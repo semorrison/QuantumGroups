@@ -1,0 +1,356 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      9772,        258]*)
+(*NotebookOutlinePosition[     10451,        281]*)
+(*  CellTagsIndexPosition[     10407,        277]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["RMatrix package", "Subtitle",
+  InitializationCell->True],
+
+Cell["\<\
+A subpackage for QuantumGroups v2.
+Version 2.0, June 22, 2006, Scott Morrison\
+\>", "Text",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+  InitializationCell->True],
+
+Cell["\<\
+This package produces universal R-matrices, and their actions on \
+representations.\
+\>", "Text",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Implementation", "Section",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["Start of package", "Subsection"],
+
+Cell["Specify package dependencies:", "Text"],
+
+Cell[BoxData[
+    \(\(BeginPackage["\<QuantumGroups`RMatrix`\>", {"\<QuantumGroups`\>", \
+"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Utilities`Debugging`\>", "\<QuantumGroups`RootSystems`\>", "\
+\<QuantumGroups`Algebra`\>", "\<QuantumGroups`WeylGroups`\>", \
+"\<QuantumGroups`Representations`\>", "\<QuantumGroups`QuantumRoots`\>", \
+"\<QuantumGroups`MatrixPresentations`\>"}];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Usage messages", "Subsection"],
+
+Cell[BoxData[
+    \(\(RMatrix::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(CheckRMatrixOppositeCommutes::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Internals", "Subsection"],
+
+Cell[BoxData[
+    \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(PartialRMatrix[\[CapitalGamma]_]\)[
+        n_] := \(\(PartialRMatrix[\[CapitalGamma]]\)[n] = 
+        Module[{p = Length[QuantumPositiveRoots[\[CapitalGamma]]], iterators, 
+            r, d = CartanFactors[\[CapitalGamma]], 
+            i = LongestWordDecomposition[\[CapitalGamma]], l, t, 
+            rmatrix}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \
+\(PartialRMatrix[\[CapitalGamma]]\)[n]]; \[IndentingNewLine]l = 
+            QuantumRootHeight[\[CapitalGamma]] /@ 
+              QuantumPositiveRoots[\[CapitalGamma]]; \
+\[IndentingNewLine]iterators = 
+            Table[{t[r], 
+                  0, \(n - Sum[l\[LeftDoubleBracket]k\[RightDoubleBracket] \
+t[k], {k, r + 1, p}]\)\/l\[LeftDoubleBracket]r\[RightDoubleBracket]}, {r, p, 
+                  2, \(-1\)}]~
+              Join~{With[{t1 = \(n - Sum[t[k] l\[LeftDoubleBracket]k\
+\[RightDoubleBracket], {k, 2, p}]\)\/l\[LeftDoubleBracket]1\
+\[RightDoubleBracket]}, {t[1], t1, t1}]}; \[IndentingNewLine]rmatrix = 
+            Sum[If[p > 1, NonCommutativeMultiply, Times] @@ 
+                Table[\(\(q\^d\[LeftDoubleBracket]
+                              i\[LeftDoubleBracket]
+                                r\[RightDoubleBracket]\[RightDoubleBracket]\)\
+\^\(\(1\/2\) t[r] \((t[r] + 
+                              1)\)\)\) \(\((1 - q\^\(\(-2\) d\
+\[LeftDoubleBracket]i\[LeftDoubleBracket]r\[RightDoubleBracket]\
+\[RightDoubleBracket]\))\)\^t[r]\/\(qFactorial[t[r]]\)[
+                          q\^d\[LeftDoubleBracket]i\[LeftDoubleBracket]r\
+\[RightDoubleBracket]\[RightDoubleBracket]]\) \(X\_\(\[CapitalGamma], \
+r\)\^+\)\^\(\(**\)\(t[r]\)\)\[CircleTimes]\(X\_\(\[CapitalGamma], \
+r\)\^-\)\^\(\(**\)\(t[r]\)\), {r, 1, p}], 
+              Evaluate[
+                Sequence @@ 
+                  iterators]]; \[IndentingNewLine]DebugPrintHeld["\<Finished \
+calculating \>", \(PartialRMatrix[\[CapitalGamma]]\)[
+              n]]; \[IndentingNewLine]rmatrix\[IndentingNewLine]]\)\)], \
+"Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(RMatrixAdjunct[\[CapitalGamma]_, V1_, V2_, \[Lambda]_] := 
+      Module[{partialWeightMultiplicities, exponents, 
+          d}, \[IndentingNewLine]partialWeightMultiplicities = 
+          QuantumGroups`MatrixPresentations`Private`\
+WeightMultiplicityComponents[\[CapitalGamma], V1, 
+            V2, \[Lambda]]; \[IndentingNewLine]exponents = \(\(KillingForm[\
+\[CapitalGamma]]\)[\[Lambda] - #, #] &\) /@ 
+            Weights[\[CapitalGamma], V2]; \[IndentingNewLine]d = 
+          Flatten[\(Table[#\[LeftDoubleBracket]1\[RightDoubleBracket], {#\
+\[LeftDoubleBracket]2\[RightDoubleBracket]}] &\) /@ 
+              Transpose[{q\^exponents, 
+                  partialWeightMultiplicities}]]; \[IndentingNewLine]Matrix[
+          DiagonalMatrix[d]]\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PartialRMatrixPresentation[\[CapitalGamma]_, n_, V_, 
+        W_, \[Beta]_, \[Lambda]_] := \(PartialRMatrixPresentation[\
+\[CapitalGamma], n, V, 
+          W, \[Beta], \[Lambda]] = \(\(MatrixPresentation[\[CapitalGamma]]\)[\
+\(PartialRMatrix[\[CapitalGamma]]\)[n]]\)[
+          V\[CircleTimes]W, \[Beta], \[Lambda]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(RMatrix[\[CapitalGamma]_, V1_, V2_, \[Beta]_, \[Lambda]_] /; 
+        MemberQ[Weights[\[CapitalGamma], V1\[CircleTimes]V2], \[Lambda]] := 
+      Module[{n = \(-1\), w, m, data}, \[IndentingNewLine]w = 
+          Weights[\[CapitalGamma], 
+            V1\[CircleTimes]V2]; \[IndentingNewLine]m = 
+          Length[w]; \[IndentingNewLine]data = 
+          Together[
+            Inner[Dot, \[IndentingNewLine]Table[
+                RMatrixAdjunct[\[CapitalGamma], V1, V2, 
+                  w\[LeftDoubleBracket]i\[RightDoubleBracket]], {i, 1, m}], 
+              FixedPoint[\((\(n++\); # + 
+                      Table[PartialRMatrixPresentation[\[CapitalGamma], n, 
+                          V1, V2, \[Beta], 
+                          w\[LeftDoubleBracket]i\[RightDoubleBracket]], {i, 
+                          1, m}])\) &, 0], 
+              List]\[IndentingNewLine]]; \[IndentingNewLine]Table[
+          RMatrix[\[CapitalGamma], V1, V2, \[Beta], 
+              w\[LeftDoubleBracket]i\[RightDoubleBracket]] = 
+            data\[LeftDoubleBracket]i\[RightDoubleBracket], {i, 1, 
+            m}]; \[IndentingNewLine]RMatrix[\[CapitalGamma], V1, 
+          V2, \[Beta], \[Lambda]]\[IndentingNewLine]]\), \
+"\[IndentingNewLine]", 
+    \(RMatrix[\[CapitalGamma]_, V1_, 
+          V2_, \[Beta]_, \[Lambda]_] /; \(! MemberQ[
+            Weights[\[CapitalGamma], V1\[CircleTimes]V2], \[Lambda]]\) := 
+      Matrix[0, 0]\)}], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(CheckRMatrixOppositeCommutes[\[CapitalGamma]_, Z_]\)[V1_, 
+        V2_, \[Beta]_, \[Lambda]_] := 
+      With[{R1 = RMatrix[\[CapitalGamma], V1, V2, \[Beta], \[Lambda]], 
+          R2 = RMatrix[\[CapitalGamma], V1, 
+              V2, \[Beta], \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[\
+\[CapitalDelta][Z]]]}, \[IndentingNewLine]ZeroMatrixQ[
+          Simplify[\(\(MatrixPresentation[\[CapitalGamma]]\)[\(\[CapitalDelta]\
+\^op\)[Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] - 
+              R2 . \(\(MatrixPresentation[\[CapitalGamma]]\)[\[CapitalDelta][
+                      Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] . 
+                Inverse[
+                  R1]]\[IndentingNewLine]]\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(CheckRMatrixOppositeCommutes[\[CapitalGamma]_]\)[V1_, 
+        V2_, \[Beta]_, \[Lambda]_] := 
+      And @@ \((\(\(CheckRMatrixOppositeCommutes[\[CapitalGamma], #]\)[V1, 
+                V2, \[Beta], \[Lambda]] &\) /@ 
+            PositiveGenerators[\[CapitalGamma]])\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(CheckRMatrixOppositeCommutes[\[CapitalGamma]_]\)[V1_, V2_, \[Beta]_] := 
+      And @@ \((\(\(CheckRMatrixOppositeCommutes[\[CapitalGamma]]\)[V1, 
+                V2, \[Beta], #] &\) /@ 
+            Weights[\[CapitalGamma], V1\[CircleTimes]V2])\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(End[];\)\)], "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["End of package", "Subsection"],
+
+Cell[BoxData[
+    \(\(EndPackage[];\)\)], "Input",
+  InitializationCell->True]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+AutoGeneratedPackage->Automatic,
+WindowSize->{671, 589},
+WindowMargins->{{Automatic, 81}, {Automatic, -38}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 63, 1, 51, "Subtitle",
+  InitializationCell->True],
+Cell[1842, 56, 129, 4, 52, "Text",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[1996, 64, 59, 1, 73, "Section",
+  InitializationCell->True],
+Cell[2058, 67, 135, 4, 33, "Text",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2230, 76, 61, 1, 73, "Section",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[2316, 81, 38, 0, 38, "Subsection"],
+Cell[2357, 83, 45, 0, 33, "Text"],
+Cell[2405, 85, 442, 7, 130, "Input",
+  InitializationCell->True],
+Cell[2850, 94, 78, 2, 30, "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2965, 101, 36, 0, 38, "Subsection"],
+Cell[3004, 103, 89, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3096, 107, 110, 2, 30, "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3243, 114, 31, 0, 38, "Subsection"],
+Cell[3277, 116, 88, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3368, 120, 2019, 36, 347, "Input",
+  InitializationCell->True],
+Cell[5390, 158, 825, 14, 230, "Input",
+  InitializationCell->True],
+Cell[6218, 174, 378, 7, 70, "Input",
+  InitializationCell->True],
+Cell[6599, 183, 1475, 27, 310, "Input",
+  InitializationCell->True],
+Cell[8077, 212, 782, 13, 170, "Input",
+  InitializationCell->True],
+Cell[8862, 227, 331, 6, 70, "Input",
+  InitializationCell->True],
+Cell[9196, 235, 308, 5, 50, "Input",
+  InitializationCell->True],
+Cell[9507, 242, 71, 2, 30, "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9615, 249, 36, 0, 38, "Subsection"],
+Cell[9654, 251, 78, 2, 30, "Input",
+  InitializationCell->True]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

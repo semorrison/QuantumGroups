@@ -1,0 +1,406 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8665,        285]*)
+(*NotebookOutlinePosition[      9310,        307]*)
+(*  CellTagsIndexPosition[      9266,        303]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(V = \(Irrep[A\_3]\)[{1, 0, 0}];\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(Vs = {V\[CircleTimes]V, V};\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Weights[A\_3, V]\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 0, 0}, {\(-1\), 1, 0}, {0, \(-1\), 1}, {0, 0, \(-1\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[A\_3]\)[\(X\_1\^+\)]\)[
+      V, \[Beta]\_F, {1, 0, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[0, 1, {}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Weights[A\_3, V\[CircleTimes]V]\)], "Input"],
+
+Cell[BoxData[
+    \({{2, 0, 0}, {0, 1, 0}, {1, \(-1\), 1}, {\(-2\), 2, 0}, {1, 
+        0, \(-1\)}, {\(-1\), 0, 1}, {\(-1\), 1, \(-1\)}, {0, \(-2\), 
+        2}, {0, \(-1\), 0}, {0, 0, \(-2\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[A\_3]\)[\(X\_1\^+\)]\)[
+      V\[CircleTimes]V, \[Beta]\_F, {0, 1, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 2, {{q, 1}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(PartialRMatrix[A\_3]\)[1]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 - 
+            1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 1\))\)\^-\) + \((1 - 
+            1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+3\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 3\))\)\^-\) + \((1 - 
+            1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+6\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 6\))\)\^-\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PartialRMatrixPresentation[A\_3, 1, V, 
+      V, \[Beta]\_F, {0, 1, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[2, 2, {{0, 0}, {\((1 - 1\/q\^2)\)\ q, 0}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Weights[A\_3, V\^\(\[CircleTimes]3\)]\)], "Input"],
+
+Cell[BoxData[
+    \({{3, 0, 0}, {1, 1, 0}, {2, \(-1\), 1}, {\(-1\), 2, 0}, {2, 
+        0, \(-1\)}, {0, 0, 1}, {\(-3\), 3, 0}, {0, 1, \(-1\)}, {1, \(-2\), 
+        2}, {\(-2\), 1, 1}, {1, \(-1\), 0}, {\(-2\), 
+        2, \(-1\)}, {\(-1\), \(-1\), 2}, {1, 0, \(-2\)}, {\(-1\), 0, 
+        0}, {0, \(-3\), 3}, {\(-1\), 1, \(-2\)}, {0, \(-2\), 
+        1}, {0, \(-1\), \(-1\)}, {0, 0, \(-3\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(PartialRMatrix[A\_3]\)[1]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 - 
+            1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 1\))\)\^-\) + \((1 - 
+            1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+3\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 3\))\)\^-\) + \((1 - 
+            1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+6\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 6\))\)\^-\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Weights[A\_3, V]\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 0, 0}, {\(-1\), 1, 0}, {0, \(-1\), 1}, {0, 0, \(-1\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Weights[A\_3, V\[CircleTimes]V]\)], "Input"],
+
+Cell[BoxData[
+    \({{2, 0, 0}, {0, 1, 0}, {1, \(-1\), 1}, {\(-2\), 2, 0}, {1, 
+        0, \(-1\)}, {\(-1\), 0, 1}, {\(-1\), 1, \(-1\)}, {0, \(-2\), 
+        2}, {0, \(-1\), 0}, {0, 0, \(-2\)}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[A\_3]\)[\(X\_\(A\_3, 1\)\^+\)]\)[
+      V\[CircleTimes]V, \[Beta]\_F, {1, 1, 0} - {1, 0, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 2, {{q, 1}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[A\_3]\)[\(X\_\(A\_3, 1\)\^-\)]\)[
+      V, \[Beta]\_F, {1, 0, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 1, {{1}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[
+          A\_3]\)[\((1 - 
+              1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 1\))\)\^-\)]\)[{V\[CircleTimes]V, 
+        V}, \[Beta]\_F, {1, 1, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[3, 
+      3, {{0, 0, 0}, {0, 0, 
+          0}, {\((1 - 1\/q\^2)\)\ q\^2, \((1 - 1\/q\^2)\)\ q, 
+          0}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[
+          A\_3]\)[\((1 - 
+              1\/q\^2)\)\ q\ \(\((X\_\(A\_3, \
+6\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_3, 6\))\)\^-\)]\)[{V\[CircleTimes]V, 
+        V}, \[Beta]\_F, {1, 1, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[3, 3, {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Clea\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(Clea\\)\\\" is similar to existing symbol \\\
+\"\\!\\(Clear\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(Clea\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PartialRMatrixPresentation[A\_3, 1, V\[CircleTimes]V, 
+      V, \[Beta]\_F, {1, 1, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[3, 
+      3, {{0, 0, 0}, {0, 0, 
+          0}, {\((1 - 1\/q\^2)\)\ q\^2, \((1 - 1\/q\^2)\)\ q, 
+          0}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Braiding[A\_3, 1, {V\[CircleTimes]V, V}, \[Beta]\_F]\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor[
+      A\_3, \(Irrep[A\_3]\)[{1, 0, 0}]\[CircleTimes]\(Irrep[A\_3]\)[{1, 0, 
+            0}]\[CircleTimes]\(Irrep[A\_3]\)[{1, 0, 0}], \[Beta]\_F, \(Irrep[
+            A\_3]\)[{1, 0, 0}]\[CircleTimes]\(Irrep[A\_3]\)[{1, 0, 
+            0}]\[CircleTimes]\(Irrep[A\_3]\)[{1, 0, 0}], \[Beta]\_F, {{{3, 0, 
+            0}, Matrix[1, 1, {{q\^\(3/2\)}}]}, {{1, 1, 0}, 
+          Matrix[3, 
+            3, {{\(\(-1\) + q\^2\)\/\@q, \(\(-1\) + q\^2\)\/q\^\(3/2\), 
+                1\/\@q}, {\@q, 0, 0}, {0, \@q, 0}}]}, {{2, \(-1\), 1}, 
+          Matrix[0, 0, {}]}, {{\(-1\), 2, 0}, 
+          Matrix[3, 
+            3, {{\(\(-1\) + q\^2\)\/\@q, \@q, 
+                0}, {\(\(-1\) + q\^2\)\/q\^\(3/2\), 0, \@q}, {1\/\@q, 0, 
+                0}}]}, {{2, 0, \(-1\)}, Matrix[0, 0, {}]}, {{0, 0, 1}, 
+          Matrix[0, 0, {}]}, {{\(-3\), 3, 0}, 
+          Matrix[1, 1, {{q\^\(3/2\)}}]}, {{0, 1, \(-1\)}, 
+          Matrix[0, 0, {}]}, {{1, \(-2\), 2}, 
+          Matrix[0, 0, {}]}, {{\(-2\), 1, 1}, 
+          Matrix[0, 0, {}]}, {{1, \(-1\), 0}, 
+          Matrix[0, 0, {}]}, {{\(-2\), 2, \(-1\)}, 
+          Matrix[0, 0, {}]}, {{\(-1\), \(-1\), 2}, 
+          Matrix[0, 0, {}]}, {{1, 0, \(-2\)}, 
+          Matrix[0, 0, {}]}, {{\(-1\), 0, 0}, 
+          Matrix[0, 0, {}]}, {{0, \(-3\), 3}, 
+          Matrix[0, 0, {}]}, {{\(-1\), 1, \(-2\)}, 
+          Matrix[0, 0, {}]}, {{0, \(-2\), 1}, 
+          Matrix[0, 0, {}]}, {{0, \(-1\), \(-1\)}, 
+          Matrix[0, 0, {}]}, {{0, 0, \(-3\)}, Matrix[0, 0, {}]}}]\)], "Output"]
+}, Closed]]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 747}},
+WindowSize->{493, 593},
+WindowMargins->{{Automatic, 150}, {Automatic, 6}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 68, 1, 30, "Input"],
+Cell[1825, 54, 64, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[1914, 59, 49, 1, 30, "Input"],
+Cell[1966, 62, 93, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2096, 68, 111, 2, 30, "Input"],
+Cell[2210, 72, 50, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2297, 78, 64, 1, 30, "Input"],
+Cell[2364, 81, 207, 3, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2608, 89, 126, 2, 30, "Input"],
+Cell[2737, 93, 56, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2830, 99, 60, 1, 30, "Input"],
+Cell[2893, 102, 355, 7, 80, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3285, 114, 104, 2, 30, "Input"],
+Cell[3392, 118, 83, 1, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3512, 124, 70, 1, 31, "Input"],
+Cell[3585, 127, 404, 6, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4026, 138, 60, 1, 30, "Input"],
+Cell[4089, 141, 355, 7, 80, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4481, 153, 49, 1, 30, "Input"],
+Cell[4533, 156, 93, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4663, 162, 64, 1, 30, "Input"],
+Cell[4730, 165, 207, 3, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4974, 173, 148, 2, 51, "Input"],
+Cell[5125, 177, 56, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5218, 183, 121, 2, 31, "Input"],
+Cell[5342, 187, 53, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5432, 193, 240, 5, 65, "Input"],
+Cell[5675, 200, 151, 4, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5863, 209, 240, 5, 65, "Input"],
+Cell[6106, 216, 81, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6224, 222, 37, 1, 30, "Input"],
+Cell[6264, 225, 357, 5, 52, "Message"],
+Cell[6624, 232, 38, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6699, 238, 119, 2, 50, "Input"],
+Cell[6821, 242, 151, 4, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7009, 251, 85, 1, 30, "Input"],
+Cell[7097, 254, 1552, 28, 562, "Output"]
+}, Closed]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

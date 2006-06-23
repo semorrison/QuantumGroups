@@ -1,0 +1,451 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     10768,        316]*)
+(*NotebookOutlinePosition[     11447,        339]*)
+(*  CellTagsIndexPosition[     11403,        335]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Representations package", "Subtitle",
+  InitializationCell->True],
+
+Cell["\<\
+A subpackage for QuantumGroups v2.
+Version 2.0, July 30, 2005, Scott Morrison\
+\>", "Text",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+  InitializationCell->True],
+
+Cell["\<\
+This package implements a weight multiplicity formula and a tensor product \
+decomposition algorithm (the underlying implementation is by Littelmann \
+paths, but you don't need to know that, if you don't care!), and can \
+calculate the weight multiplicities of tensor products and direct sums.\
+\>", "Text",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Implementation", "Section",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(BeginPackage["\<QuantumGroups`Representations`\>", {"\<QuantumGroups`\
+\>", "\<QuantumGroups`RootSystems`\>", "\<QuantumGroups`Algebra`\>", \
+"\<QuantumGroups`WeylGroups`\>", \
+"\<QuantumGroups`LittelmannPaths`\>"}];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(WeightMultiplicities::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(WeightMultiplicity::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(Weights::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(WeightDiameter::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(PositiveWeights::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(qDimension::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Weight and tensor product multiplicities, using the Littelmann path model.\
+\>", "Subsubsection",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, \[DoubleStruckCapitalC]] := \
+{{ZeroVector[Rank[\[CapitalGamma]]], 1}}\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, TensorProduct[V_]] := 
+      WeightMultiplicities[\[CapitalGamma], V]\)], "Input",
+  InitializationCell->True],
+
+Cell["Use the functions provided by the LittelmannPath package.", "Text",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, \(Irrep[\[CapitalGamma]_]\)[\
+\[Lambda]_]] := \(WeightMultiplicities[\[CapitalGamma], \(Irrep[\
+\[CapitalGamma]]\)[\[Lambda]]] = 
+        LittelmannPathWeightMultiplicities[\[CapitalGamma], \(Irrep[\
+\[CapitalGamma]]\)[\[Lambda]]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[\(Irrep[\[CapitalGamma]_]\
+\)[\[Lambda]_]\[CircleTimes]\(Irrep[\[CapitalGamma]_]\)[\[Mu]_]] := \
+\(\(DecomposeRepresentation[\[CapitalGamma]]\)[\(Irrep[\[CapitalGamma]]\)[\
+\[Lambda]]\[CircleTimes]\(Irrep[\[CapitalGamma]]\)[\[Mu]]] = \
+\(LittelmannPathDecomposeRepresentation[\[CapitalGamma]]\)[\(Irrep[\
+\[CapitalGamma]]\)[\[Lambda]]\[CircleTimes]\(Irrep[\[CapitalGamma]]\)[\[Mu]]]\
+\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(Weights[\[CapitalGamma]_, V_] := \(Weights[\[CapitalGamma], V] = 
+        First /@ WeightMultiplicities[\[CapitalGamma], V]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicity[\[CapitalGamma]_, V_, \[Mu]_] := 
+      Plus @@ Cases[
+          WeightMultiplicities[\[CapitalGamma], 
+            V], {\[Mu], n_} \[RuleDelayed] n]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightDiameter[\[CapitalGamma]_, 
+        V_] := \(WeightDiameter[\[CapitalGamma], V] = 
+        2  Max[\(\@\(KillingForm[\[CapitalGamma]]\)[#, #] &\) /@ 
+              Weights[\[CapitalGamma], V]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[\(Irrep[\[CapitalGamma]_]\
+\)[\[Lambda]_]] := \(Irrep[\[CapitalGamma]]\)[\[Lambda]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[
+        V_DirectSum] := \(SortWeights[\[CapitalGamma]]\)[
+        DecomposeRepresentation[\[CapitalGamma]] /@ V]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[
+        V_DirectSum\[CircleTimes]W_] := \
+\(SortWeights[\[CapitalGamma]]\)[\(DecomposeRepresentation[\[CapitalGamma]]\)[
+          Distribute[V\[CircleTimes]W, DirectSum]]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[
+        V_\[CircleTimes]W_DirectSum] := \
+\(SortWeights[\[CapitalGamma]]\)[\(DecomposeRepresentation[\[CapitalGamma]]\)[
+          Distribute[V\[CircleTimes]W, DirectSum]]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[\((U_\[CircleTimes]V_)\)\
+\[CircleTimes]W__] := \
+\(SortWeights[\[CapitalGamma]]\)[\(DecomposeRepresentation[\[CapitalGamma]]\)[\
+\(DecomposeRepresentation[\[CapitalGamma]]\)[
+              U\[CircleTimes]V]\[CircleTimes]W]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[
+        U_\[CircleTimes]\((V_\[CircleTimes]W__)\)] := \(SortWeights[\
+\[CapitalGamma]]\)[\(DecomposeRepresentation[\[CapitalGamma]]\)[
+          U\[CircleTimes]\(DecomposeRepresentation[\[CapitalGamma]]\)[
+              V\[CircleTimes]W]]]\)], "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Weights and weight multiplicities for repesentations", "Subsubsection",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(HighestWeight[\[CapitalGamma]_, \
+\(Irrep[\[CapitalGamma]_]\)[\[Lambda]_]] := \[Lambda]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, V_] /; 
+        MinisculeRepresentationQ[\[CapitalGamma], 
+          V] := \(WeightMultiplicities[\[CapitalGamma], 
+          V] = \({#, 1} &\) /@ \(SortWeights[\[CapitalGamma]]\)[
+            WeylOrbit[\[CapitalGamma], 
+              HighestWeight[\[CapitalGamma], V]]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, \
+\(Irrep[\[CapitalGamma]_]\)[\[Mu]_]] /; 
+        ZeroVectorQ[\[Mu]] := {{ZeroVector[Rank[\[CapitalGamma]]], 
+          1}}\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(TensorWeightMultiplicities[{\[Lambda]_, a_}, {\[Mu]_, 
+          b_}] := {\[Lambda] + \[Mu], a\ b}\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CombineWeightMultiplicities[\[CapitalGamma]_, 
+        l_] := \({#\[LeftDoubleBracket]1, 1\[RightDoubleBracket], 
+            Plus @@ \((Last /@ #)\)} &\) /@ 
+        Split[\(SortWeightMultiplicities[\[CapitalGamma]]\)[
+            l], #1\[LeftDoubleBracket]1\[RightDoubleBracket] \[Equal] #2\
+\[LeftDoubleBracket]1\[RightDoubleBracket] &]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, 
+        V_\[CircleTimes]W_] := \(WeightMultiplicities[\[CapitalGamma], 
+          V\[CircleTimes]W] = 
+        CombineWeightMultiplicities[\[CapitalGamma], 
+          Flatten[Outer[TensorWeightMultiplicities, 
+              WeightMultiplicities[\[CapitalGamma], W], 
+              WeightMultiplicities[\[CapitalGamma], V], 1], 1]]\)\)], "Input",\
+
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicities[\[CapitalGamma]_, 
+        V_DirectSum] := \(WeightMultiplicities[\[CapitalGamma], V] = 
+        CombineWeightMultiplicities[\[CapitalGamma], 
+          Join @@ \((\(WeightMultiplicities[\[CapitalGamma], #] &\) /@ \
+\((List @@ V)\))\)]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeightMultiplicity[\[CapitalGamma]_, V_DirectSum, \[Lambda]_] := 
+      Plus @@ \((\(WeightMultiplicity[\[CapitalGamma], #, \[Lambda]] &\) /@ \
+\((List @@ V)\))\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PositiveWeights[\[CapitalGamma]_, 
+        V_] := \(PositiveWeights[\[CapitalGamma], V] = 
+        Select[Weights[\[CapitalGamma], V], 
+          PositiveWeightQ[\[CapitalGamma]]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(qDimension[\[CapitalGamma]_]\)[
+        V_] := \(\(qDimension[\[CapitalGamma]]\)[V] = 
+        With[{\[Rho] = Plus @@ PositiveRoots[\[CapitalGamma]]}, 
+          Plus @@ \((WeightMultiplicities[\[CapitalGamma], 
+                  V] /. {\[Lambda]_, n_Integer} \[RuleDelayed] 
+                  n\ q\^\(KillingForm[\[CapitalGamma]]\)[\[Rho], \
+\[Lambda]])\)]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(End[];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(EndPackage[];\)\)], "Input",
+  InitializationCell->True]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+AutoGeneratedPackage->Automatic,
+WindowSize->{815, 610},
+WindowMargins->{{Automatic, 136}, {Automatic, 26}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 71, 1, 51, "Subtitle",
+  InitializationCell->True],
+Cell[1850, 56, 129, 4, 52, "Text",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[2004, 64, 59, 1, 73, "Section",
+  InitializationCell->True],
+Cell[2066, 67, 345, 6, 71, "Text",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2448, 78, 61, 1, 73, "Section",
+  InitializationCell->True],
+Cell[2512, 81, 281, 5, 70, "Input",
+  InitializationCell->True],
+Cell[2796, 88, 78, 2, 30, "Input",
+  InitializationCell->True],
+Cell[2877, 92, 102, 2, 30, "Input",
+  InitializationCell->True],
+Cell[2982, 96, 100, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3085, 100, 105, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3193, 104, 89, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3285, 108, 96, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3384, 112, 97, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3484, 116, 92, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3579, 120, 88, 2, 30, "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[3692, 126, 135, 3, 29, "Subsubsection",
+  InitializationCell->True],
+Cell[3830, 131, 170, 3, 30, "Input",
+  InitializationCell->True],
+Cell[4003, 136, 169, 3, 30, "Input",
+  InitializationCell->True],
+Cell[4175, 141, 101, 1, 33, "Text",
+  InitializationCell->True],
+Cell[4279, 144, 332, 6, 50, "Input",
+  InitializationCell->True],
+Cell[4614, 152, 493, 8, 70, "Input",
+  InitializationCell->True],
+Cell[5110, 162, 186, 3, 30, "Input",
+  InitializationCell->True],
+Cell[5299, 167, 229, 5, 30, "Input",
+  InitializationCell->True],
+Cell[5531, 174, 260, 5, 33, "Input",
+  InitializationCell->True],
+Cell[5794, 181, 190, 3, 30, "Input",
+  InitializationCell->True],
+Cell[5987, 186, 220, 4, 30, "Input",
+  InitializationCell->True],
+Cell[6210, 192, 280, 5, 50, "Input",
+  InitializationCell->True],
+Cell[6493, 199, 280, 5, 50, "Input",
+  InitializationCell->True],
+Cell[6776, 206, 331, 6, 50, "Input",
+  InitializationCell->True],
+Cell[7110, 214, 347, 6, 50, "Input",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7494, 225, 105, 1, 29, "Subsubsection",
+  InitializationCell->True],
+Cell[7602, 228, 148, 3, 30, "Input",
+  InitializationCell->True],
+Cell[7753, 233, 372, 7, 50, "Input",
+  InitializationCell->True],
+Cell[8128, 242, 224, 5, 30, "Input",
+  InitializationCell->True],
+Cell[8355, 249, 159, 3, 30, "Input",
+  InitializationCell->True],
+Cell[8517, 254, 400, 7, 50, "Input",
+  InitializationCell->True],
+Cell[8920, 263, 435, 9, 110, "Input",
+  InitializationCell->True],
+Cell[9358, 274, 319, 6, 70, "Input",
+  InitializationCell->True],
+Cell[9680, 282, 223, 4, 30, "Input",
+  InitializationCell->True],
+Cell[9906, 288, 242, 5, 30, "Input",
+  InitializationCell->True],
+Cell[10151, 295, 422, 8, 72, "Input",
+  InitializationCell->True],
+Cell[10576, 305, 71, 2, 30, "Input",
+  InitializationCell->True],
+Cell[10650, 309, 78, 2, 30, "Input",
+  InitializationCell->True]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
