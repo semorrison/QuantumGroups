@@ -1,0 +1,430 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     10409,        346]*)
+(*NotebookOutlinePosition[     11350,        378]*)
+(*  CellTagsIndexPosition[     11262,        372]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(HooksList = {};\)\)], "Input"],
+
+Cell[BoxData[
+    \(HookFunctions[f_] := {}\)], "Input"],
+
+Cell[BoxData[
+    \(InstallHook[f_] := 
+      Module[{p}, \[IndentingNewLine]p = 
+          MemberQ[Attributes[f], Protected]; \[IndentingNewLine]If[p, 
+          Unprotect[f]]; \[IndentingNewLine]RemoveHook[
+          f]; \[IndentingNewLine]\((f[x__] /; Hook[f] := 
+            HookWrapper[f, x])\); \[IndentingNewLine]If[p, 
+          Protect[f]]; \[IndentingNewLine]AppendTo[HooksList, 
+          f]; \[IndentingNewLine]Hook[f] = 
+          True;\[IndentingNewLine]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(HookWrapper[f_, x__] := 
+        Module[{r, t}, \[IndentingNewLine]Hook[f] = 
+            False; \[IndentingNewLine]t = \(AbsoluteTiming[
+                r = f[x]]\)\[LeftDoubleBracket]1\[RightDoubleBracket]; \
+\[IndentingNewLine]Hook[f] = True; \[IndentingNewLine]RunHooks[f, x, r, 
+            t]; \[IndentingNewLine]r\[IndentingNewLine]];\)\)], "Input"],
+
+Cell[BoxData[
+    \(DownValueHookQ[
+        v_] := \((v\[LeftDoubleBracket]1, 1, 0\[RightDoubleBracket] === 
+            Condition)\) \[And] \((v\[LeftDoubleBracket]1, 1, 2, 
+              0\[RightDoubleBracket] === Hook)\)\)], "Input"],
+
+Cell[BoxData[
+    \(RemoveHook[f_] := 
+      Module[{}, \[IndentingNewLine]\(DownValues[f] = 
+            DeleteCases[
+              DownValues[f], _?
+                DownValueHookQ];\)\[IndentingNewLine]]\)], "Input"],
+
+Cell[BoxData[
+    \(AddEvaluationHook[f_, h_] := 
+      Module[{}, \[IndentingNewLine]InstallHook[
+          f]; \[IndentingNewLine]AppendTo[HookFunctions[f], 
+          h];\[IndentingNewLine]]\)], "Input"],
+
+Cell[BoxData[
+    \(RunHooks[f_, x_, r_, t_] := \(#[f, x, r, t] &\) /@ 
+        HookFunctions[f]\)], "Input"],
+
+Cell[BoxData[
+    \(RepairHooks[] := \((\(InstallHook /@ HooksList;\))\)\)], "Input"],
+
+Cell[BoxData[
+    \(HookPrint[f_, x_, r_, t_] := 
+      Print[f, "\<[\>", x, "\<] produced \>", r, "\<in \>", t]\)], "Input"],
+
+Cell[BoxData[
+    \(HookPrintShort[f_, x_, r_, t_] := 
+      Print[f, "\<[\>", Short[x], "\<] produced \>", Short[r], "\<in \>", 
+        t]\)], "Input"],
+
+Cell[BoxData[
+    \(HookPrintTime[f_, x_, r_, t_] := 
+      Print[f, "\<[\>", Short[x], "\<] took \>", t]\)], "Input"],
+
+Cell[BoxData[
+    \(EvaluationTime[f_] := 0. \ Second\)], "Input"],
+
+Cell[BoxData[
+    \(HookRecordTime[f_, x_, r_, t_] := EvaluationTime[f] += t\)], "Input"],
+
+Cell[BoxData[
+    \(AddEvaluationHook[foo, HookRecordTime]\)], "Input"],
+
+Cell[BoxData[
+    \(AddEvaluationHook[MatrixRank, HookRecordTime]\)], "Input"],
+
+Cell[BoxData[
+    \(AddEvaluationHook[Simplify, HookRecordTime]\)], "Input"],
+
+Cell[BoxData[
+    \(AddEvaluationHook[InWeylPolytopeQ, HookRecordTime]\)], "Input"],
+
+Cell[BoxData[
+    \(AddEvaluationHook[IntersectSubspaces, HookRecordTime]\)], "Input"],
+
+Cell[BoxData[
+    \(foo[n_Integer] := Det[Inverse[Table[Random[], {n}, {n}]]]\)], "Input"],
+
+Cell[BoxData[
+    \(foo[x_] /; 
+        NumberQ[x] := \((Det[Inverse[Table[Random[], {1000}, {1000}]]]; 
+        x\^2)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(foo[100. ]\)], "Input"],
+
+Cell[BoxData[
+    \(10000.`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(?? foo\)], "Input"],
+
+Cell["Global`foo", "Print",
+  CellTags->"Info3334920164-8638769"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(foo[x$__] /; Hook[foo] := HookWrapper[foo, x$]\)},
+                {" "},
+                {\(foo[n_Integer] := 
+                    Det[Inverse[Table[Random[], {n}, {n}]]]\)},
+                {" "},
+                {\(foo[x_] /; 
+                      NumberQ[x] := \((Det[
+                        Inverse[Table[Random[], {1000}, {1000}]]]; x\^2)\)\)}
+                },
+              GridBaseline->{Baseline, {1, 1}},
+              ColumnWidths->0.999,
+              ColumnAlignments->{Left}]}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      Definition[ "foo"],
+      Editable->False]], "Print",
+  CellTags->"Info3334920164-8638769"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(EvaluationTime[foo]\)], "Input"],
+
+Cell[BoxData[
+    \(6.559431999999999`\ Second\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+BeginPackage[\"Profile`\"]
+
+BeginProfile::usage = \"BeginProfile[] begins a profiling session, with root \
+\\
+\tname ProfileRoot. BeginProfile[root] does same with root name root.\"
+
+ProfileRoot::usage = \"The default root label of a profile.\"
+
+EndProfile::usage = \"EndProfile[] ends a profiling session and returns a \\
+\tProfileData object containing the profile of the last session.\"
+
+$Profiling::usage = \"When $Profiling is True, profiling is on.\"
+
+ProfileOn::usage = \"ProfileOn[] turns profiling on.\"
+
+ProfileOff::usage = \"ProfileOff[] turns profiling off.\"
+
+Profile::usage = \"Profile[label,expr] evaluates expr while taking profiling \
+\\
+\tdata under the label label.\"
+
+Called::usage = \"n Called[parent,child] means that child was called n times \
+\\
+\tby parent.\"
+
+TimeUnder::usage = \"t TimeUnder[parent,child] means that child spent time t \
+\\
+\tunder parent.\"
+
+ProfileData::usage = \"The result of EndProfile. Has format \\
+\tProfileData[root,calls,total,self], where root is the profile root\\
+\tlabel, calls is a linear combination of tags with head Called, and\\
+\ttotal and self are linear combinations of tags with head TimeUnder.\"
+
+(* Begin[\"`private`\"] *)
+
+ProfileOff[] := (
+  $Profiling = False;
+  Attributes[Profile]={HoldFirst};
+  Profile[label_,expr_] := expr
+)
+
+ProfileOff[]
+
+ProfileOn[] := (
+  $Profiling=True;
+  Attributes[Profile]={HoldRest};
+  Profile[label_,expr_] := (
+    Block[
+      {
+        PreviousLabel=CurrentLabel,
+        CurrentLabel=label,
+        EntryTime=TimeUsed[],
+        AdjustedEntryTime
+      },
+      AdjustedEntryTime = EntryTime;
+      CallingHistory += Called[PreviousLabel,CurrentLabel];
+      Value=expr;
+      TotalTime += (TimeSpent=(TimeReading=TimeUsed[])-EntryTime) *
+        TimeUnder[PreviousLabel,CurrentLabel];
+      SelfTime += (TimeReading-AdjustedEntryTime) *
+        TimeUnder[PreviousLabel,CurrentLabel];
+    ];
+    AdjustedEntryTime += TimeSpent;
+    Value
+  )
+)
+
+BeginProfile[] := BeginProfile[ProfileRoot]
+BeginProfile[root_] := (
+  ProfileOn[];
+  CallingHistory = TotalTime = SelfTime = 0;
+  RootEntryTime = AdjustedEntryTime = TimeUsed[];
+  $ProfileRoot = CurrentLabel = root
+)
+
+EndProfile[] := (
+  ProfileOff[];
+  ProfileData[$ProfileRoot,CallingHistory,TotalTime,SelfTime]
+)
+
+$CurrentProfile := \
+ProfileData[$ProfileRoot,CallingHistory,TotalTime,SelfTime]
+
+TimeIn[label_] := TimeIn[label,$CurrentProfile]
+TimeIn[label_,ProfileData[_,_,_,st_]] := st /. {
+  TimeUnder[_,label] -> 1,
+  TimeUnder[_,_] -> 0
+}
+
+ProfileLabels[] := ProfileLabels[$CurrentProfile]
+ProfileLabels[pd_ProfileData] := Block[
+  {out={}},
+  pd[[2]] /. Called[lbls__] :> (out=Union[out,{lbls}];);
+  Reverse[Last /@ Sort[{TimeIn[#,pd],#}& /@ out]]
+]
+
+PrintProfile[pd_ProfileData] :=
+  PrintProfile[#,pd]& /@ ProfileLabels[pd]
+PrintProfile[]:=PrintProfile[$CurrentProfile]
+PrintProfile[label_] := PrintProfile[label,$CurrentProfile]
+PrintProfile[label_,ProfileData[pr_,ch_,tt_,st_]] := Block[
+  {labelist={},i,l1,l2},
+  l1=Floor[N[Log[10, ch /. _Called -> 1]]];
+  l2=3+Floor[N[Log[10, tt /. _TimeUnder -> 1]]];
+  Print[label,\": called \",
+    ch /. {Called[_,label] -> 1, Called[_,_] -> 0},
+    \" times, time in \",
+    TimeIn[label],
+    \"/\",
+    tt /. {TimeUnder[_,label] -> 1, TimeUnder[_,_] -> 0}
+  ];
+  ch /.  Called[lbl_,label] :> (labelist=Union[labelist,{lbl}];);
+  If[Length[labelist]>0,
+    Print[\"  Parents:\"];
+    Do[
+      Print[StringForm[\"    (``) ``/`` under ``\", 
+        PaddedForm[Coefficient[ch,Called[labelist[[i]],label]],l1], 
+        PaddedForm[Coefficient[st,TimeUnder[labelist[[i]],label]],{l2,3}],  
+        PaddedForm[Coefficient[tt,TimeUnder[labelist[[i]],label]],{l2,3}], 
+        labelist[[i]]
+      ]],
+      {i,1,Length[labelist]}
+    ]
+  ];
+  labelist={};
+  ch /.  Called[label,lbl_] :> (labelist=Union[labelist,{lbl}];);
+  If[Length[labelist]>0,
+    Print[\"  Children:\"];
+    Do[
+      Print[StringForm[\"    (``) ``/`` above ``\",
+        PaddedForm[Coefficient[ch,Called[label,labelist[[i]]]],l1],
+        PaddedForm[Coefficient[st,TimeUnder[label,labelist[[i]]]],{l2,3}],
+        PaddedForm[Coefficient[tt,TimeUnder[label,labelist[[i]]]],{l2,3}],
+        labelist[[i]]
+      ]], 
+      {i,1,Length[labelist]}
+    ]
+  ];
+  Print[\"\"];
+]
+
+(* End[] *)
+
+EndPackage[]
+\
+\>", "Input",
+  PageWidth->Infinity,
+  InitializationCell->True,
+  ShowSpecialCharacters->False,
+  FormatType->InputForm]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+AutoGeneratedPackage->None,
+WindowSize->{555, 593},
+WindowMargins->{{149, Automatic}, {Automatic, 13}},
+ShowSelection->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Info3334920164-8638769"->{
+    Cell[4995, 158, 65, 1, 25, "Print",
+      CellTags->"Info3334920164-8638769"],
+    Cell[5063, 161, 768, 20, 114, "Print",
+      CellTags->"Info3334920164-8638769"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Info3334920164-8638769", 11067, 363}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 52, 1, 30, "Input"],
+Cell[1809, 54, 56, 1, 30, "Input"],
+Cell[1868, 57, 482, 9, 190, "Input"],
+Cell[2353, 68, 378, 6, 150, "Input"],
+Cell[2734, 76, 236, 4, 50, "Input"],
+Cell[2973, 82, 218, 5, 70, "Input"],
+Cell[3194, 89, 206, 4, 90, "Input"],
+Cell[3403, 95, 109, 2, 30, "Input"],
+Cell[3515, 99, 85, 1, 30, "Input"],
+Cell[3603, 102, 125, 2, 50, "Input"],
+Cell[3731, 106, 153, 3, 50, "Input"],
+Cell[3887, 111, 118, 2, 50, "Input"],
+Cell[4008, 115, 66, 1, 30, "Input"],
+Cell[4077, 118, 89, 1, 30, "Input"],
+Cell[4169, 121, 71, 1, 30, "Input"],
+Cell[4243, 124, 78, 1, 30, "Input"],
+Cell[4324, 127, 76, 1, 30, "Input"],
+Cell[4403, 130, 83, 1, 30, "Input"],
+Cell[4489, 133, 86, 1, 30, "Input"],
+Cell[4578, 136, 90, 1, 30, "Input"],
+Cell[4671, 139, 133, 3, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[4829, 146, 43, 1, 30, "Input"],
+Cell[4875, 149, 41, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4953, 155, 39, 1, 30, "Input"],
+Cell[4995, 158, 65, 1, 25, "Print",
+  CellTags->"Info3334920164-8638769"],
+Cell[5063, 161, 768, 20, 114, "Print",
+  CellTags->"Info3334920164-8638769"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5868, 186, 52, 1, 30, "Input"],
+Cell[5923, 189, 60, 1, 29, "Output"]
+}, Open  ]],
+Cell[5998, 193, 4407, 151, 70, "Input",
+  InitializationCell->True]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

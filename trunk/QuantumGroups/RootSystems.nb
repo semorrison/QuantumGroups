@@ -1,0 +1,908 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     21545,        679]*)
+(*NotebookOutlinePosition[     22400,        706]*)
+(*  CellTagsIndexPosition[     22356,        702]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["RootSystems package", "Subtitle"],
+
+Cell["\<\
+A subpackage for QuantumGroups v2.
+Version 2.0, June 20, 2005, Scott Morrison\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section"],
+
+Cell["", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Implementation", "Section"],
+
+Cell[BoxData[
+    \(\(BeginPackage["\<QuantumGroups`RootSystems`\>", {"\<QuantumGroups`\>", \
+"\<LinearAlgebra`MatrixManipulation`\>"}];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanMatrix; CartanFactors; Rank; KillingForm; SimpleRoots; 
+    SimpleReflection; WeylOrbit; PositiveWeightQ; InWeylPolytopeQ; 
+    SortWeights; SortWeightMultiplicities; MinisculeWeightQ; 
+    MinisculeRepresentationQ; ReflectIntoPositiveWeylChamber; DominantRoots; 
+    ShortDominantRoots; ShortSimpleRoots; ShortRoots; 
+    ShortDominantRootQ;\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  CellLabel->"In[5]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanMatrix[A\_n_] := \(CartanMatrix[A\_n] = 
+        TridiagonalMatrix[
+          Switch[#1 - #2, 1, \(-1\), 0, 2, \(-1\), \(-1\), _, 0] &, 
+          n]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ElementaryMatrix[n_, i0_, j0_] := 
+      Table[If[i \[Equal] i0 \[And] j \[Equal] j0, 1, 0], {i, 1, n}, {j, 1, 
+          n}]\)], "Input",
+  CellLabel->"In[20]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanMatrix[B\_n_] := \(CartanMatrix[B\_n] = 
+        CartanMatrix[A\_n] - ElementaryMatrix[n, n, n - 1]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanMatrix[C\_n_] := \(CartanMatrix[C\_n] = 
+        CartanMatrix[A\_n] - ElementaryMatrix[n, n - 1, n]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanMatrix[D\_n_] := \(CartanMatrix[D\_n] = 
+        CartanMatrix[A\_n] + ElementaryMatrix[n, n, n - 1] + 
+          ElementaryMatrix[n, n - 1, n] - ElementaryMatrix[n, n, n - 2] - 
+          ElementaryMatrix[n, n - 2, n]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(CartanMatrix[E\_6]\), "=", 
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+              {"2", "0", \(-1\), "0", "0", "0"},
+              {"0", "2", "0", \(-1\), "0", "0"},
+              {\(-1\), "0", "2", \(-1\), "0", "0"},
+              {"0", \(-1\), \(-1\), "2", \(-1\), "0"},
+              {"0", "0", "0", \(-1\), "2", \(-1\)},
+              {"0", "0", "0", "0", \(-1\), "2"}
+              },
+            RowSpacings->1,
+            ColumnSpacings->1,
+            ColumnAlignments->{Left}], "\[NoBreak]", ")"}]}], ";"}]], "Input",\
+
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(CartanMatrix[E\_7]\), "=", 
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+              {"2", "0", \(-1\), "0", "0", "0", "0"},
+              {"0", "2", "0", \(-1\), "0", "0", "0"},
+              {\(-1\), "0", "2", \(-1\), "0", "0", "0"},
+              {"0", \(-1\), \(-1\), "2", \(-1\), "0", "0"},
+              {"0", "0", "0", \(-1\), "2", \(-1\), "0"},
+              {"0", "0", "0", "0", \(-1\), "2", \(-1\)},
+              {"0", "0", "0", "0", "0", \(-1\), "2"}
+              },
+            RowSpacings->1,
+            ColumnSpacings->1,
+            ColumnAlignments->{Left}], "\[NoBreak]", ")"}]}], ";"}]], "Input",\
+
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(CartanMatrix[E\_8]\), "=", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"2", "0", \(-1\), "0", "0", "0", "0", "0"},
+                {"0", "2", "0", \(-1\), "0", "0", "0", "0"},
+                {\(-1\), "0", "2", \(-1\), "0", "0", "0", "0"},
+                {"0", \(-1\), \(-1\), "2", \(-1\), "0", "0", "0"},
+                {"0", "0", "0", \(-1\), "2", \(-1\), "0", "0"},
+                {"0", "0", "0", "0", \(-1\), "2", \(-1\), "0"},
+                {"0", "0", "0", "0", "0", \(-1\), "2", \(-1\)},
+                {"0", "0", "0", "0", "0", "0", \(-1\), "2"}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}], ";"}]], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(CartanMatrix[F\_4]\), "=", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"2", \(-1\), "0", "0"},
+                {\(-1\), "2", \(-1\), "0"},
+                {"0", \(-2\), "2", \(-1\)},
+                {"0", "0", \(-1\), "2"}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}], ";"}]], "Input",
+  CellLabel->"Out[18]//MatrixForm=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{\(CartanMatrix[G\_2]\), "=", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {"2", \(-3\)},
+                {\(-1\), "2"}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}], ";"}]], "Input",
+  CellLabel->"Out[19]//MatrixForm=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanFactors[A\_n_] := \(CartanFactors[A\_n] = 
+        Table[1, {n}]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanFactors[B\_n_] := \(CartanFactors[B\_n] = 
+        Table[2, {n - 1}]~Join~{1}\)\)], "Input",
+  CellLabel->"In[63]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanFactors[C\_n_] := \(CartanFactors[C\_n] = 
+        Table[1, {n - 1}]~Join~{2}\)\)], "Input",
+  CellLabel->"In[68]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanFactors[D\_n_] := \(CartanFactors[D\_n] = 
+        Table[1, {n}]\)\)], "Input",
+  CellLabel->"In[73]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(CartanFactors[G\_2] = {1, 3};\)\)], "Input",
+  CellLabel->"In[81]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(CartanFactors[F\_4] = {2, 2, 1, 1};\)\)], "Input",
+  CellLabel->"In[86]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(CartanFactors[E\_n_] := \(CartanFactors[E\_n] = 
+        Table[1, {n}]\)\)], "Input",
+  CellLabel->"In[91]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(Rank[\[CapitalGamma]_\_n_] := n\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(InverseCartanMatrix[\[CapitalGamma]_] := \(InverseCartanMatrix[\
+\[CapitalGamma]] = Inverse[CartanMatrix[\[CapitalGamma]]]\)\)], "Input",
+  CellLabel->"In[157]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \( (*\(KillingForm[\[CapitalGamma]_]\)[x_, y_] := 
+        Simplify[x . InverseCartanMatrix[\[CapitalGamma]] . y]*) \)], "Input",\
+
+  CellLabel->"In[186]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(KillingForm[\[CapitalGamma]_]\)[x_, y_] := 
+      Simplify[x . 
+          Inverse[CartanFactors[\[CapitalGamma]] 
+              CartanMatrix[\[CapitalGamma]]] . y]\)], "Input",
+  CellLabel->"In[138]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(KillingForm[\[CapitalGamma]_]\)[x_, y_] := 
+      Simplify[x . Inverse[Transpose[CartanMatrix[\[CapitalGamma]]]] . 
+          DiagonalMatrix[CartanFactors[\[CapitalGamma]]] . y]\)], "Input",
+  CellLabel->"In[138]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(SimpleRoots[\[CapitalGamma]_] := 
+      Transpose[CartanMatrix[\[CapitalGamma]]]\)], "Input",
+  CellLabel->"In[233]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(SimpleReflection[\[CapitalGamma]_, i_]\)[
+        x_] := \[IndentingNewLine]With[{\[Lambda] = \(SimpleRoots[\
+\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, 
+        x - 2 \(\( KillingForm[\[CapitalGamma]]\)[\[Lambda], 
+                  x]\/\(KillingForm[\[CapitalGamma]]\)[\[Lambda], \
+\[Lambda]]\) \[Lambda]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(AllSimpleReflections[\[CapitalGamma]_]\)[x_] := 
+      Table[\(SimpleReflection[\[CapitalGamma], i]\)[x], {i, 1, 
+          Rank[\[CapitalGamma]]}]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WeylOrbit[\[CapitalGamma]_, \[Lambda]_] := 
+      FixedPoint[
+        Union[Flatten[AllSimpleReflections[\[CapitalGamma]] /@ #, 
+              1], #] &, {\[Lambda]}]\)], "Input",
+  InitializationCell->True],
+
+Cell["\<\
+In PositiveWeightQ, we don't ask that the entries be integers, because \
+Littelmann paths have vertices off the weight lattice.\
+\>", "Text"],
+
+Cell[BoxData[
+    \(\(PositiveWeightQ[\[CapitalGamma]_]\)[\[Lambda]_] := 
+      And @@ \((NonNegative /@ \[Lambda])\)\)], "Input",
+  CellLabel->"In[6]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(ReflectIntoPositiveWeylChamber[\[CapitalGamma]_]\)[\[Lambda]_] := 
+      With[{p = Position[\[Lambda], _?Negative]}, \ 
+        If[Length[p] \[Equal] 
+            0, \[Lambda], \
+\(ReflectIntoPositiveWeylChamber[\[CapitalGamma]]\)[\(SimpleReflection[\
+\[CapitalGamma], 
+                p\[LeftDoubleBracket]1, 
+                  1\[RightDoubleBracket]]\)[\[Lambda]]]]]\)], "Input",
+  CellLabel->"In[15]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(WeightsOrderedQ[\[CapitalGamma]_]\)[\[Lambda]_, \[Mu]_] := 
+      And @@ \((\(NonNegative[\(KillingForm[\[CapitalGamma]]\)[\[Lambda] - \
+\[Mu], #]] &\) /@ IdentityMatrix[Rank[\[CapitalGamma]]])\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(InWeylPolytopeQ[\[CapitalGamma]_, \[Lambda]_, \[Mu]_] := \
+\(InWeylPolytopeQ[\[CapitalGamma], \[Lambda], \[Mu]] = \(WeightsOrderedQ[\
+\[CapitalGamma]]\)[\[Lambda], \
+\(ReflectIntoPositiveWeylChamber[\[CapitalGamma]]\)[\[Mu]]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(OrderingWeight[A\_n_] := \(OrderingWeight[A\_n] = 
+        Table[1 + 10\^\(\(-5\) - i\), {i, 1, n}]\)\)], "Input",
+  CellLabel->"In[38]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(WeightsOrderedComplete[\[CapitalGamma]_]\)[\[Lambda]_, \[Mu]_] := 
+      With[{\[Theta] = 
+            OrderingWeight[\[CapitalGamma]]}, \
+\(KillingForm[\[CapitalGamma]]\)[\[Lambda], \[Theta]] > \(KillingForm[\
+\[CapitalGamma]]\)[\[Mu], \[Theta]]]\)], "Input",
+  CellLabel->"In[39]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(SortWeights[\[CapitalGamma]_]\)[weights_] := 
+      With[{\[Theta] = OrderingWeight[\[CapitalGamma]]}, 
+        weights\[LeftDoubleBracket]
+          Ordering[\(\(-\(KillingForm[\[CapitalGamma]]\)[#, \[Theta]]\) &\) /@ \
+\((weights /. \(Irrep[_]\)[\[Lambda]_] \[RuleDelayed] \[Lambda])\)]\
+\[RightDoubleBracket]]\)], "Input",
+  CellLabel->"In[37]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(SortWeightMultiplicities[\[CapitalGamma]_]\)[l_] := 
+      With[{\[Theta] = OrderingWeight[\[CapitalGamma]]}, 
+        l\[LeftDoubleBracket]
+          Ordering[\(\(-\(KillingForm[\[CapitalGamma]]\)[#\[LeftDoubleBracket]\
+1\[RightDoubleBracket], \[Theta]]\) &\) /@ \((l /. \(Irrep[_]\)[\[Lambda]_] \
+\[RuleDelayed] \[Lambda])\)]\[RightDoubleBracket]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(MinisculeWeightQ[A\_n_, \[Lambda]_] := 
+      UnitVectorQ[\[Lambda]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(MinisculeWeightQ[B\_n_, \[Lambda]_] := \[Lambda] === 
+        UnitVector[n, n]\), "\[IndentingNewLine]", 
+    \(MinisculeWeightQ[C\_n_, \[Lambda]_] := \[Lambda] === 
+        UnitVector[n, 1]\), "\[IndentingNewLine]", 
+    \(MinisculeWeightQ[D\_n_, \[Lambda]_] := 
+      MemberQ[{UnitVector[n, 1], UnitVector[n, n - 1], 
+          UnitVector[n, n]}, \[Lambda]]\)}], "Input",
+  CellLabel->"In[126]:=",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(\(MinisculeWeightQ[E\_6, {1, 0, 0, 0, 0, 0}] = 
+        True;\)\), "\[IndentingNewLine]", 
+    \(\(MinisculeWeightQ[E\_6, {0, 0, 0, 0, 0, 1}] = True;\)\)}], "Input",
+  InitializationCell->True],
+
+Cell["\<\
+I don't actually know whether 3 through 5 are miniscule or not. 1,2 and 6 \
+aren't. You can use the following to test these:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B\_4, k = 1}, 
+      Max[Last /@ 
+              WeightMultiplicities[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], k]]]] \[Equal] 
+          1 \[And] 
+        WeightMultiplicity[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[
+              UnitVector[Rank[\[CapitalGamma]], k]], 
+            ZeroVector[Rank[\[CapitalGamma]]]] \[Equal] 0]\)], "Input",
+  CellLabel->"In[81]:="],
+
+Cell[BoxData[
+    \(False\)], "Output",
+  CellLabel->"Out[81]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = E\_7, k = 2}, 
+      Max[Last /@ 
+              WeightMultiplicities[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], k]]]] \[Equal] 
+          1 \[And] 
+        WeightMultiplicity[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[
+              UnitVector[Rank[\[CapitalGamma]], k]], 
+            ZeroVector[Rank[\[CapitalGamma]]]] \[Equal] 0]\)], "Input",
+  CellLabel->"In[79]:="],
+
+Cell[BoxData[
+    \(False\)], "Output",
+  CellLabel->"Out[79]="]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(MinisculeWeightQ[E\_7, {0, 0, 0, 0, 0, 0, 1}] = True;\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(MinisculeWeightQ[_, _] := False\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(MinisculeRepresentationQ[\[CapitalGamma]_, \(Irrep[\[CapitalGamma]_]\)[\
+\[Lambda]_]] := MinisculeWeightQ[\[CapitalGamma], \[Lambda]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(DominantRoots[\[CapitalGamma]_] := \(DominantRoots[\[CapitalGamma]] = 
+        Union[ReflectIntoPositiveWeylChamber[\[CapitalGamma]] /@ 
+            SimpleRoots[\[CapitalGamma]]]\)\)], "Input",
+  CellLabel->"In[142]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ShortDominantRoots[\[CapitalGamma]_] := \(ShortDominantRoots[\
+\[CapitalGamma]] = 
+        Module[{dr = DominantRoots[\[CapitalGamma]], 
+            shortLength}, \[IndentingNewLine]shortLength = 
+            Min[\(\(KillingForm[\[CapitalGamma]]\)[#, #] &\) /@ 
+                dr]; \[IndentingNewLine]Select[
+            dr, \(KillingForm[\[CapitalGamma]]\)[#, #] \[Equal] 
+                shortLength &]\[IndentingNewLine]]\)\)], "Input",
+  CellLabel->"In[143]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ShortSimpleRoots[\[CapitalGamma]_] := \
+\(ShortSimpleRoots[\[CapitalGamma]] = 
+        Module[{shortLength}, \[IndentingNewLine]shortLength = 
+            Min[\(\(KillingForm[\[CapitalGamma]]\)[#, #] &\) /@ 
+                SimpleRoots[\[CapitalGamma]]]; \[IndentingNewLine]Select[
+            SimpleRoots[\[CapitalGamma]], \(KillingForm[\[CapitalGamma]]\)[#, \
+#] \[Equal] shortLength &]\[IndentingNewLine]]\)\)], "Input",
+  CellLabel->"In[185]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ShortRoots[\[CapitalGamma]_] := \(ShortRoots[\[CapitalGamma]] = \
+\(ShortRoots[\[CapitalGamma]] = 
+          Union @@ \((\(WeylOrbit[\[CapitalGamma], #] &\) /@ 
+                ShortDominantRoots[\[CapitalGamma]])\)\)\)\)], "Input",
+  CellLabel->"In[221]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ShortDominantRootQ[\[CapitalGamma]_, \[Lambda]_] := 
+      MemberQ[ShortDominantRoots[\[CapitalGamma]], \[Lambda]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(End[];\)\)], "Input",
+  CellLabel->"In[22]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(EndPackage[];\)\)], "Input",
+  CellLabel->"In[23]:=",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CartanMatrix[G\_2]\)], "Input",
+  CellLabel->"In[129]:="],
+
+Cell[BoxData[
+    \({{2, \(-3\)}, {\(-1\), 2}}\)], "Output",
+  CellLabel->"Out[129]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CartanFactors[G\_2]\)], "Input",
+  CellLabel->"In[130]:="],
+
+Cell[BoxData[
+    \({1, 3}\)], "Output",
+  CellLabel->"Out[130]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CartanFactors[G\_2] CartanMatrix[G\_2] // MatrixForm\)], "Input",
+  CellLabel->"In[137]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"2", \(-3\)},
+            {\(-3\), "6"}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[137]//MatrixForm="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ShortRoots[F\_4]\)], "Input",
+  CellLabel->"In[223]:="],
+
+Cell[BoxData[
+    \({{\(-2\), 1, 0, 0}, {\(-1\), \(-1\), 1, 0}, {\(-1\), 0, 0, 0}, {\(-1\), 
+        0, 0, 1}, {\(-1\), 0, 1, \(-1\)}, {\(-1\), 1, \(-1\), 1}, {\(-1\), 1, 
+        0, \(-1\)}, {\(-1\), 1, 0, 0}, {\(-1\), 2, \(-1\), 0}, {0, \(-1\), 0, 
+        1}, {0, \(-1\), 1, \(-1\)}, {0, \(-1\), 1, 0}, {0, 1, \(-1\), 0}, {0, 
+        1, \(-1\), 1}, {0, 1, 0, \(-1\)}, {1, \(-2\), 1, 0}, {1, \(-1\), 0, 
+        0}, {1, \(-1\), 0, 1}, {1, \(-1\), 1, \(-1\)}, {1, 0, \(-1\), 1}, {1, 
+        0, 0, \(-1\)}, {1, 0, 0, 0}, {1, 1, \(-1\), 0}, {2, \(-1\), 0, 
+        0}}\)], "Output",
+  CellLabel->"Out[223]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DominantRoots[A\_4]\)], "Input",
+  CellLabel->"In[144]:="],
+
+Cell[BoxData[
+    \({{1, 0, 0, 1}}\)], "Output",
+  CellLabel->"Out[144]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ShortDominantRoots[B\_6]\)], "Input",
+  CellLabel->"In[145]:="],
+
+Cell[BoxData[
+    \({{0, 1, 0, 0, 0, 0}}\)], "Output",
+  CellLabel->"Out[145]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DominantRoots[B\_6]\)], "Input",
+  CellLabel->"In[146]:="],
+
+Cell[BoxData[
+    \({{0, 1, 0, 0, 0, 0}, {2, 0, 0, 0, 0, 0}}\)], "Output",
+  CellLabel->"Out[146]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DominantRoots[C\_7]\)], "Input",
+  CellLabel->"In[147]:="],
+
+Cell[BoxData[
+    \({{0, 1, 0, 0, 0, 0, 0}, {1, 0, 0, 0, 0, 0, 0}}\)], "Output",
+  CellLabel->"Out[147]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DominantRoots[D\_8]\)], "Input",
+  CellLabel->"In[148]:="],
+
+Cell[BoxData[
+    \({{0, 1, 0, 0, 0, 0, 0, 0}}\)], "Output",
+  CellLabel->"Out[148]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DominantRoots[G\_2]\)], "Input",
+  CellLabel->"In[149]:="],
+
+Cell[BoxData[
+    \({{0, 1}, {1, 0}}\)], "Output",
+  CellLabel->"Out[149]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ShortDominantRoots[G\_2]\)], "Input",
+  CellLabel->"In[150]:="],
+
+Cell[BoxData[
+    \({{0, 1}}\)], "Output",
+  CellLabel->"Out[150]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ReflectIntoPositiveWeylChamber[B\_3] /@ CartanMatrix[B\_3]\)], "Input",
+  CellLabel->"In[151]:="],
+
+Cell[BoxData[
+    \({{0, 1, 0}, {0, 1, 0}, {2, 0, 0}}\)], "Output",
+  CellLabel->"Out[151]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(WeylOrbit[B\_3, #] &\) /@ 
+      Table[SimpleRoot[B\_3, i], {i, 1, 3}]\)], "Input",
+  CellLabel->"In[152]:="],
+
+Cell[BoxData[
+    \({{{\(-2\), 1, 0}, {\(-1\), \(-1\), 1}, {\(-1\), 0, 1}, {\(-1\), 
+          1, \(-1\)}, {\(-1\), 2, \(-1\)}, {0, \(-1\), 0}, {0, 1, 
+          0}, {1, \(-2\), 1}, {1, \(-1\), 1}, {1, 0, \(-1\)}, {1, 
+          1, \(-1\)}, {2, \(-1\), 0}}, {{\(-2\), 1, 0}, {\(-1\), \(-1\), 
+          1}, {\(-1\), 0, 1}, {\(-1\), 1, \(-1\)}, {\(-1\), 
+          2, \(-1\)}, {0, \(-1\), 0}, {0, 1, 0}, {1, \(-2\), 1}, {1, \(-1\), 
+          1}, {1, 0, \(-1\)}, {1, 1, \(-1\)}, {2, \(-1\), 0}}, {{\(-2\), 0, 
+          0}, {\(-2\), 2, 0}, {0, \(-2\), 2}, {0, 2, \(-2\)}, {2, \(-2\), 
+          0}, {2, 0, 0}}}\)], "Output",
+  CellLabel->"Out[152]="]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+AutoGeneratedPackage->Automatic,
+WindowSize->{626, 679},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+StyleDefinitions -> \
+FrontEnd`FileName[{ParentDirectory[ParentDirectory[ParentDirectory[]]]}, \
+"PackageStyleSheet.nb", CharacterEncoding -> "WindowsANSI"]
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 39, 0, 33, "Subtitle"],
+Cell[1818, 55, 101, 3, 50, "Text"],
+
+Cell[CellGroupData[{
+Cell[1944, 62, 31, 0, 85, "Section"],
+Cell[1978, 64, 16, 0, 25, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2031, 69, 33, 0, 85, "Section"],
+Cell[2067, 71, 179, 3, 30, "Input",
+  InitializationCell->True],
+Cell[2249, 76, 409, 7, 90, "Input",
+  InitializationCell->True],
+Cell[2661, 85, 112, 3, 30, "Input",
+  InitializationCell->True],
+Cell[2776, 90, 218, 5, 31, "Input",
+  InitializationCell->True],
+Cell[2997, 97, 211, 5, 30, "Input",
+  InitializationCell->True],
+Cell[3211, 104, 168, 3, 31, "Input",
+  InitializationCell->True],
+Cell[3382, 109, 168, 3, 31, "Input",
+  InitializationCell->True],
+Cell[3553, 114, 286, 5, 51, "Input",
+  InitializationCell->True],
+Cell[3842, 121, 605, 15, 105, "Input",
+  InitializationCell->True],
+Cell[4450, 138, 692, 16, 121, "Input",
+  InitializationCell->True],
+Cell[5145, 156, 901, 19, 137, "Input",
+  InitializationCell->True],
+Cell[6049, 177, 602, 16, 87, "Input",
+  InitializationCell->True],
+Cell[6654, 195, 494, 14, 55, "Input",
+  InitializationCell->True],
+Cell[7151, 211, 133, 3, 31, "Input",
+  InitializationCell->True],
+Cell[7287, 216, 171, 4, 31, "Input",
+  InitializationCell->True],
+Cell[7461, 222, 171, 4, 31, "Input",
+  InitializationCell->True],
+Cell[7635, 228, 158, 4, 31, "Input",
+  InitializationCell->True],
+Cell[7796, 234, 119, 3, 30, "Input",
+  InitializationCell->True],
+Cell[7918, 239, 125, 3, 30, "Input",
+  InitializationCell->True],
+Cell[8046, 244, 158, 4, 31, "Input",
+  InitializationCell->True],
+Cell[8207, 250, 92, 2, 34, "Input",
+  InitializationCell->True],
+Cell[8302, 254, 211, 4, 30, "Input",
+  InitializationCell->True],
+Cell[8516, 260, 203, 5, 30, "Input",
+  InitializationCell->True],
+Cell[8722, 267, 252, 6, 30, "Input",
+  InitializationCell->True],
+Cell[8977, 275, 266, 5, 70, "Input",
+  InitializationCell->True],
+Cell[9246, 282, 167, 4, 30, "Input",
+  InitializationCell->True],
+Cell[9416, 288, 390, 7, 65, "Input",
+  InitializationCell->True],
+Cell[9809, 297, 210, 4, 50, "Input",
+  InitializationCell->True],
+Cell[10022, 303, 226, 5, 50, "Input",
+  InitializationCell->True],
+Cell[10251, 310, 151, 3, 42, "Text"],
+Cell[10405, 315, 182, 4, 30, "Input",
+  InitializationCell->True],
+Cell[10590, 321, 456, 10, 90, "Input",
+  InitializationCell->True],
+Cell[11049, 333, 258, 4, 50, "Input",
+  InitializationCell->True],
+Cell[11310, 339, 288, 5, 70, "Input",
+  InitializationCell->True],
+Cell[11601, 346, 187, 4, 31, "Input",
+  InitializationCell->True],
+Cell[11791, 352, 335, 7, 50, "Input",
+  InitializationCell->True],
+Cell[12129, 361, 400, 8, 90, "Input",
+  InitializationCell->True],
+Cell[12532, 371, 412, 7, 70, "Input",
+  InitializationCell->True],
+Cell[12947, 380, 129, 3, 31, "Input",
+  InitializationCell->True],
+Cell[13079, 385, 448, 9, 93, "Input",
+  InitializationCell->True],
+Cell[13530, 396, 214, 4, 50, "Input",
+  InitializationCell->True],
+Cell[13747, 402, 148, 3, 42, "Text"],
+
+Cell[CellGroupData[{
+Cell[13920, 409, 451, 9, 90, "Input"],
+Cell[14374, 420, 64, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[14475, 427, 451, 9, 90, "Input"],
+Cell[14929, 438, 64, 2, 24, "Output"]
+}, Open  ]],
+Cell[15008, 443, 118, 2, 30, "Input",
+  InitializationCell->True],
+Cell[15129, 447, 92, 2, 30, "Input",
+  InitializationCell->True],
+Cell[15224, 451, 194, 3, 30, "Input",
+  InitializationCell->True],
+Cell[15421, 456, 267, 5, 70, "Input",
+  InitializationCell->True],
+Cell[15691, 463, 514, 10, 110, "Input",
+  InitializationCell->True],
+Cell[16208, 475, 497, 9, 130, "Input",
+  InitializationCell->True],
+Cell[16708, 486, 306, 6, 70, "Input",
+  InitializationCell->True],
+Cell[17017, 494, 175, 3, 30, "Input",
+  InitializationCell->True],
+Cell[17195, 499, 96, 3, 30, "Input",
+  InitializationCell->True],
+Cell[17294, 504, 103, 3, 30, "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[17422, 511, 77, 2, 30, "Input"],
+Cell[17502, 515, 86, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[17625, 522, 78, 2, 30, "Input"],
+Cell[17706, 526, 66, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[17809, 533, 111, 2, 30, "Input"],
+Cell[17923, 537, 362, 11, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[18322, 553, 75, 2, 30, "Input"],
+Cell[18400, 557, 609, 9, 62, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19046, 571, 78, 2, 30, "Input"],
+Cell[19127, 575, 74, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19238, 582, 83, 2, 30, "Input"],
+Cell[19324, 586, 80, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19441, 593, 78, 2, 30, "Input"],
+Cell[19522, 597, 100, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19659, 604, 78, 2, 30, "Input"],
+Cell[19740, 608, 106, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19883, 615, 78, 2, 30, "Input"],
+Cell[19964, 619, 86, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20087, 626, 78, 2, 30, "Input"],
+Cell[20168, 630, 76, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20281, 637, 83, 2, 30, "Input"],
+Cell[20367, 641, 68, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20472, 648, 117, 2, 30, "Input"],
+Cell[20592, 652, 93, 2, 24, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20722, 659, 131, 3, 30, "Input"],
+Cell[20856, 664, 649, 10, 62, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
