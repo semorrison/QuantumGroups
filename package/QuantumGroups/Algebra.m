@@ -26,7 +26,7 @@ overwritten.
 
 
 BeginPackage["QuantumGroups`Algebra`",{"QuantumGroups`","QuantumGroups`RootSystems`",
-    "QuantumGroups`WeylGroups`"(*,"Utilities`Notation`"*)}]
+    "QuantumGroups`WeylGroups`"}]
 
 X;K;\[ScriptOne];\[ScriptZero];\[Rho];
 
@@ -77,17 +77,6 @@ NonCommutativePower[x_,0]:=\[ScriptOne]
 
 \!\(NonCommutativePower[x_, n_?\((# < 0 &)\)] := NonCommutativePower[x\^\(-1\), \(-n\)]\)
 
-\!\(\*
-  RowBox[{"(*", 
-    RowBox[{"Notation", "[", 
-      RowBox[{
-        TagBox[\(F_\^\(\(**\)\(n_\)\)\),
-          NotationBoxTag,
-          TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
-        TagBox[\(NonCommutativePower[F_, n_]\),
-          NotationBoxTag,
-          TagStyle->"NotationTemplateStyle"]}], "]"}], "*)"}]\)
-
 Protect[NonCommutativeMultiply];
 
 
@@ -102,28 +91,12 @@ Protect[NonCommutativeMultiply];
 
 \[CapitalDelta][A_**B_]:=\[CapitalDelta][A]**\[CapitalDelta][B]
 
-\!\(\*
-  RowBox[{"(*", 
-    RowBox[{"Symbolize", "[", 
-      TagBox[\(\[CapitalDelta]\^op\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"], "]"}], "*)"}]\)
-
 \[CapitalDelta]op[
     Z_]:=\[CapitalDelta][Z]/.X_\[CircleTimes]Y_\[RuleDelayed]Y\[CircleTimes]X
 
 \[CapitalDelta][X_Plus]:=\[CapitalDelta]/@X
 \[CapitalDelta][
     X_TensorProduct]:=\[CapitalDelta][First[X]]\[CircleTimes]Rest[X]
-
-\!\(\*
-  RowBox[{"(*", 
-    RowBox[{"Symbolize", "[", 
-      TagBox[\(\[CapitalDelta]\^\((_)\)\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"], "]"}], "*)"}]\)
-
-\!\( (*\(\[CapitalDelta]\^\((n_)\)\)[X_] := Nest[\[CapitalDelta], X, n]*) \)
 
 
 

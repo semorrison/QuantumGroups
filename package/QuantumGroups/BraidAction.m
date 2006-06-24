@@ -31,8 +31,8 @@ overwritten.
 
 BeginPackage[
     "QuantumGroups`BraidAction`",{"QuantumGroups`","QuantumGroups`Utilities`Debugging`",
-      "QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`",
-      "Utilities`Notation`"}];
+      "QuantumGroups`RootSystems`","QuantumGroups`Algebra`",
+      "QuantumGroups`Representations`"}];
 
 
 
@@ -60,13 +60,13 @@ q=Global`q;
         NotationBoxTag,
         TagStyle->"NotationTemplateStyle"]}], "]"}]\)
 
-\!\(\(ExpandReducedPowers[\[CapitalGamma]_]\)[F_] := \(F /. \[IndentingNewLine]{\(X\_i_\^+\)\^\((n_)\) \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(X\_i\^+\)\^\(\(**\)\(n\)\)\/\(qFactorial[n]\)[q\^d]], \[IndentingNewLine]\(X\_i_\^-\)\^\((n_)\) \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(X\_i\^-\)\^\(\(**\)\(n\)\)\/\(qFactorial[n]\)[q\^d]]}\) /. OrderingRules[\[CapitalGamma]]\)
+\!\(\(ExpandReducedPowers[\[CapitalGamma]_]\)[F_] := \(F /. \[IndentingNewLine]{ReducedPower[\(X\_i_\^+\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(X\_i\^+\)\^\(\(**\)\(n\)\)\/\(qFactorial[n]\)[q\^d]], \[IndentingNewLine]Reduced[\(X\_i_\^-\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(X\_i\^-\)\^\(\(**\)\(n\)\)\/\(qFactorial[n]\)[q\^d]]}\) /. OrderingRules[\[CapitalGamma]]\)
 
 BraidAction[\[CapitalGamma]_][{word___},0]:=0
 
-\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, \(X\_j_\^+\)] := \(\(BraidAction[\[CapitalGamma]]\)[{T\_i}, \(X\_j\^+\)] = \[IndentingNewLine]If[i \[Equal] j, \(-\(X\_i\^-\) ** K\_i\), With[{a = \(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket], d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(ExpandReducedPowers[\[CapitalGamma]]\)[\[Sum]\+\(r = 0\)\%\(-a\)\(\((\(-1\))\)\^\(r - a\)\) \(q\^\(\(-d\)\ r\)\) \(X\_i\^+\)\^\((\(-a\) - r)\) ** \(X\_j\^+\) ** \(X\_i\^+\)\^\((r)\)]]]\)\)
+\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, \(X\_j_\^+\)] := \(\(BraidAction[\[CapitalGamma]]\)[{T\_i}, \(X\_j\^+\)] = \[IndentingNewLine]If[i \[Equal] j, \(-\(X\_i\^-\) ** K\_i\), With[{a = \(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket], d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(ExpandReducedPowers[\[CapitalGamma]]\)[\[Sum]\+\(r = 0\)\%\(-a\)\(\((\(-1\))\)\^\(r - a\)\) \(q\^\(\(-d\)\ r\)\) ReducedPower[\(X\_i\^+\), \(-a\) - r] ** \(X\_j\^+\) ** ReducedPower[\(X\_i\^+\), r]]]]\)\)
 
-\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, \(X\_j_\^-\)] := \(\(BraidAction[\[CapitalGamma]]\)[{T\_i}, \(X\_j\^-\)] = \[IndentingNewLine]If[i \[Equal] j, \(-K\_i\^\(-1\) ** \(X\_i\^+\)\), With[{a = \(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket], d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(ExpandReducedPowers[\[CapitalGamma]]\)[\[Sum]\+\(r = 0\)\%\(-a\)\(\((\(-1\))\)\^\(r - a\)\) \(q\^\(d\ r\)\) \(X\_i\^-\)\^\((r)\) ** \(X\_j\^-\) ** \(X\_i\^-\)\^\((\(-a\) - r)\)]]]\)\)
+\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, \(X\_j_\^-\)] := \(\(BraidAction[\[CapitalGamma]]\)[{T\_i}, \(X\_j\^-\)] = \[IndentingNewLine]If[i \[Equal] j, \(-K\_i\^\(-1\) ** \(X\_i\^+\)\), With[{a = \(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket], d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(ExpandReducedPowers[\[CapitalGamma]]\)[\[Sum]\+\(r = 0\)\%\(-a\)\(\((\(-1\))\)\^\(r - a\)\) \(q\^\(d\ r\)\) ReducedPower[\(X\_i\^-\), r] ** \(X\_j\^-\) ** ReducedPower[\(X\_i\^-\), \(-a\) - r]]]]\)\)
 
 \!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, K\_j_] := K\_j ** K\_i\^\(\(**\)\(-\(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\)\)
 
