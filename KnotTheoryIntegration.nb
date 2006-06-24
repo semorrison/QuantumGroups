@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      6315,        178]*)
-(*NotebookOutlinePosition[     89885,       3008]*)
-(*  CellTagsIndexPosition[     89841,       3004]*)
+(*NotebookOptionsPosition[     12235,        338]*)
+(*NotebookOutlinePosition[     95803,       3168]*)
+(*  CellTagsIndexPosition[     95759,       3164]*)
 (*WindowFrame->Normal*)
 
 
@@ -91,6 +91,11 @@ package QuantumGroups`, written by Scott Morrison 2003-2006.\"\)"\)], \
 "Message"],
 
 Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A2`BraidingData`\"\)."\)], "Message"],
+
+Cell[BoxData[
     \({{"QuantumInvariant/A2/1,1", Knot[3, 1], 
         q\^4 + 2\ q\^6 + 4\ q\^8 + 4\ q\^10 + 3\ q\^12 + 2\ q\^14 - 
           2\ q\^18 - 3\ q\^20 - 2\ q\^22 - 2\ q\^24 + 
@@ -106,28 +111,172 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
-    \(ProcessKnotAtlasUploadQueue["\<Testing_Queue\>"]\)], "Input"],
-
-Cell[BoxData[
-    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
-\[InvisibleSpace]"Read more at \
-http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
-      SequenceForm[ 
-      "Loading QuantumGroups` version 2.0\n", 
-        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
-      Editable->False]], "Print"],
-
-Cell[BoxData[
-    \("*\"QuantumInvariant/A1/1\", \
-\"Select[AllKnots[{3,10}],BraidIndex[#]<=2&]\""\)], "Print"],
+    \(ProcessKnotAtlasUploadQueue["\<QuantumInvariants_Queue\>"]\)], "Input"],
 
 Cell[BoxData[
     InterpretationBox[\("Calculating \
-"\[InvisibleSpace]"QuantumInvariant/A1/1"\[InvisibleSpace]" for everything in \
-"\[InvisibleSpace]"Select[AllKnots[{3,10}],BraidIndex[#]<=2&]"\),
+"\[InvisibleSpace]"QuantumInvariant/G2/1,0"\[InvisibleSpace]" for everything \
+in "\[InvisibleSpace]"Select[AllKnots[{3,11}],First[BR[#]]<=3&]"\),
       SequenceForm[ 
-      "Calculating ", "QuantumInvariant/A1/1", " for everything in ", 
-        "Select[AllKnots[{3,10}],BraidIndex[#]<=2&]"],
+      "Calculating ", "QuantumInvariant/G2/1,0", " for everything in ", 
+        "Select[AllKnots[{3,11}],First[BR[#]]<=3&]"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(KnotTheory::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \!\(\"DTCode4KnotsTo11`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"The GaussCode to PD conversion was written by Siddarth Sankaran \
+at the University of Toronto in the summer of 2005.\"\)"\)], "Message"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"Vogel's algorithm was implemented by Dan Carney in the summer of \
+2005 at the University of Toronto.\"\)"\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[\("Checking to see what "\[InvisibleSpace]"KnotAtlas"\
+\[InvisibleSpace]" already contains..."\),
+      SequenceForm[ 
+      "Checking to see what ", "KnotAtlas", " already contains..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(took \
+"\[InvisibleSpace]\(16.724048`8.674886398852777\ Second\)\[InvisibleSpace]")"\
+\),
+      SequenceForm[ "(took ", 
+        Times[ 16.724048`8.674886398852777, Second], ")"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Starting to calculate "\[InvisibleSpace]1\
+\[InvisibleSpace]" invariants..."\),
+      SequenceForm[ "Starting to calculate ", 1, " invariants..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`G2`BraidingData`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[\("Uploaded "\[InvisibleSpace]1\[InvisibleSpace]" \
+invariants in "\[InvisibleSpace]\(9.0830608`\ Second\)\),
+      SequenceForm[ "Uploaded ", 1, " invariants in ", 
+        Times[ 9.0830608000000002, Second]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Calculating \
+"\[InvisibleSpace]"QuantumInvariant/A4/0,1,0,0"\[InvisibleSpace]" for \
+everything in "\[InvisibleSpace]"Select[AllKnots[{3,11}],First[BR[#]]<=2&]"\),
+      
+      SequenceForm[ 
+      "Calculating ", "QuantumInvariant/A4/0,1,0,0", " for everything in ", 
+        "Select[AllKnots[{3,11}],First[BR[#]]<=2&]"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Checking to see what "\[InvisibleSpace]"KnotAtlas"\
+\[InvisibleSpace]" already contains..."\),
+      SequenceForm[ 
+      "Checking to see what ", "KnotAtlas", " already contains..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(took \
+"\[InvisibleSpace]\(2.6838592`7.880304721733983\ Second\)\[InvisibleSpace]")"\
+\),
+      SequenceForm[ "(took ", 
+        Times[ 2.6838592`7.880304721733983, Second], ")"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Starting to calculate "\[InvisibleSpace]1\
+\[InvisibleSpace]" invariants..."\),
+      SequenceForm[ "Starting to calculate ", 1, " invariants..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A4`BraidingData`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[\("Uploaded "\[InvisibleSpace]1\[InvisibleSpace]" \
+invariants in "\[InvisibleSpace]\(4.406336`\ Second\)\),
+      SequenceForm[ "Uploaded ", 1, " invariants in ", 
+        Times[ 4.4063359999999996, Second]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Calculating \
+"\[InvisibleSpace]"QuantumInvariant/A3/1,0,0"\[InvisibleSpace]" for \
+everything in "\[InvisibleSpace]"Select[AllKnots[{3,11}],First[BR[#]]<=3&]"\),
+      
+      SequenceForm[ 
+      "Calculating ", "QuantumInvariant/A3/1,0,0", " for everything in ", 
+        "Select[AllKnots[{3,11}],First[BR[#]]<=3&]"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Checking to see what "\[InvisibleSpace]"KnotAtlas"\
+\[InvisibleSpace]" already contains..."\),
+      SequenceForm[ 
+      "Checking to see what ", "KnotAtlas", " already contains..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(took \
+"\[InvisibleSpace]\(13.7297424`8.589207382494706\ \
+Second\)\[InvisibleSpace]")"\),
+      SequenceForm[ "(took ", 
+        Times[ 13.7297424`8.589207382494706, Second], ")"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Starting to calculate "\[InvisibleSpace]1\
+\[InvisibleSpace]" invariants..."\),
+      SequenceForm[ "Starting to calculate ", 1, " invariants..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A3`BraidingData`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[\("Uploaded "\[InvisibleSpace]1\[InvisibleSpace]" \
+invariants in "\[InvisibleSpace]\(6.3791728`\ Second\)\),
+      SequenceForm[ "Uploaded ", 1, " invariants in ", 
+        Times[ 6.3791728000000001, Second]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Calculating \
+"\[InvisibleSpace]"QuantumInvariant/A1/3"\[InvisibleSpace]" for everything in \
+"\[InvisibleSpace]"Select[AllKnots[{3,11}],First[BR[#]]<=4&]"\),
+      SequenceForm[ 
+      "Calculating ", "QuantumInvariant/A1/3", " for everything in ", 
+        "Select[AllKnots[{3,11}],First[BR[#]]<=4&]"],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ProcessKnotAtlasUploadQueue["\<QuantumInvariants_Queue\>"]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Calculating \
+"\[InvisibleSpace]"QuantumInvariant/A1/5"\[InvisibleSpace]" for everything in \
+"\[InvisibleSpace]"Select[AllKnots[{3,11}],BraidIndex[#]<=3&]"\),
+      SequenceForm[ 
+      "Calculating ", "QuantumInvariant/A1/5", " for everything in ", 
+        "Select[AllKnots[{3,11}],BraidIndex[#]<=3&]"],
       Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -148,38 +297,49 @@ Cell[BoxData[
 
 Cell[BoxData[
     InterpretationBox[\("(took \
-"\[InvisibleSpace]\(3.7954576`8.030809137673266\ Second\)\[InvisibleSpace]")"\
+"\[InvisibleSpace]\(7.6209584`8.333554584475767\ Second\)\[InvisibleSpace]")"\
 \),
       SequenceForm[ "(took ", 
-        Times[ 3.7954576`8.030809137673266, Second], ")"],
+        Times[ 7.6209584`8.333554584475767, Second], ")"],
       Editable->False]], "Print"],
 
 Cell[BoxData[
-    InterpretationBox[\("Starting to calculate "\[InvisibleSpace]0\
+    InterpretationBox[\("Starting to calculate "\[InvisibleSpace]30\
 \[InvisibleSpace]" invariants..."\),
-      SequenceForm[ "Starting to calculate ", 0, " invariants..."],
-      Editable->False]], "Print"]
-}, Open  ]],
-
-Cell[CellGroupData[{
+      SequenceForm[ "Starting to calculate ", 30, " invariants..."],
+      Editable->False]], "Print"],
 
 Cell[BoxData[
-    \(\(\(QuantumKnotInvariant[A\_2, \(Irrep[A\_2]\)[{2, 2}]]\)[Knot[3, 1]]\)[
-      q]\)], "Input"],
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A1`BraidingData`\"\)."\)], "Message"],
 
 Cell[BoxData[
-    \(q\^8 + 2\ q\^10 + 4\ q\^12 + 6\ q\^14 + 9\ q\^16 + 10\ q\^18 + 
-      12\ q\^20 + 10\ q\^22 + 9\ q\^24 + 4\ q\^26 + 2\ q\^28 - 2\ q\^30 - 
-      5\ q\^32 - 8\ q\^34 - 10\ q\^36 - 10\ q\^38 - 9\ q\^40 - 6\ q\^42 - 
-      4\ q\^44 - 2\ q\^46 + 2\ q\^50 + 2\ q\^52 + 2\ q\^54 + q\^64 + 
-      2\ q\^66 + 4\ q\^68 + 4\ q\^70 + 3\ q\^72 + 2\ q\^74 - 2\ q\^78 - 
-      3\ q\^80 - 2\ q\^82 - 2\ q\^84 + q\^96\)], "Output"]
+    InterpretationBox[\("Uploaded "\[InvisibleSpace]9\[InvisibleSpace]" \
+invariants in "\[InvisibleSpace]\(308.593736`\ Second\)\),
+      SequenceForm[ "Uploaded ", 9, " invariants in ", 
+        Times[ 308.59373599999998, Second]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(KnotTheory::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \!\(\"DTCode4KnotsTo11`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"The GaussCode to PD conversion was written by Siddarth Sankaran \
+at the University of Toronto in the summer of 2005.\"\)"\)], "Message"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"Vogel's algorithm was implemented by Dan Carney in the summer of \
+2005 at the University of Toronto.\"\)"\)], "Message"]
 }, Open  ]]
 },
 FrontEndVersion->"5.2 for Microsoft Windows",
 ScreenRectangle->{{0, 1280}, {0, 713}},
-WindowSize->{1136, 555},
-WindowMargins->{{Automatic, -1}, {Automatic, 17}},
+WindowSize->{1272, 679},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Visible->True,
 ShowSelection->True,
 InputAliases->{"intt"->RowBox[ {"\[Integral]", 
@@ -3018,25 +3178,50 @@ Cell[2222, 67, 127, 2, 30, "Input"],
 Cell[2352, 71, 341, 7, 44, "Print"],
 Cell[2696, 80, 222, 4, 22, "Message"],
 Cell[2921, 86, 217, 4, 22, "Message"],
-Cell[3141, 92, 384, 6, 70, "Output"]
+Cell[3141, 92, 161, 3, 22, "Message"],
+Cell[3305, 97, 384, 6, 70, "Output"]
 }, Open  ]],
-Cell[3540, 101, 141, 2, 30, "Input"],
+Cell[3704, 106, 141, 2, 30, "Input"],
 
 Cell[CellGroupData[{
-Cell[3706, 107, 81, 1, 30, "Input"],
-Cell[3790, 110, 341, 7, 44, "Print"],
-Cell[4134, 119, 111, 2, 25, "Print"],
-Cell[4248, 123, 379, 7, 25, "Print"],
-Cell[4630, 132, 205, 3, 22, "Message"],
-Cell[4838, 137, 133, 2, 22, "Message"],
-Cell[4974, 141, 257, 5, 25, "Print"],
-Cell[5234, 148, 253, 6, 25, "Print"],
-Cell[5490, 156, 220, 4, 25, "Print"]
+Cell[3870, 112, 91, 1, 30, "Input"],
+Cell[3964, 115, 381, 7, 25, "Print"],
+Cell[4348, 124, 138, 2, 22, "Message"],
+Cell[4489, 128, 209, 3, 22, "Message"],
+Cell[4701, 133, 193, 3, 22, "Message"],
+Cell[4897, 138, 257, 5, 25, "Print"],
+Cell[5157, 145, 253, 6, 25, "Print"],
+Cell[5413, 153, 220, 4, 25, "Print"],
+Cell[5636, 159, 161, 3, 22, "Message"],
+Cell[5800, 164, 280, 5, 25, "Print"],
+Cell[6083, 171, 396, 8, 25, "Print"],
+Cell[6482, 181, 257, 5, 25, "Print"],
+Cell[6742, 188, 253, 6, 25, "Print"],
+Cell[6998, 196, 220, 4, 25, "Print"],
+Cell[7221, 202, 161, 3, 22, "Message"],
+Cell[7385, 207, 279, 5, 25, "Print"],
+Cell[7667, 214, 392, 8, 25, "Print"],
+Cell[8062, 224, 257, 5, 25, "Print"],
+Cell[8322, 231, 255, 6, 25, "Print"],
+Cell[8580, 239, 220, 4, 25, "Print"],
+Cell[8803, 245, 161, 3, 22, "Message"],
+Cell[8967, 250, 280, 5, 25, "Print"],
+Cell[9250, 257, 377, 7, 25, "Print"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[5747, 165, 114, 2, 30, "Input"],
-Cell[5864, 169, 435, 6, 48, "Output"]
+Cell[9664, 269, 91, 1, 30, "Input"],
+Cell[9758, 272, 379, 7, 25, "Print"],
+Cell[10140, 281, 205, 3, 22, "Message"],
+Cell[10348, 286, 133, 2, 22, "Message"],
+Cell[10484, 290, 257, 5, 25, "Print"],
+Cell[10744, 297, 253, 6, 25, "Print"],
+Cell[11000, 305, 222, 4, 25, "Print"],
+Cell[11225, 311, 161, 3, 22, "Message"],
+Cell[11389, 316, 281, 5, 25, "Print"],
+Cell[11673, 323, 138, 2, 22, "Message"],
+Cell[11814, 327, 209, 3, 22, "Message"],
+Cell[12026, 332, 193, 3, 22, "Message"]
 }, Open  ]]
 }
 ]
