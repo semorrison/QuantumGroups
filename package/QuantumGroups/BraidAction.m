@@ -50,17 +50,7 @@ Begin["`Private`"];
 
 q=Global`q;
 
-\!\(\*
-  RowBox[{"Notation", "[", 
-    RowBox[{
-      TagBox[\(F_\^\((n_)\)\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongLeftRightArrow]", " ", 
-      TagBox[\(ReducedPower[F_, n_]\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"]}], "]"}]\)
-
-\!\(\(ExpandReducedPowers[\[CapitalGamma]_]\)[F_] := \(F /. \[IndentingNewLine]{ReducedPower[\(X\_i_\^+\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(X\_i\^+\)\^\(\(**\)\(n\)\)\/\(qFactorial[n]\)[q\^d]], \[IndentingNewLine]Reduced[\(X\_i_\^-\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(X\_i\^-\)\^\(\(**\)\(n\)\)\/\(qFactorial[n]\)[q\^d]]}\) /. OrderingRules[\[CapitalGamma]]\)
+\!\(\(ExpandReducedPowers[\[CapitalGamma]_]\)[F_] := \(F /. \[IndentingNewLine]{ReducedPower[\(X\_i_\^+\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, NonCommutativePower[\(X\_i\^+\), n]\/\(qFactorial[n]\)[q\^d]], \[IndentingNewLine]ReducedPower[\(X\_i_\^-\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, NonCommutativePower[\(X\_i\^-\), n]\/\(qFactorial[n]\)[q\^d]]}\) /. OrderingRules[\[CapitalGamma]]\)
 
 BraidAction[\[CapitalGamma]_][{word___},0]:=0
 
@@ -68,9 +58,9 @@ BraidAction[\[CapitalGamma]_][{word___},0]:=0
 
 \!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, \(X\_j_\^-\)] := \(\(BraidAction[\[CapitalGamma]]\)[{T\_i}, \(X\_j\^-\)] = \[IndentingNewLine]If[i \[Equal] j, \(-K\_i\^\(-1\) ** \(X\_i\^+\)\), With[{a = \(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket], d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, \(ExpandReducedPowers[\[CapitalGamma]]\)[\[Sum]\+\(r = 0\)\%\(-a\)\(\((\(-1\))\)\^\(r - a\)\) \(q\^\(d\ r\)\) ReducedPower[\(X\_i\^-\), r] ** \(X\_j\^-\) ** ReducedPower[\(X\_i\^-\), \(-a\) - r]]]]\)\)
 
-\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, K\_j_] := K\_j ** K\_i\^\(\(**\)\(-\(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\)\)
+\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, K\_j_] := K\_j ** NonCommutativePower[K\_i, \(-\(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)]\)
 
-\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, K\_j_\^\(-1\)] := K\_i\^\(\(**\)\(\(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\) ** K\_j\^\(-1\)\)
+\!\(\(BraidAction[\[CapitalGamma]_]\)[{T\_i_}, K\_j_\^\(-1\)] := NonCommutativePower[K\_i, \(CartanMatrix[\[CapitalGamma]]\)\[LeftDoubleBracket]i, j\[RightDoubleBracket]] ** K\_j\^\(-1\)\)
 
 \!\(OrderingRules[\[CapitalGamma]_] := \(OrderingRules[\[CapitalGamma]] = With[{d = CartanFactors[\[CapitalGamma]], a = CartanMatrix[\[CapitalGamma]]}, {\[IndentingNewLine]K\_i_ ** K\_i_\^\(-1\) \[RuleDelayed] \[ScriptOne], \[IndentingNewLine]K\_i_\^\(-1\) ** K\_i_ \[RuleDelayed] \[ScriptOne], \[IndentingNewLine]Y___ ** K\_i_\^n_.  ** K\_j_\^m_.  ** Z___ /; i > j \[RuleDelayed] Y ** K\_j\^m ** K\_i\^n ** Z, \[IndentingNewLine]\(X\_j_\^+\) ** K\_i_\^n_.  \[RuleDelayed] \(q\^\(\(-n\)\ d\[LeftDoubleBracket]i\[RightDoubleBracket] a\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\) K\_i\^n ** \(X\_j\^+\), \[IndentingNewLine]K\_i_\^n_.  ** \(X\_j_\^-\) \[RuleDelayed] \(q\^\(\(-n\)\ d\[LeftDoubleBracket]i\[RightDoubleBracket] a\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\) \(X\_j\^-\) ** K\_i\^n, \[IndentingNewLine]\(X\_i_\^+\) ** \(X\_j_\^-\) \[RuleDelayed] \(X\_j\^-\) ** \(X\_i\^+\) + DiscreteDelta[i - j] \(K\_i - K\_i\^\(-1\)\)\/\(q\^d\[LeftDoubleBracket]i\[RightDoubleBracket] - q\^\(-d\[LeftDoubleBracket]i\[RightDoubleBracket]\)\)\[IndentingNewLine]}]\)\)
 
