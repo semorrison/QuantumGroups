@@ -95,11 +95,7 @@ Print[
   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"
   ]
 
-(*Utilities`Notation`AutoLoadNotationPalette = False;*)
-
-BeginPackage["QuantumGroups`"(*,{"Utilities`Notation`"}*)];
-
-(*Utilities`Notation`AutoLoadNotationPalette=.;*)
+BeginPackage["QuantumGroups`"];
 
 QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return the location the QuantumGroups` package was loaded from.";
 
@@ -108,25 +104,6 @@ QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return 
 {Irrep,\[DoubleStruckCapitalC],\[Beta]};
 
 SetAttributes[DirectSum,{Flat,OneIdentity}]
-
-\!\(\*
-  RowBox[{"(*", 
-    RowBox[{"Notation", "[", 
-      RowBox[{
-        TagBox[\(V_\^\(\[CircleTimes]n_\)\),
-          NotationBoxTag,
-          TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
-        TagBox[\(TensorPower[V_, n_]\),
-          NotationBoxTag,
-          TagStyle->"NotationTemplateStyle"]}], "]"}], "*)"}]\)
-
-\!\(\*
-  RowBox[{"(*", 
-    RowBox[{"InfixNotation", "[", 
-      RowBox[{
-        TagBox["\[CirclePlus]",
-          NotationBoxTag,
-          TagStyle->"NotationTemplateStyle"], ",", "DirectSum"}], "]"}], "*)"}]\)
 
 CircleTimes/:Power[V_,CircleTimes[n_]]:=TensorPower[V,n]
 
