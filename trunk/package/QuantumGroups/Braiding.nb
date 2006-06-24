@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     10774,        302]*)
-(*NotebookOutlinePosition[     11452,        325]*)
-(*  CellTagsIndexPosition[     11408,        321]*)
+(*NotebookOptionsPosition[     19097,        488]*)
+(*NotebookOutlinePosition[     19775,        511]*)
+(*  CellTagsIndexPosition[     19731,        507]*)
 (*WindowFrame->Normal*)
 
 
@@ -85,7 +85,7 @@ Cell["Specify package dependencies:", "Text"],
 
 Cell[BoxData[
     \(\(BeginPackage["\<QuantumGroups`Braiding`\>", {"\<QuantumGroups`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<WikiLink`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", \
 "\<QuantumGroups`Utilities`Debugging`\>", \
 "\<QuantumGroups`Representations`\>", \
 "\<QuantumGroups`MatrixPresentations`\>", \
@@ -107,6 +107,24 @@ Cell[BoxData[
 
 Cell[BoxData[
     \(\(BraidingData::usage = "\<\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(PackageBraidingData::usage = "\<PackageBraidingData[\[CapitalGamma]] \
+writes currently known braiding data for the quantum group \[CapitalGamma] \
+into a data directory in the QuantumGroups` package.\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(WriteBraidingDataToWiki::usage = "\<WriteBraidingDataToWiki[V,k] \
+tries to calculate braiding data for the k-fold tensor power of a \
+representation V, and saves the results in the Knot Atlas.\>";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(LoadAllBraidingDataFromWiki::usage = "\<LoadAllBraidingDataFromWiki[] \
+retrieves all currently calculated braiding data from the Knot \
+Atlas.\>";\)\)], "Input",
   InitializationCell->True]
 }, Open  ]],
 
@@ -285,6 +303,174 @@ Cell[BoxData[
   InitializationCell->True],
 
 Cell[BoxData[
+    \(DefiniteValues[s_Symbol] := 
+      Cases[DownValues[s]~Join~SubValues[s], 
+        rule : \((pattern_ /; 
+                  FreeQ[pattern, Blank] \[RuleDelayed] _)\) \[RuleDelayed] 
+          rule]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(MatchingValues[s_Symbol, p_] := 
+      Cases[DownValues[s]~Join~SubValues[s], 
+        rule : \((pattern_ /; 
+                  MatchQ[pattern /. HoldPattern \[Rule] Hold, 
+                    Hold[p]] \[RuleDelayed] _)\) \[RuleDelayed] 
+          rule]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ConvertRuleToAssignmentString[a_HoldPattern \[RuleDelayed] b_] := 
+      StringTake[ToString[a, InputForm], {13, \(-2\)}] <> "\<:=\>" <> 
+        ToString[b, InputForm] <> "\<\n\>"\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(SaveBraidingData[\[CapitalGamma]_] := 
+      SaveBraidingData[\[CapitalGamma], _]\), "\[IndentingNewLine]", 
+    \(SaveBraidingData[\[CapitalGamma]_, \[Lambda] : {__Integer}] := 
+      SaveBraidingData[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[\[Lambda]]]\), "\[IndentingNewLine]", 
+    \(SaveBraidingData[\[CapitalGamma]_, V_] := 
+      StringJoin @@ \((ConvertRuleToAssignmentString /@ 
+            MatchingValues[
+              BraidingData, \(BraidingData[\[CapitalGamma]]\)[
+                V, _]])\)\)}], "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PackageBraidingData[\[CapitalGamma]_\_n_] := 
+      Module[{package, directory, filename, 
+          contents}, \[IndentingNewLine]SetDirectory[
+          QuantumGroupsDirectory[]]; \[IndentingNewLine]directory = 
+          ToFileName[{"\<QuantumGroups\>", "\<Data\>"}, 
+            ToString[\[CapitalGamma]] <> ToString[n]]; \[IndentingNewLine]If[
+          Length[FileNames[directory]] == 
+            0, \[IndentingNewLine]CreateDirectory[
+            directory]]; \[IndentingNewLine]package = \
+"\<QuantumGroups`Data`\>" <> ToString[\[CapitalGamma]] <> 
+            ToString[
+              n] <> "\<`BraidingData`\>"; \[IndentingNewLine]filename = 
+          ToFileName[directory, "\<BraidingData.m\>"]; \[IndentingNewLine]If[
+          Length[FileNames[filename]] \[NotEqual] 0, \[IndentingNewLine]Get[
+            package]]; \[IndentingNewLine]contents = \
+\[IndentingNewLine]"\<BeginPackage[\"\>" <> 
+            package <> \
+"\<\",{\"QuantumGroups`\",\"QuantumGroups`Braiding`\"}]\n\>" \
+<> \[IndentingNewLine]"\<Message[QuantumGroups::loading,\"\>" <> 
+            package <> "\<\"]\n\>" <> \[IndentingNewLine]"\<Begin[\"`Private`\
+\"]\n\>" <> \[IndentingNewLine]"\<q=Global`q;\n\>" \
+<> \[IndentingNewLine]SaveBraidingData[\[CapitalGamma]\_n] \
+<> \[IndentingNewLine]"\<End[]\n\>" <> \[IndentingNewLine]"\<EndPackage[]\>"; \
+\[IndentingNewLine]If[
+          Length[FileNames[filename]] \[NotEqual] 
+            0, \[IndentingNewLine]DeleteFile[
+            filename]]; \[IndentingNewLine]WriteString[filename, 
+          contents]; \[IndentingNewLine]Close[
+          filename]; \[IndentingNewLine]ResetDirectory[];\[IndentingNewLine]]\
+\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(directory\\)\\\" is similar to existing \
+symbol \\\"\\!\\(Directory\\)\\\". \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], \
+"Message",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[BoxData[
+    \(listToString[x_List] := listToString[x, "\<,\>"]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(listToString[x_List, s_String] := 
+      StringJoin[
+        Drop[Flatten[
+            Transpose[{ToString /@ x, 
+                Table[s, {Length[x]}]}]], \(-1\)]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WriteBraidingDataToWiki[V_, k_] := 
+      WriteBraidingDataToWiki[V, k, 200*10\^6]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(WriteBraidingDataToWiki[\(Irrep[\[CapitalGamma]_\_n_]\)[\[Lambda]_], 
+        k_, M_] := 
+      MemoryConstrained[
+          Module[{}, \
+\[IndentingNewLine]If[\(CheckBraidingData[\[CapitalGamma]\_n]\)[\(Irrep[\
+\[CapitalGamma]\_n]\)[\[Lambda]], k] =!= True, 
+              Print["\<The braiding data for \>", \(Irrep[\[CapitalGamma]\_n]\
+\)[\[Lambda]]\^"\<\[CircleTimes]\>" <> ToString[k], "\< is invalid!\>"]; 
+              Return[$Failed]]; \[IndentingNewLine]PackageBraidingData[\
+\[CapitalGamma]\_n]; \[IndentingNewLine]WikiSetPageText["\<Data:Braiding/\>" <> 
+                ToString[\[CapitalGamma]] <> "\<_\>" <> 
+                ToString[n] <> "\</\>" <> listToString[\[Lambda]] <> "\</\>" <> 
+                ToString[k], 
+              ToString[\(BraidingData[\[CapitalGamma]\_n]\)[\(Irrep[\
+\[CapitalGamma]\_n]\)[\[Lambda]], k], 
+                InputForm]]\[IndentingNewLine]], \[IndentingNewLine]M] /. \
+$Aborted \[RuleDelayed] \((Print["\<Aborted because the calculation exceeded \
+the current memory limit: \>", M]; $Aborted)\)\)], "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(LoadBraidingDataFromWiki[\(Irrep[\[CapitalGamma]_\_n_]\)[\[Lambda]_], 
+        k_] := Module[{text}, \[IndentingNewLine]text = 
+          WikiGetPageText["\<Data:Braiding/\>" <> 
+              ToString[\[CapitalGamma]] <> "\<_\>" <> ToString[n] <> "\</\>" <> 
+              listToString[\[Lambda]] <> "\</\>" <> 
+              ToString[k]]; \[IndentingNewLine]If[
+          text == "\<\>" \[Or] text \[Equal] $Failed, 
+          Return[$Failed]]; \[IndentingNewLine]\(BraidingData[\[CapitalGamma]\
+\_n]\)[\(Irrep[\[CapitalGamma]\_n]\)[\[Lambda]], k] = 
+          ToExpression[text, InputForm]\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(text\\)\\\" is similar to existing symbol \\\
+\"\\!\\(Text\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message",
+  InitializationCell->True]
+}, Open  ]],
+
+Cell[BoxData[
+    \(LoadAllBraidingDataFromWiki[] := 
+      Module[{targets, irrep, results = {}}, \[IndentingNewLine]targets = 
+          WikiAllPages["\<http://katlas.math.toronto.edu/w/index.php\>", \
+"\<Braiding\>", "\<Data\>", 
+            100]; \[IndentingNewLine]\(StringCases[#, "\<Data:Braiding/\>" ~~ \
+\(\[CapitalGamma]_ ~~ \("\<_\>" | "\< \>" ~~ \(n : \((DigitCharacter .. )\) ~~ \
+\("\</\>" ~~ \(\[Lambda] : \((\((DigitCharacter ..  ~~ "\<,\>")\) ...  ~~ 
+                                  DigitCharacter .. )\) ~~ \("\</\>" ~~ 
+                              k : \((DigitCharacter .. )\)\)\)\)\)\)\) \
+\[RuleDelayed] \[IndentingNewLine]\((irrep = \(Irrep[\(ToExpression[\
+\[CapitalGamma]]\)\_\(ToExpression[n]\)]\)[
+                      ToExpression["\<{\>" <> \[Lambda] <> "\<}\>"]]; \
+\[IndentingNewLine]Print["\<Loading braiding data for \>", 
+                    irrep\^"\<\[CircleTimes]\>" <> k]; 
+                  results = 
+                    results~
+                      Join~{{irrep, 
+                          ToExpression[
+                            k]}}; \[IndentingNewLine]LoadBraidingDataFromWiki[
+                    irrep, ToExpression[k]])\)\[IndentingNewLine]] &\)\  /@ \ 
+          targets; \[IndentingNewLine]results\[IndentingNewLine]]\)], "Input",\
+
+  InitializationCell->True],
+
+Cell[BoxData[
     \(\(End[];\)\)], "Input",
   InitializationCell->True]
 }, Open  ]],
@@ -303,8 +489,8 @@ Cell[BoxData[
 FrontEndVersion->"5.2 for Microsoft Windows",
 ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
-WindowSize->{671, 589},
-WindowMargins->{{Automatic, -2}, {Automatic, 34}}
+WindowSize->{866, 589},
+WindowMargins->{{Automatic, 147}, {Automatic, 8}}
 ]
 
 (*******************************************************************
@@ -334,7 +520,7 @@ Cell[1843, 56, 129, 4, 52, "Text",
 Cell[CellGroupData[{
 Cell[1997, 64, 59, 1, 73, "Section",
   InitializationCell->True],
-Cell[2059, 67, 177, 4, 52, "Text",
+Cell[2059, 67, 177, 4, 33, "Text",
   InitializationCell->True]
 }, Open  ]],
 
@@ -345,61 +531,99 @@ Cell[2273, 76, 61, 1, 73, "Section",
 Cell[CellGroupData[{
 Cell[2359, 81, 38, 0, 38, "Subsection"],
 Cell[2400, 83, 45, 0, 33, "Text"],
-Cell[2448, 85, 355, 7, 110, "Input",
+Cell[2448, 85, 372, 7, 90, "Input",
   InitializationCell->True],
-Cell[2806, 94, 84, 2, 30, "Input",
+Cell[2823, 94, 84, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2927, 101, 36, 0, 38, "Subsection"],
-Cell[2966, 103, 99, 2, 30, "Input",
+Cell[2944, 101, 36, 0, 38, "Subsection"],
+Cell[2983, 103, 99, 2, 30, "Input",
   InitializationCell->True],
-Cell[3068, 107, 94, 2, 30, "Input",
+Cell[3085, 107, 94, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3182, 111, 269, 4, 70, "Input",
+  InitializationCell->True],
+Cell[3454, 117, 262, 4, 70, "Input",
+  InitializationCell->True],
+Cell[3719, 123, 212, 4, 50, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[3199, 114, 31, 0, 38, "Subsection"],
-Cell[3233, 116, 88, 2, 30, "Input",
+Cell[3968, 132, 31, 0, 38, "Subsection"],
+Cell[4002, 134, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[3324, 120, 202, 4, 30, "Input",
+Cell[4093, 138, 202, 4, 30, "Input",
   InitializationCell->True],
-Cell[3529, 126, 451, 8, 70, "Input",
+Cell[4298, 144, 451, 8, 70, "Input",
   InitializationCell->True],
-Cell[3983, 136, 1444, 29, 250, "Input",
+Cell[4752, 154, 1444, 29, 230, "Input",
   InitializationCell->True],
-Cell[5430, 167, 215, 4, 30, "Input",
+Cell[6199, 185, 215, 4, 30, "Input",
   InitializationCell->True],
-Cell[5648, 173, 193, 4, 30, "Input",
+Cell[6417, 191, 193, 4, 30, "Input",
   InitializationCell->True],
-Cell[5844, 179, 262, 5, 50, "Input",
+Cell[6613, 197, 262, 5, 30, "Input",
   InitializationCell->True],
-Cell[6109, 186, 330, 7, 70, "Input",
+Cell[6878, 204, 330, 7, 50, "Input",
   InitializationCell->True],
-Cell[6442, 195, 402, 7, 130, "Input",
+Cell[7211, 213, 402, 7, 90, "Input",
   InitializationCell->True],
-Cell[6847, 204, 961, 18, 250, "Input",
+Cell[7616, 222, 961, 18, 190, "Input",
   InitializationCell->True],
-Cell[7811, 224, 516, 9, 174, "Input",
+Cell[8580, 242, 516, 9, 154, "Input",
   InitializationCell->True],
-Cell[8330, 235, 547, 10, 110, "Input",
+Cell[9099, 253, 547, 10, 90, "Input",
   InitializationCell->True],
-Cell[8880, 247, 617, 12, 110, "Input",
+Cell[9649, 265, 617, 12, 50, "Input",
   InitializationCell->True],
-Cell[9500, 261, 640, 13, 130, "Input",
+Cell[10269, 279, 640, 13, 90, "Input",
   InitializationCell->True],
-Cell[10143, 276, 183, 3, 50, "Input",
+Cell[10912, 294, 183, 3, 30, "Input",
   InitializationCell->True],
-Cell[10329, 281, 177, 3, 30, "Input",
+Cell[11098, 299, 177, 3, 30, "Input",
   InitializationCell->True],
-Cell[10509, 286, 71, 2, 30, "Input",
+Cell[11278, 304, 258, 6, 50, "Input",
+  InitializationCell->True],
+Cell[11539, 312, 314, 7, 70, "Input",
+  InitializationCell->True],
+Cell[11856, 321, 241, 4, 50, "Input",
+  InitializationCell->True],
+Cell[12100, 327, 572, 11, 90, "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[12697, 342, 1708, 31, 474, "Input",
+  InitializationCell->True],
+Cell[14408, 375, 396, 7, 22, "Message",
+  InitializationCell->True]
+}, Open  ]],
+Cell[14819, 385, 109, 2, 30, "Input",
+  InitializationCell->True],
+Cell[14931, 389, 225, 6, 50, "Input",
+  InitializationCell->True],
+Cell[15159, 397, 143, 3, 31, "Input",
+  InitializationCell->True],
+Cell[15305, 402, 1106, 19, 198, "Input",
+  InitializationCell->True],
+
+Cell[CellGroupData[{
+Cell[16436, 425, 673, 11, 134, "Input",
+  InitializationCell->True],
+Cell[17112, 438, 384, 6, 22, "Message",
+  InitializationCell->True]
+}, Open  ]],
+Cell[17511, 447, 1318, 23, 277, "Input",
+  InitializationCell->True],
+Cell[18832, 472, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[10617, 293, 36, 0, 38, "Subsection"],
-Cell[10656, 295, 78, 2, 30, "Input",
+Cell[18940, 479, 36, 0, 38, "Subsection"],
+Cell[18979, 481, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
