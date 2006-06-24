@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     13923,        421]*)
-(*NotebookOutlinePosition[     50038,       1577]*)
-(*  CellTagsIndexPosition[     49966,       1571]*)
+(*NotebookOptionsPosition[     12811,        384]*)
+(*NotebookOutlinePosition[     48926,       1540]*)
+(*  CellTagsIndexPosition[     48854,       1534]*)
 (*WindowFrame->Normal*)
 
 
@@ -174,20 +174,8 @@ http://katlas.math.toronto.edu/wiki/QuantumGroups\>"\[IndentingNewLine]]\)], \
   InitializationCell->True],
 
 Cell[BoxData[
-    \( (*\(Utilities`Notation`AutoLoadNotationPalette\  = \ 
-          False;\)*) \)], "Input",
-  CellLabel->"In[1]:=",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\(BeginPackage["\<QuantumGroups`\>" \
-(*\(,\)\({"\<Utilities`Notation`\>"}\)*) ];\)\)], "Input",
+    \(\(BeginPackage["\<QuantumGroups`\>"];\)\)], "Input",
   CellLabel->"In[42]:=",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \( (*\(Utilities`Notation`AutoLoadNotationPalette =. ;\)*) \)], "Input",
-  CellLabel->"In[43]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -209,31 +197,6 @@ Cell[BoxData[
 Cell[BoxData[
     \(SetAttributes[DirectSum, {Flat, OneIdentity}]\)], "Input",
   CellLabel->"In[47]:=",
-  InitializationCell->True],
-
-Cell[BoxData[
-    RowBox[{"(*", 
-      RowBox[{"Notation", "[", 
-        RowBox[{
-          TagBox[\(V_\^\(\[CircleTimes]n_\)\),
-            NotationBoxTag,
-            TagStyle->"NotationTemplateStyle"], " ", 
-          "\[DoubleLongRightArrow]", " ", 
-          TagBox[\(TensorPower[V_, n_]\),
-            NotationBoxTag,
-            TagStyle->"NotationTemplateStyle"]}], "]"}], "*)"}]], "Input",
-  CellLabel->"In[49]:=",
-  InitializationCell->True],
-
-Cell[BoxData[
-    RowBox[{"(*", 
-      RowBox[{"InfixNotation", "[", 
-        RowBox[{
-          TagBox["\[CirclePlus]",
-            NotationBoxTag,
-            TagStyle->"NotationTemplateStyle"], ",", "DirectSum"}], "]"}], 
-      "*)"}]], "Input",
-  CellLabel->"In[50]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -1562,7 +1525,7 @@ you save this file from within Mathematica.
 (*CellTagsOutline
 CellTagsIndex->{
   "Union"->{
-    Cell[12506, 367, 191, 5, 30, "Input",
+    Cell[11394, 330, 191, 5, 30, "Input",
       InitializationCell->True,
       CellTags->"Union"]}
   }
@@ -1570,7 +1533,7 @@ CellTagsIndex->{
 
 (*CellTagsIndex
 CellTagsIndex->{
-  {"Union", 49840, 1563}
+  {"Union", 48728, 1526}
   }
 *)
 
@@ -1616,84 +1579,76 @@ Cell[6135, 163, 170, 3, 50, "Input",
   InitializationCell->True],
 Cell[6308, 168, 243, 5, 90, "Input",
   InitializationCell->True],
-Cell[6554, 175, 161, 4, 30, "Input",
+Cell[6554, 175, 125, 3, 30, "Input",
   InitializationCell->True],
-Cell[6718, 181, 169, 4, 30, "Input",
+Cell[6682, 180, 213, 4, 70, "Input",
   InitializationCell->True],
-Cell[6890, 187, 143, 3, 30, "Input",
+Cell[6898, 186, 112, 3, 30, "Input",
   InitializationCell->True],
-Cell[7036, 192, 213, 4, 70, "Input",
+Cell[7013, 191, 132, 3, 30, "Input",
   InitializationCell->True],
-Cell[7252, 198, 112, 3, 30, "Input",
+Cell[7148, 196, 131, 3, 30, "Input",
   InitializationCell->True],
-Cell[7367, 203, 132, 3, 30, "Input",
+Cell[7282, 201, 154, 4, 30, "Input",
   InitializationCell->True],
-Cell[7502, 208, 131, 3, 30, "Input",
+Cell[7439, 207, 138, 3, 30, "Input",
   InitializationCell->True],
-Cell[7636, 213, 451, 12, 30, "Input",
+Cell[7580, 212, 101, 2, 30, "Input",
   InitializationCell->True],
-Cell[8090, 227, 301, 9, 30, "Input",
+Cell[7684, 216, 135, 3, 30, "Input",
   InitializationCell->True],
-Cell[8394, 238, 154, 4, 30, "Input",
+Cell[7822, 221, 239, 5, 50, "Input",
   InitializationCell->True],
-Cell[8551, 244, 138, 3, 30, "Input",
+Cell[8064, 228, 130, 3, 30, "Input",
   InitializationCell->True],
-Cell[8692, 249, 101, 2, 30, "Input",
+Cell[8197, 233, 126, 3, 30, "Input",
   InitializationCell->True],
-Cell[8796, 253, 135, 3, 30, "Input",
+Cell[8326, 238, 473, 8, 150, "Input",
   InitializationCell->True],
-Cell[8934, 258, 239, 5, 50, "Input",
+Cell[8802, 248, 223, 5, 70, "Input",
   InitializationCell->True],
-Cell[9176, 265, 130, 3, 30, "Input",
+Cell[9028, 255, 172, 4, 30, "Input",
   InitializationCell->True],
-Cell[9309, 270, 126, 3, 30, "Input",
+Cell[9203, 261, 261, 5, 90, "Input",
   InitializationCell->True],
-Cell[9438, 275, 473, 8, 150, "Input",
+Cell[9467, 268, 168, 4, 30, "Input",
   InitializationCell->True],
-Cell[9914, 285, 223, 5, 70, "Input",
+Cell[9638, 274, 174, 4, 50, "Input",
   InitializationCell->True],
-Cell[10140, 292, 172, 4, 30, "Input",
+Cell[9815, 280, 165, 4, 30, "Input",
   InitializationCell->True],
-Cell[10315, 298, 261, 5, 90, "Input",
+Cell[9983, 286, 113, 3, 30, "Input",
   InitializationCell->True],
-Cell[10579, 305, 168, 4, 30, "Input",
+Cell[10099, 291, 341, 7, 110, "Input",
   InitializationCell->True],
-Cell[10750, 311, 174, 4, 50, "Input",
+Cell[10443, 300, 260, 4, 70, "Input",
   InitializationCell->True],
-Cell[10927, 317, 165, 4, 30, "Input",
+Cell[10706, 306, 160, 4, 31, "Input",
   InitializationCell->True],
-Cell[11095, 323, 113, 3, 30, "Input",
+Cell[10869, 312, 179, 4, 30, "Input",
   InitializationCell->True],
-Cell[11211, 328, 341, 7, 110, "Input",
+Cell[11051, 318, 197, 5, 44, "Input",
   InitializationCell->True],
-Cell[11555, 337, 260, 4, 70, "Input",
+Cell[11251, 325, 140, 3, 30, "Input",
   InitializationCell->True],
-Cell[11818, 343, 160, 4, 31, "Input",
-  InitializationCell->True],
-Cell[11981, 349, 179, 4, 30, "Input",
-  InitializationCell->True],
-Cell[12163, 355, 197, 5, 44, "Input",
-  InitializationCell->True],
-Cell[12363, 362, 140, 3, 30, "Input",
-  InitializationCell->True],
-Cell[12506, 367, 191, 5, 30, "Input",
+Cell[11394, 330, 191, 5, 30, "Input",
   InitializationCell->True,
   CellTags->"Union"],
-Cell[12700, 374, 131, 3, 30, "Input",
+Cell[11588, 337, 131, 3, 30, "Input",
   InitializationCell->True],
-Cell[12834, 379, 117, 3, 30, "Input",
+Cell[11722, 342, 117, 3, 30, "Input",
   InitializationCell->True],
-Cell[12954, 384, 251, 5, 30, "Input",
+Cell[11842, 347, 251, 5, 30, "Input",
   InitializationCell->True],
-Cell[13208, 391, 128, 3, 30, "Input",
+Cell[12096, 354, 128, 3, 30, "Input",
   InitializationCell->True],
-Cell[13339, 396, 192, 5, 30, "Input",
+Cell[12227, 359, 192, 5, 30, "Input",
   InitializationCell->True],
-Cell[13534, 403, 156, 4, 30, "Input",
+Cell[12422, 366, 156, 4, 30, "Input",
   InitializationCell->True],
-Cell[13693, 409, 96, 3, 30, "Input",
+Cell[12581, 372, 96, 3, 30, "Input",
   InitializationCell->True],
-Cell[13792, 414, 103, 3, 30, "Input",
+Cell[12680, 377, 103, 3, 30, "Input",
   InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
