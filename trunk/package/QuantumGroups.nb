@@ -260,6 +260,11 @@ Cell[BoxData[
   CellLabel->"In[53]:=",
   InitializationCell->True],
 
+Cell[BoxData[
+    \(QuantumGroups::loading = "\<Loading precomputed data in `1`.\>"\)], \
+"Input",
+  InitializationCell->True],
+
 Cell[BoxData[{
     \(\(qInteger::usage = "\<qInteger[n][q] computes the quantum integer n \
 with the variable q.\>";\)\), "\[IndentingNewLine]", 
@@ -320,11 +325,6 @@ Cell[BoxData[
                       ToFileName[#, "\<QuantumGroups\>"]] &\) /@ \(($Path /. \
 "\<.\>" \[Rule] Directory[])\)])\), \(-14\)]\)\)], "Input",
   CellLabel->"In[16]:=",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(QuantumGroups::loading = "\<Loading precomputed data in `1`.\>"\)], \
-"Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -1630,25 +1630,25 @@ Cell[8618, 250, 239, 5, 50, "Input",
   InitializationCell->True],
 Cell[8860, 257, 130, 3, 30, "Input",
   InitializationCell->True],
-Cell[8993, 262, 473, 8, 150, "Input",
+Cell[8993, 262, 126, 3, 30, "Input",
   InitializationCell->True],
-Cell[9469, 272, 223, 5, 70, "Input",
+Cell[9122, 267, 473, 8, 150, "Input",
   InitializationCell->True],
-Cell[9695, 279, 172, 4, 30, "Input",
+Cell[9598, 277, 223, 5, 70, "Input",
   InitializationCell->True],
-Cell[9870, 285, 261, 5, 90, "Input",
+Cell[9824, 284, 172, 4, 30, "Input",
   InitializationCell->True],
-Cell[10134, 292, 168, 4, 30, "Input",
+Cell[9999, 290, 261, 5, 90, "Input",
   InitializationCell->True],
-Cell[10305, 298, 174, 4, 50, "Input",
+Cell[10263, 297, 168, 4, 30, "Input",
   InitializationCell->True],
-Cell[10482, 304, 165, 4, 30, "Input",
+Cell[10434, 303, 174, 4, 50, "Input",
   InitializationCell->True],
-Cell[10650, 310, 113, 3, 30, "Input",
+Cell[10611, 309, 165, 4, 30, "Input",
   InitializationCell->True],
-Cell[10766, 315, 341, 7, 110, "Input",
+Cell[10779, 315, 113, 3, 30, "Input",
   InitializationCell->True],
-Cell[11110, 324, 126, 3, 30, "Input",
+Cell[10895, 320, 341, 7, 110, "Input",
   InitializationCell->True],
 Cell[11239, 329, 160, 4, 31, "Input",
   InitializationCell->True],
