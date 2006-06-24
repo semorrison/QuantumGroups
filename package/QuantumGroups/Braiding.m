@@ -100,7 +100,7 @@ ChangeBasis[map_,basis_]:=Module[{},
 
 \!\(\(BraidingMatrices[\[CapitalGamma]_]\)[V_, n_Integer, \[Lambda]_] := Module[{a, hwv, matrices, inverses}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \(BraidingMatrices[\[CapitalGamma]]\)[V, n, \[Lambda]]]; \[IndentingNewLine]hwv = \(HighWeightVectors[\[CapitalGamma]]\)[V\^\(\[CircleTimes]n\), FundamentalBasis, \[Lambda]]; \[IndentingNewLine]DebugPrint["\<Changing basis ...\>"]; \[IndentingNewLine]matrices = Table[ChangeBasis[MatrixData[\(\(BR[n, {i}]\)[\[CapitalGamma], V, FundamentalBasis]\)[\[Lambda]]], hwv], {i, 1, n - 1}]; \[IndentingNewLine]inverses = MatrixInverse /@ matrices; \[IndentingNewLine]DebugPrint["\<Finished calculating braiding matrices.\>"]; \[IndentingNewLine]Together[{matrices, inverses}]\[IndentingNewLine]]\)
 
-\!\(\(BraidingData[\[CapitalGamma]_]\)[V_, n_Integer] := \(\(BraidingData[\[CapitalGamma]]\)[V, n] = \({\(qDimension[\[CapitalGamma]]\)[\(Irrep[\[CapitalGamma]]\)[#]], \(BraidingMatrices[\[CapitalGamma]]\)[V, n, #]} &\) /@ HighWeights[\[CapitalGamma], V\^\(\[CircleTimes]n\)]\)\)
+\!\(\(BraidingData[\[CapitalGamma]_\_n_]\)[V_, k_Integer] := \(\(BraidingData[\[CapitalGamma]\_n]\)[V, k] = Module[{}, \[IndentingNewLine]Off[Get::noopen, Needs::nocont]; \[IndentingNewLine]Needs["\<QuantumGroups`Data`\>" <> ToString[\[CapitalGamma]] <> ToString[n] <> "\<`BraidingData`\>"]; \[IndentingNewLine]On[Get::noopen, Needs::nocont]; \[IndentingNewLine]\({\(qDimension[\[CapitalGamma]\_n]\)[\(Irrep[\[CapitalGamma]\_n]\)[#]], \(BraidingMatrices[\[CapitalGamma]\_n]\)[V, k, #]} &\) /@ HighWeights[\[CapitalGamma]\_n, V\^\(\[CircleTimes]k\)]\[IndentingNewLine]]\)\)
 
 CheckBraidingData[m:{__?MatrixQ}]:=
   And@@Table[

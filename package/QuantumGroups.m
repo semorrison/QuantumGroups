@@ -157,9 +157,12 @@ ZeroVectorQ::usage="ZeroVectorQ[v] tests if v is the zero vector.";
 Begin["`Private`"];
 
 QuantumGroupsDirectory[]:=
-  StringDrop[(File/.Flatten[
-          FileInformation[ToFileName[#,"QuantumGroups"]]&/@($Path/.
-                "."\[Rule]Directory[])]),-14]
+  QuantumGroupsDirectory[]=
+    StringDrop[(File/.Flatten[
+            FileInformation[ToFileName[#,"QuantumGroups"]]&/@($Path/.
+                  "."\[Rule]Directory[])]),-14]
+
+QuantumGroups::loading="Loading precomputed data in `1`."
 
 \!\(\(qInteger[n_Integer]\)[q_] := Sum[q\^k, {k, \(-n\) + 1, n - 1, 2}]\)
 
