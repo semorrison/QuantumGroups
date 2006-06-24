@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     10475,        296]*)
-(*NotebookOutlinePosition[     11154,        319]*)
-(*  CellTagsIndexPosition[     11110,        315]*)
+(*NotebookOptionsPosition[     10772,        302]*)
+(*NotebookOutlinePosition[     11451,        325]*)
+(*  CellTagsIndexPosition[     11407,        321]*)
 (*WindowFrame->Normal*)
 
 
@@ -223,20 +223,26 @@ braiding matrices.\>"]; \[IndentingNewLine]Together[{matrices,
   InitializationCell->True],
 
 Cell[BoxData[
-    \(\(BraidingData[\[CapitalGamma]_\_n_]\)[V_, 
-        k_Integer] := \(\(BraidingData[\[CapitalGamma]\_n]\)[V, k] = 
-        Module[{}, \[IndentingNewLine]Off[Get::noopen, 
-            Needs::nocont]; \
-\[IndentingNewLine]Needs["\<QuantumGroups`Data`\>" <> 
-              ToString[\[CapitalGamma]] <> 
-              ToString[n] <> "\<`BraidingData`\>"]; \[IndentingNewLine]On[
-            Get::noopen, 
-            Needs::nocont]; \
-\[IndentingNewLine]\({\(qDimension[\[CapitalGamma]\_n]\)[\(Irrep[\
-\[CapitalGamma]\_n]\)[#]], \(BraidingMatrices[\[CapitalGamma]\_n]\)[V, 
-                  k, #]} &\) /@ 
-            HighWeights[\[CapitalGamma]\_n, 
-              V\^\(\[CircleTimes]k\)]\[IndentingNewLine]]\)\)], "Input",
+    \(LoadBraidingData[\[CapitalGamma]_\_n_] := 
+      Module[{}, \[IndentingNewLine]Off[Get::noopen, 
+          Needs::nocont]; \[IndentingNewLine]Needs["\<QuantumGroups`Data`\>" <> 
+            ToString[\[CapitalGamma]] <> 
+            ToString[n] <> "\<`BraidingData`\>"]; \[IndentingNewLine]On[
+          Get::noopen, 
+          Needs::nocont]; \[IndentingNewLine]LoadBraidingData[\[CapitalGamma]\
+\_n] = False; \[IndentingNewLine]True\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(BraidingData[\[CapitalGamma]_]\)[V_, 
+        n_Integer] := \(\(BraidingData[\[CapitalGamma]]\)[V, 
+          n] = \[IndentingNewLine]If[
+          LoadBraidingData[\[CapitalGamma]], \
+\(BraidingData[\[CapitalGamma]]\)[V, 
+            n], \[IndentingNewLine]\({\(qDimension[\[CapitalGamma]]\)[\(Irrep[\
+\[CapitalGamma]]\)[#]], \(BraidingMatrices[\[CapitalGamma]]\)[V, n, #]} &\) /@ 
+            HighWeights[\[CapitalGamma], 
+              V\^\(\[CircleTimes]n\)]\[IndentingNewLine]]\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -375,23 +381,25 @@ Cell[6442, 195, 402, 7, 130, "Input",
   InitializationCell->True],
 Cell[6847, 204, 961, 18, 250, "Input",
   InitializationCell->True],
-Cell[7811, 224, 767, 15, 217, "Input",
+Cell[7811, 224, 514, 9, 174, "Input",
   InitializationCell->True],
-Cell[8581, 241, 617, 12, 110, "Input",
+Cell[8328, 235, 547, 10, 110, "Input",
   InitializationCell->True],
-Cell[9201, 255, 640, 13, 130, "Input",
+Cell[8878, 247, 617, 12, 110, "Input",
   InitializationCell->True],
-Cell[9844, 270, 183, 3, 50, "Input",
+Cell[9498, 261, 640, 13, 130, "Input",
   InitializationCell->True],
-Cell[10030, 275, 177, 3, 30, "Input",
+Cell[10141, 276, 183, 3, 50, "Input",
   InitializationCell->True],
-Cell[10210, 280, 71, 2, 30, "Input",
+Cell[10327, 281, 177, 3, 30, "Input",
+  InitializationCell->True],
+Cell[10507, 286, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[10318, 287, 36, 0, 38, "Subsection"],
-Cell[10357, 289, 78, 2, 30, "Input",
+Cell[10615, 293, 36, 0, 38, "Subsection"],
+Cell[10654, 295, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
