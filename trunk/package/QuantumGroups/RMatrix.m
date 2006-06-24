@@ -81,7 +81,19 @@ RMatrix[\[CapitalGamma]_,V1_,
       V2_,\[Beta]_,\[Lambda]_]/;!MemberQ[
         Weights[\[CapitalGamma],V1\[CircleTimes]V2],\[Lambda]]:=Matrix[0,0]
 
-\!\(\(CheckRMatrixOppositeCommutes[\[CapitalGamma]_, Z_]\)[V1_, V2_, \[Beta]_, \[Lambda]_] := With[{R1 = RMatrix[\[CapitalGamma], V1, V2, \[Beta], \[Lambda]], R2 = RMatrix[\[CapitalGamma], V1, V2, \[Beta], \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[\[CapitalDelta][Z]]]}, \[IndentingNewLine]ZeroMatrixQ[Simplify[\(\(MatrixPresentation[\[CapitalGamma]]\)[\(\[CapitalDelta]\^op\)[Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] - R2 . \(\(MatrixPresentation[\[CapitalGamma]]\)[\[CapitalDelta][Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] . Inverse[R1]]\[IndentingNewLine]]\[IndentingNewLine]]\)
+CheckRMatrixOppositeCommutes[\[CapitalGamma]_,Z_][V1_,
+    V2_,\[Beta]_,\[Lambda]_]:=
+  With[{R1=RMatrix[\[CapitalGamma],V1,V2,\[Beta],\[Lambda]],
+      R2=RMatrix[\[CapitalGamma],V1,
+          V2,\[Beta],\[Lambda]+
+            OperatorWeight[\[CapitalGamma]][\[CapitalDelta][Z]]]},
+    ZeroMatrixQ[
+      Simplify[MatrixPresentation[\[CapitalGamma]][\[CapitalDelta]op[Z]][
+            V1\[CircleTimes]V2,\[Beta],\[Lambda]]-
+          R2.MatrixPresentation[\[CapitalGamma]][\[CapitalDelta][Z]][
+              V1\[CircleTimes]V2,\[Beta],\[Lambda]].Inverse[R1]]
+      ]
+    ]
 
 CheckRMatrixOppositeCommutes[\[CapitalGamma]_][V1_,V2_,\[Beta]_,\[Lambda]_]:=
   And@@(CheckRMatrixOppositeCommutes[\[CapitalGamma],#][V1,

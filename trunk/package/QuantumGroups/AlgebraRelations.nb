@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      9738,        274]*)
-(*NotebookOutlinePosition[     93341,       3105]*)
-(*  CellTagsIndexPosition[     93297,       3101]*)
+(*NotebookOptionsPosition[     10036,        278]*)
+(*NotebookOutlinePosition[     93639,       3109]*)
+(*  CellTagsIndexPosition[     93595,       3105]*)
 (*WindowFrame->Normal*)
 
 
@@ -174,17 +174,21 @@ Cell[BoxData[
           Flatten[Join[\[IndentingNewLine]Table[\[Sum]\+\(r = 0\)\%\(1 - cm\
 \[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\(\((\(-1\))\)\^r\) \
 \(qBinomial[1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket], r]\)[
-                          q\^cf\[LeftDoubleBracket]i\[RightDoubleBracket]] \
-\((\(X\_i\^+\))\)\^\(\(**\)\((1 - cm\[LeftDoubleBracket]i, j\
-\[RightDoubleBracket] - r)\)\) ** \(X\_j\^+\) ** \
-\((\(X\_i\^+\))\)\^\(\(**\)\(r\)\) \[Equal] \[ScriptZero], {i, 1, n}, {j, 1, 
+                          q\^cf\[LeftDoubleBracket]i\[RightDoubleBracket]] 
+                        NonCommutativePower[\((\(X\_i\^+\))\), 
+                            1 - cm\[LeftDoubleBracket]i, 
+                                j\[RightDoubleBracket] - r] ** \(X\_j\^+\) ** 
+                          NonCommutativePower[\((\(X\_i\^+\))\), 
+                            r] \[Equal] \[ScriptZero], {i, 1, n}, {j, 1, 
                     n}], \[IndentingNewLine]Table[\[Sum]\+\(r = 0\)\%\(1 - cm\
 \[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\(\((\(-1\))\)\^r\) \
 \(qBinomial[1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket], r]\)[
-                          q\^cf\[LeftDoubleBracket]i\[RightDoubleBracket]] \
-\((\(X\_i\^-\))\)\^\(\(**\)\((1 - cm\[LeftDoubleBracket]i, j\
-\[RightDoubleBracket] - r)\)\) ** \(X\_j\^-\) ** \
-\((\(X\_i\^-\))\)\^\(\(**\)\(r\)\) \[Equal] \[ScriptZero], {i, 1, n}, {j, 1, 
+                          q\^cf\[LeftDoubleBracket]i\[RightDoubleBracket]] 
+                        NonCommutativePower[\((\(X\_i\^-\))\), 
+                            1 - cm\[LeftDoubleBracket]i, 
+                                j\[RightDoubleBracket] - r] ** \(X\_j\^-\) ** 
+                          NonCommutativePower[\((\(X\_i\^-\))\), 
+                            r] \[Equal] \[ScriptZero], {i, 1, n}, {j, 1, 
                     n}]\[IndentingNewLine]]] /. {0 \[Rule] \[ScriptZero]}, 
           True]\[IndentingNewLine]]\)], "Input",
   InitializationCell->True],
@@ -3152,32 +3156,32 @@ Cell[5204, 156, 147, 3, 22, "Message",
 Cell[5354, 161, 173, 4, 22, "Message",
   InitializationCell->True]
 }, Open  ]],
-Cell[5542, 168, 1348, 21, 188, "Input",
+Cell[5542, 168, 1646, 25, 230, "Input",
   InitializationCell->True],
-Cell[6893, 191, 176, 4, 30, "Input",
+Cell[7191, 195, 176, 4, 30, "Input",
   InitializationCell->True],
 
 Cell[CellGroupData[{
-Cell[7094, 199, 599, 12, 70, "Input",
+Cell[7392, 203, 599, 12, 70, "Input",
   InitializationCell->True],
-Cell[7696, 213, 147, 3, 22, "Message",
+Cell[7994, 217, 147, 3, 22, "Message",
   InitializationCell->True],
-Cell[7846, 218, 172, 4, 22, "Message",
+Cell[8144, 222, 172, 4, 22, "Message",
   InitializationCell->True]
 }, Open  ]],
-Cell[8033, 225, 601, 12, 70, "Input",
+Cell[8331, 229, 601, 12, 70, "Input",
   InitializationCell->True],
-Cell[8637, 239, 595, 11, 90, "Input",
+Cell[8935, 243, 595, 11, 90, "Input",
   InitializationCell->True],
-Cell[9235, 252, 235, 4, 30, "Input",
+Cell[9533, 256, 235, 4, 30, "Input",
   InitializationCell->True],
-Cell[9473, 258, 71, 2, 30, "Input",
+Cell[9771, 262, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9581, 265, 36, 0, 38, "Subsection"],
-Cell[9620, 267, 78, 2, 30, "Input",
+Cell[9879, 269, 36, 0, 38, "Subsection"],
+Cell[9918, 271, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
