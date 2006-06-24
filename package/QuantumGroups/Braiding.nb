@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     10053,        287]*)
-(*NotebookOutlinePosition[     10732,        310]*)
-(*  CellTagsIndexPosition[     10688,        306]*)
+(*NotebookOptionsPosition[     10065,        287]*)
+(*NotebookOutlinePosition[     10744,        310]*)
+(*  CellTagsIndexPosition[     10700,        306]*)
 (*WindowFrame->Normal*)
 
 
@@ -208,13 +208,13 @@ Cell[BoxData[
           inverses}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \
 \(BraidingMatrices[\[CapitalGamma]]\)[V, 
             n, \[Lambda]]]; \[IndentingNewLine]hwv = \(HighWeightVectors[\
-\[CapitalGamma]]\)[
-            V\^\(\[CircleTimes]n\), \[Beta]\_F, \[Lambda]]; \
+\[CapitalGamma]]\)[V\^\(\[CircleTimes]n\), 
+            FundamentalBasis, \[Lambda]]; \
 \[IndentingNewLine]DebugPrint["\<Changing basis ...\>"]; \
 \[IndentingNewLine]matrices = 
           Table[ChangeBasis[
-              MatrixData[\(\(BR[n, {i}]\)[\[CapitalGamma], 
-                    V, \[Beta]\_F]\)[\[Lambda]]], hwv], {i, 1, 
+              MatrixData[\(\(BR[n, {i}]\)[\[CapitalGamma], V, 
+                    FundamentalBasis]\)[\[Lambda]]], hwv], {i, 1, 
               n - 1}]; \[IndentingNewLine]inverses = 
           MatrixInverse /@ 
             matrices; \[IndentingNewLine]DebugPrint["\<Finished calculating \
@@ -352,7 +352,7 @@ Cell[3324, 120, 202, 4, 30, "Input",
   InitializationCell->True],
 Cell[3529, 126, 451, 8, 70, "Input",
   InitializationCell->True],
-Cell[3983, 136, 1444, 29, 250, "Input",
+Cell[3983, 136, 1444, 29, 230, "Input",
   InitializationCell->True],
 Cell[5430, 167, 215, 4, 30, "Input",
   InitializationCell->True],
@@ -364,25 +364,25 @@ Cell[6109, 186, 330, 7, 70, "Input",
   InitializationCell->True],
 Cell[6442, 195, 392, 7, 130, "Input",
   InitializationCell->True],
-Cell[6837, 204, 949, 18, 230, "Input",
+Cell[6837, 204, 961, 18, 250, "Input",
   InitializationCell->True],
-Cell[7789, 224, 367, 6, 90, "Input",
+Cell[7801, 224, 367, 6, 90, "Input",
   InitializationCell->True],
-Cell[8159, 232, 617, 12, 110, "Input",
+Cell[8171, 232, 617, 12, 110, "Input",
   InitializationCell->True],
-Cell[8779, 246, 640, 13, 130, "Input",
+Cell[8791, 246, 640, 13, 130, "Input",
   InitializationCell->True],
-Cell[9422, 261, 183, 3, 50, "Input",
+Cell[9434, 261, 183, 3, 50, "Input",
   InitializationCell->True],
-Cell[9608, 266, 177, 3, 30, "Input",
+Cell[9620, 266, 177, 3, 30, "Input",
   InitializationCell->True],
-Cell[9788, 271, 71, 2, 30, "Input",
+Cell[9800, 271, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9896, 278, 36, 0, 38, "Subsection"],
-Cell[9935, 280, 78, 2, 30, "Input",
+Cell[9908, 278, 36, 0, 38, "Subsection"],
+Cell[9947, 280, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
