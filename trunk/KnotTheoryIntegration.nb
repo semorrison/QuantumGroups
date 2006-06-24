@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      5750,        152]*)
-(*NotebookOutlinePosition[     89570,       2990]*)
-(*  CellTagsIndexPosition[     89481,       2984]*)
+(*NotebookOptionsPosition[      6315,        178]*)
+(*NotebookOutlinePosition[     89885,       3008]*)
+(*  CellTagsIndexPosition[     89841,       3004]*)
 (*WindowFrame->Normal*)
 
 
@@ -66,94 +66,120 @@ at http://katlas.math.toronto.edu/wiki/KnotTheory."\)], "Print"]
 Cell[CellGroupData[{
 
 Cell[BoxData[
-    \(\(\(QuantumKnotInvariant[A\_2, \(Irrep[A\_2]\)[{1, 1}]]\)[Knot[3, 1]]\)[
+    \(RetrieveInvariants[{"\<QuantumInvariant/A2/1,1\>"}, 
+      AllKnots[{3, 4}], "\<KnotTheory\>"]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
+\[InvisibleSpace]"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
+      SequenceForm[ 
+      "Loading QuantumGroups` version 2.0\n", 
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"The minimum braids representing the knots with up to 10 \
+crossings were provided by Thomas Gittings. See \
+arXiv:math.GT/0401051.\"\)"\)], "Message"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"Quantum knot invariants are calculated using the mathematica \
+package QuantumGroups`, written by Scott Morrison 2003-2006.\"\)"\)], \
+"Message"],
+
+Cell[BoxData[
+    \({{"QuantumInvariant/A2/1,1", Knot[3, 1], 
+        q\^4 + 2\ q\^6 + 4\ q\^8 + 4\ q\^10 + 3\ q\^12 + 2\ q\^14 - 
+          2\ q\^18 - 3\ q\^20 - 2\ q\^22 - 2\ q\^24 + 
+          q\^36}, {"QuantumInvariant/A2/1,1", Knot[4, 1], 
+        2 + 1\/q\^20 + 2\/q\^16 - 2\/q\^10 - 2\/q\^8 + 4\/q\^2 + 4\ q\^2 - 
+          2\ q\^8 - 2\ q\^10 + 2\ q\^16 + q\^20}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(CreateWikiConnection["\<http://katlas.math.toronto.edu/w/index.php\>", \
+"\<ScottDataRobot\>", "\<foobar\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ProcessKnotAtlasUploadQueue["\<Testing_Queue\>"]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
+\[InvisibleSpace]"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
+      SequenceForm[ 
+      "Loading QuantumGroups` version 2.0\n", 
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \("*\"QuantumInvariant/A1/1\", \
+\"Select[AllKnots[{3,10}],BraidIndex[#]<=2&]\""\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Calculating \
+"\[InvisibleSpace]"QuantumInvariant/A1/1"\[InvisibleSpace]" for everything in \
+"\[InvisibleSpace]"Select[AllKnots[{3,10}],BraidIndex[#]<=2&]"\),
+      SequenceForm[ 
+      "Calculating ", "QuantumInvariant/A1/1", " for everything in ", 
+        "Select[AllKnots[{3,10}],BraidIndex[#]<=2&]"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(KnotTheory::"credits" \(\(:\)\(\ \)\) 
+      "\!\(\"The braid index data known to KnotTheory` is taken from Charles \
+Livingston's http://www.indiana.edu/~knotinfo/.\"\)"\)], "Message"],
+
+Cell[BoxData[
+    \(KnotTheory::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \!\(\"IndianaData`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    InterpretationBox[\("Checking to see what "\[InvisibleSpace]"KnotAtlas"\
+\[InvisibleSpace]" already contains..."\),
+      SequenceForm[ 
+      "Checking to see what ", "KnotAtlas", " already contains..."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(took \
+"\[InvisibleSpace]\(3.7954576`8.030809137673266\ Second\)\[InvisibleSpace]")"\
+\),
+      SequenceForm[ "(took ", 
+        Times[ 3.7954576`8.030809137673266, Second], ")"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Starting to calculate "\[InvisibleSpace]0\
+\[InvisibleSpace]" invariants..."\),
+      SequenceForm[ "Starting to calculate ", 0, " invariants..."],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(QuantumKnotInvariant[A\_2, \(Irrep[A\_2]\)[{2, 2}]]\)[Knot[3, 1]]\)[
       q]\)], "Input"],
 
 Cell[BoxData[
-    RowBox[{\(Part::"partw"\), \(\(:\)\(\ \)\), "\<\"Part \\!\\(2\\) of \
-\\!\\({2}\\) does not exist. \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
-ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
-ButtonData:>\\\"General::partw\\\"]\\)\"\>"}]], "Message"],
-
-Cell[BoxData[
-    RowBox[{\(Part::"partw"\), \(\(:\)\(\ \)\), "\<\"Part \\!\\(2\\) of \
-\\!\\({2}\\) does not exist. \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
-ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
-ButtonData:>\\\"General::partw\\\"]\\)\"\>"}]], "Message"],
-
-Cell[BoxData[
-    \($Aborted\)], "Output"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
-    \(Names["\<QuantumGroups`Braiding`\>"]\)], "Input"],
-
-Cell[BoxData[
-    \({}\)], "Output"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
-    \(?? QuantumKnotInvariant\)], "Input"],
-
-Cell[BoxData[
-    \("QuantumKnotInvariant[\[CapitalGamma], V][K][q] calculates the quantum \
-knot invariant of the knot K in the representation V of the quantum group \
-\[CapitalGamma]. This relies on the QuantumGroups` package, and you should \
-look there for details of how \[CapitalGamma] and V may be specified.  \
-Examples:    QuantumKnotInvariant[\!\(A\_2\), Irrep[\!\(A\_2\)][{1, \
-0}]][Knot[5, 2]][q]    QuantumKnotInvariant[\!\(G\_2\), Irrep[\!\(G\_2\)][{1, \
-0}]\[CirclePlus]Irrep[\!\(G\_2\)][{0, 1}]][Knot[5, 2]][q]"\)], "Print",
-  CellTags->"Info3360081462-1149727"],
-
-Cell[BoxData[
-    InterpretationBox[GridBox[{
-          {GridBox[{
-                {\(\(QuantumKnotInvariant[
-                        KnotTheory`QuantumKnotInvariants`Private`\
-\[CapitalGamma]_, KnotTheory`QuantumKnotInvariants`Private`V_]\)[K_] := 
-                    Module[{KnotTheory`QuantumKnotInvariants`Private`br = 
-                          BR[K], KnotTheory`QuantumKnotInvariants`Private`n, 
-                        KnotTheory`QuantumKnotInvariants`Private`data}, 
-                      KnotTheory`QuantumKnotInvariants`Private`n = 
-                        KnotTheory`QuantumKnotInvariants`Private`br\
-\[LeftDoubleBracket]1\[RightDoubleBracket]; 
-                      KnotTheory`QuantumKnotInvariants`Private`data = \
-\(KnotTheory`QuantumKnotInvariants`Private`BraidingData[
-                            KnotTheory`QuantumKnotInvariants`Private`\
-\[CapitalGamma]]\)[KnotTheory`QuantumKnotInvariants`Private`V, 
-                          KnotTheory`QuantumKnotInvariants`Private`n]; 
-                      Function[{KnotTheory`QuantumKnotInvariants`Private`q}, 
-                        Evaluate[
-                          Expand[
-                            Plus @@ \(\((#1\[LeftDoubleBracket]1\
-\[RightDoubleBracket]\ Tr[Dot @@ 
-                                        KnotTheory`QuantumKnotInvariants`\
-Private`ExtractMatrices[
-                                        KnotTheory`QuantumKnotInvariants`\
-Private`br\[LeftDoubleBracket]2\[RightDoubleBracket], #1\[LeftDoubleBracket]2\
-\[RightDoubleBracket]]] &)\) /@ 
-                                KnotTheory`QuantumKnotInvariants`Private`data\
-\)]]]]\)}
-                },
-              GridBaseline->{Baseline, {1, 1}},
-              ColumnWidths->0.999,
-              ColumnAlignments->{Left}]}
-          },
-        GridBaseline->{Baseline, {1, 1}},
-        ColumnAlignments->{Left}],
-      Definition[ "QuantumKnotInvariant"],
-      Editable->False]], "Print",
-  CellTags->"Info3360081462-1149727"]
+    \(q\^8 + 2\ q\^10 + 4\ q\^12 + 6\ q\^14 + 9\ q\^16 + 10\ q\^18 + 
+      12\ q\^20 + 10\ q\^22 + 9\ q\^24 + 4\ q\^26 + 2\ q\^28 - 2\ q\^30 - 
+      5\ q\^32 - 8\ q\^34 - 10\ q\^36 - 10\ q\^38 - 9\ q\^40 - 6\ q\^42 - 
+      4\ q\^44 - 2\ q\^46 + 2\ q\^50 + 2\ q\^52 + 2\ q\^54 + q\^64 + 
+      2\ q\^66 + 4\ q\^68 + 4\ q\^70 + 3\ q\^72 + 2\ q\^74 - 2\ q\^78 - 
+      3\ q\^80 - 2\ q\^82 - 2\ q\^84 + q\^96\)], "Output"]
 }, Open  ]]
 },
 FrontEndVersion->"5.2 for Microsoft Windows",
 ScreenRectangle->{{0, 1280}, {0, 713}},
-WindowSize->{740, 555},
-WindowMargins->{{69, Automatic}, {Automatic, -12}},
+WindowSize->{1136, 555},
+WindowMargins->{{Automatic, -1}, {Automatic, 17}},
 Visible->True,
 ShowSelection->True,
 InputAliases->{"intt"->RowBox[ {"\[Integral]", 
@@ -2972,19 +2998,11 @@ you save this file from within Mathematica.
 *******************************************************************)
 
 (*CellTagsOutline
-CellTagsIndex->{
-  "Info3360081462-1149727"->{
-    Cell[3190, 101, 578, 8, 101, "Print",
-      CellTags->"Info3360081462-1149727"],
-    Cell[3771, 111, 1963, 38, 310, "Print",
-      CellTags->"Info3360081462-1149727"]}
-  }
+CellTagsIndex->{}
 *)
 
 (*CellTagsIndex
-CellTagsIndex->{
-  {"Info3360081462-1149727", 89283, 2975}
-  }
+CellTagsIndex->{}
 *)
 
 (*NotebookFileOutline
@@ -2996,23 +3014,29 @@ Cell[2027, 60, 158, 2, 44, "Print"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2222, 67, 114, 2, 30, "Input"],
-Cell[2339, 71, 281, 4, 22, "Message"],
-Cell[2623, 77, 281, 4, 22, "Message"],
-Cell[2907, 83, 42, 1, 29, "Output"]
+Cell[2222, 67, 127, 2, 30, "Input"],
+Cell[2352, 71, 341, 7, 44, "Print"],
+Cell[2696, 80, 222, 4, 22, "Message"],
+Cell[2921, 86, 217, 4, 22, "Message"],
+Cell[3141, 92, 384, 6, 70, "Output"]
+}, Open  ]],
+Cell[3540, 101, 141, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3706, 107, 81, 1, 30, "Input"],
+Cell[3790, 110, 341, 7, 44, "Print"],
+Cell[4134, 119, 111, 2, 25, "Print"],
+Cell[4248, 123, 379, 7, 25, "Print"],
+Cell[4630, 132, 205, 3, 22, "Message"],
+Cell[4838, 137, 133, 2, 22, "Message"],
+Cell[4974, 141, 257, 5, 25, "Print"],
+Cell[5234, 148, 253, 6, 25, "Print"],
+Cell[5490, 156, 220, 4, 25, "Print"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2986, 89, 69, 1, 30, "Input"],
-Cell[3058, 92, 36, 1, 29, "Output"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-Cell[3131, 98, 56, 1, 30, "Input"],
-Cell[3190, 101, 578, 8, 101, "Print",
-  CellTags->"Info3360081462-1149727"],
-Cell[3771, 111, 1963, 38, 310, "Print",
-  CellTags->"Info3360081462-1149727"]
+Cell[5747, 165, 114, 2, 30, "Input"],
+Cell[5864, 169, 435, 6, 48, "Output"]
 }, Open  ]]
 }
 ]

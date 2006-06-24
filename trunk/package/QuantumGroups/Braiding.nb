@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     10075,        287]*)
-(*NotebookOutlinePosition[     10754,        310]*)
-(*  CellTagsIndexPosition[     10710,        306]*)
+(*NotebookOptionsPosition[     10475,        296]*)
+(*NotebookOutlinePosition[     11154,        319]*)
+(*  CellTagsIndexPosition[     11110,        315]*)
 (*WindowFrame->Normal*)
 
 
@@ -223,11 +223,20 @@ braiding matrices.\>"]; \[IndentingNewLine]Together[{matrices,
   InitializationCell->True],
 
 Cell[BoxData[
-    \(\(BraidingData[\[CapitalGamma]_]\)[V_, 
-        n_Integer] := \(\(BraidingData[\[CapitalGamma]]\)[V, 
-          n] = \({\(qDimension[\[CapitalGamma]]\)[\(Irrep[\[CapitalGamma]]\)[#\
-]], \(BraidingMatrices[\[CapitalGamma]]\)[V, n, #]} &\) /@ 
-          HighWeights[\[CapitalGamma], V\^\(\[CircleTimes]n\)]\)\)], "Input",
+    \(\(BraidingData[\[CapitalGamma]_\_n_]\)[V_, 
+        k_Integer] := \(\(BraidingData[\[CapitalGamma]\_n]\)[V, k] = 
+        Module[{}, \[IndentingNewLine]Off[Get::noopen, 
+            Needs::nocont]; \
+\[IndentingNewLine]Needs["\<QuantumGroups`Data`\>" <> 
+              ToString[\[CapitalGamma]] <> 
+              ToString[n] <> "\<`BraidingData`\>"]; \[IndentingNewLine]On[
+            Get::noopen, 
+            Needs::nocont]; \
+\[IndentingNewLine]\({\(qDimension[\[CapitalGamma]\_n]\)[\(Irrep[\
+\[CapitalGamma]\_n]\)[#]], \(BraidingMatrices[\[CapitalGamma]\_n]\)[V, 
+                  k, #]} &\) /@ 
+            HighWeights[\[CapitalGamma]\_n, 
+              V\^\(\[CircleTimes]k\)]\[IndentingNewLine]]\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -366,23 +375,23 @@ Cell[6442, 195, 402, 7, 130, "Input",
   InitializationCell->True],
 Cell[6847, 204, 961, 18, 250, "Input",
   InitializationCell->True],
-Cell[7811, 224, 367, 6, 90, "Input",
+Cell[7811, 224, 767, 15, 217, "Input",
   InitializationCell->True],
-Cell[8181, 232, 617, 12, 110, "Input",
+Cell[8581, 241, 617, 12, 110, "Input",
   InitializationCell->True],
-Cell[8801, 246, 640, 13, 130, "Input",
+Cell[9201, 255, 640, 13, 130, "Input",
   InitializationCell->True],
-Cell[9444, 261, 183, 3, 50, "Input",
+Cell[9844, 270, 183, 3, 50, "Input",
   InitializationCell->True],
-Cell[9630, 266, 177, 3, 30, "Input",
+Cell[10030, 275, 177, 3, 30, "Input",
   InitializationCell->True],
-Cell[9810, 271, 71, 2, 30, "Input",
+Cell[10210, 280, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9918, 278, 36, 0, 38, "Subsection"],
-Cell[9957, 280, 78, 2, 30, "Input",
+Cell[10318, 287, 36, 0, 38, "Subsection"],
+Cell[10357, 289, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
