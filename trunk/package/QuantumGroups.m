@@ -102,7 +102,7 @@ QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return 
 
 {A,B,C,D,E,F,G};
 
-\!\(A1 = A\_1; A2 = A\_2; A3 = A\_3; A4 = A\_4; A5 = A\_5; A6 = A\_6; A7 = A\_7; A8 = A\_8; A9 = A\_9; A10 = A\_10; A11 = A\_11; A12 = A\_12; B2 = B\_2; B3 = B\_3; B4 = B\_4; B5 = B\_5; B6 = B\_6; B7 = B\_7; B8 = B\_8; C3 = C\_3; C4 = C\_4; C5 = C\_5; C6 = C\_6; C7 = C\_7; C8 = C\_8; D4 = D\_4; D5 = D\_5; D6 = D\_6; D7 = D\_7; D8 = \(\(D\_8\) E6 = E\_6\); E7 = E\_7; E8 = E\_8; F4 = F\_4; G2 = G\_2;\)
+\!\(A1 = A\_1; A2 = A\_2; A3 = A\_3; A4 = A\_4; A5 = A\_5; A6 = A\_6; A7 = A\_7; A8 = A\_8; A9 = A\_9; A10 = A\_10; A11 = A\_11; A12 = A\_12; B2 = B\_2; B3 = B\_3; B4 = B\_4; B5 = B\_5; B6 = B\_6; B7 = B\_7; B8 = B\_8; C3 = C\_3; C4 = C\_4; C5 = C\_5; C6 = C\_6; C7 = C\_7; C8 = C\_8; D4 = D\_4; D5 = D\_5; D6 = D\_6; D7 = D\_7; D8 = D\_8; E6 = E\_6; E7 = E\_7; E8 = E\_8; F4 = F\_4; G2 = G\_2;\)
 
 {Irrep,\[DoubleStruckCapitalC],\[Beta]};
 
