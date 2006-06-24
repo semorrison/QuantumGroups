@@ -164,6 +164,10 @@ QuantumGroupsDirectory[]:=
             FileInformation[ToFileName[#,"QuantumGroups"]]&/@($Path/.
                   "."\[Rule]Directory[])]),-14]
 
+(*might be dangerous if QuantumGroupsDirectory[] is somehow \
+incorrect!*)If[!MemberQ[$Path,QuantumGroupsDirectory[]],
+  AppendTo[$Path,QuantumGroupsDirectory[]]]
+
 \!\(\(qInteger[n_Integer]\)[q_] := Sum[q\^k, {k, \(-n\) + 1, n - 1, 2}]\)
 
 qFactorial[n_Integer][q_]:=Expand[Times@@Table[qInteger[i][q],{i,1,n}]]
