@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      7029,        214]*)
-(*NotebookOutlinePosition[     90632,       3045]*)
-(*  CellTagsIndexPosition[     90588,       3041]*)
+(*NotebookOptionsPosition[      7110,        218]*)
+(*NotebookOutlinePosition[     90713,       3049]*)
+(*  CellTagsIndexPosition[     90669,       3045]*)
 (*WindowFrame->Normal*)
 
 
@@ -119,6 +119,10 @@ Cell["Internals", "Subsection"],
 
 Cell[BoxData[
     \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[{
@@ -3085,27 +3089,29 @@ Cell[CellGroupData[{
 Cell[3313, 117, 31, 0, 38, "Subsection"],
 Cell[3347, 119, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[3438, 123, 1058, 20, 92, "Input",
+Cell[3438, 123, 78, 2, 30, "Input",
   InitializationCell->True],
-Cell[4499, 145, 383, 7, 31, "Input",
+Cell[3519, 127, 1058, 20, 92, "Input",
   InitializationCell->True],
-Cell[4885, 154, 243, 5, 31, "Input",
+Cell[4580, 149, 383, 7, 31, "Input",
   InitializationCell->True],
-Cell[5131, 161, 430, 7, 52, "Input",
+Cell[4966, 158, 243, 5, 31, "Input",
   InitializationCell->True],
-Cell[5564, 170, 396, 7, 50, "Input",
+Cell[5212, 165, 430, 7, 52, "Input",
   InitializationCell->True],
-Cell[5963, 179, 451, 9, 51, "Input",
+Cell[5645, 174, 396, 7, 50, "Input",
   InitializationCell->True],
-Cell[6417, 190, 344, 6, 31, "Input",
+Cell[6044, 183, 451, 9, 51, "Input",
   InitializationCell->True],
-Cell[6764, 198, 71, 2, 30, "Input",
+Cell[6498, 194, 344, 6, 31, "Input",
+  InitializationCell->True],
+Cell[6845, 202, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[6872, 205, 36, 0, 38, "Subsection"],
-Cell[6911, 207, 78, 2, 30, "Input",
+Cell[6953, 209, 36, 0, 38, "Subsection"],
+Cell[6992, 211, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]

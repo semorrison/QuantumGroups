@@ -49,6 +49,8 @@ QuantumRootHeight::usage="";
 
 Begin["`Private`"];
 
+q=Global`q;
+
 \!\(\(ExpandQuantumRoot[\[CapitalGamma]_]\)[\(X\_\(\[CapitalGamma]_, r_\)\^+\)] /; MemberQ[SimpleRoots[\[CapitalGamma]], \(PositiveRoots[\[CapitalGamma]]\)\[LeftDoubleBracket]r\[RightDoubleBracket]] := \(X\_\(\(Position[SimpleRoots[\[CapitalGamma]], \(PositiveRoots[\[CapitalGamma]]\)\[LeftDoubleBracket]r\[RightDoubleBracket]]\)\[LeftDoubleBracket]1, 1\[RightDoubleBracket]\)\^+\)\[IndentingNewLine]
   \(ExpandQuantumRoot[\[CapitalGamma]_]\)[\(X\_\(\[CapitalGamma]_, r_\)\^+\)] := \(\(ExpandQuantumRoot[\[CapitalGamma]]\)[\(X\_\(\[CapitalGamma], r\)\^+\)] = With[{i = LongestWordDecomposition[\[CapitalGamma]]}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \(ExpandQuantumRoot[\[CapitalGamma]]\)[\(X\_\(\[CapitalGamma], r\)\^+\)]]; \[IndentingNewLine]\(BraidAction[\[CapitalGamma]]\)[\(T\_# &\) /@ Take[i, r - 1], \(X\_\(i\[LeftDoubleBracket]r\[RightDoubleBracket]\)\^+\)]]\)\)
 

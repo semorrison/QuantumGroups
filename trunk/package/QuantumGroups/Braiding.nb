@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     10065,        287]*)
-(*NotebookOutlinePosition[     10744,        310]*)
-(*  CellTagsIndexPosition[     10700,        306]*)
+(*NotebookOptionsPosition[     10075,        287]*)
+(*NotebookOutlinePosition[     10754,        310]*)
+(*  CellTagsIndexPosition[     10710,        306]*)
 (*WindowFrame->Normal*)
 
 
@@ -197,7 +197,7 @@ Cell[BoxData[
     \(ChangeBasis[map_, basis_] := 
       Module[{}, \[IndentingNewLine]DebugPrint["\<ChangeBasis called with \
 \>", Dimensions[map], "\< \>", Length[basis]]; \[IndentingNewLine]Transpose[
-          LinearSolve[Transpose[basis], map . Transpose[basis], 
+          LinearSolve[Transpose[basis], Together[map . Transpose[basis]], 
             Method \[Rule] 
               OneStepRowReduction]]\[IndentingNewLine]]\)], "Input",
   InitializationCell->True],
@@ -362,27 +362,27 @@ Cell[5844, 179, 262, 5, 50, "Input",
   InitializationCell->True],
 Cell[6109, 186, 330, 7, 70, "Input",
   InitializationCell->True],
-Cell[6442, 195, 392, 7, 130, "Input",
+Cell[6442, 195, 402, 7, 130, "Input",
   InitializationCell->True],
-Cell[6837, 204, 961, 18, 250, "Input",
+Cell[6847, 204, 961, 18, 250, "Input",
   InitializationCell->True],
-Cell[7801, 224, 367, 6, 90, "Input",
+Cell[7811, 224, 367, 6, 90, "Input",
   InitializationCell->True],
-Cell[8171, 232, 617, 12, 110, "Input",
+Cell[8181, 232, 617, 12, 110, "Input",
   InitializationCell->True],
-Cell[8791, 246, 640, 13, 130, "Input",
+Cell[8801, 246, 640, 13, 130, "Input",
   InitializationCell->True],
-Cell[9434, 261, 183, 3, 50, "Input",
+Cell[9444, 261, 183, 3, 50, "Input",
   InitializationCell->True],
-Cell[9620, 266, 177, 3, 30, "Input",
+Cell[9630, 266, 177, 3, 30, "Input",
   InitializationCell->True],
-Cell[9800, 271, 71, 2, 30, "Input",
+Cell[9810, 271, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9908, 278, 36, 0, 38, "Subsection"],
-Cell[9947, 280, 78, 2, 30, "Input",
+Cell[9918, 278, 36, 0, 38, "Subsection"],
+Cell[9957, 280, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
