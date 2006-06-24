@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      9766,        258]*)
-(*NotebookOutlinePosition[     10445,        281]*)
-(*  CellTagsIndexPosition[     10401,        277]*)
+(*NotebookOptionsPosition[      9824,        259]*)
+(*NotebookOutlinePosition[     10503,        282]*)
+(*  CellTagsIndexPosition[     10459,        278]*)
 (*WindowFrame->Normal*)
 
 
@@ -145,9 +145,10 @@ t[k], {k, r + 1, p}]\)\/l\[LeftDoubleBracket]r\[RightDoubleBracket]}, {r, p,
 \[LeftDoubleBracket]i\[LeftDoubleBracket]r\[RightDoubleBracket]\
 \[RightDoubleBracket]\))\)\^t[r]\/\(qFactorial[t[r]]\)[
                           q\^d\[LeftDoubleBracket]i\[LeftDoubleBracket]r\
-\[RightDoubleBracket]\[RightDoubleBracket]]\) \(X\_\(\[CapitalGamma], \
-r\)\^+\)\^\(\(**\)\(t[r]\)\)\[CircleTimes]\(X\_\(\[CapitalGamma], \
-r\)\^-\)\^\(\(**\)\(t[r]\)\), {r, 1, p}], 
+\[RightDoubleBracket]\[RightDoubleBracket]]\) 
+                    NonCommutativePower[\(X\_\(\[CapitalGamma], r\)\^+\), 
+                        t[r]]\[CircleTimes]NonCommutativePower[\(X\_\(\
+\[CapitalGamma], r\)\^-\), t[r]], {r, 1, p}], 
               Evaluate[
                 Sequence @@ 
                   iterators]]; \[IndentingNewLine]DebugPrintHeld["\<Finished \
@@ -319,27 +320,27 @@ Cell[3196, 112, 88, 2, 30, "Input",
   InitializationCell->True],
 Cell[3287, 116, 78, 2, 30, "Input",
   InitializationCell->True],
-Cell[3368, 120, 2019, 36, 347, "Input",
+Cell[3368, 120, 2077, 37, 367, "Input",
   InitializationCell->True],
-Cell[5390, 158, 825, 14, 230, "Input",
+Cell[5448, 159, 825, 14, 230, "Input",
   InitializationCell->True],
-Cell[6218, 174, 378, 7, 70, "Input",
+Cell[6276, 175, 378, 7, 70, "Input",
   InitializationCell->True],
-Cell[6599, 183, 1475, 27, 310, "Input",
+Cell[6657, 184, 1475, 27, 310, "Input",
   InitializationCell->True],
-Cell[8077, 212, 776, 13, 170, "Input",
+Cell[8135, 213, 776, 13, 170, "Input",
   InitializationCell->True],
-Cell[8856, 227, 331, 6, 70, "Input",
+Cell[8914, 228, 331, 6, 70, "Input",
   InitializationCell->True],
-Cell[9190, 235, 308, 5, 50, "Input",
+Cell[9248, 236, 308, 5, 50, "Input",
   InitializationCell->True],
-Cell[9501, 242, 71, 2, 30, "Input",
+Cell[9559, 243, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9609, 249, 36, 0, 38, "Subsection"],
-Cell[9648, 251, 78, 2, 30, "Input",
+Cell[9667, 250, 36, 0, 38, "Subsection"],
+Cell[9706, 252, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
