@@ -101,6 +101,8 @@ BeginPackage["QuantumGroups`",{"Utilities`Notation`"}];
 
 Utilities`Notation`AutoLoadNotationPalette=.;
 
+QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return the location the QuantumGroups` package was loaded from.";
+
 {A,B,C,D,E,F,G};
 
 {Irrep,\[DoubleStruckCapitalC],\[Beta]};
@@ -153,6 +155,10 @@ UnitVectorQ::usage="UnitVectorQ[v] tests if v is a unit coordinate vector.";
 ZeroVectorQ::usage="ZeroVectorQ[v] tests if v is the zero vector.";
 
 Begin["`Private`"];
+
+QuantumGroupsDirectory[]=(File/.Flatten[
+        FileInformation[ToFileName[#,"QuantumGroups"]]&/@($Path/.
+              "."\[Rule]Directory[])])
 
 \!\(\(qInteger[n_Integer]\)[q_] := Sum[q\^k, {k, \(-n\) + 1, n - 1, 2}]\)
 
