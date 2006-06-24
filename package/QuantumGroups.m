@@ -45,7 +45,7 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","\[Rho]",
       "PositiveGenerators","NegativeGenerators","CartanGenerators","Generators",
-      "NonCommutativePower","\[CapitalDelta]","OperatorWeight",
+      "NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight",
       "OperatorLength"}];
 
 DeclarePackage[
@@ -95,11 +95,11 @@ Print[
   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"
   ]
 
-Utilities`Notation`AutoLoadNotationPalette = False;
+(*Utilities`Notation`AutoLoadNotationPalette = False;*)
 
-BeginPackage["QuantumGroups`",{"Utilities`Notation`"}];
+BeginPackage["QuantumGroups`"(*,{"Utilities`Notation`"}*)];
 
-Utilities`Notation`AutoLoadNotationPalette=.;
+(*Utilities`Notation`AutoLoadNotationPalette=.;*)
 
 QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return the location the QuantumGroups` package was loaded from.";
 
@@ -110,27 +110,31 @@ QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return 
 SetAttributes[DirectSum,{Flat,OneIdentity}]
 
 \!\(\*
-  RowBox[{"Notation", "[", 
-    RowBox[{
-      TagBox[\(V_\^\(\[CircleTimes]n_\)\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
-      TagBox[\(TensorPower[V_, n_]\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"]}], "]"}]\)
+  RowBox[{"(*", 
+    RowBox[{"Notation", "[", 
+      RowBox[{
+        TagBox[\(V_\^\(\[CircleTimes]n_\)\),
+          NotationBoxTag,
+          TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
+        TagBox[\(TensorPower[V_, n_]\),
+          NotationBoxTag,
+          TagStyle->"NotationTemplateStyle"]}], "]"}], "*)"}]\)
 
 \!\(\*
-  RowBox[{"InfixNotation", "[", 
-    RowBox[{
-      TagBox["\[CirclePlus]",
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"], ",", "DirectSum"}], "]"}]\)
+  RowBox[{"(*", 
+    RowBox[{"InfixNotation", "[", 
+      RowBox[{
+        TagBox["\[CirclePlus]",
+          NotationBoxTag,
+          TagStyle->"NotationTemplateStyle"], ",", "DirectSum"}], "]"}], "*)"}]\)
 
 TensorProduct=CircleTimes;CirclePlus=DirectSum;
 
 TensorProduct[x_]:=x
 
 TensorProduct[a__,b_,c_]:=TensorProduct[TensorProduct[a,b],c]
+
+
 
 TensorPower[_,0]:=TensorProduct[]
 TensorPower[x_,n_?NaturalQ]:=Fold[TensorProduct,x,Table[x,{n-1}]]

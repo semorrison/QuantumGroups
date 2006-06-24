@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      9772,        258]*)
-(*NotebookOutlinePosition[     10451,        281]*)
-(*  CellTagsIndexPosition[     10407,        277]*)
+(*NotebookOptionsPosition[      9766,        258]*)
+(*NotebookOutlinePosition[     10445,        281]*)
+(*  CellTagsIndexPosition[     10401,        277]*)
 (*WindowFrame->Normal*)
 
 
@@ -217,8 +217,8 @@ Cell[BoxData[
           R2 = RMatrix[\[CapitalGamma], V1, 
               V2, \[Beta], \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[\
 \[CapitalDelta][Z]]]}, \[IndentingNewLine]ZeroMatrixQ[
-          Simplify[\(\(MatrixPresentation[\[CapitalGamma]]\)[\(\[CapitalDelta]\
-\^op\)[Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] - 
+          Simplify[\(\(MatrixPresentation[\[CapitalGamma]]\)[\[CapitalDelta]\
+op[Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] - 
               R2 . \(\(MatrixPresentation[\[CapitalGamma]]\)[\[CapitalDelta][
                       Z]]\)[V1\[CircleTimes]V2, \[Beta], \[Lambda]] . 
                 Inverse[
@@ -327,19 +327,19 @@ Cell[6218, 174, 378, 7, 70, "Input",
   InitializationCell->True],
 Cell[6599, 183, 1475, 27, 310, "Input",
   InitializationCell->True],
-Cell[8077, 212, 782, 13, 170, "Input",
+Cell[8077, 212, 776, 13, 170, "Input",
   InitializationCell->True],
-Cell[8862, 227, 331, 6, 70, "Input",
+Cell[8856, 227, 331, 6, 70, "Input",
   InitializationCell->True],
-Cell[9196, 235, 308, 5, 50, "Input",
+Cell[9190, 235, 308, 5, 50, "Input",
   InitializationCell->True],
-Cell[9507, 242, 71, 2, 30, "Input",
+Cell[9501, 242, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9615, 249, 36, 0, 38, "Subsection"],
-Cell[9654, 251, 78, 2, 30, "Input",
+Cell[9609, 249, 36, 0, 38, "Subsection"],
+Cell[9648, 251, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]

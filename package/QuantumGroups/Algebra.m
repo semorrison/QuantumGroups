@@ -26,14 +26,15 @@ overwritten.
 
 
 BeginPackage["QuantumGroups`Algebra`",{"QuantumGroups`","QuantumGroups`RootSystems`",
-    "QuantumGroups`WeylGroups`","Utilities`Notation`"}]
+    "QuantumGroups`WeylGroups`"(*,"Utilities`Notation`"*)}]
 
 X;K;\[ScriptOne];\[ScriptZero];\[Rho];
 
 SuperPlus;SuperMinus;
 
 PositiveGenerators;NegativeGenerators;CartanGenerators;Generators;\
-NonCommutativePower;\[CapitalDelta];OperatorWeight;OperatorLength;
+NonCommutativePower;\[CapitalDelta];\[CapitalDelta]op;OperatorWeight;\
+OperatorLength;
 
 Begin["`Private`"];
 
@@ -77,14 +78,15 @@ NonCommutativePower[x_,0]:=\[ScriptOne]
 \!\(NonCommutativePower[x_, n_?\((# < 0 &)\)] := NonCommutativePower[x\^\(-1\), \(-n\)]\)
 
 \!\(\*
-  RowBox[{"Notation", "[", 
-    RowBox[{
-      TagBox[\(F_\^\(\(**\)\(n_\)\)\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
-      TagBox[\(NonCommutativePower[F_, n_]\),
-        NotationBoxTag,
-        TagStyle->"NotationTemplateStyle"]}], "]"}]\)
+  RowBox[{"(*", 
+    RowBox[{"Notation", "[", 
+      RowBox[{
+        TagBox[\(F_\^\(\(**\)\(n_\)\)\),
+          NotationBoxTag,
+          TagStyle->"NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
+        TagBox[\(NonCommutativePower[F_, n_]\),
+          NotationBoxTag,
+          TagStyle->"NotationTemplateStyle"]}], "]"}], "*)"}]\)
 
 Protect[NonCommutativeMultiply];
 
@@ -101,24 +103,27 @@ Protect[NonCommutativeMultiply];
 \[CapitalDelta][A_**B_]:=\[CapitalDelta][A]**\[CapitalDelta][B]
 
 \!\(\*
-  RowBox[{"Symbolize", "[", 
-    TagBox[\(\[CapitalDelta]\^op\),
-      NotationBoxTag,
-      TagStyle->"NotationTemplateStyle"], "]"}]\)
+  RowBox[{"(*", 
+    RowBox[{"Symbolize", "[", 
+      TagBox[\(\[CapitalDelta]\^op\),
+        NotationBoxTag,
+        TagStyle->"NotationTemplateStyle"], "]"}], "*)"}]\)
 
-\!\(\(\[CapitalDelta]\^op\)[Z_] := \[CapitalDelta][Z] /. X_\[CircleTimes]Y_ \[RuleDelayed] Y\[CircleTimes]X\)
+\[CapitalDelta]op[
+    Z_]:=\[CapitalDelta][Z]/.X_\[CircleTimes]Y_\[RuleDelayed]Y\[CircleTimes]X
 
 \[CapitalDelta][X_Plus]:=\[CapitalDelta]/@X
 \[CapitalDelta][
     X_TensorProduct]:=\[CapitalDelta][First[X]]\[CircleTimes]Rest[X]
 
 \!\(\*
-  RowBox[{"Symbolize", "[", 
-    TagBox[\(\[CapitalDelta]\^\((_)\)\),
-      NotationBoxTag,
-      TagStyle->"NotationTemplateStyle"], "]"}]\)
+  RowBox[{"(*", 
+    RowBox[{"Symbolize", "[", 
+      TagBox[\(\[CapitalDelta]\^\((_)\)\),
+        NotationBoxTag,
+        TagStyle->"NotationTemplateStyle"], "]"}], "*)"}]\)
 
-\!\(\(\[CapitalDelta]\^\((n_)\)\)[X_] := Nest[\[CapitalDelta], X, n]\)
+\!\( (*\(\[CapitalDelta]\^\((n_)\)\)[X_] := Nest[\[CapitalDelta], X, n]*) \)
 
 
 
