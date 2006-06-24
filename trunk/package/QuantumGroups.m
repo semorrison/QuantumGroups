@@ -128,13 +128,13 @@ SetAttributes[DirectSum,{Flat,OneIdentity}]
           NotationBoxTag,
           TagStyle->"NotationTemplateStyle"], ",", "DirectSum"}], "]"}], "*)"}]\)
 
+CircleTimes/:Power[V_,CircleTimes[n_]]:=TensorPower[V,n]
+
 TensorProduct=CircleTimes;CirclePlus=DirectSum;
 
-TensorProduct[x_]:=x
+TensorProduct[x:Except[_Integer]]:=x
 
 TensorProduct[a__,b_,c_]:=TensorProduct[TensorProduct[a,b],c]
-
-
 
 TensorPower[_,0]:=TensorProduct[]
 TensorPower[x_,n_?NaturalQ]:=Fold[TensorProduct,x,Table[x,{n-1}]]
