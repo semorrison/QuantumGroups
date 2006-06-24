@@ -1,4 +1,5 @@
 BeginPackage["QuantumGroups`Data`A4`BraidingData`",{"QuantumGroups`","QuantumGroups`Braiding`"}]
+Message[QuantumGroups::loading,"QuantumGroups`Data`A4`BraidingData`"]
 Begin["`Private`"]
 q=Global`q;
 BraidingData[Subscript[A, 4]][Irrep[Subscript[A, 4]][{0, 1, 0, 0}], 2]:={{8 + q^(-12) + q^(-10) + 3/q^8 + 4/q^6 + 6/q^4 + 6/q^2 + 6*q^2 + 6*q^4 + 4*q^6 + 3*q^8 + q^10 + q^12, {{{{q^(-6)}}}, {{{q^6}}}}}, {7 + q^(-10) + 2/q^8 + 4/q^6 + 5/q^4 + 7/q^2 + 7*q^2 + 5*q^4 + 4*q^6 + 2*q^8 + q^10, {{{{-q^(-8)}}}, {{{-q^8}}}}}, {1 + q^(-4) + q^(-2) + q^2 + q^4, {{{{q^(-12)}}}, {{{q^12}}}}}}
