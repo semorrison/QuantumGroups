@@ -30,8 +30,6 @@ BeginPackage[
       "QuantumGroups`Algebra`","QuantumGroups`WeylGroups`",
       "QuantumGroups`LittelmannPaths`"}];
 
-q=Global`q;
-
 WeightMultiplicities::usage="";
 
 WeightMultiplicity::usage="";
@@ -47,6 +45,8 @@ PositiveWeights::usage="";
 qDimension::usage="";
 
 Begin["`Private`"];
+
+q=Global`q;
 
 
 

@@ -34,8 +34,6 @@ BeginPackage[
       "QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`",
       "Utilities`Notation`"}];
 
-q=Global`q;
-
 
 
 T;
@@ -49,6 +47,8 @@ CheckBraidRelations::usage="CheckBraidRelations[\[CapitalGamma]] checks that the
 
 
 Begin["`Private`"];
+
+q=Global`q;
 
 \!\(\*
   RowBox[{"Notation", "[", 

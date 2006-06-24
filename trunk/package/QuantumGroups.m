@@ -90,6 +90,11 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`Braiding`",{"BraidingData","CheckBraidingData","BR"}];
 
+Print[
+  "Loading QuantumGroups` version 2.0\n",
+  "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"
+  ]
+
 Utilities`Notation`AutoLoadNotationPalette = False;
 
 BeginPackage["QuantumGroups`",{"Utilities`Notation`"}];

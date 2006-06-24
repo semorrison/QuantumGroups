@@ -90,10 +90,6 @@ Cell[BoxData[
 \<QuantumGroups`Algebra`\>", "\<QuantumGroups`WeylGroups`\>", \
 "\<QuantumGroups`Representations`\>", "\<QuantumGroups`QuantumRoots`\>", \
 "\<QuantumGroups`MatrixPresentations`\>"}];\)\)], "Input",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True]
 }, Open  ]],
 
@@ -116,6 +112,10 @@ Cell["Internals", "Subsection"],
 
 Cell[BoxData[
     \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -302,22 +302,22 @@ Cell[CellGroupData[{
 Cell[2316, 81, 38, 0, 38, "Subsection"],
 Cell[2357, 83, 45, 0, 33, "Text"],
 Cell[2405, 85, 442, 7, 130, "Input",
-  InitializationCell->True],
-Cell[2850, 94, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2965, 101, 36, 0, 38, "Subsection"],
-Cell[3004, 103, 89, 2, 30, "Input",
+Cell[2884, 97, 36, 0, 38, "Subsection"],
+Cell[2923, 99, 89, 2, 30, "Input",
   InitializationCell->True],
-Cell[3096, 107, 110, 2, 30, "Input",
+Cell[3015, 103, 110, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[3243, 114, 31, 0, 38, "Subsection"],
-Cell[3277, 116, 88, 2, 30, "Input",
+Cell[3162, 110, 31, 0, 38, "Subsection"],
+Cell[3196, 112, 88, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3287, 116, 78, 2, 30, "Input",
   InitializationCell->True],
 Cell[3368, 120, 2019, 36, 347, "Input",
   InitializationCell->True],

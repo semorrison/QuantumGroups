@@ -35,8 +35,6 @@ BeginPackage[
       "QuantumGroups`Utilities`Debugging`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`",
       "QuantumGroups`Representations`"}];
 
-q=Global`q;
-
 
 
 MatrixPresentation::usage="";
@@ -58,6 +56,8 @@ ShortRootBasis;
 
 
 Begin["`Private`"];
+
+q=Global`q;
 
 (*MatrixPresentation[\[CapitalGamma]_][A_][
       TensorProduct[V_],\[Beta]_,\[Lambda]_]:=

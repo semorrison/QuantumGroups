@@ -35,8 +35,6 @@ BeginPackage[
       "QuantumGroups`WeylGroups`","QuantumGroups`Representations`","QuantumGroups`QuantumRoots`",
       "QuantumGroups`MatrixPresentations`"}];
 
-q=Global`q;
-
 
 
 RMatrix::usage="";
@@ -46,6 +44,8 @@ CheckRMatrixOppositeCommutes::usage="";
 
 
 Begin["`Private`"];
+
+q=Global`q;
 
 \!\(\(PartialRMatrix[\[CapitalGamma]_]\)[n_] := \(\(PartialRMatrix[\[CapitalGamma]]\)[n] = Module[{p = Length[QuantumPositiveRoots[\[CapitalGamma]]], iterators, r, d = CartanFactors[\[CapitalGamma]], i = LongestWordDecomposition[\[CapitalGamma]], l, t, rmatrix}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \(PartialRMatrix[\[CapitalGamma]]\)[n]]; \[IndentingNewLine]l = QuantumRootHeight[\[CapitalGamma]] /@ QuantumPositiveRoots[\[CapitalGamma]]; \[IndentingNewLine]iterators = Table[{t[r], 0, \(n - Sum[l\[LeftDoubleBracket]k\[RightDoubleBracket] t[k], {k, r + 1, p}]\)\/l\[LeftDoubleBracket]r\[RightDoubleBracket]}, {r, p, 2, \(-1\)}]~Join~{With[{t1 = \(n - Sum[t[k] l\[LeftDoubleBracket]k\[RightDoubleBracket], {k, 2, p}]\)\/l\[LeftDoubleBracket]1\[RightDoubleBracket]}, {t[1], t1, t1}]}; \[IndentingNewLine]rmatrix = Sum[If[p > 1, NonCommutativeMultiply, Times] @@ Table[\(\(q\^d\[LeftDoubleBracket]i\[LeftDoubleBracket]r\[RightDoubleBracket]\[RightDoubleBracket]\)\^\(\(1\/2\) t[r] \((t[r] + 1)\)\)\) \(\((1 - q\^\(\(-2\) d\[LeftDoubleBracket]i\[LeftDoubleBracket]r\[RightDoubleBracket]\[RightDoubleBracket]\))\)\^t[r]\/\(qFactorial[t[r]]\)[q\^d\[LeftDoubleBracket]i\[LeftDoubleBracket]r\[RightDoubleBracket]\[RightDoubleBracket]]\) \(X\_\(\[CapitalGamma], r\)\^+\)\^\(\(**\)\(t[r]\)\)\[CircleTimes]\(X\_\(\[CapitalGamma], r\)\^-\)\^\(\(**\)\(t[r]\)\), {r, 1, p}], Evaluate[Sequence @@ iterators]]; \[IndentingNewLine]DebugPrintHeld["\<Finished calculating \>", \(PartialRMatrix[\[CapitalGamma]]\)[n]]; \[IndentingNewLine]rmatrix\[IndentingNewLine]]\)\)
 
