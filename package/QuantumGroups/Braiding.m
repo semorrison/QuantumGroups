@@ -30,7 +30,7 @@ overwritten.
 
 
 BeginPackage[
-    "QuantumGroups`Braiding`",{"QuantumGroups`","QuantumGroups`Utilities`MatrixWrapper`",
+    "QuantumGroups`Braiding`",{"QuantumGroups`","WikiLink`","QuantumGroups`Utilities`MatrixWrapper`",
       "QuantumGroups`Utilities`Debugging`","QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`",
       "QuantumGroups`RepresentationTensors`"}];
 
@@ -41,6 +41,12 @@ BR=KnotTheory`BR;
 CheckBraidingData::usage="";
 
 BraidingData::usage="";
+
+PackageBraidingData::usage="PackageBraidingData[\[CapitalGamma]] writes currently known braiding data for the quantum group \[CapitalGamma] into a data directory in the QuantumGroups` package.";
+
+WriteBraidingDataToWiki::usage="WriteBraidingDataToWiki[V,k] tries to calculate braiding data for the k-fold tensor power of a representation V, and saves the results in the Knot Atlas.";
+
+LoadAllBraidingDataFromWiki::usage="LoadAllBraidingDataFromWiki[] retrieves all currently calculated braiding data from the Knot Atlas.";
 
 
 
@@ -133,6 +139,45 @@ CheckBraidingData[d:{{_,{{__?MatrixQ},{__?MatrixQ}}}..}]:=
 
 CheckBraidingData[\[CapitalGamma]_][V_,k_]:=
   CheckBraidingData[BraidingData[\[CapitalGamma]][V,k]]
+
+DefiniteValues[s_Symbol]:=
+  Cases[DownValues[s]~Join~SubValues[s],
+    rule:(pattern_/;FreeQ[pattern,Blank]\[RuleDelayed]_)\[RuleDelayed]rule]
+
+MatchingValues[s_Symbol,p_]:=
+  Cases[DownValues[s]~Join~SubValues[s],
+    rule:(pattern_/;
+              MatchQ[pattern/.HoldPattern\[Rule]Hold,
+                Hold[p]]\[RuleDelayed]_)\[RuleDelayed]rule]
+
+ConvertRuleToAssignmentString[a_HoldPattern\[RuleDelayed]b_]:=
+  StringTake[ToString[a,InputForm],{13,-2}]<>":="<>ToString[b,InputForm]<>"\n"
+
+SaveBraidingData[\[CapitalGamma]_]:=SaveBraidingData[\[CapitalGamma],_]
+SaveBraidingData[\[CapitalGamma]_,\[Lambda]:{__Integer}]:=
+  SaveBraidingData[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]]
+SaveBraidingData[\[CapitalGamma]_,V_]:=
+  StringJoin@@(ConvertRuleToAssignmentString/@
+        MatchingValues[BraidingData,BraidingData[\[CapitalGamma]][V,_]])
+
+\!\(PackageBraidingData[\[CapitalGamma]_\_n_] := Module[{package, directory, filename, contents}, \[IndentingNewLine]SetDirectory[QuantumGroupsDirectory[]]; \[IndentingNewLine]directory = ToFileName[{"\<QuantumGroups\>", "\<Data\>"}, ToString[\[CapitalGamma]] <> ToString[n]]; \[IndentingNewLine]If[Length[FileNames[directory]] == 0, \[IndentingNewLine]CreateDirectory[directory]]; \[IndentingNewLine]package = "\<QuantumGroups`Data`\>" <> ToString[\[CapitalGamma]] <> ToString[n] <> "\<`BraidingData`\>"; \[IndentingNewLine]filename = ToFileName[directory, "\<BraidingData.m\>"]; \[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, \[IndentingNewLine]Get[package]]; \[IndentingNewLine]contents = \[IndentingNewLine]"\<BeginPackage[\"\>" <> package <> "\<\",{\"QuantumGroups`\",\"QuantumGroups`Braiding`\"}]\n\>" <> \[IndentingNewLine]"\<Message[QuantumGroups::loading,\"\>" <> package <> "\<\"]\n\>" <> \[IndentingNewLine]"\<Begin[\"`Private`\"]\n\>" <> \[IndentingNewLine]"\<q=Global`q;\n\>" <> \[IndentingNewLine]SaveBraidingData[\[CapitalGamma]\_n] <> \[IndentingNewLine]"\<End[]\n\>" <> \[IndentingNewLine]"\<EndPackage[]\>"; \[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, \[IndentingNewLine]DeleteFile[filename]]; \[IndentingNewLine]WriteString[filename, contents]; \[IndentingNewLine]Close[filename]; \[IndentingNewLine]ResetDirectory[];\[IndentingNewLine]]\)
+
+
+
+listToString[x_List]:=listToString[x,","]
+
+listToString[x_List,s_String]:=
+  StringJoin[Drop[Flatten[Transpose[{ToString/@x,Table[s,{Length[x]}]}]],-1]]
+
+\!\(WriteBraidingDataToWiki[V_, k_] := WriteBraidingDataToWiki[V, k, 200*10\^6]\)
+
+\!\(WriteBraidingDataToWiki[\(Irrep[\[CapitalGamma]_\_n_]\)[\[Lambda]_], k_, M_] := MemoryConstrained[Module[{}, \[IndentingNewLine]If[\(CheckBraidingData[\[CapitalGamma]\_n]\)[\(Irrep[\[CapitalGamma]\_n]\)[\[Lambda]], k] =!= True, Print["\<The braiding data for \>", \(Irrep[\[CapitalGamma]\_n]\)[\[Lambda]]\^"\<\[CircleTimes]\>" <> ToString[k], "\< is invalid!\>"]; Return[$Failed]]; \[IndentingNewLine]PackageBraidingData[\[CapitalGamma]\_n]; \[IndentingNewLine]WikiSetPageText["\<Data:Braiding/\>" <> ToString[\[CapitalGamma]] <> "\<_\>" <> ToString[n] <> "\</\>" <> listToString[\[Lambda]] <> "\</\>" <> ToString[k], ToString[\(BraidingData[\[CapitalGamma]\_n]\)[\(Irrep[\[CapitalGamma]\_n]\)[\[Lambda]], k], InputForm]]\[IndentingNewLine]], \[IndentingNewLine]M] /. $Aborted \[RuleDelayed] \((Print["\<Aborted because the calculation exceeded the current memory limit: \>", M]; $Aborted)\)\)
+
+\!\(LoadBraidingDataFromWiki[\(Irrep[\[CapitalGamma]_\_n_]\)[\[Lambda]_], k_] := Module[{text}, \[IndentingNewLine]text = WikiGetPageText["\<Data:Braiding/\>" <> ToString[\[CapitalGamma]] <> "\<_\>" <> ToString[n] <> "\</\>" <> listToString[\[Lambda]] <> "\</\>" <> ToString[k]]; \[IndentingNewLine]If[text == "\<\>" \[Or] text \[Equal] $Failed, Return[$Failed]]; \[IndentingNewLine]\(BraidingData[\[CapitalGamma]\_n]\)[\(Irrep[\[CapitalGamma]\_n]\)[\[Lambda]], k] = ToExpression[text, InputForm]\[IndentingNewLine]]\)
+
+
+
+\!\(LoadAllBraidingDataFromWiki[] := Module[{targets, irrep, results = {}}, \[IndentingNewLine]targets = WikiAllPages["\<http://katlas.math.toronto.edu/w/index.php\>", "\<Braiding\>", "\<Data\>", 100]; \[IndentingNewLine]\(StringCases[#, "\<Data:Braiding/\>" ~~ \(\[CapitalGamma]_ ~~ \("\<_\>" | "\< \>" ~~ \(n : \((DigitCharacter .. )\) ~~ \("\</\>" ~~ \(\[Lambda] : \((\((DigitCharacter ..  ~~ "\<,\>")\) ...  ~~ DigitCharacter .. )\) ~~ \("\</\>" ~~ k : \((DigitCharacter .. )\)\)\)\)\)\)\) \[RuleDelayed] \[IndentingNewLine]\((irrep = \(Irrep[\(ToExpression[\[CapitalGamma]]\)\_\(ToExpression[n]\)]\)[ToExpression["\<{\>" <> \[Lambda] <> "\<}\>"]]; \[IndentingNewLine]Print["\<Loading braiding data for \>", irrep\^"\<\[CircleTimes]\>" <> k]; results = results~Join~{{irrep, ToExpression[k]}}; \[IndentingNewLine]LoadBraidingDataFromWiki[irrep, ToExpression[k]])\)\[IndentingNewLine]] &\)\  /@ \ targets; \[IndentingNewLine]results\[IndentingNewLine]]\)
 
 End[];
 

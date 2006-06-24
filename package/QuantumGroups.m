@@ -88,7 +88,8 @@ DeclarePackage[
       "DirectSumInclusionMap"}];
 
 DeclarePackage[
-    "QuantumGroups`Braiding`",{"BraidingData","CheckBraidingData","BR"}];
+    "QuantumGroups`Braiding`",{"BraidingData","CheckBraidingData","BR","LoadAllBraidingDataFromWiki",
+      "PackageBraidingData","WriteBraidingDataToWiki"}];
 
 Print[
   "Loading QuantumGroups` version 2.0\n",
