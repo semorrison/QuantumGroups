@@ -91,10 +91,6 @@ Cell[BoxData[
 "\<QuantumGroups`Utilities`Debugging`\>", "\<QuantumGroups`RootSystems`\>", "\
 \<QuantumGroups`Algebra`\>", "\<QuantumGroups`Representations`\>"}];\)\)], \
 "Input",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True]
 }, Open  ]],
 
@@ -141,6 +137,10 @@ Cell["Internals", "Subsection"],
 
 Cell[BoxData[
     \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -3883,34 +3883,34 @@ Cell[CellGroupData[{
 Cell[2354, 81, 38, 0, 38, "Subsection"],
 Cell[2395, 83, 45, 0, 33, "Text"],
 Cell[2443, 85, 438, 8, 110, "Input",
-  InitializationCell->True],
-Cell[2884, 95, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2999, 102, 36, 0, 38, "Subsection"],
-Cell[3038, 104, 100, 2, 30, "Input",
+Cell[2918, 98, 36, 0, 38, "Subsection"],
+Cell[2957, 100, 100, 2, 30, "Input",
   InitializationCell->True],
-Cell[3141, 108, 99, 2, 30, "Input",
+Cell[3060, 104, 99, 2, 30, "Input",
   InitializationCell->True],
-Cell[3243, 112, 83, 2, 30, "Input",
+Cell[3162, 108, 83, 2, 30, "Input",
   InitializationCell->True],
-Cell[3329, 116, 93, 2, 30, "Input",
+Cell[3248, 112, 93, 2, 30, "Input",
   InitializationCell->True],
-Cell[3425, 120, 102, 2, 30, "Input",
+Cell[3344, 116, 102, 2, 30, "Input",
   InitializationCell->True],
-Cell[3530, 124, 99, 2, 30, "Input",
+Cell[3449, 120, 99, 2, 30, "Input",
   InitializationCell->True],
-Cell[3632, 128, 85, 2, 30, "Input",
+Cell[3551, 124, 85, 2, 30, "Input",
   InitializationCell->True],
-Cell[3720, 132, 80, 2, 30, "Input",
+Cell[3639, 128, 80, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[3837, 139, 31, 0, 38, "Subsection"],
-Cell[3871, 141, 88, 2, 30, "Input",
+Cell[3756, 135, 31, 0, 38, "Subsection"],
+Cell[3790, 137, 88, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3881, 141, 78, 2, 30, "Input",
   InitializationCell->True],
 Cell[3962, 145, 255, 5, 30, "Input",
   InitializationCell->True],

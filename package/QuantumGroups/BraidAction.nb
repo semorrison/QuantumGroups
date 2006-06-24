@@ -88,10 +88,6 @@ Cell[BoxData[
 "\<QuantumGroups`Utilities`Debugging`\>", "\<QuantumGroups`RootSystems`\>", "\
 \<QuantumGroups`Algebra`\>", "\<QuantumGroups`Representations`\>", \
 "\<Utilities`Notation`\>"}];\)\)], "Input",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True]
 }, Open  ]],
 
@@ -126,6 +122,10 @@ Cell["Internals", "Subsection"],
 
 Cell[BoxData[
     \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -487,24 +487,24 @@ Cell[CellGroupData[{
 Cell[2323, 81, 38, 0, 38, "Subsection"],
 Cell[2364, 83, 45, 0, 33, "Text"],
 Cell[2412, 85, 313, 5, 70, "Input",
-  InitializationCell->True],
-Cell[2728, 92, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2843, 99, 36, 0, 38, "Subsection"],
-Cell[2882, 101, 67, 2, 30, "Input",
+Cell[2762, 95, 36, 0, 38, "Subsection"],
+Cell[2801, 97, 67, 2, 30, "Input",
   InitializationCell->True],
-Cell[2952, 105, 216, 4, 30, "Input",
+Cell[2871, 101, 216, 4, 30, "Input",
   InitializationCell->True],
-Cell[3171, 111, 499, 8, 90, "Input",
+Cell[3090, 107, 499, 8, 90, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[3707, 124, 31, 0, 38, "Subsection"],
-Cell[3741, 126, 88, 2, 30, "Input",
+Cell[3626, 120, 31, 0, 38, "Subsection"],
+Cell[3660, 122, 88, 2, 30, "Input",
+  InitializationCell->True],
+Cell[3751, 126, 78, 2, 30, "Input",
   InitializationCell->True],
 Cell[3832, 130, 374, 10, 31, "Input",
   InitializationCell->True],

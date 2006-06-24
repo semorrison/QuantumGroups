@@ -87,10 +87,6 @@ Cell[BoxData[
   InitializationCell->True],
 
 Cell[BoxData[
-    \(\(q = Global`q;\)\)], "Input",
-  InitializationCell->True],
-
-Cell[BoxData[
     \(\(WeightMultiplicities::usage = "\<\>";\)\)], "Input",
   InitializationCell->True],
 
@@ -120,6 +116,10 @@ Cell[BoxData[
 
 Cell[BoxData[
     \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(q = Global`q;\)\)], "Input",
   InitializationCell->True],
 
 Cell[CellGroupData[{
@@ -357,23 +357,23 @@ Cell[2448, 78, 61, 1, 73, "Section",
   InitializationCell->True],
 Cell[2512, 81, 281, 5, 70, "Input",
   InitializationCell->True],
-Cell[2796, 88, 78, 2, 30, "Input",
+Cell[2796, 88, 102, 2, 30, "Input",
   InitializationCell->True],
-Cell[2877, 92, 102, 2, 30, "Input",
+Cell[2901, 92, 100, 2, 30, "Input",
   InitializationCell->True],
-Cell[2982, 96, 100, 2, 30, "Input",
+Cell[3004, 96, 105, 2, 30, "Input",
   InitializationCell->True],
-Cell[3085, 100, 105, 2, 30, "Input",
+Cell[3112, 100, 89, 2, 30, "Input",
   InitializationCell->True],
-Cell[3193, 104, 89, 2, 30, "Input",
+Cell[3204, 104, 96, 2, 30, "Input",
   InitializationCell->True],
-Cell[3285, 108, 96, 2, 30, "Input",
+Cell[3303, 108, 97, 2, 30, "Input",
   InitializationCell->True],
-Cell[3384, 112, 97, 2, 30, "Input",
+Cell[3403, 112, 92, 2, 30, "Input",
   InitializationCell->True],
-Cell[3484, 116, 92, 2, 30, "Input",
+Cell[3498, 116, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[3579, 120, 88, 2, 30, "Input",
+Cell[3589, 120, 78, 2, 30, "Input",
   InitializationCell->True],
 
 Cell[CellGroupData[{
