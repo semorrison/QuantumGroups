@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     11535,        321]*)
-(*NotebookOutlinePosition[     14278,        393]*)
-(*  CellTagsIndexPosition[     14234,        389]*)
+(*NotebookOptionsPosition[     11860,        324]*)
+(*NotebookOutlinePosition[     14603,        396]*)
+(*  CellTagsIndexPosition[     14559,        392]*)
 (*WindowFrame->Normal*)
 
 
@@ -79,13 +79,19 @@ Cell[BoxData[
   InitializationCell->True],
 
 Cell[BoxData[
+    \(\(LittelmannPath::usage = \*"\"\<LittelmannPath[\[CapitalGamma]][{\!\(\
+\[Lambda]\_1\),\!\(\[Lambda]\_2\),\!\(\[Lambda]\_3\),...}] represents a \
+Littelmann path in the weight lattice for \[CapitalGamma] with segments \!\(\
+\[Lambda]\_1\),\!\(\[Lambda]\_2\),\!\(\[Lambda]\_3\)...\>\"";\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
     \(\(LittelmannPathDecomposeRepresentation::usage = \
 "\<LittelmannPathDecomposeRepresentation[\[CapitalGamma]][Irrep[\
 \[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]] gives \
 the direct sum decomposition of Irrep[\[CapitalGamma]][\[Lambda]]\
 \[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]] into irreducibles, using the \
 Littelmann path model.\>";\)\)], "Input",
-  CellLabel->"In[4]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -97,26 +103,42 @@ model.\>";\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
+    \(\(Begin["\<`Internals`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(LittelmannPathVertices; LittelmannPathInnerProducts; 
+    LowerLittelmannPath; LittelmannPathOneStepLowerings; 
+    LittelmannPathLowerings; ComposeLittelmannPaths; 
+    LittelmannPathDominantQ;\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(End[];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
     \(\(Begin["\<`Private`\>"];\)\)], "Input",
-  CellLabel->"In[5]:=",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(AppendTo[$ContextPath, \
+"\<QuantumGroups`LittelmannPaths`Internals`\>"];\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
     \(LittelmannPathAlgebra[\(LittelmannPath[\[CapitalGamma]_]\)[
           l_List]] := \[CapitalGamma]\)], "Input",
-  CellLabel->"In[5]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(LittelmannPathEndpoint[\(LittelmannPath[\[CapitalGamma]_]\)[l_List]] := 
       Plus @@ l\)], "Input",
-  CellLabel->"In[6]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(LittelmannPathVertices[\(LittelmannPath[\[CapitalGamma]_\_n_]\)[
           l_List]] := FoldList[Plus, ZeroVector[n], l]\)], "Input",
-  CellLabel->"In[7]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -132,31 +154,26 @@ Cell[BoxData[
                 CartanFactors[\[CapitalGamma]]] . \(SimpleRoots[\
 \[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]\))\)\)], "Input",\
 
-  CellLabel->"In[8]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(\(RedefineLittelmannPathInnerProducts[];\)\)], "Input",
-  CellLabel->"In[9]:=",
   InitializationCell->True],
 
 Cell[BoxData[{
     \(LowerLittelmannPath[0, i_] := 0\), "\[IndentingNewLine]", 
     \(LowerLittelmannPath[0, i_, m_] := 0\)}], "Input",
-  CellLabel->"In[12]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(LowerLittelmannPath[lp_, i_] := 
       LowerLittelmannPath[lp, i, 1]\)], "Input",
-  CellLabel->"In[14]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(VectorsPositivelyProportionalQ[v1_, v2_] := 
       Simplify[\((v1 . v2)\)\^2 - v1 . v1\ v2 . v2] \[Equal] 0 \[And] 
         v1 . v2 > 0\)], "Input",
-  CellLabel->"In[15]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -164,7 +181,6 @@ Cell[BoxData[
           l_List]] := \(LittelmannPath[\[CapitalGamma]]\)[\(Plus @@ # &\) /@ 
           Split[DeleteCases[l, ZeroVector[Rank[\[CapitalGamma]]]], 
             VectorsPositivelyProportionalQ]]\)], "Input",
-  CellLabel->"In[16]:=",
   InitializationCell->True],
 
 Cell[BoxData[{
@@ -172,7 +188,6 @@ Cell[BoxData[{
     \(LowerLittelmannPath[lp_, d_List] := 
       LowerLittelmannPath[LowerLittelmannPath[lp, Last[d]], 
         Drop[d, \(-1\)]]\)}], "Input",
-  CellLabel->"In[17]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -181,7 +196,6 @@ Cell[BoxData[
 \[CapitalGamma]]\)\[LeftDoubleBracket]
             i\[RightDoubleBracket], \(SimpleRoots[\[CapitalGamma]]\)\
 \[LeftDoubleBracket]i\[RightDoubleBracket]]\)], "Input",
-  CellLabel->"In[37]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -218,7 +232,6 @@ ip\[LeftDoubleBracket]lm\[RightDoubleBracket]\)\/\[Alpha])\) < m,
               Join~{v1, v2}~Join~
               Drop[lp\[LeftDoubleBracket]1\[RightDoubleBracket], 
                 lm]]]\[IndentingNewLine]]\)], "Input",
-  CellLabel->"In[7]:=",
   InitializationCell->True],
 
 Cell[BoxData[{
@@ -231,7 +244,6 @@ Cell[BoxData[{
           DeleteCases[
             Flatten[Table[\(LowerLittelmannPath[#, i] &\) /@ paths, {i, 1, 
                   n}]], 0]]\[IndentingNewLine]]\)}], "Input",
-  CellLabel->"In[22]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -243,25 +255,21 @@ Cell[BoxData[
                 paths]]]; \
 \[IndentingNewLine]RedefineLittelmannPathInnerProducts[]; \
 \[IndentingNewLine]result\[IndentingNewLine]]\)], "Input",
-  CellLabel->"In[24]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(LittelmannPathLowerings[lp_] := 
       LittelmannPathLowerings[{lp}]\)], "Input",
-  CellLabel->"In[25]:=",
   InitializationCell->True],
 
 Cell[BoxData[
-    \(Clear[LittelmannPathLowerings]\)], "Input",
-  CellLabel->"In[88]:="],
+    \(Clear[LittelmannPathLowerings]\)], "Input"],
 
 Cell[BoxData[
     \(LittelmannPathLowerings[\(Irrep[\[CapitalGamma]_]\)[\[Lambda]_]] := \
 \(LittelmannPathLowerings[\(Irrep[\[CapitalGamma]]\)[\[Lambda]]] = 
         LittelmannPathLowerings[\(LittelmannPath[\[CapitalGamma]]\)[{\[Lambda]\
 }]]\)\)], "Input",
-  CellLabel->"In[89]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -272,7 +280,6 @@ Cell[BoxData[
             LittelmannPathEndpoint /@ 
               LittelmannPathLowerings[\(Irrep[\[CapitalGamma]]\)[\[Lambda]]]]]\
 \)], "Input",
-  CellLabel->"In[27]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -280,14 +287,12 @@ Cell[BoxData[
           l1_], \(LittelmannPath[\[CapitalGamma]_]\)[
           l2_]] := \(LittelmannPath[\[CapitalGamma]]\)[l1~Join~l2]\)], "Input",\
 
-  CellLabel->"In[28]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(LittelmannPathDominantQ[lp_] := 
       And @@ \((PositiveWeightQ[LittelmannPathAlgebra[lp]] /@ 
             LittelmannPathVertices[lp])\)\)], "Input",
-  CellLabel->"In[29]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -304,12 +309,10 @@ _]] := Module[{lp,
 \[CapitalGamma]]\)[
                   LittelmannPathEndpoint[
                     lp]]]]\[IndentingNewLine]]\)], "Input",
-  CellLabel->"In[30]:=",
   InitializationCell->True],
 
 Cell[BoxData[
     \(\(End[];\)\)], "Input",
-  CellLabel->"In[22]:=",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -394,69 +397,79 @@ CellTagsIndex->{}
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[1776, 53, 42, 0, 33, "Subtitle"],
-Cell[1821, 55, 101, 3, 50, "Text"],
+Cell[1776, 53, 42, 0, 51, "Subtitle"],
+Cell[1821, 55, 101, 3, 52, "Text"],
 
 Cell[CellGroupData[{
-Cell[1947, 62, 31, 0, 85, "Section"],
-Cell[1981, 64, 143, 3, 25, "Text"]
+Cell[1947, 62, 31, 0, 73, "Section"],
+Cell[1981, 64, 143, 3, 33, "Text"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[2161, 72, 61, 1, 85, "Section",
+Cell[2161, 72, 61, 1, 73, "Section",
   InitializationCell->True],
 Cell[2225, 75, 176, 3, 30, "Input",
   InitializationCell->True],
-Cell[2404, 80, 452, 8, 90, "Input",
+Cell[2404, 80, 348, 5, 70, "Input",
   InitializationCell->True],
-Cell[2859, 90, 355, 6, 70, "Input",
+Cell[2755, 87, 428, 7, 90, "Input",
   InitializationCell->True],
-Cell[3217, 98, 112, 3, 30, "Input",
+Cell[3186, 96, 355, 6, 70, "Input",
   InitializationCell->True],
-Cell[3332, 103, 182, 4, 30, "Input",
+Cell[3544, 104, 90, 2, 30, "Input",
   InitializationCell->True],
-Cell[3517, 109, 173, 4, 30, "Input",
+Cell[3637, 108, 255, 5, 70, "Input",
   InitializationCell->True],
-Cell[3693, 115, 204, 4, 34, "Input",
+Cell[3895, 115, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[3900, 121, 686, 14, 110, "Input",
+Cell[3969, 119, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[4589, 137, 127, 3, 30, "Input",
+Cell[4060, 123, 138, 3, 30, "Input",
   InitializationCell->True],
-Cell[4719, 142, 188, 4, 50, "Input",
+Cell[4201, 128, 158, 3, 30, "Input",
   InitializationCell->True],
-Cell[4910, 148, 154, 4, 30, "Input",
+Cell[4362, 133, 149, 3, 30, "Input",
   InitializationCell->True],
-Cell[5067, 154, 221, 5, 31, "Input",
+Cell[4514, 138, 180, 3, 34, "Input",
   InitializationCell->True],
-Cell[5291, 161, 337, 6, 70, "Input",
+Cell[4697, 143, 662, 13, 110, "Input",
   InitializationCell->True],
-Cell[5631, 169, 278, 6, 50, "Input",
+Cell[5362, 158, 103, 2, 30, "Input",
   InitializationCell->True],
-Cell[5912, 177, 351, 7, 42, "Input",
+Cell[5468, 162, 163, 3, 50, "Input",
   InitializationCell->True],
-Cell[6266, 186, 1860, 35, 368, "Input",
+Cell[5634, 167, 129, 3, 30, "Input",
   InitializationCell->True],
-Cell[8129, 223, 522, 11, 110, "Input",
+Cell[5766, 172, 196, 4, 31, "Input",
   InitializationCell->True],
-Cell[8654, 236, 394, 10, 130, "Input",
+Cell[5965, 178, 312, 5, 70, "Input",
   InitializationCell->True],
-Cell[9051, 248, 154, 4, 30, "Input",
+Cell[6280, 185, 253, 5, 70, "Input",
   InitializationCell->True],
-Cell[9208, 254, 88, 2, 30, "Input"],
-Cell[9299, 258, 309, 6, 50, "Input",
+Cell[6536, 192, 326, 6, 42, "Input",
   InitializationCell->True],
-Cell[9611, 266, 421, 9, 70, "Input",
+Cell[6865, 200, 1836, 34, 389, "Input",
   InitializationCell->True],
-Cell[10035, 277, 269, 6, 50, "Input",
+Cell[8704, 236, 497, 10, 110, "Input",
   InitializationCell->True],
-Cell[10307, 285, 223, 5, 50, "Input",
+Cell[9204, 248, 369, 9, 130, "Input",
   InitializationCell->True],
-Cell[10533, 292, 769, 15, 170, "Input",
+Cell[9576, 259, 129, 3, 30, "Input",
   InitializationCell->True],
-Cell[11305, 309, 96, 3, 30, "Input",
+Cell[9708, 264, 63, 1, 30, "Input"],
+Cell[9774, 267, 284, 5, 50, "Input",
   InitializationCell->True],
-Cell[11404, 314, 103, 3, 30, "Input",
+Cell[10061, 274, 396, 8, 70, "Input",
+  InitializationCell->True],
+Cell[10460, 284, 244, 5, 50, "Input",
+  InitializationCell->True],
+Cell[10707, 291, 198, 4, 50, "Input",
+  InitializationCell->True],
+Cell[10908, 297, 744, 14, 170, "Input",
+  InitializationCell->True],
+Cell[11655, 313, 71, 2, 30, "Input",
+  InitializationCell->True],
+Cell[11729, 317, 103, 3, 30, "Input",
   InitializationCell->True]
 }, Open  ]]
 }, Open  ]]

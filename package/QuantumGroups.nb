@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     13385,        394]*)
-(*NotebookOutlinePosition[     49500,       1550]*)
-(*  CellTagsIndexPosition[     49428,       1544]*)
+(*NotebookOptionsPosition[     13407,        394]*)
+(*NotebookOutlinePosition[     49522,       1550]*)
+(*  CellTagsIndexPosition[     49450,       1544]*)
 (*WindowFrame->Normal*)
 
 
@@ -114,7 +114,7 @@ Cell[BoxData[
 
 Cell[BoxData[
     \(\(DeclarePackage["\<QuantumGroups`LittelmannPaths`\>", \
-{"\<LittelmannPathDecomposeRepresentation\>", \
+{"\<LittelmannPath\>", "\<LittelmannPathDecomposeRepresentation\>", \
 "\<LittelmannPathWeightMultiplicities\>"}];\)\)], "Input",
   CellLabel->"In[39]:=",
   InitializationCell->True],
@@ -1535,7 +1535,7 @@ you save this file from within Mathematica.
 (*CellTagsOutline
 CellTagsIndex->{
   "Union"->{
-    Cell[11968, 340, 191, 5, 30, "Input",
+    Cell[11990, 340, 191, 5, 30, "Input",
       InitializationCell->True,
       CellTags->"Union"]}
   }
@@ -1543,7 +1543,7 @@ CellTagsIndex->{
 
 (*CellTagsIndex
 CellTagsIndex->{
-  {"Union", 49302, 1536}
+  {"Union", 49324, 1536}
   }
 *)
 
@@ -1571,96 +1571,96 @@ Cell[3724, 102, 197, 4, 50, "Input",
   InitializationCell->True],
 Cell[3924, 108, 227, 4, 70, "Input",
   InitializationCell->True],
-Cell[4154, 114, 236, 5, 70, "Input",
+Cell[4154, 114, 258, 5, 70, "Input",
   InitializationCell->True],
-Cell[4393, 121, 212, 4, 50, "Input",
+Cell[4415, 121, 212, 4, 50, "Input",
   InitializationCell->True],
-Cell[4608, 127, 314, 6, 70, "Input",
+Cell[4630, 127, 314, 6, 70, "Input",
   InitializationCell->True],
-Cell[4925, 135, 332, 6, 90, "Input",
+Cell[4947, 135, 332, 6, 90, "Input",
   InitializationCell->True],
-Cell[5260, 143, 162, 3, 50, "Input",
+Cell[5282, 143, 162, 3, 50, "Input",
   InitializationCell->True],
-Cell[5425, 148, 165, 3, 50, "Input",
+Cell[5447, 148, 165, 3, 50, "Input",
   InitializationCell->True],
-Cell[5593, 153, 539, 8, 150, "Input",
+Cell[5615, 153, 539, 8, 150, "Input",
   InitializationCell->True],
-Cell[6135, 163, 265, 4, 70, "Input",
+Cell[6157, 163, 265, 4, 70, "Input",
   InitializationCell->True],
-Cell[6403, 169, 243, 5, 90, "Input",
+Cell[6425, 169, 243, 5, 90, "Input",
   InitializationCell->True],
-Cell[6649, 176, 125, 3, 30, "Input",
+Cell[6671, 176, 125, 3, 30, "Input",
   InitializationCell->True],
-Cell[6777, 181, 213, 4, 70, "Input",
+Cell[6799, 181, 213, 4, 70, "Input",
   InitializationCell->True],
-Cell[6993, 187, 112, 3, 30, "Input",
+Cell[7015, 187, 112, 3, 30, "Input",
   InitializationCell->True],
-Cell[7108, 192, 476, 7, 110, "Input",
+Cell[7130, 192, 476, 7, 110, "Input",
   InitializationCell->True],
-Cell[7587, 201, 132, 3, 30, "Input",
+Cell[7609, 201, 132, 3, 30, "Input",
   InitializationCell->True],
-Cell[7722, 206, 131, 3, 30, "Input",
+Cell[7744, 206, 131, 3, 30, "Input",
   InitializationCell->True],
-Cell[7856, 211, 154, 4, 30, "Input",
+Cell[7878, 211, 154, 4, 30, "Input",
   InitializationCell->True],
-Cell[8013, 217, 138, 3, 30, "Input",
+Cell[8035, 217, 138, 3, 30, "Input",
   InitializationCell->True],
-Cell[8154, 222, 101, 2, 30, "Input",
+Cell[8176, 222, 101, 2, 30, "Input",
   InitializationCell->True],
-Cell[8258, 226, 135, 3, 30, "Input",
+Cell[8280, 226, 135, 3, 30, "Input",
   InitializationCell->True],
-Cell[8396, 231, 239, 5, 50, "Input",
+Cell[8418, 231, 239, 5, 50, "Input",
   InitializationCell->True],
-Cell[8638, 238, 130, 3, 30, "Input",
+Cell[8660, 238, 130, 3, 30, "Input",
   InitializationCell->True],
-Cell[8771, 243, 126, 3, 30, "Input",
+Cell[8793, 243, 126, 3, 30, "Input",
   InitializationCell->True],
-Cell[8900, 248, 473, 8, 150, "Input",
+Cell[8922, 248, 473, 8, 150, "Input",
   InitializationCell->True],
-Cell[9376, 258, 223, 5, 70, "Input",
+Cell[9398, 258, 223, 5, 70, "Input",
   InitializationCell->True],
-Cell[9602, 265, 172, 4, 30, "Input",
+Cell[9624, 265, 172, 4, 30, "Input",
   InitializationCell->True],
-Cell[9777, 271, 261, 5, 90, "Input",
+Cell[9799, 271, 261, 5, 90, "Input",
   InitializationCell->True],
-Cell[10041, 278, 168, 4, 30, "Input",
+Cell[10063, 278, 168, 4, 30, "Input",
   InitializationCell->True],
-Cell[10212, 284, 174, 4, 50, "Input",
+Cell[10234, 284, 174, 4, 50, "Input",
   InitializationCell->True],
-Cell[10389, 290, 165, 4, 30, "Input",
+Cell[10411, 290, 165, 4, 30, "Input",
   InitializationCell->True],
-Cell[10557, 296, 113, 3, 30, "Input",
+Cell[10579, 296, 113, 3, 30, "Input",
   InitializationCell->True],
-Cell[10673, 301, 341, 7, 110, "Input",
+Cell[10695, 301, 341, 7, 110, "Input",
   InitializationCell->True],
-Cell[11017, 310, 260, 4, 70, "Input",
+Cell[11039, 310, 260, 4, 70, "Input",
   InitializationCell->True],
-Cell[11280, 316, 160, 4, 31, "Input",
+Cell[11302, 316, 160, 4, 31, "Input",
   InitializationCell->True],
-Cell[11443, 322, 179, 4, 30, "Input",
+Cell[11465, 322, 179, 4, 30, "Input",
   InitializationCell->True],
-Cell[11625, 328, 197, 5, 44, "Input",
+Cell[11647, 328, 197, 5, 44, "Input",
   InitializationCell->True],
-Cell[11825, 335, 140, 3, 30, "Input",
+Cell[11847, 335, 140, 3, 30, "Input",
   InitializationCell->True],
-Cell[11968, 340, 191, 5, 30, "Input",
+Cell[11990, 340, 191, 5, 30, "Input",
   InitializationCell->True,
   CellTags->"Union"],
-Cell[12162, 347, 131, 3, 30, "Input",
+Cell[12184, 347, 131, 3, 30, "Input",
   InitializationCell->True],
-Cell[12296, 352, 117, 3, 30, "Input",
+Cell[12318, 352, 117, 3, 30, "Input",
   InitializationCell->True],
-Cell[12416, 357, 251, 5, 30, "Input",
+Cell[12438, 357, 251, 5, 30, "Input",
   InitializationCell->True],
-Cell[12670, 364, 128, 3, 30, "Input",
+Cell[12692, 364, 128, 3, 30, "Input",
   InitializationCell->True],
-Cell[12801, 369, 192, 5, 30, "Input",
+Cell[12823, 369, 192, 5, 30, "Input",
   InitializationCell->True],
-Cell[12996, 376, 156, 4, 30, "Input",
+Cell[13018, 376, 156, 4, 30, "Input",
   InitializationCell->True],
-Cell[13155, 382, 96, 3, 30, "Input",
+Cell[13177, 382, 96, 3, 30, "Input",
   InitializationCell->True],
-Cell[13254, 387, 103, 3, 30, "Input",
+Cell[13276, 387, 103, 3, 30, "Input",
   InitializationCell->True]
 }, Open  ]]
 }, Open  ]]

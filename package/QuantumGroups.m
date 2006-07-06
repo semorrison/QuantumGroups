@@ -57,7 +57,7 @@ DeclarePackage[
       "QuantumNegativeRoots","QuantumRootHeight"}];
 
 DeclarePackage[
-    "QuantumGroups`LittelmannPaths`",{"LittelmannPathDecomposeRepresentation",
+    "QuantumGroups`LittelmannPaths`",{"LittelmannPath","LittelmannPathDecomposeRepresentation",
       "LittelmannPathWeightMultiplicities"}];
 
 DeclarePackage[

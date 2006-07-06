@@ -29,11 +29,23 @@ BeginPackage[
     "QuantumGroups`LittelmannPaths`",{"QuantumGroups`",
       "QuantumGroups`RootSystems`"}];
 
+\!\(\(LittelmannPath::usage = \*"\"\<LittelmannPath[\[CapitalGamma]][{\!\(\[Lambda]\_1\),\!\(\[Lambda]\_2\),\!\(\[Lambda]\_3\),...}] represents a Littelmann path in the weight lattice for \[CapitalGamma] with segments \!\(\[Lambda]\_1\),\!\(\[Lambda]\_2\),\!\(\[Lambda]\_3\)...\>\"";\)\)
+
 LittelmannPathDecomposeRepresentation::usage="LittelmannPathDecomposeRepresentation[\[CapitalGamma]][Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]] gives the direct sum decomposition of Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]] into irreducibles, using the Littelmann path model.";
 
 LittelmannPathWeightMultiplicities::usage="LittelmannPathWeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]] gives a list of pairs; each pair consists of a weight and its multiplicity in Irrep[\[CapitalGamma]][\[Lambda]], using the Littelmann path model.";
 
+Begin["`Internals`"];
+
+LittelmannPathVertices;LittelmannPathInnerProducts;LowerLittelmannPath;\
+LittelmannPathOneStepLowerings;LittelmannPathLowerings;ComposeLittelmannPaths;\
+LittelmannPathDominantQ;
+
+End[];
+
 Begin["`Private`"];
+
+AppendTo[$ContextPath,"QuantumGroups`LittelmannPaths`Internals`"];
 
 LittelmannPathAlgebra[
     LittelmannPath[\[CapitalGamma]_][l_List]]:=\[CapitalGamma]
