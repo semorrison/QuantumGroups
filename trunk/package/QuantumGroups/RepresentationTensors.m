@@ -355,10 +355,10 @@ HighWeightVectors[\[CapitalGamma]_][(U_\[CircleTimes]V_)\[CircleTimes]W_,\
 DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
   RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
     DecomposeRepresentation[\[CapitalGamma]][
-      V\[CircleTimes]W],\[Beta],{#,
-          QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition[\
-\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#]}&/@
-      Weights[\[CapitalGamma],V\[CircleTimes]W]]
+      V\[CircleTimes]W],\[Beta],{#,(Print["... weight ",#];
+            QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition[\
+\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
+      Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]]
 
 DecompositionMap[\[CapitalGamma]_,(U_\[CircleTimes]V_)\[CircleTimes]W_,\[Beta]\
 _]:=With[{Z=DecomposeRepresentation[\[CapitalGamma]][U\[CircleTimes]V]},
