@@ -31,7 +31,8 @@ overwritten.
 
 BeginPackage[
     "QuantumGroups`Braiding`",{"QuantumGroups`","WikiLink`","QuantumGroups`Utilities`MatrixWrapper`",
-      "QuantumGroups`Utilities`Debugging`","QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`",
+      "QuantumGroups`Utilities`Debugging`","QuantumGroups`Utilities`DataPackage`",
+      "QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`",
       "QuantumGroups`RepresentationTensors`"}];
 
 BR=KnotTheory`BR;
@@ -140,27 +141,13 @@ CheckBraidingData[d:{{_,{{__?MatrixQ},{__?MatrixQ}}}..}]:=
 CheckBraidingData[\[CapitalGamma]_][V_,k_]:=
   CheckBraidingData[BraidingData[\[CapitalGamma]][V,k]]
 
-DefiniteValues[s_Symbol]:=
-  Cases[DownValues[s]~Join~SubValues[s],
-    rule:(pattern_/;FreeQ[pattern,Blank]\[RuleDelayed]_)\[RuleDelayed]rule]
+\!\(PackageBraidingData[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]BraidingData, \(BraidingData[\[CapitalGamma]\_n]\)[_, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<BraidingData\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Braiding`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
-MatchingValues[s_Symbol,p_]:=
-  Cases[DownValues[s]~Join~SubValues[s],
-    rule:(pattern_/;
-              MatchQ[pattern/.HoldPattern\[Rule]Hold,
-                Hold[p]]\[RuleDelayed]_)\[RuleDelayed]rule]
 
-ConvertRuleToAssignmentString[a_HoldPattern\[RuleDelayed]b_]:=
-  StringTake[ToString[a,InputForm],{13,-2}]<>":="<>ToString[b,InputForm]<>"\n"
 
-SaveBraidingData[\[CapitalGamma]_]:=SaveBraidingData[\[CapitalGamma],_]
-SaveBraidingData[\[CapitalGamma]_,\[Lambda]:{__Integer}]:=
-  SaveBraidingData[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]]
-SaveBraidingData[\[CapitalGamma]_,V_]:=
-  StringJoin@@(ConvertRuleToAssignmentString/@
-        MatchingValues[BraidingData,BraidingData[\[CapitalGamma]][V,_]])
 
-\!\(PackageBraidingData[\[CapitalGamma]_\_n_] := Module[{package, directory, filename, contents}, \[IndentingNewLine]SetDirectory[QuantumGroupsDirectory[]]; \[IndentingNewLine]directory = ToFileName[{"\<QuantumGroups\>", "\<Data\>"}, ToString[\[CapitalGamma]] <> ToString[n]]; \[IndentingNewLine]If[Length[FileNames[directory]] == 0, \[IndentingNewLine]CreateDirectory[directory]]; \[IndentingNewLine]package = "\<QuantumGroups`Data`\>" <> ToString[\[CapitalGamma]] <> ToString[n] <> "\<`BraidingData`\>"; \[IndentingNewLine]filename = ToFileName[directory, "\<BraidingData.m\>"]; \[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, \[IndentingNewLine]Get[package]]; \[IndentingNewLine]contents = \[IndentingNewLine]"\<BeginPackage[\"\>" <> package <> "\<\",{\"QuantumGroups`\",\"QuantumGroups`Braiding`\"}]\n\>" <> \[IndentingNewLine]"\<Message[QuantumGroups::loading,\"\>" <> package <> "\<\"]\n\>" <> \[IndentingNewLine]"\<Begin[\"`Private`\"]\n\>" <> \[IndentingNewLine]"\<q=Global`q;\n\>" <> \[IndentingNewLine]SaveBraidingData[\[CapitalGamma]\_n] <> \[IndentingNewLine]"\<End[]\n\>" <> \[IndentingNewLine]"\<EndPackage[]\>"; \[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, \[IndentingNewLine]DeleteFile[filename]]; \[IndentingNewLine]WriteString[filename, contents]; \[IndentingNewLine]Close[filename]; \[IndentingNewLine]ResetDirectory[];\[IndentingNewLine]]\)
+
+
 
 
 
