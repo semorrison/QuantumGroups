@@ -170,7 +170,7 @@ InterpolationInverseRequests={};
 
 recordInterpolationInverseRequest[mat_]:=
   If[Length[mat]\[GreaterEqual]InterpolationInverseLargestRequestSize,
-    Print["New largest matrix! Size ",Length[mat]];
+    DebugPrint["New largest matrix! Size ",Length[mat]];
     AppendTo[InterpolationInverseRequests,mat];
     InterpolationInverseLargestRequestSize=Length[mat]]
 

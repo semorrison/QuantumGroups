@@ -1,0 +1,273 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      9522,        217]*)
+(*NotebookOutlinePosition[     10200,        240]*)
+(*  CellTagsIndexPosition[     10156,        236]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(BeginPackage["\<QuantumGroups`Utilities`DataPackage`\>", \
+{"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`Debugging`\>"}];\)\)], \
+"Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ValuesAsString; PackageData;\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(Begin["\<`Private`\>"];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(DefiniteValues[s_Symbol] := 
+      Cases[DownValues[s]~Join~SubValues[s], 
+        rule : \((pattern_ /; 
+                  FreeQ[pattern, Blank] \[RuleDelayed] _)\) \[RuleDelayed] 
+          rule]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(MatchingValues[s_Symbol, p_] := 
+      Cases[DownValues[s]~Join~SubValues[s], 
+        rule : \((pattern_ /; 
+                  MatchQ[pattern /. HoldPattern \[Rule] Hold, 
+                    Hold[p]] \[RuleDelayed] _)\) \[RuleDelayed] 
+          rule]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ConvertRuleToAssignmentString[a_HoldPattern \[RuleDelayed] b_] := 
+      StringTake[
+          ToString[a, InputForm, 
+            CharacterEncoding \[Rule] "\<PrintableASCII\>"], {13, \(-2\)}] <> \
+"\<:=\>" <> 
+        ToString[b, InputForm, 
+          CharacterEncoding \[Rule] "\<PrintableASCII\>"] <> "\<\n\>"\)], \
+"Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(ValuesAsString[s_Symbol, p_] := 
+      StringJoin @@ \((ConvertRuleToAssignmentString /@ 
+            MatchingValues[s, p])\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(\(Options[
+          PackageData] = {"\<Needs\>" \[Rule] {}, "\<ExtraPackageCode\>" \
+\[Rule] "\<\>", "\<ExtraPrivateCode\>" \[Rule] "\<\>", \
+"\<LoadPreexistingPackage\>" \[Rule] 
+            True, "\<Message\>" \[Rule] "\<QuantumGroups::loading\>", \
+"\<UseGzip\>" \[Rule] False};\)\), "\[IndentingNewLine]", 
+    \(PackageData[s_Symbol, p_, packagePath : {__String}, opts___] := 
+      PackageData[{{s, p}}, QuantumGroupsDirectory[], packagePath, 
+        opts]\), "\n", 
+    \(PackageData[s_Symbol, p_, baseDirectory_String, 
+        packagePath : {__String}, opts___] := 
+      PackageData[{{s, p}}, baseDirectory, packagePath, opts]\), "\n", 
+    \(PackageData[patterns : {{_Symbol, _} .. }, packagePath : {__String}, 
+        opts___] := 
+      PackageData[patterns, QuantumGroupsDirectory[], packagePath, 
+        opts]\), "\[IndentingNewLine]", 
+    \(PackageData[patterns : {{_Symbol, _} .. }, baseDirectory_String, 
+        packagePath : {__String}, opts___] := 
+      Module[{fullPackagePath, package, directory, filename, contents, needs, 
+          extraPackageCode, extraPrivateCode, loadPreexistingPackage, 
+          message, useGzip}, 
+        needs = \("\<Needs\>" /. {opts}\) /. 
+            Options[PackageData]; \[IndentingNewLine]extraPackageCode = \
+\("\<ExtraPackageCode\>" /. {opts}\) /. 
+            Options[PackageData]; \[IndentingNewLine]extraPrivateCode = \
+\("\<ExtraPrivateCode\>" /. {opts}\) /. 
+            Options[PackageData]; \[IndentingNewLine]loadPreexistingPackage = \
+\("\<LoadPreexistingPackage\>" /. {opts}\) /. 
+            Options[PackageData]; \[IndentingNewLine]message = \
+\("\<Message\>" /. {opts}\) /. 
+            Options[PackageData]; \[IndentingNewLine]useGzip = \
+\("\<UseGzip\>" /. {opts}\) /. 
+            Options[PackageData]; \[IndentingNewLine]SetDirectory[
+          baseDirectory]; \[IndentingNewLine]fullPackagePath = \
+{"\<QuantumGroups\>", "\<Data\>"}~Join~
+            packagePath; \[IndentingNewLine]directory = 
+          ToFileName[Most[fullPackagePath]]; \[IndentingNewLine]If[
+          Length[FileNames[
+                fullPackagePath\[LeftDoubleBracket]\(-2\)\[RightDoubleBracket]\
+, ToFileName[Drop[fullPackagePath, \(-2\)]]]] \[Equal] 0, 
+          CreateDirectory[directory]]; \[IndentingNewLine]package = 
+          StringJoin @@ \((Flatten[
+                Transpose[{fullPackagePath, 
+                    Table["\<`\>", {Length[fullPackagePath]}]}], 
+                1])\); \[IndentingNewLine]filename = 
+          ToFileName[Most[fullPackagePath], 
+            Last[fullPackagePath] <> "\<.m\>"]; \[IndentingNewLine]If[
+          loadPreexistingPackage \[And] \(! MemberQ[$ContextPath, 
+                package]\), \[IndentingNewLine]If[
+            useGzip \[And] Length[FileNames[filename]] \[Equal] 0 \[And] 
+              Length[FileNames[filename <> "\<.gz\>"]] \[NotEqual] 
+                0, \[IndentingNewLine]SetDirectory[
+              directory]; \[IndentingNewLine]Run["\<gzip -d \>" <> 
+                Last[fullPackagePath] <> "\<.m.gz\>"]; \
+\[IndentingNewLine]ResetDirectory[]\[IndentingNewLine]]; \
+\[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, 
+            Get[package]]\[IndentingNewLine]]; \[IndentingNewLine]contents = \
+"\<BeginPackage[\"\>" <> package <> "\<\"\>" <> 
+            If[MatchQ[needs, {__String}], "\<, \>" <> 
+                ToString[needs, 
+                  InputForm], "\<\>"] <> "\<]\>" <> "\<\n\>"\
+\[IndentingNewLine] <> "\<Message[\>" <> message <> "\<,\"\>" <> 
+            package <> "\<\"]\>" <> "\<\n\>"\[IndentingNewLine] <> 
+            extraPackageCode <> "\<\n\>"\[IndentingNewLine] <> \
+"\<Begin[\"`Private`\"]\>" <> "\<\n\>"\[IndentingNewLine] <> 
+            extraPrivateCode <> "\<\n\>"\[IndentingNewLine] <> 
+            StringJoin @@ \((\(ValuesAsString @@ # &\) /@ 
+                  patterns)\) <> "\<\n\>"\[IndentingNewLine] <> "\<End[]\n\>"\
+\[IndentingNewLine] <> "\<EndPackage[]\>"; \[IndentingNewLine]If[
+          Length[FileNames[filename]] \[NotEqual] 0, 
+          DeleteFile[filename]]; \[IndentingNewLine]If[
+          useGzip \[And] 
+            Length[FileNames[filename <> "\<.gz\>"]] \[NotEqual] 0, 
+          DeleteFile[filename <> "\<.gz\>"]]; \[IndentingNewLine]WriteString[
+          filename, contents]; \[IndentingNewLine]Close[
+          filename]; \[IndentingNewLine]If[useGzip, SetDirectory[directory]; 
+          Run["\<gzip \>" <> Last[fullPackagePath] <> "\<.m\>"]; 
+          ResetDirectory[]]; \[IndentingNewLine]ResetDirectory[];]\)}], \
+"Input",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(\(Unprotect[Get];\)\), "\[IndentingNewLine]", 
+    \(\(useGetGzipHack = True;\)\), "\[IndentingNewLine]", 
+    \(Get[
+        package_String /; \((useGetGzipHack \[And] 
+              StringMatchQ[package, "\<QuantumGroups`Data`\>" ~~ __])\)] := 
+      Module[{packageFragments, directory, filename, 
+          gzipExists = False}, \[IndentingNewLine]packageFragments = 
+          StringSplit[package, "\<`\>"]; \[IndentingNewLine]SetDirectory[
+          QuantumGroupsDirectory[]]; \[IndentingNewLine]directory = 
+          ToFileName[Most[packageFragments]]; \[IndentingNewLine]filename = 
+          Last[packageFragments] <> "\<.m\>"; \[IndentingNewLine]If[
+          Length[ToFileNames[filename <> "\<.gz\>"]] \[NotEqual] 
+            0, \[IndentingNewLine]gzipExists = 
+            True; \[IndentingNewLine]SetDirectory[
+            directory]; \[IndentingNewLine]Run["\<gzip -d \>" <> 
+              filename <> "\<.gz\>"]; \[IndentingNewLine]ResetDirectory[]\
+\[IndentingNewLine]]; \[IndentingNewLine]useGetGzipHack = 
+          False; \[IndentingNewLine]Get[
+          package]; \[IndentingNewLine]useGetGzipHack = 
+          True; \[IndentingNewLine]If[
+          gzipExists, \[IndentingNewLine]SetDirectory[
+            directory]; \[IndentingNewLine]Run["\<gzip \>" <> 
+              filename]; \[IndentingNewLine]ResetDirectory[];\
+\[IndentingNewLine]]\[IndentingNewLine]]\), "\[IndentingNewLine]", 
+    \(\(Protect[Get];\)\)}], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(End[];\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(EndPackage[];\)\)], "Input",
+  InitializationCell->True]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+AutoGeneratedPackage->Automatic,
+WindowSize->{1208, 593},
+WindowMargins->{{13, Automatic}, {Automatic, 4}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 192, 4, 30, "Input",
+  InitializationCell->True],
+Cell[1949, 57, 89, 2, 30, "Input",
+  InitializationCell->True],
+Cell[2041, 61, 88, 2, 30, "Input",
+  InitializationCell->True],
+Cell[2132, 65, 258, 6, 30, "Input",
+  InitializationCell->True],
+Cell[2393, 73, 314, 7, 30, "Input",
+  InitializationCell->True],
+Cell[2710, 82, 376, 9, 50, "Input",
+  InitializationCell->True],
+Cell[3089, 93, 186, 4, 30, "Input",
+  InitializationCell->True],
+Cell[3278, 99, 4585, 80, 830, "Input",
+  InitializationCell->True],
+Cell[7866, 181, 1497, 26, 490, "Input",
+  InitializationCell->True],
+Cell[9366, 209, 71, 2, 30, "Input",
+  InitializationCell->True],
+Cell[9440, 213, 78, 2, 30, "Input",
+  InitializationCell->True]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
