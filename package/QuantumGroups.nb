@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     13579,        399]*)
-(*NotebookOutlinePosition[     49694,       1555]*)
-(*  CellTagsIndexPosition[     49622,       1549]*)
+(*NotebookOptionsPosition[     13755,        404]*)
+(*NotebookOutlinePosition[     49870,       1560]*)
+(*  CellTagsIndexPosition[     49798,       1554]*)
 (*WindowFrame->Normal*)
 
 
@@ -388,6 +388,11 @@ Cell[BoxData[
 Cell[BoxData[
     \(\(End[];\)\)], "Input",
   CellLabel->"In[75]:=",
+  InitializationCell->True],
+
+Cell[BoxData[{
+    \(<< QuantumGroups`Utilities`Debugging`\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`Utilities`DataPackage`\)}], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -1548,7 +1553,7 @@ CellTagsIndex->{
 
 (*CellTagsIndex
 CellTagsIndex->{
-  {"Union", 49496, 1541}
+  {"Union", 49672, 1546}
   }
 *)
 
@@ -1667,7 +1672,9 @@ Cell[13190, 381, 156, 4, 30, "Input",
   InitializationCell->True],
 Cell[13349, 387, 96, 3, 30, "Input",
   InitializationCell->True],
-Cell[13448, 392, 103, 3, 30, "Input",
+Cell[13448, 392, 173, 3, 50, "Input",
+  InitializationCell->True],
+Cell[13624, 397, 103, 3, 30, "Input",
   InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
