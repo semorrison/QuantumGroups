@@ -143,14 +143,6 @@ CheckBraidingData[\[CapitalGamma]_][V_,k_]:=
 
 \!\(PackageBraidingData[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]BraidingData, \(BraidingData[\[CapitalGamma]\_n]\)[_, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<BraidingData\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Braiding`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
-
-
-
-
-
-
-
-
 listToString[x_List]:=listToString[x,","]
 
 listToString[x_List,s_String]:=
