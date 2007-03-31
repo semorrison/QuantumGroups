@@ -181,4 +181,7 @@ ZeroVectorQ[v_?VectorQ]:=Union[v]==={0}\[Or]v\[Equal]{}
 
 End[];
 
+<<QuantumGroups`Utilities`Debugging`
+<<QuantumGroups`Utilities`DataPackage`
+
 EndPackage[];

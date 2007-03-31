@@ -50,7 +50,7 @@ Begin["`Private`"];
 
 q=Global`q;
 
-\!\(\(ExpandReducedPowers[\[CapitalGamma]_]\)[F_] := \(F /. \[IndentingNewLine]{ReducedPower[\(X\_i_\^+\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, NonCommutativePower[\(X\_i\^+\), n]\/\(qFactorial[n]\)[q\^d]], \[IndentingNewLine]ReducedPower[\(X\_i_\^-\), n] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, NonCommutativePower[\(X\_i\^-\), n]\/\(qFactorial[n]\)[q\^d]]}\) /. OrderingRules[\[CapitalGamma]]\)
+\!\(\(ExpandReducedPowers[\[CapitalGamma]_]\)[F_] := \(F /. \[IndentingNewLine]{ReducedPower[\(X\_i_\^+\), n_] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, NonCommutativePower[\(X\_i\^+\), n]\/\(qFactorial[n]\)[q\^d]], \[IndentingNewLine]ReducedPower[\(X\_i_\^-\), n_] \[RuleDelayed] With[{d = \(CartanFactors[\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}, NonCommutativePower[\(X\_i\^-\), n]\/\(qFactorial[n]\)[q\^d]]}\) /. OrderingRules[\[CapitalGamma]]\)
 
 BraidAction[\[CapitalGamma]_][{word___},0]:=0
 
