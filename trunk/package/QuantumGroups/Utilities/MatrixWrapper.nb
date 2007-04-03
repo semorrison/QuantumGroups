@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     14864,        389]*)
-(*NotebookOutlinePosition[     15541,        412]*)
-(*  CellTagsIndexPosition[     15497,        408]*)
+(*NotebookOptionsPosition[     14850,        389]*)
+(*NotebookOutlinePosition[     15527,        412]*)
+(*  CellTagsIndexPosition[     15483,        408]*)
 (*WindowFrame->Normal*)
 
 
@@ -322,7 +322,7 @@ Cell[BoxData[{
 
 Cell[BoxData[
     \(recordInterpolationInverseRequest[mat_] := 
-      If[Length[mat] \[GreaterEqual] InterpolationInverseLargestRequestSize, 
+      If[Length[mat] > InterpolationInverseLargestRequestSize, 
         DebugPrint["\<New largest matrix! Size \>", Length[mat]]; 
         AppendTo[InterpolationInverseRequests, mat]; 
         InterpolationInverseLargestRequestSize = Length[mat]]\)], "Input",
@@ -491,13 +491,13 @@ Cell[11459, 309, 292, 5, 90, "Input",
   InitializationCell->True],
 Cell[11754, 316, 191, 4, 50, "Input",
   InitializationCell->True],
-Cell[11948, 322, 365, 6, 110, "Input",
+Cell[11948, 322, 351, 6, 110, "Input",
   InitializationCell->True],
-Cell[12316, 330, 2389, 49, 614, "Input",
+Cell[12302, 330, 2389, 49, 614, "Input",
   InitializationCell->True],
-Cell[14708, 381, 71, 2, 30, "Input",
+Cell[14694, 381, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[14782, 385, 78, 2, 30, "Input",
+Cell[14768, 385, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]

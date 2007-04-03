@@ -36,7 +36,9 @@ DeclarePackage[
       "DebugSet","DebugPrintHeld"}];
 
 DeclarePackage[
-    "QuantumGroups`Utilities`DataPackage`",{"ValuesAsString","PackageData"}];
+    "QuantumGroups`Utilities`DataPackage`",{"ValuesAsString","PackageData","PackageMatrixPresentations",
+      "PackageDecompositionMaps","PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation",
+      "PackageHighWeightVectors"}];
 
 DeclarePackage[
     "QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm",

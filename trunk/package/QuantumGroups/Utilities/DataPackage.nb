@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      9522,        217]*)
-(*NotebookOutlinePosition[     10200,        240]*)
-(*  CellTagsIndexPosition[     10156,        236]*)
+(*NotebookOptionsPosition[     13816,        305]*)
+(*NotebookOutlinePosition[     14495,        328]*)
+(*  CellTagsIndexPosition[     14451,        324]*)
 (*WindowFrame->Normal*)
 
 
@@ -51,12 +51,21 @@ NotebookFileLineBreakTest*)
 Notebook[{
 Cell[BoxData[
     \(\(BeginPackage["\<QuantumGroups`Utilities`DataPackage`\>", \
-{"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`Debugging`\>"}];\)\)], \
-"Input",
+{"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`Debugging`\>", \
+"\<QuantumGroups`MatrixPresentations`\>", \
+"\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`Representations`\
+\>"}];\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
-    \(ValuesAsString; PackageData;\)], "Input",
+    \(ValuesAsString; PackageData; MatchingValues;\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\({PackageMatrixPresentations, PackageDecompositionMaps, 
+        PackageQuantumRoots, PackageRMatrix, 
+        PackagePartialRMatrixPresentation, 
+        PackageHighWeightVectors};\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -179,6 +188,85 @@ Cell[BoxData[{
 "Input",
   InitializationCell->True],
 
+Cell[BoxData[
+    \(PackageMatrixPresentations[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]MatrixPresentation, \
+\(\(MatrixPresentation[\[CapitalGamma]\_n]\)[_]\)[\(Irrep[\[CapitalGamma]\_n]\
+\)[_], FundamentalBasis, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<MatrixPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \
+\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
+"\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Algebra`\>"}, \
+\[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", \
+"\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]DecompositionMap, 
+        DecompositionMap[\[CapitalGamma]\_n, _, _], \
+\[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \
+\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\
+\>", "\<QuantumGroups`MatrixPresentations`\>"}, \
+\[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", \
+"\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PackageQuantumRoots[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]ExpandQuantumRoot, \(ExpandQuantumRoot[\
+\[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
+{"\<QuantumGroups`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] \
+"\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PackageRMatrix[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]RMatrix, 
+        RMatrix[\[CapitalGamma]\_n, _, _, _, _], \
+\[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<RMatrix\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
+{"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
+\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] 
+          True\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PackagePartialRMatrixPresentation[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]QuantumGroups`RMatrix`Private`\
+PartialRMatrixPresentation, 
+        QuantumGroups`RMatrix`Private`PartialRMatrixPresentation[\
+\[CapitalGamma]\_n, __], \[IndentingNewLine]{"\<tmp\>", 
+          ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<PartialRMatrixPresentation\>"}, \
+\[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", \
+"\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`RMatrix`\>", \
+"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
+\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PackageHighWeightVectors[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]HighWeightVectors, \(HighWeightVectors[\
+\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", 
+          ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<HighWeightVectors\>"}, \[IndentingNewLine]"\<Needs\>" \
+\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
+"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
+\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
 Cell[BoxData[{
     \(\(Unprotect[Get];\)\), "\[IndentingNewLine]", 
     \(\(useGetGzipHack = True;\)\), "\[IndentingNewLine]", 
@@ -191,7 +279,7 @@ Cell[BoxData[{
           QuantumGroupsDirectory[]]; \[IndentingNewLine]directory = 
           ToFileName[Most[packageFragments]]; \[IndentingNewLine]filename = 
           Last[packageFragments] <> "\<.m\>"; \[IndentingNewLine]If[
-          Length[ToFileNames[filename <> "\<.gz\>"]] \[NotEqual] 
+          Length[FileNames[filename <> "\<.gz\>", {directory}]] \[NotEqual] 
             0, \[IndentingNewLine]gzipExists = 
             True; \[IndentingNewLine]SetDirectory[
             directory]; \[IndentingNewLine]Run["\<gzip -d \>" <> 
@@ -219,7 +307,7 @@ FrontEndVersion->"5.2 for Microsoft Windows",
 ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
 WindowSize->{1208, 593},
-WindowMargins->{{13, Automatic}, {Automatic, 4}}
+WindowMargins->{{28, Automatic}, {41, Automatic}}
 ]
 
 (*******************************************************************
@@ -239,27 +327,41 @@ CellTagsIndex->{}
 
 (*NotebookFileOutline
 Notebook[{
-Cell[1754, 51, 192, 4, 30, "Input",
+Cell[1754, 51, 320, 6, 70, "Input",
   InitializationCell->True],
-Cell[1949, 57, 89, 2, 30, "Input",
+Cell[2077, 59, 105, 2, 30, "Input",
   InitializationCell->True],
-Cell[2041, 61, 88, 2, 30, "Input",
+Cell[2185, 63, 245, 5, 30, "Input",
   InitializationCell->True],
-Cell[2132, 65, 258, 6, 30, "Input",
+Cell[2433, 70, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[2393, 73, 314, 7, 30, "Input",
+Cell[2524, 74, 258, 6, 30, "Input",
   InitializationCell->True],
-Cell[2710, 82, 376, 9, 50, "Input",
+Cell[2785, 82, 314, 7, 30, "Input",
   InitializationCell->True],
-Cell[3089, 93, 186, 4, 30, "Input",
+Cell[3102, 91, 376, 9, 50, "Input",
   InitializationCell->True],
-Cell[3278, 99, 4585, 80, 830, "Input",
+Cell[3481, 102, 186, 4, 30, "Input",
   InitializationCell->True],
-Cell[7866, 181, 1497, 26, 490, "Input",
+Cell[3670, 108, 4585, 80, 830, "Input",
   InitializationCell->True],
-Cell[9366, 209, 71, 2, 30, "Input",
+Cell[8258, 190, 703, 11, 134, "Input",
   InitializationCell->True],
-Cell[9440, 213, 78, 2, 30, "Input",
+Cell[8964, 203, 696, 12, 154, "Input",
+  InitializationCell->True],
+Cell[9663, 217, 476, 8, 134, "Input",
+  InitializationCell->True],
+Cell[10142, 227, 585, 11, 134, "Input",
+  InitializationCell->True],
+Cell[10730, 240, 774, 14, 154, "Input",
+  InitializationCell->True],
+Cell[11507, 256, 639, 11, 134, "Input",
+  InitializationCell->True],
+Cell[12149, 269, 1508, 26, 490, "Input",
+  InitializationCell->True],
+Cell[13660, 297, 71, 2, 30, "Input",
+  InitializationCell->True],
+Cell[13734, 301, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]
