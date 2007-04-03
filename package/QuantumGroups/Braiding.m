@@ -100,6 +100,7 @@ BR[n_Integer,ks:{__Integer}][\[CapitalGamma]_,V_,\[Beta]_]:=
 
 ChangeBasis[map_,basis_]:=Module[{},
     DebugPrint["ChangeBasis called with ",Dimensions[map]," ",Length[basis]];
+    lastChangeBasisArguments={map,basis};
     Transpose[
       LinearSolve[Transpose[basis],Together[map.Transpose[basis]],
         Method\[Rule]OneStepRowReduction]]
