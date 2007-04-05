@@ -219,6 +219,10 @@ SortWeightMultiplicities[\[CapitalGamma]_][l_]:=
 \!\(\(MinisculeWeightQ[E\_6, {1, 0, 0, 0, 0, 0}] = True;\)\[IndentingNewLine]
   \(MinisculeWeightQ[E\_6, {0, 0, 0, 0, 0, 1}] = True;\)\)
 
+\!\(\(MinisculeWeightQ[E\_7, {1, 0, 0, 0, 0, 0, 0}] = False;\)\[IndentingNewLine]
+  \(MinisculeWeightQ[E\_7, {0, 1, 0, 0, 0, 0, 0}] = False;\)\[IndentingNewLine]
+  \(MinisculeWeightQ[E\_7, {0, 0, 0, 0, 0, 1, 0}] = False;\)\[IndentingNewLine]
+  \(MinisculeWeightQ[E\_7, {0, 0, 0, 0, 0, 0, 1}] = True;\)\)
 
 
 
@@ -229,7 +233,6 @@ SortWeightMultiplicities[\[CapitalGamma]_][l_]:=
 
 
 
-\!\(\(MinisculeWeightQ[E\_7, {0, 0, 0, 0, 0, 0, 1}] = True;\)\)
 
 MinisculeWeightQ[_,_]:=False
 

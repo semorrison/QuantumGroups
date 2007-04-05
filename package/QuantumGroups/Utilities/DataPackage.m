@@ -18,7 +18,7 @@ overwritten.
 BeginPackage[
     "QuantumGroups`Utilities`DataPackage`",{"QuantumGroups`","QuantumGroups`Utilities`Debugging`",
       "QuantumGroups`MatrixPresentations`","QuantumGroups`RepresentationTensors`",
-      "QuantumGroups`Representations`"}];
+      "QuantumGroups`Representations`","QuantumGroups`Algebra`"}];
 
 ValuesAsString;PackageData;MatchingValues;
 
@@ -112,7 +112,7 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
 
 \!\(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]DecompositionMap, DecompositionMap[\[CapitalGamma]\_n, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`MatrixPresentations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
 
-\!\(PackageQuantumRoots[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]ExpandQuantumRoot, \(ExpandQuantumRoot[\[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
+\!\(PackageQuantumRoots[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]ExpandQuantumRoot, \(ExpandQuantumRoot[\[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`QuantumRoots`\>", "\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
 \!\(PackageRMatrix[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]RMatrix, RMatrix[\[CapitalGamma]\_n, _, _, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<RMatrix\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
 

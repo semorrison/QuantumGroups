@@ -88,8 +88,8 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`RepresentationTensors`",{"RepresentationTensor","Domain","Codomain",
       "DomainBasis","CodomainBasis","Algebra","IdentityMap","ZeroTensorQ","CheckRepresentationTensor",
-      "QuantumTrace","Distributor","Associator","BraidingMap","NormalisedBraidingMap",
-      "DecompositionMap","PermuteDirectSummands","DirectSumProjectionMap",
+      "RepresentationTensorErrors","QuantumTrace","Distributor","Associator","BraidingMap",
+      "NormalisedBraidingMap","DecompositionMap","PermuteDirectSummands","DirectSumProjectionMap",
       "DirectSumInclusionMap"}];
 
 DeclarePackage[

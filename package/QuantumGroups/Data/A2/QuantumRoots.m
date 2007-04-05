@@ -1,4 +1,4 @@
-BeginPackage["QuantumGroups`Data`A2`QuantumRoots`", {"QuantumGroups`"}]
+BeginPackage["QuantumGroups`Data`A2`QuantumRoots`", {"QuantumGroups`", "QuantumGroups`QuantumRoots`", "QuantumGroups`Algebra`"}]
 Message[QuantumGroups::loading,"QuantumGroups`Data`A2`QuantumRoots`"]
 
 Begin["`Private`"]
