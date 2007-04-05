@@ -55,6 +55,8 @@ ZeroTensorQ::usage="";
 
 CheckRepresentationTensor::usage="";
 
+RepresentationTensorErrors;
+
 QuantumTrace::usage="";
 
 Distributor;Associator;
@@ -109,6 +111,17 @@ CheckRepresentationTensor[
                         OperatorWeight[\[CapitalGamma]][#]].\
 MatrixPresentation[\[CapitalGamma]][#][Vd,\[Beta]d,\[Lambda]]]]]&/@
         Generators[\[CapitalGamma]])
+
+RepresentationTensorErrors[
+    F:RepresentationTensor[\[CapitalGamma]_,Vc_,\[Beta]c_,
+        Vd_,\[Beta]d_,_],\[Lambda]_]:=
+  DeleteCases[{#,
+          MatrixPresentation[\[CapitalGamma]][#][
+              Vc,\[Beta]c,\[Lambda]].F[\[Lambda]],
+          F[\[Lambda]+
+                OperatorWeight[\[CapitalGamma]][#]].MatrixPresentation[\
+\[CapitalGamma]][#][Vd,\[Beta]d,\[Lambda]]}&/@
+      Generators[\[CapitalGamma]],{_,a_,b_}/;ZeroMatrixQ[Simplify[a-b]]]
 
 CheckRepresentationTensor[
     F:RepresentationTensor[\[CapitalGamma]_,_,_,V_,_,_]]:=
@@ -353,12 +366,14 @@ HighWeightVectors[\[CapitalGamma]_][(U_\[CircleTimes]V_)\[CircleTimes]W_,\
       ]
 
 DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
-  RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
-    DecomposeRepresentation[\[CapitalGamma]][
-      V\[CircleTimes]W],\[Beta],{#,(Print["... weight ",#];
-            QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition[\
-\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
-      Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]]
+  DecompositionMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=
+    RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
+      DecomposeRepresentation[\[CapitalGamma]][
+        V\[CircleTimes]W],\[Beta],{#,(Print["mem: ",MemoryInUse[]," time: ",
+                TimeUsed[]," ... weight ",#];
+              QuantumGroups`MatrixPresentations`Private`\
+DirectSumDecomposition[\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
+        Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]]
 
 DecompositionMap[\[CapitalGamma]_,(U_\[CircleTimes]V_)\[CircleTimes]W_,\[Beta]\
 _]:=With[{Z=DecomposeRepresentation[\[CapitalGamma]][U\[CircleTimes]V]},

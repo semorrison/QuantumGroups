@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     13816,        305]*)
-(*NotebookOutlinePosition[     14495,        328]*)
-(*  CellTagsIndexPosition[     14451,        324]*)
+(*NotebookOptionsPosition[     13913,        306]*)
+(*NotebookOutlinePosition[     14592,        329]*)
+(*  CellTagsIndexPosition[     14548,        325]*)
 (*WindowFrame->Normal*)
 
 
@@ -54,7 +54,7 @@ Cell[BoxData[
 {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`Debugging`\>", \
 "\<QuantumGroups`MatrixPresentations`\>", \
 "\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`Representations`\
-\>"}];\)\)], "Input",
+\>", "\<QuantumGroups`Algebra`\>"}];\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -221,8 +221,9 @@ Cell[BoxData[
 \[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
             ToString[
               n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
-{"\<QuantumGroups`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] \
-"\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
+{"\<QuantumGroups`\>", "\<QuantumGroups`QuantumRoots`\>", \
+"\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \
+\[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -327,41 +328,41 @@ CellTagsIndex->{}
 
 (*NotebookFileOutline
 Notebook[{
-Cell[1754, 51, 320, 6, 70, "Input",
+Cell[1754, 51, 350, 6, 70, "Input",
   InitializationCell->True],
-Cell[2077, 59, 105, 2, 30, "Input",
+Cell[2107, 59, 105, 2, 30, "Input",
   InitializationCell->True],
-Cell[2185, 63, 245, 5, 30, "Input",
+Cell[2215, 63, 245, 5, 30, "Input",
   InitializationCell->True],
-Cell[2433, 70, 88, 2, 30, "Input",
+Cell[2463, 70, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[2524, 74, 258, 6, 30, "Input",
+Cell[2554, 74, 258, 6, 30, "Input",
   InitializationCell->True],
-Cell[2785, 82, 314, 7, 30, "Input",
+Cell[2815, 82, 314, 7, 30, "Input",
   InitializationCell->True],
-Cell[3102, 91, 376, 9, 50, "Input",
+Cell[3132, 91, 376, 9, 50, "Input",
   InitializationCell->True],
-Cell[3481, 102, 186, 4, 30, "Input",
+Cell[3511, 102, 186, 4, 30, "Input",
   InitializationCell->True],
-Cell[3670, 108, 4585, 80, 830, "Input",
+Cell[3700, 108, 4585, 80, 830, "Input",
   InitializationCell->True],
-Cell[8258, 190, 703, 11, 134, "Input",
+Cell[8288, 190, 703, 11, 134, "Input",
   InitializationCell->True],
-Cell[8964, 203, 696, 12, 154, "Input",
+Cell[8994, 203, 696, 12, 154, "Input",
   InitializationCell->True],
-Cell[9663, 217, 476, 8, 134, "Input",
+Cell[9693, 217, 543, 9, 134, "Input",
   InitializationCell->True],
-Cell[10142, 227, 585, 11, 134, "Input",
+Cell[10239, 228, 585, 11, 134, "Input",
   InitializationCell->True],
-Cell[10730, 240, 774, 14, 154, "Input",
+Cell[10827, 241, 774, 14, 154, "Input",
   InitializationCell->True],
-Cell[11507, 256, 639, 11, 134, "Input",
+Cell[11604, 257, 639, 11, 134, "Input",
   InitializationCell->True],
-Cell[12149, 269, 1508, 26, 490, "Input",
+Cell[12246, 270, 1508, 26, 490, "Input",
   InitializationCell->True],
-Cell[13660, 297, 71, 2, 30, "Input",
+Cell[13757, 298, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[13734, 301, 78, 2, 30, "Input",
+Cell[13831, 302, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]

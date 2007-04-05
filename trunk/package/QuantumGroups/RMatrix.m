@@ -53,8 +53,41 @@ q=Global`q;
 
 PartialRMatrixPresentation[\[CapitalGamma]_,n_,V_,W_,\[Beta]_,\[Lambda]_]:=
   PartialRMatrixPresentation[\[CapitalGamma],n,V,W,\[Beta],\[Lambda]]=
-    MatrixPresentation[\[CapitalGamma]][PartialRMatrix[\[CapitalGamma]][n]][
+    FastMatrixPresentation[\[CapitalGamma]][
+        PartialRMatrix[\[CapitalGamma]][n]][
       V\[CircleTimes]W,\[Beta],\[Lambda]]
+
+CarefulFastMatrixPresentation[\[CapitalGamma]_][X_][V_,\[Beta]_,\[Lambda]_]:=
+  Module[{told,tnew,rold,rnew},
+    {tnew,rnew}=
+      AbsoluteTiming[
+        FastMatrixPresentation[\[CapitalGamma]][X][V,\[Beta],\[Lambda]]];
+    {told,rold}=
+      AbsoluteTiming[
+        MatrixPresentation[\[CapitalGamma]][X][V,\[Beta],\[Lambda]]];
+    If[rold=!=rnew,Print["Achtung, FastMatrixPresentation failed."]];
+    DebugPrint["FastMatrixPresentation timing: ",{told,tnew}];
+    rnew
+    ]
+
+
+
+\!\(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\[ScriptOne]\[CircleTimes]\[ScriptOne]]\)[V_\[CircleTimes]W_, \[Beta]_, \[Lambda]_] := \(\(MatrixPresentation[\[CapitalGamma]]\)[\[ScriptOne]\[CircleTimes]\[ScriptOne]]\)[V\[CircleTimes]W, \[Beta], \[Lambda]]\[IndentingNewLine]
+  \(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\(X\_\(\[CapitalGamma]_, r_\)\^+\)\[CircleTimes]\(X\_\(\[CapitalGamma]_, r_\)\^-\)]\)[V_\[CircleTimes]W_, \[Beta]_, \[Lambda]_] := \(\(MatrixPresentation[\[CapitalGamma]]\)[\(X\_\(\[CapitalGamma], r\)\^+\)\[CircleTimes]\(X\_\(\[CapitalGamma], r\)\^-\)]\)[V\[CircleTimes]W, \[Beta], \[Lambda]]\)
+
+\!\(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\((X : \((NonCommutativeMultiply[\((\(X\_\(\[CapitalGamma]_, _\)\^+\))\) .. ])\))\)\[CircleTimes]\((Y : \((NonCommutativeMultiply[\((\(X\_\(\[CapitalGamma]_, _\)\^-\))\) .. ])\))\)]\)[V_\[CircleTimes]W_, \[Beta]_, \[Lambda]_] := \[IndentingNewLine]Module[{result}, \[IndentingNewLine]If[WeightMultiplicity[\[CapitalGamma], V\[CircleTimes]W, \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[X]] \[Equal] 0, Return[ZeroesMatrix[WeightMultiplicity[\[CapitalGamma], V\[CircleTimes]W, \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[X\[CircleTimes]Y]], WeightMultiplicity[\[CapitalGamma], V\[CircleTimes]W, \[Lambda]]]]]; \[IndentingNewLine]If[WeightMultiplicity[\[CapitalGamma], V\[CircleTimes]W, \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[Y]] \[Equal] 0, Return[ZeroesMatrix[WeightMultiplicity[\[CapitalGamma], V\[CircleTimes]W, \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\)[X\[CircleTimes]Y]], WeightMultiplicity[\[CapitalGamma], V\[CircleTimes]W, \[Lambda]]]]]; \[IndentingNewLine]result = Together[\(\(MatrixPresentation[\[CapitalGamma]]\)[X\[CircleTimes]Y]\)[V\[CircleTimes]W, \[Beta], \[Lambda]]]; \[IndentingNewLine]Return[result]\[IndentingNewLine]]\)
+
+FastMatrixPresentation[\[CapitalGamma]_][A_Plus][V_,\[Beta]_,\[Lambda]_]:=
+  FastMatrixPresentation[\[CapitalGamma]][#][V,\[Beta],\[Lambda]]&/@A
+
+FastMatrixPresentation[\[CapitalGamma]_][\[Alpha]_?qNumberQ A_][
+    V_,\[Beta]_,\[Lambda]_]:=\[Alpha] FastMatrixPresentation[\[CapitalGamma]][
+        A][V,\[Beta],\[Lambda]]
+
+FastMatrixPresentation[\[CapitalGamma]_][X_][
+    V_,\[Beta]_,\[Lambda]_]:=(DebugPrint[
+      "FastMatrixPresentation degrading to MatrixPresentation."];
+    MatrixPresentation[\[CapitalGamma]][X][V,\[Beta],\[Lambda]])
 
 RMatrix[\[CapitalGamma]_,V1_,V2_,\[Beta]_,\[Lambda]_]/;
     MemberQ[Weights[\[CapitalGamma],V1\[CircleTimes]V2],\[Lambda]]:=

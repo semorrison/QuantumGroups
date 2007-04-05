@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      9824,        259]*)
-(*NotebookOutlinePosition[     10503,        282]*)
-(*  CellTagsIndexPosition[     10459,        278]*)
+(*NotebookOptionsPosition[     13744,        339]*)
+(*NotebookOutlinePosition[     14424,        362]*)
+(*  CellTagsIndexPosition[     14380,        358]*)
 (*WindowFrame->Normal*)
 
 
@@ -177,9 +177,89 @@ Cell[BoxData[
     \(PartialRMatrixPresentation[\[CapitalGamma]_, n_, V_, 
         W_, \[Beta]_, \[Lambda]_] := \(PartialRMatrixPresentation[\
 \[CapitalGamma], n, V, 
-          W, \[Beta], \[Lambda]] = \(\(MatrixPresentation[\[CapitalGamma]]\)[\
-\(PartialRMatrix[\[CapitalGamma]]\)[n]]\)[
-          V\[CircleTimes]W, \[Beta], \[Lambda]]\)\)], "Input",
+          W, \[Beta], \[Lambda]] = \
+\(\(FastMatrixPresentation[\[CapitalGamma]]\)[\(PartialRMatrix[\[CapitalGamma]\
+]\)[n]]\)[V\[CircleTimes]W, \[Beta], \[Lambda]]\)\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(\(CarefulFastMatrixPresentation[\[CapitalGamma]_]\)[X_]\)[
+        V_, \[Beta]_, \[Lambda]_] := 
+      Module[{told, tnew, rold, rnew}, \[IndentingNewLine]{tnew, rnew} = 
+          AbsoluteTiming[\(\(FastMatrixPresentation[\[CapitalGamma]]\)[X]\)[
+              V, \[Beta], \[Lambda]]]; \[IndentingNewLine]{told, rold} = 
+          AbsoluteTiming[\(\(MatrixPresentation[\[CapitalGamma]]\)[X]\)[
+              V, \[Beta], \[Lambda]]]; \[IndentingNewLine]If[rold =!= rnew, 
+          Print["\<Achtung, FastMatrixPresentation failed.\>"]]; \
+\[IndentingNewLine]DebugPrint["\<FastMatrixPresentation timing: \>", {told, 
+            tnew}]; \[IndentingNewLine]rnew\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell["No need to do these two fast, they're easy anyway:", "Text"],
+
+Cell[BoxData[{
+    \(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\[ScriptOne]\
+\[CircleTimes]\[ScriptOne]]\)[
+        V_\[CircleTimes]W_, \[Beta]_, \[Lambda]_] := \(\(MatrixPresentation[\
+\[CapitalGamma]]\)[\[ScriptOne]\[CircleTimes]\[ScriptOne]]\)[
+        V\[CircleTimes]W, \[Beta], \[Lambda]]\), "\[IndentingNewLine]", 
+    \(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\(X\_\(\[CapitalGamma]_, \
+r_\)\^+\)\[CircleTimes]\(X\_\(\[CapitalGamma]_, r_\)\^-\)]\)[
+        V_\[CircleTimes]W_, \[Beta]_, \[Lambda]_] := \(\(MatrixPresentation[\
+\[CapitalGamma]]\)[\(X\_\(\[CapitalGamma], r\)\^+\)\[CircleTimes]\(X\_\(\
+\[CapitalGamma], r\)\^-\)]\)[
+        V\[CircleTimes]W, \[Beta], \[Lambda]]\)}], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\((X : \
+\((NonCommutativeMultiply[\((\(X\_\(\[CapitalGamma]_, _\)\^+\))\) .. ])\))\)\
+\[CircleTimes]\((Y : \((NonCommutativeMultiply[\((\(X\_\(\[CapitalGamma]_, \
+_\)\^-\))\) .. ])\))\)]\)[
+        V_\[CircleTimes]W_, \[Beta]_, \[Lambda]_] \
+:= \[IndentingNewLine]Module[{result}, \[IndentingNewLine]If[
+          WeightMultiplicity[\[CapitalGamma], 
+              V\[CircleTimes]W, \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\
+\)[X]] \[Equal] 0, 
+          Return[ZeroesMatrix[
+              WeightMultiplicity[\[CapitalGamma], 
+                V\[CircleTimes]W, \[Lambda] + \
+\(OperatorWeight[\[CapitalGamma]]\)[X\[CircleTimes]Y]], 
+              WeightMultiplicity[\[CapitalGamma], 
+                V\[CircleTimes]W, \[Lambda]]]]]; \[IndentingNewLine]If[
+          WeightMultiplicity[\[CapitalGamma], 
+              V\[CircleTimes]W, \[Lambda] + \(OperatorWeight[\[CapitalGamma]]\
+\)[Y]] \[Equal] 0, 
+          Return[ZeroesMatrix[
+              WeightMultiplicity[\[CapitalGamma], 
+                V\[CircleTimes]W, \[Lambda] + \
+\(OperatorWeight[\[CapitalGamma]]\)[X\[CircleTimes]Y]], 
+              WeightMultiplicity[\[CapitalGamma], 
+                V\[CircleTimes]W, \[Lambda]]]]]; \[IndentingNewLine]result = 
+          Together[\(\(MatrixPresentation[\[CapitalGamma]]\)[
+                X\[CircleTimes]Y]\)[
+              V\[CircleTimes]W, \[Beta], \[Lambda]]]; \
+\[IndentingNewLine]Return[result]\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[A_Plus]\)[
+        V_, \[Beta]_, \[Lambda]_] := \(\(\(FastMatrixPresentation[\
+\[CapitalGamma]]\)[#]\)[V, \[Beta], \[Lambda]] &\) /@ A\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[\[Alpha]_?
+              qNumberQ\ A_]\)[
+        V_, \[Beta]_, \[Lambda]_] := \[Alpha]\ \(\(FastMatrixPresentation[\
+\[CapitalGamma]]\)[A]\)[V, \[Beta], \[Lambda]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(\(\(FastMatrixPresentation[\[CapitalGamma]_]\)[X_]\)[
+        V_, \[Beta]_, \[Lambda]_] := \((DebugPrint["\<FastMatrixPresentation \
+degrading to MatrixPresentation.\>"]; \(\(MatrixPresentation[\[CapitalGamma]]\
+\)[X]\)[V, \[Beta], \[Lambda]])\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[{
@@ -260,8 +340,8 @@ Cell[BoxData[
 FrontEndVersion->"5.2 for Microsoft Windows",
 ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
-WindowSize->{671, 589},
-WindowMargins->{{Automatic, 81}, {Automatic, -38}}
+WindowSize->{1198, 589},
+WindowMargins->{{Automatic, -23}, {12, Automatic}}
 ]
 
 (*******************************************************************
@@ -302,7 +382,7 @@ Cell[2230, 76, 61, 1, 73, "Section",
 Cell[CellGroupData[{
 Cell[2316, 81, 38, 0, 38, "Subsection"],
 Cell[2357, 83, 45, 0, 33, "Text"],
-Cell[2405, 85, 442, 7, 130, "Input",
+Cell[2405, 85, 442, 7, 70, "Input",
   InitializationCell->True]
 }, Open  ]],
 
@@ -320,27 +400,40 @@ Cell[3196, 112, 88, 2, 30, "Input",
   InitializationCell->True],
 Cell[3287, 116, 78, 2, 30, "Input",
   InitializationCell->True],
-Cell[3368, 120, 2077, 37, 367, "Input",
+Cell[3368, 120, 2077, 37, 291, "Input",
   InitializationCell->True],
-Cell[5448, 159, 825, 14, 230, "Input",
+Cell[5448, 159, 825, 14, 130, "Input",
   InitializationCell->True],
-Cell[6276, 175, 378, 7, 70, "Input",
+Cell[6276, 175, 373, 7, 50, "Input",
   InitializationCell->True],
-Cell[6657, 184, 1475, 27, 310, "Input",
+Cell[6652, 184, 742, 11, 150, "Input",
   InitializationCell->True],
-Cell[8135, 213, 776, 13, 170, "Input",
+Cell[7397, 197, 66, 0, 33, "Text"],
+Cell[7466, 199, 737, 12, 51, "Input",
   InitializationCell->True],
-Cell[8914, 228, 331, 6, 70, "Input",
+Cell[8206, 213, 1539, 29, 191, "Input",
   InitializationCell->True],
-Cell[9248, 236, 308, 5, 50, "Input",
+Cell[9748, 244, 242, 4, 30, "Input",
   InitializationCell->True],
-Cell[9559, 243, 71, 2, 30, "Input",
+Cell[9993, 250, 272, 5, 30, "Input",
+  InitializationCell->True],
+Cell[10268, 257, 306, 5, 30, "Input",
+  InitializationCell->True],
+Cell[10577, 264, 1475, 27, 210, "Input",
+  InitializationCell->True],
+Cell[12055, 293, 776, 13, 110, "Input",
+  InitializationCell->True],
+Cell[12834, 308, 331, 6, 30, "Input",
+  InitializationCell->True],
+Cell[13168, 316, 308, 5, 30, "Input",
+  InitializationCell->True],
+Cell[13479, 323, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[9667, 250, 36, 0, 38, "Subsection"],
-Cell[9706, 252, 78, 2, 30, "Input",
+Cell[13587, 330, 36, 0, 38, "Subsection"],
+Cell[13626, 332, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]

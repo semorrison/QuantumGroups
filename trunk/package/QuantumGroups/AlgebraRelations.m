@@ -35,8 +35,6 @@ BeginPackage[
       "QuantumGroups`MatrixPresentations`","QuantumGroups`Algebra`",
       "QuantumGroups`Representations`"}];
 
-q=Global`q
-
 
 
 Relations::usage="";
@@ -46,6 +44,8 @@ CheckRelations::usage="";
 
 
 Begin["`Private`"];
+
+q=Global`q
 
 \!\(BasicRelations[\[CapitalGamma]_] := With[{cm = CartanMatrix[\[CapitalGamma]], cf = CartanFactors[\[CapitalGamma]], n = Rank[\[CapitalGamma]]}, \[IndentingNewLine]DeleteCases[Flatten[Join[\[IndentingNewLine]Table[K\_i ** K\_j \[Equal] K\_j ** K\_i, {i, 1, n}, {j, i + 1, n}], \[IndentingNewLine]Table[K\_i ** K\_i\^\(-1\) \[Equal] \[ScriptOne], {i, 1, n}], \[IndentingNewLine]Table[K\_i\^\(-1\) ** K\_i \[Equal] \[ScriptOne], {i, 1, n}], \[IndentingNewLine]Table[K\_i ** \(X\_j\^+\) ** K\_i\^\(-1\) \[Equal] \(q\^\(cf\[LeftDoubleBracket]i\[RightDoubleBracket] cm\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\) \(X\_j\^+\), {i, 1, n}, {j, 1, n}], \[IndentingNewLine]Table[K\_i ** \(X\_j\^-\) ** K\_i\^\(-1\) \[Equal] \(q\^\(\(-cf\[LeftDoubleBracket]i\[RightDoubleBracket]\) cm\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)\) \(X\_j\^-\), {i, 1, n}, {j, 1, n}], \[IndentingNewLine]Table[\(X\_i\^+\) ** \(X\_j\^-\) - \(X\_j\^-\) ** \(X\_i\^+\) \[Equal] DiscreteDelta[i - j] \(K\_i - K\_i\^\(-1\)\)\/\(q\^cf\[LeftDoubleBracket]i\[RightDoubleBracket] - q\^\(-cf\[LeftDoubleBracket]i\[RightDoubleBracket]\)\), {i, 1, n}, {j, 1, n}]\[IndentingNewLine]\[IndentingNewLine]]] /. {0 \[Rule] \[ScriptZero]}, True]\[IndentingNewLine]]\)
 
