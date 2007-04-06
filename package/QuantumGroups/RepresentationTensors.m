@@ -367,31 +367,48 @@ HighWeightVectors[\[CapitalGamma]_][(U_\[CircleTimes]V_)\[CircleTimes]W_,\
 
 DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
   DecompositionMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=
-    RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
-      DecomposeRepresentation[\[CapitalGamma]][
-        V\[CircleTimes]W],\[Beta],{#,(Print["mem: ",MemoryInUse[]," time: ",
-                TimeUsed[]," ... weight ",#];
-              QuantumGroups`MatrixPresentations`Private`\
+    (Print[DecompositionMap, \[CapitalGamma],V,W];
+      RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
+        DecomposeRepresentation[\[CapitalGamma]][
+          V\[CircleTimes]W],\[Beta],{#,(Print["mem: ",MemoryInUse[]," time: ",
+                  TimeUsed[]," ... weight ",#];
+                QuantumGroups`MatrixPresentations`Private`\
 DirectSumDecomposition[\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
-        Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]]
+          Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]])
 
 DecompositionMap[\[CapitalGamma]_,(U_\[CircleTimes]V_)\[CircleTimes]W_,\[Beta]\
 _]:=With[{Z=DecomposeRepresentation[\[CapitalGamma]][U\[CircleTimes]V]},
-    Module[{disordered,domain,disordering},
-      disordered=(DecompositionMap[\[CapitalGamma],
-                U\[CircleTimes]V,\[Beta]]\[CircleTimes]IdentityMap[\
-\[CapitalGamma],W,\[Beta]]).Distributor[\[CapitalGamma]][
-            Z\[CircleTimes]W,\[Beta]].(DecompositionMap[\[CapitalGamma],#\
-\[CircleTimes]W,\[Beta]]&/@Z);
+    Module[{disordered,domain,disordering,result},
+      DebugPrintHeld["Beginning ",
+        DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
+\[Beta]]];
+      distributor=Distributor[\[CapitalGamma]][Z\[CircleTimes]W,\[Beta]];
+      DebugPrint["...prepared distributor"];
+      firstDecomposition=
+        DecompositionMap[\[CapitalGamma],U\[CircleTimes]V,\[Beta]];
+      DebugPrint["...prepared first decomposition map"];
+      summandDecompositions=(DecompositionMap[\[CapitalGamma],#\[CircleTimes]\
+W,\[Beta]]&/@Z);
+      DebugPrint["...prepared all decomposition maps"];
+      disordered=(firstDecomposition\[CircleTimes]IdentityMap[\[CapitalGamma],
+                W,\[Beta]]).distributor.summandDecompositions;
+      DebugPrintHeld["... calculated the composition"];
       domain=Domain[disordered];
       disordering=
         Ordering[domain]\[LeftDoubleBracket]
           Ordering[
             Ordering[
               SortWeights[\[CapitalGamma]][domain]]]\[RightDoubleBracket];
-      disordered.PermuteDirectSummands[\[CapitalGamma]][
-          domain\[LeftDoubleBracket]disordering\[RightDoubleBracket],\[Beta],
-          Ordering[disordering]]
+      DebugPrint["... permuting bases"];
+      result=
+        disordered.PermuteDirectSummands[\[CapitalGamma]][
+            domain\[LeftDoubleBracket]
+              disordering\[RightDoubleBracket],\[Beta],
+            Ordering[disordering]];
+      DebugPrintHeld["Finishedt ",
+        DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
+\[Beta]]];
+      result
       ]
     ]
 

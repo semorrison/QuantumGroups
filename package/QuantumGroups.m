@@ -45,7 +45,7 @@ DeclarePackage[
       "SimpleRoots","SimpleReflection","WeylOrbit","PositiveWeightQ","InWeylPolytopeQ",
       "SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinisculeRepresentationQ",
       "ReflectIntoPositiveWeylChamber","ShortDominantRoots","ShortSimpleRoots",
-      "ShortRoots","ShortDominantRootQ"}];
+      "ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
 
 DeclarePackage[
     "QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","\[Rho]",

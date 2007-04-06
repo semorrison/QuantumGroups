@@ -224,16 +224,38 @@ AddOneVectorToSpanningSet[m_?MatrixQ,v_?VectorQ]:=
 
 SpanningSet[{}]:={};
 
-SpanningSet[m_?MatrixQ]:=Fold[AddOneVectorToSpanningSet,{},m]
+SpanningSet[m_?MatrixQ]:=(Global`spanningSetArgument=m;
+    Fold[AddOneVectorToSpanningSet,{},m])
 
 SpanningSet[Matrix[_,_,data_]]:=SpanningSet[data]
 
-SpanningSet[x_]:=Print["Warning - unrecognised argument for SpanningSet: ", x]
+LazyAddOneVectorToSpanningSet[{},v_?VectorQ]:=If[ZeroVectorQ[v],{},{v}]
+
+LazyAddOneVectorToSpanningSet[m_?MatrixQ,v_?VectorQ]:=
+  If[MatrixRank[m~Join~{v}/.q\[Rule]1]\[Equal]Length[m],m,m~Join~{v}]
+
+LazySpanningSet[{}]:={};
+
+LazySpanningSet[m_?MatrixQ]:=(Global`spanningSetArgument=m;
+    Fold[LazyAddOneVectorToSpanningSet,{},m])
+
+LazySpanningSet[Matrix[_,_,data_]]:=LazySpanningSet[data]
+
+CarefulSpanningSetNewTime=CarefulSpanningSetOldTime=0;
+
+CarefulSpanningSet[m_]:=Module[{tnew,rnew,told,rold},
+    {tnew,rnew}=AbsoluteTiming[LazySpanningSet[m]];
+    {told,rold}=AbsoluteTiming[SpanningSet[m]];
+    If[rnew=!=rold,Print["LazySpanningSet failed!"]];
+    CarefulSpanningSetNewTime+=tnew;
+    CarefulSpanningSetOldTime+=told;
+    rnew
+    ]
 
 SubIrrepWeightBasis[\[CapitalGamma]_][V_,\[Beta]_,\[Lambda]_,
     v_,\[Lambda]_]:={v}
 
-\!\(\(SubIrrepWeightBasis[\[CapitalGamma]_]\)[V_, \[Beta]_, \[Lambda]_, v_, \[Mu]_] /; InWeylPolytopeQ[\[CapitalGamma], \[Lambda], \[Mu]] := \(\(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu]] = Module[{c, r}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu]]]; \[IndentingNewLine]c = Join @@ Table[\(\(\(MatrixPresentation[\[CapitalGamma]]\)[\(X\_i\^-\)]\)[V, \[Beta], \[Mu] - \(OperatorWeight[\[CapitalGamma]]\)[\(X\_i\^-\)]] . # &\) /@ \(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu] - \(OperatorWeight[\[CapitalGamma]]\)[\(X\_i\^-\)]], {i, 1, Rank[\[CapitalGamma]]}]; \[IndentingNewLine]DebugPrint["\< ... prepared spanning set.\>"]; \[IndentingNewLine]r = SpanningSet[Together[c]]; \[IndentingNewLine]DebugPrintHeld["\<Finished calculating \>", \(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu]]]; \[IndentingNewLine]r\[IndentingNewLine]]\)\)
+\!\(\(SubIrrepWeightBasis[\[CapitalGamma]_]\)[V_, \[Beta]_, \[Lambda]_, v_, \[Mu]_] /; InWeylPolytopeQ[\[CapitalGamma], \[Lambda], \[Mu]] := \(\(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu]] = Module[{c, r}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu]]]; \[IndentingNewLine]c = Join @@ Table[\(\(\(MatrixPresentation[\[CapitalGamma]]\)[\(X\_i\^-\)]\)[V, \[Beta], \[Mu] - \(OperatorWeight[\[CapitalGamma]]\)[\(X\_i\^-\)]] . # &\) /@ \(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu] - \(OperatorWeight[\[CapitalGamma]]\)[\(X\_i\^-\)]], {i, 1, Rank[\[CapitalGamma]]}]; \[IndentingNewLine]DebugPrint["\< ... prepared spanning set.\>"]; \[IndentingNewLine]r = LazySpanningSet[Together[c]]; \[IndentingNewLine]DebugPrintHeld["\<Finished calculating \>", \(SubIrrepWeightBasis[\[CapitalGamma]]\)[V, \[Beta], \[Lambda], v, \[Mu]]]; \[IndentingNewLine]r\[IndentingNewLine]]\)\)
 
 SubIrrepWeightBasis[\[CapitalGamma]_][V_,\[Beta]_,\[Lambda]_,v_,\[Mu]_]:={}
 
