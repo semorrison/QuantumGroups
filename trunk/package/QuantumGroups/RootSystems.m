@@ -33,7 +33,7 @@ CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;\
 WeylOrbit;PositiveWeightQ;InWeylPolytopeQ;SortWeights;\
 SortWeightMultiplicities;MinisculeWeightQ;MinisculeRepresentationQ;\
 ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;\
-ShortSimpleRoots;ShortRoots;ShortDominantRootQ;
+ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
 
 Begin["`Private`"];
 
@@ -269,6 +269,16 @@ ShortRoots[\[CapitalGamma]_]:=
 
 ShortDominantRootQ[\[CapitalGamma]_,\[Lambda]_]:=
   MemberQ[ShortDominantRoots[\[CapitalGamma]],\[Lambda]]
+
+\!\(DualCoxeterNumber[A\_n_] := n + 1\[IndentingNewLine]
+  DualCoxeterNumber[B\_n_] := 2  n - 1\[IndentingNewLine]
+  DualCoxeterNumber[C\_n_] := n + 1\[IndentingNewLine]
+  DualCoxeterNumber[D\_n_] := 2  n - 2\[IndentingNewLine]
+  \(DualCoxeterNumber[E\_6] = 12;\)\[IndentingNewLine]
+  \(DualCoxeterNumber[E\_7] = 18;\)\[IndentingNewLine]
+  \(DualCoxeterNumber[E\_8] = 30;\)\[IndentingNewLine]
+  \(DualCoxeterNumber[F\_4] = 9;\)\[IndentingNewLine]
+  \(DualCoxeterNumber[G\_2] = 4;\)\)
 
 End[];
 

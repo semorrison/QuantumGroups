@@ -24,7 +24,8 @@ ValuesAsString;PackageData;MatchingValues;
 
 {PackageMatrixPresentations,PackageDecompositionMaps,PackageQuantumRoots,
     PackageRMatrix,PackagePartialRMatrixPresentation,
-    PackageHighWeightVectors};
+    PackageDirectSumDecompositions,PackageHighWeightVectors,
+    PackageSubIrrepWeightBases};
 
 Begin["`Private`"];
 
@@ -117,6 +118,12 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
 \!\(PackageRMatrix[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]RMatrix, RMatrix[\[CapitalGamma]\_n, _, _, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<RMatrix\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
 
 \!\(PackagePartialRMatrixPresentation[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`RMatrix`Private`PartialRMatrixPresentation, QuantumGroups`RMatrix`Private`PartialRMatrixPresentation[\[CapitalGamma]\_n, __], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<PartialRMatrixPresentation\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`RMatrix`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
+
+\!\(PackageDirectSumDecompositions[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition, \(QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<DirectSumDecompositions\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
+
+\!\(PackageSubIrrepWeightBases[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis, \(QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<SubIrrepWeightBases\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
+
+
 
 \!\(PackageHighWeightVectors[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]HighWeightVectors, \(HighWeightVectors[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<HighWeightVectors\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
