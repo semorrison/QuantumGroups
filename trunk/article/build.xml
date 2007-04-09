@@ -1,0 +1,96 @@
+<!-- This is an Ant build file; you'll need to install Ant before using it. -->
+<project name="quantum_groups" default="usage">
+    <target name="init">
+      <property name="arxivTarFile" value="quantum_groups.tar"/>
+    </target>
+
+    <!-- USAGE -->
+    <!-- Instructions for using the build file -->
+    <!-- =================================================================== -->
+    <target name = "usage" depends = "init">    
+        <echo message = ""/>
+        <echo message = "quantum_groups build instructions"/>
+        <echo message = "-------------------------------------------------------------"/>
+        <echo message = ""/>
+        <echo message = " available targets are:"/>
+        <echo message = ""/>
+        <echo message = "   arxiv --> builds quantum_groups.tar.gz, for submission to the arxiv"/>
+        <echo message = "   dvi   --> builds quantum_groups.dvi"/>
+        <echo message = "   ps    --> builds quantum_groups.ps"/>
+        <echo message = "   pdf   --> builds quantum_groups.pdf"/>
+        <echo message = ""/>
+        <echo message = "-------------------------------------------------------------"/>
+        <echo message = ""/>  
+    </target>
+    <!-- =================================================================== -->    
+
+    <target name="clean" depends="init">
+        <delete>
+            <fileset dir=".">
+                <include name="*.toc"/>
+                <include name="*.log"/>
+                <include name="*.aux"/>
+                <include name="*.blg"/>
+                <include name="*.xyc"/>
+                <include name="*.out"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="arxiv" depends="clean">
+        <delete file="${arxivTarFile}"/>
+        <delete file="${arxivTarFile}.gz"/>
+        <tar destfile="${arxivTarFile}" basedir="." includes="**"
+            excludes="*.dvi,*.ps,*.pdf,*.png,${arxivTarFile},${arxivTarFile}.gz,sandbox.*,bibliography/**,papers/**,talks/**,diagrams/pdf/**,diagrams/latex2pdf/**,diagrams/*"
+        />
+        <gzip src="${arxivTarFile}" destfile="${arxivTarFile}.gz"/>
+        <delete file="${arxivTarFile}"/>
+    </target>
+
+    <target name="bbl" depends="init">
+        <exec executable="latex">
+            <arg value="quantum_groups"/>
+        </exec>
+        <exec executable="bibtex">
+            <arg value="quantum_groups"/>
+        </exec>
+    </target>
+     
+    <target name="dvi" depends="bbl">
+        <exec executable="latex">
+            <arg value="quantum_groups"/>
+        </exec>
+        <exec executable="latex">
+            <arg value="quantum_groups"/>
+        </exec>
+    </target>
+
+    <target name="ps" depends="dvi">
+        <exec executable="dvips">
+            <arg value="quantum_groups"/>
+        </exec>
+    </target>
+
+    <target name="pdf" depends="ps">
+        <exec executable="ps2pdf">
+            <arg value="quantum_groups.ps"/>
+        </exec>
+    </target>
+    
+    <target name="eps-diagrams">
+        <exec executable="bash" dir="diagrams">
+            <arg value="find_all_diagrams.sh"/>
+        </exec>
+        <exec executable="bash" dir="diagrams">
+            <arg value="stripall.sh"/>
+        </exec>
+    </target>
+    
+    <target name="scott-copy-pdf" depends="pdf">
+        <copy file="quantum_groups.pdf" tofile="../../../../hosts/math.berkeley.edu/public_html/papers/quantum_groups.pdf"/>
+        <svn>
+            <commit dir="../../../../hosts/math.berkeley.edu/public_html/papers/"/>
+        </svn>
+    </target>
+
+</project>
