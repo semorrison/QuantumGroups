@@ -1,0 +1,36 @@
+\documentclass{gtart}
+% to submit to AGT, uncomment
+%\agtart
+
+\newcommand{\pathtotrunk}{./}
+\input{article/article_preamble.tex}
+\input{article/top_matter.tex}
+
+\begin{document}
+
+\begin{abstract}
+%% please modify plaintextabstract.txt below if you edit this one!
+\end{abstract}
+
+\maketitle
+
+% remove table of contents for submitted version
+\tableofcontents
+\input{article/text.tex}
+
+% ----------------------------------------------------------------
+\newcommand{\urlprefix}{}
+\bibliographystyle{gtart}
+%Included for winedt:
+%input "bibliography/bibliography.bib"
+\bibliography{bibliography/bibliography}
+% ----------------------------------------------------------------
+
+This paper is available online at arXiv:\arxiv{?????}, and at
+\url{http://scott-morrison.org/quantum_groups}.
+
+% A GTART necessity:
+\Addresses
+% ----------------------------------------------------------------
+\end{document}
+% ----------------------------------------------------------------
