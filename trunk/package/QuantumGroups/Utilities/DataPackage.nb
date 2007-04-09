@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     15562,        340]*)
-(*NotebookOutlinePosition[     16241,        363]*)
-(*  CellTagsIndexPosition[     16197,        359]*)
+(*NotebookOptionsPosition[     15899,        347]*)
+(*NotebookOutlinePosition[     16578,        370]*)
+(*  CellTagsIndexPosition[     16534,        366]*)
 (*WindowFrame->Normal*)
 
 
@@ -100,10 +100,14 @@ Cell[BoxData[
 "Input",
   InitializationCell->True],
 
-Cell[BoxData[
+Cell[BoxData[{
     \(ValuesAsString[s_Symbol, p_] := 
       StringJoin @@ \((ConvertRuleToAssignmentString /@ 
-            MatchingValues[s, p])\)\)], "Input",
+            MatchingValues[s, p])\)\), "\[IndentingNewLine]", 
+    \(WritesValues[s_Symbol, p_, 
+        filename_] := \(WriteString[filename, 
+            ConvertRuleToAssignmentString[#]] &\) /@ 
+        MatchingValues[s, p]\)}], "Input",
   InitializationCell->True],
 
 Cell[BoxData[{
@@ -125,9 +129,9 @@ Cell[BoxData[{
         opts]\), "\[IndentingNewLine]", 
     \(PackageData[patterns : {{_Symbol, _} .. }, baseDirectory_String, 
         packagePath : {__String}, opts___] := 
-      Module[{fullPackagePath, package, directory, filename, contents, needs, 
-          extraPackageCode, extraPrivateCode, loadPreexistingPackage, 
-          message, useGzip}, 
+      Module[{fullPackagePath, package, directory, filename, contentsTop, \ 
+          contentsBottom, needs, extraPackageCode, extraPrivateCode, 
+          loadPreexistingPackage, message, useGzip}, 
         needs = \("\<Needs\>" /. {opts}\) /. 
             Options[PackageData]; \[IndentingNewLine]extraPackageCode = \
 \("\<ExtraPackageCode\>" /. {opts}\) /. 
@@ -163,8 +167,8 @@ Cell[BoxData[{
                 Last[fullPackagePath] <> "\<.m.gz\>"]; \
 \[IndentingNewLine]ResetDirectory[]\[IndentingNewLine]]; \
 \[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, 
-            Get[package]]\[IndentingNewLine]]; \[IndentingNewLine]contents = \
-"\<BeginPackage[\"\>" <> package <> "\<\"\>" <> 
+            Get[package]]\[IndentingNewLine]]; \[IndentingNewLine]contentsTop \
+= "\<BeginPackage[\"\>" <> package <> "\<\"\>" <> 
             If[MatchQ[needs, {__String}], "\<, \>" <> 
                 ToString[needs, 
                   InputForm], "\<\>"] <> "\<]\>" <> "\<\n\>"\
@@ -172,16 +176,19 @@ Cell[BoxData[{
             package <> "\<\"]\>" <> "\<\n\>"\[IndentingNewLine] <> 
             extraPackageCode <> "\<\n\>"\[IndentingNewLine] <> \
 "\<Begin[\"`Private`\"]\>" <> "\<\n\>"\[IndentingNewLine] <> 
-            extraPrivateCode <> "\<\n\>"\[IndentingNewLine] <> 
-            StringJoin @@ \((\(ValuesAsString @@ # &\) /@ 
-                  patterns)\) <> "\<\n\>"\[IndentingNewLine] <> "\<End[]\n\>"\
-\[IndentingNewLine] <> "\<EndPackage[]\>"; \[IndentingNewLine]If[
+            extraPrivateCode <> "\<\n\>"; \[IndentingNewLine]contentsBottom = \
+"\<End[]\n\>" <> "\<EndPackage[]\>"; \[IndentingNewLine]If[
           Length[FileNames[filename]] \[NotEqual] 0, 
           DeleteFile[filename]]; \[IndentingNewLine]If[
           useGzip \[And] 
             Length[FileNames[filename <> "\<.gz\>"]] \[NotEqual] 0, 
           DeleteFile[filename <> "\<.gz\>"]]; \[IndentingNewLine]WriteString[
-          filename, contents]; \[IndentingNewLine]Close[
+          filename, 
+          contentsTop]; \
+\[IndentingNewLine]\(WriteValues[#\[LeftDoubleBracket]1\[RightDoubleBracket], \
+#\[LeftDoubleBracket]2\[RightDoubleBracket], filename] &\) /@ 
+          patterns; \[IndentingNewLine]WriteString[filename, 
+          contentsBottom]; \[IndentingNewLine]Close[
           filename]; \[IndentingNewLine]If[useGzip, SetDirectory[directory]; 
           Run["\<gzip \>" <> Last[fullPackagePath] <> "\<.m\>"]; 
           ResetDirectory[]]; \[IndentingNewLine]ResetDirectory[];]\)}], \
@@ -376,32 +383,32 @@ Cell[2875, 82, 314, 7, 30, "Input",
   InitializationCell->True],
 Cell[3192, 91, 376, 9, 50, "Input",
   InitializationCell->True],
-Cell[3571, 102, 186, 4, 30, "Input",
+Cell[3571, 102, 379, 8, 50, "Input",
   InitializationCell->True],
-Cell[3760, 108, 4585, 80, 830, "Input",
+Cell[3953, 112, 4729, 83, 830, "Input",
   InitializationCell->True],
-Cell[8348, 190, 703, 11, 134, "Input",
+Cell[8685, 197, 703, 11, 134, "Input",
   InitializationCell->True],
-Cell[9054, 203, 696, 12, 154, "Input",
+Cell[9391, 210, 696, 12, 154, "Input",
   InitializationCell->True],
-Cell[9753, 217, 543, 9, 134, "Input",
+Cell[10090, 224, 543, 9, 134, "Input",
   InitializationCell->True],
-Cell[10299, 228, 585, 11, 134, "Input",
+Cell[10636, 235, 585, 11, 134, "Input",
   InitializationCell->True],
-Cell[10887, 241, 774, 14, 154, "Input",
+Cell[11224, 248, 774, 14, 154, "Input",
   InitializationCell->True],
-Cell[11664, 257, 749, 13, 134, "Input",
+Cell[12001, 264, 749, 13, 134, "Input",
   InitializationCell->True],
-Cell[12416, 272, 735, 13, 134, "Input",
+Cell[12753, 279, 735, 13, 134, "Input",
   InitializationCell->True],
-Cell[13154, 287, 96, 2, 30, "Input"],
-Cell[13253, 291, 639, 11, 134, "Input",
+Cell[13491, 294, 96, 2, 30, "Input"],
+Cell[13590, 298, 639, 11, 134, "Input",
   InitializationCell->True],
-Cell[13895, 304, 1508, 26, 490, "Input",
+Cell[14232, 311, 1508, 26, 490, "Input",
   InitializationCell->True],
-Cell[15406, 332, 71, 2, 30, "Input",
+Cell[15743, 339, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[15480, 336, 78, 2, 30, "Input",
+Cell[15817, 343, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]
