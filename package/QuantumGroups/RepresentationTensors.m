@@ -196,13 +196,15 @@ RepresentationTensor/:(F:
 RepresentationTensor/:(F:
         RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]c_,
           V2_,\[Beta]d_,_])\[CirclePlus](G:
-        RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]c_,V4_,\[Beta]d_,_]):=
-  
-  RepresentationTensor[\[CapitalGamma],V1\[CirclePlus]V3,\[Beta]c,
-    V2\[CirclePlus]V4,\[Beta]d,
-    With[{\[Lambda]=#},{\[Lambda],
-            BlockDiagonalMatrix[F[\[Lambda]],G[\[Lambda]]]}]&/@
-      Weights[\[CapitalGamma],V2\[CirclePlus]V4]]
+        RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]c_,
+          V4_,\[Beta]d_,_]):=
+  (DebugPrint["taking direct sums of tensors..."];
+    RepresentationTensor[\[CapitalGamma],V1\[CirclePlus]V3,\[Beta]c,
+      V2\[CirclePlus]V4,\[Beta]d,
+      With[{\[Lambda]=#},
+            Print["... weight ",\[Lambda]];{\[Lambda],
+              BlockDiagonalMatrix[F[\[Lambda]],G[\[Lambda]]]}]&/@
+        Weights[\[CapitalGamma],V2\[CirclePlus]V4]])
 
 RepresentationTensor/:
   Inverse[RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,
@@ -377,40 +379,42 @@ DirectSumDecomposition[\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
           Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]])
 
 DecompositionMap[\[CapitalGamma]_,(U_\[CircleTimes]V_)\[CircleTimes]W_,\[Beta]\
-_]:=With[{Z=DecomposeRepresentation[\[CapitalGamma]][U\[CircleTimes]V]},
-    Module[{disordered,domain,disordering,result},
-      DebugPrintHeld["Beginning ",
-        DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
+_]:=DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\[Beta]\
+]=With[{Z=DecomposeRepresentation[\[CapitalGamma]][U\[CircleTimes]V]},
+      Module[{distributor,firstDecomposition,summandDecompositions,disordered,
+          domain,disordering,result},
+        DebugPrintHeld["Beginning ",
+          DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
 \[Beta]]];
-      distributor=Distributor[\[CapitalGamma]][Z\[CircleTimes]W,\[Beta]];
-      DebugPrint["...prepared distributor"];
-      firstDecomposition=
-        DecompositionMap[\[CapitalGamma],U\[CircleTimes]V,\[Beta]];
-      DebugPrint["...prepared first decomposition map"];
-      summandDecompositions=(DecompositionMap[\[CapitalGamma],#\[CircleTimes]\
-W,\[Beta]]&/@Z);
-      DebugPrint["...prepared all decomposition maps"];
-      disordered=(firstDecomposition\[CircleTimes]IdentityMap[\[CapitalGamma],
-                W,\[Beta]]).distributor.summandDecompositions;
-      DebugPrintHeld["... calculated the composition"];
-      domain=Domain[disordered];
-      disordering=
-        Ordering[domain]\[LeftDoubleBracket]
-          Ordering[
+        distributor=Distributor[\[CapitalGamma]][Z\[CircleTimes]W,\[Beta]];
+        DebugPrint["...prepared distributor"];
+        firstDecomposition=
+          DecompositionMap[\[CapitalGamma],U\[CircleTimes]V,\[Beta]];
+        DebugPrint["...prepared first decomposition map"];
+        summandDecompositions=(DecompositionMap[\[CapitalGamma],#\
+\[CircleTimes]W,\[Beta]]&/@Z);
+        DebugPrint["...prepared all decomposition maps"];
+        disordered=(firstDecomposition\[CircleTimes]IdentityMap[\
+\[CapitalGamma],W,\[Beta]]).distributor.summandDecompositions;
+        DebugPrint["... calculated the composition"];
+        domain=Domain[disordered];
+        disordering=
+          Ordering[domain]\[LeftDoubleBracket]
             Ordering[
-              SortWeights[\[CapitalGamma]][domain]]]\[RightDoubleBracket];
-      DebugPrint["... permuting bases"];
-      result=
-        disordered.PermuteDirectSummands[\[CapitalGamma]][
-            domain\[LeftDoubleBracket]
-              disordering\[RightDoubleBracket],\[Beta],
-            Ordering[disordering]];
-      DebugPrintHeld["Finishedt ",
-        DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
+              Ordering[
+                SortWeights[\[CapitalGamma]][domain]]]\[RightDoubleBracket];
+        DebugPrint["... permuting bases"];
+        result=
+          disordered.PermuteDirectSummands[\[CapitalGamma]][
+              domain\[LeftDoubleBracket]
+                disordering\[RightDoubleBracket],\[Beta],
+              Ordering[disordering]];
+        DebugPrintHeld["Finished ",
+          DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
 \[Beta]]];
-      result
+        result
+        ]
       ]
-    ]
 
 BlockPermutationMatrix[permutation:{__Integer},blocksizes:{__Integer}]:=
   BlockMatrix[

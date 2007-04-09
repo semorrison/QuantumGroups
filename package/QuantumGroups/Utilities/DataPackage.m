@@ -46,6 +46,8 @@ ConvertRuleToAssignmentString[a_HoldPattern\[RuleDelayed]b_]:=
 
 ValuesAsString[s_Symbol,p_]:=
   StringJoin@@(ConvertRuleToAssignmentString/@MatchingValues[s,p])
+WritesValues[s_Symbol,p_,filename_]:=
+  WriteString[filename,ConvertRuleToAssignmentString[#]]&/@MatchingValues[s,p]
 
 Options[PackageData]={"Needs"\[Rule]{},"ExtraPackageCode"\[Rule]"",
       "ExtraPrivateCode"\[Rule]"","LoadPreexistingPackage"\[Rule]True,
@@ -58,9 +60,10 @@ PackageData[patterns:{{_Symbol,_}..},packagePath:{__String},opts___]:=
   PackageData[patterns,QuantumGroupsDirectory[],packagePath,opts]
 PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
     packagePath:{__String},opts___]:=
-  Module[{fullPackagePath,package,directory,filename,contents,needs,
-      extraPackageCode,extraPrivateCode,loadPreexistingPackage,message,
-      useGzip},needs="Needs"/.{opts}/.Options[PackageData];
+  Module[{fullPackagePath,package,directory,filename,contentsTop, 
+      contentsBottom,needs,extraPackageCode,extraPrivateCode,
+      loadPreexistingPackage,message,useGzip},
+    needs="Needs"/.{opts}/.Options[PackageData];
     extraPackageCode="ExtraPackageCode"/.{opts}/.Options[PackageData];
     extraPrivateCode="ExtraPrivateCode"/.{opts}/.Options[PackageData];
     loadPreexistingPackage=
@@ -89,21 +92,22 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
         ];
       If[Length[FileNames[filename]]\[NotEqual]0,Get[package]]
       ];
-    contents=
+    contentsTop=
       "BeginPackage[\""<>package<>"\""<>
         If[MatchQ[needs,{__String}],", "<>ToString[needs,InputForm],""]<>"]"<>
         "\n"
         <>"Message["<>message<>",\""<>package<>"\"]"<>"\n"
         <>extraPackageCode<>"\n"
         <>"Begin[\"`Private`\"]"<>"\n"
-        <>extraPrivateCode<>"\n"
-        <>StringJoin@@(ValuesAsString@@#&/@patterns)<>"\n"
-        <>"End[]\n"
-        <>"EndPackage[]";
+        <>extraPrivateCode<>"\n";
+    contentsBottom="End[]\n"<>"EndPackage[]";
     If[Length[FileNames[filename]]\[NotEqual]0,DeleteFile[filename]];
     If[useGzip\[And]Length[FileNames[filename<>".gz"]]\[NotEqual]0,
       DeleteFile[filename<>".gz"]];
-    WriteString[filename,contents];
+    WriteString[filename,contentsTop];
+    WriteValues[#\[LeftDoubleBracket]1\[RightDoubleBracket],#\
+\[LeftDoubleBracket]2\[RightDoubleBracket],filename]&/@patterns;
+    WriteString[filename,contentsBottom];
     Close[filename];
     If[useGzip,SetDirectory[directory];
       Run["gzip "<>Last[fullPackagePath]<>".m"];ResetDirectory[]];
