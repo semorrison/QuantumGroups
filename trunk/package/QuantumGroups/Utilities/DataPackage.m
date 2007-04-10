@@ -46,8 +46,43 @@ ConvertRuleToAssignmentString[a_HoldPattern\[RuleDelayed]b_]:=
 
 ValuesAsString[s_Symbol,p_]:=
   StringJoin@@(ConvertRuleToAssignmentString/@MatchingValues[s,p])
-WritesValues[s_Symbol,p_,filename_]:=
-  WriteString[filename,ConvertRuleToAssignmentString[#]]&/@MatchingValues[s,p]
+
+WriteRule[filename_,a_HoldPattern\[RuleDelayed]b_]:=
+  (WriteString[filename,
+      StringTake[
+          ToString[a,InputForm,
+            CharacterEncoding\[Rule]"PrintableASCII"],{13,-2}]<>":="];
+    CautiousWriteString[filename,b,InputForm,
+      CharacterEncoding\[Rule]"PrintableASCII"];
+    WriteString[filename,"\n"];)
+
+CautiousWriteString[filename_,s_Symbol,options___]:=
+  WriteString[filename,ToString[s,options]]
+CautiousWriteString[filename_,s_String,options___]:=WriteString[filename,s]
+CautiousWriteString[filename_,s_Integer,options___]:=
+  WriteString[filename,ToString[s,options]]
+CautiousWriteString[filename_,s_Real,options___]:=
+  WriteString[filename,ToString[s,options]]
+CautiousWriteString[filename_,x_Plus,options___]:=
+  WriteString[filename,ToString[x,options]]
+CautiousWriteString[filename_,x_Times,options___]:=
+  WriteString[filename,ToString[x,options]]
+CautiousWriteString[filename_,x_TensorProduct,options___]:=
+  WriteString[filename,ToString[x,options]]
+CautiousWriteString[filename_,x_CircleTimes,options___]:=
+  WriteString[filename,ToString[x,options]]
+CautiousWriteString[filename_,{x___},options___]:=
+  (WriteString[filename,"{"];
+    (CautiousWriteString[filename,#,options];WriteString[filename,", "])&/@
+      Most[{x}];
+    CautiousWriteString[filename,Last[{x}],options];
+    WriteString[filename,"}"];)
+CautiousWriteString[filename_,f_[x___],options___]:=
+  (WriteString[filename,ToString[f,options]];WriteString[filename,"["];
+    (CautiousWriteString[filename,#,options];WriteString[filename,", "])&/@
+      Most[{x}];
+    CautiousWriteString[filename,Last[{x}],options];
+    WriteString[filename,"]"];)
 
 Options[PackageData]={"Needs"\[Rule]{},"ExtraPackageCode"\[Rule]"",
       "ExtraPrivateCode"\[Rule]"","LoadPreexistingPackage"\[Rule]True,
@@ -105,8 +140,8 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
     If[useGzip\[And]Length[FileNames[filename<>".gz"]]\[NotEqual]0,
       DeleteFile[filename<>".gz"]];
     WriteString[filename,contentsTop];
-    WriteValues[#\[LeftDoubleBracket]1\[RightDoubleBracket],#\
-\[LeftDoubleBracket]2\[RightDoubleBracket],filename]&/@patterns;
+    (Function[{rule},WriteRule[filename,rule]]/@(MatchingValues@@#))&/@
+      patterns;
     WriteString[filename,contentsBottom];
     Close[filename];
     If[useGzip,SetDirectory[directory];
