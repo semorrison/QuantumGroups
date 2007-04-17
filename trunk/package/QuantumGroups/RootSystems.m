@@ -31,7 +31,7 @@ BeginPackage[
 
 CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;\
 WeylOrbit;PositiveWeightQ;InWeylPolytopeQ;SortWeights;\
-SortWeightMultiplicities;MinisculeWeightQ;MinisculeRepresentationQ;\
+SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;\
 ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;\
 ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
 
@@ -210,21 +210,19 @@ SortWeightMultiplicities[\[CapitalGamma]_][l_]:=
 \[RightDoubleBracket],\[Theta]]&/@(l/.Irrep[_][\[Lambda]_]\[RuleDelayed]\
 \[Lambda])]\[RightDoubleBracket]]
 
-\!\(MinisculeWeightQ[A\_n_, \[Lambda]_] := UnitVectorQ[\[Lambda]]\)
+\!\(MinusculeWeightQ[A\_n_, \[Lambda]_] := UnitVectorQ[\[Lambda]]\)
 
-\!\(MinisculeWeightQ[B\_n_, \[Lambda]_] := \[Lambda] === UnitVector[n, n]\[IndentingNewLine]
-  MinisculeWeightQ[C\_n_, \[Lambda]_] := \[Lambda] === UnitVector[n, 1]\[IndentingNewLine]
-  MinisculeWeightQ[D\_n_, \[Lambda]_] := MemberQ[{UnitVector[n, 1], UnitVector[n, n - 1], UnitVector[n, n]}, \[Lambda]]\)
+\!\(MinusculeWeightQ[B\_n_, \[Lambda]_] := \[Lambda] === UnitVector[n, n]\[IndentingNewLine]
+  MinusculeWeightQ[C\_n_, \[Lambda]_] := \[Lambda] === UnitVector[n, 1]\[IndentingNewLine]
+  MinusculeWeightQ[D\_n_, \[Lambda]_] := MemberQ[{UnitVector[n, 1], UnitVector[n, n - 1], UnitVector[n, n]}, \[Lambda]]\)
 
-\!\(\(MinisculeWeightQ[E\_6, {1, 0, 0, 0, 0, 0}] = True;\)\[IndentingNewLine]
-  \(MinisculeWeightQ[E\_6, {0, 0, 0, 0, 0, 1}] = True;\)\)
+\!\(\(MinusculeWeightQ[E\_6, {1, 0, 0, 0, 0, 0}] = True;\)\[IndentingNewLine]
+  \(MinusculeWeightQ[E\_6, {0, 0, 0, 0, 0, 1}] = True;\)\)
 
-\!\(\(MinisculeWeightQ[E\_7, {1, 0, 0, 0, 0, 0, 0}] = False;\)\[IndentingNewLine]
-  \(MinisculeWeightQ[E\_7, {0, 1, 0, 0, 0, 0, 0}] = False;\)\[IndentingNewLine]
-  \(MinisculeWeightQ[E\_7, {0, 0, 0, 0, 0, 1, 0}] = False;\)\[IndentingNewLine]
-  \(MinisculeWeightQ[E\_7, {0, 0, 0, 0, 0, 0, 1}] = True;\)\)
-
-
+\!\(\(MinusculeWeightQ[E\_7, {1, 0, 0, 0, 0, 0, 0}] = False;\)\[IndentingNewLine]
+  \(MinusculeWeightQ[E\_7, {0, 1, 0, 0, 0, 0, 0}] = False;\)\[IndentingNewLine]
+  \(MinusculeWeightQ[E\_7, {0, 0, 0, 0, 0, 1, 0}] = False;\)\[IndentingNewLine]
+  \(MinusculeWeightQ[E\_7, {0, 0, 0, 0, 0, 0, 1}] = True;\)\)
 
 
 
@@ -234,11 +232,18 @@ SortWeightMultiplicities[\[CapitalGamma]_][l_]:=
 
 
 
-MinisculeWeightQ[_,_]:=False
 
-MinisculeRepresentationQ[\[CapitalGamma]_,
+
+MinusculeWeightQ[_,_]:=False
+
+MinusculeRepresentationQ[\[CapitalGamma]_,
     Irrep[\[CapitalGamma]_][\[Lambda]_]]:=
-  MinisculeWeightQ[\[CapitalGamma],\[Lambda]]
+  MinusculeWeightQ[\[CapitalGamma],\[Lambda]]
+
+MinusculeRepresentations[\[CapitalGamma]_]:=
+  Irrep[\[CapitalGamma]]/@
+    Select[IdentityMatrix[Rank[\[CapitalGamma]]],
+      MinusculeWeightQ[\[CapitalGamma],#]&]
 
 DominantRoots[\[CapitalGamma]_]:=
   DominantRoots[\[CapitalGamma]]=
