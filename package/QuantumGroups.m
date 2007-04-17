@@ -43,9 +43,10 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm",
       "SimpleRoots","SimpleReflection","WeylOrbit","PositiveWeightQ","InWeylPolytopeQ",
-      "SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinisculeRepresentationQ",
-      "ReflectIntoPositiveWeylChamber","ShortDominantRoots","ShortSimpleRoots",
-      "ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
+      "SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinusculeRepresentationQ",
+      "MinusculeRepresentations","ReflectIntoPositiveWeylChamber","ShortDominantRoots",
+      "ShortSimpleRoots","ShortRoots","ShortDominantRootQ",
+      "DualCoxeterNumber"}];
 
 DeclarePackage[
     "QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","\[Rho]",
