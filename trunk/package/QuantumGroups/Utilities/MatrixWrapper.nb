@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     14850,        389]*)
-(*NotebookOutlinePosition[     15527,        412]*)
-(*  CellTagsIndexPosition[     15483,        408]*)
+(*NotebookOptionsPosition[     14857,        389]*)
+(*NotebookOutlinePosition[     15534,        412]*)
+(*  CellTagsIndexPosition[     15490,        408]*)
 (*WindowFrame->Normal*)
 
 
@@ -309,7 +309,7 @@ Cell[BoxData[
 
 Cell[BoxData[
     \(RowOrderedInterpolationInverse[mat_?SquareMatrixQ] := 
-      Module[{rf = MatrixRowFactors[mat], rfmat}, \[IndentingNewLine]Simplify[
+      Module[{rf = MatrixRowFactors[mat]}, \[IndentingNewLine]Simplify[
           InterpolationInverse[Expand[Together[rf . mat]]] . 
             rf]\[IndentingNewLine]]\)], "Input",
   InitializationCell->True],
@@ -322,7 +322,7 @@ Cell[BoxData[{
 
 Cell[BoxData[
     \(recordInterpolationInverseRequest[mat_] := 
-      If[Length[mat] > InterpolationInverseLargestRequestSize, 
+      If[Length[mat] \[GreaterEqual] InterpolationInverseLargestRequestSize, 
         DebugPrint["\<New largest matrix! Size \>", Length[mat]]; 
         AppendTo[InterpolationInverseRequests, mat]; 
         InterpolationInverseLargestRequestSize = Length[mat]]\)], "Input",
@@ -487,17 +487,17 @@ Cell[10727, 292, 228, 4, 70, "Input",
   InitializationCell->True],
 Cell[10958, 298, 498, 9, 130, "Input",
   InitializationCell->True],
-Cell[11459, 309, 292, 5, 90, "Input",
+Cell[11459, 309, 285, 5, 90, "Input",
   InitializationCell->True],
-Cell[11754, 316, 191, 4, 50, "Input",
+Cell[11747, 316, 191, 4, 50, "Input",
   InitializationCell->True],
-Cell[11948, 322, 351, 6, 110, "Input",
+Cell[11941, 322, 365, 6, 110, "Input",
   InitializationCell->True],
-Cell[12302, 330, 2389, 49, 614, "Input",
+Cell[12309, 330, 2389, 49, 614, "Input",
   InitializationCell->True],
-Cell[14694, 381, 71, 2, 30, "Input",
+Cell[14701, 381, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[14768, 385, 78, 2, 30, "Input",
+Cell[14775, 385, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]
