@@ -25,7 +25,7 @@ ValuesAsString;PackageData;MatchingValues;
 {PackageMatrixPresentations,PackageDecompositionMaps,PackageQuantumRoots,
     PackageRMatrix,PackagePartialRMatrixPresentation,
     PackageDirectSumDecompositions,PackageHighWeightVectors,
-    PackageSubIrrepWeightBases};
+    PackageSubIrrepWeightBases,PackageBraidingMatrices};
 
 Begin["`Private`"];
 
@@ -71,7 +71,8 @@ CautiousWriteString[filename_,x_TensorProduct,options___]:=
   WriteString[filename,ToString[x,options]]
 CautiousWriteString[filename_,x_CircleTimes,options___]:=
   WriteString[filename,ToString[x,options]]
-CautiousWriteString[filename_,{x___},options___]:=
+CautiousWriteString[filename_,{},options___]:=WriteString[filename,"{}"]
+CautiousWriteString[filename_,{x__},options___]:=
   (WriteString[filename,"{"];
     (CautiousWriteString[filename,#,options];WriteString[filename,", "])&/@
       Most[{x}];
@@ -150,7 +151,7 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
 
 \!\(PackageMatrixPresentations[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]MatrixPresentation, \(\(MatrixPresentation[\[CapitalGamma]\_n]\)[_]\)[\(Irrep[\[CapitalGamma]\_n]\)[_], FundamentalBasis, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<MatrixPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
 
-\!\(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]DecompositionMap, DecompositionMap[\[CapitalGamma]\_n, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`MatrixPresentations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
+\!\(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]DecompositionMap, DecompositionMap[\[CapitalGamma]\_n, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`MatrixPresentations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)
 
 \!\(PackageQuantumRoots[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]ExpandQuantumRoot, \(ExpandQuantumRoot[\[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`QuantumRoots`\>", "\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
@@ -165,6 +166,8 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
 
 
 \!\(PackageHighWeightVectors[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]HighWeightVectors, \(HighWeightVectors[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<HighWeightVectors\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
+
+\!\(PackageBraidingMatrices[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`Braiding`Private`BraidingMatrices, \(QuantumGroups`Braiding`Private`BraidingMatrices[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<BraidingMatrices\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Braiding`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
 Unprotect[Get];
 useGetGzipHack=True;

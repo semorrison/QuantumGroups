@@ -161,7 +161,7 @@ MatrixRowFactors[mat_?SquareMatrixQ]:=
     ]
 
 RowOrderedInterpolationInverse[mat_?SquareMatrixQ]:=
-  Module[{rf=MatrixRowFactors[mat],rfmat},
+  Module[{rf=MatrixRowFactors[mat]},
     Simplify[InterpolationInverse[Expand[Together[rf.mat]]].rf]
     ]
 
@@ -169,7 +169,7 @@ InterpolationInverseLargestRequestSize=0;
 InterpolationInverseRequests={};
 
 recordInterpolationInverseRequest[mat_]:=
-  If[Length[mat]>InterpolationInverseLargestRequestSize,
+  If[Length[mat]\[GreaterEqual]InterpolationInverseLargestRequestSize,
     DebugPrint["New largest matrix! Size ",Length[mat]];
     AppendTo[InterpolationInverseRequests,mat];
     InterpolationInverseLargestRequestSize=Length[mat]]

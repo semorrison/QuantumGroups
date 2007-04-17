@@ -38,7 +38,7 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`Utilities`DataPackage`",{"ValuesAsString","PackageData","PackageMatrixPresentations",
       "PackageDecompositionMaps","PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation",
-      "PackageHighWeightVectors"}];
+      "PackageHighWeightVectors","PackageBraidingMatrices"}];
 
 DeclarePackage[
     "QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm",

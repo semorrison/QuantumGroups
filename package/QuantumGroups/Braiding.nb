@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     16189,        420]*)
-(*NotebookOutlinePosition[     16868,        443]*)
-(*  CellTagsIndexPosition[     16824,        439]*)
+(*NotebookOptionsPosition[     16292,        422]*)
+(*NotebookOutlinePosition[     16971,        445]*)
+(*  CellTagsIndexPosition[     16927,        441]*)
 (*WindowFrame->Normal*)
 
 
@@ -223,23 +223,25 @@ Cell[BoxData[
   InitializationCell->True],
 
 Cell[BoxData[
-    \(\(BraidingMatrices[\[CapitalGamma]_]\)[V_, n_Integer, \[Lambda]_] := 
-      Module[{a, hwv, matrices, 
-          inverses}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \
+    \(\(BraidingMatrices[\[CapitalGamma]_]\)[V_, 
+        n_Integer, \[Lambda]_] := \(\(BraidingMatrices[\[CapitalGamma]]\)[V, 
+          n, \[Lambda]] = 
+        Module[{a, hwv, matrices, 
+            inverses}, \[IndentingNewLine]DebugPrintHeld["\<Calculating \>", \
 \(BraidingMatrices[\[CapitalGamma]]\)[V, 
-            n, \[Lambda]]]; \[IndentingNewLine]hwv = \(HighWeightVectors[\
+              n, \[Lambda]]]; \[IndentingNewLine]hwv = \(HighWeightVectors[\
 \[CapitalGamma]]\)[V\^\(\[CircleTimes]n\), 
-            FundamentalBasis, \[Lambda]]; \
+              FundamentalBasis, \[Lambda]]; \
 \[IndentingNewLine]DebugPrint["\<Changing basis ...\>"]; \
 \[IndentingNewLine]matrices = 
-          Table[ChangeBasis[
-              MatrixData[\(\(BR[n, {i}]\)[\[CapitalGamma], V, 
-                    FundamentalBasis]\)[\[Lambda]]], hwv], {i, 1, 
-              n - 1}]; \[IndentingNewLine]inverses = 
-          MatrixInverse /@ 
-            matrices; \[IndentingNewLine]DebugPrint["\<Finished calculating \
+            Table[ChangeBasis[
+                MatrixData[\(\(BR[n, {i}]\)[\[CapitalGamma], V, 
+                      FundamentalBasis]\)[\[Lambda]]], hwv], {i, 1, 
+                n - 1}]; \[IndentingNewLine]inverses = 
+            MatrixInverse /@ 
+              matrices; \[IndentingNewLine]DebugPrint["\<Finished calculating \
 braiding matrices.\>"]; \[IndentingNewLine]Together[{matrices, 
-            inverses}]\[IndentingNewLine]]\)], "Input",
+              inverses}]\[IndentingNewLine]]\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -503,46 +505,46 @@ Cell[6922, 204, 330, 7, 50, "Input",
   InitializationCell->True],
 Cell[7255, 213, 486, 9, 110, "Input",
   InitializationCell->True],
-Cell[7744, 224, 961, 18, 190, "Input",
+Cell[7744, 224, 1064, 20, 230, "Input",
   InitializationCell->True],
-Cell[8708, 244, 516, 9, 154, "Input",
+Cell[8811, 246, 516, 9, 154, "Input",
   InitializationCell->True],
-Cell[9227, 255, 547, 10, 90, "Input",
+Cell[9330, 257, 547, 10, 90, "Input",
   InitializationCell->True],
-Cell[9777, 267, 617, 12, 50, "Input",
+Cell[9880, 269, 617, 12, 50, "Input",
   InitializationCell->True],
-Cell[10397, 281, 640, 13, 90, "Input",
+Cell[10500, 283, 640, 13, 90, "Input",
   InitializationCell->True],
-Cell[11040, 296, 183, 3, 30, "Input",
+Cell[11143, 298, 183, 3, 30, "Input",
   InitializationCell->True],
-Cell[11226, 301, 177, 3, 30, "Input",
+Cell[11329, 303, 177, 3, 30, "Input",
   InitializationCell->True],
-Cell[11406, 306, 502, 9, 134, "Input",
+Cell[11509, 308, 502, 9, 134, "Input",
   InitializationCell->True],
-Cell[11911, 317, 109, 2, 30, "Input",
+Cell[12014, 319, 109, 2, 30, "Input",
   InitializationCell->True],
-Cell[12023, 321, 225, 6, 50, "Input",
+Cell[12126, 323, 225, 6, 50, "Input",
   InitializationCell->True],
-Cell[12251, 329, 143, 3, 31, "Input",
+Cell[12354, 331, 143, 3, 31, "Input",
   InitializationCell->True],
-Cell[12397, 334, 1106, 19, 198, "Input",
+Cell[12500, 336, 1106, 19, 198, "Input",
   InitializationCell->True],
 
 Cell[CellGroupData[{
-Cell[13528, 357, 673, 11, 134, "Input",
+Cell[13631, 359, 673, 11, 134, "Input",
   InitializationCell->True],
-Cell[14204, 370, 384, 6, 22, "Message",
+Cell[14307, 372, 384, 6, 22, "Message",
   InitializationCell->True]
 }, Open  ]],
-Cell[14603, 379, 1318, 23, 257, "Input",
+Cell[14706, 381, 1318, 23, 257, "Input",
   InitializationCell->True],
-Cell[15924, 404, 71, 2, 30, "Input",
+Cell[16027, 406, 71, 2, 30, "Input",
   InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[16032, 411, 36, 0, 38, "Subsection"],
-Cell[16071, 413, 78, 2, 30, "Input",
+Cell[16135, 413, 36, 0, 38, "Subsection"],
+Cell[16174, 415, 78, 2, 30, "Input",
   InitializationCell->True]
 }, Closed]]
 }, Open  ]]
