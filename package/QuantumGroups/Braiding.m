@@ -64,6 +64,10 @@ BR[n_,{1}][\[CapitalGamma]_,V_List,\[Beta]_]:=
 \[LeftDoubleBracket]2\[RightDoubleBracket],\[Beta]],
       IdentityMap[\[CapitalGamma],#,\[Beta]]&/@Drop[V,2]]
 
+BR[n_,{-1}][\[CapitalGamma]_,V_List,\[Beta]_]:=
+  BR[n,{-1}][\[CapitalGamma],V,\[Beta]]=
+    Inverse[BR[n,{1}][\[CapitalGamma],V,\[Beta]]]
+
 BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<k<n:=
   BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,aib,r},
       DebugPrintHeld["Calculating (what a waste!) ",
@@ -85,18 +89,39 @@ BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<k<n:=
       r
       ]
 
-BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;0<-k<n:=
-  Inverse[BR[n,{-k}][\[CapitalGamma],V,\[Beta]]]
+BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<-k<n:=
+  BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,aib,r},
+      DebugPrintHeld["Calculating (what a waste!) ",
+        BR[n,{k}][\[CapitalGamma],V,\[Beta]]];
+      ib=IdentityMap[\[CapitalGamma],
+            TensorProduct@@
+              Take[V,(-k)-1],\[Beta]]\[CircleTimes]\
+InverseNormalisedBraidingMap[\[CapitalGamma],
+            V\[LeftDoubleBracket]-k\[RightDoubleBracket]\[CircleTimes]V\
+\[LeftDoubleBracket]-k+1\[RightDoubleBracket],\[Beta]];
+      as=Associator[\[CapitalGamma],TensorProduct@@Take[V,-k-1],
+          V\[LeftDoubleBracket]-k\[RightDoubleBracket],
+          V\[LeftDoubleBracket]-k+1\[RightDoubleBracket],\[Beta]];
+      aib=as.ib.Inverse[as];
+      r=Fold[#1\[CircleTimes]#2&,aib,
+          IdentityMap[\[CapitalGamma],#,\[Beta]]&/@Drop[V,-k+1]];
+      DebugPrint["... finished calculating, result ",ByteCount[r], " bytes"];
+      r
+      ]
 
-BR[n_,{k_Integer}][\[CapitalGamma]_,V_,\[Beta]_]:=
-  BR[n,{k}][\[CapitalGamma],Table[V,{n}],\[Beta]]
+BR[n_Integer,{k1_Integer,k2_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]:=
+  BR[n,{k1,k2}][\[CapitalGamma],V,\[Beta]]=
+    Simplify[BR[n,{k1}][\[CapitalGamma],V,\[Beta]].BR[n,{k2}][\[CapitalGamma],
+          V,\[Beta]]]
 
-BR[n_Integer,{k1_Integer,k2_Integer}][\[CapitalGamma]_,V_,\[Beta]_]:=
-  BR[n,{k1}][\[CapitalGamma],V,\[Beta]].BR[n,{k2}][\[CapitalGamma],V,\[Beta]]
+BR[n_Integer,k_][\[CapitalGamma]_,V:Irrep[\[CapitalGamma]_][_],\[Beta]_]:=
+  BR[n,k][\[CapitalGamma],Table[V,{n}],\[Beta]]
 
-BR[n_Integer,ks:{__Integer}][\[CapitalGamma]_,V_,\[Beta]_]:=
-  BR[n,Take[ks,Floor[Length[ks]/2]]][\[CapitalGamma],
-      V,\[Beta]].BR[n,Drop[ks,Floor[Length[ks]/2]]][\[CapitalGamma],V,\[Beta]]
+BR[n_Integer,ks:{__Integer}][\[CapitalGamma]_,V_List,\[Beta]_]:=
+  BR[n,ks][\[CapitalGamma],V,\[Beta]]=
+    Simplify[BR[n,Take[ks,Floor[Length[ks]/2]]][\[CapitalGamma],
+          V,\[Beta]].BR[n,Drop[ks,Floor[Length[ks]/2]]][\[CapitalGamma],
+          V,\[Beta]]]
 
 ChangeBasis[map_,basis_]:=Module[{},
     DebugPrint["ChangeBasis called with ",Dimensions[map]," ",Length[basis]];

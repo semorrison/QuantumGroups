@@ -38,7 +38,8 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`Utilities`DataPackage`",{"ValuesAsString","PackageData","PackageMatrixPresentations",
       "PackageDecompositionMaps","PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation",
-      "PackageHighWeightVectors","PackageBraidingMatrices"}];
+      "PackageHighWeightVectors","PackageBraidingMatrices","PackageBRPresentations",
+      "PackageBraidingMaps"}];
 
 DeclarePackage[
     "QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm",
@@ -90,7 +91,8 @@ DeclarePackage[
     "QuantumGroups`RepresentationTensors`",{"RepresentationTensor","Domain","Codomain",
       "DomainBasis","CodomainBasis","Algebra","IdentityMap","ZeroTensorQ","CheckRepresentationTensor",
       "RepresentationTensorErrors","QuantumTrace","Distributor","Associator","BraidingMap",
-      "NormalisedBraidingMap","DecompositionMap","PermuteDirectSummands","DirectSumProjectionMap",
+      "NormalisedBraidingMap","InverseNormalisedBraidingMap","DecompositionMap",
+      "PermuteDirectSummands","DirectSumProjectionMap",
       "DirectSumInclusionMap"}];
 
 DeclarePackage[

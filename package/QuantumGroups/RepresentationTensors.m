@@ -61,7 +61,7 @@ QuantumTrace::usage="";
 
 Distributor;Associator;
 
-BraidingMap;NormalisedBraidingMap;
+BraidingMap;NormalisedBraidingMap;InverseNormalisedBraidingMap;
 
 DecompositionMap;
 
@@ -94,8 +94,20 @@ IdentityMap[\[CapitalGamma]_,V_,\[Beta]_]:=
     V,\[Beta],{#,identityMatrix[WeightMultiplicity[\[CapitalGamma],V,#]]}&/@
       Weights[\[CapitalGamma],V]]
 
+ZeroMap[\[CapitalGamma]_,V_,\[Beta]V_,W_,\[Beta]W_]:=
+  RepresentationTensor[\[CapitalGamma],V,\[Beta]V,
+    W,\[Beta]W,{#,
+          zeroMatrix[WeightMultiplicity[\[CapitalGamma],V,#],
+            WeightMultiplicity[\[CapitalGamma],W,#]]}&/@
+      Weights[\[CapitalGamma],V]]
+
 ZeroTensorQ[RepresentationTensor[_,_,_,_,_,matrices_]]:=
   And@@(ZeroMatrixQ[#\[LeftDoubleBracket]2\[RightDoubleBracket]]&/@matrices)
+
+RepresentationTensor/:
+  Together[RepresentationTensor[\[CapitalGamma]_,Vc_,\[Beta]c_,Vd_,\[Beta]d_,
+      data_]]:=RepresentationTensor[\[CapitalGamma],Vc,\[Beta]c,Vd,\[Beta]d,
+    Together[data]]
 
 
 
@@ -326,6 +338,10 @@ BraidingMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
 
 NormalisedBraidingMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
   BraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]
+
+InverseNormalisedBraidingMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
+  InverseNormalisedBraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=
+    Inverse[NormalisedBraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]]
 
 \!\(SwitchTensorProductWeightSpace[\[CapitalGamma]_, V_\[CircleTimes]W_, \[Lambda] : {__Integer}] := \[Sum]\+\(i = 1\)\%\(Length[Weights[\[CapitalGamma], W]]\)TensorProductWeightSpaceInclusion[\[CapitalGamma], {W, V}, {\(Weights[\[CapitalGamma], W]\)\[LeftDoubleBracket]i\[RightDoubleBracket], \[Lambda] - \(Weights[\[CapitalGamma], W]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}] . SwitchTensorProduct[WeightMultiplicity[\[CapitalGamma], V, \[Lambda] - \(Weights[\[CapitalGamma], W]\)\[LeftDoubleBracket]i\[RightDoubleBracket]], WeightMultiplicity[\[CapitalGamma], W, \(Weights[\[CapitalGamma], W]\)\[LeftDoubleBracket]i\[RightDoubleBracket]]] . Transpose[TensorProductWeightSpaceInclusion[\[CapitalGamma], {V, W}, {\[Lambda] - \(Weights[\[CapitalGamma], W]\)\[LeftDoubleBracket]i\[RightDoubleBracket], \(Weights[\[CapitalGamma], W]\)\[LeftDoubleBracket]i\[RightDoubleBracket]}]]\)
 

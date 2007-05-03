@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     19279,        411]*)
-(*NotebookOutlinePosition[     19956,        434]*)
-(*  CellTagsIndexPosition[     19912,        430]*)
+(*NotebookOptionsPosition[     20720,        439]*)
+(*NotebookOutlinePosition[     21397,        462]*)
+(*  CellTagsIndexPosition[     21353,        458]*)
 (*WindowFrame->Normal*)
 
 
@@ -66,7 +66,8 @@ Cell[BoxData[
         PackageQuantumRoots, PackageRMatrix, 
         PackagePartialRMatrixPresentation, PackageDirectSumDecompositions, 
         PackageHighWeightVectors, PackageSubIrrepWeightBases, 
-        PackageBraidingMatrices};\)\)], "Input",
+        PackageBraidingMatrices, PackageBRPresentations, 
+        PackageBraidingMaps};\)\)], "Input",
   InitializationCell->True],
 
 Cell[BoxData[
@@ -342,8 +343,35 @@ Private`SubIrrepWeightBasis, \
   InitializationCell->True],
 
 Cell[BoxData[
-    \(QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis\)], \
-"Input"],
+    \(PackageBraidingMaps[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]{{NormalisedBraidingMap, 
+            NormalisedBraidingMap[\[CapitalGamma]\_n, _, _]}, \
+{InverseNormalisedBraidingMap, 
+            InverseNormalisedBraidingMap[\[CapitalGamma]\_n, _, _]}}, \
+\[IndentingNewLine]{"\<tmp\>", 
+          ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<BraidingMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
+{"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
+"\<QuantumGroups`RepresentationTensors`\>", \
+"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
+\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
+
+Cell[BoxData[
+    \(PackageBRPresentations[\[CapitalGamma]_\_n_] := 
+      PackageData[\[IndentingNewLine]KnotTheory`BR, \(KnotTheory`BR[_, _]\)[\
+\[CapitalGamma]\_n, __], \[IndentingNewLine]{"\<tmp\>", 
+          ToString[\[CapitalGamma]] <> 
+            ToString[
+              n], "\<BRPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \
+\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
+"\<QuantumGroups`RepresentationTensors`\>", \
+"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
+"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
+\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
+  InitializationCell->True],
 
 Cell[BoxData[
     \(PackageHighWeightVectors[\[CapitalGamma]_\_n_] := 
@@ -437,48 +465,51 @@ Cell[1754, 51, 350, 6, 50, "Input",
   InitializationCell->True],
 Cell[2107, 59, 105, 2, 30, "Input",
   InitializationCell->True],
-Cell[2215, 63, 339, 6, 50, "Input",
+Cell[2215, 63, 393, 7, 50, "Input",
   InitializationCell->True],
-Cell[2557, 71, 88, 2, 30, "Input",
+Cell[2611, 72, 88, 2, 30, "Input",
   InitializationCell->True],
-Cell[2648, 75, 258, 6, 30, "Input",
+Cell[2702, 76, 258, 6, 30, "Input",
   InitializationCell->True],
-Cell[2909, 83, 314, 7, 30, "Input",
+Cell[2963, 84, 314, 7, 30, "Input",
   InitializationCell->True],
-Cell[3226, 92, 376, 9, 50, "Input",
+Cell[3280, 93, 376, 9, 50, "Input",
   InitializationCell->True],
-Cell[3605, 103, 186, 4, 30, "Input",
+Cell[3659, 104, 186, 4, 30, "Input",
   InitializationCell->True],
-Cell[3794, 109, 528, 11, 90, "Input",
+Cell[3848, 110, 528, 11, 90, "Input",
   InitializationCell->True],
-Cell[4325, 122, 2266, 37, 390, "Input",
+Cell[4379, 123, 2266, 37, 390, "Input",
   InitializationCell->True],
-Cell[6594, 161, 4732, 83, 830, "Input",
+Cell[6648, 162, 4732, 83, 830, "Input",
   InitializationCell->True],
-Cell[11329, 246, 703, 11, 134, "Input",
+Cell[11383, 247, 703, 11, 134, "Input",
   InitializationCell->True],
-Cell[12035, 259, 697, 12, 154, "Input",
+Cell[12089, 260, 697, 12, 154, "Input",
   InitializationCell->True],
-Cell[12735, 273, 543, 9, 134, "Input",
+Cell[12789, 274, 543, 9, 134, "Input",
   InitializationCell->True],
-Cell[13281, 284, 585, 11, 134, "Input",
+Cell[13335, 285, 585, 11, 134, "Input",
   InitializationCell->True],
-Cell[13869, 297, 774, 14, 154, "Input",
+Cell[13923, 298, 774, 14, 154, "Input",
   InitializationCell->True],
-Cell[14646, 313, 749, 13, 134, "Input",
+Cell[14700, 314, 749, 13, 134, "Input",
   InitializationCell->True],
-Cell[15398, 328, 735, 13, 134, "Input",
+Cell[15452, 329, 735, 13, 134, "Input",
   InitializationCell->True],
-Cell[16136, 343, 96, 2, 30, "Input"],
-Cell[16235, 347, 639, 11, 134, "Input",
+Cell[16190, 344, 801, 15, 154, "Input",
   InitializationCell->True],
-Cell[16877, 360, 732, 13, 154, "Input",
+Cell[16994, 361, 679, 12, 154, "Input",
   InitializationCell->True],
-Cell[17612, 375, 1508, 26, 490, "Input",
+Cell[17676, 375, 639, 11, 134, "Input",
   InitializationCell->True],
-Cell[19123, 403, 71, 2, 30, "Input",
+Cell[18318, 388, 732, 13, 154, "Input",
   InitializationCell->True],
-Cell[19197, 407, 78, 2, 30, "Input",
+Cell[19053, 403, 1508, 26, 490, "Input",
+  InitializationCell->True],
+Cell[20564, 431, 71, 2, 30, "Input",
+  InitializationCell->True],
+Cell[20638, 435, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]
