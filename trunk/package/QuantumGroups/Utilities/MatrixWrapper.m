@@ -16,7 +16,7 @@ overwritten.
 ***********************************************************************)
 
 BeginPackage[
-    "QuantumGroups`Utilities`MatrixWrapper`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`",
+    "QuantumGroups`Utilities`MatrixWrapper`",{"LinearAlgebra`MatrixManipulation`",
       "QuantumGroups`Utilities`Debugging`"}];
 
 OnesMatrix;ZeroesMatrix;ZeroMatrixQ;NonZeroMatrixQ;Matrix;MatrixData;\
