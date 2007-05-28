@@ -214,7 +214,7 @@ RepresentationTensor/:(F:
     RepresentationTensor[\[CapitalGamma],V1\[CirclePlus]V3,\[Beta]c,
       V2\[CirclePlus]V4,\[Beta]d,
       With[{\[Lambda]=#},
-            Print["... weight ",\[Lambda]];{\[Lambda],
+            DebugPrint["... weight ",\[Lambda]];{\[Lambda],
               BlockDiagonalMatrix[F[\[Lambda]],G[\[Lambda]]]}]&/@
         Weights[\[CapitalGamma],V2\[CirclePlus]V4]])
 
@@ -385,10 +385,10 @@ HighWeightVectors[\[CapitalGamma]_][(U_\[CircleTimes]V_)\[CircleTimes]W_,\
 
 DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
   DecompositionMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=
-    (Print[DecompositionMap, \[CapitalGamma],V,W];
+    (DebugPrint[DecompositionMap, \[CapitalGamma],V,W];
       RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
         DecomposeRepresentation[\[CapitalGamma]][
-          V\[CircleTimes]W],\[Beta],{#,(Print["mem: ",MemoryInUse[]," time: ",
+          V\[CircleTimes]W],\[Beta],{#,(DebugPrint["mem: ",MemoryInUse[]," time: ",
                   TimeUsed[]," ... weight ",#];
                 QuantumGroups`MatrixPresentations`Private`\
 DirectSumDecomposition[\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@

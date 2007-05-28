@@ -25,6 +25,9 @@ InterpolationInverseThreshold;
 
 Begin["`Private`"];
 
+UnitVector[n_Integer,k_Integer]/;1\[LessEqual]k\[LessEqual]n:=
+  Table[If[i\[Equal]k,1,0],{i,1,n}]
+
 OnesMatrix[n_,m_]:=Matrix[n,m,Table[1,{n},{m}]]
 
 ZeroesMatrix[n_,m_]:=Matrix[n,m,Table[0,{n},{m}]]

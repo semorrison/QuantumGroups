@@ -101,12 +101,16 @@ DeclarePackage[
 
 Print[
   "Loading QuantumGroups` version 2.0\n",
-  "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"
+  "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups\n",
+  "Remember to set QuantumGroupsDataDirectory[] to the appropriate path, if you've downloaded precomputed data."\
+
   ]
 
 BeginPackage["QuantumGroups`"];
 
-QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return the location the QuantumGroups` package was loaded from.";
+QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return the location the QuantumGroups` package was loaded from.";\
+
+QuantumGroupsDataDirectory::usage="QuantumGroupsDataDirectory[] specificies were the QuantumGroups` package should look for, and save, precomputed data.";
 
 {A,B,C,D,E,F,G};
 
@@ -156,9 +160,11 @@ QuantumGroupsDirectory[]:=
             FileInformation[ToFileName[#,"QuantumGroups"]]&/@($Path/.
                   "."\[Rule]Directory[])]),-14]
 
-(*might be dangerous if QuantumGroupsDirectory[] is somehow \
-incorrect!*)If[!MemberQ[$Path,QuantumGroupsDirectory[]],
+(*might be dangerous if QuantumGroupsDirectory[] is somehow incorrect!*)
+If[!MemberQ[$Path,QuantumGroupsDirectory[]],
   AppendTo[$Path,QuantumGroupsDirectory[]]]
+
+QuantumGroupsDataDirectory[]:=QuantumGroupsDirectory[]<>"/Data";
 
 \!\(\(qInteger[n_Integer]\)[q_] := Sum[q\^k, {k, \(-n\) + 1, n - 1, 2}]\)
 
