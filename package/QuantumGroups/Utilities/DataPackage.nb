@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     20720,        439]*)
-(*NotebookOutlinePosition[     21397,        462]*)
-(*  CellTagsIndexPosition[     21353,        458]*)
+(*NotebookOptionsPosition[     20724,        439]*)
+(*NotebookOutlinePosition[     21401,        462]*)
+(*  CellTagsIndexPosition[     21357,        458]*)
 (*WindowFrame->Normal*)
 
 
@@ -175,7 +175,7 @@ Cell[BoxData[{
       PackageData[{{s, p}}, baseDirectory, packagePath, opts]\), "\n", 
     \(PackageData[patterns : {{_Symbol, _} .. }, packagePath : {__String}, 
         opts___] := 
-      PackageData[patterns, QuantumGroupsDirectory[], packagePath, 
+      PackageData[patterns, QuantumGroupsDataDirectory[], packagePath, 
         opts]\), "\[IndentingNewLine]", 
     \(PackageData[patterns : {{_Symbol, _} .. }, baseDirectory_String, 
         packagePath : {__String}, opts___] := 
@@ -481,35 +481,35 @@ Cell[3848, 110, 528, 11, 90, "Input",
   InitializationCell->True],
 Cell[4379, 123, 2266, 37, 390, "Input",
   InitializationCell->True],
-Cell[6648, 162, 4732, 83, 830, "Input",
+Cell[6648, 162, 4736, 83, 830, "Input",
   InitializationCell->True],
-Cell[11383, 247, 703, 11, 134, "Input",
+Cell[11387, 247, 703, 11, 134, "Input",
   InitializationCell->True],
-Cell[12089, 260, 697, 12, 154, "Input",
+Cell[12093, 260, 697, 12, 154, "Input",
   InitializationCell->True],
-Cell[12789, 274, 543, 9, 134, "Input",
+Cell[12793, 274, 543, 9, 134, "Input",
   InitializationCell->True],
-Cell[13335, 285, 585, 11, 134, "Input",
+Cell[13339, 285, 585, 11, 134, "Input",
   InitializationCell->True],
-Cell[13923, 298, 774, 14, 154, "Input",
+Cell[13927, 298, 774, 14, 154, "Input",
   InitializationCell->True],
-Cell[14700, 314, 749, 13, 134, "Input",
+Cell[14704, 314, 749, 13, 134, "Input",
   InitializationCell->True],
-Cell[15452, 329, 735, 13, 134, "Input",
+Cell[15456, 329, 735, 13, 134, "Input",
   InitializationCell->True],
-Cell[16190, 344, 801, 15, 154, "Input",
+Cell[16194, 344, 801, 15, 154, "Input",
   InitializationCell->True],
-Cell[16994, 361, 679, 12, 154, "Input",
+Cell[16998, 361, 679, 12, 154, "Input",
   InitializationCell->True],
-Cell[17676, 375, 639, 11, 134, "Input",
+Cell[17680, 375, 639, 11, 134, "Input",
   InitializationCell->True],
-Cell[18318, 388, 732, 13, 154, "Input",
+Cell[18322, 388, 732, 13, 154, "Input",
   InitializationCell->True],
-Cell[19053, 403, 1508, 26, 490, "Input",
+Cell[19057, 403, 1508, 26, 490, "Input",
   InitializationCell->True],
-Cell[20564, 431, 71, 2, 30, "Input",
+Cell[20568, 431, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[20638, 435, 78, 2, 30, "Input",
+Cell[20642, 435, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]

@@ -94,7 +94,7 @@ PackageData[s_Symbol,p_,packagePath:{__String},opts___]:=
 PackageData[s_Symbol,p_,baseDirectory_String,packagePath:{__String},opts___]:=
   PackageData[{{s,p}},baseDirectory,packagePath,opts]
 PackageData[patterns:{{_Symbol,_}..},packagePath:{__String},opts___]:=
-  PackageData[patterns,QuantumGroupsDirectory[],packagePath,opts]
+  PackageData[patterns,QuantumGroupsDataDirectory[],packagePath,opts]
 PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
     packagePath:{__String},opts___]:=
   Module[{fullPackagePath,package,directory,filename,contentsTop, 

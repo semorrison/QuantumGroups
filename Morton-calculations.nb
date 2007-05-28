@@ -1,0 +1,399 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     10764,        297]*)
+(*NotebookOutlinePosition[     11429,        320]*)
+(*  CellTagsIndexPosition[     11385,        316]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(\(KnotTheoryPath\  = \ \
+"\<c:\\scott\\projects\\svn-checkouts\\KnotTheory\\trunk\\\>";\)\), "\n", 
+    \(\(AppendTo[$Path, \ KnotTheoryPath];\)\), "\n", 
+    \(<< \ KnotTheory`\)}], "Input"],
+
+Cell[BoxData[
+    \("Loading KnotTheory` version of July 31, 2006, 9:34:35.6875.\nRead more \
+at http://katlas.math.toronto.edu/wiki/KnotTheory."\)], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(QuantumGroupsPath\  = \ \
+"\<c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\package\\\>";\)\)\
+, "\n", 
+    \(\(AppendTo[$Path, \ QuantumGroupsPath];\)\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
+\[InvisibleSpace]"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
+      SequenceForm[ 
+      "Loading QuantumGroups` version 2.0\n", 
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\[Beta]\_F = FundamentalBasis;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(<< QuantumGroups`Data`A2`BraidingData`\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`Data`A2`DecompositionMaps`\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`Data`A2`MatrixPresentations`\), "\[IndentingNewLine]", \
+
+    \(<< QuantumGroups`Data`A2`QuantumRoots`\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`Data`tmp`A2`BRPresentations`\), "\[IndentingNewLine]", \
+
+    \(<< QuantumGroups`Data`tmp`A2`BraidingMaps`\), "\[IndentingNewLine]", 
+    \(Share[]\)}], "Input"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A2`BraidingData`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A2`DecompositionMaps`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A2`MatrixPresentations`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A2`QuantumRoots`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`tmp`A2`BRPresentations`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`tmp`A2`BraidingMaps`\"\)."\)], "Message"],
+
+Cell[BoxData[
+    \(104110840\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(QuantumGroups`Data`tmp`A2`BRPresentations`Private`RepresentationTensor \
+= RepresentationTensor\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(DebugSet[True]\)], "Input"],
+
+Cell[BoxData[
+    \(\(b1 = \(BR[3, {1}]\)[
+          A\_2, \(Irrep[A\_2]\)[{2, 2}], \[Beta]\_F];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dimensions /@ \(Last /@ Last[b1]\)\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 1}, {3, 3}, {3, 3}, {6, 6}, {12, 12}, {6, 6}, {7, 7}, {27, 
+        27}, {27, 27}, {7, 7}, {6, 6}, {39, 39}, {69, 69}, {39, 39}, {6, 
+        6}, {3, 3}, {39, 39}, {114, 114}, {114, 114}, {39, 39}, {3, 3}, {1, 
+        1}, {27, 27}, {135, 135}, {218, 218}, {135, 135}, {27, 27}, {1, 
+        1}, {12, 12}, {114, 114}, {297, 297}, {297, 297}, {114, 114}, {12, 
+        12}, {3, 3}, {69, 69}, {297, 297}, {468, 468}, {297, 297}, {69, 
+        69}, {3, 3}, {27, 27}, {218, 218}, {540, 540}, {540, 540}, {218, 
+        218}, {27, 27}, {6, 6}, {114, 114}, {468, 468}, {720, 720}, {468, 
+        468}, {114, 114}, {6, 6}, {39, 39}, {297, 297}, {720, 720}, {720, 
+        720}, {297, 297}, {39, 39}, {7, 7}, {135, 135}, {540, 540}, {831, 
+        831}, {540, 540}, {135, 135}, {7, 7}, {39, 39}, {297, 297}, {720, 
+        720}, {720, 720}, {297, 297}, {39, 39}, {6, 6}, {114, 114}, {468, 
+        468}, {720, 720}, {468, 468}, {114, 114}, {6, 6}, {27, 27}, {218, 
+        218}, {540, 540}, {540, 540}, {218, 218}, {27, 27}, {3, 3}, {69, 
+        69}, {297, 297}, {468, 468}, {297, 297}, {69, 69}, {3, 3}, {12, 
+        12}, {114, 114}, {297, 297}, {297, 297}, {114, 114}, {12, 12}, {1, 
+        1}, {27, 27}, {135, 135}, {218, 218}, {135, 135}, {27, 27}, {1, 
+        1}, {3, 3}, {39, 39}, {114, 114}, {114, 114}, {39, 39}, {3, 3}, {6, 
+        6}, {39, 39}, {69, 69}, {39, 39}, {6, 6}, {7, 7}, {27, 27}, {27, 
+        27}, {7, 7}, {6, 6}, {12, 12}, {6, 6}, {3, 3}, {3, 3}, {1, 
+        1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(bm = 
+        NormalisedBraidingMap[
+          A\_2, \(Irrep[A\_2]\)[{2, 2}]\[CircleTimes]\(Irrep[A\_2]\)[{2, 
+                2}], \[Beta]\_F];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dimensions /@ \(Last /@ Last[bm]\)\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 1}, {2, 2}, {2, 2}, {3, 3}, {6, 6}, {3, 3}, {2, 2}, {10, 10}, {10, 
+        10}, {2, 2}, {1, 1}, {10, 10}, {20, 20}, {10, 10}, {1, 1}, {6, 
+        6}, {24, 24}, {24, 24}, {6, 6}, {2, 2}, {20, 20}, {36, 36}, {20, 
+        20}, {2, 2}, {10, 10}, {36, 36}, {36, 36}, {10, 10}, {3, 3}, {24, 
+        24}, {45, 45}, {24, 24}, {3, 3}, {10, 10}, {36, 36}, {36, 36}, {10, 
+        10}, {2, 2}, {20, 20}, {36, 36}, {20, 20}, {2, 2}, {6, 6}, {24, 
+        24}, {24, 24}, {6, 6}, {1, 1}, {10, 10}, {20, 20}, {10, 10}, {1, 
+        1}, {2, 2}, {10, 10}, {10, 10}, {2, 2}, {3, 3}, {6, 6}, {3, 3}, {2, 
+        2}, {2, 2}, {1, 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(ibm = 
+        InverseNormalisedBraidingMap[
+          A\_2, \(Irrep[A\_2]\)[{2, 2}]\[CircleTimes]\(Irrep[A\_2]\)[{2, 
+                2}], \[Beta]\_F];\)\)], "Input"],
+
+Cell[BoxData[
+    \(PackageBraidingMaps[A\_2]\)], "Input"],
+
+Cell[BoxData[
+    \(PackageBRPresentations[A\_2]\)], "Input"],
+
+Cell[BoxData[
+    \(\(bn2 = \(BR[3, {\(-2\)}]\)[
+          A\_2, \(Irrep[A\_2]\)[{2, 2}], \[Beta]\_F];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dimensions /@ \(Last /@ Last[bn2]\)\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 1}, {3, 3}, {3, 3}, {6, 6}, {12, 12}, {6, 6}, {7, 7}, {27, 
+        27}, {27, 27}, {7, 7}, {6, 6}, {39, 39}, {69, 69}, {39, 39}, {6, 
+        6}, {3, 3}, {39, 39}, {114, 114}, {114, 114}, {39, 39}, {3, 3}, {1, 
+        1}, {27, 27}, {135, 135}, {218, 218}, {135, 135}, {27, 27}, {1, 
+        1}, {12, 12}, {114, 114}, {297, 297}, {297, 297}, {114, 114}, {12, 
+        12}, {3, 3}, {69, 69}, {297, 297}, {468, 468}, {297, 297}, {69, 
+        69}, {3, 3}, {27, 27}, {218, 218}, {540, 540}, {540, 540}, {218, 
+        218}, {27, 27}, {6, 6}, {114, 114}, {468, 468}, {720, 720}, {468, 
+        468}, {114, 114}, {6, 6}, {39, 39}, {297, 297}, {720, 720}, {720, 
+        720}, {297, 297}, {39, 39}, {7, 7}, {135, 135}, {540, 540}, {831, 
+        831}, {540, 540}, {135, 135}, {7, 7}, {39, 39}, {297, 297}, {720, 
+        720}, {720, 720}, {297, 297}, {39, 39}, {6, 6}, {114, 114}, {468, 
+        468}, {720, 720}, {468, 468}, {114, 114}, {6, 6}, {27, 27}, {218, 
+        218}, {540, 540}, {540, 540}, {218, 218}, {27, 27}, {3, 3}, {69, 
+        69}, {297, 297}, {468, 468}, {297, 297}, {69, 69}, {3, 3}, {12, 
+        12}, {114, 114}, {297, 297}, {297, 297}, {114, 114}, {12, 12}, {1, 
+        1}, {27, 27}, {135, 135}, {218, 218}, {135, 135}, {27, 27}, {1, 
+        1}, {3, 3}, {39, 39}, {114, 114}, {114, 114}, {39, 39}, {3, 3}, {6, 
+        6}, {39, 39}, {69, 69}, {39, 39}, {6, 6}, {7, 7}, {27, 27}, {27, 
+        27}, {7, 7}, {6, 6}, {12, 12}, {6, 6}, {3, 3}, {3, 3}, {1, 
+        1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(PackageBRPresentations[A\_2]\)], "Input"],
+
+Cell[BoxData[
+    \(\(b = \(BR[3, {\(-2\), 1, \(-2\)}]\)[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], \[Beta]\_F];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Head[b]\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dimensions /@ \(Last /@ Last[b]\)\)], "Input"],
+
+Cell[BoxData[
+    \({{1, 1}, {3, 3}, {3, 3}, {3, 3}, {12, 12}, {3, 3}, {1, 1}, {18, 
+        18}, {18, 18}, {1, 1}, {12, 12}, {39, 39}, {12, 12}, {3, 3}, {39, 
+        39}, {39, 39}, {3, 3}, {18, 18}, {56, 56}, {18, 18}, {3, 3}, {39, 
+        39}, {39, 39}, {3, 3}, {12, 12}, {39, 39}, {12, 12}, {1, 1}, {18, 
+        18}, {18, 18}, {1, 1}, {3, 3}, {12, 12}, {3, 3}, {3, 3}, {3, 3}, {1, 
+        1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(b = \(BR[3, {\(-2\), 1, \(-2\)}]\)[
+          A\_2, \(Irrep[A\_2]\)[{2, 2}], \[Beta]\_F];\)\)], "Input"],
+
+Cell["\<\
+
+No more memory available.
+Mathematica kernel has shut down.
+Try quitting other applications and then retry.\
+\>", "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Dimensions /@ \(Last /@ Last[b]\)\)], "Input"],
+
+Cell[BoxData[
+    \(PackageBRPresentations[A\_2]\)], "Input"]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+WindowSize->{1272, 679},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 212, 4, 70, "Input"],
+Cell[1991, 59, 158, 2, 44, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2186, 66, 250, 5, 70, "Input"],
+Cell[2439, 73, 341, 7, 44, "Print"]
+}, Open  ]],
+Cell[2795, 83, 67, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[2887, 88, 501, 9, 150, "Input"],
+Cell[3391, 99, 161, 3, 22, "Message"],
+Cell[3555, 104, 166, 3, 22, "Message"],
+Cell[3724, 109, 168, 3, 22, "Message"],
+Cell[3895, 114, 161, 3, 22, "Message"],
+Cell[4059, 119, 168, 3, 22, "Message"],
+Cell[4230, 124, 165, 3, 22, "Message"],
+Cell[4398, 129, 43, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4478, 135, 128, 2, 30, "Input"],
+Cell[4609, 139, 54, 1, 29, "Output"]
+}, Open  ]],
+Cell[4678, 143, 47, 1, 30, "Input"],
+Cell[4728, 146, 111, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[4864, 152, 67, 1, 30, "Input"],
+Cell[4934, 155, 1522, 21, 162, "Output"]
+}, Open  ]],
+Cell[6471, 179, 181, 4, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[6677, 187, 67, 1, 30, "Input"],
+Cell[6747, 190, 656, 9, 86, "Output"]
+}, Open  ]],
+Cell[7418, 202, 189, 4, 30, "Input"],
+Cell[7610, 208, 58, 1, 30, "Input"],
+Cell[7671, 211, 61, 1, 30, "Input"],
+Cell[7735, 214, 117, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[7877, 220, 68, 1, 30, "Input"],
+Cell[7948, 223, 1522, 21, 162, "Output"]
+}, Open  ]],
+Cell[9485, 247, 61, 1, 30, "Input"],
+Cell[9549, 250, 126, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[9700, 256, 40, 1, 30, "Input"],
+Cell[9743, 259, 54, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9834, 265, 66, 1, 30, "Input"],
+Cell[9903, 268, 413, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10353, 279, 126, 2, 30, "Input"],
+Cell[10482, 283, 133, 5, 76, "Print"]
+}, Open  ]],
+Cell[10630, 291, 66, 1, 30, "Input"],
+Cell[10699, 294, 61, 1, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
