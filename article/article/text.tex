@@ -1,8 +1,8 @@
-In this paper, we describe a \MMA package for performing
-computations in the representation theory of an arbitrary quantum
-group $\uqg$. Subject to quite restrictive practical
-limitations,\footnote{My code is inefficient, the algorithms are
-slow, and the computations are difficult!} this package can
+In this paper, we describe a \MMA package for performing computations in
+the representation theory of an arbitrary quantum group $\uqg$. Subject
+to quite restrictive practical limitations,\footnote{My code is
+inefficient, the algorithms are slow, and the computations are
+difficult!} this package can
 \begin{itemize}
 \item Calculate dimensions of weight spaces and invariant spaces of
 tensor products of arbitrary highest weight representations, using a
@@ -25,9 +25,43 @@ mathematics'.
 
 \section{Installing the \code{QuantumGroups`} package}
 
-\section{Littelmann paths: a combinatorial model for representation theory}
+\section{Combinatorial representation theory}
 
 \section{Explicit representations}
+The function \code{MatrixPresentation} produces explicit matrices
+representing the action of the quantum group generators on a
+representation.
+
+It is invoked as \code{MatrixPresentation[\Gamma][Z][V, \lambda, \beta]}.
+Here
+\begin{defn}
+\item[$\Gamma$] is the Cartan type, see \S \ref{sec:cartan-types}.
+\item[$Z$] is a generator of the quantum group $\Gamma$, that is
+$X_i^\pm$ or $K_i$, for $1 \leq i \leq \rank{\Gamma}$. Compositions of
+generators, in the notation of \ref{sec:composition}, and linear
+combinations, are also allowed. (Linear combinations must be homogeneous
+with respect to the weight grading.)
+\item[$V$] is a representation, in the notation of \S
+\ref{sec:representations}.
+\item[$\lambda$] is a weight, in the notation of \S \ref{sec:weights};
+that is, a vector of integers, giving the weight as a linear combination
+of fundamental weights.
+\end{defn}
+
+\subsection{Bases}
+The function \code{MatrixPresentation} takes an argument specifying the
+desired basis. In the current implementation, there is only one useful
+value -- the symbol \code{FundamentalBasis}. While we give a description
+of how this basis is recursively defined below, essentially it depends on
+many minor details of the implementation. One should not depend on any
+particular properties of this basis!
+
+Future versions of the \code{QuantumGroups`} package may allow the use of
+the symbols \code{GelfandTsetlinBasis} and \code{CanonicalBasis}, with
+the obvious results.\footnote{Gelfand-Tsetlin bases are only projectively
+canonical.} Code implementing Gelfand-Testlin bases exists, but is not
+currently part of the package. Anyone interested in adding support for
+canonical bases should certainly contact me!
 
 \section{Invariant vectors and intertwiners}
 
