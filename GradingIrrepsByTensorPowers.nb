@@ -1,0 +1,1254 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     35740,       1109]*)
+(*NotebookOutlinePosition[     36384,       1131]*)
+(*  CellTagsIndexPosition[     36340,       1127]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(\(QuantumGroupsPath\  = \ \
+"\<c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\package\\\>";\)\)\
+, "\n", 
+    \(\(AppendTo[$Path, \ QuantumGroupsPath];\)\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
+\[InvisibleSpace]"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\n\
+"\[InvisibleSpace]"Remember to set QuantumGroupsDataDirectory[] to the \
+appropriate path, if you've downloaded precomputed data."\),
+      SequenceForm[ 
+      "Loading QuantumGroups` version 2.0\n", 
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups\n", 
+        "Remember to set QuantumGroupsDataDirectory[] to the appropriate \
+path, if you've downloaded precomputed data."],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[Filtration]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(Filtration[\[CapitalGamma]_]\)[
+          0] := {{\(Irrep[\[CapitalGamma]]\)[
+              ZeroVector[Rank[\[CapitalGamma]]]], 1}};\)\)], "Input"],
+
+Cell[BoxData[
+    \(DirectSummands[d_DirectSum] := List @@ d\)], "Input"],
+
+Cell[BoxData[
+    \(Multiplicities[l_List] := 
+      Module[{count}, \[IndentingNewLine]count[_] := 
+          0; \[IndentingNewLine]\(\(++count[#]\) &\) /@ 
+          l; \[IndentingNewLine]\({#, count[#]} &\) /@ 
+          Union[l]\[IndentingNewLine]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Multiplicities[{a, b, b, c, c, c, d}]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, 1}, {b, 2}, {c, 3}, {d, 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(Filtration[\[CapitalGamma]_]\)[n_] := 
+      Multiplicities[
+        Flatten[\(Table[
+                DirectSummands[\(DecomposeRepresentation[\[CapitalGamma]]\)[#\
+\[LeftDoubleBracket]1\[RightDoubleBracket]\[CircleTimes]StandardIrrep[\
+\[CapitalGamma]]]], {#\[LeftDoubleBracket]2\[RightDoubleBracket]}] &\) /@ \
+\(Filtration[\[CapitalGamma]]\)[n - 1]]]\)], "Input"],
+
+Cell[BoxData[
+    \(StandardIrrep[A\_n_] := \(Irrep[A\_n]\)[UnitVector[n, 1]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Filtration[A2]\)[0]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{0, 0}], 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Filtration[A2]\)[1]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{1, 0}], 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Filtration[A2]\)[2]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{0, 1}], 1}, {\(Irrep[A\_2]\)[{2, 0}], 
+        1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(Filtration[A2]\)[3]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{0, 0}], 1}, {\(Irrep[A\_2]\)[{1, 1}], 
+        2}, {\(Irrep[A\_2]\)[{3, 0}], 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(AssociatedGraded[\[CapitalGamma]_]\)[n_] := 
+      Complement[\(Filtration[\[CapitalGamma]]\)[n], 
+        Flatten[Table[\(AssociatedGraded[\[CapitalGamma]]\)[k], {k, 0, 
+              n - 1}], 1], 
+        SameTest \[Rule] \((#1\[LeftDoubleBracket]1\[RightDoubleBracket] === \
+#2\[LeftDoubleBracket]1\[RightDoubleBracket] &)\)]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(AssociatedGraded[A2]\)[0]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{0, 0}], 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(AssociatedGraded[A2]\)[1]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{1, 0}], 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(AssociatedGraded[A2]\)[2]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{0, 1}], 1}, {\(Irrep[A\_2]\)[{2, 0}], 
+        1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(AssociatedGraded[A2]\)[3]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{1, 1}], 2}, {\(Irrep[A\_2]\)[{3, 0}], 
+        1}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(AssociatedGraded[A2]\)[4]\)], "Input"],
+
+Cell[BoxData[
+    \({{\(Irrep[A\_2]\)[{0, 2}], 2}, {\(Irrep[A\_2]\)[{2, 1}], 
+        3}, {\(Irrep[A\_2]\)[{4, 0}], 1}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(SumOfSquares[\[CapitalGamma]_]\)[n_] := 
+      Plus @@ \((\(#\[LeftDoubleBracket]2\[RightDoubleBracket]\^2 &\) /@ \
+\(AssociatedGraded[\[CapitalGamma]]\)[n])\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A2]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 5, 14, 42, 132, 429, 1430}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(<< DiscreteMath`CombinatorialFunctions`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[CatalanNumber[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 5, 14, 42, 132, 429, 1430}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A1]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 1, 1, 1, 1, 1, 1, 1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A3]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 23, 103, 513, 2761, 15767}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(AssociatedGraded[A3]\)[k], {k, 0, 8}] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 1, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 0, 1}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 1, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{3, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 2, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 0, 1}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 1, 0}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{4, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 1, 1}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 2, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 0, 1}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{3, 1, 0}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{5, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 0, 2}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 3, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 1, 1}]\)},
+                {"16"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 2, 0}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{3, 0, 1}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{4, 1, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{6, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 2, 1}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 0, 2}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 3, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 1, 1}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{3, 2, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{4, 0, 1}]\)},
+                {"15"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{5, 1, 0}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{7, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 1, 2}]\)},
+                {"42"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{0, 4, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{1, 2, 1}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 0, 2}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{2, 3, 0}]\)},
+                {"28"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{3, 1, 1}]\)},
+                {"64"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{4, 2, 0}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{5, 0, 1}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{6, 1, 0}]\)},
+                {"7"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_3]\)[{8, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}]}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {{{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 1, 0}], 1}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 0, 1}], 1}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 1, 0}], 2}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {3, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 2, 0}], 2}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 0, 1}], 3}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 1, 0}], 3}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {4, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 1, 1}], 5}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 2, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 0, 1}], 6}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {3, 1, 0}], 4}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {5, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 0, 2}], 5}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 3, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 1, 1}], 16}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 2, 0}], 9}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {3, 0, 1}], 10}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {4, 1, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {6, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 2, 1}], 21}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 0, 2}], 21}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 3, 0}], 14}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 1, 1}], 35}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {3, 2, 0}], 14}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {4, 0, 1}], 15}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {5, 1, 0}], 6}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {7, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 1, 2}], 42}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {0, 4, 0}], 14}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {1, 2, 1}], 70}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 0, 2}], 56}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {2, 3, 0}], 28}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {3, 1, 1}], 64}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {4, 2, 0}], 20}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {5, 0, 1}], 21}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {6, 1, 0}], 7}, {
+        Irrep[ 
+          Subscript[ A, 3]][ {8, 0, 0}], 1}}}]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(StandardIrrep[B2] := \(Irrep[B2]\)[{1, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \(StandardIrrep[G2] := \(Irrep[G2]\)[{1, 0}]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[B2]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 5, 14, 42, 132, 429, 1430}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[G2]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 5, 14, 42, 132, 429, 1430}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(StandardIrrep[B3] := \(Irrep[B3]\)[{1, 0, 0}]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[B3]\)[k], {k, 0, 9}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 23, 103, 513, 2761, 15767, 94359}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(AssociatedGraded[B3]\)[k], {k, 0, 8}] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 1, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 0, 2}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 1, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{3, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 2, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 0, 2}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 1, 0}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{4, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 1, 2}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 2, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 0, 2}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{3, 1, 0}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{5, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 0, 4}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 3, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 1, 2}]\)},
+                {"16"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 2, 0}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{3, 0, 2}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{4, 1, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{6, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 2, 2}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 0, 4}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 3, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 1, 2}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{3, 2, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{4, 0, 2}]\)},
+                {"15"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{5, 1, 0}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{7, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 1, 4}]\)},
+                {"42"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{0, 4, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{1, 2, 2}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 0, 4}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{2, 3, 0}]\)},
+                {"28"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{3, 1, 2}]\)},
+                {"64"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{4, 2, 0}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{5, 0, 2}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{6, 1, 0}]\)},
+                {"7"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[B\_3]\)[{8, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}]}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {{{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 1, 0}], 1}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 0, 2}], 1}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 1, 0}], 2}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {3, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 2, 0}], 2}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 0, 2}], 3}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 1, 0}], 3}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {4, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 1, 2}], 5}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 2, 0}], 5}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 0, 2}], 6}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {3, 1, 0}], 4}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {5, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 0, 4}], 5}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 3, 0}], 5}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 1, 2}], 16}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 2, 0}], 9}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {3, 0, 2}], 10}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {4, 1, 0}], 5}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {6, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 2, 2}], 21}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 0, 4}], 21}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 3, 0}], 14}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 1, 2}], 35}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {3, 2, 0}], 14}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {4, 0, 2}], 15}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {5, 1, 0}], 6}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {7, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 1, 4}], 42}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {0, 4, 0}], 14}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {1, 2, 2}], 70}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 0, 4}], 56}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {2, 3, 0}], 28}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {3, 1, 2}], 64}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {4, 2, 0}], 20}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {5, 0, 2}], 21}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {6, 1, 0}], 7}, {
+        Irrep[ 
+          Subscript[ B, 3]][ {8, 0, 0}], 1}}}]]], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+WindowSize->{1272, 679},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 250, 5, 70, "Input"],
+Cell[2029, 60, 599, 11, 63, "Print"]
+}, Open  ]],
+Cell[2643, 74, 50, 1, 30, "Input"],
+Cell[2696, 77, 171, 3, 30, "Input"],
+Cell[2870, 82, 73, 1, 30, "Input"],
+Cell[2946, 85, 265, 5, 110, "Input"],
+
+Cell[CellGroupData[{
+Cell[3236, 94, 70, 1, 30, "Input"],
+Cell[3309, 97, 66, 1, 29, "Output"]
+}, Open  ]],
+Cell[3390, 101, 388, 7, 50, "Input"],
+Cell[3781, 110, 90, 1, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[3896, 115, 54, 1, 30, "Input"],
+Cell[3953, 118, 64, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4054, 124, 54, 1, 30, "Input"],
+Cell[4111, 127, 64, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4212, 133, 54, 1, 30, "Input"],
+Cell[4269, 136, 103, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4409, 143, 54, 1, 30, "Input"],
+Cell[4466, 146, 133, 2, 29, "Output"]
+}, Open  ]],
+Cell[4614, 151, 363, 6, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[5002, 161, 60, 1, 30, "Input"],
+Cell[5065, 164, 64, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5166, 170, 60, 1, 30, "Input"],
+Cell[5229, 173, 64, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5330, 179, 60, 1, 30, "Input"],
+Cell[5393, 182, 103, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5533, 189, 60, 1, 30, "Input"],
+Cell[5596, 192, 103, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5736, 199, 60, 1, 30, "Input"],
+Cell[5799, 202, 133, 2, 29, "Output"]
+}, Open  ]],
+Cell[5947, 207, 194, 3, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[6166, 214, 74, 1, 30, "Input"],
+Cell[6243, 217, 70, 1, 29, "Output"]
+}, Open  ]],
+Cell[6328, 221, 72, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[6425, 226, 67, 1, 30, "Input"],
+Cell[6495, 229, 70, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6602, 235, 74, 1, 30, "Input"],
+Cell[6679, 238, 61, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6777, 244, 74, 1, 30, "Input"],
+Cell[6854, 247, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6964, 253, 91, 1, 30, "Input"],
+Cell[7058, 256, 13868, 403, 275, "Output"]
+}, Open  ]],
+Cell[20941, 662, 75, 1, 30, "Input"],
+Cell[21019, 665, 75, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[21119, 670, 74, 1, 30, "Input"],
+Cell[21196, 673, 70, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[21303, 679, 74, 1, 30, "Input"],
+Cell[21380, 682, 70, 1, 29, "Output"]
+}, Open  ]],
+Cell[21465, 686, 78, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[21568, 691, 74, 1, 30, "Input"],
+Cell[21645, 694, 80, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[21762, 700, 91, 1, 30, "Input"],
+Cell[21856, 703, 13868, 403, 275, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
