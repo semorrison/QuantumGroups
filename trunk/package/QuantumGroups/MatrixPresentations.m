@@ -201,7 +201,13 @@ HighWeightVectors[\[CapitalGamma]_][
 HighWeightVectors[\[CapitalGamma]_][
     Irrep[\[CapitalGamma]_][\[Lambda]_],_,_]:={}
 
-\!\(\(HighWeightVectors[\[CapitalGamma]_]\)[V : \((\(Irrep[\[CapitalGamma]_]\)[_]\[CircleTimes]\(Irrep[\[CapitalGamma]_]\)[_])\), b_, \[Lambda]_] := \(\(HighWeightVectors[\[CapitalGamma]]\)[V, b, \[Lambda]] = Module[{T, r}, \[IndentingNewLine]T = AppendColumns @@ Table[\(\(MatrixPresentation[\[CapitalGamma]]\)[\(X\_i\^+\)]\)[V, b, \[Lambda]], {i, 1, Rank[\[CapitalGamma]]}]; \[IndentingNewLine]If[\(Dimensions[T]\)\[LeftDoubleBracket]1\[RightDoubleBracket] \[Equal] 0, Return[IdentityMatrix[WeightMultiplicity[\[CapitalGamma], V, \[Lambda]]]]]; \[IndentingNewLine]DebugPrint["\<About to find the null space of a \>", \(Dimensions[T]\)\[LeftDoubleBracket]2\[RightDoubleBracket], "\< by \>", \(Dimensions[T]\)\[LeftDoubleBracket]2\[RightDoubleBracket], "\< matrix.\>"]; \[IndentingNewLine]r = Together[NullSpace[T, Method \[Rule] OneStepRowReduction]]; \[IndentingNewLine]DebugPrint["\<Finished finding null space.\>"]; \[IndentingNewLine]r\[IndentingNewLine]]\)\)
+
+
+
+
+
+
+\!\(\(HighWeightVectors[\[CapitalGamma]_]\)[V_, b_, \[Lambda]_] := \(\(HighWeightVectors[\[CapitalGamma]]\)[V, b, \[Lambda]] = Module[{T, r}, \[IndentingNewLine]T = AppendColumns @@ Table[\(\(MatrixPresentation[\[CapitalGamma]]\)[\(X\_i\^+\)]\)[V, b, \[Lambda]], {i, 1, Rank[\[CapitalGamma]]}]; \[IndentingNewLine]If[\(Dimensions[T]\)\[LeftDoubleBracket]1\[RightDoubleBracket] \[Equal] 0, Return[IdentityMatrix[WeightMultiplicity[\[CapitalGamma], V, \[Lambda]]]]]; \[IndentingNewLine]DebugPrint["\<About to find the null space of a \>", \(Dimensions[T]\)\[LeftDoubleBracket]2\[RightDoubleBracket], "\< by \>", \(Dimensions[T]\)\[LeftDoubleBracket]2\[RightDoubleBracket], "\< matrix.\>"]; \[IndentingNewLine]r = Together[NullSpace[T, Method \[Rule] OneStepRowReduction]]; \[IndentingNewLine]DebugPrint["\<Finished finding null space.\>"]; \[IndentingNewLine]r\[IndentingNewLine]]\)\)
 
 
 
@@ -287,7 +293,12 @@ DirectSumProjection[\[CapitalGamma]_][V_DirectSum,index_Integer,\[Lambda]_]:=
     AppendRows[ZeroesMatrix[b,a],identityMatrix[b],ZeroesMatrix[b,c]]
     ]
 
-DirectSumInclusion[\[CapitalGamma]_][V_DirectSum,index_Integer,\[Lambda]_]:=
+DirectSumProjection[\[CapitalGamma]_][V_DirectSum,
+    indexes:{___Integer},\[Lambda]_]:=
+  AppendColumns@@(DirectSumProjection[\[CapitalGamma]][V,#,\[Lambda]]&/@
+        indexes)
+
+DirectSumInclusion[\[CapitalGamma]_][V_DirectSum,index_,\[Lambda]_]:=
   Transpose[DirectSumProjection[\[CapitalGamma]][V,index,\[Lambda]]]
 
 ChangeOfBasisMatrix[\[CapitalGamma]_][V:Irrep[\[CapitalGamma]_][_],\[Beta]_,

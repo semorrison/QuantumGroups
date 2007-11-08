@@ -35,7 +35,7 @@ ZeroesMatrix[n_]:=ZeroesMatrix[n,n]
 
 ZeroMatrixQ[Matrix[0,_,_]]:=True
 ZeroMatrixQ[Matrix[_,0,_]]:=True
-ZeroMatrixQ[Matrix[_,_,data_]]:=And@@(#===0&)/@Flatten[data]
+ZeroMatrixQ[Matrix[_,_,data_]]:=And@@(Together[#]===0&)/@Flatten[data]
 
 NonZeroMatrixQ[m_]:=!ZeroMatrixQ[m]
 
@@ -72,6 +72,8 @@ Matrix/:m1_Matrix.m2_?
         MatrixQ/;(Dimensions[
             m1]\[LeftDoubleBracket]2\[RightDoubleBracket]\[Equal]Length[m2]):=
   MatrixData[m1].m2
+
+Matrix/:Together[Matrix[r_,c_,data_]]:=Matrix[r,c,Together[data]]
 
 Matrix/:Transpose[Matrix[0,c_,_]]:=Matrix[c,0]
 Matrix/:Transpose[Matrix[r_,0,_]]:=Matrix[0,r]
@@ -146,6 +148,7 @@ KroneckerProduct[a_,b_,c__]:=KroneckerProduct[KroneckerProduct[a,b],c]
 BlockDiagonalMatrix[m1:Matrix[r1_,c1_,_],m2:Matrix[r2_,c2_,_]]:=
   AppendColumns[AppendRows[m1,ZeroesMatrix[r1,c2]],
     AppendRows[ZeroesMatrix[r2,c1],m2]]
+BlockDiagonalMatrix[]:=Matrix[0,0]
 BlockDiagonalMatrix[m_Matrix]:=m
 BlockDiagonalMatrix[m1_,m2_,m3__]:=
   BlockDiagonalMatrix[BlockDiagonalMatrix[m1,m2],m3]

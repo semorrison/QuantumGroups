@@ -41,16 +41,28 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     35740,       1109]*)
-(*NotebookOutlinePosition[     36384,       1131]*)
-(*  CellTagsIndexPosition[     36340,       1127]*)
+(*NotebookOptionsPosition[    192697,       4862]*)
+(*NotebookOutlinePosition[    193362,       4885]*)
+(*  CellTagsIndexPosition[    193318,       4881]*)
 (*WindowFrame->Normal*)
 
 
 
 Notebook[{
+Cell["\<\
+To get started, you'll need a copy of the QuantumGroups package. Assuming you \
+already have subversion installed, just type\
+\>", "Text"],
+
+Cell["\<\
+svn checkout http://katlas.math.toronto.edu/svn/QuantumGroups\
+\>", "Text",
+  FontFamily->"Courier New"],
+
+Cell["and then adjust the path in the line below.", "Text"],
 
 Cell[CellGroupData[{
+
 Cell[BoxData[{
     \(\(QuantumGroupsPath\  = \ \
 "\<c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\package\\\>";\)\)\
@@ -61,15 +73,63 @@ Cell[BoxData[{
 Cell[BoxData[
     InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
 \[InvisibleSpace]"Read more at \
-http://katlas.math.toronto.edu/wiki/QuantumGroups\n\
-"\[InvisibleSpace]"Remember to set QuantumGroupsDataDirectory[] to the \
-appropriate path, if you've downloaded precomputed data."\),
+http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
       SequenceForm[ 
       "Loading QuantumGroups` version 2.0\n", 
-        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups\n", 
-        "Remember to set QuantumGroupsDataDirectory[] to the appropriate \
-path, if you've downloaded precomputed data."],
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Found precomputed data in \
+"\[InvisibleSpace]"c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\\
+data"\),
+      SequenceForm[ 
+      "Found precomputed data in ", 
+        "c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\data"],
       Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(QuantumGroupsDataDirectory[]\)], "Input"],
+
+Cell[BoxData[
+    \("c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\data"\)], \
+"Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(<< QuantumGroups`Data`A3`DecompositionMaps`\)], "Input"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`A3`DecompositionMaps`\"\)."\)], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(<< QuantumGroups`Data`B2`DecompositionMaps`\)], "Input"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`B2`DecompositionMaps`\"\)."\)], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(<< QuantumGroups`Data`B3`DecompositionMaps`\)], "Input"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`B3`DecompositionMaps`\"\)."\)], "Message"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -80,8 +140,11 @@ Cell[BoxData[
           0] := {{\(Irrep[\[CapitalGamma]]\)[
               ZeroVector[Rank[\[CapitalGamma]]]], 1}};\)\)], "Input"],
 
-Cell[BoxData[
-    \(DirectSummands[d_DirectSum] := List @@ d\)], "Input"],
+Cell[BoxData[{
+    \(DirectSummands[d_DirectSum] := List @@ d\), "\[IndentingNewLine]", 
+    \(DirectSummands[x_] := {x}\)}], "Input"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
     \(Multiplicities[l_List] := 
@@ -89,6 +152,14 @@ Cell[BoxData[
           0; \[IndentingNewLine]\(\(++count[#]\) &\) /@ 
           l; \[IndentingNewLine]\({#, count[#]} &\) /@ 
           Union[l]\[IndentingNewLine]]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(count\\)\\\" is similar to existing symbol \
+\\\"\\!\\(Count\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -150,12 +221,13 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[BoxData[
-    \(\(AssociatedGraded[\[CapitalGamma]_]\)[n_] := 
-      Complement[\(Filtration[\[CapitalGamma]]\)[n], 
-        Flatten[Table[\(AssociatedGraded[\[CapitalGamma]]\)[k], {k, 0, 
-              n - 1}], 1], 
-        SameTest \[Rule] \((#1\[LeftDoubleBracket]1\[RightDoubleBracket] === \
-#2\[LeftDoubleBracket]1\[RightDoubleBracket] &)\)]\)], "Input"],
+    \(\(AssociatedGraded[\[CapitalGamma]_]\)[
+        n_] := \(\(AssociatedGraded[\[CapitalGamma]]\)[n] = 
+        Complement[\(Filtration[\[CapitalGamma]]\)[n], 
+          Flatten[Table[\(AssociatedGraded[\[CapitalGamma]]\)[k], {k, 0, 
+                n - 1}], 1], 
+          SameTest \[Rule] \((#1\[LeftDoubleBracket]1\[RightDoubleBracket] === \
+#2\[LeftDoubleBracket]1\[RightDoubleBracket] &)\)]\)\)], "Input"],
 
 Cell[CellGroupData[{
 
@@ -1105,12 +1177,3694 @@ Cell[BoxData[
           Subscript[ B, 3]][ {6, 1, 0}], 7}, {
         Irrep[ 
           Subscript[ B, 3]][ {8, 0, 0}], 1}}}]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(StandardIrrep[C3] := \(Irrep[C3]\)[{1, 0, 0}]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[C3]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 23, 103, 513, 2761, 15767}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(StandardIrrep[
+        B4] := \(Irrep[B4]\)[{1, 0, 0, 0}]\), "\[IndentingNewLine]", 
+    \(StandardIrrep[
+        C4] := \(Irrep[C4]\)[{1, 0, 0, 0}]\), "\[IndentingNewLine]", 
+    \(StandardIrrep[
+        D4] := \(Irrep[D4]\)[{1, 0, 0, 0}]\), "\[IndentingNewLine]", 
+    \(StandardIrrep[F4] := \(Irrep[F4]\)[{1, 0, 0, 0}]\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A4]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 119, 694, 4582, 33324}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[B4]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 119, 694, 4582, 33324}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[C4]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 119, 694, 4582, 33324}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[D4]\)[k], {k, 0, 10}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 25, 135, 875, 6403, 50881, 429257, 3794786}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(AssociatedGraded[A4]\)[k], {k, 0, 8}] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 1, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 0, 1, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 1, 0, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{3, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 0, 0, 1}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 2, 0, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 0, 1, 0}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 1, 0, 0}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{4, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 1, 1, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 0, 0, 1}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 2, 0, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 0, 1, 0}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{3, 1, 0, 0}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{5, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 0, 2, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 1, 0, 1}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 3, 0, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 1, 1, 0}]\)},
+                {"16"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 0, 0, 1}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 2, 0, 0}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{3, 0, 1, 0}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{4, 1, 0, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{6, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 0, 1, 1}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 2, 1, 0}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 0, 2, 0}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 1, 0, 1}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 3, 0, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 1, 1, 0}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{3, 0, 0, 1}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{3, 2, 0, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{4, 0, 1, 0}]\)},
+                {"15"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{5, 1, 0, 0}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{7, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 0, 0, 2}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 1, 2, 0}]\)},
+                {"42"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 2, 0, 1}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{0, 4, 0, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 0, 1, 1}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{1, 2, 1, 0}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 0, 2, 0}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 1, 0, 1}]\)},
+                {"90"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{2, 3, 0, 0}]\)},
+                {"28"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{3, 1, 1, 0}]\)},
+                {"64"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{4, 0, 0, 1}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{4, 2, 0, 0}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{5, 0, 1, 0}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{6, 1, 0, 0}]\)},
+                {"7"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[A\_4]\)[{8, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}]}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {{{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 1, 0, 0}], 1}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 0, 1, 0}], 1}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 1, 0, 0}], 2}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {3, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 0, 0, 1}], 1}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 2, 0, 0}], 2}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 0, 1, 0}], 3}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 1, 0, 0}], 3}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {4, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 1, 1, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 0, 0, 1}], 4}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 2, 0, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 0, 1, 0}], 6}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {3, 1, 0, 0}], 4}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {5, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 0, 2, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 1, 0, 1}], 9}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 3, 0, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 1, 1, 0}], 16}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 0, 0, 1}], 10}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 2, 0, 0}], 9}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {3, 0, 1, 0}], 10}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {4, 1, 0, 0}], 5}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {6, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 0, 1, 1}], 14}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 2, 1, 0}], 21}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 0, 2, 0}], 21}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 1, 0, 1}], 35}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 3, 0, 0}], 14}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 1, 1, 0}], 35}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {3, 0, 0, 1}], 20}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {3, 2, 0, 0}], 14}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {4, 0, 1, 0}], 15}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {5, 1, 0, 0}], 6}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {7, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 0, 0, 2}], 14}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 1, 2, 0}], 42}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 2, 0, 1}], 56}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {0, 4, 0, 0}], 14}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 0, 1, 1}], 70}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {1, 2, 1, 0}], 70}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 0, 2, 0}], 56}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 1, 0, 1}], 90}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {2, 3, 0, 0}], 28}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {3, 1, 1, 0}], 64}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {4, 0, 0, 1}], 35}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {4, 2, 0, 0}], 20}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {5, 0, 1, 0}], 21}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {6, 1, 0, 0}], 7}, {
+        Irrep[ 
+          Subscript[ A, 4]][ {8, 0, 0, 0}], 1}}}]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(AssociatedGraded[D4]\)[k], {k, 0, 8}] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 1, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 1, 1}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 1, 0, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 0, 2}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 2, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 2, 0, 0}]\)},
+                {"2"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 1, 1}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 1, 0, 0}]\)},
+                {"3"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{4, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 1, 1, 1}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 0, 2}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 2, 0}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 2, 0, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 0, 1, 1}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 1, 0, 0}]\)},
+                {"4"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{5, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 2, 2}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 1, 0, 2}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 1, 2, 0}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 3, 0, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 1, 1, 1}]\)},
+                {"16"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 0, 0, 2}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 0, 2, 0}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 2, 0, 0}]\)},
+                {"9"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 0, 1, 1}]\)},
+                {"10"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{4, 1, 0, 0}]\)},
+                {"5"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{6, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 1, 3}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 3, 1}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 2, 1, 1}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 2, 2}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 1, 0, 2}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 1, 2, 0}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 3, 0, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 1, 1, 1}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 0, 0, 2}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 0, 2, 0}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 2, 0, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{4, 0, 1, 1}]\)},
+                {"15"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{5, 1, 0, 0}]\)},
+                {"6"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{7, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              
+              ColumnAlignments->{
+                Left}], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+          {GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 0, 4}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 0, 4, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 1, 2, 2}]\)},
+                {"42"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 2, 0, 2}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 2, 2, 0}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{0, 4, 0, 0}]\)},
+                {"14"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 1, 3}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 0, 3, 1}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{1, 2, 1, 1}]\)},
+                {"70"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 0, 2, 2}]\)},
+                {"56"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 1, 0, 2}]\)},
+                {"90"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 1, 2, 0}]\)},
+                {"90"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{2, 3, 0, 0}]\)},
+                {"28"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{3, 1, 1, 1}]\)},
+                {"64"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{4, 0, 0, 2}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{4, 0, 2, 0}]\)},
+                {"35"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{4, 2, 0, 0}]\)},
+                {"20"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{5, 0, 1, 1}]\)},
+                {"21"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{6, 1, 0, 0}]\)},
+                {"7"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}], GridBox[{
+                {\(\(Irrep[D\_4]\)[{8, 0, 0, 0}]\)},
+                {"1"}
+                },
+              RowSpacings->0.25,
+              ColumnSpacings->1,
+              RowAlignments->Baseline,
+              ColumnAlignments->{Left}]}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {{{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 1, 0, 0}], 1}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 1, 1}], 1}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 1, 0, 0}], 2}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 0, 2}], 1}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 2, 0}], 1}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 2, 0, 0}], 2}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 1, 1}], 3}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 1, 0, 0}], 3}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {4, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 1, 1, 1}], 5}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 0, 2}], 4}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 2, 0}], 4}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 2, 0, 0}], 5}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 0, 1, 1}], 6}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 1, 0, 0}], 4}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {5, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 2, 2}], 5}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 1, 0, 2}], 9}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 1, 2, 0}], 9}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 3, 0, 0}], 5}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 1, 1, 1}], 16}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 0, 0, 2}], 10}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 0, 2, 0}], 10}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 2, 0, 0}], 9}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 0, 1, 1}], 10}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {4, 1, 0, 0}], 5}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {6, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 1, 3}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 3, 1}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 2, 1, 1}], 21}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 2, 2}], 21}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 1, 0, 2}], 35}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 1, 2, 0}], 35}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 3, 0, 0}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 1, 1, 1}], 35}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 0, 0, 2}], 20}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 0, 2, 0}], 20}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 2, 0, 0}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {4, 0, 1, 1}], 15}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {5, 1, 0, 0}], 6}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {7, 0, 0, 0}], 1}}, {{
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 0, 4}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 0, 4, 0}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 1, 2, 2}], 42}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 2, 0, 2}], 56}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 2, 2, 0}], 56}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {0, 4, 0, 0}], 14}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 1, 3}], 70}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 0, 3, 1}], 70}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {1, 2, 1, 1}], 70}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 0, 2, 2}], 56}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 1, 0, 2}], 90}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 1, 2, 0}], 90}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {2, 3, 0, 0}], 28}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {3, 1, 1, 1}], 64}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {4, 0, 0, 2}], 35}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {4, 0, 2, 0}], 35}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {4, 2, 0, 0}], 20}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {5, 0, 1, 1}], 21}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {6, 1, 0, 0}], 7}, {
+        Irrep[ 
+          Subscript[ D, 4]][ {8, 0, 0, 0}], 1}}}]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[F4]\)[k], {k, 0, 6}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 3, 20, 264, 5547, 111437}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(StandardIrrep[B\_n_] := \(Irrep[B\_n]\)[
+        UnitVector[n, 1]]\), "\[IndentingNewLine]", 
+    \(StandardIrrep[C\_n_] := \(Irrep[C\_n]\)[UnitVector[n, 1]]\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A5]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 719, 5003, 39429}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[B5]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 719, 5003, 39429}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[C5]\)[k], {k, 0, 8}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 719, 5003, 39429}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(k!\), {k, 0, 11}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 
+      39916800}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A\_10]\)[k], {k, 0, 11}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 
+      39916799}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[B\_10]\)[k], {k, 0, 11}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 
+      39916799}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[C\_10]\)[k], {k, 0, 11}]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 
+      39916799}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[A\_n]\)[k], {n, 1, 10}, {k, 0, 10}] // 
+      TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"},
+          {"1", "1", "2", "5", "14", "42", "132", "429", "1430", "4862", 
+            "16796"},
+          {"1", "1", "2", "6", "23", "103", "513", "2761", "15767", "94359", 
+            "586590"},
+          {"1", "1", "2", "6", "24", "119", "694", "4582", "33324", "261808", 
+            "2190688"},
+          {"1", "1", "2", "6", "24", "120", "719", "5003", "39429", "344837", 
+            "3291590"},
+          {"1", "1", "2", "6", "24", "120", "720", "5039", "40270", "361302", 
+            "3587916"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40319", "362815", 
+            "3626197"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40320", "362879", 
+            "3628718"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40320", "362880", 
+            "3628799"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40320", "362880", 
+            "3628800"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(SumOfSquares[B\_n]\)[k], {n, 1, 10}, {k, 0, 10}] // 
+      TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"},
+          {"1", "1", "2", "5", "14", "42", "132", "429", "1430", "4862", 
+            "16796"},
+          {"1", "1", "2", "6", "23", "103", "513", "2761", "15767", "94359", 
+            "586590"},
+          {"1", "1", "2", "6", "24", "119", "694", "4582", "33324", "261808", 
+            "2190688"},
+          {"1", "1", "2", "6", "24", "120", "719", "5003", "39429", "344837", 
+            "3291590"},
+          {"1", "1", "2", "6", "24", "120", "720", "5039", "40270", "361302", 
+            "3587916"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40319", "362815", 
+            "3626197"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40320", "362879", 
+            "3628718"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40320", "362880", 
+            "3628799"},
+          {"1", "1", "2", "6", "24", "120", "720", "5040", "40320", "362880", 
+            "3628800"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(DecomposeRepresentation[\[CapitalGamma]_]\)[V_] := 
+      DirectSum @@ \((Irrep[\[CapitalGamma]] /@ \((First /@ \
+\(AllHighWeightVectors[\[CapitalGamma]]\)[V, 
+                  FundamentalBasis])\))\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(multiplicities[d_DirectSum] := \(Count[d, #] &\) /@ 
+        Union[List @@ d]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(multiplicities\\)\\\" is similar to existing \
+symbol \\\"\\!\\(Multiplicities\\)\\\". \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], \
+"Message"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(multiplicityFreeQ[d_DirectSum] := 
+      Max[multiplicities[d]] \[LessEqual] 1\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(MatrixPresentation[A_]\)[Y_]\)[\(Irrep[B_]\)[\[Lambda]_], 
+          FundamentalBasis, \[Mu]_] /; BranchingQ[B, A] := 
+      QuantumGroups`Utilities`MatrixWrapper`BlockDiagonalMatrix @@ \
+\((\(\(\(MatrixPresentation[B]\)[
+                  IncludeGenerator[A, B, Y]]\)[\(Irrep[B]\)[\[Lambda]], 
+                FundamentalBasis, #] &\)\  /@ 
+            Select[Weights[
+                B, \(Irrep[
+                    B]\)[\[Lambda]]], \((BranchWeight[B, 
+                      A, #] \[Equal] \[Mu])\) &])\)\)], "Input"],
+
+Cell[BoxData[
+    \(WeightMultiplicities[A_, \(Irrep[B_]\)[\[Lambda]_]] /; 
+        BranchingQ[B, 
+          A] := \({#\[LeftDoubleBracket]1\[RightDoubleBracket], 
+            Length[#]} &\) /@ 
+        Split[\(SortWeights[A]\)[
+            Flatten[\(Table[
+                    BranchWeight[B, 
+                      A, #\[LeftDoubleBracket]1\[RightDoubleBracket]], {#\
+\[LeftDoubleBracket]2\[RightDoubleBracket]}] &\) /@ 
+                WeightMultiplicities[B, \(Irrep[B]\)[\[Lambda]]], 
+              1]]]\)], "Input"],
+
+Cell[TextData[{
+  "Definitions for ",
+  Cell[BoxData[
+      \(TraditionalForm\`A\_\(n - 1\) \[Subset] A\_n\)]],
+  ", ",
+  Cell[BoxData[
+      \(TraditionalForm\`D\_\(n - 1\) \[Subset] D\_n\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`A\_\(n - 1\) \[Subset] D\_n\)]],
+  "."
+}], "Text"],
+
+Cell[BoxData[
+    \(BranchingQ[A\_m_, A\_n_] /; \((m \[Equal] n + 1)\) := True\)], "Input"],
+
+Cell[BoxData[
+    \(BranchWeight[A\_m_, A\_n_, \[Lambda]_] /; \((m \[Equal] n + 1)\) := 
+      Most[\[Lambda]]\)], "Input"],
+
+Cell[BoxData[
+    \(IncludeGenerator[A\_n_, A\_m_, Y_] /; \((m \[Equal] n + 1)\) := 
+      Y\)], "Input"],
+
+Cell[BoxData[
+    \(BranchingQ[D\_m_, D\_n_] /; \((m \[Equal] n + 1)\) := True\)], "Input"],
+
+Cell[BoxData[
+    \(BranchWeight[D\_m_, D\_n_, \[Lambda]_] /; \((m \[Equal] n + 1)\) := 
+      Rest[\[Lambda]]\)], "Input"],
+
+Cell[BoxData[{
+    \(IncludeGenerator[D\_n_, 
+          D\_m_, \(X\_i_\^+\)] /; \((m \[Equal] 
+            n + 1)\) := \(X\_\(i + 1\)\^+\)\), "\[IndentingNewLine]", 
+    \(IncludeGenerator[D\_n_, 
+          D\_m_, \(X\_i_\^-\)] /; \((m \[Equal] 
+            n + 1)\) := \(X\_\(i + 1\)\^-\)\), "\[IndentingNewLine]", 
+    \(IncludeGenerator[D\_n_, D\_m_, K\_i_] /; \((m \[Equal] n + 1)\) := 
+      K\_\(i + 1\)\), "\[IndentingNewLine]", 
+    \(IncludeGenerator[D\_n_, D\_m_, 
+          K\_i_\^\(-1\)] /; \((m \[Equal] n + 1)\) := 
+      K\_\(i + 1\)\^\(-1\)\)}], "Input"],
+
+Cell[BoxData[
+    \(BranchingQ[D\_m_, A\_n_] /; \((m \[Equal] n + 1)\) := True\)], "Input"],
+
+Cell[BoxData[
+    \(BranchWeight[D\_m_, A\_n_, \[Lambda]_] /; \((m \[Equal] n + 1)\) := 
+      Most[\[Lambda]]\)], "Input"],
+
+Cell[BoxData[
+    \(IncludeGenerator[A\_n_, D\_m_, Y_] /; \((m \[Equal] n + 1)\) := 
+      Y\)], "Input"],
+
+Cell[BoxData[
+    \(BranchingQ[B\_m_, A\_n_] /; \((m \[Equal] n + 1)\) := True\)], "Input"],
+
+Cell[BoxData[
+    \(BranchWeight[B\_m_, A\_n_, \[Lambda]_] /; \((m \[Equal] n + 1)\) := 
+      Most[\[Lambda]]\)], "Input"],
+
+Cell[BoxData[
+    \(IncludeGenerator[A\_n_, B\_m_, Y_] /; \((m \[Equal] n + 1)\) := 
+      Y\)], "Input"],
+
+Cell[BoxData[
+    \(BranchingQ[C\_m_, A\_n_] /; \((m \[Equal] n + 1)\) := True\)], "Input"],
+
+Cell[BoxData[
+    \(BranchWeight[C\_m_, A\_n_, \[Lambda]_] /; \((m \[Equal] n + 1)\) := 
+      Most[\[Lambda]]\)], "Input"],
+
+Cell[BoxData[
+    \(IncludeGenerator[A\_n_, C\_m_, Y_] /; \((m \[Equal] n + 1)\) := 
+      Y\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(DecomposeRepresentation[A\_k]\)[\(Irrep[B\_\(k + 1\)]\)[
+            UnitVector[k + 1, 1]]], {k, 1, 8}] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {\(DirectSum[\(Irrep[A\_1]\)[{1}], \(Irrep[A\_1]\)[{1}], \(Irrep[
+                  A\_1]\)[{0}]]\)},
+          {\(DirectSum[\(Irrep[A\_2]\)[{1, 0}], \(Irrep[A\_2]\)[{0, 
+                  1}], \(Irrep[A\_2]\)[{0, 0}]]\)},
+          {\(DirectSum[\(Irrep[A\_3]\)[{1, 0, 0}], \(Irrep[A\_3]\)[{0, 0, 
+                  1}], \(Irrep[A\_3]\)[{0, 0, 0}]]\)},
+          {\(DirectSum[\(Irrep[A\_4]\)[{1, 0, 0, 0}], \(Irrep[A\_4]\)[{0, 0, 
+                  0, 1}], \(Irrep[A\_4]\)[{0, 0, 0, 0}]]\)},
+          {\(DirectSum[\(Irrep[A\_5]\)[{1, 0, 0, 0, 0}], \(Irrep[A\_5]\)[{0, 
+                  0, 0, 0, 1}], \(Irrep[A\_5]\)[{0, 0, 0, 0, 0}]]\)},
+          {\(DirectSum[\(Irrep[A\_6]\)[{1, 0, 0, 0, 0, 0}], \(Irrep[
+                  A\_6]\)[{0, 0, 0, 0, 0, 1}], \(Irrep[A\_6]\)[{0, 0, 0, 0, 
+                  0, 0}]]\)},
+          {\(DirectSum[\(Irrep[A\_7]\)[{1, 0, 0, 0, 0, 0, 0}], \(Irrep[
+                  A\_7]\)[{0, 0, 0, 0, 0, 0, 1}], \(Irrep[A\_7]\)[{0, 0, 0, 
+                  0, 0, 0, 0}]]\)},
+          {\(DirectSum[\(Irrep[A\_8]\)[{1, 0, 0, 0, 0, 0, 0, 0}], \(Irrep[
+                  A\_8]\)[{0, 0, 0, 0, 0, 0, 0, 1}], \(Irrep[A\_8]\)[{0, 0, 
+                  0, 0, 0, 0, 0, 0}]]\)}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 1]][ {1}], 
+          Irrep[ 
+            Subscript[ A, 1]][ {1}], 
+          Irrep[ 
+            Subscript[ A, 1]][ {0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 2]][ {1, 0}], 
+          Irrep[ 
+            Subscript[ A, 2]][ {0, 1}], 
+          Irrep[ 
+            Subscript[ A, 2]][ {0, 0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 3]][ {1, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 3]][ {0, 0, 1}], 
+          Irrep[ 
+            Subscript[ A, 3]][ {0, 0, 0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 4]][ {1, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 4]][ {0, 0, 0, 1}], 
+          Irrep[ 
+            Subscript[ A, 4]][ {0, 0, 0, 0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 5]][ {1, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 5]][ {0, 0, 0, 0, 1}], 
+          Irrep[ 
+            Subscript[ A, 5]][ {0, 0, 0, 0, 0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 6]][ {1, 0, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 6]][ {0, 0, 0, 0, 0, 1}], 
+          Irrep[ 
+            Subscript[ A, 6]][ {0, 0, 0, 0, 0, 0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 7]][ {1, 0, 0, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 7]][ {0, 0, 0, 0, 0, 0, 1}], 
+          Irrep[ 
+            Subscript[ A, 7]][ {0, 0, 0, 0, 0, 0, 0}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 8]][ {1, 0, 0, 0, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 8]][ {0, 0, 0, 0, 0, 0, 0, 1}], 
+          Irrep[ 
+            Subscript[ A, 8]][ {0, 0, 0, 0, 0, 0, 0, 0}]]}]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(DecomposeRepresentation[A\_k]\)[\(Irrep[C\_\(k + 1\)]\)[
+            UnitVector[k + 1, 1]]], {k, 1, 8}] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {\(DirectSum[\(Irrep[A\_1]\)[{1}], \(Irrep[A\_1]\)[{1}]]\)},
+          {\(DirectSum[\(Irrep[A\_2]\)[{1, 0}], \(Irrep[A\_2]\)[{0, 1}]]\)},
+          {\(DirectSum[\(Irrep[A\_3]\)[{1, 0, 0}], \(Irrep[A\_3]\)[{0, 0, 
+                  1}]]\)},
+          {\(DirectSum[\(Irrep[A\_4]\)[{1, 0, 0, 0}], \(Irrep[A\_4]\)[{0, 0, 
+                  0, 1}]]\)},
+          {\(DirectSum[\(Irrep[A\_5]\)[{1, 0, 0, 0, 0}], \(Irrep[A\_5]\)[{0, 
+                  0, 0, 0, 1}]]\)},
+          {\(DirectSum[\(Irrep[A\_6]\)[{1, 0, 0, 0, 0, 0}], \(Irrep[
+                  A\_6]\)[{0, 0, 0, 0, 0, 1}]]\)},
+          {\(DirectSum[\(Irrep[A\_7]\)[{1, 0, 0, 0, 0, 0, 0}], \(Irrep[
+                  A\_7]\)[{0, 0, 0, 0, 0, 0, 1}]]\)},
+          {\(DirectSum[\(Irrep[A\_8]\)[{1, 0, 0, 0, 0, 0, 0, 0}], \(Irrep[
+                  A\_8]\)[{0, 0, 0, 0, 0, 0, 0, 1}]]\)}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      TableForm[ {
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 1]][ {1}], 
+          Irrep[ 
+            Subscript[ A, 1]][ {1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 2]][ {1, 0}], 
+          Irrep[ 
+            Subscript[ A, 2]][ {0, 1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 3]][ {1, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 3]][ {0, 0, 1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 4]][ {1, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 4]][ {0, 0, 0, 1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 5]][ {1, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 5]][ {0, 0, 0, 0, 1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 6]][ {1, 0, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 6]][ {0, 0, 0, 0, 0, 1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 7]][ {1, 0, 0, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 7]][ {0, 0, 0, 0, 0, 0, 1}]], 
+        DirectSum[ 
+          Irrep[ 
+            Subscript[ A, 8]][ {1, 0, 0, 0, 0, 0, 0, 0}], 
+          Irrep[ 
+            Subscript[ A, 8]][ {0, 0, 0, 0, 0, 0, 0, 1}]]}]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(DecompositionMap[A_, V : \(Irrep[B_]\)[_], \[Beta]_] /; 
+        BranchingQ[B, A] := \(DecompositionMap[A, 
+          V, \[Beta]] = \[IndentingNewLine]\((RepresentationTensor[A, 
+            V, \[Beta], \(DecomposeRepresentation[A]\)[
+              V], \[Beta], \({#, \
+\(QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition[A]\)[
+                    V, \[Beta], #]} &\) /@ 
+              Reverse[Weights[A, V]]])\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(bf = FundamentalBasis;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DecompositionMap[A2, \(Irrep[A3]\)[{1, 0, 0}], bf]\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor[A\_2, \(Irrep[A\_3]\)[{1, 0, 0}], 
+      FundamentalBasis, 
+      DirectSum[\(Irrep[A\_2]\)[{1, 0}], \(Irrep[A\_2]\)[{0, 0}]], 
+      FundamentalBasis, {{{0, \(-1\)}, Matrix[1, 1, {{1}}]}, {{\(-1\), 1}, 
+          Matrix[1, 1, {{1}}]}, {{0, 0}, Matrix[1, 1, {{1}}]}, {{1, 0}, 
+          Matrix[1, 1, {{1}}]}}]\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[PrincipalBranchingInclusion, 
+      PrincipalBranchingProjection]\)], "Input"],
+
+Cell[BoxData[
+    \(PrincipalBranchingInclusion[A_, 
+        B_, \(Irrep[
+            B_]\)[\[Lambda]_], \[Beta]_] := \(PrincipalBranchingInclusion[A, 
+          B, \(Irrep[B]\)[\[Lambda]], \[Beta]] = 
+        DecompositionMap[A, \(Irrep[B]\)[\[Lambda]], \[Beta]] . 
+          DirectSumInclusionMap[
+            A, \(DecomposeRepresentation[A]\)[\(Irrep[B]\)[\[Lambda]]], 
+            1, \[Beta]]\)\)], "Input"],
+
+Cell[BoxData[
+    \(SecondaryBranchingInclusion[A_, 
+        B_, \(Irrep[
+            B_]\)[\[Lambda]_], \[Beta]_] := \(SecondaryBranchingInclusion[A, 
+          B, \(Irrep[B]\)[\[Lambda]], \[Beta]] = 
+        DecompositionMap[A, \(Irrep[B]\)[\[Lambda]], \[Beta]] . 
+          DirectSumInclusionMap[
+            A, \(DecomposeRepresentation[A]\)[\(Irrep[B]\)[\[Lambda]]], 
+            Range[2, 
+              Length[\(DecomposeRepresentation[
+                    A]\)[\(Irrep[B]\)[\[Lambda]]]]], \[Beta]]\)\)], "Input"],
+
+Cell[BoxData[
+    \(PrincipalBranchingProjection[A_, 
+        B_, \(Irrep[
+            B_]\)[\[Lambda]_], \[Beta]_] := \(PrincipalBranchingProjection[A, 
+          B, \(Irrep[B]\)[\[Lambda]], \[Beta]] = 
+        DirectSumProjectionMap[
+            A, \(DecomposeRepresentation[A]\)[\(Irrep[B]\)[\[Lambda]]], 
+            1, \[Beta]] . 
+          InverseDecompositionMap[
+            A, \(Irrep[B]\)[\[Lambda]], \[Beta]]\)\)], "Input"],
+
+Cell[BoxData[
+    \(SecondaryBranchingProjection[A_, 
+        B_, \(Irrep[
+            B_]\)[\[Lambda]_], \[Beta]_] := \(SecondaryBranchingProjection[A, 
+          B, \(Irrep[B]\)[\[Lambda]], \[Beta]] = 
+        DirectSumProjectionMap[
+            A, \(DecomposeRepresentation[A]\)[\(Irrep[B]\)[\[Lambda]]], 
+            Range[2, 
+              Length[\(DecomposeRepresentation[
+                    A]\)[\(Irrep[B]\)[\[Lambda]]]]], \[Beta]] . 
+          InverseDecompositionMap[
+            A, \(Irrep[B]\)[\[Lambda]], \[Beta]]\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PrincipalBranchingInclusion[A2, B3, \(Irrep[B3]\)[{1, 0, 0}], 
+      bf]\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor[A\_2, \(Irrep[B\_3]\)[{1, 0, 0}], 
+      FundamentalBasis, \(Irrep[A\_2]\)[{1, 0}], 
+      FundamentalBasis, {{{1, 0}, Matrix[1, 1, {{1}}]}, {{0, 1}, 
+          Matrix[1, 0, {{}}]}, {{1, \(-1\)}, Matrix[1, 0, {{}}]}, {{0, 0}, 
+          Matrix[1, 0, {{}}]}, {{\(-1\), 1}, 
+          Matrix[1, 1, {{1}}]}, {{0, \(-1\)}, 
+          Matrix[1, 1, {{1}}]}, {{\(-1\), 0}, 
+          Matrix[1, 0, {{}}]}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(SecondaryBranchingInclusion[A2, B3, \(Irrep[B3]\)[{1, 0, 0}], 
+      bf]\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor[A\_2, \(Irrep[B\_3]\)[{1, 0, 0}], 
+      FundamentalBasis, 
+      DirectSum[\(Irrep[A\_2]\)[{0, 1}], \(Irrep[A\_2]\)[{0, 0}]], 
+      FundamentalBasis, {{{1, 0}, Matrix[1, 0, {{}}]}, {{0, 1}, 
+          Matrix[1, 1, {{1}}]}, {{1, \(-1\)}, Matrix[1, 1, {{1}}]}, {{0, 0}, 
+          Matrix[1, 1, {{1}}]}, {{\(-1\), 1}, 
+          Matrix[1, 0, {{}}]}, {{0, \(-1\)}, 
+          Matrix[1, 0, {{}}]}, {{\(-1\), 0}, 
+          Matrix[1, 1, {{1}}]}}]\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Branch[B_, A_, 
+          RepresentationTensor[B_, Vc_, \[Beta]c_, Vd_, \[Beta]d_, 
+            matrices_List]] /; 
+        BranchingQ[B, A] := \[IndentingNewLine]RepresentationTensor[A, 
+        Vc, \[Beta]c, 
+        Vd, \[Beta]d, \({#, 
+              PermuteRowsAndColumns[
+                BlockDiagonalMatrix @@ 
+                  Cases[matrices, {\[Lambda]_ /; \((BranchWeight[B, 
+                                A, \[Lambda]] \[Equal] #)\), 
+                        m_} \[RuleDelayed] m], 
+                BranchingBasisReordering[B, A, Vc, #], 
+                BranchingBasisReordering[B, A, Vd, #]]} &\) /@ 
+          Weights[A, Vd]]\)], "Input"],
+
+Cell[BoxData[
+    \(Basis[A_, \(Irrep[A_]\)[\[Mu]_], \[Lambda]_] := 
+      Table[f[A, \(Irrep[A]\)[\[Mu]], \[Lambda], i], {i, 1, 
+          WeightMultiplicity[A, \(Irrep[A]\)[\[Mu]], \[Lambda]]}]\)], "Input"],
+
+Cell[BoxData[
+    \(Basis[A_, V_\[CircleTimes]W_, \[Lambda]_] := 
+      Module[{\[Mu]}, \[IndentingNewLine]Flatten[
+          Table[\[Mu] = \(Weights[A, W]\)\[LeftDoubleBracket]
+                i\[RightDoubleBracket]; 
+            Outer[TensorProduct, Basis[A, V, \[Lambda] - \[Mu]], 
+              Basis[A, W, \[Mu]]], {i, 1, 
+              Length[Weights[A, W]]}]]\[IndentingNewLine]]\)], "Input"],
+
+Cell[BoxData[
+    \(Basis[A_, \(Irrep[B_]\)[\[Mu]_], \[Lambda]_] := 
+      Join @@ \((\(Basis[B, \(Irrep[B]\)[\[Mu]], #] &\) /@ 
+            Select[Weights[B, \(Irrep[B]\)[\[Mu]]], 
+              BranchWeight[B, A, #] \[Equal] \[Lambda] &])\)\)], "Input"],
+
+Cell[BoxData[
+    \(BranchBasis[B_, A_, V_, \[Lambda]_] := 
+      Flatten[\(Basis[B, V, #] &\) /@ 
+          Select[Weights[B, V], 
+            BranchWeight[B, A, #] \[Equal] \[Lambda] &]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Basis[
+      A1, \(Irrep[A2]\)[{1, 0}]\[CircleTimes]\(Irrep[A2]\)[{0, 
+            1}], {0}]\)], "Input"],
+
+Cell[BoxData[
+    \({f[A\_2, \(Irrep[A\_2]\)[{1, 0}], {\(-1\), 1}, 1]\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{0, 1}], {1, \(-1\)}, 1], 
+      f[A\_2, \(Irrep[A\_2]\)[{1, 0}], {0, \(-1\)}, 1]\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{0, 1}], {0, 1}, 1], 
+      f[A\_2, \(Irrep[A\_2]\)[{1, 0}], {1, 0}, 1]\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{0, 1}], {\(-1\), 0}, 1]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(BranchBasis[A2, 
+      A1, \(Irrep[A2]\)[{1, 0}]\[CircleTimes]\(Irrep[A2]\)[{0, 
+            1}], {0}]\)], "Input"],
+
+Cell[BoxData[
+    \({f[A\_2, \(Irrep[A\_2]\)[{1, 0}], {0, \(-1\)}, 1]\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{0, 1}], {0, 1}, 1], 
+      f[A\_2, \(Irrep[A\_2]\)[{1, 0}], {\(-1\), 1}, 1]\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{0, 1}], {1, \(-1\)}, 1], 
+      f[A\_2, \(Irrep[A\_2]\)[{1, 0}], {1, 0}, 1]\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{0, 1}], {\(-1\), 0}, 1]}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(BranchingBasisReordering[B_, A_, 
+        V_, \[Lambda]_] := \(Ordering[
+          BranchBasis[B, A, V, \[Lambda]]]\)\[LeftDoubleBracket]
+        Ordering[
+          Ordering[Basis[A, V, \[Lambda]]]]\[RightDoubleBracket]\)], "Input"],
+
+Cell[BoxData[{
+    \(PermuteRows[Matrix[r_, c_, data_], p_] /; Length[p] \[Equal] r := 
+      Matrix[r, c, 
+        data\[LeftDoubleBracket]Ordering[
+            Ordering[p]]\[RightDoubleBracket]]\), "\[IndentingNewLine]", 
+    \(PermuteColumns[Matrix[r_, c_, data_], p_] /; Length[p] \[Equal] c := 
+      Matrix[r, c, 
+        data\[LeftDoubleBracket]All, 
+          Ordering[Ordering[p]]\[RightDoubleBracket]]\)}], "Input"],
+
+Cell[BoxData[
+    \(PermuteRowsAndColumns[Matrix[r_, c_, data_], pr_, pc_] := 
+      PermuteRows[PermuteColumns[Matrix[r, c, data], pc], pr]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(BranchingBasisReordering[A2, 
+      A1, \(Irrep[A2]\)[{1, 0}]\[CircleTimes]\(Irrep[A2]\)[{0, 
+            1}], {0}]\)], "Input"],
+
+Cell[BoxData[
+    \({2, 1, 3}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Basis[
+      A2, \((\(Irrep[A2]\)[{1, 1}]\[CircleTimes]\(Irrep[A2]\)[{1, 
+                1}])\)\[CircleTimes]\(Irrep[A2]\)[{1, 1}], {0, 0}]\)], "Input"],
+
+Cell[BoxData[
+    \({\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 1]}\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Basis[
+        A2, \(Irrep[A2]\)[{1, 
+              1}]\[CircleTimes]\((\(Irrep[A2]\)[{1, 1}]\[CircleTimes]\(Irrep[
+                  A2]\)[{1, 1}])\), {0, 0}] /. 
+      a_\[CircleTimes]\((b_\[CircleTimes]c_)\) \[RuleDelayed] \((a\
+\[CircleTimes]b)\)\[CircleTimes]c\)], "Input"],
+
+Cell[BoxData[
+    \({\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+              2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+              1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+              1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+          2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+              1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+          1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+              A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+          A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 1]}\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(%% - %\)], "Input"],
+
+Cell[BoxData[
+    \({0, 
+      0, \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                    1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                    1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 1], 0, 
+      0, \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                    1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+            1], 0, 0, \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                    1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                2])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                2]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                2]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                2]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                2])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+                    2]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\) + \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 1], 0, 
+      0, \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\) + \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], 0, 0, \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            1], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 2]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+                1])\)\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {0, 0}, 
+            2], \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 
+            1] - \((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                1]\[CircleTimes]f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+            1], \(-\((\((f[A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, 1}, 
+                    1]\[CircleTimes]f[
+                    A\_2, \(Irrep[A\_2]\)[{1, 1}], {1, \(-2\)}, 
+                    1])\)\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-2\), 1}, 1])\)\) + \((f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {2, \(-1\)}, 1]\[CircleTimes]f[
+                A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), 2}, 
+                1])\)\[CircleTimes]f[
+            A\_2, \(Irrep[A\_2]\)[{1, 1}], {\(-1\), \(-1\)}, 1], 0, 
+      0}\)], "Output"]
+}, Closed]],
+
+Cell[BoxData[
+    \(Basis[A_, V_DirectSum, \[Lambda]_] := 
+      Flatten[Table[\(UnitVector[Length[V], i] # &\) /@ 
+            Basis[A, 
+              V\[LeftDoubleBracket]i\[RightDoubleBracket], \[Lambda]], {i, 1, 
+            Length[V]}], 1]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Branch[A3, A2, 
+      IdentityMap[A3, \(Irrep[A3]\)[{1, 1, 0}], bf]]\)], "Input"],
+
+Cell[BoxData[
+    \(RepresentationTensor[A\_2, \(Irrep[A\_3]\)[{1, 1, 0}], 
+      FundamentalBasis, \(Irrep[A\_3]\)[{1, 1, 0}], 
+      FundamentalBasis, {{{2, 0}, Matrix[1, 1, {{1}}]}, {{1, 1}, 
+          Matrix[1, 1, {{1}}]}, {{2, \(-1\)}, Matrix[1, 1, {{1}}]}, {{1, 0}, 
+          Matrix[1, 1, {{1}}]}, {{0, 1}, 
+          Matrix[2, 2, {{1, 0}, {0, 1}}]}, {{\(-1\), 2}, 
+          Matrix[1, 1, {{1}}]}, {{1, \(-1\)}, 
+          Matrix[2, 2, {{1, 0}, {0, 1}}]}, {{0, 0}, 
+          Matrix[2, 2, {{1, 0}, {0, 1}}]}, {{\(-1\), 1}, 
+          Matrix[1, 1, {{1}}]}, {{\(-2\), 2}, 
+          Matrix[1, 1, {{1}}]}, {{1, \(-2\)}, 
+          Matrix[1, 1, {{1}}]}, {{0, \(-1\)}, 
+          Matrix[1, 1, {{1}}]}, {{\(-1\), 0}, 
+          Matrix[2, 2, {{1, 0}, {0, 1}}]}, {{\(-2\), 1}, 
+          Matrix[1, 1, {{1}}]}, {{0, \(-2\)}, 
+          Matrix[1, 1, {{1}}]}, {{\(-1\), \(-1\)}, 
+          Matrix[1, 1, {{1}}]}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CheckRepresentationTensor[%]\)], "Input"],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[Hom]\)], "Input"],
+
+Cell[BoxData[{
+    \(Hom[\[CapitalGamma]_, \(Irrep[\[CapitalGamma]_]\)[\[Lambda]_], \
+\[Beta]_, \(Irrep[\[CapitalGamma]_]\)[\[Lambda]_], \[Beta]_] := {IdentityMap[\
+\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[\[Lambda]], \[Beta]]}\), "\
+\[IndentingNewLine]", 
+    \(Hom[\[CapitalGamma]_, \(Irrep[\[CapitalGamma]_]\)[\[Lambda]_], \
+\[Beta]_, \(Irrep[\[CapitalGamma]_]\)[\[Mu]_], \[Beta]_] /; \((\[Lambda] \
+\[NotEqual] \[Mu])\) := {}\)}], "Input"],
+
+Cell[BoxData[
+    \(Hom[\[CapitalGamma]_, 
+        V : DirectSum[\((\(Irrep[\[CapitalGamma]_]\)[_])\) .. ], \[Beta]_, 
+        W : \((\(Irrep[\[CapitalGamma]_]\)[_])\), \[Beta]_] := \
+\(DirectSumProjectionMap[\[CapitalGamma], V, #, \[Beta]] &\) /@ 
+        Flatten[Position[V, W, 1], 1]\)], "Input"],
+
+Cell[BoxData[
+    \(Hom[\[CapitalGamma]_, 
+        V : \((\(Irrep[\[CapitalGamma]_]\)[_])\), \[Beta]_, 
+        W : DirectSum[\((\(Irrep[\[CapitalGamma]_]\)[_])\) .. ], \[Beta]_] := \
+\(DirectSumInclusionMap[\[CapitalGamma], W, #, \[Beta]] &\) /@ 
+        Flatten[Position[W, V, 1], 1]\)], "Input"],
+
+Cell[BoxData[
+    \(Hom[\[CapitalGamma]_, 
+        V : DirectSum[\((\(Irrep[\[CapitalGamma]_]\)[_])\) .. ], \[Beta]_, 
+        W : DirectSum[\((\(Irrep[\[CapitalGamma]_]\)[_])\) .. ], \[Beta]_] := 
+      Flatten[Table[
+          DirectSumInclusionMap[\[CapitalGamma], W, k, \[Beta]] . 
+            Hom[\[CapitalGamma], V, \[Beta], 
+              W\[LeftDoubleBracket]k\[RightDoubleBracket], \[Beta]], {k, 1, 
+            Length[W]}], 1]\)], "Input"],
+
+Cell[BoxData[
+    \(Hom[\[CapitalGamma]_, V_, \[Beta]_, 
+        W_, \[Beta]_] := \(Hom[\[CapitalGamma], V, \[Beta], W, \[Beta]] = 
+        DecompositionMap[\[CapitalGamma], W, \[Beta]] . 
+          Hom[\[CapitalGamma], \(DecomposeRepresentation[\[CapitalGamma]]\)[
+              V], \[Beta], \(DecomposeRepresentation[\[CapitalGamma]]\)[
+              W], \[Beta]] . 
+          Inverse[DecompositionMap[\[CapitalGamma], V, \[Beta]]]\)\)], "Input"],
+
+Cell[BoxData[
+    \(Endo[\[CapitalGamma]_, V_, \[Beta]_] := 
+      Hom[\[CapitalGamma], V, \[Beta], V, \[Beta]]\)], "Input"],
+
+Cell[BoxData[
+    \(HighestWeight[\[CapitalGamma]_, 
+        V_] := \(Weights[\[CapitalGamma], 
+          V]\)\[LeftDoubleBracket]1\[RightDoubleBracket]\)], "Input"],
+
+Cell[BoxData[
+    \(SelectDirectSummands[big_DirectSum, small_DirectSum] := 
+      Module[{remaining = small, indexes = {}}, \[IndentingNewLine]Do[
+          If[MemberQ[remaining, 
+              big\[LeftDoubleBracket]
+                i\[RightDoubleBracket]], \[IndentingNewLine]AppendTo[indexes, 
+              i]; \[IndentingNewLine]remaining = 
+              DeleteCases[remaining, 
+                big\[LeftDoubleBracket]i\[RightDoubleBracket], 1, 
+                1]\[IndentingNewLine]], {i, 1, 
+            Length[big]}]; \[IndentingNewLine]indexes\[IndentingNewLine]]\)], \
+"Input"],
+
+Cell[BoxData[
+    \(EndomorphismsOfLeadingEdge[\[CapitalGamma]_, V_, k_, \[Beta]_] := 
+      Hom[\[CapitalGamma], LeadingEdge[\[CapitalGamma], V, k], \[Beta], 
+          V\^\(\[CircleTimes]k\), \[Beta]] . 
+        DirectSumProjectionMap[\[CapitalGamma], \(DecomposeRepresentation[\
+\[CapitalGamma]]\)[V\^\(\[CircleTimes]k\)], 
+          SelectDirectSummands[\(DecomposeRepresentation[\[CapitalGamma]]\)[
+              V\^\(\[CircleTimes]k\)], 
+            LeadingEdge[\[CapitalGamma], V, k]], \[Beta]] . 
+        InverseDecompositionMap[\[CapitalGamma], 
+          V\^\(\[CircleTimes]k\), \[Beta]]\)], "Input"],
+
+Cell[BoxData[
+    \(UnsortedComplement[x_List, y__List] := 
+      Replace[x, 
+        Dispatch[\(\((# \[RuleDelayed] Sequence[])\) &\) /@ Union[y]], 
+        1]\)], "Input"],
+
+Cell[BoxData[{
+    \(LeadingEdge[\[CapitalGamma]_, _, 0] := 
+      DirectSum[\(Irrep[\[CapitalGamma]]\)[
+          ZeroVector[Rank[\[CapitalGamma]]]]]\), "\[IndentingNewLine]", 
+    \(LeadingEdge[\[CapitalGamma]_, V_, k_] := 
+      DirectSum @@ 
+        UnsortedComplement[
+          DirectSummands[\(DecomposeRepresentation[\[CapitalGamma]]\)[
+              V\^\(\[CircleTimes]k\)]], 
+          DirectSummands[\(Irrep[\[CapitalGamma]]\)[
+              ZeroVector[Rank[\[CapitalGamma]]]]], 
+          Sequence @@ 
+            Table[DirectSummands[\(DecomposeRepresentation[\[CapitalGamma]]\)[
+                  V\^\(\[CircleTimes]j\)]], {j, 1, k - 1}]]\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(EndomorphismsOfLeadingEdge[A2, \(Irrep[A2]\)[{1, 0}], 3, bf]\)], "Input"],
+
+Cell[BoxData[
+    \({RepresentationTensor[
+        A\_2, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[A\_2]\)[{1, 
+                  0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[
+                  A\_2]\)[{1, 0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, {{{3, 0}, Matrix[1, 1, {{1}}]}, {{1, 1}, 
+            Matrix[3, 
+              3, {{q\^4\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\)}}]}, {{2, \(-1\)}, 
+            Matrix[3, 
+              3, {{q\^4\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\)}}]}, {{\(-1\), 2}, 
+            Matrix[3, 
+              3, {{q\^4\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), 1\/\(1 + q\^2 + q\^4\)}}]}, {{0, 
+              0}, Matrix[6, 
+              6, {{q\^6\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {q\^5\/\(1 + 2\ \
+q\^2 + 2\ q\^4 + q\^6\), q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {q\^5\/\(1 + 2\ \
+q\^2 + 2\ q\^4 + q\^6\), q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {q\^4\/\(1 + 2\ \
+q\^2 + 2\ q\^4 + q\^6\), q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {q\^4\/\(1 + 2\ q\^2 \
++ 2\ q\^4 + q\^6\), q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {q\^3\/\(1 + 2\ q\^2 \
++ 2\ q\^4 + q\^6\), q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  1\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}}]}, {{\(-3\), 3}, 
+            Matrix[1, 1, {{1}}]}, {{1, \(-2\)}, 
+            Matrix[3, 
+              3, {{q\^4\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\)}}]}, {{\(-2\), 1}, 
+            Matrix[3, 
+              3, {{q\^4\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\)}}]}, {{\(-1\), \(-1\)}, 
+            Matrix[3, 
+              3, {{q\^4\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\)}}]}, {{0, \(-3\)}, 
+            Matrix[1, 1, {{1}}]}}], 
+      RepresentationTensor[
+        A\_2, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[A\_2]\)[{1, 
+                  0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[
+                  A\_2]\)[{1, 0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, {{{3, 0}, Matrix[1, 1, {{0}}]}, {{1, 1}, 
+            Matrix[3, 
+              3, {{q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^2\/\(1 + 
+                          q\^2 + 
+                          q\^4\)\)\)}, {q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  1\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(q\^2\ \((1 + q\^2)\)\)\/\(1 + q\^2 + \
+q\^4\)}}]}, {{2, \(-1\)}, 
+            Matrix[3, 
+              3, {{q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^2\/\(1 + 
+                          q\^2 + 
+                          q\^4\)\)\)}, {q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  1\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(q\^2\ \((1 + q\^2)\)\)\/\(1 + q\^2 + \
+q\^4\)}}]}, {{\(-1\), 2}, 
+            Matrix[3, 
+              3, {{\(1 + q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^3\/\(1 + q\^2 + q\^4\)\)\), 
+                  q\^6\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {\(-\(q\^2\/\(1 + 
+                          q\^2 + q\^4\)\)\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}}]}, {{0, 0}, 
+            Matrix[6, 
+              6, {{q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), \(-\(q\^5\/\(\((1 + q\^2)\)\ \((1 + 
+                              q\^2 + q\^4)\)\)\)\), \(-\(q\^4\/\(\((1 + 
+                              q\^2)\)\ \((1 + q\^2 + 
+                              q\^4)\)\)\)\), \(-\(q\^4\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\), \(-\(q\^3\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\)}, {q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\), \(-\(q\^4\/\(\((1 + q\^2)\)\ \((1 + 
+                              q\^2 + q\^4)\)\)\)\), \(-\(q\^3\/\(\((1 + 
+                              q\^2)\)\ \((1 + q\^2 + 
+                              q\^4)\)\)\)\), \(-\(q\^3\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\), \(-\(q\^2\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\)}, {\(-\(q\^5\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\), \(-\(q\^4\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + 
+                          q\^6\)\)\), \(q\^2 + q\^6\)\/\(1 + 2\ q\^2 + 2\ \
+q\^4 + q\^6\), \(q + q\^5\)\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^3\/\(1 \
++ 2\ q\^2 + 2\ q\^4 + q\^6\)\)\), \(-\(q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + 
+                          q\^6\)\)\)}, {\(-\(q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + 
+                          q\^6\)\)\), \(-\(q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + 
+                          q\^6\)\)\), \(q + q\^5\)\/\(1 + 2\ q\^2 + 2\ q\^4 + \
+q\^6\), \(1 + q\^4\)\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^2\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\), \(-\(q\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\)}, {\(-\(q\^4\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\), \(-\(q\^3\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + 
+                          q\^6\)\)\), \(-\(q\^3\/\(\((1 + q\^2)\)\ \((1 + 
+                              q\^2 + q\^4)\)\)\)\), \(-\(q\^2\/\(\((1 + 
+                              q\^2)\)\ \((1 + q\^2 + q\^4)\)\)\)\), 
+                  q\^4\/\(1 + q\^2 + q\^4\), 
+                  q\^3\/\(1 + q\^2 + q\^4\)}, {\(-\(q\^3\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\), \(-\(q\^2\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + 
+                          q\^6\)\)\), \(-\(q\^2\/\(\((1 + q\^2)\)\ \((1 + 
+                              q\^2 + q\^4)\)\)\)\), \(-\(q\/\(\((1 + 
+                              q\^2)\)\ \((1 + q\^2 + q\^4)\)\)\)\), 
+                  q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}}]}, {{\(-3\), 3}, 
+            Matrix[1, 1, {{0}}]}, {{1, \(-2\)}, 
+            Matrix[3, 
+              3, {{\(1 + q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^3\/\(1 + q\^2 + q\^4\)\)\), 
+                  q\^6\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {\(-\(q\^2\/\(1 + 
+                          q\^2 + q\^4\)\)\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}}]}, {{\(-2\), 1}, 
+            Matrix[3, 
+              3, {{q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^2\/\(1 + 
+                          q\^2 + 
+                          q\^4\)\)\)}, {q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  1\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(q\^2\ \((1 + q\^2)\)\)\/\(1 + q\^2 + \
+q\^4\)}}]}, {{\(-1\), \(-1\)}, 
+            Matrix[3, 
+              3, {{\(1 + q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^3\/\(1 + q\^2 + q\^4\)\)\), 
+                  q\^6\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {\(-\(q\^2\/\(1 + 
+                          q\^2 + q\^4\)\)\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}}]}, {{0, \(-3\)}, 
+            Matrix[1, 1, {{0}}]}}], 
+      RepresentationTensor[
+        A\_2, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[A\_2]\)[{1, 
+                  0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[
+                  A\_2]\)[{1, 0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, {{{3, 0}, Matrix[1, 1, {{0}}]}, {{1, 1}, 
+            Matrix[3, 
+              3, {{q\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\^2\)\), 
+                  0}, {1\/\((1 + q\^2)\)\^2, \(-\(q\/\((1 + q\^2)\)\^2\)\), 
+                  0}, {\(-\(q\/\(1 + q\^2\)\)\), q\^2\/\(1 + q\^2\), 
+                  0}}]}, {{2, \(-1\)}, 
+            Matrix[3, 
+              3, {{q\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\^2\)\), 
+                  0}, {1\/\((1 + q\^2)\)\^2, \(-\(q\/\((1 + q\^2)\)\^2\)\), 
+                  0}, {\(-\(q\/\(1 + q\^2\)\)\), q\^2\/\(1 + q\^2\), 
+                  0}}]}, {{\(-1\), 2}, 
+            Matrix[3, 
+              3, {{0, 1\/\(1 + q\^2\), \(-\(q\/\(1 + 
+                          q\^2\)\)\)}, {0, \(-\(q\^3\/\((1 + q\^2)\)\^2\)\), 
+                  q\^4\/\((1 + q\^2)\)\^2}, {0, \(-\(q\^2\/\((1 + \
+q\^2)\)\^2\)\), q\^3\/\((1 + q\^2)\)\^2}}]}, {{0, 0}, 
+            Matrix[6, 
+              6, {{0, 0, 
+                  q\^2\/\((1 + q\^2)\)\^2, \(-\(q\^3\/\((1 + q\^2)\)\^2\)\), 
+                  q\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\^2\)\)}, \
+{0, 0, q\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\^2\)\), 
+                  1\/\((1 + q\^2)\)\^2, \(-\(q\/\((1 + q\^2)\)\^2\)\)}, {q\^2\
+\/\((1 + q\^2)\)\^2, \(-\(q\^3\/\((1 + q\^2)\)\^2\)\), \(q - q\^3\)\/\((1 + q\
+\^2)\)\^2, \(\(-q\^2\) + q\^4\)\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\
+\^2\)\), q\^3\/\((1 + q\^2)\)\^2}, {q\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\
+\^2)\)\^2\)\), \(1 - q\^2\)\/\((1 + q\^2)\)\^2, \(\(-q\) + q\^3\)\/\((1 + \
+q\^2)\)\^2, \(-\(q\/\((1 + q\^2)\)\^2\)\), 
+                  q\^2\/\((1 + q\^2)\)\^2}, {\(-\(q\^3\/\((1 + \
+q\^2)\)\^2\)\), q\^4\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\^2\)\), 
+                  q\^3\/\((1 + q\^2)\)\^2, 0, 
+                  0}, {\(-\(q\^2\/\((1 + q\^2)\)\^2\)\), 
+                  q\^3\/\((1 + q\^2)\)\^2, \(-\(q\/\((1 + q\^2)\)\^2\)\), 
+                  q\^2\/\((1 + q\^2)\)\^2, 0, 0}}]}, {{\(-3\), 3}, 
+            Matrix[1, 1, {{0}}]}, {{1, \(-2\)}, 
+            Matrix[3, 
+              3, {{0, 1\/\(1 + q\^2\), \(-\(q\/\(1 + 
+                          q\^2\)\)\)}, {0, \(-\(q\^3\/\((1 + q\^2)\)\^2\)\), 
+                  q\^4\/\((1 + q\^2)\)\^2}, {0, \(-\(q\^2\/\((1 + \
+q\^2)\)\^2\)\), q\^3\/\((1 + q\^2)\)\^2}}]}, {{\(-2\), 1}, 
+            Matrix[3, 
+              3, {{q\/\((1 + q\^2)\)\^2, \(-\(q\^2\/\((1 + q\^2)\)\^2\)\), 
+                  0}, {1\/\((1 + q\^2)\)\^2, \(-\(q\/\((1 + q\^2)\)\^2\)\), 
+                  0}, {\(-\(q\/\(1 + q\^2\)\)\), q\^2\/\(1 + q\^2\), 
+                  0}}]}, {{\(-1\), \(-1\)}, 
+            Matrix[3, 
+              3, {{0, 1\/\(1 + q\^2\), \(-\(q\/\(1 + 
+                          q\^2\)\)\)}, {0, \(-\(q\^3\/\((1 + q\^2)\)\^2\)\), 
+                  q\^4\/\((1 + q\^2)\)\^2}, {0, \(-\(q\^2\/\((1 + \
+q\^2)\)\^2\)\), q\^3\/\((1 + q\^2)\)\^2}}]}, {{0, \(-3\)}, 
+            Matrix[1, 1, {{0}}]}}], 
+      RepresentationTensor[
+        A\_2, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[A\_2]\)[{1, 
+                  0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[
+                  A\_2]\)[{1, 0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, {{{3, 0}, Matrix[1, 1, {{0}}]}, {{1, 1}, 
+            Matrix[3, 
+              3, {{q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\), \(-\(\(q\ \((1 + q\^2)\)\)\/\(1 + 
+                          q\^2 + q\^4\)\)\)}, {\(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(q\^2\ \((1 + q\^2)\)\)\/\(1 + q\^2 + \
+q\^4\)}, {0, 0, 0}}]}, {{2, \(-1\)}, 
+            Matrix[3, 
+              3, {{q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\), \(-\(\(q\ \((1 + q\^2)\)\)\/\(1 + 
+                          q\^2 + q\^4\)\)\)}, {\(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(q\^2\ \((1 + q\^2)\)\)\/\(1 + q\^2 + \
+q\^4\)}, {0, 0, 0}}]}, {{\(-1\), 2}, 
+            Matrix[3, 
+              3, {{0, 0, 
+                  0}, {\(1 + q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + 
+                          q\^2 + q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(\(q\ \((1 + q\^2)\)\)\/\(1 + 
+                          q\^2 + q\^4\)\)\), q\^4\/\(1 + q\^2 + q\^4\), 
+                  q\^3\/\(1 + q\^2 + q\^4\)}}]}, {{0, 0}, 
+            Matrix[6, 
+              6, {{0, 0, q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {0, 
+                  0, \(-\(q\^3\/\(1 + q\^2 + q\^4\)\)\), \(-\(q\^2\/\(1 + 
+                          q\^2 + q\^4\)\)\), q\^4\/\(1 + q\^2 + q\^4\), 
+                  q\^3\/\(1 + q\^2 + q\^4\)}, {q\^2\/\(1 + q\^2 + q\^4\), 
+                  q\/\(1 + q\^2 + q\^4\), \(q - q\^3\)\/\(1 + q\^2 + q\^4\), \
+\(1 - q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(q\^3\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(\(-q\^2\) + q\^4\)\/\(1 + q\^2 + q\^4\
+\), \(\(-q\) + q\^3\)\/\(1 + q\^2 + q\^4\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}, {q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + q\^4\)\)\), 0, 
+                  0}, {\(-\(q\^2\/\(1 + q\^2 + q\^4\)\)\), \(-\(q\/\(1 + 
+                          q\^2 + q\^4\)\)\), q\^3\/\(1 + q\^2 + q\^4\), 
+                  q\^2\/\(1 + q\^2 + q\^4\), 0, 0}}]}, {{\(-3\), 3}, 
+            Matrix[1, 1, {{0}}]}, {{1, \(-2\)}, 
+            Matrix[3, 
+              3, {{0, 0, 
+                  0}, {\(1 + q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + 
+                          q\^2 + q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(\(q\ \((1 + q\^2)\)\)\/\(1 + 
+                          q\^2 + q\^4\)\)\), q\^4\/\(1 + q\^2 + q\^4\), 
+                  q\^3\/\(1 + q\^2 + q\^4\)}}]}, {{\(-2\), 1}, 
+            Matrix[3, 
+              3, {{q\/\(1 + q\^2 + q\^4\), 
+                  1\/\(1 + q\^2 + q\^4\), \(-\(\(q\ \((1 + q\^2)\)\)\/\(1 + 
+                          q\^2 + q\^4\)\)\)}, {\(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\), \(q\^2\ \((1 + q\^2)\)\)\/\(1 + q\^2 + \
+q\^4\)}, {0, 0, 0}}]}, {{\(-1\), \(-1\)}, 
+            Matrix[3, 
+              3, {{0, 0, 
+                  0}, {\(1 + q\^2\)\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + 
+                          q\^2 + q\^4\)\)\), \(-\(q\^2\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {\(-\(\(q\ \((1 + q\^2)\)\)\/\(1 + 
+                          q\^2 + q\^4\)\)\), q\^4\/\(1 + q\^2 + q\^4\), 
+                  q\^3\/\(1 + q\^2 + q\^4\)}}]}, {{0, \(-3\)}, 
+            Matrix[1, 1, {{0}}]}}], 
+      RepresentationTensor[
+        A\_2, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[A\_2]\)[{1, 
+                  0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, \((\(Irrep[A\_2]\)[{1, 0}]\[CircleTimes]\(Irrep[
+                  A\_2]\)[{1, 0}])\)\[CircleTimes]\(Irrep[A\_2]\)[{1, 0}], 
+        FundamentalBasis, {{{3, 0}, Matrix[1, 1, {{0}}]}, {{1, 1}, 
+            Matrix[3, 
+              3, {{1\/\(1 + q\^2\), \(-\(q\/\(1 + q\^2\)\)\), 
+                  0}, {\(-\(q\/\(1 + q\^2\)\)\), q\^2\/\(1 + q\^2\), 0}, {0, 
+                  0, 0}}]}, {{2, \(-1\)}, 
+            Matrix[3, 
+              3, {{1\/\(1 + q\^2\), \(-\(q\/\(1 + q\^2\)\)\), 
+                  0}, {\(-\(q\/\(1 + q\^2\)\)\), q\^2\/\(1 + q\^2\), 0}, {0, 
+                  0, 0}}]}, {{\(-1\), 2}, 
+            Matrix[3, 
+              3, {{0, 0, 0}, {0, 
+                  1\/\(1 + q\^2\), \(-\(q\/\(1 + 
+                          q\^2\)\)\)}, {0, \(-\(q\/\(1 + q\^2\)\)\), 
+                  q\^2\/\(1 + q\^2\)}}]}, {{0, 0}, 
+            Matrix[6, 
+              6, {{q\^2\/\(1 + q\^2 + q\^4\), \(-\(q\^3\/\(1 + q\^2 + 
+                          q\^4\)\)\), 
+                  q\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^2\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\), \(-\(q\^2\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)}, {\(-\(q\^3\/\(1 + 
+                          q\^2 + q\^4\)\)\), 
+                  q\^4\/\(1 + q\^2 + q\^4\), \(-\(q\^2\/\(1 + 2\ q\^2 + 
+                          2\ q\^4 + q\^6\)\)\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^4\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + 
+                          q\^6\)\)\)}, {q\/\(\((1 + q\^2)\)\ \((1 + q\^2 + \
+q\^4)\)\), \(-\(q\^2\/\(\((1 + q\^2)\)\ \((1 + q\^2 + 
+                              q\^4)\)\)\)\), \(1 + q\^4\)\/\(1 + 2\ q\^2 + 2\ \
+q\^4 + q\^6\), \(\(-q\) - q\^5\)\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(\((1 + q\^2)\)\ \((1 + q\^2 + q\^4)\)\), \
+\(-\(q\^4\/\(\((1 + q\^2)\)\ \((1 + q\^2 + 
+                              q\^4)\)\)\)\)}, {\(-\(q\^2\/\(\((1 + 
+                              q\^2)\)\ \((1 + q\^2 + q\^4)\)\)\)\), 
+                  q\^3\/\(\((1 + q\^2)\)\ \((1 + q\^2 + q\^4)\)\), \(\(-q\) - \
+q\^5\)\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(q\^2 + q\^6\)\/\(1 + 2\ q\^2 + 2\ \
+q\^4 + q\^6\), \(-\(q\^4\/\(\((1 + q\^2)\)\ \((1 + q\^2 + q\^4)\)\)\)\), 
+                  q\^5\/\(\((1 + q\^2)\)\ \((1 + q\^2 + q\^4)\)\)}, \
+{\(-\(q\^2\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)\)\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), 
+                  q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\^4\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\), 
+                  1\/\(1 + q\^2 + q\^4\), \(-\(q\/\(1 + q\^2 + 
+                          q\^4\)\)\)}, {q\^3\/\(1 + 2\ q\^2 + 2\ q\^4 + \
+q\^6\), \(-\(q\^4\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\)\)\), \(-\(q\^4\/\(1 + 
+                          2\ q\^2 + 2\ q\^4 + q\^6\)\)\), 
+                  q\^5\/\(1 + 2\ q\^2 + 2\ q\^4 + q\^6\), \(-\(q\/\(1 + 
+                          q\^2 + q\^4\)\)\), 
+                  q\^2\/\(1 + q\^2 + q\^4\)}}]}, {{\(-3\), 3}, 
+            Matrix[1, 1, {{0}}]}, {{1, \(-2\)}, 
+            Matrix[3, 
+              3, {{0, 0, 0}, {0, 
+                  1\/\(1 + q\^2\), \(-\(q\/\(1 + 
+                          q\^2\)\)\)}, {0, \(-\(q\/\(1 + q\^2\)\)\), 
+                  q\^2\/\(1 + q\^2\)}}]}, {{\(-2\), 1}, 
+            Matrix[3, 
+              3, {{1\/\(1 + q\^2\), \(-\(q\/\(1 + q\^2\)\)\), 
+                  0}, {\(-\(q\/\(1 + q\^2\)\)\), q\^2\/\(1 + q\^2\), 0}, {0, 
+                  0, 0}}]}, {{\(-1\), \(-1\)}, 
+            Matrix[3, 
+              3, {{0, 0, 0}, {0, 
+                  1\/\(1 + q\^2\), \(-\(q\/\(1 + 
+                          q\^2\)\)\)}, {0, \(-\(q\/\(1 + q\^2\)\)\), 
+                  q\^2\/\(1 + q\^2\)}}]}, {{0, \(-3\)}, 
+            Matrix[1, 1, {{0}}]}}]}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(f[\[CapitalGamma] : \((\((A | B | C)\)\_n_)\), k_]\)[x_] := 
+      PrincipalBranchingProjection[A\_\(n - 1\), \[CapitalGamma], \(Irrep[\
+\[CapitalGamma]]\)[UnitVector[n, 1]], bf]\^\(\[CircleTimes]k\) . 
+        Branch[\[CapitalGamma], A\_\(n - 1\), x] . 
+        PrincipalBranchingInclusion[A\_\(n - 1\), \[CapitalGamma], \(Irrep[\
+\[CapitalGamma]]\)[UnitVector[n, 1]], bf]\^\(\[CircleTimes]k\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(matrixEntry[\[CapitalGamma] : \((\((A | B | C)\)\_n_)\), k_, l1_, 
+          l2_]\)[x_] := \((TensorProduct @@ \(({PrincipalBranchingProjection[
+                    A\_\(n - 1\), \[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[
+                      UnitVector[n, 1]], bf], 
+                  SecondaryBranchingProjection[
+                    A\_\(n - 1\), \[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[
+                      UnitVector[n, 1]], bf]}\[LeftDoubleBracket]
+                l1\[RightDoubleBracket])\))\) . 
+        Branch[\[CapitalGamma], A\_\(n - 1\), 
+          x] . \((TensorProduct @@ \(({PrincipalBranchingInclusion[
+                    A\_\(n - 1\), \[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[
+                      UnitVector[n, 1]], bf], 
+                  SecondaryBranchingInclusion[
+                    A\_\(n - 1\), \[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[
+                      UnitVector[n, 1]], bf]}\[LeftDoubleBracket]
+                l2\[RightDoubleBracket])\))\)\)], "Input"],
+
+Cell[BoxData[
+    \(testf[\[CapitalGamma]_, k_] := 
+      With[{endos = 
+            Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]}, \[IndentingNewLine]Table[
+          ZeroTensorQ[\(f[\[CapitalGamma], k]\)[
+                endos\[LeftDoubleBracket]i\[RightDoubleBracket] . 
+                  endos\[LeftDoubleBracket]
+                    j\[RightDoubleBracket]] - \(f[\[CapitalGamma], k]\)[
+                  endos\[LeftDoubleBracket]
+                    i\[RightDoubleBracket]] . \(f[\[CapitalGamma], k]\)[
+                  endos\[LeftDoubleBracket]j\[RightDoubleBracket]]], {i, 1, 
+            Length[endos]}, {j, 1, 
+            Length[endos]}]\[IndentingNewLine]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(endos = 
+        With[{\[CapitalGamma] = A2, k = 3}, 
+          Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[A2, 3] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[A2, 4] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    \($Aborted\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[A3, 2] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"True", "True"},
+          {"True", "True"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[A3, 3] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"},
+          {"True", "True", "True", "True", "True", "True"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[A4, 2] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"True", "True"},
+          {"True", "True"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[B2, 2] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"True", "True", "True"},
+          {"True", "True", "True"},
+          {"True", "True", "True"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(testf[B2, 3] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    \($Aborted\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(testf[B3, 2] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    \(testf[C3, 2] // TableForm\)], "Input"],
+
+Cell[BoxData[
+    \(asVector[RepresentationTensor[_, _, _, _, _, matrices_]] := 
+      Flatten[MatrixData /@ \(Last /@ matrices\)]\)], "Input"],
+
+Cell[BoxData[
+    \(SpanningDimension[spanningSet : {___RepresentationTensor}] := 
+      MatrixRank[asVector /@ spanningSet]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 3}, 
+      SpanningDimension[
+        EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+          bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+            bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A1, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A3, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A3, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A3, k = 3}, 
+      SpanningDimension[
+        EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+          bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A3, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+            bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(6\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 4}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(23\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 4}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(14\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 4}, 
+      SpanningDimension[
+        EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+          bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(14\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 4}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+            bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(14\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A1, k = 4}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(14\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A3, k = 4}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B2, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(15\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B2, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B2, k = 3}, 
+      SpanningDimension[
+        EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+          bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B2, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+            bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A1, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B3, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(15\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B3, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B3, k = 3}, 
+      SpanningDimension[
+        EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+          bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = B3, k = 3}, 
+      SpanningDimension[
+        f[\[CapitalGamma], k] /@ 
+          EndomorphismsOfLeadingEdge[\[CapitalGamma], \
+\(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\[CapitalGamma]], 1]], k, 
+            bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(With[{\[CapitalGamma] = A2, k = 3}, 
+      SpanningDimension[
+        Endo[\[CapitalGamma], \(Irrep[\[CapitalGamma]]\)[UnitVector[Rank[\
+\[CapitalGamma]], 1]]\^\(\[CircleTimes]k\), bf]]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
 }, Open  ]]
 },
 FrontEndVersion->"5.2 for Microsoft Windows",
 ScreenRectangle->{{0, 1280}, {0, 713}},
 WindowSize->{1272, 679},
-WindowMargins->{{0, Automatic}, {Automatic, 0}}
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True
 ]
 
 (*******************************************************************
@@ -1130,117 +4884,525 @@ CellTagsIndex->{}
 
 (*NotebookFileOutline
 Notebook[{
+Cell[1754, 51, 148, 3, 33, "Text"],
+Cell[1905, 56, 114, 3, 33, "Text"],
+Cell[2022, 61, 59, 0, 33, "Text"],
 
 Cell[CellGroupData[{
-Cell[1776, 53, 250, 5, 70, "Input"],
-Cell[2029, 60, 599, 11, 63, "Print"]
-}, Open  ]],
-Cell[2643, 74, 50, 1, 30, "Input"],
-Cell[2696, 77, 171, 3, 30, "Input"],
-Cell[2870, 82, 73, 1, 30, "Input"],
-Cell[2946, 85, 265, 5, 110, "Input"],
-
-Cell[CellGroupData[{
-Cell[3236, 94, 70, 1, 30, "Input"],
-Cell[3309, 97, 66, 1, 29, "Output"]
-}, Open  ]],
-Cell[3390, 101, 388, 7, 50, "Input"],
-Cell[3781, 110, 90, 1, 31, "Input"],
-
-Cell[CellGroupData[{
-Cell[3896, 115, 54, 1, 30, "Input"],
-Cell[3953, 118, 64, 1, 29, "Output"]
+Cell[2106, 65, 250, 5, 70, "Input"],
+Cell[2359, 72, 341, 7, 44, "Print"],
+Cell[2703, 81, 321, 7, 25, "Print"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[4054, 124, 54, 1, 30, "Input"],
-Cell[4111, 127, 64, 1, 29, "Output"]
+Cell[3061, 93, 61, 1, 30, "Input"],
+Cell[3125, 96, 100, 2, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[4212, 133, 54, 1, 30, "Input"],
-Cell[4269, 136, 103, 2, 29, "Output"]
+Cell[3262, 103, 76, 1, 30, "Input"],
+Cell[3341, 106, 166, 3, 22, "Message"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[4409, 143, 54, 1, 30, "Input"],
-Cell[4466, 146, 133, 2, 29, "Output"]
-}, Open  ]],
-Cell[4614, 151, 363, 6, 30, "Input"],
-
-Cell[CellGroupData[{
-Cell[5002, 161, 60, 1, 30, "Input"],
-Cell[5065, 164, 64, 1, 29, "Output"]
+Cell[3544, 114, 76, 1, 30, "Input"],
+Cell[3623, 117, 166, 3, 22, "Message"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[5166, 170, 60, 1, 30, "Input"],
-Cell[5229, 173, 64, 1, 29, "Output"]
+Cell[3826, 125, 76, 1, 30, "Input"],
+Cell[3905, 128, 166, 3, 22, "Message"]
+}, Open  ]],
+Cell[4086, 134, 50, 1, 30, "Input"],
+Cell[4139, 137, 171, 3, 30, "Input"],
+Cell[4313, 142, 134, 2, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[4472, 148, 265, 5, 110, "Input"],
+Cell[4740, 155, 358, 5, 22, "Message"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[5330, 179, 60, 1, 30, "Input"],
-Cell[5393, 182, 103, 2, 29, "Output"]
+Cell[5135, 165, 70, 1, 30, "Input"],
+Cell[5208, 168, 66, 1, 29, "Output"]
+}, Open  ]],
+Cell[5289, 172, 388, 7, 30, "Input"],
+Cell[5680, 181, 90, 1, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[5795, 186, 54, 1, 30, "Input"],
+Cell[5852, 189, 64, 1, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[5533, 189, 60, 1, 30, "Input"],
-Cell[5596, 192, 103, 2, 29, "Output"]
+Cell[5953, 195, 54, 1, 30, "Input"],
+Cell[6010, 198, 64, 1, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[5736, 199, 60, 1, 30, "Input"],
-Cell[5799, 202, 133, 2, 29, "Output"]
-}, Open  ]],
-Cell[5947, 207, 194, 3, 31, "Input"],
-
-Cell[CellGroupData[{
-Cell[6166, 214, 74, 1, 30, "Input"],
-Cell[6243, 217, 70, 1, 29, "Output"]
-}, Open  ]],
-Cell[6328, 221, 72, 1, 30, "Input"],
-
-Cell[CellGroupData[{
-Cell[6425, 226, 67, 1, 30, "Input"],
-Cell[6495, 229, 70, 1, 29, "Output"]
+Cell[6111, 204, 54, 1, 30, "Input"],
+Cell[6168, 207, 103, 2, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[6602, 235, 74, 1, 30, "Input"],
-Cell[6679, 238, 61, 1, 29, "Output"]
+Cell[6308, 214, 54, 1, 30, "Input"],
+Cell[6365, 217, 133, 2, 29, "Output"]
+}, Open  ]],
+Cell[6513, 222, 427, 7, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[6965, 233, 60, 1, 30, "Input"],
+Cell[7028, 236, 64, 1, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[6777, 244, 74, 1, 30, "Input"],
-Cell[6854, 247, 73, 1, 29, "Output"]
+Cell[7129, 242, 60, 1, 30, "Input"],
+Cell[7192, 245, 64, 1, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[6964, 253, 91, 1, 30, "Input"],
-Cell[7058, 256, 13868, 403, 275, "Output"]
-}, Open  ]],
-Cell[20941, 662, 75, 1, 30, "Input"],
-Cell[21019, 665, 75, 1, 30, "Input"],
-
-Cell[CellGroupData[{
-Cell[21119, 670, 74, 1, 30, "Input"],
-Cell[21196, 673, 70, 1, 29, "Output"]
+Cell[7293, 251, 60, 1, 30, "Input"],
+Cell[7356, 254, 103, 2, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[21303, 679, 74, 1, 30, "Input"],
-Cell[21380, 682, 70, 1, 29, "Output"]
-}, Open  ]],
-Cell[21465, 686, 78, 1, 30, "Input"],
-
-Cell[CellGroupData[{
-Cell[21568, 691, 74, 1, 30, "Input"],
-Cell[21645, 694, 80, 1, 29, "Output"]
+Cell[7496, 261, 60, 1, 30, "Input"],
+Cell[7559, 264, 103, 2, 29, "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
-Cell[21762, 700, 91, 1, 30, "Input"],
-Cell[21856, 703, 13868, 403, 275, "Output"]
+Cell[7699, 271, 60, 1, 30, "Input"],
+Cell[7762, 274, 133, 2, 29, "Output"]
+}, Open  ]],
+Cell[7910, 279, 194, 3, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[8129, 286, 74, 1, 30, "Input"],
+Cell[8206, 289, 70, 1, 29, "Output"]
+}, Open  ]],
+Cell[8291, 293, 72, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[8388, 298, 67, 1, 30, "Input"],
+Cell[8458, 301, 70, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8565, 307, 74, 1, 30, "Input"],
+Cell[8642, 310, 61, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8740, 316, 74, 1, 30, "Input"],
+Cell[8817, 319, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8927, 325, 91, 1, 30, "Input"],
+Cell[9021, 328, 13868, 403, 275, "Output"]
+}, Open  ]],
+Cell[22904, 734, 75, 1, 30, "Input"],
+Cell[22982, 737, 75, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[23082, 742, 74, 1, 30, "Input"],
+Cell[23159, 745, 70, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[23266, 751, 74, 1, 30, "Input"],
+Cell[23343, 754, 70, 1, 29, "Output"]
+}, Open  ]],
+Cell[23428, 758, 78, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[23531, 763, 74, 1, 30, "Input"],
+Cell[23608, 766, 80, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[23725, 772, 91, 1, 30, "Input"],
+Cell[23819, 775, 13868, 403, 275, "Output"]
+}, Open  ]],
+Cell[37702, 1181, 78, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[37805, 1186, 74, 1, 30, "Input"],
+Cell[37882, 1189, 73, 1, 29, "Output"]
+}, Open  ]],
+Cell[37970, 1193, 356, 7, 90, "Input"],
+
+Cell[CellGroupData[{
+Cell[38351, 1204, 74, 1, 30, "Input"],
+Cell[38428, 1207, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[38538, 1213, 74, 1, 30, "Input"],
+Cell[38615, 1216, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[38725, 1222, 74, 1, 30, "Input"],
+Cell[38802, 1225, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[38912, 1231, 75, 1, 30, "Input"],
+Cell[38990, 1234, 90, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[39117, 1240, 91, 1, 30, "Input"],
+Cell[39211, 1243, 18394, 520, 261, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[57642, 1768, 91, 1, 30, "Input"],
+Cell[57736, 1771, 22614, 635, 261, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[80387, 2411, 74, 1, 30, "Input"],
+Cell[80464, 2414, 66, 1, 29, "Output"]
+}, Open  ]],
+Cell[80545, 2418, 192, 3, 52, "Input"],
+
+Cell[CellGroupData[{
+Cell[80762, 2425, 74, 1, 30, "Input"],
+Cell[80839, 2428, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[80949, 2434, 74, 1, 30, "Input"],
+Cell[81026, 2437, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[81136, 2443, 74, 1, 30, "Input"],
+Cell[81213, 2446, 73, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[81323, 2452, 58, 1, 30, "Input"],
+Cell[81384, 2455, 107, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[81528, 2462, 78, 1, 30, "Input"],
+Cell[81609, 2465, 107, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[81753, 2472, 78, 1, 30, "Input"],
+Cell[81834, 2475, 107, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[81978, 2482, 78, 1, 30, "Input"],
+Cell[82059, 2485, 107, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[82203, 2492, 109, 2, 30, "Input"],
+Cell[82315, 2496, 1224, 27, 169, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[83576, 2528, 109, 2, 30, "Input"],
+Cell[83688, 2532, 1224, 27, 169, "Output"]
+}, Open  ]],
+Cell[84927, 2562, 236, 4, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[85188, 2570, 110, 2, 30, "Input"],
+Cell[85301, 2574, 378, 6, 22, "Message"]
+}, Open  ]],
+Cell[85694, 2583, 111, 2, 30, "Input"],
+Cell[85808, 2587, 544, 10, 70, "Input"],
+Cell[86355, 2599, 521, 11, 50, "Input"],
+Cell[86879, 2612, 296, 11, 33, "Text"],
+Cell[87178, 2625, 91, 1, 31, "Input"],
+Cell[87272, 2628, 123, 2, 31, "Input"],
+Cell[87398, 2632, 105, 2, 31, "Input"],
+Cell[87506, 2636, 91, 1, 31, "Input"],
+Cell[87600, 2639, 123, 2, 31, "Input"],
+Cell[87726, 2643, 570, 11, 94, "Input"],
+Cell[88299, 2656, 91, 1, 31, "Input"],
+Cell[88393, 2659, 123, 2, 31, "Input"],
+Cell[88519, 2663, 105, 2, 31, "Input"],
+Cell[88627, 2667, 91, 1, 31, "Input"],
+Cell[88721, 2670, 123, 2, 31, "Input"],
+Cell[88847, 2674, 105, 2, 31, "Input"],
+Cell[88955, 2678, 91, 1, 31, "Input"],
+Cell[89049, 2681, 123, 2, 31, "Input"],
+Cell[89175, 2685, 105, 2, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[89305, 2691, 157, 2, 30, "Input"],
+Cell[89465, 2695, 3177, 82, 151, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[92679, 2782, 157, 2, 30, "Input"],
+Cell[92839, 2786, 2290, 61, 151, "Output"]
+}, Open  ]],
+Cell[95144, 2850, 462, 8, 70, "Input"],
+Cell[95609, 2860, 59, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[95693, 2865, 83, 1, 30, "Input"],
+Cell[95779, 2868, 364, 6, 48, "Output"]
+}, Open  ]],
+Cell[96158, 2877, 104, 2, 30, "Input"],
+Cell[96265, 2881, 411, 8, 50, "Input"],
+Cell[96679, 2891, 519, 10, 70, "Input"],
+Cell[97201, 2903, 434, 9, 50, "Input"],
+Cell[97638, 2914, 542, 11, 90, "Input"],
+
+Cell[CellGroupData[{
+Cell[98205, 2929, 105, 2, 30, "Input"],
+Cell[98313, 2933, 453, 8, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[98803, 2946, 105, 2, 30, "Input"],
+Cell[98911, 2950, 497, 9, 67, "Output"]
+}, Open  ]],
+Cell[99423, 2962, 674, 14, 90, "Input"],
+Cell[100100, 2978, 208, 3, 30, "Input"],
+Cell[100311, 2983, 399, 7, 70, "Input"],
+Cell[100713, 2992, 255, 4, 30, "Input"],
+Cell[100971, 2998, 201, 4, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[101197, 3006, 125, 3, 30, "Input"],
+Cell[101325, 3011, 407, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[101769, 3022, 135, 3, 30, "Input"],
+Cell[101907, 3027, 407, 6, 48, "Output"]
+}, Open  ]],
+Cell[102329, 3036, 253, 5, 30, "Input"],
+Cell[102585, 3043, 425, 8, 50, "Input"],
+Cell[103013, 3053, 153, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[103191, 3059, 148, 3, 30, "Input"],
+Cell[103342, 3064, 43, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[103422, 3070, 173, 3, 30, "Input"],
+Cell[103598, 3075, 12367, 196, 1074, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[116002, 3276, 298, 6, 27, "Input"],
+Cell[116303, 3284, 12367, 196, 1074, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[128707, 3485, 39, 1, 27, "Input"],
+Cell[128749, 3488, 21178, 335, 1682, "Output"]
+}, Closed]],
+Cell[149942, 3826, 257, 5, 27, "Input"],
+
+Cell[CellGroupData[{
+Cell[150224, 3835, 101, 2, 30, "Input"],
+Cell[150328, 3839, 922, 17, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[151287, 3861, 61, 1, 30, "Input"],
+Cell[151351, 3864, 38, 1, 29, "Output"]
+}, Open  ]],
+Cell[151404, 3868, 43, 1, 30, "Input"],
+Cell[151450, 3871, 446, 7, 50, "Input"],
+Cell[151899, 3880, 299, 5, 30, "Input"],
+Cell[152201, 3887, 298, 5, 30, "Input"],
+Cell[152502, 3894, 449, 8, 50, "Input"],
+Cell[152954, 3904, 448, 7, 50, "Input"],
+Cell[153405, 3913, 124, 2, 30, "Input"],
+Cell[153532, 3917, 165, 3, 30, "Input"],
+Cell[153700, 3922, 589, 11, 150, "Input"],
+Cell[154292, 3935, 610, 10, 72, "Input"],
+Cell[154905, 3947, 173, 4, 30, "Input"],
+Cell[155081, 3953, 666, 13, 92, "Input"],
+
+Cell[CellGroupData[{
+Cell[155772, 3970, 93, 1, 30, "Input"],
+Cell[155868, 3973, 22966, 382, 2264, "Output"]
+}, Open  ]],
+Cell[178849, 4358, 429, 6, 52, "Input"],
+Cell[179281, 4366, 1026, 16, 92, "Input"],
+Cell[180310, 4384, 751, 13, 72, "Input"],
+Cell[181064, 4399, 217, 4, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[181306, 4407, 58, 1, 30, "Input"],
+Cell[181367, 4410, 599, 14, 119, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[182003, 4429, 58, 1, 30, "Input"],
+Cell[182064, 4432, 42, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[182143, 4438, 58, 1, 30, "Input"],
+Cell[182204, 4441, 295, 10, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[182536, 4456, 58, 1, 30, "Input"],
+Cell[182597, 4459, 599, 14, 105, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[183233, 4478, 58, 1, 30, "Input"],
+Cell[183294, 4481, 295, 10, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[183626, 4496, 58, 1, 30, "Input"],
+Cell[183687, 4499, 347, 11, 57, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[184071, 4515, 58, 1, 30, "Input"],
+Cell[184132, 4518, 42, 1, 29, "Output"]
+}, Open  ]],
+Cell[184189, 4522, 58, 1, 30, "Input"],
+Cell[184250, 4525, 58, 1, 30, "Input"],
+Cell[184311, 4528, 143, 2, 30, "Input"],
+Cell[184457, 4532, 137, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[184619, 4538, 219, 4, 31, "Input"],
+Cell[184841, 4544, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[184913, 4550, 255, 5, 31, "Input"],
+Cell[185171, 4557, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[185243, 4563, 234, 5, 30, "Input"],
+Cell[185480, 4570, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[185552, 4576, 272, 6, 30, "Input"],
+Cell[185827, 4584, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[185899, 4590, 219, 4, 31, "Input"],
+Cell[186121, 4596, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[186193, 4602, 219, 4, 31, "Input"],
+Cell[186415, 4608, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[186487, 4614, 255, 5, 31, "Input"],
+Cell[186745, 4621, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[186817, 4627, 234, 5, 30, "Input"],
+Cell[187054, 4634, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[187126, 4640, 272, 6, 30, "Input"],
+Cell[187401, 4648, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[187473, 4654, 219, 4, 31, "Input"],
+Cell[187695, 4660, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[187767, 4666, 219, 4, 31, "Input"],
+Cell[187989, 4672, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[188062, 4678, 255, 5, 31, "Input"],
+Cell[188320, 4685, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[188393, 4691, 234, 5, 30, "Input"],
+Cell[188630, 4698, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[188703, 4704, 272, 6, 30, "Input"],
+Cell[188978, 4712, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[189051, 4718, 219, 4, 31, "Input"],
+Cell[189273, 4724, 36, 1, 29, "Output"]
+}, Open  ]],
+Cell[189324, 4728, 219, 4, 31, "Input"],
+
+Cell[CellGroupData[{
+Cell[189568, 4736, 219, 4, 31, "Input"],
+Cell[189790, 4742, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[189863, 4748, 255, 5, 31, "Input"],
+Cell[190121, 4755, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[190193, 4761, 234, 5, 30, "Input"],
+Cell[190430, 4768, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[190502, 4774, 272, 6, 30, "Input"],
+Cell[190777, 4782, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[190849, 4788, 219, 4, 31, "Input"],
+Cell[191071, 4794, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[191143, 4800, 219, 4, 31, "Input"],
+Cell[191365, 4806, 36, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[191438, 4812, 255, 5, 31, "Input"],
+Cell[191696, 4819, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[191768, 4825, 234, 5, 30, "Input"],
+Cell[192005, 4832, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[192077, 4838, 272, 6, 30, "Input"],
+Cell[192352, 4846, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[192424, 4852, 219, 4, 31, "Input"],
+Cell[192646, 4858, 35, 1, 29, "Output"]
 }, Open  ]]
 }
 ]

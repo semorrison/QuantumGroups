@@ -41,9 +41,9 @@ Wolfram Research.
 
 (*NotebookFileLineBreakTest
 NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     20724,        439]*)
-(*NotebookOutlinePosition[     21401,        462]*)
-(*  CellTagsIndexPosition[     21357,        458]*)
+(*NotebookOptionsPosition[     21046,        450]*)
+(*NotebookOutlinePosition[     21723,        473]*)
+(*  CellTagsIndexPosition[     21679,        469]*)
 (*WindowFrame->Normal*)
 
 
@@ -402,6 +402,18 @@ BraidingMatrices, \(QuantumGroups`Braiding`Private`BraidingMatrices[\
   InitializationCell->True],
 
 Cell[BoxData[{
+    \(\(Unprotect[Get];\)\), "\n", 
+    \(Get[
+        package_String /; 
+          StringMatchQ[package, "\<QuantumGroups`Data`\>" ~~ __]] := 
+      Get[StringDrop[package, 
+          StringLength["\<QuantumGroups`Data`\>"]]]\), "\n", 
+    \(\(Protect[Get];\)\)}], "Input",
+  InitializationCell->True],
+
+Cell["Deprecated:", "Text"],
+
+Cell[BoxData[{
     \(\(Unprotect[Get];\)\), "\[IndentingNewLine]", 
     \(\(useGetGzipHack = True;\)\), "\[IndentingNewLine]", 
     \(Get[
@@ -426,8 +438,7 @@ Cell[BoxData[{
             directory]; \[IndentingNewLine]Run["\<gzip \>" <> 
               filename]; \[IndentingNewLine]ResetDirectory[];\
 \[IndentingNewLine]]\[IndentingNewLine]]\), "\[IndentingNewLine]", 
-    \(\(Protect[Get];\)\)}], "Input",
-  InitializationCell->True],
+    \(\(Protect[Get];\)\)}], "Input"],
 
 Cell[BoxData[
     \(\(End[];\)\)], "Input",
@@ -505,11 +516,13 @@ Cell[17680, 375, 639, 11, 134, "Input",
   InitializationCell->True],
 Cell[18322, 388, 732, 13, 154, "Input",
   InitializationCell->True],
-Cell[19057, 403, 1508, 26, 490, "Input",
+Cell[19057, 403, 317, 8, 70, "Input",
   InitializationCell->True],
-Cell[20568, 431, 71, 2, 30, "Input",
+Cell[19377, 413, 27, 0, 33, "Text"],
+Cell[19407, 415, 1480, 25, 490, "Input"],
+Cell[20890, 442, 71, 2, 30, "Input",
   InitializationCell->True],
-Cell[20642, 435, 78, 2, 30, "Input",
+Cell[20964, 446, 78, 2, 30, "Input",
   InitializationCell->True]
 }
 ]

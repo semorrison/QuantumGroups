@@ -173,30 +173,13 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
 \!\(PackageBraidingMatrices[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`Braiding`Private`BraidingMatrices, \(QuantumGroups`Braiding`Private`BraidingMatrices[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<BraidingMatrices\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Braiding`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
 Unprotect[Get];
-useGetGzipHack=True;
-Get[package_String/;(useGetGzipHack\[And]
-          StringMatchQ[package,"QuantumGroups`Data`"~~__])]:=
-  Module[{packageFragments,directory,filename,gzipExists=False},
-    packageFragments=StringSplit[package,"`"];
-    SetDirectory[QuantumGroupsDirectory[]];
-    directory=ToFileName[Most[packageFragments]];
-    filename=Last[packageFragments]<>".m";
-    If[Length[FileNames[filename<>".gz",{directory}]]\[NotEqual]0,
-      gzipExists=True;
-      SetDirectory[directory];
-      Run["gzip -d "<>filename<>".gz"];
-      ResetDirectory[]
-      ];
-    useGetGzipHack=False;
-    Get[package];
-    useGetGzipHack=True;
-    If[gzipExists,
-      SetDirectory[directory];
-      Run["gzip "<>filename];
-      ResetDirectory[];
-      ]
-    ]
+Get[package_String/;StringMatchQ[package,"QuantumGroups`Data`"~~__]]:=
+  Get[StringDrop[package,StringLength["QuantumGroups`Data`"]]]
 Protect[Get];
+
+
+
+
 
 End[];
 
