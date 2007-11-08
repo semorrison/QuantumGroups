@@ -63,7 +63,7 @@ Distributor;Associator;
 
 BraidingMap;NormalisedBraidingMap;InverseNormalisedBraidingMap;
 
-DecompositionMap;
+DecompositionMap;InverseDecompositionMap;
 
 PermuteDirectSummands;DirectSumProjectionMap;DirectSumInclusionMap;
 
@@ -181,27 +181,45 @@ RepresentationTensor/:(F:
         RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,
           V3_,\[Beta]3_,_List]):=
   RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,
-    V3,\[Beta]3,{#,Expand[F[#].G[#]]}&/@Weights[\[CapitalGamma],V3]]
+    V3,\[Beta]3,{#,Together[F[#].G[#]]}&/@
+      SortWeights[\[CapitalGamma]][
+        Union[Weights[\[CapitalGamma],V1]~Join~Weights[\[CapitalGamma],V3]]]]
+
+RepresentationTensor/:(F:
+        RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]3_,
+          V2_,\[Beta]2_,_]).(Gs:{RepresentationTensor[\[CapitalGamma]_,
+              V2_,\[Beta]2_,V1_,\[Beta]1_,_]...}):=F.#&/@Gs
+
+RepresentationTensor/:(Fs:{RepresentationTensor[\[CapitalGamma]_,
+              V3_,\[Beta]3_,V2_,\[Beta]2_,_]...}).(G:
+        RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,
+          V1_,\[Beta]1_,_]):=#.G&/@Fs
 
 RepresentationTensor/:(F:
         RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]c_,
           V2_,\[Beta]d_,_])\[CircleTimes](G:
         RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]c_,V4_,\[Beta]d_,_]):=
   Module[{\[Lambda],\[Mu],codomain=V1\[CircleTimes]V3,
-      domain=V2\[CircleTimes]V4},
+      domain=V2\[CircleTimes]V4,productWeights,rightWeights},
+    productWeights=
+      SortWeights[\[CapitalGamma]][
+        Union[Weights[\[CapitalGamma],domain]~Join~
+            Weights[\[CapitalGamma],codomain]]];
+    rightWeights=
+      SortWeights[\[CapitalGamma]][
+        Union[Weights[\[CapitalGamma],V4]~Join~Weights[\[CapitalGamma],V3]]];
     RepresentationTensor[\[CapitalGamma],codomain,\[Beta]c,domain,\[Beta]d,
       Table[\[Lambda]=
-          Weights[\[CapitalGamma],domain]\[LeftDoubleBracket]
-            i\[RightDoubleBracket];{\[Lambda],
+          productWeights\[LeftDoubleBracket]i\[RightDoubleBracket];{\[Lambda],
           BlockDiagonalMatrix@@
             Table[\[Mu]=
-                Weights[\[CapitalGamma],V4]\[LeftDoubleBracket]
-                  j\[RightDoubleBracket];
+                rightWeights\[LeftDoubleBracket]j\[RightDoubleBracket];
               Expand[KroneckerProduct[F[\[Lambda]-\[Mu]],G[\[Mu]]]],{j,1,
-                Length[Weights[\[CapitalGamma],V4]]}]},{i,1,
-          Length[Weights[\[CapitalGamma],domain]]}]
+                Length[rightWeights]}]},{i,1,Length[productWeights]}]
       ]
     ]
+
+
 
 
 
@@ -383,6 +401,17 @@ HighWeightVectors[\[CapitalGamma]_][(U_\[CircleTimes]V_)\[CircleTimes]W_,\
       result
       ]
 
+DecompositionMap[\[CapitalGamma]_,
+    Irrep[\[CapitalGamma]_][\[Lambda]_],\[Beta]_]:=
+  IdentityMap[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]],\[Beta]]
+
+DecompositionMap[\[CapitalGamma]_,
+    V:DirectSum[Irrep[\[CapitalGamma]_][_]..],\[Beta]_]:=
+  Inverse[PermuteDirectSummands[\[CapitalGamma]][V,\[Beta],
+      Ordering[V]\[LeftDoubleBracket]
+        Ordering[
+          Ordering[SortWeights[\[CapitalGamma]][V]]]\[RightDoubleBracket]]]
+
 DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
   DecompositionMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=
     (DebugPrint[DecompositionMap, \[CapitalGamma],V,W];
@@ -431,6 +460,9 @@ _]:=DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\[Beta]\
         result
         ]
       ]
+
+InverseDecompositionMap[\[CapitalGamma]_,V_,\[Beta]_]:=
+  Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]]
 
 BlockPermutationMatrix[permutation:{__Integer},blocksizes:{__Integer}]:=
   BlockMatrix[
