@@ -1,0 +1,16 @@
+BeginPackage["QuantumGroups`Data`B4`MatrixPresentations`", {"QuantumGroups`", "QuantumGroups`MatrixPresentations`", "QuantumGroups`Utilities`MatrixWrapper`", "QuantumGroups`Algebra`"}]
+Message[QuantumGroups::loading,"QuantumGroups`Data`B4`MatrixPresentations`"]
+
+Begin["`Private`"]
+q=Global`q;
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {0, 0, 0, 0}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {0, 0, 1, -2}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {1, 0, 0, 0}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 2]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {0, 0, 0, 0}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 2]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {0, 0, 1, -2}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 2]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {1, 0, 0, 0}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {0, 0, 0, 0}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {0, 0, 1, -2}]:=Matrix[0, 1, {}]
+MatrixPresentation[Subscript[B, 4]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[B, 4]][{1, 0, 0, 0}], FundamentalBasis, {1, 0, 0, 0}]:=Matrix[0, 1, {}]
+End[]
+EndPackage[]

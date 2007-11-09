@@ -1127,6 +1127,5 @@ MatrixPresentation[Subscript[B, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[
 MatrixPresentation[Subscript[B, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[B, 3]][{1, 0, 0}], FundamentalBasis, {2, 0, -2}]:=Matrix[0, 0, {}]
 MatrixPresentation[Subscript[B, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[B, 3]][{1, 0, 0}], FundamentalBasis, {2, 0, 0}]:=Matrix[0, 0, {}]
 MatrixPresentation[Subscript[B, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[B, 3]][{1, 0, 0}], FundamentalBasis, {2, 1, -2}]:=Matrix[0, 0, {}]
-
 End[]
 EndPackage[]
