@@ -905,6 +905,5 @@ MatrixPresentation[Subscript[A, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[
 MatrixPresentation[Subscript[A, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[A, 3]][{0, 2, 1}], FundamentalBasis, {2, 1, 1}]:=Matrix[0, 0, {}]
 MatrixPresentation[Subscript[A, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[A, 3]][{0, 2, 1}], FundamentalBasis, {2, 2, -1}]:=Matrix[0, 0, {}]
 MatrixPresentation[Subscript[A, 3]][SuperPlus[Subscript[X, 3]]][Irrep[Subscript[A, 3]][{0, 2, 1}], FundamentalBasis, {3, 0, 0}]:=Matrix[0, 0, {}]
-
 End[]
 EndPackage[]
