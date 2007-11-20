@@ -1,0 +1,3715 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[    177811,       3483]*)
+(*NotebookOutlinePosition[    178455,       3505]*)
+(*  CellTagsIndexPosition[    178411,       3501]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(\(QuantumGroupsPath\  = \ \
+"\<c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\package\\\>";\)\)\
+, "\n", 
+    \(\(AppendTo[$Path, \ QuantumGroupsPath];\)\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
+\[InvisibleSpace]"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
+      SequenceForm[ 
+      "Loading QuantumGroups` version 2.0\n", 
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Found precomputed data in \
+"\[InvisibleSpace]"c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\\
+data"\),
+      SequenceForm[ 
+      "Found precomputed data in ", 
+        "c:\\scott\\projects\\svn-checkouts\\QuantumGroups\\trunk\\data"],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PackageMatrixPresentations[G2]\)], "Input"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`G2`MatrixPresentations`\"\)."\)], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PackageDecompositionMaps[G2]\)], "Input"],
+
+Cell[BoxData[
+    \(QuantumGroups::"loading" \(\(:\)\(\ \)\) 
+      "Loading precomputed data in \
+\!\(\"QuantumGroups`Data`G2`DecompositionMaps`\"\)."\)], "Message"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(DebugSet[True]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DecompositionMap[G2, \(Irrep[G2]\)[{0, 1}]\^\(\[CircleTimes]3\), 
+      FundamentalBasis]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "26579184", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "7.671`",
+         "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Beginning \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\(DecompositionMap[\\(\\(G\
+\\_2, \\(\\(\\(\\((\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\) \
+\[CircleTimes] \\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, \
+1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 26579184, " time: ", 7.6710000000000003, " ", 
+        "\!\(\*TagBox[\"\\\"Beginning \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(DecompositionMap[\(\(G\_2, \
+\(\(\(\((\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\) \[CircleTimes] \
+\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), FundamentalBasis\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]27581312\[InvisibleSpace]" \
+time: "\[InvisibleSpace]9.203000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"...prepared distributor"\),
+      SequenceForm[ 
+      "mem: ", 27581312, " time: ", 9.2030000000000012, " ", 
+        "...prepared distributor"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]27898504\[InvisibleSpace]" \
+time: "\[InvisibleSpace]9.213000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"...prepared first decomposition map"\),
+      SequenceForm[ 
+      "mem: ", 27898504, " time: ", 9.213000000000001, " ", 
+        "...prepared first decomposition map"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]42925728\[InvisibleSpace]" \
+time: "\[InvisibleSpace]9.964`\[InvisibleSpace]" \
+"\[InvisibleSpace]DecompositionMap\[InvisibleSpace]G\_2\[InvisibleSpace]\(\
+Irrep[G\_2]\)[{0, 2}]\[InvisibleSpace]\(Irrep[G\_2]\)[{0, 1}]\),
+      SequenceForm[ 
+      "mem: ", 42925728, " time: ", 9.9640000000000004, " ", DecompositionMap,
+         
+        Subscript[ G, 2], 
+        Irrep[ 
+          Subscript[ G, 2]][ {0, 2}], 
+        Irrep[ 
+          Subscript[ G, 2]][ {0, 1}]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]42936016\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.224`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+weight "\[InvisibleSpace]{0, 3}\),
+      SequenceForm[ 
+      "mem: ", 42936016, " time: ", 10.224, " ", " ... weight ", {0, 3}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "42997704", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.324000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(\\(\\(MatrixPresentation[G\\_2]\\)\\)[\\(\\(\\((\
+X\\_1)\\)\\^+\\)\\)]\\)\\)[\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, \
+2}\\)\\)]\\)\\), FundamentalBasis, \\(\\({\\(\\(-2\\)\\), 1}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" by looking at \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 2}\\)\\)]\\), \
+HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" as a subrep of \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\(\\(\\(\\(\\(Irrep[G\\_2]\
+\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 42997704, " time: ", 10.324000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(\(\(MatrixPresentation[G\_2]\)\)[\(\(\((X\_1)\)\^+\
+\)\)]\)\)[\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 2}\)\)]\)\), FundamentalBasis, \
+\(\({\(\(-2\)\), 1}\)\)\)\)]\), HoldForm]\)", 
+        "\!\(\*TagBox[\"\\\" by looking at \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(Irrep[G\_2]\)\)[\(\({0, 2}\)\)]\), HoldForm]\)", 
+        "\!\(\*TagBox[\"\\\" as a subrep of \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\) \
+\[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43012112\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.465`\[InvisibleSpace]" "\[InvisibleSpace]"About to \
+find the null space of a "\[InvisibleSpace]16\[InvisibleSpace]" by "\
+\[InvisibleSpace]16\[InvisibleSpace]" matrix."\),
+      SequenceForm[ 
+      "mem: ", 43012112, " time: ", 10.465, " ", 
+        "About to find the null space of a ", 16, " by ", 16, " matrix."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43043512\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.495000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"Finished finding null space."\),
+      SequenceForm[ 
+      "mem: ", 43043512, " time: ", 10.495000000000001, " ", 
+        "Finished finding null space."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43041200\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.545`\[InvisibleSpace]" "\[InvisibleSpace]"About to \
+find the null space of a "\[InvisibleSpace]10\[InvisibleSpace]" by "\
+\[InvisibleSpace]10\[InvisibleSpace]" matrix."\),
+      SequenceForm[ 
+      "mem: ", 43041200, " time: ", 10.545, " ", 
+        "About to find the null space of a ", 10, " by ", 10, " matrix."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43051696\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.555000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"Finished finding null space."\),
+      SequenceForm[ 
+      "mem: ", 43051696, " time: ", 10.555000000000001, " ", 
+        "Finished finding null space."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43050192\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.585`\[InvisibleSpace]" "\[InvisibleSpace]"About to \
+find the null space of a "\[InvisibleSpace]8\[InvisibleSpace]" by "\
+\[InvisibleSpace]8\[InvisibleSpace]" matrix."\),
+      SequenceForm[ 
+      "mem: ", 43050192, " time: ", 10.585000000000001, " ", 
+        "About to find the null space of a ", 8, " by ", 8, " matrix."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43054464\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.595`\[InvisibleSpace]" "\[InvisibleSpace]"Finished \
+finding null space."\),
+      SequenceForm[ 
+      "mem: ", 43054464, " time: ", 10.595000000000001, " ", 
+        "Finished finding null space."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43053184\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.615`\[InvisibleSpace]" "\[InvisibleSpace]"About to \
+find the null space of a "\[InvisibleSpace]5\[InvisibleSpace]" by "\
+\[InvisibleSpace]5\[InvisibleSpace]" matrix."\),
+      SequenceForm[ 
+      "mem: ", 43053184, " time: ", 10.615, " ", 
+        "About to find the null space of a ", 5, " by ", 5, " matrix."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43056760\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.625`\[InvisibleSpace]" "\[InvisibleSpace]"Finished \
+finding null space."\),
+      SequenceForm[ 
+      "mem: ", 43056760, " time: ", 10.625, " ", 
+        "Finished finding null space."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43056288\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.635000000000002`\[InvisibleSpace]" "\
+\[InvisibleSpace]"About to find the null space of a "\[InvisibleSpace]2\
+\[InvisibleSpace]" by "\[InvisibleSpace]2\[InvisibleSpace]" matrix."\),
+      SequenceForm[ 
+      "mem: ", 43056288, " time: ", 10.635000000000002, " ", 
+        "About to find the null space of a ", 2, " by ", 2, " matrix."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43057528\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.635000000000002`\[InvisibleSpace]" "\
+\[InvisibleSpace]"Finished finding null space."\),
+      SequenceForm[ 
+      "mem: ", 43057528, " time: ", 10.635000000000002, " ", 
+        "Finished finding null space."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43057184\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.645000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"About to find the null space of a "\[InvisibleSpace]2\
+\[InvisibleSpace]" by "\[InvisibleSpace]2\[InvisibleSpace]" matrix."\),
+      SequenceForm[ 
+      "mem: ", 43057184, " time: ", 10.645000000000001, " ", 
+        "About to find the null space of a ", 2, " by ", 2, " matrix."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43057408\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.645000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"Finished finding null space."\),
+      SequenceForm[ 
+      "mem: ", 43057408, " time: ", 10.645000000000001, " ", 
+        "Finished finding null space."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43057624", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.645000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({0, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43057624, " time: ", 10.645000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({0, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43059640", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.645000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({2, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43059640, " time: ", 10.645000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({2, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43061760", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.645000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-1\\)\\), 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43061760, " time: ", 10.645000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({\(\(-1\)\), 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43063496", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.645000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({1, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43063496, " time: ", 10.645000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({1, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43065240", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.655000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({3, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43065240, " time: ", 10.655000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({3, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43066576\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.675`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43066576, " time: ", 10.675000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43069144", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.675`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({3, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43069144, " time: ", 10.675000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({3, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43069336\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.695`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43069336, " time: ", 10.695, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43079408", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.705`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({1, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43079408, " time: ", 10.705, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({1, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43078136\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.725000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43078136, " time: ", 10.725000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43082992", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.735000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-1\\)\\), 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43082992, " time: ", 10.735000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({\(\(-1\)\), 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43081568\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.755`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43081568, " time: ", 10.755000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43089704", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.755`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({2, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43089704, " time: ", 10.755000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({2, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43090264", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.795`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-3\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43090264, " time: ", 10.795, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({\(\(-3\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43091176\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.825000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43091176, " time: ", 10.825000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43094920", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.825000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-3\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43094920, " time: ", 10.825000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({\(\(-3\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43093800\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.865`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43093800, " time: ", 10.865, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43113352", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.875`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 1}\\)\\), \\(\\({\\(q\\^11 + q\\^13 + \
+q\\^15\\)\\/\\(1 + q\\^2\\), \\(\\(-q\\^12\\)\\), \\(q\\^3\\\\ \\(\\((1 - \
+q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(-\\(\\(\\(q\\^4\\\\ \\(\\((1 \
+- q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\)\\)\\)\\)\\), \\(q\\^3\\\\ \
+\\(\\((1 - q\\^4 + q\\^8)\\)\\)\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) + \
+q\\^4 - q\\^8\\)\\/\\(1 + q\\^2\\), \\(\\(\\(-1\\)\\) - q\\^2 - \
+q\\^4\\)\\/\\(q\\\\ \\(\\((1 + q\\^2)\\)\\)\\), 1}\\)\\), \\(\\({0, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43113352, " time: ", 10.875, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 1}\)\), \(\({\(q\^11 + q\^13 + q\^15\)\/\(1 + \
+q\^2\), \(\(-q\^12\)\), \(q\^3\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \
+\(\(-\(\(\(q\^4\\ \(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\)\)\)\)\), \(q\^3\\ \
+\(\((1 - q\^4 + q\^8)\)\)\)\/\(1 + q\^2\), \(\(\(-1\)\) + q\^4 - q\^8\)\/\(1 \
++ q\^2\), \(\(\(-1\)\) - q\^2 - q\^4\)\/\(q\\ \(\((1 + q\^2)\)\)\), 1}\)\), \
+\(\({0, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43110960", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.875`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({0, 0}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43110960, " time: ", 10.875, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({0, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43112696", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.885000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({2, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43112696, " time: ", 10.885000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({2, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43114480", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.895000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({4, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43114480, " time: ", 10.895000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({4, \(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43116400", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.895000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({1, 0}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43116400, " time: ", 10.895000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({1, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43118144", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.895000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({3, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43118144, " time: ", 10.895000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({3, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43120224", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.915000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({0, 1}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43120224, " time: ", 10.915000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({0, 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43120752\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.935`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43120752, " time: ", 10.935, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43121712", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.935`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({0, 1}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43121712, " time: ", 10.935, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({0, 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43120040\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.955`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43120040, " time: ", 10.955, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43121704", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.955`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({3, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43121704, " time: ", 10.955, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({3, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43122784", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.975000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({\\(\\(-2\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43122784, " time: ", 10.975000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-2\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43123176\[InvisibleSpace]" \
+time: "\[InvisibleSpace]10.995000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43123176, " time: ", 10.995000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43124256", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "10.995000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({\\(\\(-2\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43124256, " time: ", 10.995000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-2\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43123056\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.035`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43123056, " time: ", 11.035, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43127008", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.035`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({1, 0}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43127008, " time: ", 11.035, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({1, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43126016\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.076`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43126016, " time: ", 11.076000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43131888", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.086`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({4, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43131888, " time: ", 11.086, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({4, \(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43130728", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.106`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({\\(\\(-1\\)\\), \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43130728, " time: ", 11.106, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-1\)\), 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43132352\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.166`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43132352, " time: ", 11.166, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43138480", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.176`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({\\(\\(-1\\)\\), \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43138480, " time: ", 11.176, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-1\)\), 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43137512\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.216000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43137512, " time: ", 11.216000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43154640", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.226`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({2, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43154640, " time: ", 11.226000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({2, \(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43154248", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.286000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({\\(\\(-3\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43154248, " time: ", 11.286000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-3\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43155832\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.326`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43155832, " time: ", 11.326000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43159192", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.336`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({\\(\\(-3\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43159192, " time: ", 11.336, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-3\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43157104\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.366000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43157104, " time: ", 11.366000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43173424", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.376000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2, 0}\\)\\), \\(\\({q\\^10, \\(\\(-q\\^7\\)\\), \\(q\
+\\^6\\\\ \\(\\((1 + \\(\\(2\\\\ q\\^2\\)\\) + q\\^4)\\)\\)\\)\\/\\(1 + q\\^2 \
++ q\\^4\\), \\(\\(-q\\^3\\)\\), 1}\\)\\), \\(\\({0, 0}\\)\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43173424, " time: ", 11.376000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({2, 0}\)\), \(\({q\^10, \(\(-q\^7\)\), \(q\^6\\ \(\((1 \
++ \(\(2\\ q\^2\)\) + q\^4)\)\)\)\/\(1 + q\^2 + q\^4\), \(\(-q\^3\)\), 1}\)\), \
+\(\({0, 0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43171072", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.376000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({0, 0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43171072, " time: ", 11.376000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({0, \
+0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43172832", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.386000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({2, \\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43172832, " time: ", 11.386000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({2, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43174608", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.386000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({4, \\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43174608, " time: ", 11.386000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({4, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43176368", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.396`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({6, \\(\\(-3\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43176368, " time: ", 11.396000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({6, \
+\(\(-3\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43178264", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.406`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({3, \\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43178264, " time: ", 11.406000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({3, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43180016", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.416`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({5, \\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43180016, " time: ", 11.416, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({5, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43181936", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.416`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({2, 0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43181936, " time: ", 11.416, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({2, \
+0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43183712", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.426`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({4, \\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43183712, " time: ", 11.426, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({4, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43185656", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.436`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({1, 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43185656, " time: ", 11.436, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({1, \
+1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43185928\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.456000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43185928, " time: ", 11.456000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43186128", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.466000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({1, 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43186128, " time: ", 11.466000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({1, \
+1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43184632\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.476`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43184632, " time: ", 11.476000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43184840", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.476`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({4, \\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43184840, " time: ", 11.476000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({4, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43185312", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.486`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-1\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43185312, " time: ", 11.486000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-1\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43185464\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.496`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43185464, " time: ", 11.496, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43185672", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.496`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-1\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43185672, " time: ", 11.496, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-1\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43185096\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.506`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43185096, " time: ", 11.506, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43185560", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.506`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({2, 0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43185560, " time: ", 11.506, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({2, \
+0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43184288\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.536000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43184288, " time: ", 11.536000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43184752", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.536000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({5, \\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43184752, " time: ", 11.536000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({5, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43184928", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.556000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({0, 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43184928, " time: ", 11.556000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({0, \
+1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43187144", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.606000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-3\\)\\), 3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43187144, " time: ", 11.606000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-3\)\), 3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43187320\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.616000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43187320, " time: ", 11.616000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43187264", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.616000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-3\\)\\), 3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43187264, " time: ", 11.616000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-3\)\), 3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43185752\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.636000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43185752, " time: ", 11.636000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43186752", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.636000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({0, 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43186752, " time: ", 11.636000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({0, \
+1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43185696\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.696000000000002`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43185696, " time: ", 11.696000000000002, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43187328", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.696000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({3, \\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43187328, " time: ", 11.696000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({3, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43186024\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.736`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43186024, " time: ", 11.736000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43186360", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.736`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({6, \\(\\(-3\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43186360, " time: ", 11.736000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({6, \
+\(\(-3\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43186040", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.746`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({1, 0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43186040, " time: ", 11.746, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({1, \
+0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43189784", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.817`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-2\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43189784, " time: ", 11.817, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-2\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43191000\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.877`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43191000, " time: ", 11.877000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43192040", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.877`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-2\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43192040, " time: ", 11.877000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-2\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43190312\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.917000000000002`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43190312, " time: ", 11.917000000000002, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43194744", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.927000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({1, 0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43194744, " time: ", 11.927000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({1, \
+0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43193304\[InvisibleSpace]" \
+time: "\[InvisibleSpace]11.997000000000002`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43193304, " time: ", 11.997000000000002, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43198736", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "11.997000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({4, \\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43198736, " time: ", 11.997000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({4, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43197472", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.037`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-1\\)\\), 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43197472, " time: ", 12.037000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-1\)\), 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43202208", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.147`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-4\\)\\), 3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43202208, " time: ", 12.147, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-4\)\), 3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43202712\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.177000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43202712, " time: ", 12.177000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43200448", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.187000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-4\\)\\), 3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43200448, " time: ", 12.187000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-4\)\), 3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43198704\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.197000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43198704, " time: ", 12.197000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43207040", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.197000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-1\\)\\), 1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43207040, " time: ", 12.197000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-1\)\), 1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43205968\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.287`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43205968, " time: ", 12.287000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43213632", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.297`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({2, \\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43213632, " time: ", 12.297000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({2, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43213736", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.417000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-3\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43213736, " time: ", 12.417000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-3\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43216536\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.508000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43216536, " time: ", 12.508000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43219192", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.518`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({\\(\\(-3\\)\\), 2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43219192, " time: ", 12.518000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \
+\(\({\(\(-3\)\), 2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43217976\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.588000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43217976, " time: ", 12.588000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43248680", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.628`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({3, 0}\\)\\), \\(\\({\\(\\(-q\\^3\\)\\), 1}\\)\\), \
+\\(\\({0, 0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43248680, " time: ", 12.628, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({3, 0}\)\), \(\({\(\(-q\^3\)\), 1}\)\), \(\({0, \
+0}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43242712", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.628`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({0, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43242712, " time: ", 12.628, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({0, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43244544", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.628`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({2, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43244544, " time: ", 12.628, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({2, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43246360", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.628`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({4, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43246360, " time: ", 12.628, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({4, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43248192", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.648000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({6, \
+\\(\\(-3\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43248192, " time: ", 12.648000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({6, \
+\(\(-3\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43250144", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.648000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({3, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43250144, " time: ", 12.648000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({3, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43251992", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.648000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({5, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43251992, " time: ", 12.648000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({5, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43253960", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.648000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({2, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43253960, " time: ", 12.648000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({2, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255808", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.658000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({4, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255808, " time: ", 12.658000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({4, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43257752", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.658000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({6, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43257752, " time: ", 12.658000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({6, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43259720", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.658000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({3, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43259720, " time: ", 12.658000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({3, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43260048\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.668000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43260048, " time: ", 12.668000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255808", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.668000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({3, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255808, " time: ", 12.668000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({3, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43254304\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.678`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43254304, " time: ", 12.678000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43254568", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.678`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({6, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43254568, " time: ", 12.678000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({6, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43254944", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.688`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({1, \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43254944, " time: ", 12.688000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({1, 1}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43255120\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.698`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43255120, " time: ", 12.698, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255296", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.698`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({1, \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255296, " time: ", 12.698, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({1, 1}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43253712\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.708`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43253712, " time: ", 12.708, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43254184", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.708`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({4, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43254184, " time: ", 12.708, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({4, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43254552", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.718`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-1\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43254552, " time: ", 12.718, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-1\)\), \
+2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43254728\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.738000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43254728, " time: ", 12.738000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43254832", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.738000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-1\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43254832, " time: ", 12.738000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-1\)\), \
+2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43253360\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.748000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43253360, " time: ", 12.748000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43254120", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.748000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({2, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43254120, " time: ", 12.748000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({2, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43252632\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.778`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43252632, " time: ", 12.778, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43253320", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.778`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({5, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43253320, " time: ", 12.778, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({5, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43253600", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.798`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({0, \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43253600, " time: ", 12.798, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({0, 1}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255920", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.838000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-3\\)\\), \
+3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255920, " time: ", 12.838000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-3\)\), \
+3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43256096\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.848`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43256096, " time: ", 12.848000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255976", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.848`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-3\\)\\), \
+3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255976, " time: ", 12.848000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-3\)\), \
+3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43254488\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.868`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43254488, " time: ", 12.868, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255840", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.868`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({0, \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255840, " time: ", 12.868, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({0, 1}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43254576\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.918000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43254576, " time: ", 12.918000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43256944", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.928`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({3, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43256944, " time: ", 12.928000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({3, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43255664\[InvisibleSpace]" \
+time: "\[InvisibleSpace]12.968`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43255664, " time: ", 12.968, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43256256", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.968`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({6, \
+\\(\\(-3\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43256256, " time: ", 12.968, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({6, \
+\(\(-3\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43255960", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "12.988000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({1, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43255960, " time: ", 12.988000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({1, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43259688", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.058000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-2\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43259688, " time: ", 13.058000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-2\)\), \
+2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43260888\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.108`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43260888, " time: ", 13.108000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43262496", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.108`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-2\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43262496, " time: ", 13.108000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-2\)\), \
+2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43260760\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.169`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43260760, " time: ", 13.169, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43267776", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.179`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({1, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43267776, " time: ", 13.179, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({1, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43266152\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.229000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43266152, " time: ", 13.229000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43269416", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.229000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({4, \
+\\(\\(-2\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43269416, " time: ", 13.229000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({4, \
+\(\(-2\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43268248", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.279`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-1\\)\\), \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43268248, " time: ", 13.279, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-1\)\), \
+1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43272472", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.359`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-4\\)\\), \
+3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43272472, " time: ", 13.359, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-4\)\), \
+3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43273040\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.389000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43273040, " time: ", 13.389000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43271648", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.389000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-4\\)\\), \
+3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43271648, " time: ", 13.389000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-4\)\), \
+3}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43269832\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.409`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43269832, " time: ", 13.409000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43277816", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.409`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-1\\)\\), \
+1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43277816, " time: ", 13.409000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-1\)\), \
+1}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43276424\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.489`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43276424, " time: ", 13.489000000000001, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43288536", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.509`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({2, \
+\\(\\(-1\\)\\)}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43288536, " time: ", 13.509, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({2, \
+\(\(-1\)\)}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43288184", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.589`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-3\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43288184, " time: ", 13.589, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-3\)\), \
+2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43292128", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.659`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-6\\)\\), \
+4}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43292128, " time: ", 13.659000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-6\)\), \
+4}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43292392\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.679`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43292392, " time: ", 13.679, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43288776", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.679`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-6\\)\\), \
+4}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43288776, " time: ", 13.679, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-6\)\), \
+4}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43287192\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.689`\[InvisibleSpace]" "\[InvisibleSpace]" ... \
+prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43287192, " time: ", 13.689, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43294832", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.699000000000002`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({\\(\\(-3\\)\\), \
+2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43294832, " time: ", 13.699000000000002, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({\(\(-3\)\), \
+2}\)\)\)\)]\), HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43294256\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.779000000000002`\[InvisibleSpace]" "\
+\[InvisibleSpace]" ... prepared spanning set."\),
+      SequenceForm[ 
+      "mem: ", 43294256, " time: ", 13.779000000000002, " ", 
+        " ... prepared spanning set."],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43327280", 
+        "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+        "13.809000000000001`", "\[InvisibleSpace]", "\<\" \"\>", 
+        "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished \
+calculating \\\\\\\"\\\", HoldForm]\\)\"\>", 
+        "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\\_2]\\)\\)[\\(\\(\\(\\(\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\\
+(\\({0, 1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[G\\_2]\\)\\)[\\(\\({0, 1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0, 2}\\)\\), \\(\\({1}\\)\\), \\(\\({0, \
+0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+      SequenceForm[ 
+      "mem: ", 43327280, " time: ", 13.809000000000001, " ", 
+        "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+        "\!\(\*TagBox[\(\(\(QuantumGroups`MatrixPresentations`Private`\
+SubIrrepWeightBasis[G\_2]\)\)[\(\(\(\(\(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\
+\)\) \[CircleTimes] \(\(\(\(Irrep[G\_2]\)\)[\(\({0, 1}\)\)]\)\)\)\), \
+FundamentalBasis, \(\({0, 2}\)\), \(\({1}\)\), \(\({0, 0}\)\)\)\)]\), \
+HoldForm]\)"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("mem: "\[InvisibleSpace]43321704\[InvisibleSpace]" \
+time: "\[InvisibleSpace]13.809000000000001`\[InvisibleSpace]" "\
+\[InvisibleSpace]"Performing (built-in) row reduction on a matrix of size "\
+\[InvisibleSpace]16\),
+      SequenceForm[ 
+      "mem: ", 43321704, " time: ", 13.809000000000001, " ", 
+        "Performing (built-in) row reduction on a matrix of size ", 16],
+      Editable->False]], "Print"]
+}, Closed]],
+
+Cell[BoxData[
+    \(\(DecompositionMap[G2, \(Irrep[G2]\)[{0, 1}]\^\(\[CircleTimes]4\), 
+        FundamentalBasis];\)\)], "Input"],
+
+Cell[BoxData[
+    \(PackageMatrixPresentations[G2]\)], "Input"],
+
+Cell[BoxData[
+    \(PackageDecompositionMaps[G2]\)], "Input"]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+WindowSize->{1237, 555},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 250, 5, 70, "Input"],
+Cell[2029, 60, 341, 7, 44, "Print"],
+Cell[2373, 69, 321, 7, 25, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2731, 81, 63, 1, 30, "Input"],
+Cell[2797, 84, 168, 3, 22, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3002, 92, 61, 1, 30, "Input"],
+Cell[3066, 95, 166, 3, 22, "Message"]
+}, Open  ]],
+Cell[3247, 101, 47, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3319, 106, 122, 2, 31, "Input"],
+Cell[3444, 110, 1160, 21, 25, "Print"],
+Cell[4607, 133, 353, 7, 25, "Print"],
+Cell[4963, 142, 376, 7, 25, "Print"],
+Cell[5342, 151, 563, 13, 25, "Print"],
+Cell[5908, 166, 330, 6, 25, "Print"],
+Cell[6241, 174, 1944, 34, 44, "Print"],
+Cell[8188, 210, 470, 8, 25, "Print"],
+Cell[8661, 220, 364, 7, 25, "Print"],
+Cell[9028, 229, 470, 8, 25, "Print"],
+Cell[9501, 239, 364, 7, 25, "Print"],
+Cell[9868, 248, 478, 8, 25, "Print"],
+Cell[10349, 258, 352, 7, 25, "Print"],
+Cell[10704, 267, 466, 8, 25, "Print"],
+Cell[11173, 277, 340, 7, 25, "Print"],
+Cell[11516, 286, 490, 8, 25, "Print"],
+Cell[12009, 296, 364, 7, 25, "Print"],
+Cell[12376, 305, 490, 8, 25, "Print"],
+Cell[12869, 315, 364, 7, 25, "Print"],
+Cell[13236, 324, 2017, 32, 88, "Print"],
+Cell[15256, 358, 2039, 32, 88, "Print"],
+Cell[17298, 392, 2039, 32, 88, "Print"],
+Cell[19340, 426, 2017, 32, 88, "Print"],
+Cell[21360, 460, 2039, 32, 88, "Print"],
+Cell[23402, 494, 350, 7, 25, "Print"],
+Cell[23755, 503, 2045, 32, 88, "Print"],
+Cell[25803, 537, 338, 7, 25, "Print"],
+Cell[26144, 546, 2011, 32, 88, "Print"],
+Cell[28158, 580, 362, 7, 25, "Print"],
+Cell[28523, 589, 2057, 32, 88, "Print"],
+Cell[30583, 623, 350, 7, 25, "Print"],
+Cell[30936, 632, 2045, 32, 88, "Print"],
+Cell[32984, 666, 2015, 32, 88, "Print"],
+Cell[35002, 700, 362, 7, 25, "Print"],
+Cell[35367, 709, 2057, 32, 88, "Print"],
+Cell[37427, 743, 338, 7, 25, "Print"],
+Cell[37768, 752, 2011, 32, 88, "Print"],
+Cell[39782, 786, 1467, 25, 69, "Print"],
+Cell[41252, 813, 1513, 25, 69, "Print"],
+Cell[42768, 840, 1513, 25, 69, "Print"],
+Cell[44284, 867, 1491, 25, 69, "Print"],
+Cell[45778, 894, 1513, 25, 69, "Print"],
+Cell[47294, 921, 1491, 25, 69, "Print"],
+Cell[48788, 948, 338, 7, 25, "Print"],
+Cell[49129, 957, 1485, 25, 69, "Print"],
+Cell[50617, 984, 338, 7, 25, "Print"],
+Cell[50958, 993, 1507, 25, 69, "Print"],
+Cell[52468, 1020, 1513, 25, 69, "Print"],
+Cell[53984, 1047, 362, 7, 25, "Print"],
+Cell[54349, 1056, 1531, 25, 69, "Print"],
+Cell[55883, 1083, 338, 7, 25, "Print"],
+Cell[56224, 1092, 1485, 25, 69, "Print"],
+Cell[57712, 1119, 350, 7, 25, "Print"],
+Cell[58065, 1128, 1507, 25, 69, "Print"],
+Cell[59575, 1155, 1489, 25, 69, "Print"],
+Cell[61067, 1182, 338, 7, 25, "Print"],
+Cell[61408, 1191, 1507, 25, 69, "Print"],
+Cell[62918, 1218, 362, 7, 25, "Print"],
+Cell[63283, 1227, 1519, 25, 69, "Print"],
+Cell[64805, 1254, 1513, 25, 69, "Print"],
+Cell[66321, 1281, 350, 7, 25, "Print"],
+Cell[66674, 1290, 1507, 25, 69, "Print"],
+Cell[68184, 1317, 362, 7, 25, "Print"],
+Cell[68549, 1326, 1509, 25, 69, "Print"],
+Cell[70061, 1353, 1271, 22, 44, "Print"],
+Cell[71335, 1377, 1293, 22, 44, "Print"],
+Cell[72631, 1401, 1293, 22, 44, "Print"],
+Cell[73927, 1425, 1281, 22, 44, "Print"],
+Cell[75211, 1449, 1281, 22, 44, "Print"],
+Cell[76495, 1473, 1269, 22, 44, "Print"],
+Cell[77767, 1497, 1247, 22, 44, "Print"],
+Cell[79017, 1521, 1269, 22, 44, "Print"],
+Cell[80289, 1545, 1247, 22, 44, "Print"],
+Cell[81539, 1569, 362, 7, 25, "Print"],
+Cell[81904, 1578, 1289, 22, 44, "Print"],
+Cell[83196, 1602, 350, 7, 25, "Print"],
+Cell[83549, 1611, 1299, 22, 44, "Print"],
+Cell[84851, 1635, 1281, 22, 44, "Print"],
+Cell[86135, 1659, 338, 7, 25, "Print"],
+Cell[86476, 1668, 1287, 22, 44, "Print"],
+Cell[87766, 1692, 338, 7, 25, "Print"],
+Cell[88107, 1701, 1265, 22, 44, "Print"],
+Cell[89375, 1725, 362, 7, 25, "Print"],
+Cell[89740, 1734, 1311, 22, 44, "Print"],
+Cell[91054, 1758, 1271, 22, 44, "Print"],
+Cell[92328, 1782, 1293, 22, 44, "Print"],
+Cell[93624, 1806, 362, 7, 25, "Print"],
+Cell[93989, 1815, 1311, 22, 44, "Print"],
+Cell[95303, 1839, 362, 7, 25, "Print"],
+Cell[95668, 1848, 1289, 22, 44, "Print"],
+Cell[96960, 1872, 362, 7, 25, "Print"],
+Cell[97325, 1881, 1311, 22, 44, "Print"],
+Cell[98639, 1905, 350, 7, 25, "Print"],
+Cell[98992, 1914, 1299, 22, 44, "Print"],
+Cell[100294, 1938, 1247, 22, 44, "Print"],
+Cell[101544, 1962, 1269, 22, 44, "Print"],
+Cell[102816, 1986, 350, 7, 25, "Print"],
+Cell[103169, 1995, 1299, 22, 44, "Print"],
+Cell[104471, 2019, 362, 7, 25, "Print"],
+Cell[104836, 2028, 1289, 22, 44, "Print"],
+Cell[106128, 2052, 362, 7, 25, "Print"],
+Cell[106493, 2061, 1311, 22, 44, "Print"],
+Cell[107807, 2085, 1281, 22, 44, "Print"],
+Cell[109091, 2109, 1269, 22, 44, "Print"],
+Cell[110363, 2133, 362, 7, 25, "Print"],
+Cell[110728, 2142, 1311, 22, 44, "Print"],
+Cell[112042, 2166, 362, 7, 25, "Print"],
+Cell[112407, 2175, 1311, 22, 44, "Print"],
+Cell[113721, 2199, 350, 7, 25, "Print"],
+Cell[114074, 2208, 1299, 22, 44, "Print"],
+Cell[115376, 2232, 1293, 22, 44, "Print"],
+Cell[116672, 2256, 362, 7, 25, "Print"],
+Cell[117037, 2265, 1299, 22, 44, "Print"],
+Cell[118339, 2289, 362, 7, 25, "Print"],
+Cell[118704, 2298, 1265, 22, 44, "Print"],
+Cell[119972, 2322, 1212, 22, 44, "Print"],
+Cell[121187, 2346, 1234, 22, 44, "Print"],
+Cell[122424, 2370, 1234, 22, 44, "Print"],
+Cell[123661, 2394, 1258, 22, 44, "Print"],
+Cell[124922, 2418, 1258, 22, 44, "Print"],
+Cell[126183, 2442, 1258, 22, 44, "Print"],
+Cell[127444, 2466, 1236, 22, 44, "Print"],
+Cell[128683, 2490, 1258, 22, 44, "Print"],
+Cell[129944, 2514, 1258, 22, 44, "Print"],
+Cell[131205, 2538, 1236, 22, 44, "Print"],
+Cell[132444, 2562, 362, 7, 25, "Print"],
+Cell[132809, 2571, 1254, 22, 44, "Print"],
+Cell[134066, 2595, 350, 7, 25, "Print"],
+Cell[134419, 2604, 1264, 22, 44, "Print"],
+Cell[135686, 2628, 1224, 22, 44, "Print"],
+Cell[136913, 2652, 338, 7, 25, "Print"],
+Cell[137254, 2661, 1230, 22, 44, "Print"],
+Cell[138487, 2685, 338, 7, 25, "Print"],
+Cell[138828, 2694, 1252, 22, 44, "Print"],
+Cell[140083, 2718, 1234, 22, 44, "Print"],
+Cell[141320, 2742, 362, 7, 25, "Print"],
+Cell[141685, 2751, 1276, 22, 44, "Print"],
+Cell[142964, 2775, 362, 7, 25, "Print"],
+Cell[143329, 2784, 1254, 22, 44, "Print"],
+Cell[144586, 2808, 338, 7, 25, "Print"],
+Cell[144927, 2817, 1252, 22, 44, "Print"],
+Cell[146182, 2841, 1212, 22, 44, "Print"],
+Cell[147397, 2865, 1258, 22, 44, "Print"],
+Cell[148658, 2889, 350, 7, 25, "Print"],
+Cell[149011, 2898, 1264, 22, 44, "Print"],
+Cell[150278, 2922, 338, 7, 25, "Print"],
+Cell[150619, 2931, 1230, 22, 44, "Print"],
+Cell[151852, 2955, 362, 7, 25, "Print"],
+Cell[152217, 2964, 1264, 22, 44, "Print"],
+Cell[153484, 2988, 338, 7, 25, "Print"],
+Cell[153825, 2997, 1252, 22, 44, "Print"],
+Cell[155080, 3021, 1236, 22, 44, "Print"],
+Cell[156319, 3045, 1258, 22, 44, "Print"],
+Cell[157580, 3069, 350, 7, 25, "Print"],
+Cell[157933, 3078, 1264, 22, 44, "Print"],
+Cell[159200, 3102, 338, 7, 25, "Print"],
+Cell[159541, 3111, 1230, 22, 44, "Print"],
+Cell[160774, 3135, 362, 7, 25, "Print"],
+Cell[161139, 3144, 1276, 22, 44, "Print"],
+Cell[162418, 3168, 1234, 22, 44, "Print"],
+Cell[163655, 3192, 1234, 22, 44, "Print"],
+Cell[164892, 3216, 362, 7, 25, "Print"],
+Cell[165257, 3225, 1276, 22, 44, "Print"],
+Cell[166536, 3249, 350, 7, 25, "Print"],
+Cell[166889, 3258, 1264, 22, 44, "Print"],
+Cell[168156, 3282, 350, 7, 25, "Print"],
+Cell[168509, 3291, 1252, 22, 44, "Print"],
+Cell[169764, 3315, 1234, 22, 44, "Print"],
+Cell[171001, 3339, 1246, 22, 44, "Print"],
+Cell[172250, 3363, 338, 7, 25, "Print"],
+Cell[172591, 3372, 1252, 22, 44, "Print"],
+Cell[173846, 3396, 338, 7, 25, "Print"],
+Cell[174187, 3405, 1276, 22, 44, "Print"],
+Cell[175466, 3429, 362, 7, 25, "Print"],
+Cell[175831, 3438, 1254, 22, 44, "Print"],
+Cell[177088, 3462, 445, 8, 25, "Print"]
+}, Closed]],
+Cell[177548, 3473, 129, 2, 28, "Input"],
+Cell[177680, 3477, 63, 1, 27, "Input"],
+Cell[177746, 3480, 61, 1, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

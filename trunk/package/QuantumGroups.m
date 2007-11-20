@@ -29,7 +29,8 @@ DeclarePackage[
 DeclarePackage[
     "QuantumGroups`Utilities`MatrixWrapper`",{"OnesMatrix","ZeroesMatrix","ZeroMatrixQ",
       "NonZeroMatrixQ","Matrix","MatrixData","identityMatrix","KroneckerProduct",
-      "BlockDiagonalMatrix","MatrixInverse","InterpolationInverseThreshold"}];
+      "BlockDiagonalMatrix","MatrixInverse","PrepareInverse",
+      "InterpolationInverseThreshold"}];
 
 DeclarePackage[
     "QuantumGroups`Utilities`Debugging`",{"DebugEcho","DebugPrint","DebugEvaluate",
@@ -92,7 +93,7 @@ DeclarePackage[
       "DomainBasis","CodomainBasis","Algebra","IdentityMap","ZeroTensorQ","CheckRepresentationTensor",
       "RepresentationTensorErrors","QuantumTrace","Distributor","Associator","BraidingMap",
       "NormalisedBraidingMap","InverseNormalisedBraidingMap","DecompositionMap",
-      "PermuteDirectSummands","DirectSumProjectionMap",
+      "InverseDecompositionMap","PermuteDirectSummands","DirectSumProjectionMap",
       "DirectSumInclusionMap"}];
 
 DeclarePackage[

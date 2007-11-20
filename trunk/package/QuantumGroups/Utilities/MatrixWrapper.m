@@ -21,7 +21,7 @@ BeginPackage[
 
 OnesMatrix;ZeroesMatrix;ZeroMatrixQ;NonZeroMatrixQ;Matrix;MatrixData;\
 identityMatrix;KroneckerProduct;BlockDiagonalMatrix;MatrixInverse;\
-InterpolationInverseThreshold;
+PrepareInverse;InterpolationInverseThreshold;
 
 Begin["`Private`"];
 
@@ -153,11 +153,22 @@ BlockDiagonalMatrix[m_Matrix]:=m
 BlockDiagonalMatrix[m1_,m2_,m3__]:=
   BlockDiagonalMatrix[BlockDiagonalMatrix[m1,m2],m3]
 
-InterpolationInverseThreshold=8;
+InterpolationInverseThreshold=30;
+
+PrepareInverse[x_]:=Null
 
 MatrixInverse[m_?SquareMatrixQ]:=
   If[Length[m]\[GreaterEqual]InterpolationInverseThreshold,
-    RowOrderedInterpolationInverse[m],Together[Inverse[m]]]
+    RowOrderedInterpolationInverse[m],RowReductionInverse[m]]
+
+RowReductionInverse[m_?SquareMatrixQ]:=Module[{result},
+    If[Length[m]\[GreaterEqual]8,
+      DebugPrint["Performing (built-in) row reduction on a matrix of size ",
+        Length[m]]];
+    result=Together[Inverse[m,Method\[Rule]OneStepRowReduction]];
+    If[Length[m]\[GreaterEqual]8,DebugPrint["Finished row reduction"]];
+    result
+    ]
 
 MatrixRowFactors[mat_?SquareMatrixQ]:=
   Module[{rowFactors,rowOrdering,n=Length[mat]},
@@ -180,7 +191,7 @@ recordInterpolationInverseRequest[mat_]:=
     AppendTo[InterpolationInverseRequests,mat];
     InterpolationInverseLargestRequestSize=Length[mat]]
 
-\!\(InterpolationInverse[mat_?SquareMatrixQ] := Module[{size, newMatrix, det, degree, n, abcissa, data, inverse}, \[IndentingNewLine]DebugPrint["\<Starting InterpolationInverse on a matrix of size \>", Length[mat]]; \[IndentingNewLine]size = Length[mat]; \[IndentingNewLine]det = Together[Det[mat]]; \[IndentingNewLine]newMatrix = mat\/det; \[IndentingNewLine]degree = Min[Apply[Plus, Map[Max[Exponent[#, Global`q]] &, mat]], Apply[Plus, Map[Max[Exponent[#, Global`q]] &, Transpose[mat]]]]; \[IndentingNewLine]If[degree \[Equal] 0, DebugPrint["\<... it doesn't seem to involve q, so I'm just using Inverse\>"]; Return[Inverse[mat]]]; \[IndentingNewLine]recordInterpolationInverseRequest[mat]; \[IndentingNewLine]DebugPrint["\<inverting matrix of size \>", Length[mat], \ "\< by interpolation\>"]; \[IndentingNewLine]abcissa = {}; \[IndentingNewLine]n = Floor[\(-\(degree\/2\)\)] + 1; \[IndentingNewLine]While[Length[abcissa] < degree + 2, \[IndentingNewLine]If[\((det /. Global`q \[Rule] n)\) =!= 0, abcissa = Append[abcissa, n]]; \[IndentingNewLine]\(n++\)\[IndentingNewLine]]; \[IndentingNewLine]If[size > 20, DebugPrint["\<Inverting numerical matrices:\>"]]; \[IndentingNewLine]data = Transpose[Table[If[size > 20, DebugPrint[i]]; Inverse[newMatrix /. Global`q \[Rule] abcissa\[LeftDoubleBracket]i\[RightDoubleBracket]], {i, 1, Length[abcissa]}], {3, 1, 2}]; \[IndentingNewLine]If[size > 20, DebugPrint["\<Interpolating numerical matrices:\>"]]; \[IndentingNewLine]inverse = Table[If[i \[Equal] 1 \[And] size > 20, DebugPrint[j]]; Simplify[InterpolatingPolynomial[Transpose[{abcissa, data\[LeftDoubleBracket]i, j\[RightDoubleBracket]}], Global`q]], {i, 1, size}, {j, 1, size}]; \[IndentingNewLine]DebugPrint["\<done\>"]; \[IndentingNewLine]Together[\(1\/det\) inverse]\[IndentingNewLine]]\)
+\!\(InterpolationInverse[mat_?SquareMatrixQ] := Module[{size, newMatrix, det, degree, n, abcissa, data, inverse}, \[IndentingNewLine]DebugPrint["\<Starting InterpolationInverse on a matrix of size \>", Length[mat]]; \[IndentingNewLine]size = Length[mat]; \[IndentingNewLine]det = Together[Det[mat]]; \[IndentingNewLine]newMatrix = mat\/det; \[IndentingNewLine]degree = Min[Apply[Plus, Map[Max[Exponent[#, Global`q]] &, mat]], Apply[Plus, Map[Max[Exponent[#, Global`q]] &, Transpose[mat]]]]; \[IndentingNewLine]If[degree \[Equal] 0, DebugPrint["\<... it doesn't seem to involve q, so I'm just using Inverse\>"]; Return[Inverse[mat]]]; \[IndentingNewLine]recordInterpolationInverseRequest[mat]; \[IndentingNewLine]DebugPrint["\<inverting matrix of size \>", Length[mat], \ "\< by interpolation\>"]; \[IndentingNewLine]abcissa = {}; \[IndentingNewLine]n = Floor[\(-\(degree\/2\)\)] + 1; \[IndentingNewLine]While[Length[abcissa] < degree + 2, \[IndentingNewLine]If[\((det /. Global`q \[Rule] n)\) =!= 0, abcissa = Append[abcissa, n]]; \[IndentingNewLine]\(n++\)\[IndentingNewLine]]; \[IndentingNewLine]If[size > 20, DebugPrint["\<Inverting numerical matrices:\>"]]; \[IndentingNewLine]data = Transpose[Table[If[size > 20, DebugPrint[i]]; Inverse[newMatrix /. Global`q \[Rule] abcissa\[LeftDoubleBracket]i\[RightDoubleBracket]], {i, 1, Length[abcissa]}], {3, 1, 2}]; \[IndentingNewLine]If[size > 20, DebugPrint["\<Interpolating numerical matrices:\>"]]; \[IndentingNewLine]inverse = Table[If[j \[Equal] 1 \[And] size > 20, DebugPrint[i]]; Simplify[InterpolatingPolynomial[Transpose[{abcissa, data\[LeftDoubleBracket]i, j\[RightDoubleBracket]}], Global`q]], {i, 1, size}, {j, 1, size}]; \[IndentingNewLine]DebugPrint["\<done\>"]; \[IndentingNewLine]Together[\(1\/det\) inverse]\[IndentingNewLine]]\)
 
 End[];
 
