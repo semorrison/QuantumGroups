@@ -90,7 +90,7 @@ Options[PackageData]={"Needs"\[Rule]{},"ExtraPackageCode"\[Rule]"",
       "ExtraPrivateCode"\[Rule]"","LoadPreexistingPackage"\[Rule]True,
       "Message"\[Rule]"QuantumGroups::loading","UseGzip"\[Rule]False};
 PackageData[s_Symbol,p_,packagePath:{__String},opts___]:=
-  PackageData[{{s,p}},QuantumGroupsDirectory[],packagePath,opts]
+  PackageData[{{s,p}},QuantumGroupsDataDirectory[],packagePath,opts]
 PackageData[s_Symbol,p_,baseDirectory_String,packagePath:{__String},opts___]:=
   PackageData[{{s,p}},baseDirectory,packagePath,opts]
 PackageData[patterns:{{_Symbol,_}..},packagePath:{__String},opts___]:=
@@ -150,13 +150,13 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
       Run["gzip "<>Last[fullPackagePath]<>".m"];ResetDirectory[]];
     ResetDirectory[];]
 
-\!\(PackageMatrixPresentations[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]MatrixPresentation, \(\(MatrixPresentation[\[CapitalGamma]\_n]\)[_]\)[\(Irrep[\[CapitalGamma]\_n]\)[_], FundamentalBasis, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<MatrixPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
+\!\(PackageMatrixPresentations[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]MatrixPresentation, \(\(MatrixPresentation[\[CapitalGamma]\_n]\)[_]\)[\(Irrep[\[CapitalGamma]\_n]\)[_], FundamentalBasis, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<MatrixPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)
 
-\!\(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]DecompositionMap, DecompositionMap[\[CapitalGamma]\_n, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`MatrixPresentations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)
+\!\(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]{{DecompositionMap, DecompositionMap[\[CapitalGamma]\_n, _, _]}, {InverseDecompositionMap, HoldPattern[InverseDecompositionMap[\[CapitalGamma]\_n, _, _]]}}, \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`MatrixPresentations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)
 
 \!\(PackageQuantumRoots[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]ExpandQuantumRoot, \(ExpandQuantumRoot[\[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`QuantumRoots`\>", "\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
-\!\(PackageRMatrix[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]RMatrix, RMatrix[\[CapitalGamma]\_n, _, _, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<RMatrix\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] True\[IndentingNewLine]]\)
+\!\(PackageRMatrix[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]RMatrix, RMatrix[\[CapitalGamma]\_n, _, _, _, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> ToString[n], "\<RMatrix\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)
 
 \!\(PackagePartialRMatrixPresentation[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`RMatrix`Private`PartialRMatrixPresentation, QuantumGroups`RMatrix`Private`PartialRMatrixPresentation[\[CapitalGamma]\_n, __], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<PartialRMatrixPresentation\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`RMatrix`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
@@ -172,10 +172,7 @@ PackageData[patterns:{{_Symbol,_}..},baseDirectory_String,
 
 \!\(PackageBraidingMatrices[\[CapitalGamma]_\_n_] := PackageData[\[IndentingNewLine]QuantumGroups`Braiding`Private`BraidingMatrices, \(QuantumGroups`Braiding`Private`BraidingMatrices[\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", ToString[\[CapitalGamma]] <> ToString[n], "\<BraidingMatrices\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Braiding`\>", "\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)
 
-Unprotect[Get];
-Get[package_String/;StringMatchQ[package,"QuantumGroups`Data`"~~__]]:=
-  Get[StringDrop[package,StringLength["QuantumGroups`Data`"]]]
-Protect[Get];
+
 
 
 

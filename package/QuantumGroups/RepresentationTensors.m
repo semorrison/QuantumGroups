@@ -240,8 +240,9 @@ RepresentationTensor/:
   Inverse[RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,
       matrices_]]:=
   RepresentationTensor[\[CapitalGamma],V2,\[Beta]2,
-    V1,\[Beta]1,{#\[LeftDoubleBracket]1\[RightDoubleBracket],
-          Inverse[#\[LeftDoubleBracket]2\[RightDoubleBracket]]}&/@matrices]
+    V1,\[Beta]1,(PrepareInverse[#\[LeftDoubleBracket]2\[RightDoubleBracket]]&/@
+        matrices;{#\[LeftDoubleBracket]1\[RightDoubleBracket],
+            Inverse[#\[LeftDoubleBracket]2\[RightDoubleBracket]]}&/@matrices)]
 
 \!\(QuantumTrace[RepresentationTensor[\[CapitalGamma]_, V_, \[Beta]_, V_, \[Beta]_, matrices_]] := Simplify[\[Sum]\+\(i = 1\)\%\(Length[matrices]\)Tr[\(\(MatrixPresentation[\[CapitalGamma]]\)[K\_\(\[CapitalGamma], \[Rho]\)]\)[V, \[Beta], matrices\[LeftDoubleBracket]i, 1\[RightDoubleBracket]] . matrices\[LeftDoubleBracket]i, 2\[RightDoubleBracket]]]\)
 
@@ -417,8 +418,7 @@ DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
     (DebugPrint[DecompositionMap, \[CapitalGamma],V,W];
       RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
         DecomposeRepresentation[\[CapitalGamma]][
-          V\[CircleTimes]W],\[Beta],{#,(DebugPrint["mem: ",MemoryInUse[]," time: ",
-                  TimeUsed[]," ... weight ",#];
+          V\[CircleTimes]W],\[Beta],{#,(DebugPrint[" ... weight ",#];
                 QuantumGroups`MatrixPresentations`Private`\
 DirectSumDecomposition[\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
           Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]])
@@ -461,8 +461,21 @@ _]:=DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\[Beta]\
         ]
       ]
 
-InverseDecompositionMap[\[CapitalGamma]_,V_,\[Beta]_]:=
+InverseDecompositionMap[\[CapitalGamma]_,V:Irrep[_][_],\[Beta]_]:=
   Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]]
+InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CirclePlus]_),\[Beta]_]:=
+  Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]]
+
+InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CircleTimes]_),\[Beta]_]:=
+  InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]=
+    Module[{result},
+      DebugPrintHeld["Beginning ",
+        InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
+      result=Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]];
+      DebugPrintHeld["Finished ",
+        InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
+      result
+      ]
 
 BlockPermutationMatrix[permutation:{__Integer},blocksizes:{__Integer}]:=
   BlockMatrix[
