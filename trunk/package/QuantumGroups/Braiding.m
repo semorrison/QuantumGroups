@@ -135,7 +135,9 @@ ChangeBasis[map_,basis_]:=Module[{},
 
 \!\(LoadBraidingData[\[CapitalGamma]_\_n_] := Module[{}, \[IndentingNewLine]Off[Get::noopen, Needs::nocont]; \[IndentingNewLine]Needs["\<QuantumGroups`Data`\>" <> SymbolName[\[CapitalGamma]] <> ToString[n] <> "\<`BraidingData`\>"]; \[IndentingNewLine]On[Get::noopen, Needs::nocont]; \[IndentingNewLine]LoadBraidingData[\[CapitalGamma]\_n] = False; \[IndentingNewLine]True\[IndentingNewLine]]\)
 
-\!\(\(BraidingData[\[CapitalGamma]_]\)[V_, n_Integer] := \(\(BraidingData[\[CapitalGamma]]\)[V, n] = \[IndentingNewLine]If[LoadBraidingData[\[CapitalGamma]], \(BraidingData[\[CapitalGamma]]\)[V, n], \[IndentingNewLine]\({\(qDimension[\[CapitalGamma]]\)[\(Irrep[\[CapitalGamma]]\)[#]], \(BraidingMatrices[\[CapitalGamma]]\)[V, n, #]} &\) /@ HighWeights[\[CapitalGamma], V\^\(\[CircleTimes]n\)]\[IndentingNewLine]]\)\)
+autosaveBraidingData=True;
+
+\!\(\(BraidingData[\[CapitalGamma]_]\)[V_, n_Integer] := Module[{result}, \[IndentingNewLine]\(BraidingData[\[CapitalGamma]]\)[V, n] = \(result = \[IndentingNewLine]If[LoadBraidingData[\[CapitalGamma]], \(BraidingData[\[CapitalGamma]]\)[V, n], \[IndentingNewLine]\({\(qDimension[\[CapitalGamma]]\)[\(Irrep[\[CapitalGamma]]\)[#]], \(BraidingMatrices[\[CapitalGamma]]\)[V, n, #]} &\) /@ HighWeights[\[CapitalGamma], V\^\(\[CircleTimes]n\)]\[IndentingNewLine]]\); \[IndentingNewLine]If[autosaveBraidingData, PackageBraidingData[\[CapitalGamma]]]; \[IndentingNewLine]result\[IndentingNewLine]]\)
 
 CheckBraidingData[m:{__?MatrixQ}]:=
   And@@Table[

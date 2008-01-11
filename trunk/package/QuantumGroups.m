@@ -37,8 +37,9 @@ DeclarePackage[
       "DebugSet","DebugPrintHeld"}];
 
 DeclarePackage[
-    "QuantumGroups`Utilities`DataPackage`",{"ValuesAsString","PackageData","PackageMatrixPresentations",
-      "PackageDecompositionMaps","PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation",
+    "QuantumGroups`Utilities`DataPackage`",{"DefiniteValues","MatchingValues",
+      "ValuesAsString","PackageData","PackageMatrixPresentations","PackageDecompositionMaps",
+      "PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation",
       "PackageHighWeightVectors","PackageBraidingMatrices","PackageBRPresentations",
       "PackageBraidingMaps"}];
 

@@ -32,8 +32,9 @@ overwritten.
 BeginPackage[
     "QuantumGroups`RepresentationTensors`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`",
       "QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`",
-      "QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`",
-      "QuantumGroups`MatrixPresentations`","QuantumGroups`RMatrix`"}];
+      "QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`",
+      "QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`",
+      "QuantumGroups`RMatrix`"}];
 
 
 
@@ -414,20 +415,25 @@ DecompositionMap[\[CapitalGamma]_,
           Ordering[SortWeights[\[CapitalGamma]][V]]]\[RightDoubleBracket]]]
 
 DecompositionMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=
-  DecompositionMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=
-    (DebugPrint[DecompositionMap, \[CapitalGamma],V,W];
-      RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
-        DecomposeRepresentation[\[CapitalGamma]][
-          V\[CircleTimes]W],\[Beta],{#,(DebugPrint[" ... weight ",#];
-                QuantumGroups`MatrixPresentations`Private`\
+  Module[{result},
+    DecompositionMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=result=
+        (DebugPrint[DecompositionMap, \[CapitalGamma],V,W];
+          RepresentationTensor[\[CapitalGamma],V\[CircleTimes]W,\[Beta],
+            DecomposeRepresentation[\[CapitalGamma]][
+              V\[CircleTimes]W],\[Beta],{#,(DebugPrint[" ... weight ",#];
+                    QuantumGroups`MatrixPresentations`Private`\
 DirectSumDecomposition[\[CapitalGamma]][V\[CircleTimes]W,\[Beta],#])}&/@
-          Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]])
+              Reverse[Weights[\[CapitalGamma],V\[CircleTimes]W]]]);
+    PackageDecompositionMaps[\[CapitalGamma]];
+    result
+    ]
 
 DecompositionMap[\[CapitalGamma]_,(U_\[CircleTimes]V_)\[CircleTimes]W_,\[Beta]\
-_]:=DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\[Beta]\
+_]:=
+  Module[{distributor,firstDecomposition,summandDecompositions,disordered,
+      domain,disordering,result},
+    DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\[Beta]\
 ]=With[{Z=DecomposeRepresentation[\[CapitalGamma]][U\[CircleTimes]V]},
-      Module[{distributor,firstDecomposition,summandDecompositions,disordered,
-          domain,disordering,result},
         DebugPrintHeld["Beginning ",
           DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
 \[Beta]]];
@@ -458,8 +464,10 @@ _]:=DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\[Beta]\
           DecompositionMap[\[CapitalGamma],(U\[CircleTimes]V)\[CircleTimes]W,\
 \[Beta]]];
         result
-        ]
-      ]
+        ];
+    PackageDecompositionMaps[\[CapitalGamma]];
+    result
+    ]
 
 InverseDecompositionMap[\[CapitalGamma]_,V:Irrep[_][_],\[Beta]_]:=
   Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]]
