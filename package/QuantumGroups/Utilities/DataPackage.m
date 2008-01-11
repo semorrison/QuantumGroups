@@ -20,7 +20,7 @@ BeginPackage[
       "QuantumGroups`MatrixPresentations`","QuantumGroups`RepresentationTensors`",
       "QuantumGroups`Representations`","QuantumGroups`Algebra`"}];
 
-ValuesAsString;PackageData;MatchingValues;
+ValuesAsString;PackageData;MatchingValues;DefiniteValues;
 
 {PackageMatrixPresentations,PackageDecompositionMaps,PackageQuantumRoots,
     PackageRMatrix,PackagePartialRMatrixPresentation,
