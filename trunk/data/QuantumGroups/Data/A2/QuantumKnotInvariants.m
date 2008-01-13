@@ -2,7 +2,7 @@ BeginPackage["QuantumGroups`Data`A2`QuantumKnotInvariants`", {"QuantumGroups`", 
 Message[QuantumGroups::loading,"QuantumGroups`Data`A2`QuantumKnotInvariants`"]
 
 Begin["`Private`"]
-q=Global`q;
+q0=Global`q0;
 QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{0, 1}]][Knot[3, 1]]:=Function[{q0$}, q0$^2 + q0$^4 + 2*q0$^6 + q0$^8 - q0$^12 - q0$^14]
 QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{0, 1}]][Knot[4, 1]]:=Function[{q0$}, -1 + q0$^(-8) + q0$^(-6) + q0$^6 + q0$^8]
 QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{0, 1}]][Knot[5, 1]]:=Function[{q0$}, q0$^6 + q0$^8 + 2*q0$^10 + q0$^12 + q0$^14 - q0$^18 - q0$^20 - q0$^22]
@@ -567,5 +567,6 @@ QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{1, 1}]][Knot[10, 1
 QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{1, 1}]][Knot[10, 157]]:=Function[{q0$}, q0$^(-84) - 6/q0$^82 + 18/q0$^80 - 38/q0$^78 + 69/q0$^76 - 120/q0$^74 + 184/q0$^72 - 248/q0$^70 + 314/q0$^68 - 354/q0$^66 + 358/q0$^64 - 314/q0$^62 + 206/q0$^60 - 56/q0$^58 - 130/q0$^56 + 324/q0$^54 - 493/q0$^52 + 630/q0$^50 - 698/q0$^48 + 696/q0$^46 - 635/q0$^44 + 502/q0$^42 - 346/q0$^40 + 150/q0$^38 + 37/q0$^36 - 196/q0$^34 + 316/q0$^32 - 374/q0$^30 + 385/q0$^28 - 340/q0$^26 + 272/q0$^24 - 190/q0$^22 + 118/q0$^20 - 60/q0$^18 + 28/q0$^16 - 4/q0$^14 + 2/q0$^10]
 QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{1, 1}]][Knot[10, 159]]:=Function[{q0$}, 2 + q0$^(-4) - 4/q0$^2 - 4*q0$^2 + 15*q0$^4 - 28*q0$^6 + 52*q0$^8 - 76*q0$^10 + 119*q0$^12 - 140*q0$^14 + 160*q0$^16 - 150*q0$^18 + 114*q0$^20 - 60*q0$^22 - 18*q0$^24 + 94*q0$^26 - 172*q0$^28 + 234*q0$^30 - 272*q0$^32 + 284*q0$^34 - 273*q0$^36 + 234*q0$^38 - 172*q0$^40 + 92*q0$^42 - 11*q0$^44 - 62*q0$^46 + 122*q0$^48 - 154*q0$^50 + 158*q0$^52 - 144*q0$^54 + 116*q0$^56 - 80*q0$^58 + 50*q0$^60 - 28*q0$^62 + 12*q0$^64 - 4*q0$^66 + q0$^68]
 QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{1, 1}]][Knot[10, 161]]:=Function[{q0$}, q0$^20 + 2*q0$^22 + 2*q0$^24 + 4*q0$^26 + 3*q0$^28 + 2*q0$^30 + 2*q0$^32 + 2*q0$^34 + 4*q0$^36 + 2*q0$^38 - 2*q0$^40 + 2*q0$^42 - 5*q0$^44 - 6*q0$^48 - 4*q0$^50 - 6*q0$^54 + 4*q0$^56 - 4*q0$^58 + 4*q0$^60 - 2*q0$^62 + 4*q0$^64 - 2*q0$^66 + 2*q0$^70 - 2*q0$^72 + 4*q0$^74 - 6*q0$^76 + 4*q0$^78 - 2*q0$^80 - 2*q0$^86 + 2*q0$^88 + q0$^92]
+QuantumKnotInvariant[Subscript[A, 2], Irrep[Subscript[A, 2]][{2, 0}]][Knot[8, 19]]:=Function[{q0$}, q0$^(-80) - q0$^(-76) - 2/q0$^74 - 2/q0$^72 + q0$^(-68) + 4/q0$^66 + 4/q0$^64 + 4/q0$^62 + 2/q0$^60 + q0$^(-58) - 2/q0$^56 - 3/q0$^54 - 4/q0$^52 - 5/q0$^50 - 5/q0$^48 - 5/q0$^46 - 3/q0$^44 - 2/q0$^42 + q0$^(-38) + 3/q0$^36 + 3/q0$^34 + 4/q0$^32 + 3/q0$^30 + 3/q0$^28 + 2/q0$^26 + 2/q0$^24 + q0$^(-22) + q0$^(-20)]
 End[]
 EndPackage[]
