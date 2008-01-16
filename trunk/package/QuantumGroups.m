@@ -130,6 +130,13 @@ UnitVector::usage="UnitVector[n,i] returns the i-th n-dimensional unit vector, i
 ]
 
 
+If[$VersionNumber>=6.,
+Unprotect[IdentityMatrix];
+IdentityMatrix[0]={};
+Protect[IdentityMatrix];
+]
+
+
 ZeroVector::usage="ZeroVector[n] returns the n-dimensional 0 vector.";
 
 

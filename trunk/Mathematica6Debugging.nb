@@ -1,0 +1,419 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12722,        410]
+NotebookOptionsPosition[     11269,        353]
+NotebookOutlinePosition[     11631,        369]
+CellTagsIndexPosition[     11588,        366]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", " ", "=", " ", 
+   "\"\<c:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\package\\\\\>\""}\
+], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.4094391409245634`*^9, {3.4094394122647314`*^9, 3.40943942680564*^9}, {
+   3.40943976078588*^9, 3.4094397693882494`*^9}, 3.4094398345018787`*^9, 
+   3.409439879506592*^9, 3.409439979700664*^9, 3.40944003618188*^9, 
+   3.4094401518081427`*^9, 3.409500545249646*^9, 3.4095017494111457`*^9, 
+   3.4095019269664574`*^9, 3.4095019641198816`*^9, 3.4095020135109024`*^9, {
+   3.4095021810818577`*^9, 3.4095021941005774`*^9}, 3.4095022620683107`*^9, 
+   3.4095023427743597`*^9, 3.409502575729333*^9, 3.409506143038872*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Found precomputed data in \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\data\"\>"}],
+  SequenceForm[
+  "Found precomputed data in ", 
+   "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.4094391409245634`*^9, {3.4094394122647314`*^9, 3.40943942680564*^9}, {
+   3.40943976078588*^9, 3.4094397693882494`*^9}, 3.4094398345018787`*^9, 
+   3.409439879506592*^9, 3.409439979700664*^9, 3.40944003618188*^9, 
+   3.4094401518081427`*^9, 3.409500545249646*^9, 3.4095017494111457`*^9, 
+   3.4095019269664574`*^9, 3.4095019641198816`*^9, 3.4095020135109024`*^9, {
+   3.4095021810818577`*^9, 3.4095021941005774`*^9}, 3.4095022620683107`*^9, 
+   3.4095023427743597`*^9, 3.409502575729333*^9, 3.4095061430689154`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"obspkg\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\\"LinearAlgebra`MatrixManipulation`\\\"\\) is now \
+obsolete. The legacy version being loaded may conflict with current \
+Mathematica functionality. See the Compatibility Guide for updating \
+information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:Compatibility/Tutorials/LinearAlgebra/\
+MatrixManipulation\\\", ButtonNote -> \\\"General::obspkg\\\"]\\)\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{
+  3.409439142747184*^9, {3.409439414187496*^9, 3.4094394285681744`*^9}, {
+   3.409439762398198*^9, 3.409439771120741*^9}, 3.4094398362043266`*^9, 
+   3.4094398832419634`*^9, 3.4094399813830833`*^9, 3.409440038855725*^9, 
+   3.4094401532702446`*^9, 3.409500547022195*^9, 3.409501751974832*^9, 
+   3.4095019285287037`*^9, 3.4095019658023005`*^9, 3.409502015483739*^9, {
+   3.4095021827242193`*^9, 3.409502195742939*^9}, 3.4095022638008013`*^9, 
+   3.409502344486822*^9, 3.4095025774417953`*^9, 3.409506145372227*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"MatrixPresentation", "[", 
+    SubscriptBox["A", "2"], "]"}], "[", 
+   SuperscriptBox[
+    SubscriptBox["X", "1"], "-"], "]"}], "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "FundamentalBasis", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4094400417799296`*^9, 3.409440043071787*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"1", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "1", "}"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.409506145792832*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"1", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "1", "}"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.409440043492392*^9, 3.409440153720893*^9, 3.409500548043664*^9, 
+   3.409502582398923*^9, {3.409502693498677*^9, 3.4095026972240334`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"1", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "1", "}"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.409506145892976*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$IterationLimit", "=", "20"}]], "Input",
+ CellChangeTimes->{{3.4095055043805265`*^9, 3.409505514545142*^9}}],
+
+Cell[BoxData["20"], "Output",
+ CellChangeTimes->{3.4095055149457183`*^9, 3.409505651702365*^9, 
+  3.40950614599312*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Matrix", "[", 
+   RowBox[{"2", ",", "1", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "0", "}"}], ",", 
+      RowBox[{"{", "1", "}"}]}], "}"}]}], "]"}], ".", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"1", ",", "0", ",", 
+    RowBox[{"{", 
+     RowBox[{"{", "}"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"2", ",", "0", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", 
+     RowBox[{"{", "}"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.409506149598304*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"MatrixPresentation", "[", 
+    SubscriptBox["A", "2"], "]"}], "[", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      SubscriptBox["X", "1"], ")"}], "-"], "\[CircleTimes]", "\[ScriptOne]"}],
+    "]"}], "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Irrep", "[", 
+      SubscriptBox["A", "2"], "]"}], "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "]"}], "\[CircleTimes]", 
+    RowBox[{
+     RowBox[{"Irrep", "[", 
+      SubscriptBox["A", "2"], "]"}], "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "]"}]}], ",", "FundamentalBasis", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4094393739496365`*^9, 3.4094394046337585`*^9}, {
+   3.4094400014419265`*^9, 3.409440031445069*^9}, {3.409440136996845*^9, 
+   3.4094401438466945`*^9}, 3.4095027033628607`*^9, {3.4095052336712656`*^9, 
+   3.4095052403208275`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"2", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "0", "}"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.4095027057563024`*^9, 3.4095052654068995`*^9, 
+  3.4095054217817554`*^9, 3.4095061547657347`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalDelta]", "[", 
+  SuperscriptBox[
+   SubscriptBox["X", "1"], "-"], "]"}]], "Input",
+ CellChangeTimes->{{3.409502681691699*^9, 3.4095026864084816`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    SubscriptBox["K", "1"]], "\[CircleTimes]", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     SubscriptBox["X", "1"], ")"}], "-"]}], "+", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     SubscriptBox["X", "1"], ")"}], "-"], "\[CircleTimes]", 
+   "\[ScriptOne]"}]}]], "Output",
+ CellChangeTimes->{3.4095026869993315`*^9, 3.4095061569689026`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"MatrixPresentation", "[", 
+    SubscriptBox["A", "2"], "]"}], "[", 
+   SuperscriptBox[
+    SubscriptBox["X", "1"], "-"], "]"}], "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Irrep", "[", 
+      SubscriptBox["A", "2"], "]"}], "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "]"}], "\[CircleTimes]", 
+    RowBox[{
+     RowBox[{"Irrep", "[", 
+      SubscriptBox["A", "2"], "]"}], "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "]"}]}], ",", "FundamentalBasis", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4094393739496365`*^9, 3.4094394046337585`*^9}, {
+  3.4094400014419265`*^9, 3.409440031445069*^9}, {3.409440136996845*^9, 
+  3.4094401438466945`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"2", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", 
+      FractionBox["1", "q"], "}"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.4094401454690275`*^9, 3.409440155283139*^9}, 
+   3.4095005493855934`*^9, 3.409500655628363*^9, 3.4095025841314144`*^9, 
+   3.409506157940299*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"MatrixPresentation", "[", 
+    SubscriptBox["A", "2"], "]"}], "[", 
+   SuperscriptBox[
+    SubscriptBox["X", "1"], "-"], "]"}], "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "0"}], "}"}], "]"}], ",", "FundamentalBasis", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4094393739496365`*^9, 3.4094394046337585`*^9}, {
+  3.4094400014419265`*^9, 3.409440031445069*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Matrix", "[", 
+  RowBox[{"1", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "1", "}"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.409439405905587*^9, 3.409439414718259*^9}, {
+   3.4094399865705423`*^9, 3.4094400201287966`*^9}, 3.4094400549688945`*^9, 
+   3.409506169486902*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "=", 
+      SubscriptBox["A", "2"]}], ",", 
+     RowBox[{"V", "=", 
+      RowBox[{
+       RowBox[{"Irrep", "[", 
+        SubscriptBox["A", "2"], "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "2"}], "}"}], "]"}]}], ",", 
+     RowBox[{"n", "=", "3"}], ",", 
+     RowBox[{"\[Lambda]", "=", 
+      RowBox[{"{", 
+       RowBox[{"6", ",", "6"}], "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"hwv", "=", 
+    RowBox[{
+     RowBox[{"HighWeightVectors", "[", "\[CapitalGamma]", "]"}], "[", 
+     RowBox[{
+      SuperscriptBox["V", 
+       RowBox[{"\[CircleTimes]", "n"}]], ",", "FundamentalBasis", ",", 
+      "\[Lambda]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.4094388674613423`*^9, 3.4094389172429247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`A2`MatrixPresentations`\\\"\\).\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.4094391442193007`*^9, 3.409506174854621*^9}]
+}, Open  ]]
+},
+WindowSize->{928, 555},
+WindowMargins->{{24, Automatic}, {Automatic, 30}},
+ShowSelection->True,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 349, 10, 72, "Input"],
+Cell[CellGroupData[{
+Cell[964, 37, 892, 16, 43, "Print"],
+Cell[1859, 55, 853, 16, 23, "Print"]
+}, Open  ]],
+Cell[2727, 74, 1102, 19, 39, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3866, 98, 505, 15, 31, "Input"],
+Cell[4374, 115, 184, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4595, 125, 304, 7, 31, "Input"],
+Cell[4902, 134, 184, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5123, 144, 132, 2, 31, "Input"],
+Cell[5258, 148, 119, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5414, 155, 334, 11, 31, "Input"],
+Cell[5751, 168, 226, 7, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6014, 180, 956, 27, 31, "Input"],
+Cell[6973, 209, 313, 8, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7323, 222, 183, 4, 31, "Input"],
+Cell[7509, 228, 401, 13, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7947, 246, 795, 23, 31, "Input"],
+Cell[8745, 271, 387, 10, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9169, 286, 558, 16, 31, "Input"],
+Cell[9730, 304, 312, 7, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10079, 316, 877, 25, 77, "Input"],
+Cell[10959, 343, 294, 7, 21, "Message"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

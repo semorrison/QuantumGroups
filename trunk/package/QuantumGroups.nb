@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     73877,       1869]
-NotebookOptionsPosition[     25248,        808]
-NotebookOutlinePosition[     70207,       1755]
-CellTagsIndexPosition[     70138,       1750]
+NotebookDataLength[     74508,       1887]
+NotebookOptionsPosition[     25811,        824]
+NotebookOutlinePosition[     70770,       1771]
+CellTagsIndexPosition[     70701,       1766]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -486,6 +486,22 @@ otherwise.\>\""}], ";"}]}], "\[IndentingNewLine]", "]"}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.4094369769829683`*^9, 3.4094369851747475`*^9}},
  CellLabel->"In[59]:="],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"$VersionNumber", "\[GreaterEqual]", "6."}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Unprotect", "[", "IdentityMatrix", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"IdentityMatrix", "[", "0", "]"}], "=", 
+     RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Protect", "[", "IdentityMatrix", "]"}], ";"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4094379343596077`*^9, 3.4094379584642687`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1742,14 +1758,14 @@ package. These styles serve to make visible otherwise invisible tagboxes.",
 (*CellTagsOutline
 CellTagsIndex->{
  "Union"->{
-  Cell[21098, 663, 512, 17, 28, "Input",
+  Cell[21661, 679, 512, 17, 28, "Input",
    InitializationCell->True,
    CellTags->"Union"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Union", 70021, 1743}
+ {"Union", 70584, 1759}
  }
 *)
 (*NotebookFileOutline
@@ -1828,46 +1844,48 @@ Cell[15180, 466, 223, 7, 28, "Input",
  InitializationCell->True],
 Cell[15406, 475, 523, 12, 69, "Input",
  InitializationCell->True],
-Cell[15932, 489, 219, 7, 28, "Input",
+Cell[15932, 489, 560, 14, 109, "Input",
  InitializationCell->True],
-Cell[16154, 498, 225, 7, 28, "Input",
+Cell[16495, 505, 219, 7, 28, "Input",
  InitializationCell->True],
-Cell[16382, 507, 215, 7, 28, "Input",
+Cell[16717, 514, 225, 7, 28, "Input",
  InitializationCell->True],
-Cell[16600, 516, 143, 4, 28, "Input",
+Cell[16945, 523, 215, 7, 28, "Input",
  InitializationCell->True],
-Cell[16746, 522, 767, 23, 28, "Input",
+Cell[17163, 532, 143, 4, 28, "Input",
  InitializationCell->True],
-Cell[17516, 547, 612, 17, 49, "Input",
+Cell[17309, 538, 767, 23, 28, "Input",
  InitializationCell->True],
-Cell[18131, 566, 1404, 38, 129, "Input",
+Cell[18079, 563, 612, 17, 49, "Input",
  InitializationCell->True],
-Cell[19538, 606, 402, 13, 30, "Input",
+Cell[18694, 582, 1404, 38, 129, "Input",
  InitializationCell->True],
-Cell[19943, 621, 437, 14, 28, "Input",
+Cell[20101, 622, 402, 13, 30, "Input",
  InitializationCell->True],
-Cell[20383, 637, 469, 15, 44, "Input",
+Cell[20506, 637, 437, 14, 28, "Input",
  InitializationCell->True],
-Cell[20855, 654, 240, 7, 28, "Input",
+Cell[20946, 653, 469, 15, 44, "Input",
  InitializationCell->True],
-Cell[21098, 663, 512, 17, 28, "Input",
+Cell[21418, 670, 240, 7, 28, "Input",
+ InitializationCell->True],
+Cell[21661, 679, 512, 17, 28, "Input",
  InitializationCell->True,
  CellTags->"Union"],
-Cell[21613, 682, 236, 7, 28, "Input",
+Cell[22176, 698, 236, 7, 28, "Input",
  InitializationCell->True],
-Cell[21852, 691, 220, 7, 28, "Input",
+Cell[22415, 707, 220, 7, 28, "Input",
  InitializationCell->True],
-Cell[22075, 700, 1899, 56, 149, "Input",
+Cell[22638, 716, 1899, 56, 149, "Input",
  InitializationCell->True],
-Cell[23977, 758, 460, 15, 28, "Input",
+Cell[24540, 774, 460, 15, 28, "Input",
  InitializationCell->True],
-Cell[24440, 775, 333, 11, 28, "Input",
+Cell[25003, 791, 333, 11, 28, "Input",
  InitializationCell->True],
-Cell[24776, 788, 120, 4, 28, "Input",
+Cell[25339, 804, 120, 4, 28, "Input",
  InitializationCell->True],
-Cell[24899, 794, 191, 4, 49, "Input",
+Cell[25462, 810, 191, 4, 49, "Input",
  InitializationCell->True],
-Cell[25093, 800, 127, 4, 28, "Input",
+Cell[25656, 816, 127, 4, 28, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
@@ -1876,4 +1894,3 @@ Cell[25093, 800, 127, 4, 28, "Input",
 *)
 
 (* End of internal cache information *)
-
