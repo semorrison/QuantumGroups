@@ -1,53 +1,23 @@
-(************** Content-type: application/mathematica **************
-                     CreatedBy='Mathematica 5.2'
+(* Content-type: application/mathematica *)
 
-                    Mathematica-Compatible Notebook
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
 
-This notebook can be used with any Mathematica-compatible
-application, such as Mathematica, MathReader or Publicon. The data
-for the notebook starts with the line containing stars above.
+(* CreatedBy='Mathematica 6.0' *)
 
-To get the notebook into a Mathematica-compatible application, do
-one of the following:
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      4340,        160]
+NotebookOptionsPosition[      3374,        124]
+NotebookOutlinePosition[      3749,        140]
+CellTagsIndexPosition[      3706,        137]
+WindowFrame->Normal
+ContainsDynamic->False*)
 
-* Save the data starting with the line of stars above into a file
-  with a name ending in .nb, then open the file inside the
-  application;
-
-* Copy the data starting with the line of stars above to the
-  clipboard, then use the Paste menu command inside the application.
-
-Data for notebooks contains only printable 7-bit ASCII and can be
-sent directly in email or through ftp in text mode.  Newlines can be
-CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
-
-NOTE: If you modify the data for this notebook not in a Mathematica-
-compatible application, you must delete the line below containing
-the word CacheID, otherwise Mathematica-compatible applications may
-try to use invalid cache data.
-
-For more information on notebooks and Mathematica-compatible 
-applications, contact Wolfram Research:
-  web: http://www.wolfram.com
-  email: info@wolfram.com
-  phone: +1-217-398-0700 (U.S.)
-
-Notebook reader applications are available free of charge from 
-Wolfram Research.
-*******************************************************************)
-
-(*CacheID: 232*)
-
-
-(*NotebookFileLineBreakTest
-NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[      3325,        106]*)
-(*NotebookOutlinePosition[      4004,        129]*)
-(*  CellTagsIndexPosition[      3960,        125]*)
-(*WindowFrame->Normal*)
-
-
-
+(* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
@@ -56,109 +26,145 @@ A simple implementation of intersecting subspaces specified by a basis\
 \>", "Subsubsection"],
 
 Cell[BoxData[
-    \(BeginPackage["\<QuantumGroups`Utilities`IntersectSubspaces`\>"]\)], \
-"Input",
-  InitializationCell->True],
+ RowBox[{"BeginPackage", "[", 
+  "\"\<QuantumGroups`Utilities`IntersectSubspaces`\>\"", "]"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(IntersectSubspaces::usage = \
-\*"\"\<IntersectSubspaces[n,\!\(\[Beta]\_1\),\!\(\[Beta]\_2\),...] gives a \
-basis for the intersection of the subspaces of \!\(A\^\(\(n\)\(\\\ \
-\)\)\)spanned by the \!\(\[Beta]\_i\).\>\"";\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"IntersectSubspaces", "::", "usage"}], "=", 
+   "\"\<IntersectSubspaces[n,\!\(\*SubscriptBox[\(\[Beta]\), \
+\(1\)]\),\!\(\*SubscriptBox[\(\[Beta]\), \(2\)]\),...] gives a basis for the \
+intersection of the subspaces of \!\(\*SuperscriptBox[\(A\), \(\(n\)\(\\\ \
+\)\)]\)spanned by the \!\(\*SubscriptBox[\(\[Beta]\), \(i\)]\).\>\""}], 
+  ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(Begin["\<`Private`\>"];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(IntersectSubspaces[n_, {}] := IdentityMatrix[n]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n_", ",", 
+    RowBox[{"{", "}"}]}], "]"}], ":=", 
+  RowBox[{"IdentityMatrix", "[", "n", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(IntersectSubspaces[n_, {basis_}] := basis\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n_", ",", 
+    RowBox[{"{", "basis_", "}"}]}], "]"}], ":=", "basis"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(IntersectSubspaces[n_, {{}, _}] := {}\), "\[IndentingNewLine]", 
-    \(IntersectSubspaces[n_, {_, {}}] := {}\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n_", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "_"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n_", ",", 
+    RowBox[{"{", 
+     RowBox[{"_", ",", 
+      RowBox[{"{", "}"}]}], "}"}]}], "]"}], ":=", 
+  RowBox[{"{", "}"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(IntersectSubspaces[n_, {basis1_, basis2_}] := 
-      NullSpace[Join @@ \((NullSpace /@ {basis1, basis2})\)]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n_", ",", 
+    RowBox[{"{", 
+     RowBox[{"basis1_", ",", "basis2_"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"NullSpace", "[", 
+   RowBox[{"Join", "@@", 
+    RowBox[{"(", 
+     RowBox[{"NullSpace", "/@", 
+      RowBox[{"{", 
+       RowBox[{"basis1", ",", "basis2"}], "}"}]}], ")"}]}], "]"}]}]], "Input",\
+
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(IntersectSubspaces[n_, {basis1_, basis2_, bases__}] := 
-      IntersectSubspaces[
-        n, {basis1, IntersectSubspaces[n, {basis2, bases}]}]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n_", ",", 
+    RowBox[{"{", 
+     RowBox[{"basis1_", ",", "basis2_", ",", "bases__"}], "}"}]}], "]"}], ":=",
+   
+  RowBox[{"IntersectSubspaces", "[", 
+   RowBox[{"n", ",", 
+    RowBox[{"{", 
+     RowBox[{"basis1", ",", 
+      RowBox[{"IntersectSubspaces", "[", 
+       RowBox[{"n", ",", 
+        RowBox[{"{", 
+         RowBox[{"basis2", ",", "bases"}], "}"}]}], "]"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(End[];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(EndPackage[];\)\)], "Input",
-  InitializationCell->True]
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True]
 }, Open  ]]
 },
-FrontEndVersion->"5.2 for Microsoft Windows",
-ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
 WindowSize->{495, 593},
-WindowMargins->{{336, Automatic}, {30, Automatic}}
+WindowMargins->{{336, Automatic}, {30, Automatic}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
 ]
+(* End of Notebook Content *)
 
-(*******************************************************************
-Cached data follows.  If you edit this Notebook file directly, not
-using Mathematica, you must remove the line containing CacheID at
-the top of  the file.  The cache data will then be recreated when
-you save this file from within Mathematica.
-*******************************************************************)
-
+(* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{}
 *)
-
 (*CellTagsIndex
 CellTagsIndex->{}
 *)
-
 (*NotebookFileOutline
 Notebook[{
-
 Cell[CellGroupData[{
-Cell[1776, 53, 103, 2, 29, "Subsubsection"],
-Cell[1882, 57, 126, 3, 50, "Input",
-  InitializationCell->True],
-Cell[2011, 62, 285, 5, 90, "Input",
-  InitializationCell->True],
-Cell[2299, 69, 88, 2, 30, "Input",
-  InitializationCell->True],
-Cell[2390, 73, 108, 2, 30, "Input",
-  InitializationCell->True],
-Cell[2501, 77, 102, 2, 30, "Input",
-  InitializationCell->True],
-Cell[2606, 81, 171, 3, 50, "Input",
-  InitializationCell->True],
-Cell[2780, 86, 168, 3, 50, "Input",
-  InitializationCell->True],
-Cell[2951, 91, 203, 4, 70, "Input",
-  InitializationCell->True],
-Cell[3157, 97, 71, 2, 30, "Input",
-  InitializationCell->True],
-Cell[3231, 101, 78, 2, 30, "Input",
-  InitializationCell->True]
+Cell[590, 23, 103, 2, 45, "Subsubsection"],
+Cell[696, 27, 145, 3, 52, "Input",
+ InitializationCell->True],
+Cell[844, 32, 427, 9, 92, "Input",
+ InitializationCell->True],
+Cell[1274, 43, 119, 3, 31, "Input",
+ InitializationCell->True],
+Cell[1396, 48, 208, 6, 31, "Input",
+ InitializationCell->True],
+Cell[1607, 56, 181, 5, 31, "Input",
+ InitializationCell->True],
+Cell[1791, 63, 452, 15, 52, "Input",
+ InitializationCell->True],
+Cell[2246, 80, 401, 13, 52, "Input",
+ InitializationCell->True],
+Cell[2650, 95, 503, 16, 72, "Input",
+ InitializationCell->True],
+Cell[3156, 113, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[3255, 118, 103, 3, 31, "Input",
+ InitializationCell->True]
 }, Open  ]]
 }
 ]
 *)
 
-
-
-(*******************************************************************
-End of Mathematica Notebook file.
-*******************************************************************)
+(* End of internal cache information *)
 
