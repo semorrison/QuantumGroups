@@ -22,7 +22,7 @@
 BeginPackage["QuantumGroups`Utilities`MatrixWrapper`",{"LinearAlgebra`MatrixManipulation`","QuantumGroups`Utilities`Debugging`"}];
 
 
-OnesMatrix;ZeroesMatrix;ZeroMatrixQ;NonZeroMatrixQ;Matrix;MatrixData;identityMatrix;KroneckerProduct;BlockDiagonalMatrix;MatrixInverse;PrepareInverse;InterpolationInverseThreshold;
+OnesMatrix;ZeroesMatrix;ZeroMatrixQ;NonZeroMatrixQ;Matrix;MatrixData;identityMatrix;MatrixKroneckerProduct;BlockDiagonalMatrix;MatrixInverse;PrepareInverse;InterpolationInverseThreshold;
 
 
 Begin["`Private`"];
@@ -117,30 +117,30 @@ Matrix/:AppendColumns[m1_Matrix]:=m1
 Matrix/:AppendColumns[m1_Matrix,m2__Matrix]:=AppendColumns[m1,AppendColumns[m2]]
 
 
-Matrix/:Dot[m__Matrix]/;(!MemberQ[Flatten[Dimensions/@{m}],0]\[And]Most[Last/@Dimensions/@{m}]==Rest[First/@Dimensions/@{m}]):=Matrix[Dimensions[{m}[[1]]][[1]],Dimensions[{m}[[-1]]][[2]],Dot@@(MatrixData/@{m})]
+Matrix/:Dot[m1_Matrix,m2__Matrix]/;(!MemberQ[Flatten[Dimensions/@{m1,m2}],0]\[And]Most[Last/@Dimensions/@{m1,m2}]==Rest[First/@Dimensions/@{m1,m2}]):=Matrix[Dimensions[{m1,m2}[[1]]][[1]],Dimensions[{m1,m2}[[-1]]][[2]],Dot@@(MatrixData/@{m1,m2})]
 
 
-Matrix/:Dot[m__Matrix]/;(MemberQ[Flatten[Dimensions/@{m}],0]):=ZeroesMatrix[Dimensions[{m}[[1]]][[1]],Dimensions[{m}[[-1]]][[2]]]
+Matrix/:Dot[m1_Matrix,m2__Matrix]/;(MemberQ[Flatten[Dimensions/@{m1,m2}],0]):=ZeroesMatrix[Dimensions[{m1,m2}[[1]]][[1]],Dimensions[{m1,m2}[[-1]]][[2]]]
 
 
-Matrix/:Plus[m__Matrix]/;(SameQ[Dimensions/@{m}]):=Matrix[Sequence@@Dimensions[First[{m}]],Plus@@(MatrixData/@{m})]
+Matrix/:Plus[m1_Matrix,m2__Matrix]/;(SameQ[Dimensions/@{m1,m2}]):=Matrix[Sequence@@Dimensions[First[{m1,m2}]],Plus@@(MatrixData/@{m1,m2})]
 
 
 Matrix/:\[Alpha]_?QuantumGroups`qNumberQ Matrix[j_,k_,data_]:=Matrix[j,k,\[Alpha] data]
 
 
-KroneckerProduct[Matrix[r1_,c1_,data1_],Matrix[r2_,c2_,data2_]]/;r1>0\[And]r2>0\[And]c1>0\[And]c2>0:=Matrix[r1 r2, c1 c2,BlockMatrix[Outer[Times,data1,data2]]]
+MatrixKroneckerProduct[Matrix[r1_,c1_,data1_],Matrix[r2_,c2_,data2_]]/;r1>0\[And]r2>0\[And]c1>0\[And]c2>0:=Matrix[r1 r2, c1 c2,BlockMatrix[Outer[Times,data1,data2]]]
 
 
-KroneckerProduct[Matrix[0,c1_,_],Matrix[_,c2_,_]]:=Matrix[0,c1 c2]
-KroneckerProduct[Matrix[_,c1_,_],Matrix[0,c2_,_]]:=Matrix[0,c1 c2]
+MatrixKroneckerProduct[Matrix[0,c1_,_],Matrix[_,c2_,_]]:=Matrix[0,c1 c2]
+MatrixKroneckerProduct[Matrix[_,c1_,_],Matrix[0,c2_,_]]:=Matrix[0,c1 c2]
 
 
-KroneckerProduct[Matrix[r1_,0,_],Matrix[r2_,_,_]]:=Matrix[r1 r2, 0]
-KroneckerProduct[Matrix[r1_,_,_],Matrix[r2_,0,_]]:=Matrix[r1 r2, 0]
+MatrixKroneckerProduct[Matrix[r1_,0,_],Matrix[r2_,_,_]]:=Matrix[r1 r2, 0]
+MatrixKroneckerProduct[Matrix[r1_,_,_],Matrix[r2_,0,_]]:=Matrix[r1 r2, 0]
 
 
-KroneckerProduct[a_,b_,c__]:=KroneckerProduct[KroneckerProduct[a,b],c]
+MatrixKroneckerProduct[a_,b_,c__]:=MatrixKroneckerProduct[MatrixKroneckerProduct[a,b],c]
 
 
 BlockDiagonalMatrix[m1:Matrix[r1_,c1_,_],m2:Matrix[r2_,c2_,_]]:=AppendColumns[AppendRows[m1,ZeroesMatrix[r1,c2]],AppendRows[ZeroesMatrix[r2,c1],m2]]

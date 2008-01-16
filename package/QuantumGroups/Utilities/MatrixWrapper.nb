@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     37084,       1123]
-NotebookOptionsPosition[     33651,       1014]
-NotebookOutlinePosition[     34025,       1030]
-CellTagsIndexPosition[     33982,       1027]
+NotebookDataLength[     38151,       1149]
+NotebookOptionsPosition[     34715,       1040]
+NotebookOutlinePosition[     35091,       1056]
+CellTagsIndexPosition[     35048,       1053]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -33,10 +33,11 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"OnesMatrix", ";", "ZeroesMatrix", ";", "ZeroMatrixQ", ";", 
   "NonZeroMatrixQ", ";", "Matrix", ";", "MatrixData", ";", "identityMatrix", 
-  ";", "KroneckerProduct", ";", "BlockDiagonalMatrix", ";", "MatrixInverse", 
-  ";", "PrepareInverse", ";", "InterpolationInverseThreshold", ";"}]], "Input",\
-
- InitializationCell->True],
+  ";", "MatrixKroneckerProduct", ";", "BlockDiagonalMatrix", ";", 
+  "MatrixInverse", ";", "PrepareInverse", ";", 
+  "InterpolationInverseThreshold", ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{3.4095017173951087`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -458,7 +459,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{"Matrix", "/:", 
   RowBox[{
-   RowBox[{"Dot", "[", "m__Matrix", "]"}], "/;", 
+   RowBox[{"Dot", "[", 
+    RowBox[{"m1_Matrix", ",", "m2__Matrix"}], "]"}], "/;", 
    RowBox[{"(", 
     RowBox[{
      RowBox[{"!", 
@@ -466,82 +468,102 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"Flatten", "[", 
          RowBox[{"Dimensions", "/@", 
-          RowBox[{"{", "m", "}"}]}], "]"}], ",", "0"}], "]"}]}], "\[And]", 
+          RowBox[{"{", 
+           RowBox[{"m1", ",", "m2"}], "}"}]}], "]"}], ",", "0"}], "]"}]}], 
+     "\[And]", 
      RowBox[{
       RowBox[{"Most", "[", 
        RowBox[{"Last", "/@", 
         RowBox[{"Dimensions", "/@", 
-         RowBox[{"{", "m", "}"}]}]}], "]"}], "\[Equal]", 
+         RowBox[{"{", 
+          RowBox[{"m1", ",", "m2"}], "}"}]}]}], "]"}], "\[Equal]", 
       RowBox[{"Rest", "[", 
        RowBox[{"First", "/@", 
         RowBox[{"Dimensions", "/@", 
-         RowBox[{"{", "m", "}"}]}]}], "]"}]}]}], ")"}]}], ":=", 
+         RowBox[{"{", 
+          RowBox[{"m1", ",", "m2"}], "}"}]}]}], "]"}]}]}], ")"}]}], ":=", 
   RowBox[{"Matrix", "[", 
    RowBox[{
     RowBox[{
      RowBox[{"Dimensions", "[", 
       RowBox[{
-       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", "1", 
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}], "\[LeftDoubleBracket]", "1", 
        "\[RightDoubleBracket]"}], "]"}], "\[LeftDoubleBracket]", "1", 
      "\[RightDoubleBracket]"}], ",", 
     RowBox[{
      RowBox[{"Dimensions", "[", 
       RowBox[{
-       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", 
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}], "\[LeftDoubleBracket]", 
        RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}], 
      "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
     RowBox[{"Dot", "@@", 
      RowBox[{"(", 
       RowBox[{"MatrixData", "/@", 
-       RowBox[{"{", "m", "}"}]}], ")"}]}]}], "]"}]}]], "Input",
- InitializationCell->True],
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}]}], ")"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.409506067680512*^9, 3.4095060983646336`*^9}}],
 
 Cell[BoxData[
  RowBox[{"Matrix", "/:", 
   RowBox[{
-   RowBox[{"Dot", "[", "m__Matrix", "]"}], "/;", 
+   RowBox[{"Dot", "[", 
+    RowBox[{"m1_Matrix", ",", "m2__Matrix"}], "]"}], "/;", 
    RowBox[{"(", 
     RowBox[{"MemberQ", "[", 
      RowBox[{
       RowBox[{"Flatten", "[", 
        RowBox[{"Dimensions", "/@", 
-        RowBox[{"{", "m", "}"}]}], "]"}], ",", "0"}], "]"}], ")"}]}], ":=", 
+        RowBox[{"{", 
+         RowBox[{"m1", ",", "m2"}], "}"}]}], "]"}], ",", "0"}], "]"}], 
+    ")"}]}], ":=", 
   RowBox[{"ZeroesMatrix", "[", 
    RowBox[{
     RowBox[{
      RowBox[{"Dimensions", "[", 
       RowBox[{
-       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", "1", 
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}], "\[LeftDoubleBracket]", "1", 
        "\[RightDoubleBracket]"}], "]"}], "\[LeftDoubleBracket]", "1", 
      "\[RightDoubleBracket]"}], ",", 
     RowBox[{
      RowBox[{"Dimensions", "[", 
       RowBox[{
-       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", 
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}], "\[LeftDoubleBracket]", 
        RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}], 
      "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
    "]"}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4095060775146527`*^9, 3.40950610818876*^9}}],
 
 Cell[BoxData[
  RowBox[{"Matrix", "/:", 
   RowBox[{
-   RowBox[{"Plus", "[", "m__Matrix", "]"}], "/;", 
+   RowBox[{"Plus", "[", 
+    RowBox[{"m1_Matrix", ",", "m2__Matrix"}], "]"}], "/;", 
    RowBox[{"(", 
     RowBox[{"SameQ", "[", 
      RowBox[{"Dimensions", "/@", 
-      RowBox[{"{", "m", "}"}]}], "]"}], ")"}]}], ":=", 
+      RowBox[{"{", 
+       RowBox[{"m1", ",", "m2"}], "}"}]}], "]"}], ")"}]}], ":=", 
   RowBox[{"Matrix", "[", 
    RowBox[{
     RowBox[{"Sequence", "@@", 
      RowBox[{"Dimensions", "[", 
       RowBox[{"First", "[", 
-       RowBox[{"{", "m", "}"}], "]"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}], "]"}], "]"}]}], ",", 
     RowBox[{"Plus", "@@", 
      RowBox[{"(", 
       RowBox[{"MatrixData", "/@", 
-       RowBox[{"{", "m", "}"}]}], ")"}]}]}], "]"}]}]], "Input",
- InitializationCell->True],
+       RowBox[{"{", 
+        RowBox[{"m1", ",", "m2"}], "}"}]}], ")"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.409506079607662*^9, {3.4095061107925043`*^9, 3.409506130590973*^9}}],
 
 Cell[BoxData[
  RowBox[{"Matrix", "/:", 
@@ -557,7 +579,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"KroneckerProduct", "[", 
+   RowBox[{"MatrixKroneckerProduct", "[", 
     RowBox[{
      RowBox[{"Matrix", "[", 
       RowBox[{"r1_", ",", "c1_", ",", "data1_"}], "]"}], ",", 
@@ -576,11 +598,12 @@ Cell[BoxData[
      RowBox[{"Outer", "[", 
       RowBox[{"Times", ",", "data1", ",", "data2"}], "]"}], "]"}]}], 
    "]"}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{3.4095017203092995`*^9}],
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"KroneckerProduct", "[", 
+  RowBox[{"MatrixKroneckerProduct", "[", 
    RowBox[{
     RowBox[{"Matrix", "[", 
      RowBox[{"0", ",", "c1_", ",", "_"}], "]"}], ",", 
@@ -590,7 +613,7 @@ Cell[BoxData[{
    RowBox[{"0", ",", 
     RowBox[{"c1", " ", "c2"}]}], "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"KroneckerProduct", "[", 
+  RowBox[{"MatrixKroneckerProduct", "[", 
    RowBox[{
     RowBox[{"Matrix", "[", 
      RowBox[{"_", ",", "c1_", ",", "_"}], "]"}], ",", 
@@ -599,11 +622,12 @@ Cell[BoxData[{
   RowBox[{"Matrix", "[", 
    RowBox[{"0", ",", 
     RowBox[{"c1", " ", "c2"}]}], "]"}]}]}], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.40950172113048*^9, 3.4095017217213297`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"KroneckerProduct", "[", 
+  RowBox[{"MatrixKroneckerProduct", "[", 
    RowBox[{
     RowBox[{"Matrix", "[", 
      RowBox[{"r1_", ",", "0", ",", "_"}], "]"}], ",", 
@@ -614,7 +638,7 @@ Cell[BoxData[{
     RowBox[{"r1", " ", "r2"}], ",", " ", "0"}], 
    "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"KroneckerProduct", "[", 
+  RowBox[{"MatrixKroneckerProduct", "[", 
    RowBox[{
     RowBox[{"Matrix", "[", 
      RowBox[{"r1_", ",", "_", ",", "_"}], "]"}], ",", 
@@ -623,7 +647,8 @@ Cell[BoxData[{
   RowBox[{"Matrix", "[", 
    RowBox[{
     RowBox[{"r1", " ", "r2"}], ",", " ", "0"}], "]"}]}]}], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.409501722252093*^9, 3.409501722842942*^9}}],
 
 Cell["\<\
 Careful here; tensor products with more than 256 factors will cause \
@@ -632,13 +657,14 @@ $RecursionLimit problems.\
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"KroneckerProduct", "[", 
+  RowBox[{"MatrixKroneckerProduct", "[", 
    RowBox[{"a_", ",", "b_", ",", "c__"}], "]"}], ":=", 
-  RowBox[{"KroneckerProduct", "[", 
+  RowBox[{"MatrixKroneckerProduct", "[", 
    RowBox[{
-    RowBox[{"KroneckerProduct", "[", 
+    RowBox[{"MatrixKroneckerProduct", "[", 
      RowBox[{"a", ",", "b"}], "]"}], ",", "c"}], "]"}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.409501723784296*^9, 3.4095017252764416`*^9}}],
 
 Cell["Again, more than 256 blocks will cause problems.", "Text"],
 
@@ -1014,7 +1040,7 @@ Cell[BoxData[
 },
 AutoGeneratedPackage->Automatic,
 WindowSize->{1136, 593},
-WindowMargins->{{Automatic, 67}, {Automatic, 9}},
+WindowMargins->{{Automatic, -40}, {23, Automatic}},
 FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1031,103 +1057,102 @@ CellTagsIndex->{}
 Notebook[{
 Cell[568, 21, 327, 9, 31, "Input",
  InitializationCell->True],
-Cell[898, 32, 348, 6, 72, "Input",
+Cell[898, 32, 399, 7, 72, "Input",
  InitializationCell->True],
-Cell[1249, 40, 119, 3, 31, "Input",
+Cell[1300, 41, 119, 3, 31, "Input",
  InitializationCell->True],
-Cell[1371, 45, 1097, 31, 92, "Input",
+Cell[1422, 46, 1097, 31, 92, "Input",
  InitializationCell->True],
-Cell[2471, 78, 331, 10, 31, "Input",
+Cell[2522, 79, 331, 10, 31, "Input",
  InitializationCell->True],
-Cell[2805, 90, 489, 14, 52, "Input",
+Cell[2856, 91, 489, 14, 52, "Input",
  InitializationCell->True],
-Cell[3297, 106, 728, 23, 72, "Input",
+Cell[3348, 107, 728, 23, 72, "Input",
  InitializationCell->True],
-Cell[4028, 131, 176, 5, 31, "Input",
+Cell[4079, 132, 176, 5, 31, "Input",
  InitializationCell->True],
-Cell[4207, 138, 126, 3, 29, "Text",
+Cell[4258, 139, 126, 3, 29, "Text",
  InitializationCell->True],
-Cell[4336, 143, 524, 15, 31, "Input",
+Cell[4387, 144, 524, 15, 31, "Input",
  InitializationCell->True],
-Cell[4863, 160, 181, 4, 29, "Text",
+Cell[4914, 161, 181, 4, 29, "Text",
  InitializationCell->True],
-Cell[5047, 166, 509, 16, 52, "Input",
+Cell[5098, 167, 509, 16, 52, "Input",
  InitializationCell->True],
-Cell[5559, 184, 193, 6, 31, "Input",
+Cell[5610, 185, 193, 6, 31, "Input",
  InitializationCell->True],
-Cell[5755, 192, 229, 6, 31, "Input",
+Cell[5806, 193, 229, 6, 31, "Input",
  InitializationCell->True],
-Cell[5987, 200, 248, 7, 31, "Input",
+Cell[6038, 201, 248, 7, 31, "Input",
  InitializationCell->True],
-Cell[6238, 209, 301, 9, 31, "Input",
+Cell[6289, 210, 301, 9, 31, "Input",
  InitializationCell->True],
-Cell[6542, 220, 243, 6, 31, "Input",
+Cell[6593, 221, 243, 6, 31, "Input",
  InitializationCell->True],
-Cell[6788, 228, 1259, 37, 72, "Input",
+Cell[6839, 229, 1259, 37, 72, "Input",
  InitializationCell->True],
-Cell[8050, 267, 310, 8, 31, "Input",
+Cell[8101, 268, 310, 8, 31, "Input",
  InitializationCell->True],
-Cell[8363, 277, 774, 20, 72, "Input",
+Cell[8414, 278, 774, 20, 72, "Input",
  InitializationCell->True],
-Cell[9140, 299, 543, 14, 52, "Input",
+Cell[9191, 300, 543, 14, 52, "Input",
  InitializationCell->True],
-Cell[9686, 315, 773, 21, 92, "Input",
+Cell[9737, 316, 773, 21, 92, "Input",
  InitializationCell->True],
-Cell[10462, 338, 268, 7, 31, "Input",
+Cell[10513, 339, 268, 7, 31, "Input",
  InitializationCell->True],
-Cell[10733, 347, 1533, 41, 92, "Input",
+Cell[10784, 348, 1533, 41, 92, "Input",
  InitializationCell->True],
-Cell[12269, 390, 391, 10, 52, "Input",
+Cell[12320, 391, 391, 10, 52, "Input",
  InitializationCell->True],
-Cell[12663, 402, 1548, 41, 92, "Input",
+Cell[12714, 403, 1548, 41, 92, "Input",
  InitializationCell->True],
-Cell[14214, 445, 403, 10, 52, "Input",
+Cell[14265, 446, 403, 10, 52, "Input",
  InitializationCell->True],
-Cell[14620, 457, 1359, 39, 52, "Input",
+Cell[14671, 458, 1660, 48, 92, "Input",
  InitializationCell->True],
-Cell[15982, 498, 873, 25, 31, "Input",
+Cell[16334, 508, 1073, 31, 52, "Input",
  InitializationCell->True],
-Cell[16858, 525, 592, 18, 31, "Input",
+Cell[17410, 541, 811, 24, 52, "Input",
  InitializationCell->True],
-Cell[17453, 545, 346, 9, 31, "Input",
+Cell[18224, 567, 346, 9, 31, "Input",
  InitializationCell->True],
-Cell[17802, 556, 751, 22, 52, "Input",
+Cell[18573, 578, 801, 23, 52, "Input",
  InitializationCell->True],
-Cell[18556, 580, 724, 21, 52, "Input",
+Cell[19377, 603, 803, 22, 52, "Input",
  InitializationCell->True],
-Cell[19283, 603, 738, 22, 52, "Input",
+Cell[20183, 627, 816, 23, 52, "Input",
  InitializationCell->True],
-Cell[20024, 627, 119, 3, 29, "Text"],
-Cell[20146, 632, 296, 8, 31, "Input",
+Cell[21002, 652, 119, 3, 29, "Text"],
+Cell[21124, 657, 382, 9, 31, "Input",
  InitializationCell->True],
-Cell[20445, 642, 64, 0, 29, "Text"],
-Cell[20512, 644, 1225, 35, 112, "Input",
+Cell[21509, 668, 64, 0, 29, "Text"],
+Cell[21576, 670, 1225, 35, 112, "Input",
  InitializationCell->True],
-Cell[21740, 681, 123, 3, 31, "Input",
+Cell[22804, 707, 123, 3, 31, "Input",
  InitializationCell->True],
-Cell[21866, 686, 122, 3, 31, "Input",
+Cell[22930, 712, 122, 3, 31, "Input",
  InitializationCell->True],
-Cell[21991, 691, 433, 11, 31, "Input",
+Cell[23055, 717, 433, 11, 31, "Input",
  InitializationCell->True],
-Cell[22427, 704, 1149, 30, 132, "Input",
+Cell[23491, 730, 1149, 30, 132, "Input",
  InitializationCell->True],
-Cell[23579, 736, 1177, 34, 112, "Input",
+Cell[24643, 762, 1177, 34, 112, "Input",
  InitializationCell->True],
-Cell[24759, 772, 615, 17, 72, "Input",
+Cell[25823, 798, 615, 17, 72, "Input",
  InitializationCell->True],
-Cell[25377, 791, 250, 7, 52, "Input",
+Cell[26441, 817, 250, 7, 52, "Input",
  InitializationCell->True],
-Cell[25630, 800, 683, 16, 72, "Input",
+Cell[26694, 826, 683, 16, 72, "Input",
  InitializationCell->True],
-Cell[26316, 818, 7126, 184, 687, "Input",
+Cell[27380, 844, 7126, 184, 687, "Input",
  InitializationCell->True],
-Cell[33445, 1004, 96, 3, 31, "Input",
+Cell[34509, 1030, 96, 3, 31, "Input",
  InitializationCell->True],
-Cell[33544, 1009, 103, 3, 31, "Input",
+Cell[34608, 1035, 103, 3, 31, "Input",
  InitializationCell->True]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
