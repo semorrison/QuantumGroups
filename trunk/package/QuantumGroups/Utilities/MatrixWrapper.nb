@@ -1,279 +1,629 @@
-(************** Content-type: application/mathematica **************
-                     CreatedBy='Mathematica 5.2'
+(* Content-type: application/mathematica *)
 
-                    Mathematica-Compatible Notebook
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
 
-This notebook can be used with any Mathematica-compatible
-application, such as Mathematica, MathReader or Publicon. The data
-for the notebook starts with the line containing stars above.
+(* CreatedBy='Mathematica 6.0' *)
 
-To get the notebook into a Mathematica-compatible application, do
-one of the following:
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     37084,       1123]
+NotebookOptionsPosition[     33651,       1014]
+NotebookOutlinePosition[     34025,       1030]
+CellTagsIndexPosition[     33982,       1027]
+WindowFrame->Normal
+ContainsDynamic->False*)
 
-* Save the data starting with the line of stars above into a file
-  with a name ending in .nb, then open the file inside the
-  application;
-
-* Copy the data starting with the line of stars above to the
-  clipboard, then use the Paste menu command inside the application.
-
-Data for notebooks contains only printable 7-bit ASCII and can be
-sent directly in email or through ftp in text mode.  Newlines can be
-CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
-
-NOTE: If you modify the data for this notebook not in a Mathematica-
-compatible application, you must delete the line below containing
-the word CacheID, otherwise Mathematica-compatible applications may
-try to use invalid cache data.
-
-For more information on notebooks and Mathematica-compatible 
-applications, contact Wolfram Research:
-  web: http://www.wolfram.com
-  email: info@wolfram.com
-  phone: +1-217-398-0700 (U.S.)
-
-Notebook reader applications are available free of charge from 
-Wolfram Research.
-*******************************************************************)
-
-(*CacheID: 232*)
-
-
-(*NotebookFileLineBreakTest
-NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     15914,        420]*)
-(*NotebookOutlinePosition[     16592,        443]*)
-(*  CellTagsIndexPosition[     16548,        439]*)
-(*WindowFrame->Normal*)
-
-
-
+(* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
-    \(\(BeginPackage["\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-{"\<LinearAlgebra`MatrixManipulation`\>", \
-"\<QuantumGroups`Utilities`Debugging`\>"}];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"BeginPackage", "[", 
+   RowBox[{"\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<LinearAlgebra`MatrixManipulation`\>\"", ",", 
+      "\"\<QuantumGroups`Utilities`Debugging`\>\""}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(OnesMatrix; ZeroesMatrix; ZeroMatrixQ; NonZeroMatrixQ; Matrix; 
-    MatrixData; identityMatrix; KroneckerProduct; BlockDiagonalMatrix; 
-    MatrixInverse; PrepareInverse; InterpolationInverseThreshold;\)], "Input",\
+ RowBox[{"OnesMatrix", ";", "ZeroesMatrix", ";", "ZeroMatrixQ", ";", 
+  "NonZeroMatrixQ", ";", "Matrix", ";", "MatrixData", ";", "identityMatrix", 
+  ";", "KroneckerProduct", ";", "BlockDiagonalMatrix", ";", "MatrixInverse", 
+  ";", "PrepareInverse", ";", "InterpolationInverseThreshold", ";"}]], "Input",\
 
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\(Begin["\<`Private`\>"];\)\)], "Input",
-  InitializationCell->True],
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(UnitVector[n_Integer, k_Integer] /; 1 \[LessEqual] k \[LessEqual] n := 
-      Table[If[i \[Equal] k, 1, 0], {i, 1, n}]\)], "Input",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(OnesMatrix[n_, m_] := Matrix[n, m, Table[1, {n}, {m}]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(ZeroesMatrix[n_, m_] := 
-      Matrix[n, m, Table[0, {n}, {m}]]\), "\[IndentingNewLine]", 
-    \(ZeroesMatrix[n_] := ZeroesMatrix[n, n]\)}], "Input",
-  InitializationCell->True],
-
-Cell[BoxData[{
-    \(ZeroMatrixQ[Matrix[0, _, _]] := True\), "\[IndentingNewLine]", 
-    \(ZeroMatrixQ[Matrix[_, 0, _]] := True\), "\[IndentingNewLine]", 
-    \(ZeroMatrixQ[Matrix[_, _, data_]] := 
-      And @@ \(\((Together[#] === 0 &)\) /@ Flatten[data]\)\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"$VersionNumber", "<", "6"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"UnitVector", "[", 
+      RowBox[{"n_Integer", ",", "k_Integer"}], "]"}], "/;", 
+     RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "n"}]}], ":=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"i", "\[Equal]", "k"}], ",", "1", ",", "0"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}]}], 
+  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"UnitVectorQ", "[", 
+   RowBox[{"v_", "?", "VectorQ"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Complement", "[", 
+     RowBox[{"v", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}]}], "]"}], "\[Equal]", 
+    RowBox[{"{", "}"}]}], "\[And]", 
+   RowBox[{
+    RowBox[{"Count", "[", 
+     RowBox[{"v", ",", "1"}], "]"}], "\[Equal]", "1"}]}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4094372742504177`*^9, 3.4094372858871503`*^9}}],
 
 Cell[BoxData[
-    \(NonZeroMatrixQ[m_] := \(! ZeroMatrixQ[m]\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"OnesMatrix", "[", 
+   RowBox[{"n_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"n", ",", "m", ",", 
+    RowBox[{"Table", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"{", "n", "}"}], ",", 
+      RowBox[{"{", "m", "}"}]}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ZeroesMatrix", "[", 
+   RowBox[{"n_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"n", ",", "m", ",", 
+    RowBox[{"Table", "[", 
+     RowBox[{"0", ",", 
+      RowBox[{"{", "n", "}"}], ",", 
+      RowBox[{"{", "m", "}"}]}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ZeroesMatrix", "[", "n_", "]"}], ":=", 
+  RowBox[{"ZeroesMatrix", "[", 
+   RowBox[{"n", ",", "n"}], "]"}]}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ZeroMatrixQ", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"0", ",", "_", ",", "_"}], "]"}], "]"}], ":=", 
+  "True"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ZeroMatrixQ", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"_", ",", "0", ",", "_"}], "]"}], "]"}], ":=", 
+  "True"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ZeroMatrixQ", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"_", ",", "_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Together", "[", "#", "]"}], "===", "0"}], "&"}], ")"}], "/@", 
+    
+    RowBox[{"Flatten", "[", "data", "]"}]}]}]}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NonZeroMatrixQ", "[", "m_", "]"}], ":=", 
+  RowBox[{"!", 
+   RowBox[{"ZeroMatrixQ", "[", "m", "]"}]}]}]], "Input",
+ InitializationCell->True],
 
 Cell["\<\
 We can construct Matrix objects from 2-dimensional arrays, in the usual way\
 \>", "Text",
-  InitializationCell->True],
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix[data_?MatrixQ] := 
-      With[{d = Dimensions[data]}, 
-        Matrix[d\[LeftDoubleBracket]1\[RightDoubleBracket], 
-          d\[LeftDoubleBracket]2\[RightDoubleBracket], data]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Matrix", "[", 
+   RowBox[{"data_", "?", "MatrixQ"}], "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"d", "=", 
+      RowBox[{"Dimensions", "[", "data", "]"}]}], "}"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{
+      RowBox[{"d", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+      ",", 
+      RowBox[{"d", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+      ",", "data"}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell["\<\
 There's also a special constructor for matrices with 0 rows or 0 columns, \
 because there's no need to specify the data explicitly\
 \>", "Text",
-  InitializationCell->True],
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix[0, c_] := Matrix[0, c, {}]\), "\[IndentingNewLine]", 
-    \(Matrix[r_, 0] := Matrix[r, 0, Table[{}, {r}]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", "c_"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", "c", ",", 
+    RowBox[{"{", "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r_", ",", "0"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "0", ",", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", "r", "}"}]}], "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(MatrixData[Matrix[_, _, data_]] := data\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"MatrixData", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"_", ",", "_", ",", "data_"}], "]"}], "]"}], ":=", 
+  "data"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(identityMatrix[n_] := Matrix[n, n, IdentityMatrix[n]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"identityMatrix", "[", "n_", "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"n", ",", "n", ",", 
+    RowBox[{"IdentityMatrix", "[", "n", "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: Dimensions[Matrix[r_, c_, _]] := {r, c}\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Dimensions", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "c_", ",", "_"}], "]"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{"r", ",", "c"}], "}"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: Part[Matrix[_, _, data_], p__] := 
-      data\[LeftDoubleBracket]p\[RightDoubleBracket]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Part", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"_", ",", "_", ",", "data_"}], "]"}], ",", "p__"}], "]"}], ":=", 
+  
+  RowBox[{
+  "data", "\[LeftDoubleBracket]", "p", "\[RightDoubleBracket]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: MatrixForm[Matrix[_, _, data_]] := 
-      MatrixForm[data]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"MatrixForm", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"_", ",", "_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"MatrixForm", "[", "data", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: m_Matrix . {} := {}\), "\[IndentingNewLine]", 
-    \(Matrix /: 
-      m_Matrix . 
-          v_?VectorQ /; \((\(Dimensions[
-                m]\)\[LeftDoubleBracket]2\[RightDoubleBracket] \[Equal] 
-            Length[v])\) := 
-      If[\(Dimensions[m]\)\[LeftDoubleBracket]1\[RightDoubleBracket] \[Equal] 
-          0, {}, MatrixData[m] . v]\), "\[IndentingNewLine]", 
-    \(Matrix /: 
-      m1_Matrix . 
-          m2_?MatrixQ /; \((\(Dimensions[
-                m1]\)\[LeftDoubleBracket]2\[RightDoubleBracket] \[Equal] 
-            Length[m2])\) := MatrixData[m1] . m2\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"m_Matrix", ".", 
+   RowBox[{"{", "}"}]}], ":=", 
+  RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{
+   RowBox[{"m_Matrix", ".", 
+    RowBox[{"v_", "?", "VectorQ"}]}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Dimensions", "[", "m", "]"}], "\[LeftDoubleBracket]", "2", 
+      "\[RightDoubleBracket]"}], "\[Equal]", 
+     RowBox[{"Length", "[", "v", "]"}]}], ")"}]}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Dimensions", "[", "m", "]"}], "\[LeftDoubleBracket]", "1", 
+      "\[RightDoubleBracket]"}], "\[Equal]", "0"}], ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{
+     RowBox[{"MatrixData", "[", "m", "]"}], ".", "v"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{
+   RowBox[{"m1_Matrix", ".", 
+    RowBox[{"m2_", "?", "MatrixQ"}]}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Dimensions", "[", "m1", "]"}], "\[LeftDoubleBracket]", "2", 
+      "\[RightDoubleBracket]"}], "\[Equal]", 
+     RowBox[{"Length", "[", "m2", "]"}]}], ")"}]}], ":=", 
+  RowBox[{
+   RowBox[{"MatrixData", "[", "m1", "]"}], ".", "m2"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: Together[Matrix[r_, c_, data_]] := 
-      Matrix[r, c, Together[data]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Together", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "c_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "c", ",", 
+    RowBox[{"Together", "[", "data", "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: Transpose[Matrix[0, c_, _]] := 
-      Matrix[c, 0]\), "\[IndentingNewLine]", 
-    \(Matrix /: Transpose[Matrix[r_, 0, _]] := 
-      Matrix[0, r]\), "\[IndentingNewLine]", 
-    \(Matrix /: Transpose[Matrix[r_, c_, data_]] := 
-      Matrix[c, r, Transpose[data]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"0", ",", "c_", ",", "_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"c", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "0", ",", "_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", "r"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "c_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"c", ",", "r", ",", 
+    RowBox[{"Transpose", "[", "data", "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: Inverse[Matrix[0, 0, _]] := 
-      Matrix[0, 0]\), "\[IndentingNewLine]", 
-    \(Matrix /: Inverse[Matrix[r_, r_, data_]] := 
-      Matrix[r, r, MatrixInverse[data]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Inverse", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"0", ",", "0", ",", "_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Inverse", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "r_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "r", ",", 
+    RowBox[{"MatrixInverse", "[", "data", "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: Det[Matrix[0, 0, _]] := 1\), "\[IndentingNewLine]", 
-    \(Matrix /: Det[Matrix[r_, r_, data_]] := 
-      Det[data]\), "\[IndentingNewLine]", 
-    \(Matrix /: Tr[Matrix[0, 0, _]] := 0\), "\[IndentingNewLine]", 
-    \(Matrix /: Tr[Matrix[r_, r_, data_]] := Tr[data]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Det", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"0", ",", "0", ",", "_"}], "]"}], "]"}], ":=", 
+  "1"}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Det", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "r_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Det", "[", "data", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Tr", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"0", ",", "0", ",", "_"}], "]"}], "]"}], ":=", 
+  "0"}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"Tr", "[", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"r_", ",", "r_", ",", "data_"}], "]"}], "]"}], ":=", 
+  RowBox[{"Tr", "[", "data", "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: NullSpace[m_Matrix, opts___] := 
-      NullSpace[MatrixData[m], opts]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"NullSpace", "[", 
+   RowBox[{"m_Matrix", ",", "opts___"}], "]"}], ":=", 
+  RowBox[{"NullSpace", "[", 
+   RowBox[{
+    RowBox[{"MatrixData", "[", "m", "]"}], ",", "opts"}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: AppendRows[Matrix[r_, 0, _], Matrix[r_, c_, data_]] := 
-      Matrix[r, c, data]\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendRows[Matrix[r_, c_, data_], Matrix[r_, 0, _]] := 
-      Matrix[r, c, data]\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendRows[Matrix[0, c1_, _], Matrix[0, c2_, _]] := 
-      Matrix[0, c1 + c2]\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendRows[Matrix[r_, c1_, data1_], Matrix[r_, c2_, data2_]] := 
-      Matrix[r, c1 + c2, AppendRows[data1, data2]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendRows", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "0", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "c_", ",", "data_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "c", ",", "data"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendRows", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "c_", ",", "data_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "0", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "c", ",", "data"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendRows", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"0", ",", "c1_", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"0", ",", "c2_", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", 
+    RowBox[{"c1", "+", "c2"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendRows", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "c1_", ",", "data1_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "c2_", ",", "data2_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", 
+    RowBox[{"c1", "+", "c2"}], ",", 
+    RowBox[{"AppendRows", "[", 
+     RowBox[{"data1", ",", "data2"}], "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: AppendRows[m1_Matrix] := m1\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendRows[m1_Matrix, m2__Matrix] := 
-      AppendRows[m1, AppendRows[m2]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendRows", "[", "m1_Matrix", "]"}], ":=", 
+  "m1"}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendRows", "[", 
+   RowBox[{"m1_Matrix", ",", "m2__Matrix"}], "]"}], ":=", 
+  RowBox[{"AppendRows", "[", 
+   RowBox[{"m1", ",", 
+    RowBox[{"AppendRows", "[", "m2", "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: AppendColumns[Matrix[0, c_, _], Matrix[r_, c_, data_]] := 
-      Matrix[r, c, data]\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendColumns[Matrix[r_, c_, data_], Matrix[0, c_, _]] := 
-      Matrix[r, c, data]\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendColumns[Matrix[r1_, 0, _], Matrix[r2_, 0, _]] := 
-      Matrix[r1 + r2, 0]\), "\[IndentingNewLine]", 
-    \(Matrix /: 
-      AppendColumns[Matrix[r1_, c_, data1_], Matrix[r2_, c_, data2_]] := 
-      Matrix[r1 + r2, c, AppendColumns[data1, data2]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"0", ",", "c_", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "c_", ",", "data_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "c", ",", "data"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r_", ",", "c_", ",", "data_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"0", ",", "c_", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"r", ",", "c", ",", "data"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r1_", ",", "0", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r2_", ",", "0", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{"r1", "+", "r2"}], ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r1_", ",", "c_", ",", "data1_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r2_", ",", "c_", ",", "data2_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{"r1", "+", "r2"}], ",", "c", ",", 
+    RowBox[{"AppendColumns", "[", 
+     RowBox[{"data1", ",", "data2"}], "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(Matrix /: AppendColumns[m1_Matrix] := m1\), "\[IndentingNewLine]", 
-    \(Matrix /: AppendColumns[m1_Matrix, m2__Matrix] := 
-      AppendColumns[m1, AppendColumns[m2]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendColumns", "[", "m1_Matrix", "]"}], ":=", 
+  "m1"}], "\[IndentingNewLine]", 
+ RowBox[{"Matrix", "/:", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{"m1_Matrix", ",", "m2__Matrix"}], "]"}], ":=", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{"m1", ",", 
+    RowBox[{"AppendColumns", "[", "m2", "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: 
-      Dot[m__Matrix] /; \((\(! MemberQ[Flatten[Dimensions /@ {m}], 
-                0]\) \[And] 
-            Most[Last /@ \(Dimensions /@ {m}\)] \[Equal] 
-              Rest[First /@ \(Dimensions /@ {m}\)])\) := 
-      Matrix[\(Dimensions[{m}\[LeftDoubleBracket]1\[RightDoubleBracket]]\)\
-\[LeftDoubleBracket]1\[RightDoubleBracket], \(Dimensions[{m}\
-\[LeftDoubleBracket]\(-1\)\[RightDoubleBracket]]\)\[LeftDoubleBracket]2\
-\[RightDoubleBracket], Dot @@ \((MatrixData /@ {m})\)]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{
+   RowBox[{"Dot", "[", "m__Matrix", "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"!", 
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{"Flatten", "[", 
+         RowBox[{"Dimensions", "/@", 
+          RowBox[{"{", "m", "}"}]}], "]"}], ",", "0"}], "]"}]}], "\[And]", 
+     RowBox[{
+      RowBox[{"Most", "[", 
+       RowBox[{"Last", "/@", 
+        RowBox[{"Dimensions", "/@", 
+         RowBox[{"{", "m", "}"}]}]}], "]"}], "\[Equal]", 
+      RowBox[{"Rest", "[", 
+       RowBox[{"First", "/@", 
+        RowBox[{"Dimensions", "/@", 
+         RowBox[{"{", "m", "}"}]}]}], "]"}]}]}], ")"}]}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Dimensions", "[", 
+      RowBox[{
+       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", "1", 
+       "\[RightDoubleBracket]"}], "]"}], "\[LeftDoubleBracket]", "1", 
+     "\[RightDoubleBracket]"}], ",", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", 
+      RowBox[{
+       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", 
+       RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}], 
+     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+    RowBox[{"Dot", "@@", 
+     RowBox[{"(", 
+      RowBox[{"MatrixData", "/@", 
+       RowBox[{"{", "m", "}"}]}], ")"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: 
-      Dot[m__Matrix] /; \((MemberQ[Flatten[Dimensions /@ {m}], 0])\) := 
-      ZeroesMatrix[\(Dimensions[{m}\[LeftDoubleBracket]1\[RightDoubleBracket]]\
-\)\[LeftDoubleBracket]1\[RightDoubleBracket], \(Dimensions[{m}\
-\[LeftDoubleBracket]\(-1\)\[RightDoubleBracket]]\)\[LeftDoubleBracket]2\
-\[RightDoubleBracket]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{
+   RowBox[{"Dot", "[", "m__Matrix", "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{"MemberQ", "[", 
+     RowBox[{
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Dimensions", "/@", 
+        RowBox[{"{", "m", "}"}]}], "]"}], ",", "0"}], "]"}], ")"}]}], ":=", 
+  RowBox[{"ZeroesMatrix", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Dimensions", "[", 
+      RowBox[{
+       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", "1", 
+       "\[RightDoubleBracket]"}], "]"}], "\[LeftDoubleBracket]", "1", 
+     "\[RightDoubleBracket]"}], ",", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", 
+      RowBox[{
+       RowBox[{"{", "m", "}"}], "\[LeftDoubleBracket]", 
+       RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}], 
+     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: Plus[m__Matrix] /; \((SameQ[Dimensions /@ {m}])\) := 
-      Matrix[Sequence @@ Dimensions[First[{m}]], 
-        Plus @@ \((MatrixData /@ {m})\)]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{
+   RowBox[{"Plus", "[", "m__Matrix", "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{"SameQ", "[", 
+     RowBox[{"Dimensions", "/@", 
+      RowBox[{"{", "m", "}"}]}], "]"}], ")"}]}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{"Sequence", "@@", 
+     RowBox[{"Dimensions", "[", 
+      RowBox[{"First", "[", 
+       RowBox[{"{", "m", "}"}], "]"}], "]"}]}], ",", 
+    RowBox[{"Plus", "@@", 
+     RowBox[{"(", 
+      RowBox[{"MatrixData", "/@", 
+       RowBox[{"{", "m", "}"}]}], ")"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Matrix /: \[Alpha]_?QuantumGroups`qNumberQ\ Matrix[j_, k_, data_] := 
-      Matrix[j, k, \[Alpha]\ data]\)], "Input",
-  InitializationCell->True],
+ RowBox[{"Matrix", "/:", 
+  RowBox[{
+   RowBox[{"\[Alpha]_", "?", "QuantumGroups`qNumberQ"}], " ", 
+   RowBox[{"Matrix", "[", 
+    RowBox[{"j_", ",", "k_", ",", "data_"}], "]"}]}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"j", ",", "k", ",", 
+    RowBox[{"\[Alpha]", " ", "data"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(KroneckerProduct[Matrix[r1_, c1_, data1_], Matrix[r2_, c2_, data2_]] /; 
-        r1 > 0 \[And] r2 > 0 \[And] c1 > 0 \[And] c2 > 0 := 
-      Matrix[r1\ r2, \ c1\ c2, 
-        BlockMatrix[Outer[Times, data1, data2]]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{
+     RowBox[{"Matrix", "[", 
+      RowBox[{"r1_", ",", "c1_", ",", "data1_"}], "]"}], ",", 
+     RowBox[{"Matrix", "[", 
+      RowBox[{"r2_", ",", "c2_", ",", "data2_"}], "]"}]}], "]"}], "/;", 
+   RowBox[{
+    RowBox[{"r1", ">", "0"}], "\[And]", 
+    RowBox[{"r2", ">", "0"}], "\[And]", 
+    RowBox[{"c1", ">", "0"}], "\[And]", 
+    RowBox[{"c2", ">", "0"}]}]}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{"r1", " ", "r2"}], ",", " ", 
+    RowBox[{"c1", " ", "c2"}], ",", 
+    RowBox[{"BlockMatrix", "[", 
+     RowBox[{"Outer", "[", 
+      RowBox[{"Times", ",", "data1", ",", "data2"}], "]"}], "]"}]}], 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(KroneckerProduct[Matrix[0, c1_, _], Matrix[_, c2_, _]] := 
-      Matrix[0, c1\ c2]\), "\[IndentingNewLine]", 
-    \(KroneckerProduct[Matrix[_, c1_, _], Matrix[0, c2_, _]] := 
-      Matrix[0, c1\ c2]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"KroneckerProduct", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"0", ",", "c1_", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"_", ",", "c2_", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", 
+    RowBox[{"c1", " ", "c2"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"KroneckerProduct", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"_", ",", "c1_", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"0", ",", "c2_", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", 
+    RowBox[{"c1", " ", "c2"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(KroneckerProduct[Matrix[r1_, 0, _], Matrix[r2_, _, _]] := 
-      Matrix[r1\ r2, \ 0]\), "\[IndentingNewLine]", 
-    \(KroneckerProduct[Matrix[r1_, _, _], Matrix[r2_, 0, _]] := 
-      Matrix[r1\ r2, \ 0]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"KroneckerProduct", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r1_", ",", "0", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r2_", ",", "_", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{"r1", " ", "r2"}], ",", " ", "0"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"KroneckerProduct", "[", 
+   RowBox[{
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r1_", ",", "_", ",", "_"}], "]"}], ",", 
+    RowBox[{"Matrix", "[", 
+     RowBox[{"r2_", ",", "0", ",", "_"}], "]"}]}], "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{
+    RowBox[{"r1", " ", "r2"}], ",", " ", "0"}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell["\<\
 Careful here; tensor products with more than 256 factors will cause \
@@ -281,270 +631,503 @@ $RecursionLimit problems.\
 \>", "Text"],
 
 Cell[BoxData[
-    \(KroneckerProduct[a_, b_, c__] := 
-      KroneckerProduct[KroneckerProduct[a, b], c]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"KroneckerProduct", "[", 
+   RowBox[{"a_", ",", "b_", ",", "c__"}], "]"}], ":=", 
+  RowBox[{"KroneckerProduct", "[", 
+   RowBox[{
+    RowBox[{"KroneckerProduct", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], ",", "c"}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell["Again, more than 256 blocks will cause problems.", "Text"],
 
 Cell[BoxData[{
-    \(BlockDiagonalMatrix[m1 : Matrix[r1_, c1_, _], 
-        m2 : Matrix[r2_, c2_, _]] := 
-      AppendColumns[AppendRows[m1, ZeroesMatrix[r1, c2]], 
-        AppendRows[ZeroesMatrix[r2, c1], m2]]\), "\n", 
-    \(BlockDiagonalMatrix[] := Matrix[0, 0]\), "\[IndentingNewLine]", 
-    \(BlockDiagonalMatrix[m_Matrix] := m\), "\[IndentingNewLine]", 
-    \(BlockDiagonalMatrix[m1_, m2_, m3__] := 
-      BlockDiagonalMatrix[BlockDiagonalMatrix[m1, m2], m3]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"BlockDiagonalMatrix", "[", 
+   RowBox[{
+    RowBox[{"m1", ":", 
+     RowBox[{"Matrix", "[", 
+      RowBox[{"r1_", ",", "c1_", ",", "_"}], "]"}]}], ",", 
+    RowBox[{"m2", ":", 
+     RowBox[{"Matrix", "[", 
+      RowBox[{"r2_", ",", "c2_", ",", "_"}], "]"}]}]}], "]"}], ":=", 
+  RowBox[{"AppendColumns", "[", 
+   RowBox[{
+    RowBox[{"AppendRows", "[", 
+     RowBox[{"m1", ",", 
+      RowBox[{"ZeroesMatrix", "[", 
+       RowBox[{"r1", ",", "c2"}], "]"}]}], "]"}], ",", 
+    RowBox[{"AppendRows", "[", 
+     RowBox[{
+      RowBox[{"ZeroesMatrix", "[", 
+       RowBox[{"r2", ",", "c1"}], "]"}], ",", "m2"}], "]"}]}], 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"BlockDiagonalMatrix", "[", "]"}], ":=", 
+  RowBox[{"Matrix", "[", 
+   RowBox[{"0", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BlockDiagonalMatrix", "[", "m_Matrix", "]"}], ":=", 
+  "m"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BlockDiagonalMatrix", "[", 
+   RowBox[{"m1_", ",", "m2_", ",", "m3__"}], "]"}], ":=", 
+  RowBox[{"BlockDiagonalMatrix", "[", 
+   RowBox[{
+    RowBox[{"BlockDiagonalMatrix", "[", 
+     RowBox[{"m1", ",", "m2"}], "]"}], ",", "m3"}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(InterpolationInverseThreshold = 30;\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"InterpolationInverseThreshold", "=", "30"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PrepareInverse[x_] := Null\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PrepareInverse", "[", "x_", "]"}], ":=", "Null"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(MatrixInverse[m_?SquareMatrixQ] := 
-      If[Length[m] \[GreaterEqual] InterpolationInverseThreshold, 
-        RowOrderedInterpolationInverse[m], RowReductionInverse[m]]\)], "Input",\
-
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(RowReductionInverse[m_?SquareMatrixQ] := 
-      Module[{result}, \[IndentingNewLine]If[Length[m] \[GreaterEqual] 8, 
-          DebugPrint["\<Performing (built-in) row reduction on a matrix of \
-size \>", Length[m]]]; 
-        result = 
-          Together[
-            Inverse[m, 
-              Method \[Rule] OneStepRowReduction]]; \[IndentingNewLine]If[
-          Length[m] \[GreaterEqual] 8, 
-          DebugPrint["\<Finished row reduction\>"]]; \
-\[IndentingNewLine]result\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"MatrixInverse", "[", 
+   RowBox[{"m_", "?", "SquareMatrixQ"}], "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", "m", "]"}], "\[GreaterEqual]", 
+     "InterpolationInverseThreshold"}], ",", 
+    RowBox[{"RowOrderedInterpolationInverse", "[", "m", "]"}], ",", 
+    RowBox[{"RowReductionInverse", "[", "m", "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(MatrixRowFactors[mat_?SquareMatrixQ] := 
-      Module[{rowFactors, rowOrdering, 
-          n = Length[
-              mat]}, \[IndentingNewLine]rowFactors = \((PolynomialLCM @@ # &)\
-\) /@ \(\((Denominator[Together[#]] &)\) /@ 
-              mat\); \[IndentingNewLine]rowOrdering = \(UnitVector[n, #] &\) /@ 
-            Ordering[rowFactors\ mat]; \[IndentingNewLine]rowOrdering . 
-          DiagonalMatrix[rowFactors]\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"RowReductionInverse", "[", 
+   RowBox[{"m_", "?", "SquareMatrixQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "result", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "m", "]"}], "\[GreaterEqual]", "8"}], ",", 
+       RowBox[{"DebugPrint", "[", 
+        RowBox[{
+        "\"\<Performing (built-in) row reduction on a matrix of size \>\"", 
+         ",", 
+         RowBox[{"Length", "[", "m", "]"}]}], "]"}]}], "]"}], ";", 
+     RowBox[{"result", "=", 
+      RowBox[{"Together", "[", 
+       RowBox[{"Inverse", "[", 
+        RowBox[{"m", ",", 
+         RowBox[{"Method", "\[Rule]", "OneStepRowReduction"}]}], "]"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "m", "]"}], "\[GreaterEqual]", "8"}], ",", 
+       RowBox[{"DebugPrint", "[", "\"\<Finished row reduction\>\"", "]"}]}], 
+      "]"}], ";", "\[IndentingNewLine]", "result"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(RowOrderedInterpolationInverse[mat_?SquareMatrixQ] := 
-      Module[{rf = MatrixRowFactors[mat]}, \[IndentingNewLine]Simplify[
-          InterpolationInverse[Expand[Together[rf . mat]]] . 
-            rf]\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"MatrixRowFactors", "[", 
+   RowBox[{"mat_", "?", "SquareMatrixQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rowFactors", ",", "rowOrdering", ",", 
+      RowBox[{"n", "=", 
+       RowBox[{"Length", "[", "mat", "]"}]}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"rowFactors", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"PolynomialLCM", "@@", "#"}], "&"}], ")"}], "/@", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Denominator", "[", 
+           RowBox[{"Together", "[", "#", "]"}], "]"}], "&"}], ")"}], "/@", 
+        "mat"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"rowOrdering", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"UnitVector", "[", 
+         RowBox[{"n", ",", "#"}], "]"}], "&"}], "/@", 
+       RowBox[{"Ordering", "[", 
+        RowBox[{"rowFactors", " ", "mat"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"rowOrdering", ".", 
+      RowBox[{"DiagonalMatrix", "[", "rowFactors", "]"}]}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RowOrderedInterpolationInverse", "[", 
+   RowBox[{"mat_", "?", "SquareMatrixQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rf", "=", 
+      RowBox[{"MatrixRowFactors", "[", "mat", "]"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{
+      RowBox[{"InterpolationInverse", "[", 
+       RowBox[{"Expand", "[", 
+        RowBox[{"Together", "[", 
+         RowBox[{"rf", ".", "mat"}], "]"}], "]"}], "]"}], ".", "rf"}], 
+     "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(\(InterpolationInverseLargestRequestSize = 
-        0;\)\), "\[IndentingNewLine]", 
-    \(\(InterpolationInverseRequests = {};\)\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"InterpolationInverseLargestRequestSize", "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"InterpolationInverseRequests", "=", 
+   RowBox[{"{", "}"}]}], ";"}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(recordInterpolationInverseRequest[mat_] := 
-      If[Length[mat] \[GreaterEqual] InterpolationInverseLargestRequestSize, 
-        DebugPrint["\<New largest matrix! Size \>", Length[mat]]; 
-        AppendTo[InterpolationInverseRequests, mat]; 
-        InterpolationInverseLargestRequestSize = Length[mat]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"recordInterpolationInverseRequest", "[", "mat_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", "mat", "]"}], "\[GreaterEqual]", 
+     "InterpolationInverseLargestRequestSize"}], ",", 
+    RowBox[{
+     RowBox[{"DebugPrint", "[", 
+      RowBox[{"\"\<New largest matrix! Size \>\"", ",", 
+       RowBox[{"Length", "[", "mat", "]"}]}], "]"}], ";", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"InterpolationInverseRequests", ",", "mat"}], "]"}], ";", 
+     RowBox[{"InterpolationInverseLargestRequestSize", "=", 
+      RowBox[{"Length", "[", "mat", "]"}]}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(InterpolationInverse[mat_?SquareMatrixQ] := 
-      Module[{size, newMatrix, det, degree, n, abcissa, data, 
-          inverse}, \[IndentingNewLine]DebugPrint["\<Starting \
-InterpolationInverse on a matrix of size \>", 
-          Length[mat]]; \[IndentingNewLine]size = 
-          Length[mat]; \[IndentingNewLine]det = 
-          Together[Det[mat]]; \[IndentingNewLine]newMatrix = 
-          mat\/det; \[IndentingNewLine]degree = 
-          Min[Apply[Plus, Map[Max[Exponent[#, Global`q]] &, mat]], 
-            Apply[Plus, 
-              Map[Max[Exponent[#, Global`q]] &, 
-                Transpose[mat]]]]; \[IndentingNewLine]If[degree \[Equal] 0, 
-          DebugPrint["\<... it doesn't seem to involve q, so I'm just using \
-Inverse\>"]; 
-          Return[Inverse[
-              mat]]]; \[IndentingNewLine]recordInterpolationInverseRequest[
-          mat]; \[IndentingNewLine]DebugPrint["\<inverting matrix of size \
-\>", Length[
-            mat], \ "\< by interpolation\>"]; \[IndentingNewLine]abcissa = \
-{}; \[IndentingNewLine]n = 
-          Floor[\(-\(degree\/2\)\)] + 1; \[IndentingNewLine]While[
-          Length[abcissa] < 
-            degree + 
-              2, \[IndentingNewLine]If[\((det /. Global`q \[Rule] n)\) =!= 0, 
-            abcissa = 
-              Append[abcissa, 
-                n]]; \[IndentingNewLine]\(n++\)\[IndentingNewLine]]; \
-\[IndentingNewLine]If[size > 20, 
-          DebugPrint["\<Inverting numerical matrices:\>"]]; \
-\[IndentingNewLine]data = 
-          Transpose[
-            Table[If[size > 20, DebugPrint[i]]; 
-              Inverse[newMatrix /. 
-                  Global`q \[Rule] 
-                    abcissa\[LeftDoubleBracket]i\[RightDoubleBracket]], {i, 
-                1, Length[abcissa]}], {3, 1, 2}]; \[IndentingNewLine]If[
-          size > 20, 
-          DebugPrint["\<Interpolating numerical matrices:\>"]]; \
-\[IndentingNewLine]inverse = 
-          Table[If[j \[Equal] 1 \[And] size > 20, DebugPrint[i]]; 
-            Simplify[
-              InterpolatingPolynomial[
-                Transpose[{abcissa, 
-                    data\[LeftDoubleBracket]i, j\[RightDoubleBracket]}], 
-                Global`q]], {i, 1, size}, {j, 1, 
-              size}]; \[IndentingNewLine]DebugPrint["\<done\>"]; \
-\[IndentingNewLine]Together[\(1\/det\) 
-            inverse]\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"InterpolationInverse", "[", 
+   RowBox[{"mat_", "?", "SquareMatrixQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "size", ",", "newMatrix", ",", "det", ",", "degree", ",", "n", ",", 
+      "abcissa", ",", "data", ",", "inverse"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"DebugPrint", "[", 
+      RowBox[{
+      "\"\<Starting InterpolationInverse on a matrix of size \>\"", ",", 
+       RowBox[{"Length", "[", "mat", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"size", "=", 
+      RowBox[{"Length", "[", "mat", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"det", "=", 
+      RowBox[{"Together", "[", 
+       RowBox[{"Det", "[", "mat", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"newMatrix", "=", 
+      FractionBox["mat", "det"]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"degree", "=", 
+      RowBox[{"Min", "[", 
+       RowBox[{
+        RowBox[{"Apply", "[", 
+         RowBox[{"Plus", ",", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Max", "[", 
+              RowBox[{"Exponent", "[", 
+               RowBox[{"#", ",", "Global`q"}], "]"}], "]"}], "&"}], ",", 
+            "mat"}], "]"}]}], "]"}], ",", 
+        RowBox[{"Apply", "[", 
+         RowBox[{"Plus", ",", 
+          RowBox[{"Map", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Max", "[", 
+              RowBox[{"Exponent", "[", 
+               RowBox[{"#", ",", "Global`q"}], "]"}], "]"}], "&"}], ",", 
+            RowBox[{"Transpose", "[", "mat", "]"}]}], "]"}]}], "]"}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"degree", "\[Equal]", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Global`interpolationInverseNoQExample", "=", "mat"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"And", "@@", 
+           RowBox[{"(", 
+            RowBox[{"UnitVectorQ", "/@", "mat"}], ")"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+           "DebugPrint", "[", "\"\<... inverting a permutation matrix\>\"", 
+            "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"Return", "[", 
+            RowBox[{
+             RowBox[{"IdentityMatrix", "[", 
+              RowBox[{"Length", "[", "mat", "]"}], "]"}], 
+             "\[LeftDoubleBracket]", 
+             RowBox[{"Ordering", "[", 
+              RowBox[{"Ordering", "[", 
+               RowBox[{"Plus", "@@", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"Range", "[", 
+                   RowBox[{"Length", "[", "mat", "]"}], "]"}], " ", "mat"}], 
+                 ")"}]}], "]"}], "]"}], "\[RightDoubleBracket]"}], "]"}]}]}], 
+         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+        "DebugPrint", "[", 
+         "\"\<... it doesn't seem to involve q, so I'm just using \
+Inverse\>\"", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Return", "[", 
+         RowBox[{"Inverse", "[", 
+          RowBox[{"mat", ",", 
+           RowBox[{"Method", "\[Rule]", "OneStepRowReduction"}]}], "]"}], 
+         "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"recordInterpolationInverseRequest", "[", "mat", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"DebugPrint", "[", 
+      RowBox[{"\"\<inverting matrix of size \>\"", ",", 
+       RowBox[{"Length", "[", "mat", "]"}], ",", " ", 
+       "\"\< by interpolation\>\""}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"abcissa", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"n", "=", 
+      RowBox[{
+       RowBox[{"Floor", "[", 
+        RowBox[{"-", 
+         FractionBox["degree", "2"]}], "]"}], "+", "1"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "abcissa", "]"}], "<", 
+        RowBox[{"degree", "+", "2"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"det", "/.", 
+             RowBox[{"Global`q", "\[Rule]", "n"}]}], ")"}], "=!=", "0"}], ",",
+           
+          RowBox[{"abcissa", "=", 
+           RowBox[{"Append", "[", 
+            RowBox[{"abcissa", ",", "n"}], "]"}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"n", "++"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"size", ">", "20"}], ",", 
+       RowBox[{
+       "DebugPrint", "[", "\"\<Inverting numerical matrices:\>\"", "]"}]}], 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"data", "=", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"size", ">", "20"}], ",", 
+             RowBox[{"DebugPrint", "[", "i", "]"}]}], "]"}], ";", 
+           RowBox[{"Inverse", "[", 
+            RowBox[{"newMatrix", "/.", 
+             RowBox[{"Global`q", "\[Rule]", 
+              RowBox[{
+              "abcissa", "\[LeftDoubleBracket]", "i", 
+               "\[RightDoubleBracket]"}]}]}], "]"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "1", ",", 
+            RowBox[{"Length", "[", "abcissa", "]"}]}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", "1", ",", "2"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"size", ">", "20"}], ",", 
+       RowBox[{
+       "DebugPrint", "[", "\"\<Interpolating numerical matrices:\>\"", 
+        "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"inverse", "=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"j", "\[Equal]", "1"}], "\[And]", 
+            RowBox[{"size", ">", "20"}]}], ",", 
+           RowBox[{"DebugPrint", "[", "i", "]"}]}], "]"}], ";", 
+         RowBox[{"Simplify", "[", 
+          RowBox[{"InterpolatingPolynomial", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{"abcissa", ",", 
+               RowBox[{"data", "\[LeftDoubleBracket]", 
+                RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], "}"}], 
+             "]"}], ",", "Global`q"}], "]"}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "size"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", "size"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"DebugPrint", "[", "\"\<done\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Together", "[", 
+      RowBox[{
+       FractionBox["1", "det"], "inverse"}], "]"}]}]}], "\[IndentingNewLine]",
+    "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(End[];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(EndPackage[];\)\)], "Input",
-  InitializationCell->True]
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True]
 },
-FrontEndVersion->"5.2 for Microsoft Windows",
-ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
 WindowSize->{1136, 593},
-WindowMargins->{{Automatic, 67}, {Automatic, 9}}
+WindowMargins->{{Automatic, 67}, {Automatic, 9}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
 ]
+(* End of Notebook Content *)
 
-(*******************************************************************
-Cached data follows.  If you edit this Notebook file directly, not
-using Mathematica, you must remove the line containing CacheID at
-the top of  the file.  The cache data will then be recreated when
-you save this file from within Mathematica.
-*******************************************************************)
-
+(* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{}
 *)
-
 (*CellTagsIndex
 CellTagsIndex->{}
 *)
-
 (*NotebookFileOutline
 Notebook[{
-Cell[1754, 51, 213, 4, 30, "Input",
-  InitializationCell->True],
-Cell[1970, 57, 264, 5, 70, "Input",
-  InitializationCell->True],
-Cell[2237, 64, 88, 2, 30, "Input",
-  InitializationCell->True],
-Cell[2328, 68, 179, 3, 30, "Input",
-  InitializationCell->True],
-Cell[2510, 73, 115, 2, 30, "Input",
-  InitializationCell->True],
-Cell[2628, 77, 198, 4, 50, "Input",
-  InitializationCell->True],
-Cell[2829, 83, 299, 5, 70, "Input",
-  InitializationCell->True],
-Cell[3131, 90, 103, 2, 30, "Input",
-  InitializationCell->True],
-Cell[3237, 94, 127, 3, 33, "Text",
-  InitializationCell->True],
-Cell[3367, 99, 245, 5, 30, "Input",
-  InitializationCell->True],
-Cell[3615, 106, 182, 4, 33, "Text",
-  InitializationCell->True],
-Cell[3800, 112, 175, 3, 50, "Input",
-  InitializationCell->True],
-Cell[3978, 117, 100, 2, 30, "Input",
-  InitializationCell->True],
-Cell[4081, 121, 114, 2, 30, "Input",
-  InitializationCell->True],
-Cell[4198, 125, 110, 2, 30, "Input",
-  InitializationCell->True],
-Cell[4311, 129, 158, 3, 30, "Input",
-  InitializationCell->True],
-Cell[4472, 134, 129, 3, 30, "Input",
-  InitializationCell->True],
-Cell[4604, 139, 640, 14, 70, "Input",
-  InitializationCell->True],
-Cell[5247, 155, 141, 3, 30, "Input",
-  InitializationCell->True],
-Cell[5391, 160, 333, 7, 70, "Input",
-  InitializationCell->True],
-Cell[5727, 169, 238, 5, 50, "Input",
-  InitializationCell->True],
-Cell[5968, 176, 337, 6, 90, "Input",
-  InitializationCell->True],
-Cell[6308, 184, 140, 3, 30, "Input",
-  InitializationCell->True],
-Cell[6451, 189, 557, 9, 90, "Input",
-  InitializationCell->True],
-Cell[7011, 200, 218, 4, 50, "Input",
-  InitializationCell->True],
-Cell[7232, 206, 579, 10, 90, "Input",
-  InitializationCell->True],
-Cell[7814, 218, 230, 4, 50, "Input",
-  InitializationCell->True],
-Cell[8047, 224, 550, 10, 50, "Input",
-  InitializationCell->True],
-Cell[8600, 236, 384, 7, 30, "Input",
-  InitializationCell->True],
-Cell[8987, 245, 215, 4, 30, "Input",
-  InitializationCell->True],
-Cell[9205, 251, 165, 3, 30, "Input",
-  InitializationCell->True],
-Cell[9373, 256, 275, 5, 50, "Input",
-  InitializationCell->True],
-Cell[9651, 263, 261, 5, 50, "Input",
-  InitializationCell->True],
-Cell[9915, 270, 265, 5, 50, "Input",
-  InitializationCell->True],
-Cell[10183, 277, 119, 3, 33, "Text"],
-Cell[10305, 282, 144, 3, 30, "Input",
-  InitializationCell->True],
-Cell[10452, 287, 64, 0, 33, "Text"],
-Cell[10519, 289, 506, 9, 110, "Input",
-  InitializationCell->True],
-Cell[11028, 300, 100, 2, 30, "Input",
-  InitializationCell->True],
-Cell[11131, 304, 87, 2, 30, "Input",
-  InitializationCell->True],
-Cell[11221, 308, 232, 5, 30, "Input",
-  InitializationCell->True],
-Cell[11456, 315, 556, 12, 130, "Input",
-  InitializationCell->True],
-Cell[12015, 329, 498, 9, 110, "Input",
-  InitializationCell->True],
-Cell[12516, 340, 285, 5, 70, "Input",
-  InitializationCell->True],
-Cell[12804, 347, 191, 4, 50, "Input",
-  InitializationCell->True],
-Cell[12998, 353, 365, 6, 70, "Input",
-  InitializationCell->True],
-Cell[13366, 361, 2389, 49, 514, "Input",
-  InitializationCell->True],
-Cell[15758, 412, 71, 2, 30, "Input",
-  InitializationCell->True],
-Cell[15832, 416, 78, 2, 30, "Input",
-  InitializationCell->True]
+Cell[568, 21, 327, 9, 31, "Input",
+ InitializationCell->True],
+Cell[898, 32, 348, 6, 72, "Input",
+ InitializationCell->True],
+Cell[1249, 40, 119, 3, 31, "Input",
+ InitializationCell->True],
+Cell[1371, 45, 1097, 31, 92, "Input",
+ InitializationCell->True],
+Cell[2471, 78, 331, 10, 31, "Input",
+ InitializationCell->True],
+Cell[2805, 90, 489, 14, 52, "Input",
+ InitializationCell->True],
+Cell[3297, 106, 728, 23, 72, "Input",
+ InitializationCell->True],
+Cell[4028, 131, 176, 5, 31, "Input",
+ InitializationCell->True],
+Cell[4207, 138, 126, 3, 29, "Text",
+ InitializationCell->True],
+Cell[4336, 143, 524, 15, 31, "Input",
+ InitializationCell->True],
+Cell[4863, 160, 181, 4, 29, "Text",
+ InitializationCell->True],
+Cell[5047, 166, 509, 16, 52, "Input",
+ InitializationCell->True],
+Cell[5559, 184, 193, 6, 31, "Input",
+ InitializationCell->True],
+Cell[5755, 192, 229, 6, 31, "Input",
+ InitializationCell->True],
+Cell[5987, 200, 248, 7, 31, "Input",
+ InitializationCell->True],
+Cell[6238, 209, 301, 9, 31, "Input",
+ InitializationCell->True],
+Cell[6542, 220, 243, 6, 31, "Input",
+ InitializationCell->True],
+Cell[6788, 228, 1259, 37, 72, "Input",
+ InitializationCell->True],
+Cell[8050, 267, 310, 8, 31, "Input",
+ InitializationCell->True],
+Cell[8363, 277, 774, 20, 72, "Input",
+ InitializationCell->True],
+Cell[9140, 299, 543, 14, 52, "Input",
+ InitializationCell->True],
+Cell[9686, 315, 773, 21, 92, "Input",
+ InitializationCell->True],
+Cell[10462, 338, 268, 7, 31, "Input",
+ InitializationCell->True],
+Cell[10733, 347, 1533, 41, 92, "Input",
+ InitializationCell->True],
+Cell[12269, 390, 391, 10, 52, "Input",
+ InitializationCell->True],
+Cell[12663, 402, 1548, 41, 92, "Input",
+ InitializationCell->True],
+Cell[14214, 445, 403, 10, 52, "Input",
+ InitializationCell->True],
+Cell[14620, 457, 1359, 39, 52, "Input",
+ InitializationCell->True],
+Cell[15982, 498, 873, 25, 31, "Input",
+ InitializationCell->True],
+Cell[16858, 525, 592, 18, 31, "Input",
+ InitializationCell->True],
+Cell[17453, 545, 346, 9, 31, "Input",
+ InitializationCell->True],
+Cell[17802, 556, 751, 22, 52, "Input",
+ InitializationCell->True],
+Cell[18556, 580, 724, 21, 52, "Input",
+ InitializationCell->True],
+Cell[19283, 603, 738, 22, 52, "Input",
+ InitializationCell->True],
+Cell[20024, 627, 119, 3, 29, "Text"],
+Cell[20146, 632, 296, 8, 31, "Input",
+ InitializationCell->True],
+Cell[20445, 642, 64, 0, 29, "Text"],
+Cell[20512, 644, 1225, 35, 112, "Input",
+ InitializationCell->True],
+Cell[21740, 681, 123, 3, 31, "Input",
+ InitializationCell->True],
+Cell[21866, 686, 122, 3, 31, "Input",
+ InitializationCell->True],
+Cell[21991, 691, 433, 11, 31, "Input",
+ InitializationCell->True],
+Cell[22427, 704, 1149, 30, 132, "Input",
+ InitializationCell->True],
+Cell[23579, 736, 1177, 34, 112, "Input",
+ InitializationCell->True],
+Cell[24759, 772, 615, 17, 72, "Input",
+ InitializationCell->True],
+Cell[25377, 791, 250, 7, 52, "Input",
+ InitializationCell->True],
+Cell[25630, 800, 683, 16, 72, "Input",
+ InitializationCell->True],
+Cell[26316, 818, 7126, 184, 687, "Input",
+ InitializationCell->True],
+Cell[33445, 1004, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[33544, 1009, 103, 3, 31, "Input",
+ InitializationCell->True]
 }
 ]
 *)
 
-
-
-(*******************************************************************
-End of Mathematica Notebook file.
-*******************************************************************)
+(* End of internal cache information *)
 
