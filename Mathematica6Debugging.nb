@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     12722,        410]
-NotebookOptionsPosition[     11269,        353]
-NotebookOutlinePosition[     11631,        369]
-CellTagsIndexPosition[     11588,        366]
+NotebookDataLength[     13240,        426]
+NotebookOptionsPosition[     11706,        367]
+NotebookOutlinePosition[     12068,        383]
+CellTagsIndexPosition[     12025,        380]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -348,7 +348,21 @@ Cell[BoxData[
   ":", " "}], "\<\"Loading precomputed data in \
 \\!\\(\\\"QuantumGroups`Data`A2`MatrixPresentations`\\\"\\).\"\>"}]], \
 "Message", "MSG",
- CellChangeTimes->{3.4094391442193007`*^9, 3.409506174854621*^9}]
+ CellChangeTimes->{3.4094391442193007`*^9, 3.409506174854621*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`A2`DecompositionMaps`\\\"\\).\"\>"}]], "Message",\
+ "MSG",
+ CellChangeTimes->{3.4094391442193007`*^9, 3.409506309998949*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", "0", "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.4094391455912733`*^9, 3.409506504278309*^9}]
 }, Open  ]]
 },
 WindowSize->{928, 555},
@@ -410,7 +424,9 @@ Cell[9730, 304, 312, 7, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[10079, 316, 877, 25, 77, "Input"],
-Cell[10959, 343, 294, 7, 21, "Message"]
+Cell[10959, 343, 294, 7, 21, "Message"],
+Cell[11256, 352, 292, 7, 21, "Message"],
+Cell[11551, 361, 139, 3, 30, "Output"]
 }, Open  ]]
 }
 ]
