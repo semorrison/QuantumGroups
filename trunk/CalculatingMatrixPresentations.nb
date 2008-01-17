@@ -1,0 +1,1361 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     44597,       1352]
+NotebookOptionsPosition[     41915,       1269]
+NotebookOutlinePosition[     42257,       1284]
+CellTagsIndexPosition[     42214,       1281]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", " ", "=", " ", 
+   "\"\<c:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\package\\\\\>\""}\
+], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409507625453125*^9, 3.4095842855222445`*^9, 
+  3.409584959271048*^9, 3.409585089027629*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Found precomputed data in \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\data\"\>"}],
+  SequenceForm[
+  "Found precomputed data in ", 
+   "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409507625453125*^9, 3.4095842855222445`*^9, 
+  3.409584959271048*^9, 3.4095850890476575`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"obspkg\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\\"LinearAlgebra`MatrixManipulation`\\\"\\) is now \
+obsolete. The legacy version being loaded may conflict with current \
+Mathematica functionality. See the Compatibility Guide for updating \
+information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:Compatibility/Tutorials/LinearAlgebra/\
+MatrixManipulation\\\", ButtonNote -> \\\"General::obspkg\\\"]\\)\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.409507626265625*^9, 3.409584288326277*^9, 
+  3.4095849634170094`*^9, 3.4095850906699905`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "QuantumGroups`Data`A1`MatrixPresentations`"}]], "Input",
+ CellChangeTimes->{{3.409585088737211*^9, 3.4095850985312943`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`A1`MatrixPresentations`\\\"\\).\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.409585099512706*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "QuantumGroups`Data`A2`MatrixPresentations`"}]], "Input",
+ CellChangeTimes->{{3.409585088737211*^9, 3.4095850985312943`*^9}, {
+  3.4095851644861326`*^9, 3.4095851645562334`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`A2`MatrixPresentations`\\\"\\).\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.4095851649267664`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"KnownMatrixPresentations", "[", "]"}], ":=", 
+  RowBox[{"Union", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"First", "/@", 
+      RowBox[{"DefiniteValues", "[", "MatrixPresentation", "]"}]}], "/.", 
+     RowBox[{"HoldPattern", "\[Rule]", "Hold"}]}], "/.", 
+    RowBox[{
+     RowBox[{"Hold", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]_", "]"}], "[", 
+        "_", "]"}], "[", 
+       RowBox[{"V_", ",", "FundamentalBasis", ",", "_"}], "]"}], "]"}], 
+     "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{"\[CapitalGamma]", ",", "V"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.409584633252256*^9, 3.4095846929080367`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KnownMatrixPresentations", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.4095846773757024`*^9, 3.4095846805602818`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "2", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "3", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "4", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "5", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "6", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "7", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "8", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "9", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "10", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "11", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "12", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "13", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "14", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "15", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "16", "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "2"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "3"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "4"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "5"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "6"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "4"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "5"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "1"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "2"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "3"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "4"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "5"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "1"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "2"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "3"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "4"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "1"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "2"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "4"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"5", ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"5", ",", "2"}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "2"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"6", ",", "0"}], "}"}], "]"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.4095846808607135`*^9, 3.4095846952013345`*^9}, {
+   3.409584964108003*^9, 3.409585012868117*^9}, 3.409585101926176*^9, 
+   3.4095851668695602`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CheckAllRelations", "[", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "result", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"result", "=", 
+         RowBox[{
+          RowBox[{"CheckRelations", "[", 
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "]"}],
+           "[", 
+          RowBox[{
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+           "FundamentalBasis"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{"result", ",", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Relations for \>\"", ",", 
+            RowBox[{
+            "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
+            " ", "\"\< satisfied on \>\"", ",", 
+            RowBox[{
+            "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+            "\"\<.\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<WARNING: Relations for \>\"", ",", 
+            RowBox[{
+            "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
+            " ", "\"\< failed on \>\"", ",", 
+            RowBox[{
+            "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+            "\"\<.\>\""}], "]"}]}], "\[IndentingNewLine]", "]"}], ";", 
+        "\[IndentingNewLine]", "result"}], ")"}], "&"}], "/@", 
+     RowBox[{"KnownMatrixPresentations", "[", "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.409585105571418*^9, 3.4095851334715357`*^9}, {
+  3.4095855784513855`*^9, 3.409585698784416*^9}, {3.4095857948425407`*^9, 
+  3.4095858054277616`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CheckAllRelations", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.4095851361654096`*^9, 3.409585139149701*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "2", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{2}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857004968786`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "3", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{3}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857005269213`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "4", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{4}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585700576994*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "5", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{5}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585700617051*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "6", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{6}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585700657109*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "7", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{7}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857007171955`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "8", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{8}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585700767267*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "9", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{9}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857008273535`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "10", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{10}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857008974543`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "11", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{11}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585700967555*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "12", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{12}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857010476704`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "13", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{13}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857011277857`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "14", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{14}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857012279296`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "15", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{15}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857013280735`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "1"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "16", "}"}], "]"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 1], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 1]][{16}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585701428218*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{0, 1}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857014983187`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "2"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{0, 2}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585701618491*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "3"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{0, 3}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585701838808*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "4"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{0, 4}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857021792974`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "5"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{0, 5}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585702670003*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "6"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{0, 6}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585703290896*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{1, 0}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857033810253`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{1, 1}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857035011983`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{1, 2}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857037715874`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{1, 3}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857042022066`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "4"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{1, 4}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857048130846`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "5"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{1, 5}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857056643085`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "0"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{2, 0}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.40958570580451*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "1"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{2, 1}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857060548706`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "2"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{2, 2}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585706525547*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{2, 3}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857072766275`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "4"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{2, 4}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585709029147*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "5"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{2, 5}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857104411774`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "0"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{3, 0}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857106614943`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "1"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{3, 1}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857113424735`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "2"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{3, 2}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585712303856*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "3"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{3, 3}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857133753967`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "4"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{3, 4}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857149977293`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "0"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{4, 0}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.40958571556855*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DeleteFile", "::", "\<\"privv\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Privilege violation during \
+\\!\\(DeleteFile[\\\"QuantumGroups\\\\\\\\Data\\\\\\\\A2\\\\\\\\\
+MatrixPresentations.m\\\"]\\). \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/privv\\\", ButtonNote -> \
+\\\"DeleteFile::privv\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.40958571656999*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "1"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{4, 1}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.409585719043547*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Relations satisfied for \"\>", "\[InvisibleSpace]", 
+   SubscriptBox["A", "2"], "\[InvisibleSpace]", "\<\" on \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "2"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "2"}], "}"}], "]"}], 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Relations satisfied for ", 
+   Subscript[QuantumGroups`A, 2], " on ", 
+   QuantumGroups`Irrep[
+    Subscript[QuantumGroups`A, 2]][{4, 2}], "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4095857719295936`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{615, 555},
+WindowMargins->{{Automatic, 152}, {Automatic, 52}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 349, 10, 92, "Input"],
+Cell[CellGroupData[{
+Cell[964, 37, 467, 10, 43, "Print"],
+Cell[1434, 49, 428, 10, 23, "Print"]
+}, Open  ]],
+Cell[1877, 62, 682, 13, 56, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2596, 80, 154, 2, 31, "Input"],
+Cell[2753, 84, 270, 7, 39, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3060, 96, 207, 3, 31, "Input"],
+Cell[3270, 101, 272, 7, 39, "Message"]
+}, Open  ]],
+Cell[3557, 111, 724, 19, 92, "Input"],
+Cell[CellGroupData[{
+Cell[4306, 134, 142, 2, 31, "Input"],
+Cell[4451, 138, 10295, 350, 297, "Output"]
+}, Open  ]],
+Cell[14761, 491, 1840, 43, 172, "Input"],
+Cell[CellGroupData[{
+Cell[16626, 538, 133, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[16784, 544, 576, 14, 23, "Print"],
+Cell[17363, 560, 576, 14, 23, "Print"],
+Cell[17942, 576, 574, 14, 23, "Print"],
+Cell[18519, 592, 574, 14, 23, "Print"],
+Cell[19096, 608, 574, 14, 23, "Print"],
+Cell[19673, 624, 576, 14, 23, "Print"],
+Cell[20252, 640, 574, 14, 23, "Print"],
+Cell[20829, 656, 576, 14, 23, "Print"],
+Cell[21408, 672, 578, 14, 23, "Print"],
+Cell[21989, 688, 576, 14, 23, "Print"],
+Cell[22568, 704, 578, 14, 23, "Print"],
+Cell[23149, 720, 578, 14, 23, "Print"],
+Cell[23730, 736, 578, 14, 23, "Print"],
+Cell[24311, 752, 578, 14, 23, "Print"],
+Cell[24892, 768, 576, 14, 23, "Print"],
+Cell[25471, 784, 609, 16, 23, "Print"],
+Cell[26083, 802, 607, 16, 23, "Print"],
+Cell[26693, 820, 607, 16, 23, "Print"],
+Cell[27303, 838, 609, 16, 23, "Print"],
+Cell[27915, 856, 607, 16, 23, "Print"],
+Cell[28525, 874, 607, 16, 23, "Print"],
+Cell[29135, 892, 609, 16, 23, "Print"],
+Cell[29747, 910, 609, 16, 23, "Print"],
+Cell[30359, 928, 609, 16, 23, "Print"],
+Cell[30971, 946, 609, 16, 23, "Print"],
+Cell[31583, 964, 609, 16, 23, "Print"],
+Cell[32195, 982, 609, 16, 23, "Print"],
+Cell[32807, 1000, 606, 16, 23, "Print"],
+Cell[33416, 1018, 609, 16, 23, "Print"],
+Cell[34028, 1036, 607, 16, 23, "Print"],
+Cell[34638, 1054, 609, 16, 23, "Print"],
+Cell[35250, 1072, 607, 16, 23, "Print"],
+Cell[35860, 1090, 609, 16, 23, "Print"],
+Cell[36472, 1108, 609, 16, 23, "Print"],
+Cell[37084, 1126, 609, 16, 23, "Print"],
+Cell[37696, 1144, 607, 16, 23, "Print"],
+Cell[38306, 1162, 609, 16, 23, "Print"],
+Cell[38918, 1180, 609, 16, 23, "Print"],
+Cell[39530, 1198, 606, 16, 23, "Print"]
+}, Open  ]],
+Cell[40151, 1217, 492, 10, 39, "Message"],
+Cell[CellGroupData[{
+Cell[40668, 1231, 607, 16, 23, "Print"],
+Cell[41278, 1249, 609, 16, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
