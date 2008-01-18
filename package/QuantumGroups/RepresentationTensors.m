@@ -29,12 +29,11 @@ overwritten.
 
 
 
-BeginPackage[
-    "QuantumGroups`RepresentationTensors`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`",
-      "QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`",
-      "QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`",
-      "QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`",
-      "QuantumGroups`RMatrix`"}];
+BeginPackage["QuantumGroups`RepresentationTensors`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`",
+    "QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`",
+    "QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`",
+    "QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`",
+    "QuantumGroups`RMatrix`"}];
 
 
 
@@ -215,8 +214,8 @@ RepresentationTensor/:(F:
           BlockDiagonalMatrix@@
             Table[\[Mu]=
                 rightWeights\[LeftDoubleBracket]j\[RightDoubleBracket];
-              Expand[KroneckerProduct[F[\[Lambda]-\[Mu]],G[\[Mu]]]],{j,1,
-                Length[rightWeights]}]},{i,1,Length[productWeights]}]
+              Expand[MatrixKroneckerProduct[F[\[Lambda]-\[Mu]],G[\[Mu]]]],{j,
+                1,Length[rightWeights]}]},{i,1,Length[productWeights]}]
       ]
     ]
 
@@ -271,12 +270,12 @@ ConstituentWeights[\[CapitalGamma]_,V1_,V2_,V3_,\[Lambda]_]:=
 RightAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
   
   TensorProductWeightSpaceInclusion[\[CapitalGamma],{U,V\[CircleTimes]W},{a,
-        b+c}].KroneckerProduct[
+        b+c}].MatrixKroneckerProduct[
       identityMatrix[WeightMultiplicity[\[CapitalGamma],U,a]],
       TensorProductWeightSpaceInclusion[\[CapitalGamma],{V,W},{b,c}]]
 LeftAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
   TensorProductWeightSpaceInclusion[\[CapitalGamma],{U\[CircleTimes]V,W},{a+b,
-        c}].KroneckerProduct[
+        c}].MatrixKroneckerProduct[
       TensorProductWeightSpaceInclusion[\[CapitalGamma],{U,V},{a,b}],
       identityMatrix[WeightMultiplicity[\[CapitalGamma],W,c]]]
 
@@ -484,6 +483,8 @@ InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CircleTimes]_),\[Beta]_]:=
         InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
       result
       ]
+
+
 
 BlockPermutationMatrix[permutation:{__Integer},blocksizes:{__Integer}]:=
   BlockMatrix[
