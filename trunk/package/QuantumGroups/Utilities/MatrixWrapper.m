@@ -103,8 +103,13 @@ Matrix/:AppendRows[Matrix[0,c1_,_],Matrix[0,c2_,_]]:=Matrix[0,c1+c2]
 Matrix/:AppendRows[Matrix[r_,c1_,data1_],Matrix[r_,c2_,data2_]]:=Matrix[r,c1+c2,AppendRows[data1,data2]]
 
 
+Matrix/:AppendRows[m1:Matrix[0,_,_],m2:(Matrix[0,_,_]..)]:=ZeroesMatrix[0,Plus@@({m1,m2}[[All,2]])]
+Matrix/:AppendRows[m1:Matrix[r_,0,_],m2:(Matrix[r_,0,_]..)]:=ZeroesMatrix[r,0]
+Matrix/:AppendRows[m1:Matrix[r_,_,_],m2:(Matrix[r_,_,_]..)]:=Matrix[r,Plus@@({m1,m2}[[All,2]]),AppendRows@@(MatrixData/@{m1,m2})]
+
+
 Matrix/:AppendRows[m1_Matrix]:=m1
-Matrix/:AppendRows[m1_Matrix,m2__Matrix]:=AppendRows[m1,AppendRows[m2]]
+(*Matrix/:AppendRows[m1_Matrix,m2__Matrix]:=AppendRows[m1,AppendRows[m2]]*)
 
 
 Matrix/:AppendColumns[Matrix[0,c_,_],Matrix[r_,c_,data_]]:=Matrix[r,c,data]
@@ -113,8 +118,13 @@ Matrix/:AppendColumns[Matrix[r1_,0,_],Matrix[r2_,0,_]]:=Matrix[r1+r2,0]
 Matrix/:AppendColumns[Matrix[r1_,c_,data1_],Matrix[r2_,c_,data2_]]:=Matrix[r1+r2,c,AppendColumns[data1,data2]]
 
 
+Matrix/:AppendColumns[m1:Matrix[_,0,_],m2:(Matrix[_,0,_]..)]:=ZeroesMatrix[Plus@@({m1,m2}[[All,1]]),0]
+Matrix/:AppendColumns[m1:Matrix[0,c_,_],m2:(Matrix[0,c_,_]..)]:=ZeroesMatrix[0,c]
+Matrix/:AppendColumns[m1:Matrix[_,c_,_],m2:(Matrix[_,c_,_]..)]:=Matrix[Plus@@({m1,m2}[[All,1]]),c,AppendColumns@@(DeleteCases[MatrixData/@{m1,m2},{}])]
+
+
 Matrix/:AppendColumns[m1_Matrix]:=m1
-Matrix/:AppendColumns[m1_Matrix,m2__Matrix]:=AppendColumns[m1,AppendColumns[m2]]
+(*Matrix/:AppendColumns[m1_Matrix,m2__Matrix]:=AppendColumns[m1,AppendColumns[m2]]*)
 
 
 Matrix/:Dot[m1_Matrix,m2__Matrix]/;(!MemberQ[Flatten[Dimensions/@{m1,m2}],0]\[And]Most[Last/@Dimensions/@{m1,m2}]==Rest[First/@Dimensions/@{m1,m2}]):=Matrix[Dimensions[{m1,m2}[[1]]][[1]],Dimensions[{m1,m2}[[-1]]][[2]],Dot@@(MatrixData/@{m1,m2})]
@@ -140,13 +150,19 @@ MatrixKroneckerProduct[Matrix[r1_,0,_],Matrix[r2_,_,_]]:=Matrix[r1 r2, 0]
 MatrixKroneckerProduct[Matrix[r1_,_,_],Matrix[r2_,0,_]]:=Matrix[r1 r2, 0]
 
 
-MatrixKroneckerProduct[a_,b_,c__]:=MatrixKroneckerProduct[MatrixKroneckerProduct[a,b],c]
+(*MatrixKroneckerProduct[a_,b_,c__]:=MatrixKroneckerProduct[MatrixKroneckerProduct[a,b],c]*)
+
+
+MatrixKroneckerProduct[a_,b_,c__]:=MatrixKroneckerProduct[MatrixKroneckerProduct@@(Take[{a,b,c},Floor[Length[{a,b,c}]/2]]),MatrixKroneckerProduct@@(Drop[{a,b,c},Floor[Length[{a,b,c}]/2]])]
 
 
 BlockDiagonalMatrix[m1:Matrix[r1_,c1_,_],m2:Matrix[r2_,c2_,_]]:=AppendColumns[AppendRows[m1,ZeroesMatrix[r1,c2]],AppendRows[ZeroesMatrix[r2,c1],m2]]
 BlockDiagonalMatrix[]:=Matrix[0,0]
 BlockDiagonalMatrix[m_Matrix]:=m
-BlockDiagonalMatrix[m1_,m2_,m3__]:=BlockDiagonalMatrix[BlockDiagonalMatrix[m1,m2],m3]
+(*BlockDiagonalMatrix[m1_,m2_,m3__]:=BlockDiagonalMatrix[BlockDiagonalMatrix[m1,m2],m3]*)
+
+
+BlockDiagonalMatrix[m1_,m2_,m3__]:=BlockDiagonalMatrix[BlockDiagonalMatrix@@(Take[{m1,m2,m3},Floor[Length[{m1,m2,m3}]/2]]),BlockDiagonalMatrix@@(Drop[{m1,m2,m3},Floor[Length[{m1,m2,m3}]/2]])]
 
 
 InterpolationInverseThreshold=30;
