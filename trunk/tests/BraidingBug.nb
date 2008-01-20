@@ -1,0 +1,868 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     21595,        642]*)
+(*NotebookOutlinePosition[     22296,        666]*)
+(*  CellTagsIndexPosition[     22252,        662]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    \(\(QuantumGroupsPath\  = \ \
+"\<c:\\scott\\projects\\QuantumGroups.old\\trunk\\package\\\>";\)\), "\n", 
+    \(\(AppendTo[$Path, \ QuantumGroupsPath];\)\), "\[IndentingNewLine]", 
+    \(<< QuantumGroups`\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("Loading QuantumGroups` version 2.0\n"\
+\[InvisibleSpace]"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups"\),
+      SequenceForm[ 
+      "Loading QuantumGroups` version 2.0\n", 
+        "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("Found precomputed data in \
+"\[InvisibleSpace]"c:\\scott\\projects\\QuantumGroups.old\\trunk\\data"\),
+      SequenceForm[ 
+      "Found precomputed data in ", 
+        "c:\\scott\\projects\\QuantumGroups.old\\trunk\\data"],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rev 100", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(CheckRMatrixOppositeCommutes[
+        A1]\)[\(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis]\)], "Input",
+  CellChangeTimes -> {{3.409852692542421*^9, 3.4098526994022846`*^9}}],
+
+Cell[BoxData[
+    \(False\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CartanFactors[A1]\)], "Input"],
+
+Cell[BoxData[
+    \({1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(LongestWordDecomposition[A1]\)], "Input"],
+
+Cell[BoxData[
+    \({1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(p = Length[QuantumPositiveRoots[A1]]\)], "Input"],
+
+Cell[BoxData[
+    \(1\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(l = QuantumRootHeight[A1] /@ QuantumPositiveRoots[A1]\)], "Input"],
+
+Cell[BoxData[
+    \({1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[{t[r], 
+          0, \(n - Sum[l\[LeftDoubleBracket]k\[RightDoubleBracket] t[k], {k, \
+r + 1, p}]\)\/l\[LeftDoubleBracket]r\[RightDoubleBracket]}, {r, p, 
+          2, \(-1\)}]~
+      Join~{With[{t1 = \(n - Sum[t[k] l\[LeftDoubleBracket]k\
+\[RightDoubleBracket], {k, 2, p}]\)\/l\[LeftDoubleBracket]1\
+\[RightDoubleBracket]}, {t[1], t1, t1}]}\)], "Input"],
+
+Cell[BoxData[
+    \({{t[1], n, n}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A1]\)[0]\)], "Input"],
+
+Cell[BoxData[
+    \(q\ \[ScriptOne]\[CircleTimes]\[ScriptOne]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A1]\)[1]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 - 
+          1\/q\^2)\)\ q\ \(\((X\_\(A\_1, 1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\
+\_1, 1\))\)\^-\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A1]\)[2]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\((1 - 1\/q\^2)\)\^2\ q\ \(\((X\_\(A\_1, 1\))\)\^+\) ** \
+\(\((X\_\(A\_1, 1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_1, 1\))\)\^-\) ** \
+\(\((X\_\(A\_1, 1\))\)\^-\)\)\/\(1\/q + q\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RMatrix[A1, \(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis, {2}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 1, {{q\^\(3/2\)}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RMatrix[A1, \(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis, {0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[2, 
+      2, {{\@q, 0}, {\(\(-1\) + q\^2\)\/q\^\(3/2\), \@q}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RMatrix[A1, \(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis, {\(-2\)}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 1, {{q\^\(3/2\)}}]\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rev 99", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(CheckRMatrixOppositeCommutes[
+        A1]\)[\(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis]\)], "Input",
+  CellChangeTimes -> {{3.409852692542421*^9, 3.4098526994022846`*^9}}],
+
+Cell[BoxData[
+    \(True\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CartanFactors[A1]\)], "Input"],
+
+Cell[BoxData[
+    \({1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(LongestWordDecomposition[A1]\)], "Input"],
+
+Cell[BoxData[
+    \({1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(p = Length[QuantumPositiveRoots[A1]]\)], "Input"],
+
+Cell[BoxData[
+    \(1\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(l = QuantumRootHeight[A1] /@ QuantumPositiveRoots[A1]\)], "Input"],
+
+Cell[BoxData[
+    \({1}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[{t[r], 
+          0, \(n - Sum[l\[LeftDoubleBracket]k\[RightDoubleBracket] t[k], {k, \
+r + 1, p}]\)\/l\[LeftDoubleBracket]r\[RightDoubleBracket]}, {r, p, 
+          2, \(-1\)}]~
+      Join~{With[{t1 = \(n - Sum[t[k] l\[LeftDoubleBracket]k\
+\[RightDoubleBracket], {k, 2, p}]\)\/l\[LeftDoubleBracket]1\
+\[RightDoubleBracket]}, {t[1], t1, t1}]}\)], "Input"],
+
+Cell[BoxData[
+    \({{t[1], n, n}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A1]\)[0]\)], "Input"],
+
+Cell[BoxData[
+    \(\[ScriptOne]\[CircleTimes]\[ScriptOne]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A1]\)[1]\)], "Input"],
+
+Cell[BoxData[
+    \(\((1 - 
+          1\/q\^2)\)\ q\ \(\((X\_\(A\_1, 1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\
+\_1, 1\))\)\^-\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A1]\)[2]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\((1 - 1\/q\^2)\)\^2\ q\^3\ \(\((X\_\(A\_1, 1\))\)\^+\) ** \
+\(\((X\_\(A\_1, 1\))\)\^+\)\[CircleTimes]\(\((X\_\(A\_1, 1\))\)\^-\) ** \
+\(\((X\_\(A\_1, 1\))\)\^-\)\)\/\(1\/q + q\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RMatrix[A1, \(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis, {2}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 1, {{\@q}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RMatrix[A1, \(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis, {0}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[2, 
+      2, {{1\/\@q, 0}, {\(\(-1\) + q\^2\)\/q\^\(3/2\), 1\/\@q}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RMatrix[A1, \(Irrep[A1]\)[{1}], \(Irrep[A1]\)[{1}], 
+      FundamentalBasis, {\(-2\)}]\)], "Input"],
+
+Cell[BoxData[
+    \(Matrix[1, 1, {{\@q}}]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(bm = 
+      With[{\[CapitalGamma] = A1, V = \(Irrep[A1]\)[{1}]}, 
+        BraidingMap[\[CapitalGamma], V\^\(\[CircleTimes]2\), 
+          FundamentalBasis]]\)], "Input",
+  CellChangeTimes -> {{3.409851718371632*^9, 3.4098517836555057`*^9}, \
+{3.409852122933363*^9, 3.4098521306544657`*^9}}],
+
+Cell[BoxData[
+    \(RepresentationTensor[
+      A\_1, \(Irrep[A\_1]\)[{1}]\[CircleTimes]\(Irrep[A\_1]\)[{1}], 
+      FundamentalBasis, \(Irrep[A\_1]\)[{1}]\[CircleTimes]\(Irrep[
+            A\_1]\)[{1}], 
+      FundamentalBasis, {{{2}, Matrix[1, 1, {{q\^\(3/2\)}}]}, {{0}, 
+          Matrix[2, 
+            2, {{\(\(-1\) + q\^2\)\/q\^\(3/2\), \@q}, {\@q, 0}}]}, {{\(-2\)}, 
+          Matrix[1, 1, {{q\^\(3/2\)}}]}}]\)], "Output",
+  CellChangeTimes -> {3.409851785728486*^9, {3.4098521242652783`*^9, \
+3.4098521310049696`*^9}, 3.4098525615740976`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CheckRepresentationTensor[bm]\)], "Input",
+  CellChangeTimes -> {{3.4098517424162064`*^9, 3.409851742506336*^9}, \
+{3.409851790004635*^9, 3.4098517906455564`*^9}}],
+
+Cell[BoxData[
+    \(False\)], "Output",
+  CellChangeTimes -> {3.4098517910962048`*^9, 3.4098521277402754`*^9, \
+3.409852562505437*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(RepresentationTensorErrors[bm, #] &\) /@ 
+      Weights[A1, V\^\(\[CircleTimes]2\)]\)], "Input",
+  CellChangeTimes -> {{3.4098518172738466`*^9, 3.4098518358305297`*^9}}],
+
+Cell[BoxData[
+    \({{{\(\((X\_1)\)\^-\), Matrix[2, 1, {{q\^\(3/2\)}, {\@q}}], 
+          Matrix[2, 
+            1, {{1\/\@q + \(\(-1\) + q\^2\)\/q\^\(3/2\)}, {\@q}}]}}, {{\(\((X\
+\_1)\)\^+\), Matrix[1, 2, {{\@q + \(\(-1\) + q\^2\)\/\@q, q\^\(3/2\)}}], 
+          Matrix[1, 2, {{q\^\(5/2\), q\^\(3/2\)}}]}, {\(\((X\_1)\)\^-\), 
+          Matrix[1, 2, {{\@q + \(\(-1\) + q\^2\)\/\@q, q\^\(3/2\)}}], 
+          Matrix[1, 2, {{q\^\(5/2\), q\^\(3/2\)}}]}}, {{\(\((X\_1)\)\^+\), 
+          Matrix[2, 1, {{q\^\(3/2\)}, {\@q}}], 
+          Matrix[2, 
+            1, {{1\/\@q + \(\(-1\) + q\^2\)\/q\^\(3/2\)}, {\@q}}]}}}\)], \
+"Output",
+  CellChangeTimes -> {3.4098518366917677`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(basis = 
+      With[{\[CapitalGamma] = A1, V = \(Irrep[A1]\)[{1}], 
+          n = 3, \[Lambda] = {1}}, \[IndentingNewLine]\(HighWeightVectors[\
+\[CapitalGamma]]\)[V\^\(\[CircleTimes]n\), 
+          FundamentalBasis, \[Lambda]]\[IndentingNewLine]]\)], "Input",
+  CellChangeTimes -> {{3.4098508867658415`*^9, 3.409850886976144*^9}, \
+{3.4098509553845105`*^9, 3.409850955694957*^9}, {3.4098510857719984`*^9, \
+3.4098511419127245`*^9}}],
+
+Cell[BoxData[
+    \({{1\/\(\(-1\) - q\^2\), 1\/\(q\ \((\(-1\) - q\^2)\)\), 
+        1}, {\(-\(1\/q\)\), 1, 0}}\)], "Output",
+  CellChangeTimes -> {3.4098515967367296`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(t2 = 
+      With[{\[CapitalGamma] = A1, V = \(Irrep[A1]\)[{1}], 
+          n = 2, \[Lambda] = {1}}, \(BR[n, {1}]\)[\[CapitalGamma], V, 
+          FundamentalBasis]]\)], "Input",
+  CellChangeTimes -> {{3.409851718371632*^9, 3.409851735646472*^9}}],
+
+Cell[BoxData[
+    \(RepresentationTensor[
+      A\_1, \(Irrep[A\_1]\)[{1}]\[CircleTimes]\(Irrep[A\_1]\)[{1}], 
+      FundamentalBasis, \(Irrep[A\_1]\)[{1}]\[CircleTimes]\(Irrep[
+            A\_1]\)[{1}], 
+      FundamentalBasis, {{{2}, 
+          Matrix[1, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}, \
+{{0}, Matrix[2, 
+            2, {{\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q \
++ q\^2 + q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, \
+{\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 0}}]}, {{\(-2\)}, 
+          Matrix[1, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}}]\
+\)], "Output",
+  CellChangeTimes -> {3.409851737128603*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CheckRepresentationTensor[t2]\)], "Input",
+  CellChangeTimes -> {{3.4098517424162064`*^9, 3.409851742506336*^9}}],
+
+Cell[BoxData[
+    \(False\)], "Output",
+  CellChangeTimes -> {3.409851742906912*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(t3 = 
+      With[{\[CapitalGamma] = A1, V = \(Irrep[A1]\)[{1}], 
+          n = 3, \[Lambda] = {1}}, \(BR[n, {1}]\)[\[CapitalGamma], V, 
+          FundamentalBasis]]\)], "Input",
+  CellChangeTimes -> {3.409851718371632*^9}],
+
+Cell[BoxData[
+    \(RepresentationTensor[
+      A\_1, \((\(Irrep[A\_1]\)[{1}]\[CircleTimes]\(Irrep[
+                A\_1]\)[{1}])\)\[CircleTimes]\(Irrep[A\_1]\)[{1}], 
+      FundamentalBasis, \((\(Irrep[A\_1]\)[{1}]\[CircleTimes]\(Irrep[
+                A\_1]\)[{1}])\)\[CircleTimes]\(Irrep[A\_1]\)[{1}], 
+      FundamentalBasis, {{{3}, 
+          Matrix[1, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}, \
+{{1}, Matrix[3, 
+            3, {{\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q \
++ q\^2 + q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 
+                0}, {\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 0, 
+                0}, {0, 
+                0, \(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + \
+q\^5\)}}]}, {{\(-1\)}, 
+          Matrix[3, 
+            3, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 0, 
+                0}, {0, \(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\
+\) + q + q\^2 + q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + \
+q\^5\)}, {0, \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 
+                0}}]}, {{\(-3\)}, 
+          Matrix[1, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}}]\
+\)], "Output",
+  CellChangeTimes -> {3.4098515975879536`*^9, 3.409851719953907*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CheckRepresentationTensor[t3]\)], "Input",
+  CellChangeTimes -> {{3.409851723198573*^9, 3.4098517273545485`*^9}}],
+
+Cell[BoxData[
+    \(False\)], "Output",
+  CellChangeTimes -> {3.4098517278152113`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(RepresentationTensorErrors[t, #] &\) /@ Weights[A1, W]\)], "Input",
+  CellChangeTimes -> {{3.409851623294918*^9, 3.4098516734971056`*^9}}],
+
+Cell[BoxData[
+    \({{{\(\((X\_1)\)\^-\), 
+          Matrix[3, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, \
+{\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, {\(1 + \
+q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\)}}], 
+          Matrix[3, 
+            1, {{\(1 + q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\) + \(\((\(-1\) + q\
+\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q + q\^2 + q\^5)\)\)}, {\(q\ \((1 \
++ q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, {\(1 + q\^2\)\/\(\(-1\) + q + \
+q\^2 + q\^5\)}}]}}, {{\(\((X\_1)\)\^+\), 
+          Matrix[1, 
+            3, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\) + \(q\
+\ \((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\^3\
+\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\^2\ \((1 + \
+q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}], 
+          Matrix[1, 
+            3, {{\(q\^4\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(q\^3\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\^2\ \((1 + \
+q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}, {\(\((X\_1)\)\^-\), 
+          Matrix[3, 
+            3, {{\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\) + \
+\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\^2\
+\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 
+                0}, {\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) \
++ q + q\^2 + q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, {\(q\ \((1 + q\^2)\)\
+\)\/\(\(-1\) + q + q\^2 + q\^5\), 
+                0, \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}], 
+          Matrix[3, 
+            3, {{\(q\^3\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 
+                0}, {\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) \
++ q + q\^2 + q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(1 + q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\) + \(\((\(-1\) + q\^2)\)\ \((1 + \
+q\^2)\)\)\/\(q\ \((\(-1\) + q + q\^2 + q\^5)\)\)}, {\(q\ \((1 + q\^2)\)\)\/\(\
+\(-1\) + q + q\^2 + q\^5\), 
+                0, \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}}, \
+{{\(\((X\_1)\)\^+\), 
+          Matrix[3, 
+            3, {{\(q\^3\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q + q\^2 + \
+q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, {\(q\^2\ \
+\((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\
+\) + q + q\^2 + q\^5\), 
+                0}, {0, \(1 + q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\) + \
+\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q + q\^2 + \
+q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}], 
+          Matrix[3, 
+            3, {{\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\) + \
+\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q + q\^2 + \
+q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, {\(q\^2\ \
+\((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\
+\) + q + q\^2 + q\^5\), 
+                0}, {0, \(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + \
+q\^5\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}, \
+{\(\((X\_1)\)\^-\), 
+          Matrix[1, 
+            3, {{\(q\^4\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\ \
+\((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\) + \(\((\(-1\) + q\^2)\)\ \((1 \
++ q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) \
++ q + q\^2 + q\^5\)}}], 
+          Matrix[1, 
+            3, {{\(q\^4\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \
+\(q\^3\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), \(q\^2\ \((1 + \
+q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}}, {{\(\((X\_1)\)\^+\), 
+          Matrix[3, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, \
+{\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, {\(1 + \
+q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\)}}], 
+          Matrix[3, 
+            1, {{\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}, \
+{\(1 + q\^2\)\/\(q\ \((\(-1\) + q + q\^2 + q\^5)\)\) + \(\((\(-1\) + q\^2)\)\ \
+\((1 + q\^2)\)\)\/\(q\^2\ \((\(-1\) + q + q\^2 + q\^5)\)\)}, {\(1 + \
+q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\)}}]}}}\)], "Output",
+  CellChangeTimes -> {3.4098515986294513`*^9, {3.409851657183648*^9, \
+3.4098516744184303`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(map = 
+      With[{\[CapitalGamma] = A1, V = \(Irrep[A1]\)[{1}], 
+          n = 3, \[Lambda] = {1}}, \[IndentingNewLine]MatrixData[\(\(BR[
+                n, {1}]\)[\[CapitalGamma], V, 
+              FundamentalBasis]\)[\[Lambda]]]\[IndentingNewLine]]\)], "Input",\
+
+  CellChangeTimes -> {{3.409850878343731*^9, 3.409850920093765*^9}, \
+{3.4098509574274483`*^9, 3.409850982062872*^9}, {3.4098510879951954`*^9, \
+3.409851127822464*^9}}],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(map\\)\\\" is similar to existing symbol \
+\\\"\\!\\(Map\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \({{\(\((\(-1\) + q\^2)\)\ \((1 + q\^2)\)\)\/\(q\ \((\(-1\) + q + q\^2 + \
+q\^5)\)\), \(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 
+        0}, {\(q\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 0, 0}, {0, 
+        0, \(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\)}}\)], \
+"Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Transpose[
+      LinearSolve[Transpose[basis], Together[map . Transpose[basis]], 
+        Method \[Rule] "\<OneStepRowReduction\>"]]\)], "Input",
+  CellChangeTimes -> {{3.409850207158614*^9, 3.4098502132273407`*^9}, \
+{3.409850796175579*^9, 3.409850820730888*^9}, {3.409850936076747*^9, \
+3.4098509393814993`*^9}, {3.4098509884420447`*^9, 3.409851002522291*^9}}],
+
+Cell[BoxData[
+    RowBox[{\(LinearSolve::"nosol"\), \(\(:\)\(\ \)\), "\<\"Linear equation \
+encountered which has no solution. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"LinearSolve::nosol\\\"]\\)\"\>"}]], \
+"Message"],
+
+Cell[BoxData[
+    \(Transpose[
+      LinearSolve[{{1\/\(\(-1\) - q\^2\), \(-\(1\/q\)\)}, {1\/\(q\ \((\(-1\) \
+- q\^2)\)\), 1}, {1, 
+            0}}, {{\(1 - q - q\^2\)\/\(q\ \((\(-1\) + q + q\^2 + q\^5)\)\), \
+\(1 + q\^3 - q\^4 + q\^5\)\/\(q\^2\ \((\(-1\) + q + q\^2 + q\^5)\)\)}, \
+{\(-\(q\/\(\(-1\) + q + q\^2 + 
+                    q\^5\)\)\), \(\(-1\) - q\^2\)\/\(\(-1\) + q + q\^2 + q\^5\
+\)}, {\(q\^2\ \((1 + q\^2)\)\)\/\(\(-1\) + q + q\^2 + q\^5\), 0}}, 
+        Method \[Rule] "OneStepRowReduction"]]\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 713}},
+WindowSize->{1059, 649},
+WindowMargins->{{Automatic, 26}, {13, Automatic}},
+ShowSelection->True,
+StyleDefinitions -> "Default.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 237, 4, 70, "Input"],
+Cell[2016, 59, 341, 7, 44, "Print"],
+Cell[2360, 68, 297, 6, 25, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2694, 79, 32, 0, 29, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[2751, 83, 214, 4, 30, "Input"],
+Cell[2968, 89, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3044, 95, 50, 1, 30, "Input"],
+Cell[3097, 98, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3171, 104, 61, 1, 30, "Input"],
+Cell[3235, 107, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3309, 113, 69, 1, 30, "Input"],
+Cell[3381, 116, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3453, 122, 86, 1, 30, "Input"],
+Cell[3542, 125, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3616, 131, 380, 7, 44, "Input"],
+Cell[3999, 140, 48, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4084, 146, 88, 1, 30, "Input"],
+Cell[4175, 149, 75, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4287, 155, 88, 1, 30, "Input"],
+Cell[4378, 158, 137, 3, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4552, 166, 88, 1, 30, "Input"],
+Cell[4643, 169, 211, 3, 66, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4891, 177, 114, 2, 30, "Input"],
+Cell[5008, 181, 62, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5107, 187, 114, 2, 30, "Input"],
+Cell[5224, 191, 103, 2, 47, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5364, 198, 119, 2, 30, "Input"],
+Cell[5486, 202, 62, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5597, 209, 31, 0, 29, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[5653, 213, 214, 4, 30, "Input"],
+Cell[5870, 219, 38, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5945, 225, 50, 1, 30, "Input"],
+Cell[5998, 228, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6072, 234, 61, 1, 30, "Input"],
+Cell[6136, 237, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6210, 243, 69, 1, 30, "Input"],
+Cell[6282, 246, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6354, 252, 86, 1, 30, "Input"],
+Cell[6443, 255, 37, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6517, 261, 380, 7, 44, "Input"],
+Cell[6900, 270, 48, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6985, 276, 88, 1, 30, "Input"],
+Cell[7076, 279, 72, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7185, 285, 88, 1, 30, "Input"],
+Cell[7276, 288, 137, 3, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7450, 296, 88, 1, 30, "Input"],
+Cell[7541, 299, 214, 3, 66, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7792, 307, 114, 2, 30, "Input"],
+Cell[7909, 311, 55, 1, 32, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8001, 317, 114, 2, 30, "Input"],
+Cell[8118, 321, 109, 2, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8264, 328, 119, 2, 30, "Input"],
+Cell[8386, 332, 55, 1, 32, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8478, 338, 310, 6, 31, "Input"],
+Cell[8791, 346, 550, 10, 73, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9378, 361, 183, 3, 30, "Input"],
+Cell[9564, 366, 134, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9735, 374, 191, 3, 31, "Input"],
+Cell[9929, 379, 675, 12, 182, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10641, 396, 452, 8, 70, "Input"],
+Cell[11096, 406, 171, 3, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11304, 414, 266, 5, 30, "Input"],
+Cell[11573, 421, 741, 15, 113, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12351, 441, 133, 2, 30, "Input"],
+Cell[12487, 445, 84, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12608, 452, 242, 5, 70, "Input"],
+Cell[12853, 459, 1340, 25, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[14230, 489, 133, 2, 70, "Input"],
+Cell[14366, 493, 86, 2, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[14489, 500, 160, 2, 70, "Input"],
+Cell[14652, 504, 4500, 77, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19189, 586, 455, 9, 70, "Input"],
+Cell[19647, 597, 354, 5, 70, "Message"],
+Cell[20004, 604, 319, 5, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20360, 614, 382, 6, 70, "Input"],
+Cell[20745, 622, 297, 5, 70, "Message"],
+Cell[21045, 629, 522, 9, 70, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
