@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     68430,       1962]
-NotebookOptionsPosition[     65667,       1873]
-NotebookOutlinePosition[     66028,       1889]
-CellTagsIndexPosition[     65985,       1886]
+NotebookDataLength[    118172,       3241]
+NotebookOptionsPosition[    113082,       3083]
+NotebookOutlinePosition[    113443,       3099]
+CellTagsIndexPosition[    113400,       3096]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -49,7 +49,8 @@ http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
    3.409437503720379*^9, 3.4094379714729743`*^9, 3.4094383418555584`*^9, 
    3.409438981875862*^9, 3.409507477375*^9, 3.409608650546875*^9, 
    3.409608888109375*^9, {3.409680969796875*^9, 3.4096809996875*^9}, 
-   3.40968105653125*^9, 3.409697379109375*^9}],
+   3.40968105653125*^9, 3.409697379109375*^9, 3.4098496838861856`*^9, 
+   3.4098499581806016`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
@@ -65,7 +66,8 @@ Cell[BoxData[
    3.409437503720379*^9, 3.4094379714729743`*^9, 3.4094383418555584`*^9, 
    3.409438981875862*^9, 3.409507477375*^9, 3.409608650546875*^9, 
    3.409608888109375*^9, {3.409680969796875*^9, 3.4096809996875*^9}, 
-   3.40968105653125*^9, 3.40969737915625*^9}]
+   3.40968105653125*^9, 3.409697379109375*^9, 3.4098496838861856`*^9, 
+   3.4098499582106447`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -85,7 +87,7 @@ MatrixManipulation\\\", ButtonNote -> \\\"General::obspkg\\\"]\\)\"\>"}]], \
    3.4094379732254944`*^9, 3.40943834440923*^9, 3.409438983498195*^9, 
    3.409507478296875*^9, 3.40960865159375*^9, 3.409608890515625*^9, {
    3.409680973703125*^9, 3.40968100171875*^9}, 3.4096810581875*^9, 
-   3.4096973820625*^9}]
+   3.4096973820625*^9, 3.4098496847874813`*^9, 3.4098499605439997`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -105,7 +107,7 @@ Cell[BoxData[
   3.4094367815719805`*^9, 3.409437598396517*^9, 3.4094379802556033`*^9, 
    3.4094383457311316`*^9, 3.409507481*^9, 3.409608653*^9, 3.409608892*^9, {
    3.409680977890625*^9, 3.4096810025625*^9}, 3.409681059078125*^9, 
-   3.409697407515625*^9}]
+   3.409697407515625*^9, 3.4098496871208367`*^9, 3.409849961405238*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -125,7 +127,7 @@ Cell[BoxData[
   3.4094367889425793`*^9, 3.409437606337936*^9, 3.4094379899896*^9, 
    3.4094383528113117`*^9, 3.409507491640625*^9, 3.40960898053125*^9, {
    3.409680980703125*^9, 3.40968100703125*^9}, 3.4096810624375*^9, 
-   3.409697416125*^9}]
+   3.409697416125*^9, 3.409849687711686*^9, 3.409849962066189*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -143,8 +145,11 @@ Cell[BoxData[
  CellChangeTimes->{3.4094367839453936`*^9, 3.4094376008400307`*^9, 
   3.409437983530312*^9, 3.409438348655336*^9, 3.409507484828125*^9, 
   3.409608761203125*^9, 3.40960895921875*^9, 3.409681012578125*^9, 
-  3.409681072859375*^9, 3.40969754815625*^9}]
+  3.409681072859375*^9, 3.40969754815625*^9, 3.409849691186683*^9, 
+  3.4098499655512*^9}]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -156,6 +161,16 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"1", ",", "1"}], "}"}], "]"}], ",", "4"}], "]"}], 
   ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`A2`BraidingData`\\\"\\).\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.4098496912968416`*^9, 3.4098499656914015`*^9}]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
@@ -180,14 +195,157 @@ Cell[BoxData[
   RowBox[{"KnownBraidingData", "[", "]"}], "//", "TableForm"}]], "Input"],
 
 Cell[BoxData[
- TagBox[
-  RowBox[{"{", "}"}],
+ TagBox[GridBox[{
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], "]"}], "2"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], "]"}], "3"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], "]"}], "4"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], "]"}], "5"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], "]"}], "2"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], "]"}], "3"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], "]"}], "4"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], "]"}], "5"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], "]"}], "6"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], "]"}], "2"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], "]"}], "3"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}], "]"}], "4"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "0"}], "}"}], "]"}], "2"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "0"}], "}"}], "]"}], "3"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "0"}], "}"}], "]"}], "4"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "1"}], "}"}], "]"}], "2"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "1"}], "}"}], "]"}], "3"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "2"}], "}"}], "]"}], "2"},
+    {
+     SubscriptBox["A", "2"], 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "2"], "]"}], "[", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "0"}], "}"}], "]"}], "2"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.7]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
   Function[BoxForm`e$, 
    TableForm[BoxForm`e$]]]], "Output",
  CellChangeTimes->{3.409436788141427*^9, 3.4094376050761213`*^9, 
   3.409437989929514*^9, 3.4094383527712545`*^9, 3.40950749103125*^9, 
   3.409608971859375*^9, 3.409681016671875*^9, 3.409681076109375*^9, 
-  3.4096975486875*^9}]
+  3.4096975486875*^9, 3.4098496971652803`*^9, 3.4098499765870686`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -335,12 +493,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"Irrep", "[", 
        SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "1", "}"}], "]"}], "6"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
       RowBox[{"{", "2", "}"}], "]"}], "2"},
     {
      SubscriptBox["A", "1"], 
@@ -365,12 +517,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"Irrep", "[", 
        SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "2", "}"}], "]"}], "6"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
       RowBox[{"{", "3", "}"}], "]"}], "2"},
     {
      SubscriptBox["A", "1"], 
@@ -389,25 +535,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"Irrep", "[", 
        SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "3", "}"}], "]"}], "5"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
       RowBox[{"{", "4", "}"}], "]"}], "2"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "4", "}"}], "]"}], "3"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "4", "}"}], "]"}], "4"},
     {
      SubscriptBox["A", "1"], 
      RowBox[{
@@ -419,55 +547,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"Irrep", "[", 
        SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "5", "}"}], "]"}], "3"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "5", "}"}], "]"}], "4"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "6", "}"}], "]"}], "2"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "6", "}"}], "]"}], "3"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "7", "}"}], "]"}], "2"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "7", "}"}], "]"}], "3"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "8", "}"}], "]"}], "2"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "9", "}"}], "]"}], "2"},
-    {
-     SubscriptBox["A", "1"], 
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "1"], "]"}], "[", 
-      RowBox[{"{", "10", "}"}], "]"}], "2"}
+      RowBox[{"{", "6", "}"}], "]"}], "2"}
    },
    GridBoxAlignment->{
     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
@@ -484,41 +564,12 @@ Cell[BoxData[
  CellChangeTimes->{3.4094367973847184`*^9, 3.4094376147600465`*^9, 
   3.409437998121293*^9, 3.409438360973048*^9, 3.409507501921875*^9, 
   3.40960899746875*^9, 3.409681017171875*^9, 3.409681079109375*^9, 
-  3.40969754940625*^9}]
+  3.40969754940625*^9, 3.409849701551587*^9, 3.4098499784998193`*^9}]
 }, Open  ]],
-
-Cell[BoxData[
- RowBox[{"CheckRepresentationTensor", "[", 
-  RowBox[{"DecompositionMap", "[", 
-   RowBox[{
-    SubscriptBox["A", "2"], ",", 
-    SuperscriptBox[
-     RowBox[{
-      RowBox[{"Irrep", "[", 
-       SubscriptBox["A", "2"], "]"}], "[", 
-      RowBox[{"{", 
-       RowBox[{"2", ",", "2"}], "}"}], "]"}], 
-     RowBox[{"\[CircleTimes]", "2"}]], ",", "FundamentalBasis"}], "]"}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.409680554671875*^9, 3.40968058225*^9}, {
-  3.409680629125*^9, 3.409680635328125*^9}, {3.409681140671875*^9, 
-  3.409681140765625*^9}}],
 
 Cell[BoxData[
  RowBox[{"DebugSet", "[", "True", "]"}]], "Input",
  CellChangeTimes->{{3.409681099921875*^9, 3.409681102203125*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"BraidingData", "[", "A2", "]"}], "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"Irrep", "[", "A2", "]"}], "[", 
-    RowBox[{"{", 
-     RowBox[{"2", ",", "2"}], "}"}], "]"}], ",", "3"}], "]"}]], "Input",
- CellChangeTimes->{{3.409681005359375*^9, 3.4096810084375*^9}, {
-  3.409681085046875*^9, 3.409681098328125*^9}, {3.40968772528125*^9, 
-  3.409687725375*^9}}],
 
 Cell[CellGroupData[{
 
@@ -548,8 +599,8 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413035592", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.032`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21130000", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.528`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
@@ -558,7 +609,7 @@ Cell[BoxData[
 A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), 3, \
 \\(\\({3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413035592, " time: ", 126.032, " ", 
+  "mem: ", 21130000, " time: ", 5.528, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`Braiding`Private`BraidingMatrices[A\_1]\)\
 \)[\(\(\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), 3, \(\({3}\)\)\)\)]\), \
@@ -566,12 +617,12 @@ HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.4096975498125*^9}],
+  3.4096975498125*^9, 3.40984998407784*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413039184", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.032`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21133608", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.528`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
@@ -584,7 +635,7 @@ FundamentalBasis, \\(\\({3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>",
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
 product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413039184, " time: ", 126.032, " ", 
+  "mem: ", 21133608, " time: ", 5.528, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\(\(\(Irrep[\
 A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
@@ -595,27 +646,27 @@ A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697549859375*^9}],
+  3.4096975498125*^9, 3.409849984097869*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413043864", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.064`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21138288", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.548`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculated \
 decomposition map...\\\\\\\"\\\", HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413043864, " time: ", 126.064, " ", 
+  "mem: ", 21138288, " time: ", 5.548, " ", 
    "\!\(\*TagBox[\"\\\"Calculated decomposition map...\\\"\", HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969754990625*^9}],
+  3.4096975498125*^9, 3.4098499842180414`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413047368", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.079`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21141792", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.578`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
 \\\\\\\"\\\", HoldForm]\\)\"\>", 
@@ -628,7 +679,7 @@ FundamentalBasis, \\(\\({3}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>",
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
 product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413047368, " time: ", 126.079, " ", 
+  "mem: ", 21141792, " time: ", 5.578, " ", 
    "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\(\(\(Irrep[\
 A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
@@ -639,25 +690,25 @@ A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697549953125*^9}],
+  3.4096975498125*^9, 3.4098499843081713`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413042408", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.095`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21136816", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.598`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"Changing basis ...\"\>"}],
   SequenceForm[
-  "mem: ", 413042408, " time: ", 126.095, " ", "Changing basis ..."],
+  "mem: ", 21136816, " time: ", 5.598, " ", "Changing basis ..."],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755*^9}],
+  3.4096975498125*^9, 3.409849984358243*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413053016", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.095`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21147440", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.608`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
@@ -665,19 +716,19 @@ Cell[BoxData[
 "\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\\\
 _1]\\)\\)[0]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413053016, " time: ", 126.095, " ", 
+  "mem: ", 21147440, " time: ", 5.608, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\_1]\)\)[\
 0]\), HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.4096975500625*^9}],
+  3.4096975498125*^9, 3.409849984428344*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413053200", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.095`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21147624", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.608`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
 \\\\\\\"\\\", HoldForm]\\)\"\>", 
@@ -685,19 +736,19 @@ Cell[BoxData[
 "\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\\\
 _1]\\)\\)[0]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413053200, " time: ", 126.095, " ", 
+  "mem: ", 21147624, " time: ", 5.608, " ", 
    "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\_1]\)\)[\
 0]\), HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550109375*^9}],
+  3.4096975498125*^9, 3.409849984448373*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413055192", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.11`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21149584", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.608`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
@@ -705,19 +756,19 @@ Cell[BoxData[
 "\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\\\
 _1]\\)\\)[1]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413055192, " time: ", 126.11, " ", 
+  "mem: ", 21149584, " time: ", 5.608, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\_1]\)\)[\
 1]\), HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755015625*^9}],
+  3.4096975498125*^9, 3.4098499845685453`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413055752", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.11`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21150120", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.608`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
 \\\\\\\"\\\", HoldForm]\\)\"\>", 
@@ -725,78 +776,78 @@ Cell[BoxData[
 "\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\\\
 _1]\\)\\)[1]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413055752, " time: ", 126.11, " ", 
+  "mem: ", 21150120, " time: ", 5.608, " ", 
    "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\_1]\)\)[\
 1]\), HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550203125*^9}],
+  3.4096975498125*^9, 3.4098499845885744`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413059240", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.12599999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21153624", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.618`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
    "\[InvisibleSpace]", \
 "\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\\\
 _1]\\)\\)[2]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413059240, " time: ", 126.12599999999999`, " ", 
+  "mem: ", 21153624, " time: ", 5.618, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\_1]\)\)[\
 2]\), HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755025*^9}],
+  3.4096975498125*^9, 3.4098499846186175`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413059904", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.12599999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21154288", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.618`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
 \\\\\\\"\\\", HoldForm]\\)\"\>", 
    "\[InvisibleSpace]", \
 "\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\\\
 _1]\\)\\)[2]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413059904, " time: ", 126.12599999999999`, " ", 
+  "mem: ", 21154288, " time: ", 5.618, " ", 
    "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[A\_1]\)\)[\
 2]\), HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550296875*^9}],
+  3.4096975498125*^9, 3.409849984638646*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413134808", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.17299999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21229216", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.658`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
     RowBox[{"1", ",", "1"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "1"}],
   SequenceForm[
-  "mem: ", 413134808, " time: ", 126.17299999999999`, " ", 
-   "ChangeBasis called with ", {1, 1}, " ", 1],
+  "mem: ", 21229216, " time: ", 5.658, " ", "ChangeBasis called with ", {1, 
+   1}, " ", 1],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755034375*^9}],
+  3.4096975498125*^9, 3.4098499849991646`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413137752", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.17299999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21232184", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.658`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating (what a \
 waste!) \\\\\\\"\\\", HoldForm]\\)\"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\(\\(\\(BR[\\(\\(3, \
@@ -806,7 +857,7 @@ waste!) \\\\\\\"\\\", HoldForm]\\)\"\>",
 \\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)}\\)\\), \
 FundamentalBasis\\)\\)]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413137752, " time: ", 126.17299999999999`, " ", 
+  "mem: ", 21232184, " time: ", 5.658, " ", 
    "\!\(\*TagBox[\"\\\"Calculating (what a waste!) \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(BR[\(\(3, \(\({2}\)\)\)\)]\)\)[\(\(A\_1, \
 \(\({\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
@@ -816,27 +867,27 @@ HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755040625*^9}],
+  3.4096975498125*^9, 3.4098499850592513`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413144768", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.235`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21239200", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.728`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"... finished calculating, result \"\>", 
    "\[InvisibleSpace]", "5912", "\[InvisibleSpace]", "\<\" bytes\"\>"}],
   SequenceForm[
-  "mem: ", 413144768, " time: ", 126.235, " ", 
+  "mem: ", 21239200, " time: ", 5.728, " ", 
    "... finished calculating, result ", 5912, " bytes"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550453125*^9}],
+  3.4096975498125*^9, 3.4098499851694098`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413141032", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.235`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21235464", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.728`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
    "\[InvisibleSpace]", 
@@ -844,32 +895,32 @@ Cell[BoxData[
     RowBox[{"1", ",", "1"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "1"}],
   SequenceForm[
-  "mem: ", 413141032, " time: ", 126.235, " ", "ChangeBasis called with ", {1,
-    1}, " ", 1],
+  "mem: ", 21235464, " time: ", 5.728, " ", "ChangeBasis called with ", {1, 
+   1}, " ", 1],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.4096975505*^9}],
+  3.4096975498125*^9, 3.409849985199453*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413142368", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.25099999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21236784", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.739`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"Finished calculating braiding matrices.\"\>"}],
   SequenceForm[
-  "mem: ", 413142368, " time: ", 126.25099999999999`, " ", 
+  "mem: ", 21236784, " time: ", 5.739, " ", 
    "Finished calculating braiding matrices."],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550546875*^9}],
+  3.4096975498125*^9, 3.409849985259539*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413142512", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.25099999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21236928", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.749`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
    "\[InvisibleSpace]", \
@@ -877,7 +928,7 @@ Cell[BoxData[
 A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), 3, \
 \\(\\({1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413142512, " time: ", 126.25099999999999`, " ", 
+  "mem: ", 21236928, " time: ", 5.749, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(QuantumGroups`Braiding`Private`BraidingMatrices[A\_1]\)\
 \)[\(\(\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), 3, \(\({1}\)\)\)\)]\), \
@@ -885,13 +936,13 @@ HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755059375*^9}],
+  3.4096975498125*^9, 3.409849985299597*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413145256", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.25099999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21239672", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.749`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
 \\\", HoldForm]\\)\"\>", 
    "\[InvisibleSpace]", \
@@ -903,7 +954,7 @@ FundamentalBasis, \\(\\({1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>",
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
 product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413145256, " time: ", 126.25099999999999`, " ", 
+  "mem: ", 21239672, " time: ", 5.749, " ", 
    "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\(\(\(Irrep[\
 A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
@@ -914,58 +965,57 @@ A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755065625*^9}],
+  3.4096975498125*^9, 3.4098499853396544`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413146160", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.267`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21240576", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.769`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculated \
 decomposition map...\\\\\\\"\\\", HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413146160, " time: ", 126.267, " ", 
+  "mem: ", 21240576, " time: ", 5.769, " ", 
    "\!\(\*TagBox[\"\\\"Calculated decomposition map...\\\"\", HoldForm]\)"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550703125*^9}],
+  3.4096975498125*^9, 3.4098499853897266`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413150400", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.29799999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21244816", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.779`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"About to find the null space of a \"\>", 
    "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" by \"\>", 
    "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" matrix.\"\>"}],
   SequenceForm[
-  "mem: ", 413150400, " time: ", 126.29799999999999`, " ", 
+  "mem: ", 21244816, " time: ", 5.779, " ", 
    "About to find the null space of a ", 2, " by ", 2, " matrix."],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755075*^9}],
+  3.4096975498125*^9, 3.409849985429784*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413151232", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.29799999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21245648", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.779`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"Finished finding null space.\"\>"}],
   SequenceForm[
-  "mem: ", 413151232, " time: ", 126.29799999999999`, " ", 
-   "Finished finding null space."],
+  "mem: ", 21245648, " time: ", 5.779, " ", "Finished finding null space."],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697550796875*^9}],
+  3.4096975498125*^9, 3.4098499854598274`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413150840", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.29799999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21245264", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.779`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
 \\\\\\\"\\\", HoldForm]\\)\"\>", 
    "\[InvisibleSpace]", \
@@ -977,7 +1027,7 @@ FundamentalBasis, \\(\\({1}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>",
    "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
 product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
   SequenceForm[
-  "mem: ", 413150840, " time: ", 126.29799999999999`, " ", 
+  "mem: ", 21245264, " time: ", 5.779, " ", 
    "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
    "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\(\(\(Irrep[\
 A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
@@ -988,39 +1038,38 @@ A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.40969755084375*^9}],
+  3.4096975498125*^9, 3.409849985479856*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413145600", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.29799999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21240024", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.779`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"Changing basis ...\"\>"}],
   SequenceForm[
-  "mem: ", 413145600, " time: ", 126.29799999999999`, " ", 
-   "Changing basis ..."],
+  "mem: ", 21240024, " time: ", 5.779, " ", "Changing basis ..."],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697551*^9}],
+  3.4096975498125*^9, 3.409849985509899*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413146296", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
-   "126.29799999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21240720", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.779`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
     RowBox[{"3", ",", "3"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "2"}],
   SequenceForm[
-  "mem: ", 413146296, " time: ", 126.29799999999999`, " ", 
-   "ChangeBasis called with ", {3, 3}, " ", 2],
+  "mem: ", 21240720, " time: ", 5.779, " ", "ChangeBasis called with ", {3, 
+   3}, " ", 2],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697551046875*^9}]
+  3.4096975498125*^9, 3.409849985529928*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1033,12 +1082,12 @@ ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/LinearSolve/nosol\\\", \
 ButtonNote -> \\\"LinearSolve::nosol\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.4094385972828445`*^9, 3.4094387600168447`*^9, 
   3.4094387922331696`*^9, 3.409511446796875*^9, 3.40962662628125*^9, 
-  3.40969755109375*^9}],
+  3.40969755109375*^9, 3.4098499858103313`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "413163168", 
-   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "126.314`", 
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21257592", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.809`", 
    "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
    "\[InvisibleSpace]", 
@@ -1046,12 +1095,12 @@ Cell[BoxData[
     RowBox[{"3", ",", "3"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
    "\[InvisibleSpace]", "2"}],
   SequenceForm[
-  "mem: ", 413163168, " time: ", 126.314, " ", "ChangeBasis called with ", {3,
-    3}, " ", 2],
+  "mem: ", 21257592, " time: ", 5.809, " ", "ChangeBasis called with ", {3, 
+   3}, " ", 2],
   Editable->False]], "Print",
  CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
   3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
-  3.409697551125*^9}],
+  3.4096975498125*^9, 3.4098499858503885`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -1063,12 +1112,1173 @@ ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/LinearSolve/nosol\\\", \
 ButtonNote -> \\\"LinearSolve::nosol\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.4094385972828445`*^9, 3.4094387600168447`*^9, 
   3.4094387922331696`*^9, 3.409511446796875*^9, 3.40962662628125*^9, 
-  3.40969755115625*^9}],
+  3.40969755109375*^9, 3.4098499858704176`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21267728", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.819`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Finished calculating braiding matrices.\"\>"}],
+  SequenceForm[
+  "mem: ", 21267728, " time: ", 5.819, " ", 
+   "Finished calculating braiding matrices."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499858904467`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["A", "1"], ",", 
+     RowBox[{
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["A", "1"], "]"}], "[", 
+      RowBox[{"{", "1", "}"}], "]"}], ",", "3"}], "}"}], 
+   "\[InvisibleSpace]", "\<\" \"\>", "\[InvisibleSpace]", 
+   "2.653816`7.875415801642002"}],
+  SequenceForm[{
+    Subscript[QuantumGroups`A, 1], 
+    QuantumGroups`Irrep[
+     Subscript[QuantumGroups`A, 1]][{1}], 3}, " ", 
+   2.653816`7.875415801642002],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849985950533*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21269904", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "5.8389999999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`Braiding`Private`BraidingMatrices[\
+A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), 4, \
+\\(\\({4}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21269904, " time: ", 5.8389999999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(QuantumGroups`Braiding`Private`BraidingMatrices[A\_1]\)\
+\)[\(\(\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), 4, \(\({4}\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.40984998599059*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21272736", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "5.8389999999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(HighWeightVectors[A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\\
+((\\(\\((\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({4}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
+product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21272736, " time: ", 5.8389999999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\((\(\(\(\(\
+Irrep[A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)\)\), FundamentalBasis, \(\({4}\)\)\)\
+\)]\), HoldForm]\)", 
+   "\!\(\*TagBox[\"\\\" (iterated tensor product)\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986030648*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21276992", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.849`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculated \
+decomposition map...\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21276992, " time: ", 5.849, " ", 
+   "\!\(\*TagBox[\"\\\"Calculated decomposition map...\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986050677*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21281704", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.869`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(HighWeightVectors[A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\\
+((\\(\\((\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({4}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
+product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21281704, " time: ", 5.869, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\((\(\(\(\(\
+Irrep[A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)\)\), FundamentalBasis, \(\({4}\)\)\)\
+\)]\), HoldForm]\)", 
+   "\!\(\*TagBox[\"\\\" (iterated tensor product)\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986100749*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21273120", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.869`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Changing basis ...\"\>"}],
+  SequenceForm[
+  "mem: ", 21273120, " time: ", 5.869, " ", "Changing basis ..."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499861207776`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21275296", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.879`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "mem: ", 21275296, " time: ", 5.879, " ", "ChangeBasis called with ", {1, 
+   1}, " ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.40984998617085*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21277560", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.879`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating (what a \
+waste!) \\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\(\\(\\(BR[\\(\\(4, \
+\\(\\({2}\\)\\)\\)\\)]\\)\\)[\\(\\(A\\_1, \
+\\(\\({\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)}\\)\\), \
+FundamentalBasis\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21277560, " time: ", 5.879, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating (what a waste!) \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BR[\(\(4, \(\({2}\)\)\)\)]\)\)[\(\(A\_1, \
+\(\({\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)}\)\), FundamentalBasis\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499861908784`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21284296", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.929`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"... finished calculating, result \"\>", 
+   "\[InvisibleSpace]", "11280", "\[InvisibleSpace]", "\<\" bytes\"\>"}],
+  SequenceForm[
+  "mem: ", 21284296, " time: ", 5.929, " ", 
+   "... finished calculating, result ", 11280, " bytes"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986250965*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21279888", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.929`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "mem: ", 21279888, " time: ", 5.929, " ", "ChangeBasis called with ", {1, 
+   1}, " ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499862709937`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21282048", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.939`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating (what a \
+waste!) \\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\(\\(\\(BR[\\(\\(4, \
+\\(\\({3}\\)\\)\\)\\)]\\)\\)[\\(\\(A\\_1, \
+\\(\\({\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)}\\)\\), \
+FundamentalBasis\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21282048, " time: ", 5.939, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating (what a waste!) \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BR[\(\(4, \(\({3}\)\)\)\)]\)\)[\(\(A\_1, \
+\(\({\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)}\)\), FundamentalBasis\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986321066*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21292528", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.999`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"... finished calculating, result \"\>", 
+   "\[InvisibleSpace]", "11280", "\[InvisibleSpace]", "\<\" bytes\"\>"}],
+  SequenceForm[
+  "mem: ", 21292528, " time: ", 5.999, " ", 
+   "... finished calculating, result ", 11280, " bytes"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499863911667`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21287768", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "5.999`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "mem: ", 21287768, " time: ", 5.999, " ", "ChangeBasis called with ", {1, 
+   1}, " ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499864111953`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21289400", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.009`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Finished calculating braiding matrices.\"\>"}],
+  SequenceForm[
+  "mem: ", 21289400, " time: ", 6.009, " ", 
+   "Finished calculating braiding matrices."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499864412384`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21288976", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.009`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`Braiding`Private`BraidingMatrices[\
+A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), 4, \
+\\(\\({2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21288976, " time: ", 6.009, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(QuantumGroups`Braiding`Private`BraidingMatrices[A\_1]\)\
+\)[\(\(\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), 4, \(\({2}\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499864612675`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21291752", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.009`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(HighWeightVectors[A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\\
+((\\(\\((\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
+product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21291752, " time: ", 6.009, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\((\(\(\(\(\
+Irrep[A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)\)\), FundamentalBasis, \(\({2}\)\)\)\
+\)]\), HoldForm]\)", 
+   "\!\(\*TagBox[\"\\\" (iterated tensor product)\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.40984998649131*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21294504", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.019`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculated \
+decomposition map...\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21294504, " time: ", 6.019, " ", 
+   "\!\(\*TagBox[\"\\\"Calculated decomposition map...\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499865213537`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21301048", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.049`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"About to find the null space of a \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" by \"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "\<\" matrix.\"\>"}],
+  SequenceForm[
+  "mem: ", 21301048, " time: ", 6.049, " ", 
+   "About to find the null space of a ", 2, " by ", 2, " matrix."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499865714254`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21301744", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.049`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Finished finding null space.\"\>"}],
+  SequenceForm[
+  "mem: ", 21301744, " time: ", 6.049, " ", "Finished finding null space."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986601469*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21301576", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.049`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(HighWeightVectors[A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\\
+((\\(\\((\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({2}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
+product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21301576, " time: ", 6.049, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\((\(\(\(\(\
+Irrep[A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)\)\), FundamentalBasis, \(\({2}\)\)\)\
+\)]\), HoldForm]\)", 
+   "\!\(\*TagBox[\"\\\" (iterated tensor product)\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499866214976`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21293016", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.049`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Changing basis ...\"\>"}],
+  SequenceForm[
+  "mem: ", 21293016, " time: ", 6.049, " ", "Changing basis ..."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986641526*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21293712", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.049`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "4"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "3"}],
+  SequenceForm[
+  "mem: ", 21293712, " time: ", 6.049, " ", "ChangeBasis called with ", {4, 
+   4}, " ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.40984998667157*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "::", "\<\"nosol\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Linear equation encountered that has no solution. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/LinearSolve/nosol\\\", \
+ButtonNote -> \\\"LinearSolve::nosol\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.4094385972828445`*^9, 3.4094387600168447`*^9, 
+  3.4094387922331696`*^9, 3.409511446796875*^9, 3.40962662628125*^9, 
+  3.40969755109375*^9, 3.4098499867216415`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"stop\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \\!\\(LinearSolve :: \\\"nosol\\\"\\) \
+will be suppressed during this calculation. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.4094385972828445`*^9, 3.4094387600168447`*^9, 
+  3.4094387922331696`*^9, 3.409511446796875*^9, 3.40962662628125*^9, 
+  3.40969755109375*^9, 3.4098499869219294`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21330736", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "6.0889999999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "4"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "3"}],
+  SequenceForm[
+  "mem: ", 21330736, " time: ", 6.0889999999999995`, " ", 
+   "ChangeBasis called with ", {4, 4}, " ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849986951973*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21352232", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.129`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"ChangeBasis called with \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "4"}], "}"}], "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "3"}],
+  SequenceForm[
+  "mem: ", 21352232, " time: ", 6.129, " ", "ChangeBasis called with ", {4, 
+   4}, " ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499870020447`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21382344", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.159`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Finished calculating braiding matrices.\"\>"}],
+  SequenceForm[
+  "mem: ", 21382344, " time: ", 6.159, " ", 
+   "Finished calculating braiding matrices."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849987062131*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21382864", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.159`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`Braiding`Private`BraidingMatrices[\
+A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\), 4, \
+\\(\\({0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21382864, " time: ", 6.159, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(QuantumGroups`Braiding`Private`BraidingMatrices[A\_1]\)\
+\)[\(\(\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\), 4, \(\({0}\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.40984998708216*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21385656", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.159`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(HighWeightVectors[A\\_1]\\)\\)[\\(\\(\\(\\(\\(\\\
+((\\(\\((\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\))\\)\\) \[CircleTimes] \
+\\(\\(\\(\\(Irrep[A\\_1]\\)\\)[\\(\\({1}\\)\\)]\\)\\)\\)\\), \
+FundamentalBasis, \\(\\({0}\\)\\)\\)\\)]\\), HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\" (iterated tensor \
+product)\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21385656, " time: ", 6.159, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(HighWeightVectors[A\_1]\)\)[\(\(\(\(\(\((\(\((\(\(\(\(\
+Irrep[A\_1]\)\)[\(\({1}\)\)]\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\))\)\) \[CircleTimes] \
+\(\(\(\(Irrep[A\_1]\)\)[\(\({1}\)\)]\)\)\)\), FundamentalBasis, \(\({0}\)\)\)\
+\)]\), HoldForm]\)", 
+   "\!\(\*TagBox[\"\\\" (iterated tensor product)\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.409849987112203*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "21388408", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "6.169`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculated \
+decomposition map...\\\\\\\"\\\", HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 21388408, " time: ", 6.169, " ", 
+   "\!\(\*TagBox[\"\\\"Calculated decomposition map...\\\"\", HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4094383610131054`*^9, 3.4094387571326976`*^9, 
+  3.4094387900300016`*^9, 3.409507502109375*^9, 3.40960902446875*^9, 
+  3.4096975498125*^9, 3.4098499871422462`*^9}]
+}, Open  ]],
 
 Cell[BoxData["$Aborted"], "Output",
  CellChangeTimes->{
   3.4094386054646096`*^9, {3.4094387747079697`*^9, 3.409438794356222*^9}, 
-   3.40951620028125*^9, 3.409676852*^9, 3.4096975793125*^9}]
+   3.40951620028125*^9, 3.409676852*^9, 3.4096975793125*^9, 
+   3.40984998717229*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"basis", "=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[CapitalGamma]", "=", "A1"}], ",", 
+      RowBox[{"V", "=", 
+       RowBox[{
+        RowBox[{"Irrep", "[", "A1", "]"}], "[", 
+        RowBox[{"{", "1", "}"}], "]"}]}], ",", 
+      RowBox[{"n", "=", "3"}], ",", 
+      RowBox[{"\[Lambda]", "=", 
+       RowBox[{"{", "1", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"HighWeightVectors", "[", "\[CapitalGamma]", "]"}], "[", 
+     RowBox[{
+      SuperscriptBox["V", 
+       RowBox[{"\[CircleTimes]", "n"}]], ",", "FundamentalBasis", ",", 
+      "\[Lambda]"}], "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.4098508867658415`*^9, 3.409850886976144*^9}, {
+  3.4098509553845105`*^9, 3.409850955694957*^9}, {3.4098510857719984`*^9, 
+  3.4098511419127245`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       RowBox[{"-", "1"}], "-", 
+       SuperscriptBox["q", "2"]}]], ",", 
+     FractionBox["1", 
+      RowBox[{"q", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         SuperscriptBox["q", "2"]}], ")"}]}]], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "q"]}], ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{
+  3.4098509586892624`*^9, {3.409851086232661*^9, 3.409851142363373*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"map", "=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[CapitalGamma]", "=", "A1"}], ",", 
+      RowBox[{"V", "=", 
+       RowBox[{
+        RowBox[{"Irrep", "[", "A1", "]"}], "[", 
+        RowBox[{"{", "1", "}"}], "]"}]}], ",", 
+      RowBox[{"n", "=", "3"}], ",", 
+      RowBox[{"\[Lambda]", "=", 
+       RowBox[{"{", "1", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"MatrixData", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"BR", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{"{", "1", "}"}]}], "]"}], "[", 
+       RowBox[{"\[CapitalGamma]", ",", "V", ",", "FundamentalBasis"}], "]"}], 
+      "[", "\[Lambda]", "]"}], "]"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.409850878343731*^9, 3.409850920093765*^9}, {
+  3.4098509574274483`*^9, 3.409850982062872*^9}, {3.4098510879951954`*^9, 
+  3.409851127822464*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["q", "2"]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["q", "2"]}], ")"}]}], 
+      RowBox[{"q", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "q", "+", 
+         SuperscriptBox["q", "2"], "+", 
+         SuperscriptBox["q", "5"]}], ")"}]}]], ",", 
+     FractionBox[
+      RowBox[{"q", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["q", "2"]}], ")"}]}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "q", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "5"]}]], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"q", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["q", "2"]}], ")"}]}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "q", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "5"]}]], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["q", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["q", "2"]}], ")"}]}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "q", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "5"]}]]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.4098508796055455`*^9, 3.4098509227976527`*^9, {3.409850959850933*^9, 
+   3.4098509825135202`*^9}, {3.409851088445843*^9, 3.409851143114453*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Transpose", "[", 
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "[", "basis", "]"}], ",", 
+    RowBox[{"Together", "[", 
+     RowBox[{"map", ".", 
+      RowBox[{"Transpose", "[", "basis", "]"}]}], "]"}], ",", 
+    RowBox[{"Method", "\[Rule]", "\"\<OneStepRowReduction\>\""}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.409850207158614*^9, 3.4098502132273407`*^9}, {
+  3.409850796175579*^9, 3.409850820730888*^9}, {3.409850936076747*^9, 
+  3.4098509393814993`*^9}, {3.4098509884420447`*^9, 3.409851002522291*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "::", "\<\"nosol\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Linear equation encountered that has no solution. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/LinearSolve/nosol\\\", \
+ButtonNote -> \\\"LinearSolve::nosol\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.4098510994216256`*^9, 3.4098511299655457`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Transpose", "[", 
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{
+          RowBox[{"-", "1"}], "-", 
+          SuperscriptBox["q", "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox["1", "q"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"q", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "-", 
+            SuperscriptBox["q", "2"]}], ")"}]}]], ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"1", "-", "q", "-", 
+          SuperscriptBox["q", "2"]}], 
+         RowBox[{"q", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "q", "+", 
+            SuperscriptBox["q", "2"], "+", 
+            SuperscriptBox["q", "5"]}], ")"}]}]], ",", 
+        FractionBox[
+         RowBox[{"1", "+", 
+          SuperscriptBox["q", "3"], "-", 
+          SuperscriptBox["q", "4"], "+", 
+          SuperscriptBox["q", "5"]}], 
+         RowBox[{
+          SuperscriptBox["q", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "q", "+", 
+            SuperscriptBox["q", "2"], "+", 
+            SuperscriptBox["q", "5"]}], ")"}]}]]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["q", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "q", "+", 
+           SuperscriptBox["q", "2"], "+", 
+           SuperscriptBox["q", "5"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "-", 
+          SuperscriptBox["q", "2"]}], 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "q", "+", 
+          SuperscriptBox["q", "2"], "+", 
+          SuperscriptBox["q", "5"]}]]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          SuperscriptBox["q", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", 
+            SuperscriptBox["q", "2"]}], ")"}]}], 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "q", "+", 
+          SuperscriptBox["q", "2"], "+", 
+          SuperscriptBox["q", "5"]}]], ",", "0"}], "}"}]}], "}"}], ",", 
+    RowBox[{"Method", "\[Rule]", "\<\"OneStepRowReduction\"\>"}]}], "]"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{{3.409850200058405*^9, 3.4098502142087517`*^9}, {
+   3.4098508004216847`*^9, 3.4098508211214495`*^9}, {3.4098509331325135`*^9, 
+   3.4098510124565763`*^9}, {3.4098510903285503`*^9, 3.4098510994817123`*^9}, 
+   3.4098511300056033`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["basis"], "Input",
+ CellChangeTimes->{{3.4098503131410093`*^9, 3.4098503134214125`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["q", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["q", "2"], "+", 
+        SuperscriptBox["q", "4"]}]]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["q", "2"], "+", 
+        SuperscriptBox["q", "4"]}]]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"q", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          SuperscriptBox["q", "2"], "+", 
+          SuperscriptBox["q", "4"]}], ")"}]}]]}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       RowBox[{"-", "1"}], "-", 
+       SuperscriptBox["q", "2"]}]], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"q", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          SuperscriptBox["q", "2"]}], ")"}]}]]}], ",", "1", ",", "0"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "q"]}], ",", "1", ",", "0", ",", "0"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.4098503137619023`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "=", "A1"}], ",", 
+     RowBox[{"V", "=", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "A1", "]"}], "[", 
+       RowBox[{"{", "1", "}"}], "]"}]}], ",", 
+     RowBox[{"n", "=", "4"}], ",", 
+     RowBox[{"\[Lambda]", "=", 
+      RowBox[{"{", "2", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"HighWeightVectors", "[", "\[CapitalGamma]", "]"}], "[", 
+    RowBox[{
+     SuperscriptBox["V", 
+      RowBox[{"\[CircleTimes]", "n"}]], ",", "FundamentalBasis", ",", 
+     "\[Lambda]"}], "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.4098504232893953`*^9, 3.40985047262033*^9}, {
+  3.409850744721592*^9, 3.409850745542773*^9}, {3.409850810345955*^9, 
+  3.4098508104060416`*^9}, {3.4098508709631186`*^9, 3.4098508715940256`*^9}}],\
+
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["q", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["q", "2"], "+", 
+        SuperscriptBox["q", "4"]}]]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"1", "+", 
+        SuperscriptBox["q", "2"], "+", 
+        SuperscriptBox["q", "4"]}]]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"q", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          SuperscriptBox["q", "2"], "+", 
+          SuperscriptBox["q", "4"]}], ")"}]}]]}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       RowBox[{"-", "1"}], "-", 
+       SuperscriptBox["q", "2"]}]], ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"q", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          SuperscriptBox["q", "2"]}], ")"}]}]]}], ",", "1", ",", "0"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "q"]}], ",", "1", ",", "0", ",", "0"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.409850473782*^9, {3.409850742768784*^9, 3.4098507460334787`*^9}, 
+   3.4098508107064734`*^9, 3.4098508720747166`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DecomposeRepresentation", "[", "A1", "]"}], "[", 
+  SuperscriptBox[
+   RowBox[{
+    RowBox[{"Irrep", "[", "A1", "]"}], "[", 
+    RowBox[{"{", "1", "}"}], "]"}], 
+   RowBox[{"\[CircleTimes]", "4"}]], "]"}]], "Input",
+ CellChangeTimes->{{3.4098504772770257`*^9, 3.4098504926791725`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"DirectSum", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "4", "}"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "2", "}"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "2", "}"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "2", "}"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "0", "}"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["A", "1"], "]"}], "[", 
+    RowBox[{"{", "0", "}"}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.4098504937206707`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"map", "/.", 
+   RowBox[{"q", "\[Rule]", "1"}]}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4098505238439856`*^9, 3.4098505281001053`*^9}, {
+  3.409850759252486*^9, 3.4098507611552224`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0"},
+     {"0", "1", "0", "0"},
+     {"0", "0", "0", "1"},
+     {"0", "0", "1", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.4098505243146625`*^9, 3.4098505283604803`*^9}, 
+   3.4098507615057263`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Eigensystem", "[", "map", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4098505806456623`*^9, 3.409850586083482*^9}, {
+  3.4098506403415008`*^9, 3.409850644447405*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "4"]}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "q", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "5"]}]], ",", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "4"]}], 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "q", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "5"]}]], ",", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["q", "2"]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["q", "2"], "-", 
+         SqrtBox[
+          RowBox[{"1", "-", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["q", "2"]}], "+", 
+           RowBox[{"5", " ", 
+            SuperscriptBox["q", "4"]}]}]]}], ")"}]}], 
+      RowBox[{"2", " ", "q", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "q", "+", 
+         SuperscriptBox["q", "2"], "+", 
+         SuperscriptBox["q", "5"]}], ")"}]}]], ",", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         SuperscriptBox["q", "2"]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["q", "2"], "+", 
+         SqrtBox[
+          RowBox[{"1", "-", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["q", "2"]}], "+", 
+           RowBox[{"5", " ", 
+            SuperscriptBox["q", "4"]}]}]]}], ")"}]}], 
+      RowBox[{"2", " ", "q", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "q", "+", 
+         SuperscriptBox["q", "2"], "+", 
+         SuperscriptBox["q", "5"]}], ")"}]}]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"1", "-", 
+          SuperscriptBox["q", "2"], "+", 
+          SqrtBox[
+           RowBox[{"1", "-", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["q", "2"]}], "+", 
+            RowBox[{"5", " ", 
+             SuperscriptBox["q", "4"]}]}]]}], 
+         RowBox[{"2", " ", 
+          SuperscriptBox["q", "2"]}]]}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["q", "2"], "+", 
+         SqrtBox[
+          RowBox[{"1", "-", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["q", "2"]}], "+", 
+           RowBox[{"5", " ", 
+            SuperscriptBox["q", "4"]}]}]]}], 
+        RowBox[{"2", " ", 
+         SuperscriptBox["q", "2"]}]], ",", "1"}], "}"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.4098505871550226`*^9, 3.4098506448980527`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1891,78 +3101,147 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[590, 23, 349, 10, 72, "Input"],
 Cell[CellGroupData[{
-Cell[964, 37, 703, 14, 43, "Print"],
-Cell[1670, 53, 661, 14, 23, "Print"]
+Cell[964, 37, 755, 15, 43, "Print"],
+Cell[1722, 54, 714, 15, 23, "Print"]
 }, Open  ]],
-Cell[2346, 70, 891, 17, 21, "Message"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3274, 92, 143, 2, 31, "Input"],
-Cell[3420, 96, 486, 11, 22, "Message"]
+Cell[2451, 72, 939, 17, 21, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3943, 112, 140, 2, 31, "Input"],
-Cell[4086, 116, 471, 11, 22, "Message"]
+Cell[3427, 94, 143, 2, 31, "Input"],
+Cell[3573, 98, 532, 11, 22, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4594, 132, 133, 2, 31, "Input"],
-Cell[4730, 136, 463, 9, 22, "Message"]
-}, Open  ]],
-Cell[5208, 148, 259, 9, 31, "Input"],
-Cell[5470, 159, 530, 14, 31, "Input"],
-Cell[CellGroupData[{
-Cell[6025, 177, 97, 2, 31, "Input"],
-Cell[6125, 181, 335, 8, 30, "Output"]
-}, Open  ]],
-Cell[6475, 192, 531, 14, 31, "Input"],
-Cell[7009, 208, 3356, 89, 112, "Input"],
-Cell[CellGroupData[{
-Cell[10390, 301, 116, 3, 31, "Input"],
-Cell[10509, 306, 5225, 180, 418, "Output"]
-}, Open  ]],
-Cell[15749, 489, 563, 15, 33, "Input"],
-Cell[16315, 506, 130, 2, 31, "Input"],
-Cell[16448, 510, 390, 10, 31, "Input"],
-Cell[CellGroupData[{
-Cell[16863, 524, 761, 20, 31, "Input"],
-Cell[CellGroupData[{
-Cell[17649, 548, 1030, 20, 23, "Print"],
-Cell[18682, 570, 1495, 27, 23, "Print"],
-Cell[20180, 599, 668, 13, 23, "Print"],
-Cell[20851, 614, 1513, 27, 43, "Print"],
-Cell[22367, 643, 538, 11, 23, "Print"],
-Cell[22908, 656, 873, 18, 23, "Print"],
-Cell[23784, 676, 893, 18, 23, "Print"],
-Cell[24680, 696, 872, 18, 23, "Print"],
-Cell[25555, 716, 891, 18, 23, "Print"],
-Cell[26449, 736, 894, 18, 23, "Print"],
-Cell[27346, 756, 916, 18, 23, "Print"],
-Cell[28265, 776, 742, 16, 23, "Print"],
-Cell[29010, 794, 1278, 24, 23, "Print"],
-Cell[30291, 820, 667, 13, 23, "Print"],
-Cell[30961, 835, 715, 16, 23, "Print"],
-Cell[31679, 853, 614, 12, 23, "Print"],
-Cell[32296, 867, 1054, 20, 23, "Print"],
-Cell[33353, 889, 1517, 27, 23, "Print"],
-Cell[34873, 918, 669, 13, 23, "Print"],
-Cell[35545, 933, 764, 14, 23, "Print"],
-Cell[36312, 949, 592, 12, 23, "Print"],
-Cell[36907, 963, 1535, 27, 43, "Print"],
-Cell[38445, 992, 566, 12, 23, "Print"],
-Cell[39014, 1006, 743, 16, 23, "Print"]
-}, Open  ]],
-Cell[39772, 1025, 543, 10, 21, "Message"],
-Cell[40318, 1037, 717, 16, 23, "Print"],
-Cell[41038, 1055, 543, 10, 21, "Message"],
-Cell[41584, 1067, 191, 3, 30, "Output"]
+Cell[4142, 114, 140, 2, 31, "Input"],
+Cell[4285, 118, 515, 11, 22, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[41812, 1075, 97, 2, 31, "Input"],
-Cell[41912, 1079, 3817, 133, 268, "Output"]
+Cell[4837, 134, 133, 2, 31, "Input"],
+Cell[4973, 138, 508, 10, 22, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45766, 1217, 102, 2, 31, "Input"],
-Cell[45871, 1221, 19780, 649, 672, "Output"]
+Cell[5518, 153, 259, 9, 31, "Input"],
+Cell[5780, 164, 289, 7, 21, "Message"]
+}, Open  ]],
+Cell[6084, 174, 530, 14, 31, "Input"],
+Cell[CellGroupData[{
+Cell[6639, 192, 97, 2, 31, "Input"],
+Cell[6739, 196, 4467, 151, 312, "Output"]
+}, Open  ]],
+Cell[11221, 350, 531, 14, 31, "Input"],
+Cell[11755, 366, 3356, 89, 112, "Input"],
+Cell[CellGroupData[{
+Cell[15136, 459, 116, 3, 31, "Input"],
+Cell[15255, 464, 3099, 102, 236, "Output"]
+}, Open  ]],
+Cell[18369, 569, 130, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[18524, 575, 761, 20, 31, "Input"],
+Cell[CellGroupData[{
+Cell[19310, 599, 1045, 20, 23, "Print"],
+Cell[20358, 621, 1509, 27, 23, "Print"],
+Cell[21870, 650, 685, 13, 23, "Print"],
+Cell[22558, 665, 1529, 27, 23, "Print"],
+Cell[24090, 694, 559, 11, 23, "Print"],
+Cell[24652, 707, 889, 18, 23, "Print"],
+Cell[25544, 727, 907, 18, 23, "Print"],
+Cell[26454, 747, 891, 18, 23, "Print"],
+Cell[27348, 767, 909, 18, 23, "Print"],
+Cell[28260, 787, 891, 18, 23, "Print"],
+Cell[29154, 807, 907, 18, 23, "Print"],
+Cell[30064, 827, 736, 16, 23, "Print"],
+Cell[30803, 845, 1272, 24, 23, "Print"],
+Cell[32078, 871, 683, 13, 23, "Print"],
+Cell[32764, 886, 734, 16, 23, "Print"],
+Cell[33501, 904, 605, 12, 23, "Print"],
+Cell[34109, 918, 1046, 20, 23, "Print"],
+Cell[35158, 940, 1511, 27, 23, "Print"],
+Cell[36672, 969, 685, 13, 23, "Print"],
+Cell[37360, 984, 759, 14, 23, "Print"],
+Cell[38122, 1000, 581, 11, 23, "Print"],
+Cell[38706, 1013, 1527, 27, 23, "Print"],
+Cell[40236, 1042, 559, 11, 23, "Print"],
+Cell[40798, 1055, 734, 16, 23, "Print"]
+}, Open  ]],
+Cell[41547, 1074, 567, 10, 21, "Message"],
+Cell[42117, 1086, 736, 16, 23, "Print"],
+Cell[42856, 1104, 567, 10, 21, "Message"],
+Cell[CellGroupData[{
+Cell[43448, 1118, 607, 12, 23, "Print"],
+Cell[44058, 1132, 723, 20, 23, "Print"],
+Cell[44784, 1154, 1072, 20, 23, "Print"],
+Cell[45859, 1176, 1689, 29, 43, "Print"],
+Cell[47551, 1207, 683, 13, 23, "Print"],
+Cell[48237, 1222, 1680, 29, 43, "Print"],
+Cell[49920, 1253, 561, 11, 23, "Print"],
+Cell[50484, 1266, 733, 16, 23, "Print"],
+Cell[51220, 1284, 1373, 26, 23, "Print"],
+Cell[52596, 1312, 683, 13, 23, "Print"],
+Cell[53282, 1327, 736, 16, 23, "Print"],
+Cell[54021, 1345, 1371, 26, 23, "Print"],
+Cell[55395, 1373, 685, 13, 23, "Print"],
+Cell[56083, 1388, 736, 16, 23, "Print"],
+Cell[56822, 1406, 607, 12, 23, "Print"],
+Cell[57432, 1420, 1048, 20, 23, "Print"],
+Cell[58483, 1442, 1661, 29, 43, "Print"],
+Cell[60147, 1473, 685, 13, 23, "Print"],
+Cell[60835, 1488, 761, 14, 23, "Print"],
+Cell[61599, 1504, 579, 11, 23, "Print"],
+Cell[62181, 1517, 1682, 29, 43, "Print"],
+Cell[63866, 1548, 559, 11, 23, "Print"],
+Cell[64428, 1561, 733, 16, 23, "Print"]
+}, Open  ]],
+Cell[65176, 1580, 567, 10, 21, "Message"],
+Cell[65746, 1592, 604, 11, 21, "Message"],
+Cell[CellGroupData[{
+Cell[66375, 1607, 761, 16, 23, "Print"],
+Cell[67139, 1625, 736, 16, 23, "Print"],
+Cell[67878, 1643, 605, 12, 23, "Print"],
+Cell[68486, 1657, 1045, 20, 23, "Print"],
+Cell[69534, 1679, 1662, 29, 43, "Print"],
+Cell[71199, 1710, 685, 13, 23, "Print"]
+}, Open  ]],
+Cell[71899, 1726, 216, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72152, 1735, 878, 22, 77, "Input"],
+Cell[73033, 1759, 599, 21, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73669, 1785, 932, 25, 72, "Input"],
+Cell[74604, 1812, 1702, 54, 56, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76343, 1871, 566, 12, 31, "Input"],
+Cell[76912, 1885, 449, 8, 21, "Message"],
+Cell[77364, 1895, 2754, 82, 100, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80155, 1982, 101, 1, 31, "Input"],
+Cell[80259, 1985, 1150, 40, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81446, 2030, 879, 21, 77, "Input"],
+Cell[82330, 2054, 1248, 42, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83615, 2101, 320, 8, 33, "Input"],
+Cell[83938, 2111, 848, 27, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84823, 2143, 236, 5, 31, "Input"],
+Cell[85062, 2150, 755, 21, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85854, 2176, 220, 4, 31, "Input"],
+Cell[86077, 2182, 3113, 98, 122, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89227, 2285, 97, 2, 31, "Input"],
+Cell[89327, 2289, 3817, 133, 268, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93181, 2427, 102, 2, 31, "Input"],
+Cell[93286, 2431, 19780, 649, 672, "Output"]
 }, Open  ]]
 }
 ]

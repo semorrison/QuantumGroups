@@ -38,7 +38,7 @@ PartialRMatrix[\[CapitalGamma]_][n_]:=PartialRMatrix[\[CapitalGamma]][n]=Module[
 DebugPrintHeld["Calculating ",PartialRMatrix[\[CapitalGamma]][n]];
 l=QuantumRootHeight[\[CapitalGamma]]/@QuantumPositiveRoots[\[CapitalGamma]];
 iterators=Table[{t[r],0,(n-Sum[l[[k]]t[k],{k,r+1,p}])/l[[r]]},{r,p,2,-1}]~Join~{With[{t1=(n-Sum[t[k]l[[k]],{k,2,p}])/l[[1]]},{t[1],t1,t1}]};
-rmatrix=Sum[If[p>1,NonCommutativeMultiply,Times]@@Table[q^d[[i[[r]]]]^(1/2 t[r](t[r]+1)) (1-q^(-2d[[i[[r]]]]))^t[r]/qFactorial[t[r]][q^d[[i[[r]]]]] NonCommutativePower[SuperPlus[Subscript[X, \[CapitalGamma],r]],t[r]]\[CircleTimes]NonCommutativePower[SuperMinus[Subscript[X, \[CapitalGamma],r]],t[r]],{r,1,p}],Evaluate[Sequence@@iterators]];
+rmatrix=Sum[If[p>1,NonCommutativeMultiply,Times]@@Table[(q^d[[i[[r]]]])^(1/2 t[r](t[r]+1)) (1-q^(-2d[[i[[r]]]]))^t[r]/qFactorial[t[r]][q^d[[i[[r]]]]] NonCommutativePower[SuperPlus[Subscript[X, \[CapitalGamma],r]],t[r]]\[CircleTimes]NonCommutativePower[SuperMinus[Subscript[X, \[CapitalGamma],r]],t[r]],{r,1,p}],Evaluate[Sequence@@iterators]];
 DebugPrintHeld["Finished calculating ",PartialRMatrix[\[CapitalGamma]][n]];
 rmatrix
 ]
