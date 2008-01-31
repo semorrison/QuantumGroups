@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     38536,       1146]
-NotebookOptionsPosition[     35162,       1032]
-NotebookOutlinePosition[     35540,       1048]
-CellTagsIndexPosition[     35497,       1045]
+NotebookDataLength[     38800,       1153]
+NotebookOptionsPosition[     35388,       1038]
+NotebookOutlinePosition[     35766,       1054]
+CellTagsIndexPosition[     35723,       1051]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -465,6 +465,12 @@ Cell[BoxData[
       RowBox[{"\[CapitalGamma]", ",", "V", ",", "\[Beta]"}], "]"}]}], 
     "]"}]}]}]], "Input",
  InitializationCell->True],
+
+Cell["\<\
+(*For the future; this is a bottleneck. Perhaps we could replace LinearSolve \
+with a hand-written algorithm using interpolation.*)\
+\>", "Text",
+ CellChangeTimes->{{3.4098601738900704`*^9, 3.409860210723034*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1102,48 +1108,49 @@ Cell[13286, 410, 561, 17, 31, "Input",
  InitializationCell->True],
 Cell[13850, 429, 1207, 37, 52, "Input",
  InitializationCell->True],
-Cell[15060, 468, 1030, 25, 112, "Input",
+Cell[15060, 468, 223, 4, 29, "Text"],
+Cell[15286, 474, 1030, 25, 112, "Input",
  InitializationCell->True],
-Cell[16093, 495, 2308, 58, 199, "Input",
+Cell[16319, 501, 2308, 58, 199, "Input",
  InitializationCell->True],
-Cell[18404, 555, 1074, 28, 154, "Input",
+Cell[18630, 561, 1074, 28, 154, "Input",
  InitializationCell->True],
-Cell[19481, 585, 116, 3, 31, "Input",
+Cell[19707, 591, 116, 3, 31, "Input",
  InitializationCell->True],
-Cell[19600, 590, 1769, 44, 183, "Input",
+Cell[19826, 596, 1769, 44, 183, "Input",
  InitializationCell->True],
-Cell[21372, 636, 1246, 34, 31, "Input",
+Cell[21598, 642, 1246, 34, 31, "Input",
  InitializationCell->True],
-Cell[22621, 672, 1378, 41, 52, "Input",
+Cell[22847, 678, 1378, 41, 52, "Input",
  InitializationCell->True],
-Cell[24002, 715, 601, 20, 31, "Input",
+Cell[24228, 721, 601, 20, 31, "Input",
  InitializationCell->True],
-Cell[24606, 737, 344, 9, 31, "Input",
+Cell[24832, 743, 344, 9, 31, "Input",
  InitializationCell->True],
-Cell[24953, 748, 953, 23, 134, "Input",
+Cell[25179, 754, 953, 23, 134, "Input",
  InitializationCell->True],
-Cell[25909, 773, 192, 5, 31, "Input",
+Cell[26135, 779, 192, 5, 31, "Input",
  InitializationCell->True],
-Cell[26104, 780, 591, 18, 31, "Input",
+Cell[26330, 786, 591, 18, 31, "Input",
  InitializationCell->True],
-Cell[26698, 800, 292, 8, 33, "Input",
+Cell[26924, 806, 292, 8, 33, "Input",
  InitializationCell->True],
-Cell[26993, 810, 2806, 70, 160, "Input",
+Cell[27219, 816, 2806, 70, 160, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[29824, 884, 1534, 41, 114, "Input",
+Cell[30050, 890, 1534, 41, 114, "Input",
  InitializationCell->True],
-Cell[31361, 927, 414, 9, 22, "Message",
+Cell[31587, 933, 414, 9, 22, "Message",
  InitializationCell->True]
 }, Open  ]],
-Cell[31790, 939, 3054, 73, 228, "Input",
+Cell[32016, 945, 3054, 73, 228, "Input",
  InitializationCell->True],
-Cell[34847, 1014, 96, 3, 31, "Input",
+Cell[35073, 1020, 96, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34980, 1022, 36, 0, 36, "Subsection"],
-Cell[35019, 1024, 103, 3, 31, "Input",
+Cell[35206, 1028, 36, 0, 36, "Subsection"],
+Cell[35245, 1030, 103, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
@@ -1153,4 +1160,3 @@ Cell[35019, 1024, 103, 3, 31, "Input",
 *)
 
 (* End of internal cache information *)
-
