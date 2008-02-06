@@ -3,5 +3,3 @@ Message[QuantumGroups::loading,"QuantumGroups`Data`C4`MatrixPresentations`"]
 
 Begin["`Private`"]
 q=Global`q;
-End[]
-EndPackage[]
