@@ -1,0 +1,523 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     16569,        514]
+NotebookOptionsPosition[     14438,        440]
+NotebookOutlinePosition[     14777,        455]
+CellTagsIndexPosition[     14734,        452]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", " ", "=", " ", 
+   "\"\<c:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\package\\\\\>\""}\
+], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4113134711863747`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Found precomputed data in \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\data\"\>"}],
+  SequenceForm[
+  "Found precomputed data in ", 
+   "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4113134711863747`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"obspkg\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\\"LinearAlgebra`MatrixManipulation`\\\"\\) is now \
+obsolete. The legacy version being loaded may conflict with current \
+Mathematica functionality. See the Compatibility Guide for updating \
+information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:Compatibility/Tutorials/LinearAlgebra/\
+MatrixManipulation\\\", ButtonNote -> \\\"General::obspkg\\\"]\\)\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.4113134719051247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ExpandQuantumRoot", "[", "A3", "]"}], "/@", 
+    RowBox[{"QuantumPositiveRoots", "[", "A3", "]"}]}], ";"}], "//", 
+  "AbsoluteTiming"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135297644997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.4113134816238747`*^9, {3.4113135127019997`*^9, 3.4113135310144997`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "A4"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135663426247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2.78125`7.89578502182098", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113135702176247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "A5"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135740769997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"12.609375`8.552238554234153", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113135870613747`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "A6"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"53.09375`9.176588394045108", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113136443113747`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "/@", 
+  RowBox[{"{", 
+   RowBox[{"A4", ",", "A5", ",", "A6"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.4113136500144997`*^9, 3.4113136669051247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`A5`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{{3.4113136579988747`*^9, 3.4113136676394997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Null", ",", "Null", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113136677176247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "B2"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135663426247`*^9}, {
+  3.4113136806082497`*^9, 3.4113136809363747`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.28125`6.90063752461539", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113135702176247`*^9, 3.4113136815926247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "B3"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135740769997`*^9}, {
+  3.4113136833582497`*^9, 3.4113136835926247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"68.9375`9.290000523280236", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113135870613747`*^9, 3.4113137528269997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "B4"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113136862644997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"974.03125`10.44011788413726", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113147282019997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "/@", 
+  RowBox[{"{", 
+   RowBox[{"B2", ",", "B3", ",", "B4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, {
+   3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`B2`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.4113147284363747`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`B3`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.4113147284832497`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Loading precomputed data in \
+\\!\\(\\\"QuantumGroups`Data`B4`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.4113147287019997`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"stop\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \\!\\(QuantumGroups :: \
+\\\"loading\\\"\\) will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.4113147289207497`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Null", ",", "Null", ",", "Null", ",", 
+   RowBox[{"PackageQuantumRoots", "[", "Null", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4113147289519997`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "B5"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113137041082497`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "/@", 
+  RowBox[{"{", 
+   RowBox[{"B2", ",", "B3", ",", "B4", ",", "B5"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "C3"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135740769997`*^9}, {
+  3.4113136833582497`*^9, 3.4113136835926247`*^9}, {3.4113148147644997`*^9, 
+  3.4113148149832497`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "C4"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113136862644997`*^9}, {3.4113148165613747`*^9, 
+  3.4113148167801247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "/@", 
+  RowBox[{"{", 
+   RowBox[{"C3", ",", "C4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, {
+   3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9, {
+   3.4113148181238747`*^9, 3.4113148213269997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "C5"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113137041082497`*^9}, {3.4113148327488747`*^9, 
+  3.4113148329676247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "[", "C5", "]"}]], "Input",
+ CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}, {
+  3.4113148607644997`*^9, 3.4113148618582497`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "D4"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113136862644997`*^9}, {3.4113148165613747`*^9, 
+  3.4113148167801247`*^9}, {3.4113148708426247`*^9, 3.4113148710457497`*^9}}],\
+
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "/@", 
+  RowBox[{"{", "D4", "}"}]}]], "Input",
+ CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, {
+   3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9, {
+   3.4113148181238747`*^9, 3.4113148213269997`*^9}, 3.4113148744519997`*^9}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "D5"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113137041082497`*^9}, {3.4113148327488747`*^9, 
+  3.4113148329676247`*^9}, {3.4113148762644997`*^9, 3.4113148765613747`*^9}}],\
+
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "[", "D5", "]"}]], "Input",
+ CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}, {
+  3.4113148607644997`*^9, 3.4113148786863747`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[CapitalGamma]", "=", "F4"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "/@", 
+      RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]", "]"}]}], ";"}], 
+    "//", "AbsoluteTiming"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4113134509051247`*^9, 3.4113135907644997`*^9}, {
+  3.4113136859832497`*^9, 3.4113137041082497`*^9}, {3.4113147798894997`*^9, 
+  3.4113147805613747`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PackageQuantumRoots", "[", "F4", "]"}]], "Input",
+ CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}}]
+},
+WindowSize->{615, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 349, 10, 92, "Input"],
+Cell[CellGroupData[{
+Cell[964, 37, 398, 9, 43, "Print"],
+Cell[1365, 48, 357, 9, 23, "Print"]
+}, Open  ]],
+Cell[1737, 60, 611, 12, 56, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2385, 77, 276, 7, 31, "Input"],
+Cell[2664, 86, 175, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2876, 95, 431, 11, 52, "Input"],
+Cell[3310, 108, 143, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3490, 116, 431, 11, 52, "Input"],
+Cell[3924, 129, 146, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4107, 137, 431, 11, 52, "Input"],
+Cell[4541, 150, 145, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4723, 158, 198, 4, 31, "Input"],
+Cell[4924, 164, 291, 7, 21, "Message"],
+Cell[5218, 173, 136, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5391, 181, 484, 12, 52, "Input"],
+Cell[5878, 195, 167, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6082, 203, 484, 12, 52, "Input"],
+Cell[6569, 217, 168, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6774, 225, 484, 12, 52, "Input"],
+Cell[7261, 239, 146, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7444, 247, 276, 5, 31, "Input"],
+Cell[7723, 254, 265, 7, 21, "Message"],
+Cell[7991, 263, 265, 7, 21, "Message"],
+Cell[8259, 272, 265, 7, 21, "Message"],
+Cell[8527, 281, 466, 9, 21, "Message"],
+Cell[8996, 292, 196, 4, 30, "Output"]
+}, Open  ]],
+Cell[9207, 299, 484, 12, 52, "Input"],
+Cell[9694, 313, 209, 4, 31, "Input"],
+Cell[9906, 319, 537, 13, 52, "Input"],
+Cell[10446, 334, 537, 13, 52, "Input"],
+Cell[10986, 349, 319, 6, 31, "Input"],
+Cell[11308, 357, 537, 13, 52, "Input"],
+Cell[11848, 372, 196, 3, 31, "Input"],
+Cell[12047, 377, 587, 13, 52, "Input"],
+Cell[12639, 393, 318, 5, 31, "Input"],
+Cell[12960, 400, 587, 13, 52, "Input"],
+Cell[13552, 416, 196, 3, 31, "Input"],
+Cell[13751, 421, 537, 13, 52, "Input"],
+Cell[14291, 436, 143, 2, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
