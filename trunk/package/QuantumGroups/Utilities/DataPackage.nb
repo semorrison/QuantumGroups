@@ -1,538 +1,1348 @@
-(************** Content-type: application/mathematica **************
-                     CreatedBy='Mathematica 5.2'
+(* Content-type: application/mathematica *)
 
-                    Mathematica-Compatible Notebook
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
 
-This notebook can be used with any Mathematica-compatible
-application, such as Mathematica, MathReader or Publicon. The data
-for the notebook starts with the line containing stars above.
+(* CreatedBy='Mathematica 6.0' *)
 
-To get the notebook into a Mathematica-compatible application, do
-one of the following:
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     51428,       1339]
+NotebookOptionsPosition[     49298,       1271]
+NotebookOutlinePosition[     49676,       1287]
+CellTagsIndexPosition[     49633,       1284]
+WindowFrame->Normal
+ContainsDynamic->False*)
 
-* Save the data starting with the line of stars above into a file
-  with a name ending in .nb, then open the file inside the
-  application;
-
-* Copy the data starting with the line of stars above to the
-  clipboard, then use the Paste menu command inside the application.
-
-Data for notebooks contains only printable 7-bit ASCII and can be
-sent directly in email or through ftp in text mode.  Newlines can be
-CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
-
-NOTE: If you modify the data for this notebook not in a Mathematica-
-compatible application, you must delete the line below containing
-the word CacheID, otherwise Mathematica-compatible applications may
-try to use invalid cache data.
-
-For more information on notebooks and Mathematica-compatible 
-applications, contact Wolfram Research:
-  web: http://www.wolfram.com
-  email: info@wolfram.com
-  phone: +1-217-398-0700 (U.S.)
-
-Notebook reader applications are available free of charge from 
-Wolfram Research.
-*******************************************************************)
-
-(*CacheID: 232*)
-
-
-(*NotebookFileLineBreakTest
-NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     21171,        453]*)
-(*NotebookOutlinePosition[     21852,        476]*)
-(*  CellTagsIndexPosition[     21808,        472]*)
-(*WindowFrame->Normal*)
-
-
-
+(* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
-    \(\(BeginPackage["\<QuantumGroups`Utilities`DataPackage`\>", \
-{"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`Debugging`\>", \
-"\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`RepresentationTensors`\>", "\<QuantumGroups`Representations`\
-\>", "\<QuantumGroups`Algebra`\>"}];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"BeginPackage", "[", 
+   RowBox[{"\"\<QuantumGroups`Utilities`DataPackage`\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<QuantumGroups`\>\"", ",", 
+      "\"\<QuantumGroups`Utilities`Debugging`\>\"", ",", 
+      "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+      "\"\<QuantumGroups`RepresentationTensors`\>\"", ",", 
+      "\"\<QuantumGroups`Representations`\>\"", ",", 
+      "\"\<QuantumGroups`Algebra`\>\""}], "}"}]}], "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(ValuesAsString; PackageData; MatchingValues; DefiniteValues;\)], "Input",\
-
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\({PackageMatrixPresentations, PackageDecompositionMaps, 
-        PackageQuantumRoots, PackageRMatrix, 
-        PackagePartialRMatrixPresentation, PackageDirectSumDecompositions, 
-        PackageHighWeightVectors, PackageSubIrrepWeightBases, 
-        PackageBraidingMatrices, PackageBRPresentations, 
-        PackageBraidingMaps};\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{"ValuesAsString", ";", "PackageData", ";", "MatchingValues", ";", 
+  "DefiniteValues", ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(Begin["\<`Private`\>"];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+   "PackageMatrixPresentations", ",", "PackageDecompositionMaps", ",", 
+    "PackageQuantumRoots", ",", "PackageRMatrix", ",", 
+    "PackagePartialRMatrixPresentation", ",", 
+    "PackageDirectSumDecompositions", ",", "PackageHighWeightVectors", ",", 
+    "PackageSubIrrepWeightBases", ",", "PackageBraidingMatrices", ",", 
+    "PackageBRPresentations", ",", "PackageBraidingMaps"}], "}"}], 
+  ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(DefiniteValues[s_Symbol] := 
-      Cases[DownValues[s]~Join~SubValues[s], 
-        rule : \((pattern_ /; 
-                  FreeQ[pattern, Blank] \[RuleDelayed] _)\) \[RuleDelayed] 
-          rule]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(MatchingValues[s_Symbol, p_] := 
-      Cases[DownValues[s]~Join~SubValues[s], 
-        rule : \((pattern_ /; 
-                  MatchQ[pattern /. HoldPattern \[Rule] Hold, 
-                    Hold[p]] \[RuleDelayed] _)\) \[RuleDelayed] 
-          rule]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"DefiniteValues", "[", "s_Symbol", "]"}], ":=", 
+  RowBox[{"Cases", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"DownValues", "[", "s", "]"}], "~", "Join", "~", 
+     RowBox[{"SubValues", "[", "s", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"rule", ":", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"pattern_", "/;", 
+         RowBox[{"FreeQ", "[", 
+          RowBox[{"pattern", ",", "Blank"}], "]"}]}], "\[RuleDelayed]", "_"}],
+        ")"}]}], "\[RuleDelayed]", "rule"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(ConvertRuleToAssignmentString[a_HoldPattern \[RuleDelayed] b_] := 
-      StringTake[
-          ToString[a, InputForm, 
-            CharacterEncoding \[Rule] "\<PrintableASCII\>"], {13, \(-2\)}] <> \
-"\<:=\>" <> 
-        ToString[b, InputForm, 
-          CharacterEncoding \[Rule] "\<PrintableASCII\>"] <> "\<\n\>"\)], \
-"Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"MatchingValues", "[", 
+   RowBox[{"s_Symbol", ",", "p_"}], "]"}], ":=", 
+  RowBox[{"Cases", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"DownValues", "[", "s", "]"}], "~", "Join", "~", 
+     RowBox[{"SubValues", "[", "s", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"rule", ":", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"pattern_", "/;", 
+         RowBox[{"MatchQ", "[", 
+          RowBox[{
+           RowBox[{"pattern", "/.", 
+            RowBox[{"HoldPattern", "\[Rule]", "Hold"}]}], ",", 
+           RowBox[{"Hold", "[", "p", "]"}]}], "]"}]}], "\[RuleDelayed]", 
+        "_"}], ")"}]}], "\[RuleDelayed]", "rule"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(ValuesAsString[s_Symbol, p_] := 
-      StringJoin @@ \((ConvertRuleToAssignmentString /@ 
-            MatchingValues[s, p])\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"ConvertRuleToAssignmentString", "[", 
+   RowBox[{"a_HoldPattern", "\[RuleDelayed]", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"StringTake", "[", 
+    RowBox[{
+     RowBox[{"ToString", "[", 
+      RowBox[{"a", ",", "InputForm", ",", 
+       RowBox[{"CharacterEncoding", "\[Rule]", "\"\<PrintableASCII\>\""}]}], 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"13", ",", 
+       RowBox[{"-", "2"}]}], "}"}]}], "]"}], "<>", "\"\<:=\>\"", "<>", 
+   RowBox[{"ToString", "[", 
+    RowBox[{"b", ",", "InputForm", ",", 
+     RowBox[{"CharacterEncoding", "\[Rule]", "\"\<PrintableASCII\>\""}]}], 
+    "]"}], "<>", "\"\<\\n\>\""}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(WriteRule[filename_, 
-        a_HoldPattern \[RuleDelayed] b_] := \[IndentingNewLine]\((WriteString[
-          filename, 
-          StringTake[
-              ToString[a, InputForm, 
-                CharacterEncoding \[Rule] "\<PrintableASCII\>"], {13, \
-\(-2\)}] <> "\<:=\>"]; \[IndentingNewLine]CautiousWriteString[filename, b, 
-          InputForm, 
-          CharacterEncoding \[Rule] "\<PrintableASCII\>"]; \
-\[IndentingNewLine]WriteString[filename, "\<\n\>"];)\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"ValuesAsString", "[", 
+   RowBox[{"s_Symbol", ",", "p_"}], "]"}], ":=", 
+  RowBox[{"StringJoin", "@@", 
+   RowBox[{"(", 
+    RowBox[{"ConvertRuleToAssignmentString", "/@", 
+     RowBox[{"MatchingValues", "[", 
+      RowBox[{"s", ",", "p"}], "]"}]}], ")"}]}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WriteRule", "[", 
+   RowBox[{"filename_", ",", 
+    RowBox[{"a_HoldPattern", "\[RuleDelayed]", "b_"}]}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", 
+      RowBox[{
+       RowBox[{"StringTake", "[", 
+        RowBox[{
+         RowBox[{"ToString", "[", 
+          RowBox[{"a", ",", "InputForm", ",", 
+           RowBox[{
+           "CharacterEncoding", "\[Rule]", "\"\<PrintableASCII\>\""}]}], 
+          "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"13", ",", 
+           RowBox[{"-", "2"}]}], "}"}]}], "]"}], "<>", "\"\<:=\>\""}]}], 
+     "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"CautiousWriteString", "[", 
+     RowBox[{"filename", ",", "b", ",", "InputForm", ",", 
+      RowBox[{"CharacterEncoding", "\[Rule]", "\"\<PrintableASCII\>\""}]}], 
+     "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", "\"\<\\n\>\""}], "]"}], ";"}], ")"}]}]], "Input",\
+
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(CautiousWriteString[filename_, s_Symbol, options___] := 
-      WriteString[filename, ToString[s, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, s_String, options___] := 
-      WriteString[filename, s]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, s_Integer, options___] := 
-      WriteString[filename, ToString[s, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, s_Real, options___] := 
-      WriteString[filename, ToString[s, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, x_Plus, options___] := 
-      WriteString[filename, ToString[x, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, x_Times, options___] := 
-      WriteString[filename, ToString[x, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, x_TensorProduct, options___] := 
-      WriteString[filename, ToString[x, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, x_CircleTimes, options___] := 
-      WriteString[filename, ToString[x, options]]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, {}, options___] := 
-      WriteString[filename, "\<{}\>"]\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, {x__}, 
-        options___] := \[IndentingNewLine]\((WriteString[
-          filename, "\<{\>"]; \[IndentingNewLine]\(\((CautiousWriteString[
-                filename, #, options]; 
-              WriteString[filename, "\<, \>"])\) &\) /@ 
-          Most[{x}]; \[IndentingNewLine]CautiousWriteString[filename, 
-          Last[{x}], options]; \[IndentingNewLine]WriteString[
-          filename, "\<}\>"];)\)\), "\[IndentingNewLine]", 
-    \(CautiousWriteString[filename_, f_[x___], 
-        options___] := \[IndentingNewLine]\((WriteString[filename, 
-          ToString[f, options]]; 
-        WriteString[
-          filename, "\<[\>"]; \[IndentingNewLine]\(\((CautiousWriteString[
-                filename, #, options]; 
-              WriteString[filename, "\<, \>"])\) &\) /@ 
-          Most[{x}]; \[IndentingNewLine]CautiousWriteString[filename, 
-          Last[{x}], options]; \[IndentingNewLine]WriteString[
-          filename, "\<]\>"];)\)\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "s_Symbol", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"s", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "s_String", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", "s"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "s_Integer", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"s", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "s_Real", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"s", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "x_Plus", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"x", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "x_Times", ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"x", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "x_TensorProduct", ",", "options___"}], "]"}], ":=",
+   
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"x", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", "x_CircleTimes", ",", "options___"}], "]"}], ":=",
+   
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", 
+    RowBox[{"ToString", "[", 
+     RowBox[{"x", ",", "options"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", 
+    RowBox[{"{", "}"}], ",", "options___"}], "]"}], ":=", 
+  RowBox[{"WriteString", "[", 
+   RowBox[{"filename", ",", "\"\<{}\>\""}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", 
+    RowBox[{"{", "x__", "}"}], ",", "options___"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", "\"\<{\>\""}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"CautiousWriteString", "[", 
+         RowBox[{"filename", ",", "#", ",", "options"}], "]"}], ";", 
+        RowBox[{"WriteString", "[", 
+         RowBox[{"filename", ",", "\"\<, \>\""}], "]"}]}], ")"}], "&"}], "/@",
+      
+     RowBox[{"Most", "[", 
+      RowBox[{"{", "x", "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"CautiousWriteString", "[", 
+     RowBox[{"filename", ",", 
+      RowBox[{"Last", "[", 
+       RowBox[{"{", "x", "}"}], "]"}], ",", "options"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", "\"\<}\>\""}], "]"}], ";"}], 
+   ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CautiousWriteString", "[", 
+   RowBox[{"filename_", ",", 
+    RowBox[{"f_", "[", "x___", "]"}], ",", "options___"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", 
+      RowBox[{"ToString", "[", 
+       RowBox[{"f", ",", "options"}], "]"}]}], "]"}], ";", 
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", "\"\<[\>\""}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"CautiousWriteString", "[", 
+         RowBox[{"filename", ",", "#", ",", "options"}], "]"}], ";", 
+        RowBox[{"WriteString", "[", 
+         RowBox[{"filename", ",", "\"\<, \>\""}], "]"}]}], ")"}], "&"}], "/@",
+      
+     RowBox[{"Most", "[", 
+      RowBox[{"{", "x", "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"CautiousWriteString", "[", 
+     RowBox[{"filename", ",", 
+      RowBox[{"Last", "[", 
+       RowBox[{"{", "x", "}"}], "]"}], ",", "options"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"WriteString", "[", 
+     RowBox[{"filename", ",", "\"\<]\>\""}], "]"}], ";"}], ")"}]}]}], "Input",\
+
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(\(Options[
-          PackageData] = {"\<Needs\>" \[Rule] {}, "\<ExtraPackageCode\>" \
-\[Rule] "\<\>", "\<ExtraPrivateCode\>" \[Rule] "\<\>", \
-"\<LoadPreexistingPackage\>" \[Rule] 
-            True, "\<Message\>" \[Rule] "\<QuantumGroups::loading\>", \
-"\<UseGzip\>" \[Rule] False};\)\), "\[IndentingNewLine]", 
-    \(PackageData[s_Symbol, p_, packagePath : {__String}, opts___] := 
-      PackageData[{{s, p}}, QuantumGroupsDataDirectory[], packagePath, 
-        opts]\), "\n", 
-    \(PackageData[s_Symbol, p_, baseDirectory_String, 
-        packagePath : {__String}, opts___] := 
-      PackageData[{{s, p}}, baseDirectory, packagePath, opts]\), "\n", 
-    \(PackageData[patterns : {{_Symbol, _} .. }, packagePath : {__String}, 
-        opts___] := 
-      PackageData[patterns, QuantumGroupsDataDirectory[], packagePath, 
-        opts]\), "\[IndentingNewLine]", 
-    \(PackageData[patterns : {{_Symbol, _} .. }, baseDirectory_String, 
-        packagePath : {__String}, opts___] := 
-      Module[{fullPackagePath, package, directory, filename, contentsTop, \ 
-          contentsBottom, needs, extraPackageCode, extraPrivateCode, 
-          loadPreexistingPackage, message, useGzip}, 
-        needs = \("\<Needs\>" /. {opts}\) /. 
-            Options[PackageData]; \[IndentingNewLine]extraPackageCode = \
-\("\<ExtraPackageCode\>" /. {opts}\) /. 
-            Options[PackageData]; \[IndentingNewLine]extraPrivateCode = \
-\("\<ExtraPrivateCode\>" /. {opts}\) /. 
-            Options[PackageData]; \[IndentingNewLine]loadPreexistingPackage = \
-\("\<LoadPreexistingPackage\>" /. {opts}\) /. 
-            Options[PackageData]; \[IndentingNewLine]message = \
-\("\<Message\>" /. {opts}\) /. 
-            Options[PackageData]; \[IndentingNewLine]useGzip = \
-\("\<UseGzip\>" /. {opts}\) /. 
-            Options[PackageData]; \[IndentingNewLine]SetDirectory[
-          baseDirectory]; \[IndentingNewLine]fullPackagePath = \
-{"\<QuantumGroups\>", "\<Data\>"}~Join~
-            packagePath; \[IndentingNewLine]directory = 
-          ToFileName[Most[fullPackagePath]]; \[IndentingNewLine]If[
-          Length[FileNames[
-                fullPackagePath\[LeftDoubleBracket]\(-2\)\[RightDoubleBracket]\
-, ToFileName[Drop[fullPackagePath, \(-2\)]]]] \[Equal] 0, 
-          CreateDirectory[directory]]; \[IndentingNewLine]package = 
-          StringJoin @@ \((Flatten[
-                Transpose[{fullPackagePath, 
-                    Table["\<`\>", {Length[fullPackagePath]}]}], 
-                1])\); \[IndentingNewLine]filename = 
-          ToFileName[Most[fullPackagePath], 
-            Last[fullPackagePath] <> "\<.m\>"]; \[IndentingNewLine]If[
-          loadPreexistingPackage \[And] \(! MemberQ[$ContextPath, 
-                package]\), \[IndentingNewLine]If[
-            useGzip \[And] Length[FileNames[filename]] \[Equal] 0 \[And] 
-              Length[FileNames[filename <> "\<.gz\>"]] \[NotEqual] 
-                0, \[IndentingNewLine]SetDirectory[
-              directory]; \[IndentingNewLine]Run["\<gzip -d \>" <> 
-                Last[fullPackagePath] <> "\<.m.gz\>"]; \
-\[IndentingNewLine]ResetDirectory[]\[IndentingNewLine]]; \
-\[IndentingNewLine]If[Length[FileNames[filename]] \[NotEqual] 0, 
-            Get[package]]\[IndentingNewLine]]; \[IndentingNewLine]contentsTop \
-= "\<BeginPackage[\"\>" <> package <> "\<\"\>" <> 
-            If[MatchQ[needs, {__String}], "\<, \>" <> 
-                ToString[needs, 
-                  InputForm], "\<\>"] <> "\<]\>" <> "\<\n\>"\
-\[IndentingNewLine] <> "\<Message[\>" <> message <> "\<,\"\>" <> 
-            package <> "\<\"]\>" <> "\<\n\>"\[IndentingNewLine] <> 
-            extraPackageCode <> "\<\n\>"\[IndentingNewLine] <> \
-"\<Begin[\"`Private`\"]\>" <> "\<\n\>"\[IndentingNewLine] <> 
-            extraPrivateCode <> "\<\n\>"; \[IndentingNewLine]contentsBottom = \
-"\<End[]\n\>" <> "\<EndPackage[]\>"; \[IndentingNewLine]If[
-          Length[FileNames[filename]] \[NotEqual] 0, 
-          DeleteFile[filename]]; \[IndentingNewLine]If[
-          useGzip \[And] 
-            Length[FileNames[filename <> "\<.gz\>"]] \[NotEqual] 0, 
-          DeleteFile[filename <> "\<.gz\>"]]; \[IndentingNewLine]WriteString[
-          filename, 
-          contentsTop]; \[IndentingNewLine]\(\((Function[{rule}, 
-                  WriteRule[filename, 
-                    rule]] /@ \((MatchingValues @@ #)\))\) &\) /@ 
-          patterns; \[IndentingNewLine]WriteString[filename, 
-          contentsBottom]; \[IndentingNewLine]Close[
-          filename]; \[IndentingNewLine]If[useGzip, SetDirectory[directory]; 
-          Run["\<gzip \>" <> Last[fullPackagePath] <> "\<.m\>"]; 
-          ResetDirectory[]]; \[IndentingNewLine]ResetDirectory[];]\)}], \
-"Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "PackageData", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+      RowBox[{"{", "}"}]}], ",", 
+     RowBox[{"\"\<ExtraPackageCode\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+     RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+     RowBox[{"\"\<LoadPreexistingPackage\>\"", "\[Rule]", "True"}], ",", 
+     RowBox[{"\"\<Message\>\"", "\[Rule]", "\"\<QuantumGroups::loading\>\""}],
+      ",", 
+     RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}], ",", 
+     RowBox[{"\"\<ByteCountLimit\>\"", "\[Rule]", "\[Infinity]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PackageData", "[", 
+   RowBox[{"s_Symbol", ",", "p_", ",", 
+    RowBox[{"packagePath", ":", 
+     RowBox[{"{", "__String", "}"}]}], ",", "opts___"}], "]"}], ":=", 
+  RowBox[{"PackageData", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", "p"}], "}"}], "}"}], ",", 
+    RowBox[{"QuantumGroupsDataDirectory", "[", "]"}], ",", "packagePath", ",",
+     "opts"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"PackageData", "[", 
+   RowBox[{"s_Symbol", ",", "p_", ",", "baseDirectory_String", ",", 
+    RowBox[{"packagePath", ":", 
+     RowBox[{"{", "__String", "}"}]}], ",", "opts___"}], "]"}], ":=", 
+  RowBox[{"PackageData", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", "p"}], "}"}], "}"}], ",", "baseDirectory", ",", 
+    "packagePath", ",", "opts"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"PackageData", "[", 
+   RowBox[{
+    RowBox[{"patterns", ":", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"_Symbol", ",", "_"}], "}"}], ".."}], "}"}]}], ",", 
+    RowBox[{"packagePath", ":", 
+     RowBox[{"{", "__String", "}"}]}], ",", "opts___"}], "]"}], ":=", 
+  RowBox[{"PackageData", "[", 
+   RowBox[{"patterns", ",", 
+    RowBox[{"QuantumGroupsDataDirectory", "[", "]"}], ",", "packagePath", ",",
+     "opts"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PackageData", "[", 
+   RowBox[{
+    RowBox[{"patterns", ":", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"_Symbol", ",", "_"}], "}"}], ".."}], "}"}]}], ",", 
+    "baseDirectory_String", ",", 
+    RowBox[{"packagePath", ":", 
+     RowBox[{"{", "__String", "}"}]}], ",", "opts___"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "fullPackagePath", ",", "package", ",", "directory", ",", "filename", 
+      ",", "contentsTop", ",", " ", "contentsBottom", ",", "needs", ",", 
+      "extraPackageCode", ",", "extraPrivateCode", ",", 
+      "loadPreexistingPackage", ",", "message", ",", "useGzip", ",", 
+      "byteCountLimit"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"needs", "=", 
+      RowBox[{
+       RowBox[{"\"\<Needs\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"extraPackageCode", "=", 
+      RowBox[{
+       RowBox[{"\"\<ExtraPackageCode\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"extraPrivateCode", "=", 
+      RowBox[{
+       RowBox[{"\"\<ExtraPrivateCode\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"loadPreexistingPackage", "=", 
+      RowBox[{
+       RowBox[{"\"\<LoadPreexistingPackage\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"message", "=", 
+      RowBox[{
+       RowBox[{"\"\<Message\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"useGzip", "=", 
+      RowBox[{
+       RowBox[{"\"\<UseGzip\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"byteCountLimit", "=", 
+      RowBox[{
+       RowBox[{"\"\<ByteCountLimit\>\"", "/.", 
+        RowBox[{"{", "opts", "}"}]}], "/.", 
+       RowBox[{"Options", "[", "PackageData", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SetDirectory", "[", "baseDirectory", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"fullPackagePath", "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<QuantumGroups\>\"", ",", "\"\<Data\>\""}], "}"}], "~", 
+       "Join", "~", "packagePath"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"directory", "=", 
+      RowBox[{"ToFileName", "[", 
+       RowBox[{"Most", "[", "fullPackagePath", "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", 
+         RowBox[{"FileNames", "[", 
+          RowBox[{
+           RowBox[{"fullPackagePath", "\[LeftDoubleBracket]", 
+            RowBox[{"-", "2"}], "\[RightDoubleBracket]"}], ",", 
+           RowBox[{"ToFileName", "[", 
+            RowBox[{"Drop", "[", 
+             RowBox[{"fullPackagePath", ",", 
+              RowBox[{"-", "2"}]}], "]"}], "]"}]}], "]"}], "]"}], "\[Equal]", 
+        "0"}], ",", 
+       RowBox[{"CreateDirectory", "[", "directory", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"package", "=", 
+      RowBox[{"StringJoin", "@@", 
+       RowBox[{"(", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"{", 
+            RowBox[{"fullPackagePath", ",", 
+             RowBox[{"Table", "[", 
+              RowBox[{"\"\<`\>\"", ",", 
+               RowBox[{"{", 
+                RowBox[{"Length", "[", "fullPackagePath", "]"}], "}"}]}], 
+              "]"}]}], "}"}], "]"}], ",", "1"}], "]"}], ")"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"filename", "=", 
+      RowBox[{"ToFileName", "[", 
+       RowBox[{
+        RowBox[{"Most", "[", "fullPackagePath", "]"}], ",", 
+        RowBox[{
+         RowBox[{"Last", "[", "fullPackagePath", "]"}], "<>", 
+         "\"\<.m\>\""}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"loadPreexistingPackage", "\[And]", 
+        RowBox[{"!", 
+         RowBox[{"MemberQ", "[", 
+          RowBox[{"$ContextPath", ",", "package"}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"useGzip", "\[And]", 
+           RowBox[{
+            RowBox[{"Length", "[", 
+             RowBox[{"FileNames", "[", "filename", "]"}], "]"}], "\[Equal]", 
+            "0"}], "\[And]", 
+           RowBox[{
+            RowBox[{"Length", "[", 
+             RowBox[{"FileNames", "[", 
+              RowBox[{"filename", "<>", "\"\<.gz\>\""}], "]"}], "]"}], 
+            "\[NotEqual]", "0"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"SetDirectory", "[", "directory", "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Run", "[", 
+            RowBox[{"\"\<gzip -d \>\"", "<>", 
+             RowBox[{"Last", "[", "fullPackagePath", "]"}], "<>", 
+             "\"\<.m.gz\>\""}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"ResetDirectory", "[", "]"}]}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Length", "[", 
+            RowBox[{"FileNames", "[", "filename", "]"}], "]"}], "\[NotEqual]",
+            "0"}], ",", 
+          RowBox[{"Get", "[", "package", "]"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"contentsTop", "=", 
+      RowBox[{
+      "\"\<BeginPackage[\\\"\>\"", "<>", "package", "<>", "\"\<\\\"\>\"", "<>",
+        
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MatchQ", "[", 
+          RowBox[{"needs", ",", 
+           RowBox[{"{", "__String", "}"}]}], "]"}], ",", 
+         RowBox[{"\"\<, \>\"", "<>", 
+          RowBox[{"ToString", "[", 
+           RowBox[{"needs", ",", "InputForm"}], "]"}]}], ",", "\"\<\>\""}], 
+        "]"}], "<>", "\"\<]\>\"", "<>", "\"\<\\n\>\"", "\[IndentingNewLine]", 
+       "<>", "\"\<Message[\>\"", "<>", "message", "<>", "\"\<,\\\"\>\"", "<>",
+        "package", "<>", "\"\<\\\"]\>\"", "<>", "\"\<\\n\>\"", 
+       "\[IndentingNewLine]", "<>", "extraPackageCode", "<>", "\"\<\\n\>\"", 
+       "\[IndentingNewLine]", "<>", "\"\<Begin[\\\"`Private`\\\"]\>\"", "<>", 
+       "\"\<\\n\>\"", "\[IndentingNewLine]", "<>", "extraPrivateCode", "<>", 
+       "\"\<\\n\>\""}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"contentsBottom", "=", 
+      RowBox[{"\"\<End[]\\n\>\"", "<>", "\"\<EndPackage[]\>\""}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", 
+         RowBox[{"FileNames", "[", "filename", "]"}], "]"}], "\[NotEqual]", 
+        "0"}], ",", 
+       RowBox[{"DeleteFile", "[", "filename", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"useGzip", "\[And]", 
+        RowBox[{
+         RowBox[{"Length", "[", 
+          RowBox[{"FileNames", "[", 
+           RowBox[{"filename", "<>", "\"\<.gz\>\""}], "]"}], "]"}], 
+         "\[NotEqual]", "0"}]}], ",", 
+       RowBox[{"DeleteFile", "[", 
+        RowBox[{"filename", "<>", "\"\<.gz\>\""}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"WriteString", "[", 
+      RowBox[{"filename", ",", "contentsTop"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Function", "[", 
+          RowBox[{
+           RowBox[{"{", "rule", "}"}], ",", 
+           RowBox[{"WriteRule", "[", 
+            RowBox[{"filename", ",", "rule"}], "]"}]}], "]"}], "/@", 
+         RowBox[{"Cases", "[", 
+          RowBox[{
+           RowBox[{"MatchingValues", "@@", "#"}], ",", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"p_", "\[RuleDelayed]", "v_"}], ")"}], "/;", 
+             RowBox[{
+              RowBox[{"ByteCount", "[", "v", "]"}], "\[LessEqual]", 
+              "byteCountLimit"}]}], ")"}]}], "]"}]}], ")"}], "&"}], "/@", 
+      "patterns"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"WriteString", "[", 
+      RowBox[{"filename", ",", "contentsBottom"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Close", "[", "filename", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"useGzip", ",", 
+       RowBox[{
+        RowBox[{"SetDirectory", "[", "directory", "]"}], ";", 
+        RowBox[{"Run", "[", 
+         RowBox[{"\"\<gzip --rsync \>\"", "<>", 
+          RowBox[{"Last", "[", "fullPackagePath", "]"}], "<>", "\"\<.m\>\""}],
+          "]"}], ";", 
+        RowBox[{"ResetDirectory", "[", "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ResetDirectory", "[", "]"}], ";"}]}], "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.411236426618926*^9, 3.411236536837413*^9}, {
+  3.4112369196578817`*^9, 3.4112369213002434`*^9}, {3.4112369837500415`*^9, 
+  3.411236987465384*^9}}],
 
 Cell[BoxData[
-    \(PackageMatrixPresentations[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]MatrixPresentation, \
-\(\(MatrixPresentation[\[CapitalGamma]\_n]\)[_]\)[\(Irrep[\[CapitalGamma]\_n]\
-\)[_], FundamentalBasis, _], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<MatrixPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \
-\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", "\<QuantumGroups`Algebra`\>"}, \
-\[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", \
-"\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageMatrixPresentations", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"MatrixPresentation", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"MatrixPresentation", "[", 
+       SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "_", "]"}], "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Irrep", "[", 
+        SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "_", "]"}], ",", 
+      "FundamentalBasis", ",", "_"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<MatrixPresentations\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Algebra`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}], 
+    ",", 
+    RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PackageDecompositionMaps[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]{{DecompositionMap, 
-            DecompositionMap[\[CapitalGamma]\_n, _, _]}, \
-{InverseDecompositionMap, 
-            HoldPattern[
-              InverseDecompositionMap[\[CapitalGamma]\_n, _, _]]}}, \
-\[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<DecompositionMaps\>"}, \[IndentingNewLine]"\<Needs\>" \
-\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>", "\<QuantumGroups`RepresentationTensors`\
-\>", "\<QuantumGroups`MatrixPresentations`\>"}, \
-\[IndentingNewLine]"\<ExtraPrivateCode\>" \[Rule] "\<q=Global`q;\>", \
-"\<UseGzip\>" \[Rule] False\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageDecompositionMaps", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"DecompositionMap", ",", 
+          RowBox[{"DecompositionMap", "[", 
+           RowBox[{
+            SubscriptBox["\[CapitalGamma]", "n"], ",", "_", ",", "_"}], 
+           "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"InverseDecompositionMap", ",", 
+          RowBox[{"HoldPattern", "[", 
+           RowBox[{"InverseDecompositionMap", "[", 
+            RowBox[{
+             SubscriptBox["\[CapitalGamma]", "n"], ",", "_", ",", "_"}], 
+            "]"}], "]"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+         RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+        "\"\<DecompositionMaps\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<QuantumGroups`\>\"", ",", 
+         "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+         "\"\<QuantumGroups`Representations`\>\"", ",", 
+         "\"\<QuantumGroups`RepresentationTensors`\>\"", ",", 
+         "\"\<QuantumGroups`MatrixPresentations`\>\""}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}], 
+      ",", 
+      RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}], ",", 
+      RowBox[{"\"\<ByteCountLimit\>\"", "\[Rule]", "6000000"}]}], 
+     "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"PackageLargeDecompositionMaps", "[", 
+     RowBox[{
+      SubscriptBox["\[CapitalGamma]", "n"], ",", "6000000"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", ")"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.411236590945216*^9, 3.411236606667824*^9}, {
+  3.4112380869063025`*^9, 3.411238106163994*^9}}],
 
 Cell[BoxData[
-    \(PackageQuantumRoots[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]ExpandQuantumRoot, \(ExpandQuantumRoot[\
-\[CapitalGamma]\_n]\)[_], \[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<QuantumRoots\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
-{"\<QuantumGroups`\>", "\<QuantumGroups`QuantumRoots`\>", \
-"\<QuantumGroups`Algebra`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\>" \
-\[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"weightToString", "[", 
+   RowBox[{"\[Lambda]", ":", 
+    RowBox[{"{", "__Integer", "}"}]}], "]"}], ":=", 
+  RowBox[{"StringDrop", "[", 
+   RowBox[{
+    RowBox[{"StringJoin", "@@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"ToString", "[", "#", "]"}], "<>", "\"\<$\>\""}], ")"}], 
+        "&"}], "/@", "\[Lambda]"}], ")"}]}], ",", 
+    RowBox[{"-", "1"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4112379015597873`*^9, 3.411237993281677*^9}, {
+  3.4112498503012333`*^9, 3.411249850641723*^9}}],
 
 Cell[BoxData[
-    \(PackageRMatrix[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]RMatrix, 
-        RMatrix[\[CapitalGamma]\_n, _, _, _, _], \
-\[IndentingNewLine]{ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<RMatrix\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
-{"\<QuantumGroups`\>", "\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>", "\<UseGzip\>" \[Rule] 
-          False\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageLargeDecompositionMaps", "[", 
+   RowBox[{
+    SubscriptBox["\[CapitalGamma]_", "n_"], ",", "limit_Integer"}], "]"}], ":=",
+   
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "tensorPowerQ", ",", "tensorPowerPattern", ",", "largeValues", ",", 
+      "largeTensorPowers", ",", "largeTensorPowerData", ",", 
+      "otherLargeValues"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "tensorPowerQ", " ", "checks", " ", "if", " ", "W", " ", "looks", " ", 
+      "like", " ", "a", " ", "tensor", " ", "power", " ", "of", " ", "V"}], 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"tensorPowerQ", "[", "V_", "]"}], "[", "W_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{"W", ",", "V"}], "]"}], "||", 
+       RowBox[{"MatchQ", "[", 
+        RowBox[{"W", ",", 
+         RowBox[{
+          RowBox[{"U_", "\[CircleTimes]", "V"}], "/;", 
+          RowBox[{
+           RowBox[{"tensorPowerQ", "[", "V", "]"}], "[", "U", "]"}]}]}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"tensorPowerPattern", "=", 
+      RowBox[{
+       RowBox[{"U_", "\[CircleTimes]", 
+        RowBox[{"(", 
+         RowBox[{"V", ":", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Irrep", "[", 
+             SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "\[Lambda]_", 
+            "]"}], ")"}]}], ")"}]}], "/;", 
+       RowBox[{
+        RowBox[{"tensorPowerQ", "[", "V", "]"}], "[", "U", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"largeValues", "=", 
+      RowBox[{"Cases", "[", 
+       RowBox[{
+        RowBox[{"MatchingValues", "[", 
+         RowBox[{"DecompositionMap", ",", 
+          RowBox[{"DecompositionMap", "[", 
+           RowBox[{
+            SubscriptBox["\[CapitalGamma]", "n"], ",", "_", ",", "_"}], 
+           "]"}]}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"p_", "\[RuleDelayed]", "v_"}], ")"}], "/;", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"ByteCount", "[", "v", "]"}], ">", "limit"}], ")"}]}], 
+          ")"}], "\[RuleDelayed]", "p"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"largeTensorPowers", "=", 
+      RowBox[{
+       RowBox[{"Cases", "[", 
+        RowBox[{
+         RowBox[{"largeValues", "/.", 
+          RowBox[{"HoldPattern", "\[Rule]", "Hold"}]}], ",", 
+         RowBox[{
+          RowBox[{"Hold", "[", 
+           RowBox[{"DecompositionMap", "[", 
+            RowBox[{
+             SubscriptBox["\[CapitalGamma]", "n"], ",", "V_", ",", "_"}], 
+            "]"}], "]"}], "/;", 
+          RowBox[{"MatchQ", "[", 
+           RowBox[{"V", ",", "tensorPowerPattern"}], "]"}]}]}], "]"}], "/.", 
+       RowBox[{"Hold", "\[Rule]", "HoldPattern"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"largeTensorPowerData", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"largeTensorPowers", "/.", 
+         RowBox[{"HoldPattern", "\[Rule]", "Hold"}]}], "/.", 
+        RowBox[{
+         RowBox[{"Hold", "[", 
+          RowBox[{"DecompositionMap", "[", 
+           RowBox[{"_", ",", "V_", ",", "_"}], "]"}], "]"}], "\[RuleDelayed]",
+          "V"}]}], "/.", 
+       RowBox[{
+        RowBox[{"U", ":", 
+         RowBox[{"(", 
+          RowBox[{"_", "\[CircleTimes]", 
+           RowBox[{"V", ":", 
+            RowBox[{
+             RowBox[{"Irrep", "[", "_", "]"}], "[", "\[Lambda]_", "]"}]}]}], 
+          ")"}]}], "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"\[Lambda]", ",", 
+          RowBox[{"Count", "[", 
+           RowBox[{"U", ",", 
+            RowBox[{
+             RowBox[{"Irrep", "[", "_", "]"}], "[", "\[Lambda]", "]"}], ",", 
+            "\[Infinity]"}], "]"}], ",", "U"}], "}"}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<largeTensorPowers: \>\"", ",", "largeTensorPowers"}], 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<largeTensorPowerData: \>\"", ",", "largeTensorPowerData"}],
+       "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"otherLargeValues", "=", 
+      RowBox[{"Complement", "[", 
+       RowBox[{"largeValues", ",", "largeTensorPowers"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<otherLargeValues: \>\"", ",", "otherLargeValues"}], "]"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "otherLargeValues", "]"}], ">", "0"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PackageData", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"DecompositionMap", ",", "#"}], "}"}], "&"}], "/@", 
+          "otherLargeValues"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+            RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+           "\"\<DecompositionMaps\>\"", ",", "\"\<Large\>\""}], "}"}], ",", 
+         RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<QuantumGroups`\>\"", ",", 
+            "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+            "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+            "\"\<QuantumGroups`Algebra`\>\""}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}], ",", 
+         
+         RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}]}], "]"}]}], "]"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "largeTensorPowers", "]"}], ">", "0"}], ",", 
+       RowBox[{
+        RowBox[{"Function", "[", 
+         RowBox[{
+          RowBox[{"{", "d", "}"}], ",", 
+          RowBox[{"PackageData", "[", 
+           RowBox[{"DecompositionMap", ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"HoldPattern", "[", 
+               RowBox[{"DecompositionMap", "[", "##", "]"}], "]"}], "&"}], "@@",
+              
+             RowBox[{"{", 
+              RowBox[{
+               SubscriptBox["\[CapitalGamma]", "n"], ",", 
+               RowBox[{
+               "d", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], 
+               ",", "_"}], "}"}]}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+               RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+              "\"\<DecompositionMaps\>\"", ",", 
+              RowBox[{"\"\<w\>\"", "<>", 
+               RowBox[{"weightToString", "[", 
+                RowBox[{
+                "d", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                "]"}]}], ",", 
+              RowBox[{"\"\<k\>\"", "<>", 
+               RowBox[{"ToString", "[", 
+                RowBox[{
+                "d", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                "]"}]}]}], "}"}], ",", 
+            RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+              "\"\<QuantumGroups`\>\"", ",", 
+               "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+               "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+               "\"\<QuantumGroups`Algebra`\>\""}], "}"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+            "\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}], 
+            ",", 
+            RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}]}], "]"}]}], "]"}],
+         "/@", "largeTensorPowerData"}]}], "]"}], ";"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4112366121356864`*^9, 3.41123662659648*^9}, {
+   3.411236659343568*^9, 3.4112367547207136`*^9}, {3.4112369551489153`*^9, 
+   3.4112370490138865`*^9}, {3.41123708441479*^9, 3.411237099846981*^9}, {
+   3.4112371324839106`*^9, 3.411237213790824*^9}, {3.4112373004754705`*^9, 
+   3.4112373402126093`*^9}, {3.4112373821128592`*^9, 3.411237546048587*^9}, {
+   3.4112375820002832`*^9, 3.411237839200118*^9}, {3.4112378827126865`*^9, 
+   3.411237898305107*^9}, {3.4112380049083953`*^9, 3.4112380726157537`*^9}, {
+   3.4112390268378572`*^9, 3.4112390961174765`*^9}, {3.411239374988474*^9, 
+   3.411239406303502*^9}, {3.4112395568099203`*^9, 3.4112395775898*^9}, 
+   3.411240040525469*^9, {3.4112405341152163`*^9, 3.4112405418463326`*^9}, {
+   3.4112407110195923`*^9, 3.411240729466117*^9}, {3.411240768201816*^9, 
+   3.4112407883908463`*^9}, {3.4112410505478096`*^9, 3.411241116272317*^9}, {
+   3.4112417554814544`*^9, 3.4112417566831827`*^9}, 3.4112421434493246`*^9, {
+   3.411246548693755*^9, 3.4112465790674305`*^9}, {3.4112470113089633`*^9, 
+   3.411247023967165*^9}, {3.4112475795660768`*^9, 3.4112476591905713`*^9}, {
+   3.411248111440875*^9, 3.4112481125524735`*^9}, {3.4112486159463186`*^9, 
+   3.411248628554448*^9}, {3.411248832097128*^9, 3.4112488379755807`*^9}}],
 
 Cell[BoxData[
-    \(PackagePartialRMatrixPresentation[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]QuantumGroups`RMatrix`Private`\
-PartialRMatrixPresentation, 
-        QuantumGroups`RMatrix`Private`PartialRMatrixPresentation[\
-\[CapitalGamma]\_n, __], \[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<PartialRMatrixPresentation\>"}, \
-\[IndentingNewLine]"\<Needs\>" \[Rule] {"\<QuantumGroups`\>", \
-"\<QuantumGroups`MatrixPresentations`\>", "\<QuantumGroups`RMatrix`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"ExpandQuantumRoot", ",", 
+    RowBox[{
+     RowBox[{"ExpandQuantumRoot", "[", 
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "_", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", "\"\<QuantumRoots\>\""}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", "\"\<QuantumGroups`QuantumRoots`\>\"", 
+       ",", "\"\<QuantumGroups`Algebra`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4112376010476723`*^9, 3.4112376068460093`*^9}}],
 
 Cell[BoxData[
-    \(PackageDirectSumDecompositions[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]QuantumGroups`MatrixPresentations`\
-Private`DirectSumDecomposition, \
-\(QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition[\
-\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<DirectSumDecompositions\>"}, \[IndentingNewLine]"\<Needs\
-\>" \[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageRMatrix", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"RMatrix", ",", 
+    RowBox[{"RMatrix", "[", 
+     RowBox[{
+      SubscriptBox["\[CapitalGamma]", "n"], ",", "_", ",", "_", ",", "_", ",",
+       "_"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", "\"\<RMatrix\>\""}], "}"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}], 
+    ",", 
+    RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PackageSubIrrepWeightBases[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]QuantumGroups`MatrixPresentations`\
-Private`SubIrrepWeightBasis, \
-\(QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis[\
-\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<SubIrrepWeightBases\>"}, \[IndentingNewLine]"\<Needs\>" \
-\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackagePartialRMatrixPresentation", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"QuantumGroups`RMatrix`Private`PartialRMatrixPresentation", ",", 
+    RowBox[{"QuantumGroups`RMatrix`Private`PartialRMatrixPresentation", "[", 
+     RowBox[{
+      SubscriptBox["\[CapitalGamma]", "n"], ",", "__"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<PartialRMatrixPresentation\>\""}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`RMatrix`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PackageBraidingMaps[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]{{NormalisedBraidingMap, 
-            NormalisedBraidingMap[\[CapitalGamma]\_n, _, _]}, \
-{InverseNormalisedBraidingMap, 
-            InverseNormalisedBraidingMap[\[CapitalGamma]\_n, _, _]}}, \
-\[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<BraidingMaps\>"}, \[IndentingNewLine]"\<Needs\>" \[Rule] \
-{"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`RepresentationTensors`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageDirectSumDecompositions", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{
+   "QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition", ",", 
+    RowBox[{
+     RowBox[{
+     "QuantumGroups`MatrixPresentations`Private`DirectSumDecomposition", "[", 
+      
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "__", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<DirectSumDecompositions\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+    
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PackageBRPresentations[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]KnotTheory`BR, \(KnotTheory`BR[_, _]\)[\
-\[CapitalGamma]\_n, __], \[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<BRPresentations\>"}, \[IndentingNewLine]"\<Needs\>" \
-\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`RepresentationTensors`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageSubIrrepWeightBases", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{
+   "QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis", ",", 
+    RowBox[{
+     RowBox[{
+     "QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis", "[", 
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "__", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<SubIrrepWeightBases\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PackageHighWeightVectors[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]HighWeightVectors, \(HighWeightVectors[\
-\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<HighWeightVectors\>"}, \[IndentingNewLine]"\<Needs\>" \
-\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageBraidingMaps", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"NormalisedBraidingMap", ",", 
+        RowBox[{"NormalisedBraidingMap", "[", 
+         RowBox[{
+          SubscriptBox["\[CapitalGamma]", "n"], ",", "_", ",", "_"}], "]"}]}],
+        "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"InverseNormalisedBraidingMap", ",", 
+        RowBox[{"InverseNormalisedBraidingMap", "[", 
+         RowBox[{
+          SubscriptBox["\[CapitalGamma]", "n"], ",", "_", ",", "_"}], "]"}]}],
+        "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", "\"\<BraidingMaps\>\""}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`RepresentationTensors`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(PackageBraidingMatrices[\[CapitalGamma]_\_n_] := 
-      PackageData[\[IndentingNewLine]QuantumGroups`Braiding`Private`\
-BraidingMatrices, \(QuantumGroups`Braiding`Private`BraidingMatrices[\
-\[CapitalGamma]\_n]\)[__], \[IndentingNewLine]{"\<tmp\>", 
-          ToString[\[CapitalGamma]] <> 
-            ToString[
-              n], "\<BraidingMatrices\>"}, \[IndentingNewLine]"\<Needs\>" \
-\[Rule] {"\<QuantumGroups`\>", "\<QuantumGroups`Braiding`\>", \
-"\<QuantumGroups`MatrixPresentations`\>", \
-"\<QuantumGroups`Utilities`MatrixWrapper`\>", \
-"\<QuantumGroups`Representations`\>"}, \[IndentingNewLine]"\<ExtraPrivateCode\
-\>" \[Rule] "\<q=Global`q;\>"\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"PackageBRPresentations", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"KnotTheory`BR", ",", 
+    RowBox[{
+     RowBox[{"KnotTheory`BR", "[", 
+      RowBox[{"_", ",", "_"}], "]"}], "[", 
+     RowBox[{
+      SubscriptBox["\[CapitalGamma]", "n"], ",", "__"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<BRPresentations\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`RepresentationTensors`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PackageHighWeightVectors", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"HighWeightVectors", ",", 
+    RowBox[{
+     RowBox[{"HighWeightVectors", "[", 
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "__", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<HighWeightVectors\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PackageBraidingMatrices", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{"QuantumGroups`Braiding`Private`BraidingMatrices", ",", 
+    RowBox[{
+     RowBox[{"QuantumGroups`Braiding`Private`BraidingMatrices", "[", 
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "__", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<tmp\>\"", ",", 
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", 
+      "\"\<BraidingMatrices\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", "\"\<QuantumGroups`Braiding`\>\"", ",", 
+       "\"\<QuantumGroups`MatrixPresentations`\>\"", ",", 
+       "\"\<QuantumGroups`Utilities`MatrixWrapper`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(\(Unprotect[Get];\)\), "\n", 
-    \(Get[
-        package_String /; 
-          StringMatchQ[package, "\<QuantumGroups`Data`\>" ~~ __]] := 
-      Get[StringDrop[package, 
-          StringLength["\<QuantumGroups`Data`\>"]]]\), "\n", 
-    \(\(Protect[Get];\)\)}], "Input"],
+ RowBox[{
+  RowBox[{"Unprotect", "[", "Get", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"package_String", "/;", 
+    RowBox[{"StringMatchQ", "[", 
+     RowBox[{"package", ",", 
+      RowBox[{"\"\<QuantumGroups`Data`\>\"", "~~", "__"}]}], "]"}]}], "]"}], ":=",
+   
+  RowBox[{"Get", "[", 
+   RowBox[{"StringDrop", "[", 
+    RowBox[{"package", ",", 
+     RowBox[{"StringLength", "[", "\"\<QuantumGroups`Data`\>\"", "]"}]}], 
+    "]"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"Protect", "[", "Get", "]"}], ";"}]}], "Input"],
 
 Cell["Deprecated:", "Text"],
 
 Cell[BoxData[{
-    \(\(Unprotect[Get];\)\), "\[IndentingNewLine]", 
-    \(\(useGetGzipHack = True;\)\), "\[IndentingNewLine]", 
-    \(Get[
-        package_String /; \((useGetGzipHack \[And] 
-              StringMatchQ[package, "\<QuantumGroups`Data`\>" ~~ __])\)] := 
-      Module[{packageFragments, directory, filename, 
-          gzipExists = False}, \[IndentingNewLine]packageFragments = 
-          StringSplit[package, "\<`\>"]; \[IndentingNewLine]SetDirectory[
-          QuantumGroupsDirectory[]]; \[IndentingNewLine]directory = 
-          ToFileName[Most[packageFragments]]; \[IndentingNewLine]filename = 
-          Last[packageFragments] <> "\<.m\>"; \[IndentingNewLine]If[
-          Length[FileNames[filename <> "\<.gz\>", {directory}]] \[NotEqual] 
-            0, \[IndentingNewLine]gzipExists = 
-            True; \[IndentingNewLine]SetDirectory[
-            directory]; \[IndentingNewLine]Run["\<gzip -d \>" <> 
-              filename <> "\<.gz\>"]; \[IndentingNewLine]ResetDirectory[]\
-\[IndentingNewLine]]; \[IndentingNewLine]useGetGzipHack = 
-          False; \[IndentingNewLine]Get[
-          package]; \[IndentingNewLine]useGetGzipHack = 
-          True; \[IndentingNewLine]If[
-          gzipExists, \[IndentingNewLine]SetDirectory[
-            directory]; \[IndentingNewLine]Run["\<gzip \>" <> 
-              filename]; \[IndentingNewLine]ResetDirectory[];\
-\[IndentingNewLine]]\[IndentingNewLine]]\), "\[IndentingNewLine]", 
-    \(\(Protect[Get];\)\)}], "Input"],
+ RowBox[{
+  RowBox[{"Unprotect", "[", "Get", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"useGetGzipHack", "=", "True"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"package_String", "/;", 
+    RowBox[{"(", 
+     RowBox[{"useGetGzipHack", "\[And]", 
+      RowBox[{"StringMatchQ", "[", 
+       RowBox[{"package", ",", 
+        RowBox[{"\"\<QuantumGroups`Data`\>\"", "~~", "__"}]}], "]"}]}], 
+     ")"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"packageFragments", ",", "directory", ",", "filename", ",", 
+      RowBox[{"gzipExists", "=", "False"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"packageFragments", "=", 
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"package", ",", "\"\<`\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SetDirectory", "[", 
+      RowBox[{"QuantumGroupsDirectory", "[", "]"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"directory", "=", 
+      RowBox[{"ToFileName", "[", 
+       RowBox[{"Most", "[", "packageFragments", "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"filename", "=", 
+      RowBox[{
+       RowBox[{"Last", "[", "packageFragments", "]"}], "<>", "\"\<.m\>\""}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", 
+         RowBox[{"FileNames", "[", 
+          RowBox[{
+           RowBox[{"filename", "<>", "\"\<.gz\>\""}], ",", 
+           RowBox[{"{", "directory", "}"}]}], "]"}], "]"}], "\[NotEqual]", 
+        "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"gzipExists", "=", "True"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"SetDirectory", "[", "directory", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Run", "[", 
+         RowBox[{"\"\<gzip -d \>\"", "<>", "filename", "<>", "\"\<.gz\>\""}], 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"ResetDirectory", "[", "]"}]}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"useGetGzipHack", "=", "False"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Get", "[", "package", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"useGetGzipHack", "=", "True"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"gzipExists", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"SetDirectory", "[", "directory", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Run", "[", 
+         RowBox[{"\"\<gzip \>\"", "<>", "filename"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ResetDirectory", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "Get", "]"}], ";"}]}], "Input"],
 
 Cell[BoxData[
-    \(\(End[];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(EndPackage[];\)\)], "Input",
-  InitializationCell->True]
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True]
 },
-FrontEndVersion->"5.2 for Microsoft Windows",
-ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
-WindowSize->{1272, 679},
-WindowMargins->{{1296, Automatic}, {Automatic, 64}}
+WindowSize->{1280, 998},
+WindowMargins->{{1276, Automatic}, {Automatic, -57}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
 ]
+(* End of Notebook Content *)
 
-(*******************************************************************
-Cached data follows.  If you edit this Notebook file directly, not
-using Mathematica, you must remove the line containing CacheID at
-the top of  the file.  The cache data will then be recreated when
-you save this file from within Mathematica.
-*******************************************************************)
-
+(* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{}
 *)
-
 (*CellTagsIndex
 CellTagsIndex->{}
 *)
-
 (*NotebookFileOutline
 Notebook[{
-Cell[1754, 51, 350, 6, 50, "Input",
-  InitializationCell->True],
-Cell[2107, 59, 123, 3, 30, "Input",
-  InitializationCell->True],
-Cell[2233, 64, 393, 7, 50, "Input",
-  InitializationCell->True],
-Cell[2629, 73, 88, 2, 30, "Input",
-  InitializationCell->True],
-Cell[2720, 77, 258, 6, 30, "Input",
-  InitializationCell->True],
-Cell[2981, 85, 314, 7, 30, "Input",
-  InitializationCell->True],
-Cell[3298, 94, 376, 9, 50, "Input",
-  InitializationCell->True],
-Cell[3677, 105, 186, 4, 30, "Input",
-  InitializationCell->True],
-Cell[3866, 111, 528, 11, 90, "Input",
-  InitializationCell->True],
-Cell[4397, 124, 2266, 37, 390, "Input",
-  InitializationCell->True],
-Cell[6666, 163, 4740, 83, 830, "Input",
-  InitializationCell->True],
-Cell[11409, 248, 704, 11, 134, "Input",
-  InitializationCell->True],
-Cell[12116, 261, 826, 15, 154, "Input",
-  InitializationCell->True],
-Cell[12945, 278, 543, 9, 134, "Input",
-  InitializationCell->True],
-Cell[13491, 289, 586, 11, 134, "Input",
-  InitializationCell->True],
-Cell[14080, 302, 774, 14, 154, "Input",
-  InitializationCell->True],
-Cell[14857, 318, 749, 13, 134, "Input",
-  InitializationCell->True],
-Cell[15609, 333, 735, 13, 134, "Input",
-  InitializationCell->True],
-Cell[16347, 348, 801, 15, 154, "Input",
-  InitializationCell->True],
-Cell[17151, 365, 679, 12, 154, "Input",
-  InitializationCell->True],
-Cell[17833, 379, 639, 11, 134, "Input",
-  InitializationCell->True],
-Cell[18475, 392, 732, 13, 154, "Input",
-  InitializationCell->True],
-Cell[19210, 407, 289, 7, 70, "Input"],
-Cell[19502, 416, 27, 0, 33, "Text"],
-Cell[19532, 418, 1480, 25, 490, "Input"],
-Cell[21015, 445, 71, 2, 30, "Input",
-  InitializationCell->True],
-Cell[21089, 449, 78, 2, 30, "Input",
-  InitializationCell->True]
+Cell[568, 21, 521, 12, 52, "Input",
+ InitializationCell->True],
+Cell[1092, 35, 153, 3, 31, "Input",
+ InitializationCell->True],
+Cell[1248, 40, 489, 11, 52, "Input",
+ InitializationCell->True],
+Cell[1740, 53, 119, 3, 31, "Input",
+ InitializationCell->True],
+Cell[1862, 58, 561, 16, 31, "Input",
+ InitializationCell->True],
+Cell[2426, 76, 709, 20, 31, "Input",
+ InitializationCell->True],
+Cell[3138, 98, 702, 18, 52, "Input",
+ InitializationCell->True],
+Cell[3843, 118, 332, 9, 31, "Input",
+ InitializationCell->True],
+Cell[4178, 129, 1065, 29, 92, "Input",
+ InitializationCell->True],
+Cell[5246, 160, 4808, 125, 392, "Input",
+ InitializationCell->True],
+Cell[10057, 287, 11379, 282, 872, "Input",
+ InitializationCell->True],
+Cell[21439, 571, 1347, 33, 134, "Input",
+ InitializationCell->True],
+Cell[22789, 606, 2095, 49, 194, "Input",
+ InitializationCell->True],
+Cell[24887, 657, 623, 18, 31, "Input",
+ InitializationCell->True],
+Cell[25513, 677, 9209, 218, 434, "Input",
+ InitializationCell->True],
+Cell[34725, 897, 1061, 25, 134, "Input",
+ InitializationCell->True],
+Cell[35789, 924, 1078, 27, 134, "Input",
+ InitializationCell->True],
+Cell[36870, 953, 1252, 28, 154, "Input",
+ InitializationCell->True],
+Cell[38125, 983, 1237, 30, 134, "Input",
+ InitializationCell->True],
+Cell[39365, 1015, 1211, 28, 134, "Input",
+ InitializationCell->True],
+Cell[40579, 1045, 1517, 37, 154, "Input",
+ InitializationCell->True],
+Cell[42099, 1084, 1211, 29, 154, "Input",
+ InitializationCell->True],
+Cell[43313, 1115, 1109, 26, 134, "Input",
+ InitializationCell->True],
+Cell[44425, 1143, 1207, 26, 154, "Input",
+ InitializationCell->True],
+Cell[45635, 1171, 553, 16, 72, "Input"],
+Cell[46191, 1189, 27, 0, 29, "Text"],
+Cell[46221, 1191, 2868, 68, 472, "Input"],
+Cell[49092, 1261, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[49191, 1266, 103, 3, 31, "Input",
+ InitializationCell->True]
 }
 ]
 *)
 
-
-
-(*******************************************************************
-End of Mathematica Notebook file.
-*******************************************************************)
-
+(* End of internal cache information *)
