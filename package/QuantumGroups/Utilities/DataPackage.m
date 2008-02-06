@@ -140,10 +140,7 @@ tensorPowerPattern=U_\[CircleTimes](V:(Irrep[Subscript[\[CapitalGamma], n]][\[La
 largeValues=Cases[MatchingValues[DecompositionMap,DecompositionMap[Subscript[\[CapitalGamma], n],_,_]],((p_:>v_)/;(ByteCount[v]>limit)):>p];
 largeTensorPowers=Cases[largeValues/.HoldPattern->Hold,Hold[DecompositionMap[Subscript[\[CapitalGamma], n],V_,_]]/;MatchQ[V,tensorPowerPattern]]/.Hold->HoldPattern;
 largeTensorPowerData=largeTensorPowers/.HoldPattern->Hold/.Hold[DecompositionMap[_,V_,_]]:>V/.U:(_\[CircleTimes]V:Irrep[_][\[Lambda]_]):>{\[Lambda],Count[U,Irrep[_][\[Lambda]],\[Infinity]],U};
-Print["largeTensorPowers: ",largeTensorPowers];
-Print["largeTensorPowerData: ",largeTensorPowerData];
 otherLargeValues=Complement[largeValues,largeTensorPowers];
-Print["otherLargeValues: ",otherLargeValues];
 If[Length[otherLargeValues]>0,
 PackageData[{DecompositionMap,#}&/@otherLargeValues,{ToString[\[CapitalGamma]]<>ToString[n],"DecompositionMaps","Large"},"Needs"->{"QuantumGroups`","QuantumGroups`MatrixPresentations`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Algebra`"},
 "ExtraPrivateCode"->"q=Global`q;","UseGzip"->False]];
