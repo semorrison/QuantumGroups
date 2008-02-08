@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     16569,        514]
-NotebookOptionsPosition[     14438,        440]
-NotebookOutlinePosition[     14777,        455]
-CellTagsIndexPosition[     14734,        452]
+NotebookDataLength[     15408,        483]
+NotebookOptionsPosition[     13439,        413]
+NotebookOutlinePosition[     13778,        428]
+CellTagsIndexPosition[     13735,        425]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -243,59 +243,16 @@ Cell[BoxData[
  CellChangeTimes->{3.4113147282019997`*^9}]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "/@", 
-  RowBox[{"{", 
-   RowBox[{"B2", ",", "B3", ",", "B4"}], "}"}]}]], "Input",
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "/@", 
+   RowBox[{"{", 
+    RowBox[{"B2", ",", "B3", ",", "B4"}], "}"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, {
-   3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9}],
+   3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9, 
+   3.4113240459207497`*^9}],
 
-Cell[BoxData[
- RowBox[{
-  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
-  RowBox[{
-  ":", " "}], "\<\"Loading precomputed data in \
-\\!\\(\\\"QuantumGroups`Data`B2`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
-"MSG",
- CellChangeTimes->{3.4113147284363747`*^9}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
-  RowBox[{
-  ":", " "}], "\<\"Loading precomputed data in \
-\\!\\(\\\"QuantumGroups`Data`B3`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
-"MSG",
- CellChangeTimes->{3.4113147284832497`*^9}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"QuantumGroups", "::", "\<\"loading\"\>"}], 
-  RowBox[{
-  ":", " "}], "\<\"Loading precomputed data in \
-\\!\\(\\\"QuantumGroups`Data`B4`QuantumRoots`\\\"\\).\"\>"}]], "Message", \
-"MSG",
- CellChangeTimes->{3.4113147287019997`*^9}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"General", "::", "\<\"stop\"\>"}], 
-  RowBox[{
-  ":", " "}], "\<\"Further output of \\!\\(QuantumGroups :: \
-\\\"loading\\\"\\) will be suppressed during this calculation. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
-ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.4113147289207497`*^9}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"Null", ",", "Null", ",", "Null", ",", 
-   RowBox[{"PackageQuantumRoots", "[", "Null", "]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.4113147289519997`*^9}]
-}, Open  ]],
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"With", "[", 
@@ -312,10 +269,19 @@ Cell[BoxData[
   3.4113136859832497`*^9, 3.4113137041082497`*^9}}],
 
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "/@", 
-  RowBox[{"{", 
-   RowBox[{"B2", ",", "B3", ",", "B4", ",", "B5"}], "}"}]}]], "Input",
- CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}}],
+ RowBox[{"{", 
+  RowBox[{"11341.53125`11.506216687253108", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.4113260705926247`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "/@", 
+   RowBox[{"{", 
+    RowBox[{"B2", ",", "B3", ",", "B4", ",", "B5"}], "}"}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, 
+   3.4113240479832497`*^9}],
 
 Cell[BoxData[
  RowBox[{"With", "[", 
@@ -348,12 +314,13 @@ Cell[BoxData[
   3.4113148167801247`*^9}}],
 
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "/@", 
-  RowBox[{"{", 
-   RowBox[{"C3", ",", "C4"}], "}"}]}]], "Input",
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "/@", 
+   RowBox[{"{", 
+    RowBox[{"C3", ",", "C4"}], "}"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, {
    3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9, {
-   3.4113148181238747`*^9, 3.4113148213269997`*^9}}],
+   3.4113148181238747`*^9, 3.4113148213269997`*^9}, 3.4113240509051247`*^9}],
 
 Cell[BoxData[
  RowBox[{"With", "[", 
@@ -371,9 +338,10 @@ Cell[BoxData[
   3.4113148329676247`*^9}}],
 
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "[", "C5", "]"}]], "Input",
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "[", "C5", "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}, {
-  3.4113148607644997`*^9, 3.4113148618582497`*^9}}],
+   3.4113148607644997`*^9, 3.4113148618582497`*^9}, 3.4113240526551247`*^9}],
 
 Cell[BoxData[
  RowBox[{"With", "[", 
@@ -392,11 +360,13 @@ Cell[BoxData[
 
 
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "/@", 
-  RowBox[{"{", "D4", "}"}]}]], "Input",
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "/@", 
+   RowBox[{"{", "D4", "}"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.4113140207332497`*^9, 3.4113140428894997`*^9}, {
    3.4113141737332497`*^9, 3.4113141772176247`*^9}, 3.4113147590926247`*^9, {
-   3.4113148181238747`*^9, 3.4113148213269997`*^9}, 3.4113148744519997`*^9}],
+   3.4113148181238747`*^9, 3.4113148213269997`*^9}, 3.4113148744519997`*^9, 
+   3.4113240543269997`*^9}],
 
 Cell[BoxData[
  RowBox[{"With", "[", 
@@ -415,9 +385,10 @@ Cell[BoxData[
 
 
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "[", "D5", "]"}]], "Input",
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "[", "D5", "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}, {
-  3.4113148607644997`*^9, 3.4113148786863747`*^9}}],
+   3.4113148607644997`*^9, 3.4113148786863747`*^9}, 3.4113240559519997`*^9}],
 
 Cell[BoxData[
  RowBox[{"With", "[", 
@@ -435,8 +406,10 @@ Cell[BoxData[
   3.4113147805613747`*^9}}],
 
 Cell[BoxData[
- RowBox[{"PackageQuantumRoots", "[", "F4", "]"}]], "Input",
- CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}}]
+ RowBox[{
+  RowBox[{"PackageQuantumRoots", "[", "F4", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.4113147845144997`*^9, 3.4113147880926247`*^9}, 
+   3.4113240575457497`*^9}]
 },
 WindowSize->{615, 750},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -495,27 +468,23 @@ Cell[CellGroupData[{
 Cell[6774, 225, 484, 12, 52, "Input"],
 Cell[7261, 239, 146, 3, 30, "Output"]
 }, Open  ]],
+Cell[7422, 245, 324, 7, 31, "Input"],
 Cell[CellGroupData[{
-Cell[7444, 247, 276, 5, 31, "Input"],
-Cell[7723, 254, 265, 7, 21, "Message"],
-Cell[7991, 263, 265, 7, 21, "Message"],
-Cell[8259, 272, 265, 7, 21, "Message"],
-Cell[8527, 281, 466, 9, 21, "Message"],
-Cell[8996, 292, 196, 4, 30, "Output"]
+Cell[7771, 256, 484, 12, 52, "Input"],
+Cell[8258, 270, 149, 3, 30, "Output"]
 }, Open  ]],
-Cell[9207, 299, 484, 12, 52, "Input"],
-Cell[9694, 313, 209, 4, 31, "Input"],
-Cell[9906, 319, 537, 13, 52, "Input"],
-Cell[10446, 334, 537, 13, 52, "Input"],
-Cell[10986, 349, 319, 6, 31, "Input"],
-Cell[11308, 357, 537, 13, 52, "Input"],
-Cell[11848, 372, 196, 3, 31, "Input"],
-Cell[12047, 377, 587, 13, 52, "Input"],
-Cell[12639, 393, 318, 5, 31, "Input"],
-Cell[12960, 400, 587, 13, 52, "Input"],
-Cell[13552, 416, 196, 3, 31, "Input"],
-Cell[13751, 421, 537, 13, 52, "Input"],
-Cell[14291, 436, 143, 2, 31, "Input"]
+Cell[8422, 276, 259, 7, 31, "Input"],
+Cell[8684, 285, 537, 13, 52, "Input"],
+Cell[9224, 300, 537, 13, 52, "Input"],
+Cell[9764, 315, 363, 7, 31, "Input"],
+Cell[10130, 324, 537, 13, 52, "Input"],
+Cell[10670, 339, 239, 4, 31, "Input"],
+Cell[10912, 345, 587, 13, 52, "Input"],
+Cell[11504, 361, 365, 7, 31, "Input"],
+Cell[11872, 370, 587, 13, 52, "Input"],
+Cell[12464, 386, 239, 4, 31, "Input"],
+Cell[12706, 392, 537, 13, 52, "Input"],
+Cell[13246, 407, 189, 4, 31, "Input"]
 }
 ]
 *)
