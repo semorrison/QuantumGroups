@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["QuantumGroups`Utilities`DataPackage`",{"QuantumGroups`","QuantumGroups`Utilities`Debugging`","QuantumGroups`MatrixPresentations`","QuantumGroups`RepresentationTensors`","QuantumGroups`Representations`","QuantumGroups`Algebra`"}];
+BeginPackage["QuantumGroups`Utilities`DataPackage`",{"QuantumGroups`","QuantumGroups`Utilities`Debugging`","QuantumGroups`MatrixPresentations`","QuantumGroups`RepresentationTensors`","QuantumGroups`Representations`","QuantumGroups`Algebra`","QuantumGroups`QuantumRoots`"}];
 
 
 ValuesAsString;PackageData;MatchingValues;DefiniteValues;
