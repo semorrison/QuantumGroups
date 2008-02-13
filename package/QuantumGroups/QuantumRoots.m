@@ -49,34 +49,34 @@ True
 ]
 
 
-ExpandQuantumRoot[\[CapitalGamma]_][Subscript[X, \[CapitalGamma]_,r_]^+]/;MemberQ[SimpleRoots[\[CapitalGamma]],PositiveRoots[\[CapitalGamma]][[r]]]:=Subscript[X, Position[SimpleRoots[\[CapitalGamma]],PositiveRoots[\[CapitalGamma]][[r]]][[1,1]]]^+
-ExpandQuantumRoot[\[CapitalGamma]_][Subscript[X, \[CapitalGamma]_,r_]^+]:=ExpandQuantumRoot[\[CapitalGamma]][Subscript[X, \[CapitalGamma],r]^+]=
-If[LoadQuantumRoots[\[CapitalGamma]],ExpandQuantumRoot[\[CapitalGamma]][Subscript[X, \[CapitalGamma],r]^+],
+ExpandQuantumRoot[\[CapitalGamma]_][SuperPlus[Subscript[X, \[CapitalGamma]_,r_]]]/;MemberQ[SimpleRoots[\[CapitalGamma]],PositiveRoots[\[CapitalGamma]][[r]]]:=SuperPlus[Subscript[X, Position[SimpleRoots[\[CapitalGamma]],PositiveRoots[\[CapitalGamma]][[r]]][[1,1]]]]
+ExpandQuantumRoot[\[CapitalGamma]_][SuperPlus[Subscript[X, \[CapitalGamma]_,r_]]]:=ExpandQuantumRoot[\[CapitalGamma]][SuperPlus[Subscript[X, \[CapitalGamma],r]]]=
+If[LoadQuantumRoots[\[CapitalGamma]],ExpandQuantumRoot[\[CapitalGamma]][SuperPlus[Subscript[X, \[CapitalGamma],r]]],
 With[{i=LongestWordDecomposition[\[CapitalGamma]]},
-DebugPrintHeld["Calculating ",ExpandQuantumRoot[\[CapitalGamma]][Subscript[X, \[CapitalGamma],r]^+]];
-BraidAction[\[CapitalGamma]][Subscript[T, #]&/@Take[i,r-1],Subscript[X, i[[r]]]^+]
+DebugPrintHeld["Calculating ",ExpandQuantumRoot[\[CapitalGamma]][SuperPlus[Subscript[X, \[CapitalGamma],r]]]];
+BraidAction[\[CapitalGamma]][Subscript[T, #]&/@Take[i,r-1],SuperPlus[Subscript[X, i[[r]]]]]
 ]
 ]
 
 
-ExpandQuantumRoot[\[CapitalGamma]_][Subscript[X, \[CapitalGamma]_,r_]^-]:=ExpandQuantumRoot[\[CapitalGamma]][Subscript[X, \[CapitalGamma],r]^+]/.q->q^-1/.{Subscript[X, i_]^+:>Subscript[X, i]^-}/.Z_NonCommutativeMultiply:>Reverse[Z]
+ExpandQuantumRoot[\[CapitalGamma]_][SuperMinus[Subscript[X, \[CapitalGamma]_,r_]]]:=ExpandQuantumRoot[\[CapitalGamma]][SuperPlus[Subscript[X, \[CapitalGamma],r]]]/.q->q^-1/.{SuperPlus[Subscript[X, i_]]:>SuperMinus[Subscript[X, i]]}/.Z_NonCommutativeMultiply:>Reverse[Z]
 
 
-\[CapitalDelta][A:(Subscript[X, \[CapitalGamma]_,r_]^+|Subscript[X, \[CapitalGamma]_,r_]^-)]:=\[CapitalDelta][ExpandQuantumRoot[\[CapitalGamma]][A]]
+\[CapitalDelta][A:(SuperPlus[Subscript[X, \[CapitalGamma]_,r_]]|SuperMinus[Subscript[X, \[CapitalGamma]_,r_]])]:=\[CapitalDelta][ExpandQuantumRoot[\[CapitalGamma]][A]]
 
 
-OperatorWeight[\[CapitalGamma]_][Subscript[X, \[CapitalGamma]_,r_]^+]:=PositiveRoots[\[CapitalGamma]][[r]]
-OperatorWeight[\[CapitalGamma]_][Subscript[X, \[CapitalGamma]_,r_]^-]:=-PositiveRoots[\[CapitalGamma]][[r]]
+OperatorWeight[\[CapitalGamma]_][SuperPlus[Subscript[X, \[CapitalGamma]_,r_]]]:=PositiveRoots[\[CapitalGamma]][[r]]
+OperatorWeight[\[CapitalGamma]_][SuperMinus[Subscript[X, \[CapitalGamma]_,r_]]]:=-PositiveRoots[\[CapitalGamma]][[r]]
 
 
-QuantumPositiveRoots[\[CapitalGamma]_]:=Table[Subscript[X, \[CapitalGamma],i]^+,{i,1,Length[LongestWordDecomposition[\[CapitalGamma]]]}]
-QuantumNegativeRoots[\[CapitalGamma]_]:=Table[Subscript[X, \[CapitalGamma],i]^-,{i,1,Length[LongestWordDecomposition[\[CapitalGamma]]]}]
+QuantumPositiveRoots[\[CapitalGamma]_]:=Table[SuperPlus[Subscript[X, \[CapitalGamma],i]],{i,1,Length[LongestWordDecomposition[\[CapitalGamma]]]}]
+QuantumNegativeRoots[\[CapitalGamma]_]:=Table[SuperMinus[Subscript[X, \[CapitalGamma],i]],{i,1,Length[LongestWordDecomposition[\[CapitalGamma]]]}]
 
 
-MatrixPresentation[\[CapitalGamma]_][A:(Subscript[X, \[CapitalGamma]_,r_]^+|Subscript[X, \[CapitalGamma]_,r_]^-)][V_,\[Beta]_,\[Lambda]_]:=MatrixPresentation[\[CapitalGamma]][A][V,\[Beta],\[Lambda]]=MatrixPresentation[\[CapitalGamma]][ExpandQuantumRoot[\[CapitalGamma]][A]][V,\[Beta],\[Lambda]]
+MatrixPresentation[\[CapitalGamma]_][A:(SuperPlus[Subscript[X, \[CapitalGamma]_,r_]]|SuperMinus[Subscript[X, \[CapitalGamma]_,r_]])][V_,\[Beta]_,\[Lambda]_]:=MatrixPresentation[\[CapitalGamma]][A][V,\[Beta],\[Lambda]]=MatrixPresentation[\[CapitalGamma]][ExpandQuantumRoot[\[CapitalGamma]][A]][V,\[Beta],\[Lambda]]
 
 
-QuantumRootHeight[\[CapitalGamma]_][Subscript[X, \[CapitalGamma]_,r_]^+|Subscript[X, \[CapitalGamma]_,r_]^-]:=Plus@@(PositiveRoots[\[CapitalGamma]][[r]].Inverse[SimpleRoots[\[CapitalGamma]]])
+QuantumRootHeight[\[CapitalGamma]_][SuperPlus[Subscript[X, \[CapitalGamma]_,r_]]|SuperMinus[Subscript[X, \[CapitalGamma]_,r_]]]:=Plus@@(PositiveRoots[\[CapitalGamma]][[r]].Inverse[SimpleRoots[\[CapitalGamma]]])
 
 
 End[];
