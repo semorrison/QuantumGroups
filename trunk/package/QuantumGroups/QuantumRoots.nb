@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    129056,       2848]
-NotebookOptionsPosition[     11942,        398]
-NotebookOutlinePosition[    127344,       2789]
-CellTagsIndexPosition[    127301,       2786]
+NotebookDataLength[    129827,       2856]
+NotebookOptionsPosition[     12712,        406]
+NotebookOutlinePosition[    128114,       2797]
+CellTagsIndexPosition[    128071,       2794]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -151,9 +151,9 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]_", "]"}], "[", 
-    SuperscriptBox[
+    RowBox[{"SuperPlus", "[", 
      SubscriptBox["X", 
-      RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "+"], "]"}], "/;", 
+      RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "]"}], "/;", 
    RowBox[{"MemberQ", "[", 
     RowBox[{
      RowBox[{"SimpleRoots", "[", "\[CapitalGamma]", "]"}], ",", 
@@ -161,7 +161,7 @@ Cell[BoxData[{
       RowBox[{"PositiveRoots", "[", "\[CapitalGamma]", "]"}], 
       "\[LeftDoubleBracket]", "r", "\[RightDoubleBracket]"}]}], "]"}]}], ":=",
    
-  SuperscriptBox[
+  RowBox[{"SuperPlus", "[", 
    SubscriptBox["X", 
     RowBox[{
      RowBox[{"Position", "[", 
@@ -172,28 +172,28 @@ Cell[BoxData[{
         "\[LeftDoubleBracket]", "r", "\[RightDoubleBracket]"}]}], "]"}], 
      "\[LeftDoubleBracket]", 
      RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]], 
-   "+"]}], "\[IndentingNewLine]", 
+   "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]_", "]"}], "[", 
-   SuperscriptBox[
+   RowBox[{"SuperPlus", "[", 
     SubscriptBox["X", 
-     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "+"], "]"}], ":=", 
+     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "]"}], ":=", 
   RowBox[{
    RowBox[{
     RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "[", 
-    SuperscriptBox[
+    RowBox[{"SuperPlus", "[", 
      SubscriptBox["X", 
-      RowBox[{"\[CapitalGamma]", ",", "r"}]], "+"], "]"}], "=", 
+      RowBox[{"\[CapitalGamma]", ",", "r"}]], "]"}], "]"}], "=", 
    "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"LoadQuantumRoots", "[", "\[CapitalGamma]", "]"}], ",", 
      RowBox[{
       RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "[", 
-      SuperscriptBox[
+      RowBox[{"SuperPlus", "[", 
        SubscriptBox["X", 
-        RowBox[{"\[CapitalGamma]", ",", "r"}]], "+"], "]"}], ",", 
+        RowBox[{"\[CapitalGamma]", ",", "r"}]], "]"}], "]"}], ",", 
      "\[IndentingNewLine]", 
      RowBox[{"With", "[", 
       RowBox[{
@@ -206,9 +206,9 @@ Cell[BoxData[{
          RowBox[{"\"\<Calculating \>\"", ",", 
           RowBox[{
            RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "[", 
-           SuperscriptBox[
+           RowBox[{"SuperPlus", "[", 
             SubscriptBox["X", 
-             RowBox[{"\[CapitalGamma]", ",", "r"}]], "+"], "]"}]}], "]"}], 
+             RowBox[{"\[CapitalGamma]", ",", "r"}]], "]"}], "]"}]}], "]"}], 
         ";", "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"BraidAction", "[", "\[CapitalGamma]", "]"}], "[", 
@@ -219,42 +219,45 @@ Cell[BoxData[{
            RowBox[{"Take", "[", 
             RowBox[{"i", ",", 
              RowBox[{"r", "-", "1"}]}], "]"}]}], ",", 
-          SuperscriptBox[
+          RowBox[{"SuperPlus", "[", 
            SubscriptBox["X", 
             RowBox[{
             "i", "\[LeftDoubleBracket]", "r", "\[RightDoubleBracket]"}]], 
-           "+"]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+           "]"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
     "\[IndentingNewLine]", "]"}]}]}]}], "Input",
  InitializationCell->True,
- CellChangeTimes->{{3.4119270493971634`*^9, 3.4119271253864307`*^9}}],
+ CellChangeTimes->{{3.4119270493971634`*^9, 3.4119271253864307`*^9}, {
+  3.411927250806776*^9, 3.411927297994629*^9}, {3.411927422283347*^9, 
+  3.4119274259986897`*^9}}],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]_", "]"}], "[", 
-   SuperscriptBox[
+   RowBox[{"SuperMinus", "[", 
     SubscriptBox["X", 
-     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "-"], "]"}], ":=", 
+     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "]"}], ":=", 
   RowBox[{
    RowBox[{
     RowBox[{
      RowBox[{
       RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "[", 
-      SuperscriptBox[
+      RowBox[{"SuperPlus", "[", 
        SubscriptBox["X", 
-        RowBox[{"\[CapitalGamma]", ",", "r"}]], "+"], "]"}], "/.", 
+        RowBox[{"\[CapitalGamma]", ",", "r"}]], "]"}], "]"}], "/.", 
      RowBox[{"q", "\[Rule]", 
       SuperscriptBox["q", 
        RowBox[{"-", "1"}]]}]}], "/.", 
     RowBox[{"{", 
      RowBox[{
-      SuperscriptBox[
-       SubscriptBox["X", "i_"], "+"], "\[RuleDelayed]", 
-      SuperscriptBox[
-       SubscriptBox["X", "i"], "-"]}], "}"}]}], "/.", 
+      RowBox[{"SuperPlus", "[", 
+       SubscriptBox["X", "i_"], "]"}], "\[RuleDelayed]", 
+      RowBox[{"SuperMinus", "[", 
+       SubscriptBox["X", "i"], "]"}]}], "}"}]}], "/.", 
    RowBox[{"Z_NonCommutativeMultiply", "\[RuleDelayed]", 
     RowBox[{"Reverse", "[", "Z", "]"}]}]}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.411927303682808*^9, 3.411927329199499*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -262,26 +265,27 @@ Cell[BoxData[
    RowBox[{"A", ":", 
     RowBox[{"(", 
      RowBox[{
-      SuperscriptBox[
+      RowBox[{"SuperPlus", "[", 
        SubscriptBox["X", 
-        RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "+"], "|", 
-      SuperscriptBox[
+        RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "|", 
+      RowBox[{"SuperMinus", "[", 
        SubscriptBox["X", 
-        RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "-"]}], ")"}]}], "]"}], ":=",
+        RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}]}], ")"}]}], "]"}], ":=",
    
   RowBox[{"\[CapitalDelta]", "[", 
    RowBox[{
     RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "[", "A", 
     "]"}], "]"}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4119273340264397`*^9, 3.4119273451324096`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"OperatorWeight", "[", "\[CapitalGamma]_", "]"}], "[", 
-   SuperscriptBox[
+   RowBox[{"SuperPlus", "[", 
     SubscriptBox["X", 
-     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "+"], "]"}], ":=", 
+     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "]"}], ":=", 
   RowBox[{
    RowBox[{"PositiveRoots", "[", "\[CapitalGamma]", "]"}], 
    "\[LeftDoubleBracket]", "r", 
@@ -289,23 +293,24 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"OperatorWeight", "[", "\[CapitalGamma]_", "]"}], "[", 
-   SuperscriptBox[
+   RowBox[{"SuperMinus", "[", 
     SubscriptBox["X", 
-     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "-"], "]"}], ":=", 
+     RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "]"}], ":=", 
   RowBox[{"-", 
    RowBox[{
     RowBox[{"PositiveRoots", "[", "\[CapitalGamma]", "]"}], 
     "\[LeftDoubleBracket]", "r", "\[RightDoubleBracket]"}]}]}]}], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.411927349268357*^9, 3.4119273592627277`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"QuantumPositiveRoots", "[", "\[CapitalGamma]_", "]"}], ":=", 
   RowBox[{"Table", "[", 
    RowBox[{
-    SuperscriptBox[
+    RowBox[{"SuperPlus", "[", 
      SubscriptBox["X", 
-      RowBox[{"\[CapitalGamma]", ",", "i"}]], "+"], ",", 
+      RowBox[{"\[CapitalGamma]", ",", "i"}]], "]"}], ",", 
     RowBox[{"{", 
      RowBox[{"i", ",", "1", ",", 
       RowBox[{"Length", "[", 
@@ -315,15 +320,16 @@ Cell[BoxData[{
   RowBox[{"QuantumNegativeRoots", "[", "\[CapitalGamma]_", "]"}], ":=", 
   RowBox[{"Table", "[", 
    RowBox[{
-    SuperscriptBox[
+    RowBox[{"SuperMinus", "[", 
      SubscriptBox["X", 
-      RowBox[{"\[CapitalGamma]", ",", "i"}]], "-"], ",", 
+      RowBox[{"\[CapitalGamma]", ",", "i"}]], "]"}], ",", 
     RowBox[{"{", 
      RowBox[{"i", ",", "1", ",", 
       RowBox[{"Length", "[", 
        RowBox[{"LongestWordDecomposition", "[", "\[CapitalGamma]", "]"}], 
        "]"}]}], "}"}]}], "]"}]}]}], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.41192736206676*^9, 3.4119273780697713`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -333,12 +339,12 @@ Cell[BoxData[
     RowBox[{"A", ":", 
      RowBox[{"(", 
       RowBox[{
-       SuperscriptBox[
+       RowBox[{"SuperPlus", "[", 
         SubscriptBox["X", 
-         RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "+"], "|", 
-       SuperscriptBox[
+         RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "|", 
+       RowBox[{"SuperMinus", "[", 
         SubscriptBox["X", 
-         RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "-"]}], ")"}]}], "]"}], 
+         RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}]}], ")"}]}], "]"}], 
    "[", 
    RowBox[{"V_", ",", "\[Beta]_", ",", "\[Lambda]_"}], "]"}], ":=", 
   RowBox[{
@@ -354,19 +360,20 @@ Cell[BoxData[
       RowBox[{"ExpandQuantumRoot", "[", "\[CapitalGamma]", "]"}], "[", "A", 
       "]"}], "]"}], "[", 
     RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}]}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4119273811041346`*^9, 3.4119273982588015`*^9}}],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"QuantumRootHeight", "[", "\[CapitalGamma]_", "]"}], "[", 
    RowBox[{
-    SuperscriptBox[
+    RowBox[{"SuperPlus", "[", 
      SubscriptBox["X", 
-      RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "+"], "|", 
-    SuperscriptBox[
+      RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}], "|", 
+    RowBox[{"SuperMinus", "[", 
      SubscriptBox["X", 
-      RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "-"]}], "]"}], ":=", 
+      RowBox[{"\[CapitalGamma]_", ",", "r_"}]], "]"}]}], "]"}], ":=", 
   RowBox[{"Plus", "@@", 
    RowBox[{"(", 
     RowBox[{
@@ -376,7 +383,8 @@ Cell[BoxData[
      RowBox[{"Inverse", "[", 
       RowBox[{"SimpleRoots", "[", "\[CapitalGamma]", "]"}], "]"}]}], 
     ")"}]}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4119274053890543`*^9, 3.4119274159342175`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -2826,26 +2834,26 @@ Cell[2557, 108, 119, 3, 28, "Input",
 Cell[2679, 113, 101, 3, 28, "Input",
  InitializationCell->True],
 Cell[2783, 118, 1115, 28, 151, "Input"],
-Cell[3901, 148, 2962, 80, 169, "Input",
+Cell[3901, 148, 3146, 82, 189, "Input",
  InitializationCell->True],
-Cell[6866, 230, 876, 26, 28, "Input",
+Cell[7050, 232, 992, 27, 49, "Input",
  InitializationCell->True],
-Cell[7745, 258, 533, 17, 28, "Input",
+Cell[8045, 261, 628, 18, 28, "Input",
  InitializationCell->True],
-Cell[8281, 277, 759, 21, 49, "Input",
+Cell[8676, 281, 852, 22, 49, "Input",
  InitializationCell->True],
-Cell[9043, 300, 885, 25, 49, "Input",
+Cell[9531, 305, 977, 26, 49, "Input",
  InitializationCell->True],
-Cell[9931, 327, 1004, 29, 49, "Input",
+Cell[10511, 333, 1099, 30, 49, "Input",
  InitializationCell->True],
-Cell[10938, 358, 686, 20, 28, "Input",
+Cell[11613, 365, 781, 21, 28, "Input",
  InitializationCell->True],
-Cell[11627, 380, 96, 3, 28, "Input",
+Cell[12397, 388, 96, 3, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11760, 388, 36, 0, 36, "Subsection"],
-Cell[11799, 390, 103, 3, 30, "Input",
+Cell[12530, 396, 36, 0, 36, "Subsection"],
+Cell[12569, 398, 103, 3, 30, "Input",
  InitializationCell->True]
 }, Closed]]
 }, Open  ]]
@@ -2855,4 +2863,3 @@ Cell[11799, 390, 103, 3, 30, "Input",
 *)
 
 (* End of internal cache information *)
-
