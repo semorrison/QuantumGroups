@@ -15,6 +15,5 @@ ExpandQuantumRoot[Subscript[C, 4]][SuperPlus[Subscript[X, Subscript[C, 4], 12]]]
 ExpandQuantumRoot[Subscript[C, 4]][SuperPlus[Subscript[X, Subscript[C, 4], 13]]]:=SuperPlus[Subscript[X, 2]]**SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 4]] - SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 2]]**SuperPlus[Subscript[X, 4]]/q - SuperPlus[Subscript[X, 4]]**SuperPlus[Subscript[X, 2]]**SuperPlus[Subscript[X, 3]]/q^2 + SuperPlus[Subscript[X, 4]]**SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 2]]/q^3
 ExpandQuantumRoot[Subscript[C, 4]][SuperPlus[Subscript[X, Subscript[C, 4], 14]]]:=(q*SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 4]])/(1 + q^2) - SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 4]]**SuperPlus[Subscript[X, 3]]/q + SuperPlus[Subscript[X, 4]]**SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 3]]/(q*(1 + q^2))
 ExpandQuantumRoot[Subscript[C, 4]][SuperPlus[Subscript[X, Subscript[C, 4], 15]]]:=-SuperPlus[Subscript[X, 3]]**SuperPlus[Subscript[X, 4]] + SuperPlus[Subscript[X, 4]]**SuperPlus[Subscript[X, 3]]/q^2
-
 End[]
 EndPackage[]
