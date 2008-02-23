@@ -1,8 +1,21 @@
-In this paper, we describe a \MMA package for performing computations in
-the representation theory of an arbitrary quantum group $\uqg$. Subject
-to quite restrictive practical limitations,\footnote{My code is
-inefficient, the algorithms are slow, and the computations are
-difficult!} this package can
+\section{Introduction}
+What are the Reshetikhin-Turaev invariants \cite{???} of links coming
+from quantum groups? For each quantum group $\uqg$ (by which we mean the
+quantised universal enveloping algebra of a complex simple Lie algebra
+$\mathfrak{g}$, see below), we have a function
+
+$$(\text{framed links, with components labelled by irreps of $\uqg$}) \To
+\Integer[q,q^{-1}].$$
+
+In this paper, I describe how one computes these invariants. In
+particular, I'll tell you just enough mathematics for the definition, but
+much more importantly, I'll tell you how to \emph{actually} compute them,
+by showing you how to use a \MMA package called \pkg{QuantumGroups}.
+
+In fact, the package does much more than just compute quantum knot
+invariants. Subject to quite restrictive practical
+limitations,\footnote{My code is inefficient, the algorithms are slow,
+and the computations are difficult!} \pkg{QuantumGroups} can
 \begin{itemize}
 \item Calculate dimensions of weight spaces and invariant spaces of
 tensor products of arbitrary highest weight representations, using a
@@ -10,20 +23,74 @@ combinatorial model.
 \item Produce matrices representing the action of the generators of the quantum group
 $\uqg$ on an arbitrary highest weight representation.
 \item Calculate bases for the invariants spaces inside tensor
-products of representations, or bases for intertwining maps between
-two such tensor products.
+products of representations, or bases for intertwining maps between two
+such tensor products.
 \item Calculate the action of the universal $R$-matrix on pairs of
 representations.
 \end{itemize}
-As an application, we demonstrate the computation of
-Reshetikhin-Turaev quantum knot invariants in many cases which have
-not been previously calculated.
 
-This paper is instructional, rather than expository; we give
-examples of the usage of the package, but present no `new
-mathematics'.
+By the end, you'll understand how to answer questions like:
+\begin{quote}
+What is the invariant of the knot $8_{19}$ \todo{picture!}, labelled by
+the 14 dimensional irrep of $G_2$?
+\end{quote}
+(For the really impatient, one way is to download the \pkg{KnotTheory}
+\MMA package from \url{http://katlas.org/}, and enter\footnote{Don't type `{\color{blue}In[1]$:=$}'; \MMA will add this itself. See \S ?? for more details.} the following in \MMA:
+\begin{mma}
+\begin{inm}<<KnotTheory`\end{inm}
+\begin{printm}Loading KnotTheory` version of January 18, 2008, 18:17:28.7446. \\
+Read more at \url{http://katlas.org/wiki/KnotTheory}.
+\end{printm}
+\begin{inm}QuantumKnotInvariant[G2,Irrep[G2][{0,1}]][Knot[8,19]][q]\end{inm}
+\todo{check this
+works!}
+\begin{outm}???\end{outm}
+\end{mma}
 
-\section{Installing the \code{QuantumGroups`} package}
+\section{What's already done?}
+The Reshetikhin-Turaev invariants have been around for quite a while, but
+there hasn't been a significant tabulation of calculations, or a general
+purpose program to compute them. In this section I'll summarise what's
+already known. I'll concentrate on mentioning general purpose programs,
+which work for arbitrary links (or perhaps just knots). There's certainly
+more to say for many particular families of links.
+
+The Jones polynomial \cite{???} is the first interesting special case,
+when $\mathfrak{g}=\sl{2}$, and each component of the link is labelled
+with the two dimensional representation. Of course programs to compute
+this abound \cite{???}, as do tabulations of the invariants \cite{???}.
+From the Jones polynomial, we can generalise in two directions:
+\begin{enumerate}
+\item Labelling the link with other irreps of $\uqsl{2}$. When all the
+labels are the $n+1$ dimensional irrep, this is called the $n$-th
+coloured Jones polynomial of the link.
+\item Using the quantum group $\uqsl{n}$, and labelling each component by
+the standard $n$ dimensional irrep.
+\end{enumerate}
+
+Again, there are many programs available which calculate both of these
+invariants, and many tabulations. It's a little unusual to see direct
+discussion of the invariant coming from the standard representation of
+$\uqsl{n}$, however, because it turns out that these invariants, for
+varying $n$, all fit together as a two variable polynomial, the HOMFLYPT
+polynomial \cite{???}. In particular,
+
+$$HOMFLYPT_K(q^n, q) = RT_{\uqsl{n}, \Complex^n}(K)(q).$$
+
+Thus to find programs or tables of these invariants, you're for the most
+part better off looking for the HOMFLYPT invariant. One notable exception
+is a program available in the \pkg{KnotTheory} \MMA package \cite{???},
+which makes a direct calculation of the $\uqsl{3}$ invariant, via
+Kuperberg's spider \cite{???}.
+
+Next, the two variable Kauffman polynomial simultaneously captures all
+the Reshetikhin-Turaev invariants for the standard representations of the
+quantum groups $U_q(\mathfrak{so}(n))$, $n \geq 5$, and
+$U_q(\mathfrak{sp}(n))$, $n \geq 4$.
+
+\todo{look these up, and write some formulas}
+
+\section{Installing the \pkg{QuantumGroups} package}
 
 \section{Combinatorial representation theory}
 
@@ -32,8 +99,8 @@ The function \code{MatrixPresentation} produces explicit matrices
 representing the action of the quantum group generators on a
 representation.
 
-It is invoked as \code{MatrixPresentation[\Gamma][Z][V, \lambda, \beta]}.
-Here
+It is invoked as \code{MatrixPresentation$[\Gamma][Z][V, \lambda,
+\beta]$}. Here
 \begin{defn}
 \item[$\Gamma$] is the Cartan type, see \S \ref{sec:cartan-types}.
 \item[$Z$] is a generator of the quantum group $\Gamma$, that is
@@ -46,6 +113,8 @@ with respect to the weight grading.)
 \item[$\lambda$] is a weight, in the notation of \S \ref{sec:weights};
 that is, a vector of integers, giving the weight as a linear combination
 of fundamental weights.
+\item[$\beta$] is a symbol specifying the basis to use. Possible options are described in \S \ref{sec:bases}, but nearly always you'll use
+\code{FundamentalBasis}.
 \end{defn}
 
 \subsection{Bases}
@@ -56,7 +125,7 @@ of how this basis is recursively defined below, essentially it depends on
 many minor details of the implementation. One should not depend on any
 particular properties of this basis!
 
-Future versions of the \code{QuantumGroups`} package may allow the use of
+Future versions of the \pkg{QuantumGroups} package may allow the use of
 the symbols \code{GelfandTsetlinBasis} and \code{CanonicalBasis}, with
 the obvious results.\footnote{Gelfand-Tsetlin bases are only projectively
 canonical.} Code implementing Gelfand-Testlin bases exists, but is not
