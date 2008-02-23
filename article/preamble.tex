@@ -4,6 +4,8 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{ifpdf}
 
+\usepackage{verbatim}
+
 \ifpdf
 \usepackage[pdftex,all,color]{xy}
 \else
@@ -66,8 +68,8 @@
 
 % Marginal notes in draft mode -----------------------------------
 \newcommand{\scott}[1]{\stepcounter{comment}{{\color{blue} $\star^{(\arabic{comment})}$}}\marginpar{\color{blue}  $\star^{(\arabic{comment})}$ \usefont{T1}{scott}{m}{n}  #1 --S}}     % draft mode
-\newcommand{\ari}[1]{\stepcounter{comment}{\color{red} $\star^{(\arabic{comment})}$}\marginpar{\color{red}  $\star^{(\arabic{comment})}$  #1 --A}}     % draft mode
-\newcommand{\comment}[1]{\stepcounter{comment}$\star^{(\arabic{comment})}$\marginpar{\tiny $\star^{(\arabic{comment})}$ #1}}     % draft mode
+%\newcommand{\comment}[1]{\stepcounter{comment}$\star^{(\arabic{comment})}$\marginpar{\tiny $\star^{(\arabic{comment})}$ #1}}     % draft mode
+\newcommand{\todo}[1]{\textbf{TODO: #1}}
 \newcounter{comment}
 \newcommand{\noop}[1]{}
 
@@ -87,13 +89,43 @@
 \clap{$\mathsurround=0pt#1{#2}$}}
 
 \newcommand{\code}[1]{{\tt #1}}
-\newcommand{\MMA}{\code{Mathematica}}
+\newcommand{\pkg}[1]{\code{#1`}}
+\newcommand{\MMA}{Mathematica}
+
+\newcounter{linem}
+
+\newenvironment{mma}{}{}
+
+\newcounter{lineNumber}
+\newcommand{\inN}{\stepcounter{lineNumber}\arabic{lineNumber}}
+\newcommand{\outN}{\arabic{lineNumber}}
+
+\newenvironment{inm}{%
+ \vskip 6pt \par\noindent%
+  {\footnotesize\color{blue}In[\inN]$:=$}\tt%
+  \catcode`\#=12 \catcode`\&=12 \catcode`\~=12 \catcode`\%=12%
+  \catcode`\$=12 \catcode`\^=12 \catcode`\_=12%
+  \obeylines\obeyspaces}{}
+\newenvironment{outm}{%
+ \vskip 0pt \par\noindent\parindent=12pt%
+  {\footnotesize\color{blue}Out[\outN]$=$}\tt%
+  \catcode`\#=12 \catcode`\&=12 \catcode`\~=12 \catcode`\%=12%
+  \catcode`\$=12 \catcode`\^=12 \catcode`\_=12%
+  \obeylines\obeyspaces}{}
+%\newenvironment{printm}%
+%    {\verbatim}%
+%    {\endverbatim}%
+\newenvironment{printm}%
+    {\begin{quotation}\noindent}%
+    {\end{quotation}}%
+
 
 % MATH -----------------------------------------------------------
 \newcommand{\Natural}{\mathbb N}
 \newcommand{\Integer}{\mathbb Z}
 \newcommand{\Rational}{\mathbb Q}
 \newcommand{\Real}{\mathbb R}
+\newcommand{\Complex}{\mathbb C}
 \newcommand{\Field}{\mathbb F}
 
 \newcommand{\Zat}[1]{\Integer \! \left [\frac{1}{#1} \right ]}
@@ -155,6 +187,8 @@
 \newcommand{\Inv}[1]{\operatorname{Inv}\left(#1\right)}
 \newcommand{\Hom}[3]{\operatorname{Hom}_{#1}\left(#2,#3\right)}
 \newcommand{\End}[1]{\operatorname{End}\left(#1\right)}
+
+\newcommand{\rank}[1]{\operatorname{rank}\left(#1\right)}
 
 \newcommand{\Gr}[2]{\text{Gr}(#1 \subset #2)}
 \newcommand{\Flag}[3]{\text{Flag}(#1 \subset #2 \subset #3)}
