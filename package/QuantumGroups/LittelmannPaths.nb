@@ -1,53 +1,23 @@
-(************** Content-type: application/mathematica **************
-                     CreatedBy='Mathematica 5.2'
+(* Content-type: application/mathematica *)
 
-                    Mathematica-Compatible Notebook
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
 
-This notebook can be used with any Mathematica-compatible
-application, such as Mathematica, MathReader or Publicon. The data
-for the notebook starts with the line containing stars above.
+(* CreatedBy='Mathematica 6.0' *)
 
-To get the notebook into a Mathematica-compatible application, do
-one of the following:
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     23883,        720]
+NotebookOptionsPosition[     19373,        586]
+NotebookOutlinePosition[     21625,        648]
+CellTagsIndexPosition[     21582,        645]
+WindowFrame->Normal
+ContainsDynamic->False*)
 
-* Save the data starting with the line of stars above into a file
-  with a name ending in .nb, then open the file inside the
-  application;
-
-* Copy the data starting with the line of stars above to the
-  clipboard, then use the Paste menu command inside the application.
-
-Data for notebooks contains only printable 7-bit ASCII and can be
-sent directly in email or through ftp in text mode.  Newlines can be
-CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
-
-NOTE: If you modify the data for this notebook not in a Mathematica-
-compatible application, you must delete the line below containing
-the word CacheID, otherwise Mathematica-compatible applications may
-try to use invalid cache data.
-
-For more information on notebooks and Mathematica-compatible 
-applications, contact Wolfram Research:
-  web: http://www.wolfram.com
-  email: info@wolfram.com
-  phone: +1-217-398-0700 (U.S.)
-
-Notebook reader applications are available free of charge from 
-Wolfram Research.
-*******************************************************************)
-
-(*CacheID: 232*)
-
-
-(*NotebookFileLineBreakTest
-NotebookFileLineBreakTest*)
-(*NotebookOptionsPosition[     11860,        324]*)
-(*NotebookOutlinePosition[     14603,        396]*)
-(*  CellTagsIndexPosition[     14559,        392]*)
-(*WindowFrame->Normal*)
-
-
-
+(* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
@@ -71,415 +41,689 @@ and decomposing tensor products of irreps.\
 Cell[CellGroupData[{
 
 Cell["Implementation", "Section",
-  InitializationCell->True],
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(BeginPackage["\<QuantumGroups`LittelmannPaths`\>", {"\<QuantumGroups`\
-\>", "\<QuantumGroups`RootSystems`\>"}];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"BeginPackage", "[", 
+   RowBox[{"\"\<QuantumGroups`LittelmannPaths`\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<QuantumGroups`\>\"", ",", "\"\<QuantumGroups`RootSystems`\>\""}], 
+     "}"}]}], "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(LittelmannPath::usage = \*"\"\<LittelmannPath[\[CapitalGamma]][{\!\(\
-\[Lambda]\_1\),\!\(\[Lambda]\_2\),\!\(\[Lambda]\_3\),...}] represents a \
-Littelmann path in the weight lattice for \[CapitalGamma] with segments \!\(\
-\[Lambda]\_1\),\!\(\[Lambda]\_2\),\!\(\[Lambda]\_3\)...\>\"";\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"LittelmannPath", "::", "usage"}], "=", 
+   "\"\<LittelmannPath[\[CapitalGamma]][{\!\(\*SubscriptBox[\(\[Lambda]\), \
+\(1\)]\),\!\(\*SubscriptBox[\(\[Lambda]\), \(2\)]\),\!\(\*SubscriptBox[\(\
+\[Lambda]\), \(3\)]\),...}] represents a Littelmann path in the weight \
+lattice for \[CapitalGamma] with segments \!\(\*SubscriptBox[\(\[Lambda]\), \
+\(1\)]\),\!\(\*SubscriptBox[\(\[Lambda]\), \(2\)]\),\!\(\*SubscriptBox[\(\
+\[Lambda]\), \(3\)]\)...\>\""}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(LittelmannPathDecomposeRepresentation::usage = \
-"\<LittelmannPathDecomposeRepresentation[\[CapitalGamma]][Irrep[\
+ RowBox[{
+  RowBox[{
+   RowBox[{"LittelmannPathDecomposeRepresentation", "::", "usage"}], "=", 
+   "\"\<LittelmannPathDecomposeRepresentation[\[CapitalGamma]][Irrep[\
 \[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]] gives \
 the direct sum decomposition of Irrep[\[CapitalGamma]][\[Lambda]]\
 \[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]] into irreducibles, using the \
-Littelmann path model.\>";\)\)], "Input",
-  InitializationCell->True],
+Littelmann path model.\>\""}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(LittelmannPathWeightMultiplicities::usage = \
-"\<LittelmannPathWeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\
-\[Lambda]]] gives a list of pairs; each pair consists of a weight and its \
-multiplicity in Irrep[\[CapitalGamma]][\[Lambda]], using the Littelmann path \
-model.\>";\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"LittelmannPathWeightMultiplicities", "::", "usage"}], "=", 
+   "\"\<LittelmannPathWeightMultiplicities[\[CapitalGamma],Irrep[\
+\[CapitalGamma]][\[Lambda]]] gives a list of pairs; each pair consists of a \
+weight and its multiplicity in Irrep[\[CapitalGamma]][\[Lambda]], using the \
+Littelmann path model.\>\""}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(Begin["\<`Internals`\>"];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{"LittelmannPathOneStepLowerings", ";", "LittelmannPathLowerings", 
+  ";", "LittelmannPathEndpoint", ";"}]], "Input",
+ CellChangeTimes->{3.4130564141717744`*^9}],
 
 Cell[BoxData[
-    \(LittelmannPathVertices; LittelmannPathInnerProducts; 
-    LowerLittelmannPath; LittelmannPathOneStepLowerings; 
-    LittelmannPathLowerings; ComposeLittelmannPaths; 
-    LittelmannPathDominantQ;\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Internals`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(End[];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{"LittelmannPathVertices", ";", "LittelmannPathInnerProducts", ";", 
+  "LowerLittelmannPath", ";", "ComposeLittelmannPaths", ";", 
+  "LittelmannPathDominantQ", ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.412990522564296*^9, 3.4129905233754625`*^9}, 
+   3.413056121120387*^9, 3.413056412679629*^9}],
 
 Cell[BoxData[
-    \(\(Begin["\<`Private`\>"];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(AppendTo[$ContextPath, \
-"\<QuantumGroups`LittelmannPaths`Internals`\>"];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathAlgebra[\(LittelmannPath[\[CapitalGamma]_]\)[
-          l_List]] := \[CapitalGamma]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{
+   "$ContextPath", ",", "\"\<QuantumGroups`LittelmannPaths`Internals`\>\""}], 
+   "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathEndpoint[\(LittelmannPath[\[CapitalGamma]_]\)[l_List]] := 
-      Plus @@ l\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LittelmannPathAlgebra", "[", 
+   RowBox[{
+    RowBox[{"LittelmannPath", "[", "\[CapitalGamma]_", "]"}], "[", "l_List", 
+    "]"}], "]"}], ":=", "\[CapitalGamma]"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathVertices[\(LittelmannPath[\[CapitalGamma]_\_n_]\)[
-          l_List]] := FoldList[Plus, ZeroVector[n], l]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LittelmannPathEndpoint", "[", 
+   RowBox[{
+    RowBox[{"LittelmannPath", "[", "\[CapitalGamma]_", "]"}], "[", "l_List", 
+    "]"}], "]"}], ":=", 
+  RowBox[{"Plus", "@@", "l"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(RedefineLittelmannPathInnerProducts[] := \((Clear[
-          LittelmannPathInnerProducts]; \
-\[IndentingNewLine]LittelmannPathInnerProducts[\(LittelmannPath[\
-\[CapitalGamma]_]\)[l_List], 
-            i_Integer] := \(LittelmannPathInnerProducts[\(LittelmannPath[\
-\[CapitalGamma]]\)[l], i] = 
-            LittelmannPathVertices[\(LittelmannPath[\[CapitalGamma]]\)[l]] . 
-              Inverse[Transpose[CartanMatrix[\[CapitalGamma]]]] . 
-              DiagonalMatrix[
-                CartanFactors[\[CapitalGamma]]] . \(SimpleRoots[\
-\[CapitalGamma]]\)\[LeftDoubleBracket]i\[RightDoubleBracket]\))\)\)], "Input",\
-
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LittelmannPathVertices", "[", 
+   RowBox[{
+    RowBox[{"LittelmannPath", "[", 
+     SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", "l_List", "]"}], 
+   "]"}], ":=", 
+  RowBox[{"FoldList", "[", 
+   RowBox[{"Plus", ",", 
+    RowBox[{"ZeroVector", "[", "n", "]"}], ",", "l"}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(RedefineLittelmannPathInnerProducts[];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"RedefineLittelmannPathInnerProducts", "[", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Clear", "[", "LittelmannPathInnerProducts", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"LittelmannPathInnerProducts", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"LittelmannPath", "[", "\[CapitalGamma]_", "]"}], "[", 
+        "l_List", "]"}], ",", "i_Integer"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"LittelmannPathInnerProducts", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", "l", 
+         "]"}], ",", "i"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{"LittelmannPathVertices", "[", 
+        RowBox[{
+         RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", "l", 
+         "]"}], "]"}], ".", 
+       RowBox[{"Inverse", "[", 
+        RowBox[{"Transpose", "[", 
+         RowBox[{"CartanMatrix", "[", "\[CapitalGamma]", "]"}], "]"}], "]"}], 
+       ".", 
+       RowBox[{"DiagonalMatrix", "[", 
+        RowBox[{"CartanFactors", "[", "\[CapitalGamma]", "]"}], "]"}], ".", 
+       RowBox[{
+        RowBox[{"SimpleRoots", "[", "\[CapitalGamma]", "]"}], 
+        "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}]}]}]}], 
+   ")"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RedefineLittelmannPathInnerProducts", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(LowerLittelmannPath[0, i_] := 0\), "\[IndentingNewLine]", 
-    \(LowerLittelmannPath[0, i_, m_] := 0\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"0", ",", "i_"}], "]"}], ":=", "0"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"0", ",", "i_", ",", "m_"}], "]"}], ":=", "0"}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LowerLittelmannPath[lp_, i_] := 
-      LowerLittelmannPath[lp, i, 1]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"lp_", ",", "i_"}], "]"}], ":=", 
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"lp", ",", "i", ",", "1"}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(VectorsPositivelyProportionalQ[v1_, v2_] := 
-      Simplify[\((v1 . v2)\)\^2 - v1 . v1\ v2 . v2] \[Equal] 0 \[And] 
-        v1 . v2 > 0\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"VectorsPositivelyProportionalQ", "[", 
+   RowBox[{"v1_", ",", "v2_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Simplify", "[", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"v1", ".", "v2"}], ")"}], "2"], "-", 
+      RowBox[{
+       RowBox[{"v1", ".", "v1"}], " ", 
+       RowBox[{"v2", ".", "v2"}]}]}], "]"}], "\[Equal]", "0"}], "\[And]", 
+   RowBox[{
+    RowBox[{"v1", ".", "v2"}], ">", "0"}]}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(SimplifyLittelmannPath[\(LittelmannPath[\[CapitalGamma]_]\)[
-          l_List]] := \(LittelmannPath[\[CapitalGamma]]\)[\(Plus @@ # &\) /@ 
-          Split[DeleteCases[l, ZeroVector[Rank[\[CapitalGamma]]]], 
-            VectorsPositivelyProportionalQ]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"SimplifyLittelmannPath", "[", 
+   RowBox[{
+    RowBox[{"LittelmannPath", "[", "\[CapitalGamma]_", "]"}], "[", "l_List", 
+    "]"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Plus", "@@", "#"}], "&"}], "/@", 
+    RowBox[{"Split", "[", 
+     RowBox[{
+      RowBox[{"DeleteCases", "[", 
+       RowBox[{"l", ",", 
+        RowBox[{"ZeroVector", "[", 
+         RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], "]"}]}], "]"}], ",", 
+      "VectorsPositivelyProportionalQ"}], "]"}]}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(LowerLittelmannPath[lp_, {}] := lp\), "\[IndentingNewLine]", 
-    \(LowerLittelmannPath[lp_, d_List] := 
-      LowerLittelmannPath[LowerLittelmannPath[lp, Last[d]], 
-        Drop[d, \(-1\)]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"lp_", ",", 
+    RowBox[{"{", "}"}]}], "]"}], ":=", "lp"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"lp_", ",", "d_List"}], "]"}], ":=", 
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{
+    RowBox[{"LowerLittelmannPath", "[", 
+     RowBox[{"lp", ",", 
+      RowBox[{"Last", "[", "d", "]"}]}], "]"}], ",", 
+    RowBox[{"Drop", "[", 
+     RowBox[{"d", ",", 
+      RowBox[{"-", "1"}]}], "]"}]}], "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(SimpleRootLength[\[CapitalGamma]_]\)[
-        i_] := \(1\/2\) \(KillingForm[\[CapitalGamma]]\)[\(SimpleRoots[\
-\[CapitalGamma]]\)\[LeftDoubleBracket]
-            i\[RightDoubleBracket], \(SimpleRoots[\[CapitalGamma]]\)\
-\[LeftDoubleBracket]i\[RightDoubleBracket]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"SimpleRootLength", "[", "\[CapitalGamma]_", "]"}], "[", "i_", 
+   "]"}], ":=", 
+  RowBox[{
+   FractionBox["1", "2"], 
+   RowBox[{
+    RowBox[{"KillingForm", "[", "\[CapitalGamma]", "]"}], "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SimpleRoots", "[", "\[CapitalGamma]", "]"}], 
+      "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], ",", 
+     RowBox[{
+      RowBox[{"SimpleRoots", "[", "\[CapitalGamma]", "]"}], 
+      "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
+    "]"}]}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LowerLittelmannPath[lp_, i_, m_] := 
-      Module[{ip, min, lm, ms, l, v, \[CapitalGamma], \[Alpha], v1, 
-          v2}, \[IndentingNewLine]ip = 
-          LittelmannPathInnerProducts[lp, i]; \[IndentingNewLine]min = 
-          Min[ip]; \[IndentingNewLine]lm = \(Last[
-              Position[ip, 
-                min]]\)\[LeftDoubleBracket]1\[RightDoubleBracket]; \
-\[IndentingNewLine]If[
-          lm > Length[lp\[LeftDoubleBracket]1\[RightDoubleBracket]], 
-          Return[0]]; \[IndentingNewLine]\[CapitalGamma] = 
-          LittelmannPathAlgebra[
-            lp]; \[IndentingNewLine]\[Alpha] = \(SimpleRootLength[\
-\[CapitalGamma]]\)[
-            i]; \[IndentingNewLine]ms = \(Min[Cases[Drop[ip, lm], _?\((# < \
-\[Alpha] &)\)]] - min\)\/\[Alpha]; \[IndentingNewLine]If[ms < m, 
-          Return[LowerLittelmannPath[LowerLittelmannPath[lp, i, ms], i, 
-              m - ms]]]; \[IndentingNewLine]If[\((l = \
-\(ip\[LeftDoubleBracket]lm + 1\[RightDoubleBracket] - \
-ip\[LeftDoubleBracket]lm\[RightDoubleBracket]\)\/\[Alpha])\) < m, 
-          Return[LowerLittelmannPath[LowerLittelmannPath[lp, i, l], i, 
-              m - l]]]; \[IndentingNewLine]v = 
-          lp\[LeftDoubleBracket]1, 
-            lm\[RightDoubleBracket]; \[IndentingNewLine]v1 = 
-          Simplify[\(m\/l\) v - \ 
-              m\ \(SimpleRoots[\[CapitalGamma]]\)\[LeftDoubleBracket]
-                  i\[RightDoubleBracket]]; \[IndentingNewLine]v2 = 
-          Simplify[\(\(l - m\)\/l\) 
-              v]; \[IndentingNewLine]SimplifyLittelmannPath[\(LittelmannPath[\
-\[CapitalGamma]]\)[
-            Take[lp\[LeftDoubleBracket]1\[RightDoubleBracket], lm - 1]~
-              Join~{v1, v2}~Join~
-              Drop[lp\[LeftDoubleBracket]1\[RightDoubleBracket], 
-                lm]]]\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LowerLittelmannPath", "[", 
+   RowBox[{"lp_", ",", "i_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "ip", ",", "min", ",", "lm", ",", "ms", ",", "l", ",", "v", ",", 
+      "\[CapitalGamma]", ",", "\[Alpha]", ",", "v1", ",", "v2"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ip", "=", 
+      RowBox[{"LittelmannPathInnerProducts", "[", 
+       RowBox[{"lp", ",", "i"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"min", "=", 
+      RowBox[{"Min", "[", "ip", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"lm", "=", 
+      RowBox[{
+       RowBox[{"Last", "[", 
+        RowBox[{"Position", "[", 
+         RowBox[{"ip", ",", "min"}], "]"}], "]"}], "\[LeftDoubleBracket]", 
+       "1", "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"lm", ">", 
+        RowBox[{"Length", "[", 
+         RowBox[{"lp", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+          "]"}]}], ",", 
+       RowBox[{"Return", "[", "0", "]"}]}], "]"}], ";", "\[IndentingNewLine]",
+      
+     RowBox[{"\[CapitalGamma]", "=", 
+      RowBox[{"LittelmannPathAlgebra", "[", "lp", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\[Alpha]", "=", 
+      RowBox[{
+       RowBox[{"SimpleRootLength", "[", "\[CapitalGamma]", "]"}], "[", "i", 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"ms", "=", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"Min", "[", 
+         RowBox[{"Cases", "[", 
+          RowBox[{
+           RowBox[{"Drop", "[", 
+            RowBox[{"ip", ",", "lm"}], "]"}], ",", 
+           RowBox[{"_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"#", "<", "\[Alpha]"}], "&"}], ")"}]}]}], "]"}], "]"}], 
+        "-", "min"}], "\[Alpha]"]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"ms", "<", "m"}], ",", 
+       RowBox[{"Return", "[", 
+        RowBox[{"LowerLittelmannPath", "[", 
+         RowBox[{
+          RowBox[{"LowerLittelmannPath", "[", 
+           RowBox[{"lp", ",", "i", ",", "ms"}], "]"}], ",", "i", ",", 
+          RowBox[{"m", "-", "ms"}]}], "]"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"l", "=", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"ip", "\[LeftDoubleBracket]", 
+             RowBox[{"lm", "+", "1"}], "\[RightDoubleBracket]"}], "-", 
+            RowBox[{
+            "ip", "\[LeftDoubleBracket]", "lm", "\[RightDoubleBracket]"}]}], 
+           "\[Alpha]"]}], ")"}], "<", "m"}], ",", 
+       RowBox[{"Return", "[", 
+        RowBox[{"LowerLittelmannPath", "[", 
+         RowBox[{
+          RowBox[{"LowerLittelmannPath", "[", 
+           RowBox[{"lp", ",", "i", ",", "l"}], "]"}], ",", "i", ",", 
+          RowBox[{"m", "-", "l"}]}], "]"}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"v", "=", 
+      RowBox[{"lp", "\[LeftDoubleBracket]", 
+       RowBox[{"1", ",", "lm"}], "\[RightDoubleBracket]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"v1", "=", 
+      RowBox[{"Simplify", "[", 
+       RowBox[{
+        RowBox[{
+         FractionBox["m", "l"], "v"}], "-", " ", 
+        RowBox[{"m", " ", 
+         RowBox[{
+          RowBox[{"SimpleRoots", "[", "\[CapitalGamma]", "]"}], 
+          "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}]}], "]"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"v2", "=", 
+      RowBox[{"Simplify", "[", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"l", "-", "m"}], "l"], "v"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SimplifyLittelmannPath", "[", 
+      RowBox[{
+       RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{
+        RowBox[{"Take", "[", 
+         RowBox[{
+          RowBox[{
+          "lp", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"lm", "-", "1"}]}], "]"}], "~", "Join", "~", 
+        RowBox[{"{", 
+         RowBox[{"v1", ",", "v2"}], "}"}], "~", "Join", "~", 
+        RowBox[{"Drop", "[", 
+         RowBox[{
+          RowBox[{
+          "lp", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
+          "lm"}], "]"}]}], "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[{
-    \(\(LittelmannPathOneStepLowerings[{}] = {};\)\), "\[IndentingNewLine]", 
-    \(LittelmannPathOneStepLowerings[paths_List] := 
-      Module[{n = 
-            Rank[LittelmannPathAlgebra[
-                paths\[LeftDoubleBracket]1\[RightDoubleBracket]]]}, \
-\[IndentingNewLine]UnsortedUnion[
-          DeleteCases[
-            Flatten[Table[\(LowerLittelmannPath[#, i] &\) /@ paths, {i, 1, 
-                  n}]], 0]]\[IndentingNewLine]]\)}], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{"LittelmannPathOneStepLowerings", "[", 
+    RowBox[{"{", "}"}], "]"}], "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LittelmannPathOneStepLowerings", "[", "paths_List", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", "=", 
+      RowBox[{"Rank", "[", 
+       RowBox[{"LittelmannPathAlgebra", "[", 
+        RowBox[{
+        "paths", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+        "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"UnsortedUnion", "[", 
+     RowBox[{"DeleteCases", "[", 
+      RowBox[{
+       RowBox[{"Flatten", "[", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"LowerLittelmannPath", "[", 
+             RowBox[{"#", ",", "i"}], "]"}], "&"}], "/@", "paths"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], "]"}], ",", 
+       "0"}], "]"}], "]"}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathLowerings[paths_List] := 
-      Module[{result}, 
-        result = 
-          UnsortedUnion[
-            Flatten[FixedPointList[LittelmannPathOneStepLowerings, 
-                paths]]]; \
-\[IndentingNewLine]RedefineLittelmannPathInnerProducts[]; \
-\[IndentingNewLine]result\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LittelmannPathLowerings", "[", "paths_List", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "result", "}"}], ",", 
+    RowBox[{
+     RowBox[{"result", "=", 
+      RowBox[{"UnsortedUnion", "[", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"FixedPointList", "[", 
+         RowBox[{"LittelmannPathOneStepLowerings", ",", "paths"}], "]"}], 
+        "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"RedefineLittelmannPathInnerProducts", "[", "]"}], ";", 
+     "\[IndentingNewLine]", "result"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathLowerings[lp_] := 
-      LittelmannPathLowerings[{lp}]\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LittelmannPathLowerings", "[", "lp_", "]"}], ":=", 
+  RowBox[{"LittelmannPathLowerings", "[", 
+   RowBox[{"{", "lp", "}"}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(Clear[LittelmannPathLowerings]\)], "Input"],
+ RowBox[{
+  RowBox[{"LittelmannPathLowerings", "[", 
+   RowBox[{
+    RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", "]"}],
+    "]"}], ":=", 
+  RowBox[{
+   RowBox[{"LittelmannPathLowerings", "[", 
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "\[Lambda]", "]"}], 
+    "]"}], "=", 
+   RowBox[{"LittelmannPathLowerings", "[", 
+    RowBox[{
+     RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", 
+     RowBox[{"{", "\[Lambda]", "}"}], "]"}], "]"}]}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathLowerings[\(Irrep[\[CapitalGamma]_]\)[\[Lambda]_]] := \
-\(LittelmannPathLowerings[\(Irrep[\[CapitalGamma]]\)[\[Lambda]]] = 
-        LittelmannPathLowerings[\(LittelmannPath[\[CapitalGamma]]\)[{\[Lambda]\
-}]]\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"LittelmannPathWeightMultiplicities", "[", 
+   RowBox[{"\[CapitalGamma]_", ",", 
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
+     "]"}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+      ",", 
+      RowBox[{"Length", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
+   RowBox[{"Split", "[", 
+    RowBox[{
+     RowBox[{"SortWeights", "[", "\[CapitalGamma]", "]"}], "[", 
+     RowBox[{"LittelmannPathEndpoint", "/@", 
+      RowBox[{"LittelmannPathLowerings", "[", 
+       RowBox[{
+        RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "\[Lambda]", 
+        "]"}], "]"}]}], "]"}], "]"}]}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(LittelmannPathWeightMultiplicities[\[CapitalGamma]_, \(Irrep[\
-\[CapitalGamma]_]\)[\[Lambda]_]] := \({#\[LeftDoubleBracket]1\
-\[RightDoubleBracket], Length[#]} &\) /@ 
-        Split[\(SortWeights[\[CapitalGamma]]\)[
-            LittelmannPathEndpoint /@ 
-              LittelmannPathLowerings[\(Irrep[\[CapitalGamma]]\)[\[Lambda]]]]]\
-\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{"ComposeLittelmannPaths", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"LittelmannPath", "[", "\[CapitalGamma]_", "]"}], "[", "l1_", 
+     "]"}], ",", 
+    RowBox[{
+     RowBox[{"LittelmannPath", "[", "\[CapitalGamma]_", "]"}], "[", "l2_", 
+     "]"}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", 
+   RowBox[{"l1", "~", "Join", "~", "l2"}], "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(ComposeLittelmannPaths[\(LittelmannPath[\[CapitalGamma]_]\)[
-          l1_], \(LittelmannPath[\[CapitalGamma]_]\)[
-          l2_]] := \(LittelmannPath[\[CapitalGamma]]\)[l1~Join~l2]\)], "Input",\
+ RowBox[{
+  RowBox[{"LittelmannPathDominantQ", "[", "lp_", "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"PositiveWeightQ", "[", 
+      RowBox[{"LittelmannPathAlgebra", "[", "lp", "]"}], "]"}], "/@", 
+     RowBox[{"LittelmannPathVertices", "[", "lp", "]"}]}], ")"}]}]}]], "Input",\
 
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(LittelmannPathDominantQ[lp_] := 
-      And @@ \((PositiveWeightQ[LittelmannPathAlgebra[lp]] /@ 
-            LittelmannPathVertices[lp])\)\)], "Input",
-  InitializationCell->True],
-
-Cell[BoxData[
-    \(\(LittelmannPathDecomposeRepresentation[\[CapitalGamma]_]\)[\(Irrep[\
-\[CapitalGamma]_]\)[\[Lambda]_]\[CircleTimes]\(Irrep[\[CapitalGamma]_]\)[\[Mu]\
-_]] := Module[{lp, 
-          compositions}, \[IndentingNewLine]lp = \(LittelmannPath[\
-\[CapitalGamma]]\)[{\[Lambda]}]; 
-        compositions = \(ComposeLittelmannPaths[lp, #] &\) /@ 
-            LittelmannPathLowerings[\(Irrep[\[CapitalGamma]]\)[\[Mu]]]; \
-\[IndentingNewLine]DirectSum @@ \(SortWeights[\[CapitalGamma]]\)[
-            Cases[compositions, 
-              lp_?LittelmannPathDominantQ \[RuleDelayed] \(Irrep[\
-\[CapitalGamma]]\)[
-                  LittelmannPathEndpoint[
-                    lp]]]]\[IndentingNewLine]]\)], "Input",
-  InitializationCell->True],
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(End[];\)\)], "Input",
-  InitializationCell->True],
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "LittelmannPathDecomposeRepresentation", "[", "\[CapitalGamma]_", "]"}], 
+   "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
+     "]"}], "\[CircleTimes]", 
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Mu]_", "]"}]}], 
+   "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lp", ",", "compositions"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"lp", "=", 
+      RowBox[{
+       RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{"{", "\[Lambda]", "}"}], "]"}]}], ";", 
+     RowBox[{"compositions", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ComposeLittelmannPaths", "[", 
+         RowBox[{"lp", ",", "#"}], "]"}], "&"}], "/@", 
+       RowBox[{"LittelmannPathLowerings", "[", 
+        RowBox[{
+         RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "\[Mu]", "]"}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"DirectSum", "@@", 
+      RowBox[{
+       RowBox[{"SortWeights", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{"Cases", "[", 
+        RowBox[{"compositions", ",", 
+         RowBox[{
+          RowBox[{"lp_", "?", "LittelmannPathDominantQ"}], "\[RuleDelayed]", 
+          RowBox[{
+           RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", 
+           RowBox[{"LittelmannPathEndpoint", "[", "lp", "]"}], "]"}]}]}], 
+        "]"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
-    \(\(EndPackage[];\)\)], "Input",
-  CellLabel->"In[23]:=",
-  InitializationCell->True]
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Input",
+ InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
 },
-FrontEndVersion->"5.2 for Microsoft Windows",
-ScreenRectangle->{{0, 1280}, {0, 713}},
 AutoGeneratedPackage->Automatic,
 WindowSize->{821, 668},
-WindowMargins->{{Automatic, 76}, {Automatic, -28}},
+WindowMargins->{{Automatic, 166}, {Automatic, 0}},
 Visible->True,
-InputAliases->{"notation"->RowBox[ {"Notation", "[", 
-        RowBox[ {
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"], " ", "\[DoubleLongLeftRightArrow]", " ",
-           
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"]}], "]"}], 
-    "notation>"->RowBox[ {"Notation", "[", 
-        RowBox[ {
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"], " ", "\[DoubleLongRightArrow]", " ", 
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"]}], "]"}], 
-    "notation<"->RowBox[ {"Notation", "[", 
-        RowBox[ {
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"], " ", "\[DoubleLongLeftArrow]", " ", 
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"]}], "]"}], 
-    "symb"->RowBox[ {"Symbolize", "[", 
-        TagBox[ 
-        "\[Placeholder]", NotationBoxTag, TagStyle -> 
-          "NotationTemplateStyle"], "]"}], 
-    "infixnotation"->RowBox[ {"InfixNotation", "[", 
-        RowBox[ {
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"], ",", "\[Placeholder]"}], "]"}], 
-    "addia"->RowBox[ {"AddInputAlias", "[", 
-        RowBox[ {"\"\[Placeholder]\"", "\[Rule]", 
-          TagBox[ 
-          "\[Placeholder]", NotationBoxTag, TagStyle -> 
-            "NotationTemplateStyle"]}], "]"}], 
-    "pattwraper"->TagBox[ 
-      "\[Placeholder]", NotationPatternTag, TagStyle -> 
-        "NotationPatternWrapperStyle"], 
-    "madeboxeswraper"->TagBox[ 
-      "\[Placeholder]", NotationMadeBoxesTag, TagStyle -> 
-        "NotationMadeBoxesWrapperStyle"]},
-StyleDefinitions -> \
-FrontEnd`FileName[{ParentDirectory[ParentDirectory[ParentDirectory[]]]}, \
-"PackageStyleSheet.nb", CharacterEncoding -> "WindowsANSI"]
+InputAliases->{"notation" -> RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"],
+        " ", "\[DoubleLongLeftRightArrow]", " ", 
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> 
+        "NotationTemplateStyle"]}], "]"}], "notation>" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"],
+        " ", "\[DoubleLongRightArrow]", " ", 
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> 
+        "NotationTemplateStyle"]}], "]"}], "notation<" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"],
+        " ", "\[DoubleLongLeftArrow]", " ", 
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> 
+        "NotationTemplateStyle"]}], "]"}], "symb" -> 
+  RowBox[{"Symbolize", "[", 
+     TagBox[
+     "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"], 
+     "]"}], "infixnotation" -> RowBox[{"InfixNotation", "[", 
+     RowBox[{
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"],
+        ",", "\[Placeholder]"}], "]"}], "addia" -> 
+  RowBox[{"AddInputAlias", "[", 
+     RowBox[{"\"\[Placeholder]\"", "\[Rule]", 
+       TagBox[
+       "\[Placeholder]", NotationBoxTag, TagStyle -> 
+        "NotationTemplateStyle"]}], "]"}], "pattwraper" -> 
+  TagBox["\[Placeholder]", NotationPatternTag, TagStyle -> 
+    "NotationPatternWrapperStyle"], "madeboxeswraper" -> 
+  TagBox["\[Placeholder]", NotationMadeBoxesTag, TagStyle -> 
+    "NotationMadeBoxesWrapperStyle"]},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->FrontEnd`FileName[{
+   ParentDirectory[
+    ParentDirectory[
+     ParentDirectory[]]]}, "PackageStyleSheet.nb", CharacterEncoding -> 
+  "WindowsANSI"]
 ]
+(* End of Notebook Content *)
 
-(*******************************************************************
-Cached data follows.  If you edit this Notebook file directly, not
-using Mathematica, you must remove the line containing CacheID at
-the top of  the file.  The cache data will then be recreated when
-you save this file from within Mathematica.
-*******************************************************************)
-
+(* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{}
 *)
-
 (*CellTagsIndex
 CellTagsIndex->{}
 *)
-
 (*NotebookFileOutline
 Notebook[{
-
 Cell[CellGroupData[{
-Cell[1776, 53, 42, 0, 51, "Subtitle"],
-Cell[1821, 55, 101, 3, 52, "Text"],
-
+Cell[590, 23, 42, 0, 49, "Subtitle"],
+Cell[635, 25, 101, 3, 47, "Text"],
 Cell[CellGroupData[{
-Cell[1947, 62, 31, 0, 73, "Section"],
-Cell[1981, 64, 143, 3, 33, "Text"]
+Cell[761, 32, 31, 0, 71, "Section"],
+Cell[795, 34, 143, 3, 29, "Text"]
 }, Open  ]],
-
 Cell[CellGroupData[{
-Cell[2161, 72, 61, 1, 73, "Section",
-  InitializationCell->True],
-Cell[2225, 75, 176, 3, 30, "Input",
-  InitializationCell->True],
-Cell[2404, 80, 348, 5, 70, "Input",
-  InitializationCell->True],
-Cell[2755, 87, 428, 7, 90, "Input",
-  InitializationCell->True],
-Cell[3186, 96, 355, 6, 70, "Input",
-  InitializationCell->True],
-Cell[3544, 104, 90, 2, 30, "Input",
-  InitializationCell->True],
-Cell[3637, 108, 255, 5, 70, "Input",
-  InitializationCell->True],
-Cell[3895, 115, 71, 2, 30, "Input",
-  InitializationCell->True],
-Cell[3969, 119, 88, 2, 30, "Input",
-  InitializationCell->True],
-Cell[4060, 123, 138, 3, 30, "Input",
-  InitializationCell->True],
-Cell[4201, 128, 158, 3, 30, "Input",
-  InitializationCell->True],
-Cell[4362, 133, 149, 3, 30, "Input",
-  InitializationCell->True],
-Cell[4514, 138, 180, 3, 34, "Input",
-  InitializationCell->True],
-Cell[4697, 143, 662, 13, 110, "Input",
-  InitializationCell->True],
-Cell[5362, 158, 103, 2, 30, "Input",
-  InitializationCell->True],
-Cell[5468, 162, 163, 3, 50, "Input",
-  InitializationCell->True],
-Cell[5634, 167, 129, 3, 30, "Input",
-  InitializationCell->True],
-Cell[5766, 172, 196, 4, 31, "Input",
-  InitializationCell->True],
-Cell[5965, 178, 312, 5, 70, "Input",
-  InitializationCell->True],
-Cell[6280, 185, 253, 5, 70, "Input",
-  InitializationCell->True],
-Cell[6536, 192, 326, 6, 42, "Input",
-  InitializationCell->True],
-Cell[6865, 200, 1836, 34, 389, "Input",
-  InitializationCell->True],
-Cell[8704, 236, 497, 10, 110, "Input",
-  InitializationCell->True],
-Cell[9204, 248, 369, 9, 130, "Input",
-  InitializationCell->True],
-Cell[9576, 259, 129, 3, 30, "Input",
-  InitializationCell->True],
-Cell[9708, 264, 63, 1, 30, "Input"],
-Cell[9774, 267, 284, 5, 50, "Input",
-  InitializationCell->True],
-Cell[10061, 274, 396, 8, 70, "Input",
-  InitializationCell->True],
-Cell[10460, 284, 244, 5, 50, "Input",
-  InitializationCell->True],
-Cell[10707, 291, 198, 4, 50, "Input",
-  InitializationCell->True],
-Cell[10908, 297, 744, 14, 170, "Input",
-  InitializationCell->True],
-Cell[11655, 313, 71, 2, 30, "Input",
-  InitializationCell->True],
-Cell[11729, 317, 103, 3, 30, "Input",
-  InitializationCell->True]
+Cell[975, 42, 60, 1, 71, "Section",
+ InitializationCell->True],
+Cell[1038, 45, 288, 8, 31, "Input",
+ InitializationCell->True],
+Cell[1329, 55, 541, 10, 72, "Input",
+ InitializationCell->True],
+Cell[1873, 67, 477, 9, 92, "Input",
+ InitializationCell->True],
+Cell[2353, 78, 404, 8, 72, "Input",
+ InitializationCell->True],
+Cell[2760, 88, 183, 3, 31, "Input"],
+Cell[2946, 93, 121, 3, 31, "Input",
+ InitializationCell->True],
+Cell[3070, 98, 341, 6, 52, "Input",
+ InitializationCell->True],
+Cell[3414, 106, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[3513, 111, 119, 3, 31, "Input",
+ InitializationCell->True],
+Cell[3635, 116, 196, 6, 31, "Input",
+ InitializationCell->True],
+Cell[3834, 124, 236, 6, 31, "Input",
+ InitializationCell->True],
+Cell[4073, 132, 250, 7, 31, "Input",
+ InitializationCell->True],
+Cell[4326, 141, 359, 10, 34, "Input",
+ InitializationCell->True],
+Cell[4688, 153, 1319, 34, 112, "Input",
+ InitializationCell->True],
+Cell[6010, 189, 128, 3, 31, "Input",
+ InitializationCell->True],
+Cell[6141, 194, 283, 7, 52, "Input",
+ InitializationCell->True],
+Cell[6427, 203, 231, 6, 31, "Input",
+ InitializationCell->True],
+Cell[6661, 211, 509, 16, 36, "Input",
+ InitializationCell->True],
+Cell[7173, 229, 643, 18, 72, "Input",
+ InitializationCell->True],
+Cell[7819, 249, 561, 16, 72, "Input",
+ InitializationCell->True],
+Cell[8383, 267, 588, 17, 45, "Input",
+ InitializationCell->True],
+Cell[8974, 286, 4440, 117, 427, "Input",
+ InitializationCell->True],
+Cell[13417, 405, 1098, 30, 92, "Input",
+ InitializationCell->True],
+Cell[14518, 437, 635, 16, 132, "Input",
+ InitializationCell->True],
+Cell[15156, 455, 204, 5, 31, "Input",
+ InitializationCell->True],
+Cell[15363, 462, 557, 15, 52, "Input",
+ InitializationCell->True],
+Cell[15923, 479, 803, 22, 72, "Input",
+ InitializationCell->True],
+Cell[16729, 503, 467, 13, 52, "Input",
+ InitializationCell->True],
+Cell[17199, 518, 358, 10, 52, "Input",
+ InitializationCell->True],
+Cell[17560, 530, 1580, 42, 172, "Input",
+ InitializationCell->True],
+Cell[19143, 574, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[19242, 579, 103, 3, 31, "Input",
+ InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
-
-
-(*******************************************************************
-End of Mathematica Notebook file.
-*******************************************************************)
-
+(* End of internal cache information *)

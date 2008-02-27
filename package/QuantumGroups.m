@@ -43,7 +43,7 @@ DeclarePackage["QuantumGroups`BraidAction`",{"T","BraidAction","BraidRelations",
 DeclarePackage["QuantumGroups`QuantumRoots`",{"ExpandQuantumRoot","QuantumPositiveRoots","QuantumNegativeRoots","QuantumRootHeight"}];
 
 
-DeclarePackage["QuantumGroups`LittelmannPaths`",{"LittelmannPath","LittelmannPathDecomposeRepresentation","LittelmannPathWeightMultiplicities"}];
+DeclarePackage["QuantumGroups`LittelmannPaths`",{"LittelmannPath","LittelmannPathDecomposeRepresentation","LittelmannPathWeightMultiplicities","LittelmannPathOneStepLowerings","LittelmannPathLowerings","LittelmannPathEndpoint"}];
 
 
 DeclarePackage["QuantumGroups`WeylGroups`",{"PositiveRoots","LongestWordDecomposition","WeylGroup"}];
