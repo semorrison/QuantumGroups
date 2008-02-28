@@ -43,6 +43,9 @@ PositiveWeights::usage="";
 qDimension::usage="";
 
 
+MultiplicityFreeQ::usage="MultiplicityFreeQ[\[CapitalGamma],V] determines whether every weight space in the representation V of \[CapitalGamma] has dimension 1. In the case that this is false, MultiplicityFreeQ is much faster than WeightMultiplicities[\[CapitalGamma],V].";
+
+
 Begin["`Private`"];
 
 
@@ -56,6 +59,15 @@ WeightMultiplicities[\[CapitalGamma]_,TensorProduct[V_]]:=WeightMultiplicities[\
 
 
 WeightMultiplicities[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_]]:=WeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]]=LittelmannPathWeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]]
+
+
+GreatestMultiplicityAfterLowerings[\[CapitalGamma]_,\[Lambda]_,k_]:=Max[Last/@Tally[LittelmannPathEndpoint/@Nest[LittelmannPathOneStepLowerings,{LittelmannPath[\[CapitalGamma]][{\[Lambda]}]},k]]]
+
+
+MultiplicityFreeQ[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_]]:=Module[{m,k=1},
+While[(m=GreatestMultiplicityAfterLowerings[\[CapitalGamma],\[Lambda],k])==1,++k];
+m==-\[Infinity]
+]
 
 
 DecomposeRepresentation[\[CapitalGamma]_][Irrep[\[CapitalGamma]_][\[Lambda]_]\[CircleTimes]Irrep[\[CapitalGamma]_][\[Mu]_]]:=DecomposeRepresentation[\[CapitalGamma]][Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]]=LittelmannPathDecomposeRepresentation[\[CapitalGamma]][Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]]

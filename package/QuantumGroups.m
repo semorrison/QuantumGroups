@@ -49,7 +49,7 @@ DeclarePackage["QuantumGroups`LittelmannPaths`",{"LittelmannPath","LittelmannPat
 DeclarePackage["QuantumGroups`WeylGroups`",{"PositiveRoots","LongestWordDecomposition","WeylGroup"}];
 
 
-DeclarePackage["QuantumGroups`Representations`",{"WeightMultiplicities","WeightMultiplicity","DecomposeRepresentation","Weights","WeightDiameter","PositiveWeights","qDimension"}];
+DeclarePackage["QuantumGroups`Representations`",{"WeightMultiplicities","WeightMultiplicity","MultiplicityFreeQ","DecomposeRepresentation","Weights","WeightDiameter","PositiveWeights","qDimension"}];
 
 
 DeclarePackage["QuantumGroups`MatrixPresentations`",{"ChangeOfBasisMatrix","ShortRootBasis","FundamentalBasis","MatrixPresentation","HighWeightVectors","HighWeightVectorQ","AllHighWeightVectors"}];
