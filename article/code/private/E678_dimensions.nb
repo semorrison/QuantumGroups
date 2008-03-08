@@ -1,0 +1,189 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      5188,        179]
+NotebookOptionsPosition[      4408,        146]
+NotebookOutlinePosition[      4769,        162]
+CellTagsIndexPosition[      4726,        159]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", " ", "=", " ", 
+   "\"\<c:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\package\\\\\>\""}\
+], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input",
+ CellChangeTimes->{{3.413068087637394*^9, 3.413068109038166*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.413068109679088*^9, 3.41306811648888*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Found precomputed data in \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\data\"\>"}],
+  SequenceForm[
+  "Found precomputed data in ", 
+   "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.413068109679088*^9, 3.4130681164988947`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"obspkg\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\(\\\"LinearAlgebra`MatrixManipulation`\\\"\\) is now \
+obsolete. The legacy version being loaded may conflict with current \
+Mathematica functionality. See the Compatibility Guide for updating \
+information. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:Compatibility/Tutorials/LinearAlgebra/\
+MatrixManipulation\\\", ButtonNote -> \\\"General::obspkg\\\"]\\)\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{{3.4130681099394627`*^9, 3.4130681231284275`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"qDimension", "[", "E6", "]"}], "[", 
+     RowBox[{
+      RowBox[{"Irrep", "[", "E6", "]"}], "[", "#", "]"}], "]"}], "/.", 
+    RowBox[{"q", "\[Rule]", "1"}]}], "&"}], "/@", 
+  RowBox[{"IdentityMatrix", "[", "6", "]"}]}]], "Input",
+ CellChangeTimes->{{3.413068157748208*^9, 3.413068172769808*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"27", ",", "78", ",", "351", ",", "2925", ",", "351", ",", "27"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.4130681733606577`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"qDimension", "[", "E7", "]"}], "[", 
+     RowBox[{
+      RowBox[{"Irrep", "[", "E7", "]"}], "[", "#", "]"}], "]"}], "/.", 
+    RowBox[{"q", "\[Rule]", "1"}]}], "&"}], "/@", 
+  RowBox[{"Drop", "[", 
+   RowBox[{
+    RowBox[{"IdentityMatrix", "[", "7", "]"}], ",", 
+    RowBox[{"{", "4", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.413068157748208*^9, 3.413068188462373*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "133", ",", "912", ",", "8645", ",", "27664", ",", "1539", ",", "56"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.4130681890732512`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"qDimension", "[", "E8", "]"}], "[", 
+     RowBox[{
+      RowBox[{"Irrep", "[", "E8", "]"}], "[", "#", "]"}], "]"}], "/.", 
+    RowBox[{"q", "\[Rule]", "1"}]}], "&"}], "/@", 
+  RowBox[{"Drop", "[", 
+   RowBox[{
+    RowBox[{"IdentityMatrix", "[", "8", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "7"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.413068157748208*^9, 3.4130682117859106`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3875", ",", "147250", ",", "248"}], "}"}]], "Output",
+ CellChangeTimes->{3.4130682127072353`*^9}]
+}, Open  ]]
+},
+WindowSize->{615, 555},
+WindowMargins->{{96, Automatic}, {4, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 415, 11, 92, "Input"],
+Cell[CellGroupData[{
+Cell[1030, 38, 419, 9, 43, "Print"],
+Cell[1452, 49, 381, 9, 23, "Print"]
+}, Open  ]],
+Cell[1848, 61, 637, 12, 56, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2522, 78, 370, 10, 31, "Input"],
+Cell[2895, 90, 170, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3102, 99, 452, 13, 31, "Input"],
+Cell[3557, 114, 178, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3772, 124, 480, 14, 31, "Input"],
+Cell[4255, 140, 137, 3, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
