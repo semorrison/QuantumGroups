@@ -94,8 +94,9 @@
 \clap{$\mathsurround=0pt#1{#2}$}}
 
 \newcommand{\code}[1]{{\tt #1}}
-\newcommand{\pkg}[1]{\code{#1`}}
-\newcommand{\MMA}{Mathematica}
+\newcommand{\package}[1]{\code{#1`}}
+\newcommand{\pkg}{\package{QuantumGroups} package{}}
+\newcommand{\MMA}{Mathematica{}}
 
 \newcounter{linem}
 
@@ -110,14 +111,14 @@
   {\footnotesize\color{blue}In[\inN]$:=$}\tt%
   \catcode`\#=12 \catcode`\&=12 \catcode`\~=12 \catcode`\%=12%
   %\catcode`\$=12
-  \catcode`\^=12 \catcode`\_=12%
+  %\catcode`\^=12 \catcode`\_=12%
   \obeylines\obeyspaces}{}
 \newenvironment{outm}{%
  \vskip 0pt \par\noindent\parindent=12pt%
   {\footnotesize\color{blue}Out[\outN]$=$}\tt%
-  \catcode`\#=12 \catcode`\&=12 \catcode`\~=12 \catcode`\%=12%
-  %\catcode`\$=12
-  \catcode`\^=12 \catcode`\_=12%
+  \catcode`\#=12 \catcode`\~=12 \catcode`\%=12%
+  %\catcode`\$=12 \catcode`\&=12
+  %\catcode`\^=12 \catcode`\_=12%
   \obeylines\obeyspaces}{}
 %\newenvironment{printm}%
 %    {\verbatim}%

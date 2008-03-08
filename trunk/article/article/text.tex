@@ -10,12 +10,12 @@ $$(\text{framed links, with components labelled by irreps of $\uqg$}) \To
 In this paper, I describe how one computes these invariants. In
 particular, I'll tell you just enough mathematics for the definition, but
 much more importantly, I'll tell you how to \emph{actually} compute them,
-by showing you how to use a \MMA package called \pkg{QuantumGroups}.
+by showing you how to use a \MMA package called \package{QuantumGroups}.
 
 In fact, the package does much more than just compute quantum knot
 invariants. Subject to quite restrictive practical
 limitations,\footnote{My code is inefficient, the algorithms are slow,
-and the computations are difficult!} \pkg{QuantumGroups} can
+and the computations are difficult!} the \pkg can
 \begin{itemize}
 \item Calculate dimensions of weight spaces and invariant spaces of
 tensor products of arbitrary highest weight representations, using a
@@ -34,7 +34,7 @@ By the end, you'll understand how to answer questions like:
 What is the invariant of the knot $8_{19}$ \todo{picture!}, labelled by
 the 14 dimensional irrep of $G_2$?
 \end{quote}
-(For the really impatient, one way is to download the \pkg{KnotTheory}
+(For the really impatient, one way is to download the \package{KnotTheory}
 \MMA package from \url{http://katlas.org/}, and enter\footnote{Don't type `{\color{blue}In[1]$:=$}'; \MMA will add this itself. See \S ?? for more details.} the following in \MMA:
 \begin{mma}
 \begin{inm}<<KnotTheory`\end{inm}
@@ -79,7 +79,7 @@ $$HOMFLYPT_K(q^n, q) = RT_{\uqsl{n}, \Complex^n}(K)(q).$$
 
 Thus to find programs or tables of these invariants, you're for the most
 part better off looking for the HOMFLYPT invariant. One notable exception
-is a program available in the \pkg{KnotTheory} \MMA package \cite{???},
+is a program available in the \package{KnotTheory} \MMA package \cite{???},
 which makes a direct calculation of the $\uqsl{3}$ invariant, via
 Kuperberg's spider \cite{???}.
 
@@ -94,26 +94,111 @@ these?}
 \todo{mention cabling formulas. what happens outside of type A??}
 \todo{examples in MMA}
 
-\section{Installing the \pkg{QuantumGroups} package}
+\section{Installing the \pkg}
 
 \section{Combinatorial representation theory}
 ... Thus the possibilities for the complex simple Lie algebra
 $\mathfrak{g}$ are
 \begin{itemize}
 \item $\mathfrak{sl}_{n+1}$, $n \geq 1$, also called $A_n$, with Dynkin diagram
-???,
+???, and Cartan matrix $$\left(
+\begin{array}{rrrrrrr}
+ 2 & -1 & 0 & 0 & 0 &\cdots & 0 \\
+ -1 & 2 & -1 & 0 & 0 &\cdots & 0 \\
+ 0 & -1 & 2 & -1 & 0 & \cdots & 0 \\
+ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+ 0 & 0& \cdots & -1 & 2 & -1 & 0 \\
+ 0 & 0 &\cdots & 0 & -1 & 2 & -1 \\
+ 0 & 0 &\cdots & 0 & 0 & -1 & 2
+\end{array}
+\right),$$
 \item $\mathfrak{so}_{2n+1}$, $n \geq 2$, also called $B_n$, with Dynkin diagram
-???,
+???, and Cartan matrix
+$$\left(
+\begin{array}{rrrrrrr}
+ 2 & -1 & 0 & 0 & 0 & \cdots & 0 \\
+ -1 & 2 & -1 & 0 & 0 & \cdots & 0 \\
+ 0 & -1 & 2 & -1 & 0 & \cdots &0 \\
+ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+ 0 & 0 &\cdots & -1 & 2 & -1 & 0 \\
+ 0 & 0 &\cdots & 0 & -1 & 2 & -1 \\
+ 0 & 0 &\cdots & 0 & 0 & -2 & 2
+\end{array}
+\right),$$
 \item $\mathfrak{sp}_{2n}$, $n \geq 3$, also called $C_n$, with Dynkin diagram
-???,
+???, and Cartan matrix $$\left(
+\begin{array}{rrrrrrr}
+ 2 & -1 & 0 & 0 & 0 & \cdots & 0 \\
+ -1 & 2 & -1 & 0 & 0 & \cdots & 0 \\
+ 0 & -1 & 2 & -1 & 0 & \cdots &0 \\
+ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+ 0 & 0 &\cdots & -1 & 2 & -1 & 0 \\
+ 0 & 0 &\cdots & 0 & -1 & 2 & -2 \\
+ 0 & 0 &\cdots & 0 & 0 & -1 & 2
+\end{array}
+\right),$$
 \item $\mathfrak{so}_{2n}$, $n \geq 4$, also called $D_n$, with Dynkin
-diagram ???, along with the 5 sporadic examples,
-\item $E_6$, $E_7$ and $E_8$, with Dynkin diagrams ???,
-\item $F_4$, with Dynkin diagram ???,
+diagram ???, and Cartan matrix
+$$\left(
+\begin{array}{rrrrrrr}
+ 2 & -1 & 0 & 0 & 0 & \cdots &  0 \\
+ -1 & 2 & -1 & 0 & 0 & \cdots & 0 \\
+ 0 & -1 & 2 & -1 & 0 & \cdots & 0 \\
+ \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+ 0 & 0 &\cdots &  2 & -1 & 0 & 0  \\
+ 0 & 0 &\cdots & -1 & 2 & -1 & -1 \\
+ 0 & 0 &\cdots &0 & -1 & 2 & 0 \\
+ 0 & 0 &\cdots &0 & -1 & 0 & 2
+\end{array}
+\right),$$ along with the 5 sporadic examples,
+\item $E_6$, $E_7$ and $E_8$, with Dynkin diagrams ???,  and Cartan matrixes $\left(
+\begin{array}{rrrrrr}
+ 2 & 0 & -1 & 0 & 0 & 0 \\
+ 0 & 2 & 0 & -1 & 0 & 0 \\
+ -1 & 0 & 2 & -1 & 0 & 0 \\
+ 0 & -1 & -1 & 2 & -1 & 0 \\
+ 0 & 0 & 0 & -1 & 2 & -1 \\
+ 0 & 0 & 0 & 0 & -1 & 2
+\end{array}
+\right)$, $\left(
+\begin{array}{rrrrrrr}
+ 2 & 0 & -1 & 0 & 0 & 0 & 0 \\
+ 0 & 2 & 0 & -1 & 0 & 0 & 0 \\
+ -1 & 0 & 2 & -1 & 0 & 0 & 0 \\
+ 0 & -1 & -1 & 2 & -1 & 0 & 0 \\
+ 0 & 0 & 0 & -1 & 2 & -1 & 0 \\
+ 0 & 0 & 0 & 0 & -1 & 2 & -1 \\
+ 0 & 0 & 0 & 0 & 0 & -1 & 2
+\end{array}
+\right)$ and $\left(
+\begin{array}{rrrrrrrr}
+ 2 & 0 & -1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 2 & 0 & -1 & 0 & 0 & 0 & 0 \\
+ -1 & 0 & 2 & -1 & 0 & 0 & 0 & 0 \\
+ 0 & -1 & -1 & 2 & -1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & -1 & 2 & -1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & -1 & 2 & -1 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & -1 & 2 & -1 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & -1 & 2
+\end{array}
+\right)$,
+\item $F_4$, with Dynkin diagram ???, and Cartan matrix $\left(
+\begin{array}{rrrr}
+ 2 & -1 & 0 & 0 \\
+ -1 & 2 & -1 & 0 \\
+ 0 & -2 & 2 & -1 \\
+ 0 & 0 & -1 & 2
+\end{array}
+\right)$,
 and finally
-\item $G_2$, with Dynkin diagram ???.
+\item $G_2$, with Dynkin diagram ???, and Cartan matrix $\left(
+\begin{array}{rr}
+ 2 & -3 \\
+ -1 & 2
+\end{array}
+\right)$.
 \end{itemize}
-In the \pkg{QuantumGroups} package, you can write these in either of two
+In the \pkg, you can write these in either of two
 forms, for example $A2$ or $A_2$.
 
 ... and thus every representation of $\uqg$ splits up into the
@@ -132,7 +217,7 @@ the dimensions of the weight spaces), and determining the multiplicities
 of irreps inside the tensor product of two given irreps.
 
 Both of these problems can be answered by using `Littelmann paths',
-\cite{???}, and the \pkg{QuantumGroups} package exposes these algorithms
+\cite{???}, and the \pkg exposes these algorithms
 as in the examples\footnote{Symbols such as $\tensor, \directSum$ and
 $\Complex$ can be entered in Mathematica by typing \code{<esc>c*<esc>},
 \code{<esc>c+<esc>} and \code{<esc>dsC<esc>} respectively.} below:
@@ -153,7 +238,7 @@ WeightMultiplicities[F4,Irrep[F4][\{0,0,0,1\}]]
 \end{mma}
 
 \section{Explicit representations}
-Perhaps the most important function in the \pkg{QuantumGroups} package is
+Perhaps the most important function in the \pkg is
 \code{MatrixPresentation}, which produces explicit matrices representing
 the action of the quantum group generators on a representation.
 
@@ -301,7 +386,7 @@ of how this basis is recursively defined below, essentially it depends on
 many minor details of the implementation. One should not depend on any
 particular properties of this basis!
 
-Future versions of the \pkg{QuantumGroups} package may allow the use of
+A hypothetical future versions of the \pkg might allow the use of
 the symbols \code{GelfandTsetlinBasis} and \code{CanonicalBasis}, with
 the obvious results.\footnote{Gelfand-Tsetlin bases are only projectively
 canonical.} Code implementing Gelfand-Testlin bases exists, but is not
@@ -317,18 +402,53 @@ This is the quantum analogue of the Weyl group action on the classical universal
 as we approach defining quantum knot invariants, that although quantum groups outside of type $A$ have Coxeter braid groups which are not
 the usual Artin braid groups, it is still the usual Artin braid group which acts of tensor products of representations!
 
-The following formulas come directly from \cite[\S ???]{CP}:
+The braid group $\mathcal{B}_\mathfrak{g}$ associated to a complex simple Lie algebra $\mathfrak{g}$ of rank $n$ is
 
+\begin{equation*}
+\mathcal{B}_\mathfrak{g} =
+\relations{
+    T_i, 1 \leq i \leq n
+}{
+    \begin{array}{c}
+        T_i T_j T_i T_j \cdots = T_j T_i T_j T_i \cdots \\
+        \text{with $2, 3, 4$ or $6$ factors on each side,} \\
+        \text{when $a_{ij} a_{ji}$ = $0, 1, 2$ or $3$ respectively.}
+    \end{array}
+}
+\end{equation*}
+
+It is always infinite, and collapses to the Weyl group $W_\mathfrak{g}$ for $\mathfrak{g}$ if we impose the additional relations $T_i^2 = 1$.
+
+The following formulas are simply translated from \cite[\S8.1A]{CP}\footnote{In \cite{CP}, the authors write the action on a slightly different presentation of the quantum group,
+over $\Complex[[h]]$, and I'm using the corresponding action on the quantum group defined over $\Complex(q)$}:
+
+\todo{reduced powers!, $d_i$}
+
+\begin{align*}
+T_i(X_i^+) & = - X_i^- K_i \\
+T_i(X_i^-) & = - K_i X_i^+ \\
+T_i(K_j)   & =  K_j K_i^{-a_{ij}} \\
+T_i(X_j^+)   & = \sum_{r=0}^{-a_{ij}} (-1)^{r-a_{ij}} q^{-r d_i} (X_i^+)^{(-a_{ij}-r)} X_j^+ (X_i^+)^{(r)} \qquad \text{if $i \neq j$} \\
+T_i(X_j^-)   & = \sum_{r=0}^{-a_{ij}} (-1)^{r-a_{ij}} q^{+r d_i} (X_i^-)^{(r)} X_j^- (X_i^-)^{(-a_{ij}-r)} \qquad \text{if $i \neq j$}
+\end{align*}
+
+As \cite{CP} point out, the claim that this defines an action of $\mathcal{B}_\mathfrak{g}$ by algebra automorphisms can be checked explicitly. Happily,
+at least for a given $\mathfrak{g}$, the \pkg really can do this check. \todo{see, something}.
 
 \subsection{Quantum positive roots}
 The `quantum positive roots', which are elements of $\uqg$, are now defined as the action of certain words in the Coxeter braid group on certain of the
-generators $X_i^+$. Writing the longest word in the Weyl group uniquely as a minimal length product of simple reflections,
+generators $X_i^+$. It's possible to write the longest word in the Weyl group as a minimal length product of simple reflections in several way, and
+we'll use `the long word decomposition' to mean the lexicographically least one:
 
-$$ w_0 = s_{i_1} s_{i_2} \cdots s_{i_r}, $$
+$$ w_0 = s_{i_1} s_{i_2} \cdots s_{i_r}.$$
 
-we then define
+we then define, following \cite{CP}.
 
-We note that all the longest word decompositions can be summarised as follows:
+$$X_{\uqg, 1}^\pm = X_{i_1}^\pm, X_{\uqg, 2}^\pm = T_{i_1}(X_{i_2}^\pm), ldots, X_{\uqg, r}^\pm = T_{i_1}T_{i_2}\cdots T_{i_{r-1}}(X_{i_r}^\pm).$$
+
+Using a different decomposition of the longest word gives a different set of quantum positive roots, unlike in the classical case! \cite[\S8.1B]{CP}
+
+We note that the lexicographically least longest word decompositions can be summarised as follows:
 \begin{center}
 \begin{tabular}{c|l}
 $A_1$ & $1$ \\
@@ -345,6 +465,9 @@ $D_5$ & $1,2,1,3,2,1,4,3,2,1,5,3,2,1,4,3,2,5,3,4$ \\
 $D_n$ & $w_0(A_{n-1}),(n,(n-2,n-3,\ldots,1)),(n-1,(n-2,n-3,\ldots,2)),$ \\
       & $\qquad(n,(n-2,n-3,\ldots,3)),\ldots,(n\text{ or }n-1,(n-2)),(n-1\text{ or }n)$ \\
 $E_6$ & $1,2,3,1,4,2,3,1,4,3,5,4,2,3,1,4,3,5,4,2,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1$\\
+$E_7$ & $w_0(E_6), 7, 6, 5, 4, 2, 3, 1, 4, 3, 5, 4, 2, 6, 5, 4, 3, 1, 7, 6, 5, 4, 2, 3, 4, 5, 6, 7$ \\
+$E_8$ & $w_0(E_7), 8, 7, 6, 5, 4, 2, 3, 1, 4, 3, 5, 4, 2, 6, 5, 4, 3, 1, 7, 6, 5, 4, 2, 3, 4, 5, 6, 7, $ \\
+      & $\qquad    8, 7, 6, 5, 4, 2, 3, 1, 4, 3, 5, 4, 2, 6, 5, 4, 3, 1, 7, 6, 5, 4, 2, 3, 4, 5, 6, 7, 8$ \\
 $F_4$ & $1,2,1,3,2,1,3,2,3,4,3,2,1,3,2,3,4,3,2,1,3,2,3,4$ \\
 $G_2$ & $1,2,1,2,1,2$
 \end{tabular}
@@ -352,10 +475,43 @@ $G_2$ & $1,2,1,2,1,2$
 The expression for $D_n$, which is quite complicated, includes some extra parentheses to help you see the pattern. Whether $w_0(D_n)$ ends with an
 $n-1$ or an $n$ depends on whether $n$ is odd or even, respectively.
 
-Unfortunately I don't know longest word decompositions for $E_7$ and $E_8$.
-They are thus out of the running for computations of quantum knot invariants, because we're about to need to know the quantum positive roots.
-In principle, the \pkg{QuantumGroups} package \emph{can} calculate these longest word decompositions, but that's an `in principle' which is rather
-far from reality.
+The \package{QuantumGroups} package can tell you these decompositions, as follows
+\begin{mma}
+\begin{inm}LongestWordDecomposition[D4]\end{inm}
+\begin{outm}\{1, 2, 1, 3, 2, 1, 4, 2, 1, 3, 2, 4\}
+\end{outm}
+\end{mma}
+although it's worth admitting that it's not actually calculating these from scratch. In principle it can, and will produce a list of reflection matrices
+representing the Weyl group elements with respect to the fundamental basis, as for example
+\begin{mma}
+\begin{inm}WeylGroup[A2]\end{inm}
+\begin{outm}$\left\{\left(\begin{array}{rr} 1 & 0 \\ 0 & 1\end{array}\right),\left(\begin{array}{rr} -1 & 0 \\ 1 & 1\end{array}\right),\left(\begin{array}{rr} 1 & 1 \\ 0 & -1\end{array}\right),\right.$
+$\qquad\qquad\left.\left(\begin{array}{rr} -1 & -1 \\ 1 & 0\end{array}\right),\left(\begin{array}{rr} 0 & 1 \\ -1 & -1\end{array}\right),\left(\begin{array}{rr} 0 & -1 \\ -1 & 0\end{array}\right)\right\}$
+\end{outm}
+\end{mma}
+but in practice it's inefficient enough that, for example, finding the longest word decomposition for $E_8$ is completely impractical. I've included
+decompositions calculated by the ``chevie'' package in ``GAP''.
+
+By default, the \package{QuantumGroups} package leaves quantum roots unevaluated, and you need to explicitly apply the function \code{ExpandQuantumRoots}
+in order to reexpress them in terms of the algebra elements $X_i^\pm$. Thus, for example, we have
+\begin{mma}
+\begin{inm}ExpandQuantumRoots[A2] /@ $\{ X_{A2,1}^+, X_{A2,2}^+, X_{A2,3}^+ \}$
+\end{inm}
+\begin{outm}$\left\{\left(X_1\right){}^+,-\left(X_1\right){}^+\left(X_2\right){}^+ + q^{-1}\left(X_2\right){}^+\left(X_1\right){}^+,\left(X_2\right){}^+\right\}$
+\end{outm}
+\end{mma}
+agreeing with \cite[Example 8.1.5]{CP}, and the most complicated of the quantum positive roots for $D_4$,
+\begin{mma}
+\begin{inm}ExpandQuantumRoots[D4][$X_{D4,7}^+$]
+\end{inm}
+\begin{outm}$-q^{-1}X_1^+ X_2^+ X_4^+ X_2^+ X_3^+ + q^{-2}X_1^+ X_2^+ X_4^+ X_3^+ X_2^+ + q^{-2}X_2^+ X_1^+ X_4^+ X_2^+ X_3^+$
+$\qquad  -q^{-3}X_2^+ X_1^+ X_4^+ X_3^+ X_2^+ +X_2^+ X_3^+ X_1^+ X_2^+ X_4^+ - q^{-1}X_2^+ X_3^+ X_2^+ X_1^+ X_4^+$
+$\qquad  - q^{-1}X_2^+ X_3^+ X_4^+ X_1^+ X_2^+ + q^{-2}X_2^+ X_3^+ X_4^+ X_1^+ X_1^+ -q^{-1}X_3^+ X_2^+ X_1^+ X_2^+ X_4^+$
+$\qquad + q^{-2}X_3^+ X_2^+ X_2^+ X_1^+ X_4^+ + q^{-2}X_3^+ X_2^+ X_4^+ X_1^+ X_2^+ -q^{-3}X_3^+ X_2^+ X_4^+ X_2^+ X_1^+$
+$\qquad +q^{-2}X_4^+ X_1^+ X_2^+ X_2^+ X_3^+ - q^{-3}X_4^+ X_1^+ X_2^+ X_3^+ X_2^+ - q^{-3}X_4^+ X_2^+ X_1^+ X_2^+ X_3^+$
+$\qquad \qquad + q^{-4}X_4^+ X_2^+ X_1^+ X_3^+ X_2^+$
+\end{outm}
+\end{mma}
 
 \subsection{The universal $R$-matrix}
 

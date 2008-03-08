@@ -1,0 +1,521 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     15559,        511]
+NotebookOptionsPosition[     14154,        456]
+NotebookOutlinePosition[     14493,        471]
+CellTagsIndexPosition[     14450,        468]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", " ", "=", " ", 
+   "\"\<c:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\package\>\""}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input",
+ CellChangeTimes->{{3.410278192427582*^9, 3.410278208440181*^9}, {
+  3.410278257774493*^9, 3.410278289750338*^9}, {3.4129908397103295`*^9, 
+  3.412990889121379*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4139158569209805`*^9, 3.413917203230296*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Found precomputed data in \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\data\"\>"}],
+  SequenceForm[
+  "Found precomputed data in ", 
+   "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.4139158569209805`*^9, 3.4139172036419115`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["A", "6"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+  3.4139158998827567`*^9, 3.413915902035853*^9}, {3.4139159724571133`*^9, 
+  3.41391597267743*^9}, {3.413917181705823*^9, 3.413917182940669*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.4139160413061132`*^9, 3.4139172037623844`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["B", "6"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.4139158998827567`*^9, 3.413915902035853*^9}, 3.4139159764328303`*^9, 
+   3.4139171867154837`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", "2"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.4139159767432766`*^9, 3.413917203792503*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["C", "6"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.4139158998827567`*^9, 3.413915902035853*^9}, 3.4139159800580435`*^9, 
+   3.413917189385964*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "2"}]},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.413915980378504*^9, 3.4139172038125815`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["D", "6"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.4139158998827567`*^9, 3.413915902035853*^9}, {3.4139159838334723`*^9, 
+   3.413915985736208*^9}, 3.413917190369825*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "0", "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.413915986086712*^9, 3.4139172038427*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["E", "6"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.4139158998827567`*^9, 3.413915902035853*^9}, 3.413917193562354*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "0", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", "2", "0", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {
+      RowBox[{"-", "1"}], "0", "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.413915914754141*^9, 3.4139172038627787`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["E", "7"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.413915904118848*^9, 3.413915905621008*^9}, 3.4139171945763335`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "0", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {"0", "2", "0", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {
+      RowBox[{"-", "1"}], "0", "2", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.4139159158056526`*^9, 3.4139172038828573`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["E", "8"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.4139159074836864`*^9, 3.413915908645357*^9}, 3.413917197347208*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "0", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0", "0"},
+     {"0", "2", "0", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {
+      RowBox[{"-", "1"}], "0", "2", 
+      RowBox[{"-", "1"}], "0", "0", "0", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0", "0"},
+     {"0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", "0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "0", "0", "0", 
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.413915916867179*^9, 3.4139172039129753`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["F", "4"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, {
+   3.413915911299173*^9, 3.4139159129114914`*^9}, 3.413917198782842*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {
+      RowBox[{"-", "1"}], "2", 
+      RowBox[{"-", "1"}], "0"},
+     {"0", 
+      RowBox[{"-", "2"}], "2", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", 
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.4139159133721533`*^9, 3.4139172039330544`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CartanMatrix", "[", 
+   SubscriptBox["G", "2"], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.4139158459752417`*^9, 3.413915868507642*^9}, 
+   3.413917201864938*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "3"}]},
+     {
+      RowBox[{"-", "1"}], "2"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.413915863760816*^9, 3.413915869819528*^9}, 
+   3.413917203953133*^9}]
+}, Open  ]]
+},
+WindowSize->{898, 555},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 512, 13, 72, "Input"],
+Cell[CellGroupData[{
+Cell[1127, 40, 420, 9, 43, "Print"],
+Cell[1550, 51, 381, 9, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1980, 66, 336, 6, 31, "Input"],
+Cell[2319, 74, 1059, 32, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3415, 111, 293, 6, 31, "Input"],
+Cell[3711, 119, 1057, 32, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4805, 156, 291, 6, 31, "Input"],
+Cell[5099, 164, 1057, 32, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6193, 201, 315, 6, 31, "Input"],
+Cell[6511, 209, 1053, 32, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7601, 246, 263, 5, 31, "Input"],
+Cell[7867, 253, 1057, 32, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8961, 290, 263, 5, 31, "Input"],
+Cell[9227, 297, 1175, 35, 132, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10439, 337, 263, 5, 31, "Input"],
+Cell[10705, 344, 1299, 38, 146, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12041, 387, 263, 5, 31, "Input"],
+Cell[12307, 394, 857, 26, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13201, 425, 215, 5, 31, "Input"],
+Cell[13419, 432, 719, 21, 57, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

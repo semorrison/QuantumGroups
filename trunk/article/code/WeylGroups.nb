@@ -1,0 +1,356 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     11104,        346]
+NotebookOptionsPosition[      9931,        300]
+NotebookOutlinePosition[     10273,        315]
+CellTagsIndexPosition[     10230,        312]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", " ", "=", " ", 
+   "\"\<c:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\package\>\""}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input",
+ CellChangeTimes->{{3.410278192427582*^9, 3.410278208440181*^9}, {
+  3.410278257774493*^9, 3.410278289750338*^9}, {3.4129908397103295`*^9, 
+  3.412990889121379*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.413917250455634*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TagSetDelayed", "::", "\<\"tagnf\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Tag \\!\\(CircleTimes\\) not found in \\!\\(V_\\^n_\\). \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TagSetDelayed/tagnf\\\", ButtonNote -> \
+\\\"TagSetDelayed::tagnf\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.413917250475713*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Found precomputed data in \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"C:\\\\scott\\\\projects\\\\QuantumGroups\\\\trunk\\\\data\"\>"}],
+  SequenceForm[
+  "Found precomputed data in ", 
+   "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.413917250505831*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MatrixForm", "/@", 
+   RowBox[{"WeylGroup", "[", 
+    SubscriptBox["A", "2"], "]"}]}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4139231820242968`*^9, 3.4139232047735767`*^9}}],
+
+Cell["\<\
+\\left\\{\\left(
+\\begin{array}{ll}
+ 1 & 0 \\\\
+ 0 & 1
+\\end{array}
+\\right),\\left(
+\\begin{array}{ll}
+ -1 & 0 \\\\
+ 1 & 1
+\\end{array}
+\\right),\\left(
+\\begin{array}{ll}
+ 1 & 1 \\\\
+ 0 & -1
+\\end{array}
+\\right),\\left(
+\\begin{array}{ll}
+ -1 & -1 \\\\
+ 1 & 0
+\\end{array}
+\\right),\\left(
+\\begin{array}{ll}
+ 0 & 1 \\\\
+ -1 & -1
+\\end{array}
+\\right),\\left(
+\\begin{array}{ll}
+ 0 & -1 \\\\
+ -1 & 0
+\\end{array}
+\\right)\\right\\}\
+\>", "Output",
+ CellChangeTimes->{{3.413923187756794*^9, 3.4139232056670837`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LongestWordDecomposition", "[", 
+  SubscriptBox["D", "4"], "]"}]], "Input",
+ CellChangeTimes->{{3.4139172514194164`*^9, 3.4139172669302893`*^9}, {
+  3.4139231525787363`*^9, 3.413923153120864*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "1", ",", "3", ",", "2", ",", "1", ",", "4", ",", "2", 
+   ",", "1", ",", "3", ",", "2", ",", "4"}], "}"}]], "Output",
+ CellChangeTimes->{3.413923153773425*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LongestWordDecomposition", "[", 
+  SubscriptBox["E", "6"], "]"}]], "Input",
+ CellChangeTimes->{{3.4139172514194164`*^9, 3.4139172669302893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "1", ",", "4", ",", "2", ",", "3", ",", "1", 
+   ",", "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "3", ",", "1", ",", 
+   "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "6", ",", "5", ",", "4", 
+   ",", "2", ",", "3", ",", "1", ",", "4", ",", "3", ",", "5", ",", "4", ",", 
+   "2", ",", "6", ",", "5", ",", "4", ",", "3", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4139172672615895`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LongestWordDecomposition", "[", 
+  SubscriptBox["E", "7"], "]"}]], "Input",
+ CellChangeTimes->{{3.4139172514194164`*^9, 3.413917257603687*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "1", ",", "4", ",", "2", ",", "3", ",", "1", 
+   ",", "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "3", ",", "1", ",", 
+   "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "6", ",", "5", ",", "4", 
+   ",", "2", ",", "3", ",", "1", ",", "4", ",", "3", ",", "5", ",", "4", ",", 
+   "2", ",", "6", ",", "5", ",", "4", ",", "3", ",", "1", ",", "7", ",", "6", 
+   ",", "5", ",", "4", ",", "2", ",", "3", ",", "1", ",", "4", ",", "3", ",", 
+   "5", ",", "4", ",", "2", ",", "6", ",", "5", ",", "4", ",", "3", ",", "1", 
+   ",", "7", ",", "6", ",", "5", ",", "4", ",", "2", ",", "3", ",", "4", ",", 
+   "5", ",", "6", ",", "7"}], "}"}]], "Output",
+ CellChangeTimes->{3.4139172579450264`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LongestWordDecomposition", "[", 
+  SubscriptBox["E", "8"], "]"}]], "Input",
+ CellChangeTimes->{{3.4139172514194164`*^9, 3.4139172633161054`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "1", ",", "4", ",", "2", ",", "3", ",", "1", 
+   ",", "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "3", ",", "1", ",", 
+   "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "6", ",", "5", ",", "4", 
+   ",", "2", ",", "3", ",", "1", ",", "4", ",", "3", ",", "5", ",", "4", ",", 
+   "2", ",", "6", ",", "5", ",", "4", ",", "3", ",", "1", ",", "7", ",", "6", 
+   ",", "5", ",", "4", ",", "2", ",", "3", ",", "1", ",", "4", ",", "3", ",", 
+   "5", ",", "4", ",", "2", ",", "6", ",", "5", ",", "4", ",", "3", ",", "1", 
+   ",", "7", ",", "6", ",", "5", ",", "4", ",", "2", ",", "3", ",", "4", ",", 
+   "5", ",", "6", ",", "7", ",", "8", ",", "7", ",", "6", ",", "5", ",", "4", 
+   ",", "2", ",", "3", ",", "1", ",", "4", ",", "3", ",", "5", ",", "4", ",", 
+   "2", ",", "6", ",", "5", ",", "4", ",", "3", ",", "1", ",", "7", ",", "6", 
+   ",", "5", ",", "4", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", 
+   "7", ",", "8", ",", "7", ",", "6", ",", "5", ",", "4", ",", "2", ",", "3", 
+   ",", "1", ",", "4", ",", "3", ",", "5", ",", "4", ",", "2", ",", "6", ",", 
+   "5", ",", "4", ",", "3", ",", "1", ",", "7", ",", "6", ",", "5", ",", "4", 
+   ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.4139172638281145`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BraidAction", "[", "\[CapitalGamma]", "]"}], "[", 
+  RowBox[{
+   RowBox[{"{", 
+    SubscriptBox["T", "i"], "}"}], ",", 
+   SuperscriptBox[
+    SubscriptBox["X", "i"], "+"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4139184765073195`*^9, 3.4139185027402716`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     SubscriptBox["X", "i"], ")"}], "-"], "**", 
+   SubscriptBox["K", "i"]}]}]], "Output",
+ CellChangeTimes->{3.4139185033928328`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BraidAction", "[", "\[CapitalGamma]", "]"}], "[", 
+  RowBox[{
+   RowBox[{"{", 
+    SubscriptBox["T", "i"], "}"}], ",", 
+   SuperscriptBox[
+    SubscriptBox["X", "j"], "+"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4139185087538724`*^9, 3.413918508824148*^9}}],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"i", "\[Equal]", "j"}], ",", 
+   RowBox[{"-", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       SubscriptBox["X", "i"], ")"}], "-"], "**", 
+     SubscriptBox["K", "i"]}]}], ",", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a$", "=", 
+        RowBox[{
+         RowBox[{"CartanMatrix", "[", "\[CapitalGamma]", "]"}], 
+         "\[LeftDoubleBracket]", 
+         RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], ",", 
+       RowBox[{"QuantumGroups`BraidAction`Private`d$", "=", 
+        RowBox[{
+         RowBox[{"CartanFactors", "[", "\[CapitalGamma]", "]"}], 
+         "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}]}], "}"}], 
+     ",", 
+     RowBox[{
+      RowBox[{
+      "QuantumGroups`BraidAction`Private`ExpandReducedPowers", "[", 
+       "\[CapitalGamma]", "]"}], "[", 
+      RowBox[{
+       UnderoverscriptBox["\[Sum]", 
+        RowBox[{"QuantumGroups`BraidAction`Private`r", "=", "0"}], 
+        RowBox[{"-", "a$"}]], 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"QuantumGroups`BraidAction`Private`r", "-", "a$"}]], " ", 
+        SuperscriptBox["QuantumGroups`BraidAction`Private`q", 
+         RowBox[{
+          RowBox[{"-", "QuantumGroups`BraidAction`Private`d$"}], " ", 
+          "QuantumGroups`BraidAction`Private`r"}]], " ", 
+        RowBox[{
+         RowBox[{"QuantumGroups`BraidAction`Private`ReducedPower", "[", 
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             SubscriptBox["X", "i"], ")"}], "+"], ",", 
+           RowBox[{
+            RowBox[{"-", "a$"}], "-", 
+            "QuantumGroups`BraidAction`Private`r"}]}], "]"}], "**", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           SubscriptBox["X", "j"], ")"}], "+"], "**", 
+         RowBox[{"QuantumGroups`BraidAction`Private`ReducedPower", "[", 
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             SubscriptBox["X", "i"], ")"}], "+"], ",", 
+           "QuantumGroups`BraidAction`Private`r"}], "]"}]}]}]}], "]"}]}], 
+    "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.4139185106613584`*^9}]
+}, Open  ]]
+},
+WindowSize->{1096, 555},
+WindowMargins->{{24, Automatic}, {Automatic, 30}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 512, 13, 72, "Input"],
+Cell[1105, 38, 396, 9, 43, "Print"],
+Cell[1504, 49, 437, 9, 21, "Message"],
+Cell[1944, 60, 355, 9, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2336, 74, 220, 5, 31, "Input"],
+Cell[2559, 81, 528, 33, 524, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3124, 119, 220, 4, 31, "Input"],
+Cell[3347, 125, 222, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3606, 135, 169, 3, 31, "Input"],
+Cell[3778, 140, 476, 8, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4291, 153, 167, 3, 31, "Input"],
+Cell[4461, 158, 762, 12, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5260, 175, 169, 3, 31, "Input"],
+Cell[5432, 180, 1363, 20, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6832, 205, 296, 8, 31, "Input"],
+Cell[7131, 215, 211, 7, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7379, 227, 294, 8, 31, "Input"],
+Cell[7676, 237, 2239, 60, 149, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
