@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    134883,       2961]
-NotebookOptionsPosition[     17934,        516]
-NotebookOutlinePosition[    133335,       2907]
-CellTagsIndexPosition[    133292,       2904]
+NotebookDataLength[    140115,       3084]
+NotebookOptionsPosition[     23123,        638]
+NotebookOutlinePosition[    138524,       3029]
+CellTagsIndexPosition[    138481,       3026]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -250,7 +250,8 @@ Cell[BoxData[
         RowBox[{"0", "\[Rule]", "\[ScriptZero]"}], "}"}]}], ",", "True"}], 
      "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
  InitializationCell->True,
- CellChangeTimes->{{3.409852421212267*^9, 3.4098524743286448`*^9}}],
+ CellChangeTimes->{{3.409852421212267*^9, 3.4098524743286448`*^9}, {
+  3.413924789693655*^9, 3.4139247906674767`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -275,43 +276,45 @@ Cell[BoxData[
           RowBox[{"Table", "[", 
            RowBox[{
             RowBox[{
-             RowBox[{
-              UnderoverscriptBox["\[Sum]", 
-               RowBox[{"r", "=", "0"}], 
-               RowBox[{"1", "-", 
-                RowBox[{"cm", "\[LeftDoubleBracket]", 
-                 RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]], 
+             RowBox[{"Sum", "[", 
               RowBox[{
-               SuperscriptBox[
-                RowBox[{"(", 
-                 RowBox[{"-", "1"}], ")"}], "r"], 
                RowBox[{
-                RowBox[{"qBinomial", "[", 
-                 RowBox[{
-                  RowBox[{"1", "-", 
-                   RowBox[{"cm", "\[LeftDoubleBracket]", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{"-", "1"}], ")"}], "r"], 
+                RowBox[{
+                 RowBox[{"qBinomial", "[", 
+                  RowBox[{
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
                     RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], ",",
-                   "r"}], "]"}], "[", 
-                SuperscriptBox["q", 
-                 RowBox[{
-                 "cf", "\[LeftDoubleBracket]", "i", 
-                  "\[RightDoubleBracket]"}]], "]"}], 
-               RowBox[{
-                RowBox[{"NonCommutativePower", "[", 
-                 RowBox[{
-                  RowBox[{"SuperPlus", "[", 
-                   SubscriptBox["X", "i"], "]"}], ",", 
-                  RowBox[{"1", "-", 
-                   RowBox[{"cm", "\[LeftDoubleBracket]", 
+                    "r"}], "]"}], "[", 
+                 SuperscriptBox["q", 
+                  RowBox[{
+                  "cf", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}]], "]"}], 
+                RowBox[{
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperPlus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", 
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
                     RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], "-", 
-                   "r"}]}], "]"}], "**", 
-                RowBox[{"SuperPlus", "[", 
-                 SubscriptBox["X", "j"], "]"}], "**", 
-                RowBox[{"NonCommutativePower", "[", 
-                 RowBox[{
-                  RowBox[{"SuperPlus", "[", 
-                   SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}]}], 
-             "\[Equal]", "\[ScriptZero]"}], ",", 
+                    "r"}]}], "]"}], "**", 
+                 RowBox[{"SuperPlus", "[", 
+                  SubscriptBox["X", "j"], "]"}], "**", 
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperPlus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}], ",",
+                
+               RowBox[{"{", 
+                RowBox[{"r", ",", "0", ",", 
+                 RowBox[{"1", "-", 
+                  RowBox[{"cm", "\[LeftDoubleBracket]", 
+                   RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]}], 
+                "}"}]}], "]"}], "\[Equal]", "\[ScriptZero]"}], ",", 
             RowBox[{"{", 
              RowBox[{"i", ",", "1", ",", "n"}], "}"}], ",", 
             RowBox[{"{", 
@@ -320,43 +323,45 @@ Cell[BoxData[
           RowBox[{"Table", "[", 
            RowBox[{
             RowBox[{
-             RowBox[{
-              UnderoverscriptBox["\[Sum]", 
-               RowBox[{"r", "=", "0"}], 
-               RowBox[{"1", "-", 
-                RowBox[{"cm", "\[LeftDoubleBracket]", 
-                 RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]], 
+             RowBox[{"Sum", "[", 
               RowBox[{
-               SuperscriptBox[
-                RowBox[{"(", 
-                 RowBox[{"-", "1"}], ")"}], "r"], 
                RowBox[{
-                RowBox[{"qBinomial", "[", 
-                 RowBox[{
-                  RowBox[{"1", "-", 
-                   RowBox[{"cm", "\[LeftDoubleBracket]", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{"-", "1"}], ")"}], "r"], 
+                RowBox[{
+                 RowBox[{"qBinomial", "[", 
+                  RowBox[{
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
                     RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], ",",
-                   "r"}], "]"}], "[", 
-                SuperscriptBox["q", 
-                 RowBox[{
-                 "cf", "\[LeftDoubleBracket]", "i", 
-                  "\[RightDoubleBracket]"}]], "]"}], 
-               RowBox[{
-                RowBox[{"NonCommutativePower", "[", 
-                 RowBox[{
-                  RowBox[{"SuperMinus", "[", 
-                   SubscriptBox["X", "i"], "]"}], ",", 
-                  RowBox[{"1", "-", 
-                   RowBox[{"cm", "\[LeftDoubleBracket]", 
+                    "r"}], "]"}], "[", 
+                 SuperscriptBox["q", 
+                  RowBox[{
+                  "cf", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}]], "]"}], 
+                RowBox[{
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperMinus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", 
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
                     RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], "-", 
-                   "r"}]}], "]"}], "**", 
-                RowBox[{"SuperMinus", "[", 
-                 SubscriptBox["X", "j"], "]"}], "**", 
-                RowBox[{"NonCommutativePower", "[", 
-                 RowBox[{
-                  RowBox[{"SuperMinus", "[", 
-                   SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}]}], 
-             "\[Equal]", "\[ScriptZero]"}], ",", 
+                    "r"}]}], "]"}], "**", 
+                 RowBox[{"SuperMinus", "[", 
+                  SubscriptBox["X", "j"], "]"}], "**", 
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperMinus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}], ",",
+                
+               RowBox[{"{", 
+                RowBox[{"r", ",", "0", ",", 
+                 RowBox[{"1", "-", 
+                  RowBox[{"cm", "\[LeftDoubleBracket]", 
+                   RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]}], 
+                "}"}]}], "]"}], "\[Equal]", "\[ScriptZero]"}], ",", 
             RowBox[{"{", 
              RowBox[{"i", ",", "1", ",", "n"}], "}"}], ",", 
             RowBox[{"{", 
@@ -365,8 +370,125 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"0", "\[Rule]", "\[ScriptZero]"}], "}"}]}], ",", "True"}], 
      "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.4139248423804264`*^9, 3.413924924673388*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"SerreRelations", "[", "\[CapitalGamma]_", "]"}], ":=", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"cm", "=", 
+        RowBox[{"CartanMatrix", "[", "\[CapitalGamma]", "]"}]}], ",", 
+       RowBox[{"cf", "=", 
+        RowBox[{"CartanFactors", "[", "\[CapitalGamma]", "]"}]}], ",", 
+       RowBox[{"n", "=", 
+        RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"DeleteCases", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Flatten", "[", 
+         RowBox[{"Join", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               UnderoverscriptBox["\[Sum]", 
+                RowBox[{"r", "=", "0"}], 
+                RowBox[{"1", "-", 
+                 RowBox[{"cm", "\[LeftDoubleBracket]", 
+                  RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]], 
+               RowBox[{
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{"-", "1"}], ")"}], "r"], 
+                RowBox[{
+                 RowBox[{"qBinomial", "[", 
+                  RowBox[{
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
+                    RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], ",",
+                    "r"}], "]"}], "[", 
+                 SuperscriptBox["q", 
+                  RowBox[{
+                  "cf", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}]], "]"}], 
+                RowBox[{
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperPlus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", 
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
+                    RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], "-", 
+                    "r"}]}], "]"}], "**", 
+                 RowBox[{"SuperPlus", "[", 
+                  SubscriptBox["X", "j"], "]"}], "**", 
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperPlus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}]}], 
+              "\[Equal]", "\[ScriptZero]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", "n"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               UnderoverscriptBox["\[Sum]", 
+                RowBox[{"r", "=", "0"}], 
+                RowBox[{"1", "-", 
+                 RowBox[{"cm", "\[LeftDoubleBracket]", 
+                  RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]], 
+               RowBox[{
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{"-", "1"}], ")"}], "r"], 
+                RowBox[{
+                 RowBox[{"qBinomial", "[", 
+                  RowBox[{
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
+                    RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], ",",
+                    "r"}], "]"}], "[", 
+                 SuperscriptBox["q", 
+                  RowBox[{
+                  "cf", "\[LeftDoubleBracket]", "i", 
+                   "\[RightDoubleBracket]"}]], "]"}], 
+                RowBox[{
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperMinus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", 
+                   RowBox[{"1", "-", 
+                    RowBox[{"cm", "\[LeftDoubleBracket]", 
+                    RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], "-", 
+                    "r"}]}], "]"}], "**", 
+                 RowBox[{"SuperMinus", "[", 
+                  SubscriptBox["X", "j"], "]"}], "**", 
+                 RowBox[{"NonCommutativePower", "[", 
+                  RowBox[{
+                   RowBox[{"SuperMinus", "[", 
+                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}]}], 
+              "\[Equal]", "\[ScriptZero]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", "n"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+          "\[IndentingNewLine]", "]"}], "]"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{"0", "\[Rule]", "\[ScriptZero]"}], "}"}]}], ",", "True"}], 
+      "]"}]}], "\[IndentingNewLine]", "]"}]}], "*)"}]], "Input",
  InitializationCell->True,
- CellChangeTimes->{{3.409852482951043*^9, 3.4098525329829855`*^9}}],
+ CellChangeTimes->{{3.409852482951043*^9, 3.4098525329829855`*^9}, {
+  3.4139249290706453`*^9, 3.4139249314198647`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -2939,26 +3061,27 @@ Cell[2249, 93, 119, 3, 28, "Input",
  InitializationCell->True],
 Cell[2371, 98, 83, 2, 28, "Input",
  InitializationCell->True],
-Cell[2457, 102, 5842, 150, 286, "Input",
+Cell[2457, 102, 5893, 151, 286, "Input",
  InitializationCell->True],
-Cell[8302, 254, 4783, 114, 291, "Input",
+Cell[8353, 255, 4950, 117, 206, "Input"],
+Cell[13306, 374, 4968, 116, 246, "Input",
  InitializationCell->True],
-Cell[13088, 370, 280, 7, 28, "Input",
+Cell[18277, 492, 280, 7, 28, "Input",
  InitializationCell->True],
-Cell[13371, 379, 1228, 32, 69, "Input",
+Cell[18560, 501, 1228, 32, 69, "Input",
  InitializationCell->True],
-Cell[14602, 413, 1230, 32, 69, "Input",
+Cell[19791, 535, 1230, 32, 69, "Input",
  InitializationCell->True],
-Cell[15835, 447, 1273, 33, 89, "Input",
+Cell[21024, 569, 1273, 33, 89, "Input",
  InitializationCell->True],
-Cell[17111, 482, 505, 14, 28, "Input",
+Cell[22300, 604, 505, 14, 28, "Input",
  InitializationCell->True],
-Cell[17619, 498, 96, 3, 28, "Input",
+Cell[22808, 620, 96, 3, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17752, 506, 36, 0, 36, "Subsection"],
-Cell[17791, 508, 103, 3, 30, "Input",
+Cell[22941, 628, 36, 0, 36, "Subsection"],
+Cell[22980, 630, 103, 3, 30, "Input",
  InitializationCell->True]
 }, Closed]]
 }, Open  ]]

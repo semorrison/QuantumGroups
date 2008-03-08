@@ -49,6 +49,14 @@ Table[SuperPlus[Subscript[X, i]]**SuperMinus[Subscript[X, j]]-SuperMinus[Subscri
 
 SerreRelations[\[CapitalGamma]_]:=With[{cm=CartanMatrix[\[CapitalGamma]],cf=CartanFactors[\[CapitalGamma]],n=Rank[\[CapitalGamma]]},
 DeleteCases[Flatten[Join[
+Table[Sum[(-1)^r qBinomial[1-cm[[i,j]],r][q^cf[[i]]]NonCommutativePower[SuperPlus[Subscript[X, i]],1-cm[[i,j]]-r]**SuperPlus[Subscript[X, j]]**NonCommutativePower[SuperPlus[Subscript[X, i]],r],{r,0,1-cm[[i,j]]}]==\[ScriptZero],{i,1,n},{j,1,n}],
+Table[Sum[(-1)^r qBinomial[1-cm[[i,j]],r][q^cf[[i]]]NonCommutativePower[SuperMinus[Subscript[X, i]],1-cm[[i,j]]-r]**SuperMinus[Subscript[X, j]]**NonCommutativePower[SuperMinus[Subscript[X, i]],r],{r,0,1-cm[[i,j]]}]==\[ScriptZero],{i,1,n},{j,1,n}]
+]]/.{0->\[ScriptZero]},True]
+]
+
+
+(*SerreRelations[\[CapitalGamma]_]:=With[{cm=CartanMatrix[\[CapitalGamma]],cf=CartanFactors[\[CapitalGamma]],n=Rank[\[CapitalGamma]]},
+DeleteCases[Flatten[Join[
 Table[\!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(r = 0\), \(1 - cm[[i, j]]\)]\(
 SuperscriptBox[\((\(-1\))\), \(r\)] \(qBinomial[1 - cm[[i, j]], r]\)[
@@ -64,7 +72,7 @@ SuperscriptBox[\((\(-1\))\), \(r\)] \(qBinomial[1 - cm[[i, j]], r]\)[
 \*SubscriptBox[\(X\), \(j\)]] ** NonCommutativePower[SuperMinus[
 \*SubscriptBox[\(X\), \(i\)]], r]\)\)==\[ScriptZero],{i,1,n},{j,1,n}]
 ]]/.{0->\[ScriptZero]},True]
-]
+]*)
 
 
 Relations[\[CapitalGamma]_]:=BasicRelations[\[CapitalGamma]]~Join~SerreRelations[\[CapitalGamma]]
