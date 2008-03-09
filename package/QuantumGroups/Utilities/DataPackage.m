@@ -139,12 +139,13 @@ tensorPowerQ[V_][W_]:=MatchQ[W,V]||MatchQ[W,U_\[CircleTimes]V/;tensorPowerQ[V][U
 tensorPowerPattern=U_\[CircleTimes](V:(Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]_]))/;tensorPowerQ[V][U];
 largeValues=Cases[MatchingValues[DecompositionMap,DecompositionMap[Subscript[\[CapitalGamma], n],_,_]],((p_:>v_)/;(ByteCount[v]>limit)):>p];
 largeTensorPowers=Cases[largeValues/.HoldPattern->Hold,Hold[DecompositionMap[Subscript[\[CapitalGamma], n],V_,_]]/;MatchQ[V,tensorPowerPattern]]/.Hold->HoldPattern;
+(* oops, watch out in the next line, V means two different things! *)
 largeTensorPowerData=largeTensorPowers/.HoldPattern->Hold/.Hold[DecompositionMap[_,V_,_]]:>V/.U:(_\[CircleTimes]V:Irrep[_][\[Lambda]_]):>{\[Lambda],Count[U,Irrep[_][\[Lambda]],\[Infinity]],U};
 otherLargeValues=Complement[largeValues,largeTensorPowers];
 If[Length[otherLargeValues]>0,
-PackageData[{DecompositionMap,#}&/@otherLargeValues,{ToString[\[CapitalGamma]]<>ToString[n],"DecompositionMaps","Large"},"Needs"->{"QuantumGroups`","QuantumGroups`MatrixPresentations`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Algebra`"},
+PackageData[{DecompositionMap,#}&/@otherLargeValues,{ToString[\[CapitalGamma]]<>ToString[n],"DecompositionMaps","Large"},"Needs"->{"QuantumGroups`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Representations`","QuantumGroups`RepresentationTensors`","QuantumGroups`MatrixPresentations`"},
 "ExtraPrivateCode"->"q=Global`q;","UseGzip"->False]];
-If[Length[largeTensorPowers]>0,Function[{d},PackageData[DecompositionMap,HoldPattern[DecompositionMap[##]]&@@{Subscript[\[CapitalGamma], n],d[[3]],_},{ToString[\[CapitalGamma]]<>ToString[n],"DecompositionMaps","w"<>weightToString[d[[1]]],"k"<>ToString[d[[2]]]},"Needs"->{"QuantumGroups`","QuantumGroups`MatrixPresentations`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Algebra`"},
+If[Length[largeTensorPowers]>0,Function[{d},PackageData[DecompositionMap,HoldPattern[DecompositionMap[##]]&@@{Subscript[\[CapitalGamma], n],d[[3]],_},{ToString[\[CapitalGamma]]<>ToString[n],"DecompositionMaps","w"<>weightToString[d[[1]]],"k"<>ToString[d[[2]]]},"Needs"->{"QuantumGroups`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Representations`","QuantumGroups`RepresentationTensors`","QuantumGroups`MatrixPresentations`"},
 "ExtraPrivateCode"->"q=Global`q;","UseGzip"->False]]/@largeTensorPowerData];
 ]
 
