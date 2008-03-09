@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     30986,       1072]
-NotebookOptionsPosition[     30205,       1041]
-NotebookOutlinePosition[     30550,       1056]
-CellTagsIndexPosition[     30507,       1053]
+NotebookDataLength[     30571,       1065]
+NotebookOptionsPosition[     29797,       1033]
+NotebookOutlinePosition[     30142,       1048]
+CellTagsIndexPosition[     30099,       1045]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -36,6 +36,8 @@ Cell[BoxData[{
   3.410278257774493*^9, 3.410278289750338*^9}, {3.4129908397103295`*^9, 
   3.412990889121379*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
@@ -48,17 +50,6 @@ http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
  CellChangeTimes->{3.413923542529111*^9}],
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"TagSetDelayed", "::", "\<\"tagnf\"\>"}], 
-  RowBox[{
-  ":", " "}], "\<\"Tag \\!\\(CircleTimes\\) not found in \\!\\(V_\\^n_\\). \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/TagSetDelayed/tagnf\\\", ButtonNote -> \
-\\\"TagSetDelayed::tagnf\\\"]\\)\"\>"}]], "Message", "MSG",
- CellChangeTimes->{3.4139235425391507`*^9}],
-
-Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Found precomputed data in \"\>", 
    "\[InvisibleSpace]", \
@@ -68,6 +59,7 @@ Cell[BoxData[
    "C:\\scott\\projects\\QuantumGroups\\trunk\\data"],
   Editable->False]], "Print",
  CellChangeTimes->{3.4139235425793085`*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1057,26 +1049,26 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[590, 23, 512, 13, 72, "Input"],
-Cell[1105, 38, 396, 9, 43, "Print"],
-Cell[1504, 49, 439, 9, 21, "Message"],
-Cell[1946, 60, 357, 9, 23, "Print"]
+Cell[CellGroupData[{
+Cell[1127, 40, 396, 9, 43, "Print"],
+Cell[1526, 51, 357, 9, 23, "Print"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2340, 74, 485, 15, 31, "Input"],
-Cell[2828, 91, 265, 7, 21, "Message"],
-Cell[3096, 100, 786, 27, 48, "Output"]
+Cell[1932, 66, 485, 15, 31, "Input"],
+Cell[2420, 83, 265, 7, 21, "Message"],
+Cell[2688, 92, 786, 27, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3919, 132, 240, 6, 31, "Input"],
-Cell[4162, 140, 8035, 285, 166, "Output"]
+Cell[3511, 124, 240, 6, 31, "Input"],
+Cell[3754, 132, 8035, 285, 166, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12234, 430, 213, 4, 31, "Input"],
-Cell[12450, 436, 17739, 602, 399, "Output"]
+Cell[11826, 422, 213, 4, 31, "Input"],
+Cell[12042, 428, 17739, 602, 399, "Output"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
