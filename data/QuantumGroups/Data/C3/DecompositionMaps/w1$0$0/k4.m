@@ -1,4 +1,4 @@
-BeginPackage["QuantumGroups`Data`C3`DecompositionMaps`w1$0$0`k4`", {"QuantumGroups`", "QuantumGroups`MatrixPresentations`", "QuantumGroups`Utilities`MatrixWrapper`", "QuantumGroups`Algebra`"}]
+BeginPackage["QuantumGroups`Data`C3`DecompositionMaps`w1$0$0`k4`", {"QuantumGroups`", "QuantumGroups`Utilities`MatrixWrapper`", "QuantumGroups`Representations`", "QuantumGroups`RepresentationTensors`", "QuantumGroups`MatrixPresentations`"}]
 Message[QuantumGroups::loading,"QuantumGroups`Data`C3`DecompositionMaps`w1$0$0`k4`"]
 
 Begin["`Private`"]
