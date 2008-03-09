@@ -513,7 +513,15 @@ $\qquad \qquad + q^{-4}X_4^+ X_2^+ X_1^+ X_3^+ X_2^+$
 \end{outm}
 \end{mma}
 
+These calculations become difficult and slow, and so the \pkg includes precomputed quantum roots for everything up to rank $4$, except $F_4$. (The current version runs
+for a several weeks without finishing the computation for the expansion of $X_{F_4, 13}$; suggestions for calculating these more efficiently would be
+appreciated.)
+
 \subsection{The universal $R$-matrix}
+Having constructed the quantum roots, we can now make use of a formula for the universal $R$-matrix from \cite{CP}, which works for every $\mathfrak{g}$.
+Unfortunately the formula as given, in \cite[Theorem 8.3.9]{CP}, is incorrect; in particular the order of a product has been reversed.
+The \pkg implements the correct formula, and includes a few consistency checks which dis ...
+
 
 Note that there's a mistake in Chari and Pressley here ...
 
