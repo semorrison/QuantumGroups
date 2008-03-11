@@ -130,7 +130,7 @@ PositiveWeights[\[CapitalGamma]_,V_]:=PositiveWeights[\[CapitalGamma],V]=Select[
 qDimension[\[CapitalGamma]_][V_]:=qDimension[\[CapitalGamma]][V]=With[{\[Rho]=Plus@@PositiveRoots[\[CapitalGamma]]},Plus@@(WeightMultiplicities[\[CapitalGamma],V]/.{\[Lambda]_,n_Integer}:>n q^KillingForm[\[CapitalGamma]][\[Rho],\[Lambda]])]
 
 
-fastQDimension[Subscript[(\[CapitalGamma]:(A|D|E)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=
+fastQDimension[Subscript[(\[CapitalGamma]:(A|D|E)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
 Module[{
 exp=KillingForm[Subscript[\[CapitalGamma], n]][Plus@@PositiveRoots[Subscript[\[CapitalGamma], n]],\[Lambda]],
 sum=0,
@@ -140,14 +140,13 @@ While[exp>=0,
 sum+=q^exp Length[latestLowerings];
 exp-=2;
 latestLowerings=LittelmannPathOneStepLowerings[latestLowerings];
-Print[latestLowerings];
 ];
 Expand[sum+(sum/.{q->q^-1})-(sum/.{q->0})]
 ]
 
 
 (* this could be optimised more, by staying in the positive half-space *)
-fastQDimension[Subscript[(\[CapitalGamma]:(B|C|F|G)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=
+fastQDimension[Subscript[(\[CapitalGamma]:(B|C|F|G)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
 Module[{
 sum=0,
 latestLowerings={LittelmannPath[Subscript[\[CapitalGamma], n]][{\[Lambda]}]}
