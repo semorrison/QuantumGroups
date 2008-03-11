@@ -130,18 +130,33 @@ PositiveWeights[\[CapitalGamma]_,V_]:=PositiveWeights[\[CapitalGamma],V]=Select[
 qDimension[\[CapitalGamma]_][V_]:=qDimension[\[CapitalGamma]][V]=With[{\[Rho]=Plus@@PositiveRoots[\[CapitalGamma]]},Plus@@(WeightMultiplicities[\[CapitalGamma],V]/.{\[Lambda]_,n_Integer}:>n q^KillingForm[\[CapitalGamma]][\[Rho],\[Lambda]])]
 
 
-fastQDimension[\[CapitalGamma]_][Irrep[\[CapitalGamma]_][\[Lambda]_]]:=fastQDimension[\[CapitalGamma]][Irrep[\[CapitalGamma]][\[Lambda]]]=
+fastQDimension[Subscript[(\[CapitalGamma]:(A|D|E)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=
 Module[{
-exp=KillingForm[\[CapitalGamma]][Plus@@PositiveRoots[\[CapitalGamma]],\[Lambda]],
+exp=KillingForm[Subscript[\[CapitalGamma], n]][Plus@@PositiveRoots[Subscript[\[CapitalGamma], n]],\[Lambda]],
 sum=0,
-latestLowerings={LittelmannPath[\[CapitalGamma]][{\[Lambda]}]}
+latestLowerings={LittelmannPath[Subscript[\[CapitalGamma], n]][{\[Lambda]}]}
 },
 While[exp>=0,
 sum+=q^exp Length[latestLowerings];
 exp-=2;
-latestLowerings=LittelmannPathOneStepLowerings[latestLowerings]
+latestLowerings=LittelmannPathOneStepLowerings[latestLowerings];
+Print[latestLowerings];
 ];
 Expand[sum+(sum/.{q->q^-1})-(sum/.{q->0})]
+]
+
+
+(* this could be optimised more, by staying in the positive half-space *)
+fastQDimension[Subscript[(\[CapitalGamma]:(B|C|F|G)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=
+Module[{
+sum=0,
+latestLowerings={LittelmannPath[Subscript[\[CapitalGamma], n]][{\[Lambda]}]}
+},
+While[Length[latestLowerings]>0,
+sum+=Plus@@(q^KillingForm[Subscript[\[CapitalGamma], n]][Plus@@PositiveRoots[Subscript[\[CapitalGamma], n]],LittelmannPathEndpoint[#]]&/@latestLowerings);
+latestLowerings=LittelmannPathOneStepLowerings[latestLowerings];
+];
+sum
 ]
 
 
