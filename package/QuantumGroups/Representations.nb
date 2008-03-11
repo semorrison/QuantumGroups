@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     90117,       2684]
-NotebookOptionsPosition[     86408,       2564]
-NotebookOutlinePosition[     86783,       2580]
-CellTagsIndexPosition[     86740,       2577]
+NotebookDataLength[     90731,       2699]
+NotebookOptionsPosition[     87023,       2579]
+NotebookOutlinePosition[     87397,       2595]
+CellTagsIndexPosition[     87354,       2592]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -610,62 +610,69 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"Irrep", "[", 
      SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", "\[Lambda]_", "]"}], 
-   "]"}], ":=", "\[IndentingNewLine]", 
-  RowBox[{"Module", "[", 
+   "]"}], ":=", 
+  RowBox[{
    RowBox[{
-    RowBox[{"{", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"exp", "=", 
-       RowBox[{
-        RowBox[{"KillingForm", "[", 
-         SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
-        RowBox[{
-         RowBox[{"Plus", "@@", 
-          RowBox[{"PositiveRoots", "[", 
-           SubscriptBox["\[CapitalGamma]", "n"], "]"}]}], ",", "\[Lambda]"}], 
-        "]"}]}], ",", "\[IndentingNewLine]", 
-      RowBox[{"sum", "=", "0"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"latestLowerings", "=", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"LittelmannPath", "[", 
-          SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
-         RowBox[{"{", "\[Lambda]", "}"}], "]"}], "}"}]}]}], 
-     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"fastQDimension", "[", 
+     SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
     RowBox[{
-     RowBox[{"While", "[", 
+     RowBox[{"Irrep", "[", 
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "\[Lambda]", "]"}], 
+    "]"}], "=", "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"exp", ">=", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"exp", "=", 
+        RowBox[{
+         RowBox[{"KillingForm", "[", 
+          SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
+         RowBox[{
+          RowBox[{"Plus", "@@", 
+           RowBox[{"PositiveRoots", "[", 
+            SubscriptBox["\[CapitalGamma]", "n"], "]"}]}], ",", "\[Lambda]"}],
+          "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"sum", "=", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"latestLowerings", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"LittelmannPath", "[", 
+           SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
+          RowBox[{"{", "\[Lambda]", "}"}], "]"}], "}"}]}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"While", "[", 
        RowBox[{
-        RowBox[{"sum", "+=", 
-         RowBox[{
-          SuperscriptBox["q", "exp"], 
-          RowBox[{"Length", "[", "latestLowerings", "]"}]}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"exp", "-=", "2"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"latestLowerings", "=", 
-         RowBox[{
-         "LittelmannPathOneStepLowerings", "[", "latestLowerings", "]"}]}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"Print", "[", "latestLowerings", "]"}], ";"}]}], 
-      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"Expand", "[", 
-      RowBox[{"sum", "+", 
-       RowBox[{"(", 
-        RowBox[{"sum", "/.", 
-         RowBox[{"{", 
-          RowBox[{"q", "\[Rule]", 
-           SuperscriptBox["q", 
-            RowBox[{"-", "1"}]]}], "}"}]}], ")"}], "-", 
-       RowBox[{"(", 
-        RowBox[{"sum", "/.", 
-         RowBox[{"{", 
-          RowBox[{"q", "\[Rule]", "0"}], "}"}]}], ")"}]}], "]"}]}]}], 
-   "\[IndentingNewLine]", "]"}]}]], "Input",
+        RowBox[{"exp", ">=", "0"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"sum", "+=", 
+          RowBox[{
+           SuperscriptBox["q", "exp"], 
+           RowBox[{"Length", "[", "latestLowerings", "]"}]}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"exp", "-=", "2"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"latestLowerings", "=", 
+          RowBox[{
+          "LittelmannPathOneStepLowerings", "[", "latestLowerings", "]"}]}], 
+         ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Expand", "[", 
+       RowBox[{"sum", "+", 
+        RowBox[{"(", 
+         RowBox[{"sum", "/.", 
+          RowBox[{"{", 
+           RowBox[{"q", "\[Rule]", 
+            SuperscriptBox["q", 
+             RowBox[{"-", "1"}]]}], "}"}]}], ")"}], "-", 
+        RowBox[{"(", 
+         RowBox[{"sum", "/.", 
+          RowBox[{"{", 
+           RowBox[{"q", "\[Rule]", "0"}], "}"}]}], ")"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
  CellChangeTimes->{{3.4130034217323885`*^9, 3.4130034948274946`*^9}, {
-  3.4130036010502353`*^9, 3.413003639645733*^9}, {3.4130038735120163`*^9, 
-  3.4130040018064947`*^9}, {3.413004145603264*^9, 3.413004168896758*^9}, {
-  3.4141907740198703`*^9, 3.4141907773646803`*^9}}],
+   3.4130036010502353`*^9, 3.413003639645733*^9}, {3.4130038735120163`*^9, 
+   3.4130040018064947`*^9}, {3.413004145603264*^9, 3.413004168896758*^9}, {
+   3.4141907740198703`*^9, 3.4141907773646803`*^9}, 3.4142603906219935`*^9, {
+   3.4142604314006305`*^9, 3.4142604451804447`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -689,51 +696,59 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"Irrep", "[", 
       SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", "\[Lambda]_", "]"}],
-     "]"}], ":=", "\[IndentingNewLine]", 
-   RowBox[{"Module", "[", 
+     "]"}], ":=", 
+   RowBox[{
     RowBox[{
-     RowBox[{"{", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"sum", "=", "0"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"latestLowerings", "=", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"LittelmannPath", "[", 
-           SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
-          RowBox[{"{", "\[Lambda]", "}"}], "]"}], "}"}]}]}], 
-      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"fastQDimension", "[", 
+      SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
      RowBox[{
-      RowBox[{"While", "[", 
+      RowBox[{"Irrep", "[", 
+       SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "\[Lambda]", "]"}], 
+     "]"}], "=", "\[IndentingNewLine]", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
        RowBox[{
-        RowBox[{
-         RowBox[{"Length", "[", "latestLowerings", "]"}], ">", "0"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"sum", "+=", 
-          RowBox[{"Plus", "@@", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{
-              SuperscriptBox["q", 
-               RowBox[{
-                RowBox[{"KillingForm", "[", 
-                 SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
-                RowBox[{
-                 RowBox[{"Plus", "@@", 
-                  RowBox[{"PositiveRoots", "[", 
-                   SubscriptBox["\[CapitalGamma]", "n"], "]"}]}], ",", 
-                 RowBox[{"LittelmannPathEndpoint", "[", "#", "]"}]}], "]"}]], 
-              "&"}], "/@", "latestLowerings"}], ")"}]}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"latestLowerings", "=", 
+        RowBox[{"sum", "=", "0"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"latestLowerings", "=", 
+         RowBox[{"{", 
           RowBox[{
-          "LittelmannPathOneStepLowerings", "[", "latestLowerings", "]"}]}], 
-         ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-      "sum"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+           RowBox[{"LittelmannPath", "[", 
+            SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
+           RowBox[{"{", "\[Lambda]", "}"}], "]"}], "}"}]}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "[", "latestLowerings", "]"}], ">", "0"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"sum", "+=", 
+           RowBox[{"Plus", "@@", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               SuperscriptBox["q", 
+                RowBox[{
+                 RowBox[{"KillingForm", "[", 
+                  SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
+                 RowBox[{
+                  RowBox[{"Plus", "@@", 
+                   RowBox[{"PositiveRoots", "[", 
+                    SubscriptBox["\[CapitalGamma]", "n"], "]"}]}], ",", 
+                  RowBox[{"LittelmannPathEndpoint", "[", "#", "]"}]}], "]"}]],
+                "&"}], "/@", "latestLowerings"}], ")"}]}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"latestLowerings", "=", 
+           RowBox[{
+           "LittelmannPathOneStepLowerings", "[", "latestLowerings", "]"}]}], 
+          ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+       "sum"}]}], "\[IndentingNewLine]", "]"}]}]}]}]], "Input",
  CellChangeTimes->{{3.4130034217323885`*^9, 3.4130034948274946`*^9}, {
-  3.4130036010502353`*^9, 3.413003639645733*^9}, {3.4130038735120163`*^9, 
-  3.4130040018064947`*^9}, {3.413004145603264*^9, 3.413004168896758*^9}, {
-  3.4141907740198703`*^9, 3.4141908001073823`*^9}}],
+   3.4130036010502353`*^9, 3.413003639645733*^9}, {3.4130038735120163`*^9, 
+   3.4130040018064947`*^9}, {3.413004145603264*^9, 3.413004168896758*^9}, {
+   3.4141907740198703`*^9, 3.4141908001073823`*^9}, 3.414260449666896*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -2564,7 +2579,7 @@ Cell[BoxData[
 },
 AutoGeneratedPackage->Automatic,
 WindowSize->{815, 610},
-WindowMargins->{{Automatic, 67}, {Automatic, -49}},
+WindowMargins->{{Automatic, 139}, {Automatic, 0}},
 FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2671,17 +2686,17 @@ Cell[17013, 552, 465, 13, 31, "Input",
  InitializationCell->True],
 Cell[17481, 567, 999, 30, 76, "Input",
  InitializationCell->True],
-Cell[18483, 599, 2631, 68, 300, "Input"],
-Cell[21117, 669, 2629, 66, 267, "Input"],
-Cell[23749, 737, 406, 11, 31, "Input"],
-Cell[24158, 750, 868, 24, 52, "Input"],
-Cell[25029, 776, 13671, 396, 667, "Input"],
-Cell[38703, 1174, 10569, 338, 423, "Input"],
-Cell[49275, 1514, 13306, 409, 503, "Input"],
-Cell[62584, 1925, 23579, 624, 932, "Input"],
-Cell[86166, 2551, 96, 3, 31, "Input",
+Cell[18483, 599, 2921, 75, 280, "Input"],
+Cell[21407, 676, 2954, 74, 267, "Input"],
+Cell[24364, 752, 406, 11, 31, "Input"],
+Cell[24773, 765, 868, 24, 52, "Input"],
+Cell[25644, 791, 13671, 396, 667, "Input"],
+Cell[39318, 1189, 10569, 338, 423, "Input"],
+Cell[49890, 1529, 13306, 409, 503, "Input"],
+Cell[63199, 1940, 23579, 624, 932, "Input"],
+Cell[86781, 2566, 96, 3, 31, "Input",
  InitializationCell->True],
-Cell[86265, 2556, 103, 3, 31, "Input",
+Cell[86880, 2571, 103, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
