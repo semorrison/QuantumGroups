@@ -331,7 +331,7 @@ following representations are minuscule:
 \end{center}
 
 Every fundamental representation of $F_4$ has weight multiplicities, so cannot be minuscule.
-In $G_2$, $\{1,0\}$ has no multiplicities, but a nonzero $\{0,0\}$ weight space, which is outside the orbit of the high weight.}
+In $G_2$, $\{1,0\}$ has no multiplicities, but a nonzero $\{0,0\}$ weight space, which is outside the orbit of the high weight.
 The fundamental representations of $E_6$ with highest weight $\lambda = e_{2 \leq k \leq 5}$ have multiplicities, as do the
 fundamental representations of $E_7$ with highest weight $\lambda = e_{1 \leq k \leq 6}$ and all the fundamental representations of $E_8$.
 (Note that it's note necessary to calculate the entire weight multiplicities of a representation to determine that at least one weight has multiplicity!
@@ -375,13 +375,16 @@ In $E_8$, we have
 \begin{align*}
 V_{e_8}^{\tensor 2}     & \Iso \Complex \directSum V_{e_1} \directSum V_{e_7} \directSum V_{e_8} \directSum V_{2e_8} \\
                         & \supset V_{e_1} \directSum V_{e_7} \\
-V_{e_1} \tensor V_{e_8} & \Iso V_{e_1} \directSum \Iso V_{e_2} \directSum \Iso V_{e_7} \directSum \Iso V_{e_8} \directSum \Iso V_{e_1+e_8} \\
+V_{e_1} \tensor V_{e_8} & \Iso V_{e_1} \directSum V_{e_2} \directSum V_{e_7} \directSum V_{e_8} \directSum V_{e_1+e_8} \\
                         & \supset V_{e_2} \\
 V_{e_1}^{\tensor 2}     & \Iso \Complex \directSum V_{e_1} \directSum V_{e_2} \directSum V_{e_3} \directSum V_{e_6} \directSum V_{e_7} \directSum V_{e_8} \directSum V_{2e_1} \directSum V_{e_1+e_8} \directSum V_{2e_8} \\
-                        & \supset \directSum V_{e_2} \directSum V_{e_3} \directSum V_{e_6} \\
-V_{e_2} \tensor V_{e_1} & \Iso V_{e_1} \directSum V_{e_2} \directSum V_{e_3} \directSum V_{e_5} \directSum V_{e_6} \directSum V_{e_7} \directSum V_{e_8} \directSum V_{2e_1} \directSum V_{2e_8} \directSum V_{e_1+e_2} \directSum V_{e_1+e_7} \directSum 2V_{e_1+e_8} \directSum V_{e_2+e_8} \directSum V_{e_7+e_8}\\
+                        & \supset V_{e_3} \directSum V_{e_6} \\
+V_{e_2} \tensor V_{e_1} & \Iso V_{e_1} \directSum V_{e_2} \directSum V_{e_3} \directSum V_{e_5} \directSum V_{e_6} \directSum V_{e_7} \directSum V_{e_8} \directSum \\
+                        & \qquad  \directSum V_{2e_1} \directSum V_{2e_8} \directSum V_{e_1+e_2} \directSum V_{e_1+e_7} \directSum 2V_{e_1+e_8} \directSum V_{e_2+e_8} \directSum V_{e_7+e_8}\\
                         & \supset V_{e_5} \\
-V_{e_3} \tensor V_{e_1} & \Iso V_{e_1} \directSum V_{e_2} \directSum 2V_{e_3} \directSum V_{e_4} \directSum V_{e_5} \directSum V_{e_6} \directSum V_{e_7} \directSum V_{2e_1} \directSum 2V_{e_1+e_2} \directSum V_{e_1+e_3} \directSum V_{e_1+e_6} \directSum 2V_{e_1+e_7} \directSum 2V_{e_1+e_8} \directSum V_{e_2+e_7} \directSum 2V_{e_2+e_8} \directSum V_{e_3+e_8} \directSum V_{e_6+e_8} \directSum V_{e_7+e_8} \directSum V_{2e_1+e_8} \directSum V_{e_1+2e_8}\\
+V_{e_3} \tensor V_{e_1} & \Iso V_{e_1} \directSum V_{e_2} \directSum 2V_{e_3} \directSum V_{e_4} \directSum V_{e_5} \directSum V_{e_6} \directSum V_{e_7} \directSum V_{2e_1} \directSum \\
+                        & \qquad \directSum 2V_{e_1+e_2} \directSum V_{e_1+e_3} \directSum V_{e_1+e_6} \directSum 2V_{e_1+e_7} \directSum 2V_{e_1+e_8} \directSum V_{e_2+e_7} \directSum \\
+                        & \qquad \directSum 2V_{e_2+e_8} \directSum V_{e_3+e_8} \directSum V_{e_6+e_8} \directSum V_{e_7+e_8} \directSum V_{2e_1+e_8} \directSum V_{e_1+2e_8}\\
                         & \supset V_{e_4}
 \end{align*}
 (Note that in calculating the above, although decomposing $V \tensor W$ gives the same direct summands as decomposing $W \tensor V$, the two calculations
@@ -434,7 +437,26 @@ canonical.} Code implementing Gelfand-Testlin bases for type $A$ exists, but is 
 currently part of the package. Anyone interested in adding support for
 canonical bases should certainly contact me!
 
+\subsection{Examples}
+We conclude this section with several examples.
+
+\begin{mma}
+\begin{inm}V = Irrep[A1][\{5\}];
+Table[MatrixPresentation[G2][$X_1^+$][V, $\{\lambda\}$, FundamentalBasis], $\{\lambda, -5, 5, 2\}$]\end{inm}
+\begin{outm}???\end{outm}
+\begin{inm}V = Irrep[G2][\{1, 0\}];
+MatrixPresentation[G2][$X_1^+$][V, \{0, 0\}, FundamentalBasis]\end{inm}
+\begin{outm}???\end{outm}
+\begin{inm}MatrixPresentation[G2][$X_2^+$][V, \{0, 0\}, FundamentalBasis]\end{inm}
+\begin{outm}???\end{outm}
+\begin{inm}V = Irrep[A3][\{2, 2, 2\}];
+MatrixPresentation[A3][$X_1^+$][V, \{0, 0, 0\}, FundamentalBasis]\end{inm}
+\begin{outm}???\end{outm}
+\end{mma}
+
+
 \section{Invariant vectors and intertwiners}
+
 
 \section{$R$-matrices and quantum knot invariants}
 \subsection{Action of the Coxeter braid group on the quantum group}
@@ -561,9 +583,34 @@ appreciated.)
 \subsection{The universal $R$-matrix}
 Having constructed the quantum roots, we can now make use of a formula for the universal $R$-matrix from \cite{CP}, which works for every $\mathfrak{g}$.
 Unfortunately the formula as given, in \cite[Theorem 8.3.9]{CP}, is incorrect; in particular the order of a product has been reversed.
-The \pkg implements the correct formula, and includes a few consistency checks which dis ...
+Some further translation is needed, as that formula for the universal $R$-matrix is for the quantum group defined of $\Complex[[h]]$ rather than $\Complex(q)$.
+Fortunately this is already done in \S10.1.D of \cite{CP}, so we just summarise that, making the necessary correction.
 
+For each $n\geq0$, define
+\begin{equation}
+\mathcal{R}^{(n)} = \sum_{\substack{t_1, \ldots, t_N \\ \sum ??? t_r = n}} \prod_{r=1}^N q_{\beta_r}^{\frac{1}{2}t_r(t_r+1)} \frac{(1-q_{\beta_r}^{-2})^{t_r}}{[t_r]_{q_{\beta_r}}!} (X_{\beta_r}^+)^{t_r} \tensor (X_{\beta_r}^-)^{t_r}.
+\end{equation}
+where $[k]_q! = [k]_q [k-1]_q \cdots [2]_q [1]_q$ is the quantum factorial, and $q_\beta = q^{d_\beta}$, $d_\beta = d_i$ if $\beta$ is the $i$-th simple root, and $d_\beta = \sum \alpha_i d_i$ when $\beta = \sum \alpha_i ???$ \todo{notation for simple roots and positive roots?}.
+(The formula is \cite{CP} incorrectly requires that this product be written in the reverse order.)
 
-Note that there's a mistake in Chari and Pressley here ...
+It is clear that on any finite dimensional representation, eventually $\mathcal{R}^{(n)}$ acts by zero. Given a pair of finite dimension representations $V$ and $W$,
+define $\mathcal{R}_{V,W}$ on the product of weight spaces $V_\lambda \tensor W_\mu$ by
+\begin{equation}
+\mathcal{R}_{V,W}(v\tensor w) = q^{(\lambda,\mu)} \sum_{n=0}^\infty \mathcal{R}^{(n)}(v \tensor w).
+\end{equation}
+
+Then we have \cite[Proposition 10.1.19]{CP}
+\begin{prop}
+The map $\mathcal{R}_{V,W}$ is invertible, and satisfies
+\begin{equation*}
+\mathcal{R}_{V,W} \compose \Delta(x) = \Delta^{\text{op}}(x) \compose \mathcal{R}_{V,W}
+\end{equation*}
+for any $x$ in the quantum group, and if we define $\mathcal{B}_{V,W} = \sigma \compose \mathcal{R}_{V,W} : V \tensor W \To W \tensor V$ then $\mathcal{B}_{\bullet,\bullet}$ gives a representation of the braid group
+\begin{equation*}
+(\Id_U \tensor \mathcal{B}_{V,W}) \compose (\mathcal{B}_{U,W}\tensor \Id_V) \compose (\Id_W\tensor\mathcal{B}_{U,V}) = (\mathcal{B}_{U,V}\tensor\Id_W) \compose (\Id_V\tensor\mathcal{B}_{U,W}) \compose (\mathcal{B}_{V,W}\tensor\Id_U)
+\end{equation*}
+for any finite dimensional representations $U, V$ and $W$.
+\end{prop}
+
 
 \subsection{}
