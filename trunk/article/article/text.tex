@@ -495,19 +495,19 @@ T_i(X_j^+)   & = \sum_{r=0}^{-a_{ij}} (-1)^{r-a_{ij}} q^{-r d_i} (X_i^+)^{(-a_{i
 T_i(X_j^-)   & = \sum_{r=0}^{-a_{ij}} (-1)^{r-a_{ij}} q^{+r d_i} (X_i^-)^{(r)} X_j^- (X_i^-)^{(-a_{ij}-r)} \qquad \text{if $i \neq j$}
 \end{align*}
 
-As \cite{CP} point out, the claim that this defines an action of $\mathcal{B}_\mathfrak{g}$ by algebra automorphisms can be checked explicitly. Happily,
+As the authors of \cite{CP} point out, the claim that this defines an action of $\mathcal{B}_\mathfrak{g}$ by algebra automorphisms can be checked explicitly. Happily,
 at least for a given $\mathfrak{g}$, the \pkg really can do this check. \todo{see, something}.
 
 \subsection{Quantum positive roots}
 The `quantum positive roots', which are elements of $\uqg$, are now defined as the action of certain words in the Coxeter braid group on certain of the
-generators $X_i^+$. It's possible to write the longest word in the Weyl group as a minimal length product of simple reflections in several way, and
+generators $X_i^+$. It's possible to write the longest word in the Weyl group as a minimal length product of simple reflections in several ways, and
 we'll use `the long word decomposition' to mean the lexicographically least one:
 
 $$ w_0 = s_{i_1} s_{i_2} \cdots s_{i_r}.$$
 
-we then define, following \cite{CP}.
+We then define, following \cite{CP}.
 
-$$X_{\uqg, 1}^\pm = X_{i_1}^\pm, X_{\uqg, 2}^\pm = T_{i_1}(X_{i_2}^\pm), ldots, X_{\uqg, r}^\pm = T_{i_1}T_{i_2}\cdots T_{i_{r-1}}(X_{i_r}^\pm).$$
+$$X_{\uqg, 1}^\pm = X_{i_1}^\pm, X_{\uqg, 2}^\pm = T_{i_1}(X_{i_2}^\pm), \ldots, X_{\uqg, r}^\pm = T_{i_1}T_{i_2}\cdots T_{i_{r-1}}(X_{i_r}^\pm).$$
 
 Using a different decomposition of the longest word gives a different set of quantum positive roots, unlike in the classical case! \cite[\S8.1B]{CP}
 
@@ -596,7 +596,7 @@ where $[k]_q! = [k]_q [k-1]_q \cdots [2]_q [1]_q$ is the quantum factorial, and 
 It is clear that on any finite dimensional representation, eventually $\mathcal{R}^{(n)}$ acts by zero. Given a pair of finite dimension representations $V$ and $W$,
 define $\mathcal{R}_{V,W}$ on the product of weight spaces $V_\lambda \tensor W_\mu$ by
 \begin{equation}
-\mathcal{R}_{V,W}(v\tensor w) = q^{(\lambda,\mu)} \sum_{n=0}^\infty \mathcal{R}^{(n)}(v \tensor w).
+\mathcal{R}_{V,W}(v_\lambda\tensor w_\mu) = q^{(\lambda,\mu)} \sum_{n=0}^\infty \mathcal{R}^{(n)}(v_\lambda \tensor w_\mu).
 \end{equation}
 
 Then we have \cite[Proposition 10.1.19]{CP}
@@ -605,7 +605,7 @@ The map $\mathcal{R}_{V,W}$ is invertible, and satisfies
 \begin{equation*}
 \mathcal{R}_{V,W} \compose \Delta(x) = \Delta^{\text{op}}(x) \compose \mathcal{R}_{V,W}
 \end{equation*}
-for any $x$ in the quantum group, and if we define $\mathcal{B}_{V,W} = \sigma \compose \mathcal{R}_{V,W} : V \tensor W \To W \tensor V$ then $\mathcal{B}_{\bullet,\bullet}$ gives a representation of the braid group
+for any $x$ in the quantum group, and if we define $$\mathcal{B}_{V,W} = \sigma \compose \mathcal{R}_{V,W} : V \tensor W \To W \tensor V$$ then $\mathcal{B}_{\bullet,\bullet}$ gives a representation of the braid group
 \begin{equation*}
 (\Id_U \tensor \mathcal{B}_{V,W}) \compose (\mathcal{B}_{U,W}\tensor \Id_V) \compose (\Id_W\tensor\mathcal{B}_{U,V}) = (\mathcal{B}_{U,V}\tensor\Id_W) \compose (\Id_V\tensor\mathcal{B}_{U,W}) \compose (\mathcal{B}_{V,W}\tensor\Id_U)
 \end{equation*}
