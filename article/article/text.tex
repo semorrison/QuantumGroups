@@ -8,7 +8,7 @@ do!
 \end{itemize}
 
 \section{Introduction}
-What are the Reshetikhin-Turaev invariants \cite{???} of links coming
+What are the Reshetikhin-Turaev invariants \cite{reshetikhin, MR1025161, MR1036112, MR939474} of links coming
 from quantum groups? For each quantum group $\uqg$ (by which we mean the
 quantised universal enveloping algebra of a complex simple Lie algebra
 $\mathfrak{g}$, see below), we have a function
@@ -82,10 +82,10 @@ invariants, and many tabulations. It's a little unusual to see direct
 discussion of the invariant coming from the standard representation of
 $\uqsl{n}$, however, because it turns out that these invariants, for
 varying $n$, all fit together as a two variable polynomial, the HOMFLYPT
-polynomial \cite{???}. In particular,
+polynomial \cite{MR776477}. In particular,
 
-$$HOMFLYPT_K(q^n, q) = RT_{\uqsl{n}, \Complex^n}(K)(q).$$
-\todo{explain how to check this!}
+$$\text{HOMFLYPT}_K(q^n, q) = RT_{\uqsl{n}, \Complex^n}(K)(q).$$
+\todo{explain how to check this, and where it's proved! Perhaps \cite{MR1024455}? But I can't get it.}
 
 Thus to find programs or tables of these invariants, you're for the most
 part better off looking for the HOMFLYPT invariant. One notable exception
@@ -93,13 +93,33 @@ is a program available in the \package{KnotTheory} \MMA package \cite{???},
 which makes a direct calculation of the $\uqsl{3}$ invariant, via
 Kuperberg's spider \cite{???}.
 
-Next, the two variable Kauffman polynomial simultaneously captures all
-the Reshetikhin-Turaev invariants for the standard representations of the
-quantum groups $U_q(\mathfrak{so}(n))$, $n \geq 5$, and
-$U_q(\mathfrak{sp}(n))$, $n \geq 4$.
+Next, the two variable Kauffman polynomial \cite{MR958895} simultaneously
+captures all the Reshetikhin-Turaev invariants for the standard
+representations of the quantum groups $U_q(\mathfrak{so}(n))$, $n \geq
+5$, and $U_q(\mathfrak{sp}(n))$, $n \geq 4$. We'll write (see below)
+$B_n$ to mean $\mathfrak{so}(2n+1)$ acting on $\Complex^{2n+1}$, $C_n$ to
+mean $\mathfrak{sp}(n)$ acting on $\Complex^{2n}$, and $D_n$ to mean
+$\mathfrak{so}(2n)$ acting on $\Complex^{2n}$. The quantum integers are
+denoted $\qiq{k}{q} = \frac{q^k-q^{-k}}{q-q^{-1}}$.
 
-\todo{look these up, and write some formulas} \todo{explain how to check
+\begin{align}
+\label{eq:kauffman-B}%
+\text{Kauffman}_L(-i q^{4n}, i (q^2-q^{-2})) & = \frac{RT_{B_n}(L)(q)}{\qiq{2n}{q^2} + 1} \\
+\label{eq:kauffman-C}%
+\text{Kauffman}_L(i q^{2n+1}, i (q-q^{-1})) & = (-1)^{\card{L}} \frac{RT_{C_n}(L)(q)}{\qiq{2n+1}{q} - 1} \\
+\label{eq:kauffman-D}%
+\text{Kauffman}_L(-i q^{2n-1}, i (q-q^{-1})) & = \frac{RT_{D_n}(L)(q)}{\qiq{2n-1}{q} + 1}
+\end{align}
+
+\todo{look these up \cite{MR939474, MR1090432}, and write some formulas} \todo{explain how to check
 these?}
+
+Noticing that $\text{Kauffman}_L(a,z) = \text{Kauffman}_L(-a,-z)$, we
+observe that one can pass between the expressions in Equations
+\ref{eq:kauffman-C} and \ref{eq:kauffman-D} by replacing $n$ with $-n$
+and $q$ with $q^{-1}$. This amusing fact is a presumably a reflection of
+an identity in Vassiliev theory, due to Kontsevich, described in
+\cite[Exercise 6.37]{MR1318886}.
 
 \todo{mention cabling formulas. what happens outside of type A??}
 \todo{examples in MMA}

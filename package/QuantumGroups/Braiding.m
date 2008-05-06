@@ -86,7 +86,7 @@ BR[n_Integer,ks:{__Integer}][\[CapitalGamma]_,V_List,\[Beta]_]:=BR[n,ks][\[Capit
 ChangeBasis[map_,basis_]:=Module[{},
 DebugPrint["ChangeBasis called with ",Dimensions[map]," ",Length[basis]];
 lastChangeBasisArguments={map,basis};
-Transpose[LinearSolve[Transpose[basis],Together[map.Transpose[basis]],Method->OneStepRowReduction]]
+Together[Transpose[LinearSolve[Transpose[basis],Together[map.Transpose[basis]],Method->OneStepRowReduction]]]
 ]
 
 
@@ -97,7 +97,10 @@ hwv=HighWeightVectors[\[CapitalGamma]][
 RowBox[{"\[CircleTimes]", "n"}]]\),FundamentalBasis,\[Lambda]];
 DebugPrint["Changing basis ..."];
 matrices=Table[ChangeBasis[MatrixData[BR[n,{i}][\[CapitalGamma],V,FundamentalBasis][\[Lambda]]],hwv],{i,1,n-1}];
+DebugPrint["Computing inverses directly ..."];
 inverses=MatrixInverse/@matrices;
+DebugPrint["Computing inverses again! ..."];
+inverses=Table[ChangeBasis[MatrixData[BR[n,{-i}][\[CapitalGamma],V,FundamentalBasis][\[Lambda]]],hwv],{i,1,n-1}];
 DebugPrint["Finished calculating braiding matrices."];
 Together[{matrices,inverses}]
 ]

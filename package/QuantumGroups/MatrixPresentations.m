@@ -368,6 +368,9 @@ Irrep[\[CapitalGamma]][\[Lambda]-\[Mu]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu
 };
 
 
+MatrixPresentation[Subscript[A, 1]][Z:(SuperPlus[Subscript[X, 1]]|SuperMinus[Subscript[X, 1]])][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]:=fastMatrixPresentation[Subscript[A, 1]][Z][Irrep[Subscript[A, 1]][{\[Lambda]}],FundamentalBasis,{\[Mu]}]
+
+
 MatrixPresentation[\[CapitalGamma]_][A:(SuperPlus[Subscript[X, _]]|SuperMinus[Subscript[X, _]])][V:Irrep[\[CapitalGamma]_][\[Mu]_],FundamentalBasis,\[Lambda]_]/;\[Not]ZeroVectorQ[\[Mu]]\[And]\[Not]UnitVectorQ[\[Mu]]\[Or](\[Not]ShortDominantRootQ[\[CapitalGamma],\[Mu]]\[And]\[Not]MinusculeRepresentationQ[\[CapitalGamma],V]):=Module[{W=V/.IrrepContainmentRules,p,result},MatrixPresentation[\[CapitalGamma]][A][V,FundamentalBasis,\[Lambda]]=
 (DebugPrintHeld["Calculating ",MatrixPresentation[\[CapitalGamma]][A][V,FundamentalBasis,\[Lambda]], " by looking at ",V," as a subrep of ",Evaluate[W]];
 If[W==V,Print["Warning, couldn't work out how to find matrix presentations for ",V];Return[$Failed]];
@@ -392,6 +395,22 @@ If[autopackagingMatrixPresentations\[And]Mod[numberOfSavedMatrixPresentations[\[
 PackageMatrixPresentations[\[CapitalGamma]]
 ];
 ]
+
+
+fastMatrixPresentation[Subscript[A, 1]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]/;-\[Lambda]<=\[Mu]<\[Lambda]\[And]EvenQ[\[Lambda]-\[Mu]]:=Matrix[1,1,{{Sum[qInteger[\[Nu]][q],{\[Nu],Max[\[Mu]+2,-\[Mu]],\[Lambda],2}]}}]
+
+
+fastMatrixPresentation[Subscript[A, 1]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Lambda]_}]:=Matrix[0,1,{}]
+fastMatrixPresentation[Subscript[A, 1]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]/;\[Mu]==-\[Lambda]-2:=Matrix[1,0,{{}}]
+fastMatrixPresentation[Subscript[A, 1]][SuperPlus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]:=Matrix[0,0]
+
+
+fastMatrixPresentation[Subscript[A, 1]][SuperMinus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]/;-\[Lambda]<\[Mu]<=\[Lambda]\[And]EvenQ[\[Lambda]-\[Mu]]:=Matrix[1,1,{{1}}]
+
+
+fastMatrixPresentation[Subscript[A, 1]][SuperMinus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]/;\[Lambda]==-\[Mu]:=Matrix[0,1,{}]
+fastMatrixPresentation[Subscript[A, 1]][SuperMinus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]/;\[Mu]==\[Lambda]+2:=Matrix[1,0,{{}}]
+fastMatrixPresentation[Subscript[A, 1]][SuperMinus[Subscript[X, 1]]][Irrep[Subscript[A, 1]][{\[Lambda]_}],FundamentalBasis,{\[Mu]_}]:=Matrix[0,0]
 
 
 End[];

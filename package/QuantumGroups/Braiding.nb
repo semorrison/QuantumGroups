@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     38800,       1153]
-NotebookOptionsPosition[     35388,       1038]
-NotebookOutlinePosition[     35766,       1054]
-CellTagsIndexPosition[     35723,       1051]
+NotebookDataLength[     39930,       1181]
+NotebookOptionsPosition[     36518,       1066]
+NotebookOutlinePosition[     36896,       1082]
+CellTagsIndexPosition[     36853,       1079]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -488,16 +488,18 @@ Cell[BoxData[
      RowBox[{"lastChangeBasisArguments", "=", 
       RowBox[{"{", 
        RowBox[{"map", ",", "basis"}], "}"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"Transpose", "[", 
-      RowBox[{"LinearSolve", "[", 
-       RowBox[{
-        RowBox[{"Transpose", "[", "basis", "]"}], ",", 
-        RowBox[{"Together", "[", 
-         RowBox[{"map", ".", 
-          RowBox[{"Transpose", "[", "basis", "]"}]}], "]"}], ",", 
-        RowBox[{"Method", "\[Rule]", "OneStepRowReduction"}]}], "]"}], 
-      "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
- InitializationCell->True],
+     RowBox[{"Together", "[", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"LinearSolve", "[", 
+        RowBox[{
+         RowBox[{"Transpose", "[", "basis", "]"}], ",", 
+         RowBox[{"Together", "[", 
+          RowBox[{"map", ".", 
+           RowBox[{"Transpose", "[", "basis", "]"}]}], "]"}], ",", 
+         RowBox[{"Method", "\[Rule]", "OneStepRowReduction"}]}], "]"}], "]"}],
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4189424085823345`*^9, 3.418942410685358*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -547,8 +549,33 @@ Cell[BoxData[
           RowBox[{"i", ",", "1", ",", 
            RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
+      RowBox[{
+      "DebugPrint", "[", "\"\<Computing inverses directly ...\>\"", "]"}], 
+      ";", "\[IndentingNewLine]", 
       RowBox[{"inverses", "=", 
        RowBox[{"MatrixInverse", "/@", "matrices"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "DebugPrint", "[", "\"\<Computing inverses again! ...\>\"", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"inverses", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"ChangeBasis", "[", 
+          RowBox[{
+           RowBox[{"MatrixData", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"BR", "[", 
+               RowBox[{"n", ",", 
+                RowBox[{"{", 
+                 RowBox[{"-", "i"}], "}"}]}], "]"}], "[", 
+              RowBox[{"\[CapitalGamma]", ",", "V", ",", "FundamentalBasis"}], 
+              "]"}], "[", "\[Lambda]", "]"}], "]"}], ",", "hwv"}], "]"}], ",",
+          
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", 
+           RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{
       "DebugPrint", "[", "\"\<Finished calculating braiding matrices.\>\"", 
@@ -557,7 +584,8 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"matrices", ",", "inverses"}], "}"}], "]"}]}]}], 
     "\[IndentingNewLine]", "]"}]}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4189430231260047`*^9, 3.418943056363798*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1109,48 +1137,48 @@ Cell[13286, 410, 561, 17, 31, "Input",
 Cell[13850, 429, 1207, 37, 52, "Input",
  InitializationCell->True],
 Cell[15060, 468, 223, 4, 29, "Text"],
-Cell[15286, 474, 1030, 25, 112, "Input",
+Cell[15286, 474, 1144, 27, 112, "Input",
  InitializationCell->True],
-Cell[16319, 501, 2308, 58, 199, "Input",
+Cell[16433, 503, 3324, 84, 259, "Input",
  InitializationCell->True],
-Cell[18630, 561, 1074, 28, 154, "Input",
+Cell[19760, 589, 1074, 28, 154, "Input",
  InitializationCell->True],
-Cell[19707, 591, 116, 3, 31, "Input",
+Cell[20837, 619, 116, 3, 31, "Input",
  InitializationCell->True],
-Cell[19826, 596, 1769, 44, 183, "Input",
+Cell[20956, 624, 1769, 44, 183, "Input",
  InitializationCell->True],
-Cell[21598, 642, 1246, 34, 31, "Input",
+Cell[22728, 670, 1246, 34, 31, "Input",
  InitializationCell->True],
-Cell[22847, 678, 1378, 41, 52, "Input",
+Cell[23977, 706, 1378, 41, 52, "Input",
  InitializationCell->True],
-Cell[24228, 721, 601, 20, 31, "Input",
+Cell[25358, 749, 601, 20, 31, "Input",
  InitializationCell->True],
-Cell[24832, 743, 344, 9, 31, "Input",
+Cell[25962, 771, 344, 9, 31, "Input",
  InitializationCell->True],
-Cell[25179, 754, 953, 23, 134, "Input",
+Cell[26309, 782, 953, 23, 134, "Input",
  InitializationCell->True],
-Cell[26135, 779, 192, 5, 31, "Input",
+Cell[27265, 807, 192, 5, 31, "Input",
  InitializationCell->True],
-Cell[26330, 786, 591, 18, 31, "Input",
+Cell[27460, 814, 591, 18, 31, "Input",
  InitializationCell->True],
-Cell[26924, 806, 292, 8, 33, "Input",
+Cell[28054, 834, 292, 8, 33, "Input",
  InitializationCell->True],
-Cell[27219, 816, 2806, 70, 160, "Input",
+Cell[28349, 844, 2806, 70, 160, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[30050, 890, 1534, 41, 114, "Input",
+Cell[31180, 918, 1534, 41, 114, "Input",
  InitializationCell->True],
-Cell[31587, 933, 414, 9, 22, "Message",
+Cell[32717, 961, 414, 9, 22, "Message",
  InitializationCell->True]
 }, Open  ]],
-Cell[32016, 945, 3054, 73, 228, "Input",
+Cell[33146, 973, 3054, 73, 228, "Input",
  InitializationCell->True],
-Cell[35073, 1020, 96, 3, 31, "Input",
+Cell[36203, 1048, 96, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[35206, 1028, 36, 0, 36, "Subsection"],
-Cell[35245, 1030, 103, 3, 31, "Input",
+Cell[36336, 1056, 36, 0, 36, "Subsection"],
+Cell[36375, 1058, 103, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
