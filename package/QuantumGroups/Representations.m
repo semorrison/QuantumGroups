@@ -130,7 +130,7 @@ PositiveWeights[\[CapitalGamma]_,V_]:=PositiveWeights[\[CapitalGamma],V]=Select[
 qDimension[\[CapitalGamma]_][V_]:=qDimension[\[CapitalGamma]][V]=With[{\[Rho]=Plus@@PositiveRoots[\[CapitalGamma]]},Plus@@(WeightMultiplicities[\[CapitalGamma],V]/.{\[Lambda]_,n_Integer}:>n q^KillingForm[\[CapitalGamma]][\[Rho],\[Lambda]])]
 
 
-fastQDimension[Subscript[(\[CapitalGamma]:(A|D|E)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
+fastQDimension[Subscript[(\[CapitalGamma]:(A|D|E)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]:{___Integer}]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
 Module[{
 exp=KillingForm[Subscript[\[CapitalGamma], n]][Plus@@PositiveRoots[Subscript[\[CapitalGamma], n]],\[Lambda]],
 sum=0,
@@ -146,7 +146,7 @@ Expand[sum+(sum/.{q->q^-1})-(sum/.{q->0})]
 
 
 (* this could be optimised more, by staying in the positive half-space *)
-fastQDimension[Subscript[(\[CapitalGamma]:(B|C|F|G)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
+fastQDimension[Subscript[(\[CapitalGamma]:(B|C|F|G)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]:{___Integer}]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
 Module[{
 sum=0,
 latestLowerings={LittelmannPath[Subscript[\[CapitalGamma], n]][{\[Lambda]}]}
@@ -159,11 +159,25 @@ sum
 ]
 
 
-qDimension[\[CapitalGamma]_][V:Irrep[\[CapitalGamma]_][\[Lambda]_]]:=fastQDimension[\[CapitalGamma]][V]
+qDimension[\[CapitalGamma]_][V:Irrep[\[CapitalGamma]_][\[Lambda]_]]:=recursiveQDimension[\[CapitalGamma]][V]
 
 
 qDimension[\[CapitalGamma]_][V_\[CircleTimes]W_]:=Expand[qDimension[\[CapitalGamma]][V]qDimension[\[CapitalGamma]][W]]
 qDimension[\[CapitalGamma]_][V_\[CirclePlus]W_]:=Expand[qDimension[\[CapitalGamma]][V]+qDimension[\[CapitalGamma]][W]]
+
+
+recursiveQDimension[\[CapitalGamma]_][V_\[CircleTimes]W_]:=Expand[recursiveQDimension[\[CapitalGamma]][V]recursiveQDimension[\[CapitalGamma]][W]]
+recursiveQDimension[\[CapitalGamma]_][V_DirectSum]:=Expand[Plus@@(recursiveQDimension[\[CapitalGamma]]/@V)]
+
+
+recursiveQDimension[\[CapitalGamma]_][V:Irrep[\[CapitalGamma]_][\[Lambda]_]]:=recursiveQDimension[\[CapitalGamma]][V]=Module[{t,k,u},
+If[ZeroVectorQ[\[Lambda]],Return[1]];
+If[UnitVectorQ[\[Lambda]], Return[fastQDimension[\[CapitalGamma]][V]]];
+k=Position[\[Lambda],m_/;m>0][[1,1]];
+u=UnitVector[Rank[\[CapitalGamma]],k];
+t=Irrep[\[CapitalGamma]][\[Lambda]-u]\[CircleTimes]Irrep[\[CapitalGamma]][u];
+Expand[recursiveQDimension[\[CapitalGamma]][t]-recursiveQDimension[\[CapitalGamma]][DeleteCases[DecomposeRepresentation[\[CapitalGamma]][t],V]]]
+]
 
 
 fastQDimension[Subscript[E, 6]][Irrep[Subscript[E, 6]][{0,0,0,0,0,1}]]=3+1/q^16+1/q^14+1/q^12+1/q^10+2/q^8+2/q^6+2/q^4+2/q^2+2 q^2+2 q^4+2 q^6+2 q^8+q^10+q^12+q^14+q^16;fastQDimension[Subscript[E, 6]][Irrep[Subscript[E, 6]][{0,0,0,0,1,0}]]=23+1/q^30+1/q^28+2/q^26+3/q^24+5/q^22+6/q^20+8/q^18+10/q^16+13/q^14+14/q^12+17/q^10+19/q^8+21/q^6+21/q^4+23/q^2+23 q^2+21 q^4+21 q^6+19 q^8+17 q^10+14 q^12+13 q^14+10 q^16+8 q^18+6 q^20+5 q^22+3 q^24+2 q^26+q^28+q^30;fastQDimension[Subscript[E, 6]][Irrep[Subscript[E, 6]][{0,0,0,1,0,0}]]=161+1/q^42+1/q^40+3/q^38+5/q^36+8/q^34+11/q^32+18/q^30+23/q^28+32/q^26+41/q^24+53/q^22+63/q^20+78/q^18+89/q^16+105/q^14+116/q^12+130/q^10+139/q^8+151/q^6+154/q^4+161/q^2+161 q^2+154 q^4+151 q^6+139 q^8+130 q^10+116 q^12+105 q^14+89 q^16+78 q^18+63 q^20+53 q^22+41 q^24+32 q^26+23 q^28+18 q^30+11 q^32+8 q^34+5 q^36+3 q^38+q^40+q^42;

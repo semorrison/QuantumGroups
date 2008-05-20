@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     90731,       2699]
-NotebookOptionsPosition[     87023,       2579]
-NotebookOutlinePosition[     87397,       2595]
-CellTagsIndexPosition[     87354,       2592]
+NotebookDataLength[     94753,       2802]
+NotebookOptionsPosition[     90963,       2680]
+NotebookOutlinePosition[     91337,       2696]
+CellTagsIndexPosition[     91294,       2693]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -609,8 +609,9 @@ Cell[BoxData[
    
    RowBox[{
     RowBox[{"Irrep", "[", 
-     SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", "\[Lambda]_", "]"}], 
-   "]"}], ":=", 
+     SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", 
+    RowBox[{"\[Lambda]", ":", 
+     RowBox[{"{", "___Integer", "}"}]}], "]"}], "]"}], ":=", 
   RowBox[{
    RowBox[{
     RowBox[{"fastQDimension", "[", 
@@ -672,7 +673,7 @@ Cell[BoxData[
    3.4130036010502353`*^9, 3.413003639645733*^9}, {3.4130038735120163`*^9, 
    3.4130040018064947`*^9}, {3.413004145603264*^9, 3.413004168896758*^9}, {
    3.4141907740198703`*^9, 3.4141907773646803`*^9}, 3.4142603906219935`*^9, {
-   3.4142604314006305`*^9, 3.4142604451804447`*^9}}],
+   3.4142604314006305`*^9, 3.4142604451804447`*^9}, 3.4201097204776*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -695,8 +696,9 @@ Cell[BoxData[
      "]"}], "[", 
     RowBox[{
      RowBox[{"Irrep", "[", 
-      SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", "\[Lambda]_", "]"}],
-     "]"}], ":=", 
+      SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], "[", 
+     RowBox[{"\[Lambda]", ":", 
+      RowBox[{"{", "___Integer", "}"}]}], "]"}], "]"}], ":=", 
    RowBox[{
     RowBox[{
      RowBox[{"fastQDimension", "[", 
@@ -748,7 +750,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.4130034217323885`*^9, 3.4130034948274946`*^9}, {
    3.4130036010502353`*^9, 3.413003639645733*^9}, {3.4130038735120163`*^9, 
    3.4130040018064947`*^9}, {3.413004145603264*^9, 3.413004168896758*^9}, {
-   3.4141907740198703`*^9, 3.4141908001073823`*^9}, 3.414260449666896*^9}],
+   3.4141907740198703`*^9, 3.4141908001073823`*^9}, 3.414260449666896*^9, {
+   3.420109707769326*^9, 3.4201097129968433`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -759,9 +762,10 @@ Cell[BoxData[
      RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
      "]"}]}], "]"}], ":=", 
   RowBox[{
-   RowBox[{"fastQDimension", "[", "\[CapitalGamma]", "]"}], "[", "V", 
+   RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "[", "V", 
    "]"}]}]], "Input",
- CellChangeTimes->{{3.4130566052264977`*^9, 3.413056632505723*^9}}],
+ CellChangeTimes->{{3.4130566052264977`*^9, 3.413056632505723*^9}, {
+  3.420111491013506*^9, 3.42011149286617*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -788,6 +792,103 @@ Cell[BoxData[{
      RowBox[{"qDimension", "[", "\[CapitalGamma]", "]"}], "[", "W", "]"}]}], 
    "]"}]}]}], "Input",
  CellChangeTimes->{{3.413056647567381*^9, 3.4130566935735345`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]_", "]"}], "[", 
+   RowBox[{"V_", "\[CircleTimes]", "W_"}], "]"}], ":=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "[", "V", 
+     "]"}], 
+    RowBox[{
+     RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "[", "W", 
+     "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]_", "]"}], "[", 
+   "V_DirectSum", "]"}], ":=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{"Plus", "@@", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "/@", 
+      "V"}], ")"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.4201106741689405`*^9, 3.420110702930298*^9}, {
+  3.4201107583399725`*^9, 3.4201107986379185`*^9}, {3.420110889308296*^9, 
+  3.4201109293558817`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]_", "]"}], "[", 
+   RowBox[{"V", ":", 
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
+     "]"}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "[", "V", 
+    "]"}], "=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "k", ",", "u"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"ZeroVectorQ", "[", "\[Lambda]", "]"}], ",", 
+        RowBox[{"Return", "[", "1", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"UnitVectorQ", "[", "\[Lambda]", "]"}], ",", " ", 
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{"fastQDimension", "[", "\[CapitalGamma]", "]"}], "[", "V", 
+          "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "=", 
+       RowBox[{
+        RowBox[{"Position", "[", 
+         RowBox[{"\[Lambda]", ",", 
+          RowBox[{"m_", "/;", 
+           RowBox[{"m", ">", "0"}]}]}], "]"}], "\[LeftDoubleBracket]", 
+        RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"u", "=", 
+       RowBox[{"UnitVector", "[", 
+        RowBox[{
+         RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], ",", "k"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"t", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", 
+         RowBox[{"\[Lambda]", "-", "u"}], "]"}], "\[CircleTimes]", 
+        RowBox[{
+         RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "u", "]"}]}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Expand", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "[", 
+         "t", "]"}], "-", 
+        RowBox[{
+         RowBox[{"recursiveQDimension", "[", "\[CapitalGamma]", "]"}], "[", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"DecomposeRepresentation", "[", "\[CapitalGamma]", "]"}], 
+            "[", "t", "]"}], ",", "V"}], "]"}], "]"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.420110471026837*^9, 3.420110653218816*^9}, {
+   3.420110713134971*^9, 3.4201107435587187`*^9}, {3.42011097027472*^9, 
+   3.4201109745708976`*^9}, {3.4201110501495743`*^9, 
+   3.4201110959754686`*^9}, {3.4201112348952255`*^9, 3.420111248965458*^9}, {
+   3.420111291356413*^9, 3.4201113430207024`*^9}, {3.4201113929024286`*^9, 
+   3.420111422494981*^9}, 3.4201115001165953`*^9}],
 
 Cell[BoxData[{
  RowBox[{
@@ -2579,7 +2680,7 @@ Cell[BoxData[
 },
 AutoGeneratedPackage->Automatic,
 WindowSize->{815, 610},
-WindowMargins->{{Automatic, 139}, {Automatic, 0}},
+WindowMargins->{{Automatic, 35}, {Automatic, 23}},
 FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2686,17 +2787,19 @@ Cell[17013, 552, 465, 13, 31, "Input",
  InitializationCell->True],
 Cell[17481, 567, 999, 30, 76, "Input",
  InitializationCell->True],
-Cell[18483, 599, 2921, 75, 280, "Input"],
-Cell[21407, 676, 2954, 74, 267, "Input"],
-Cell[24364, 752, 406, 11, 31, "Input"],
-Cell[24773, 765, 868, 24, 52, "Input"],
-Cell[25644, 791, 13671, 396, 667, "Input"],
-Cell[39318, 1189, 10569, 338, 423, "Input"],
-Cell[49890, 1529, 13306, 409, 503, "Input"],
-Cell[63199, 1940, 23579, 624, 932, "Input"],
-Cell[86781, 2566, 96, 3, 31, "Input",
+Cell[18483, 599, 2996, 76, 301, "Input"],
+Cell[21482, 677, 3062, 76, 288, "Input"],
+Cell[24547, 755, 459, 12, 31, "Input"],
+Cell[25009, 769, 868, 24, 52, "Input"],
+Cell[25880, 795, 942, 25, 52, "Input"],
+Cell[26825, 822, 2756, 68, 192, "Input"],
+Cell[29584, 892, 13671, 396, 667, "Input"],
+Cell[43258, 1290, 10569, 338, 423, "Input"],
+Cell[53830, 1630, 13306, 409, 503, "Input"],
+Cell[67139, 2041, 23579, 624, 932, "Input"],
+Cell[90721, 2667, 96, 3, 31, "Input",
  InitializationCell->True],
-Cell[86880, 2571, 103, 3, 31, "Input",
+Cell[90820, 2672, 103, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]

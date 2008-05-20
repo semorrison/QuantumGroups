@@ -22,7 +22,7 @@
 BeginPackage["QuantumGroups`RootSystems`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`"}];
 
 
-CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;WeylOrbit;PositiveWeightQ;InWeylPolytopeQ;SortWeights;SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
+CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;WeylOrbit;PositiveWeightQ;InWeylPolytopeQ;SortWeights;SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;LongDominantRoots;ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
 
 
 Begin["`Private`"];
@@ -236,6 +236,12 @@ DominantRoots[\[CapitalGamma]_]:=DominantRoots[\[CapitalGamma]]=Union[ReflectInt
 ShortDominantRoots[\[CapitalGamma]_]:=ShortDominantRoots[\[CapitalGamma]]=Module[{dr=DominantRoots[\[CapitalGamma]],shortLength},
 shortLength=Min[KillingForm[\[CapitalGamma]][#,#]&/@dr];
 Select[dr,KillingForm[\[CapitalGamma]][#,#]==shortLength&]
+]
+
+
+LongDominantRoots[\[CapitalGamma]_]:=LongDominantRoots[\[CapitalGamma]]=Module[{dr=DominantRoots[\[CapitalGamma]],longLength},
+longLength=Max[KillingForm[\[CapitalGamma]][#,#]&/@dr];
+Select[dr,KillingForm[\[CapitalGamma]][#,#]==longLength&]
 ]
 
 
