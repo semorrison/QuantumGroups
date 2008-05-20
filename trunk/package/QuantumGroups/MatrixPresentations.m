@@ -363,7 +363,7 @@ RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0
 RowBox[{"\[CircleTimes]", "2"}]]\),
 Irrep[Subscript[\[ExponentialE], 8]][{0,0,0,0,1,0,0,0}]->Irrep[Subscript[E, 8]][{0,1,0,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 8]][{1,0,0,0,0,0,0,0}],
 Irrep[Subscript[\[ExponentialE], 8]][{0,0,0,1,0,0,0,0}]->Irrep[Subscript[E, 8]][{0,0,1,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 8]][{1,0,0,0,0,0,0,0}],
-Irrep[\[CapitalGamma]_][\[Lambda]_]/;!UnitVectorQ[\[Lambda]]:>Module[{n=Rank[\[CapitalGamma]],pos,\[Mu]},pos=Position[\[Lambda],_?(#!=0&)][[1,1]];\[Mu]=UnitVector[n,pos];
+Irrep[\[CapitalGamma]_][\[Lambda]_]/;(!UnitVectorQ[\[Lambda]]\[And]!ZeroVectorQ[\[Lambda]]):>Module[{n=Rank[\[CapitalGamma]],pos,\[Mu]},pos=Position[\[Lambda],_?(#!=0&)][[1,1]];\[Mu]=UnitVector[n,pos];
 Irrep[\[CapitalGamma]][\[Lambda]-\[Mu]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]]
 };
 

@@ -31,7 +31,7 @@ DeclarePackage["QuantumGroups`Utilities`Debugging`",{"DebugEcho","DebugPrint","D
 DeclarePackage["QuantumGroups`Utilities`DataPackage`",{"DefiniteValues","MatchingValues","ValuesAsString","PackageData","PackageMatrixPresentations","PackageDecompositionMaps","PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation","PackageHighWeightVectors","PackageBraidingMatrices","PackageBRPresentations","PackageBraidingMaps"}];
 
 
-DeclarePackage["QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm","SimpleRoots","SimpleReflection","WeylOrbit","PositiveWeightQ","InWeylPolytopeQ","SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinusculeRepresentationQ","MinusculeRepresentations","ReflectIntoPositiveWeylChamber","ShortDominantRoots","ShortSimpleRoots","ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
+DeclarePackage["QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm","SimpleRoots","SimpleReflection","WeylOrbit","PositiveWeightQ","InWeylPolytopeQ","SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinusculeRepresentationQ","MinusculeRepresentations","ReflectIntoPositiveWeylChamber","ShortDominantRoots","LongDominantRoots","ShortSimpleRoots","ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
 
 
 DeclarePackage["QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","\[Rho]","PositiveGenerators","NegativeGenerators","CartanGenerators","Generators","NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight","OperatorLength"}];

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     23883,        720]
-NotebookOptionsPosition[     19373,        586]
-NotebookOutlinePosition[     21625,        648]
-CellTagsIndexPosition[     21582,        645]
+NotebookDataLength[     25535,        766]
+NotebookOptionsPosition[     20956,        630]
+NotebookOutlinePosition[     23208,        692]
+CellTagsIndexPosition[     23165,        689]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -574,6 +574,50 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{
+   RowBox[{
+   "LittelmannPathDecomposeRepresentation", "[", "\[CapitalGamma]_", "]"}], 
+   "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
+     "]"}], "\[CircleTimes]", 
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Mu]_", "]"}]}], 
+   "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lp", ",", "compositions"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"lp", "=", 
+      RowBox[{
+       RowBox[{"LittelmannPath", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{"{", "\[Lambda]", "}"}], "]"}]}], ";", 
+     RowBox[{"compositions", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ComposeLittelmannPaths", "[", 
+         RowBox[{"lp", ",", "#"}], "]"}], "&"}], "/@", 
+       RowBox[{"LittelmannPathLowerings", "[", 
+        RowBox[{
+         RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "\[Mu]", "]"}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"DirectSum", "@@", 
+      RowBox[{
+       RowBox[{"SortWeights", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{"Cases", "[", 
+        RowBox[{"compositions", ",", 
+         RowBox[{
+          RowBox[{"lp_", "?", "LittelmannPathDominantQ"}], "\[RuleDelayed]", 
+          RowBox[{
+           RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", 
+           RowBox[{"LittelmannPathEndpoint", "[", "lp", "]"}], "]"}]}]}], 
+        "]"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"End", "[", "]"}], ";"}]], "Input",
  InitializationCell->True],
 
@@ -716,9 +760,11 @@ Cell[17199, 518, 358, 10, 52, "Input",
  InitializationCell->True],
 Cell[17560, 530, 1580, 42, 172, "Input",
  InitializationCell->True],
-Cell[19143, 574, 96, 3, 31, "Input",
+Cell[19143, 574, 1580, 42, 172, "Input",
  InitializationCell->True],
-Cell[19242, 579, 103, 3, 31, "Input",
+Cell[20726, 618, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[20825, 623, 103, 3, 31, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]

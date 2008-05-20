@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     51729,       1344]
-NotebookOptionsPosition[     49603,       1276]
-NotebookOutlinePosition[     49976,       1292]
-CellTagsIndexPosition[     49933,       1289]
+NotebookDataLength[     53880,       1398]
+NotebookOptionsPosition[     51683,       1328]
+NotebookOutlinePosition[     52056,       1344]
+CellTagsIndexPosition[     52013,       1341]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -571,6 +571,58 @@ Cell[BoxData[{
  CellChangeTimes->{{3.411236426618926*^9, 3.411236536837413*^9}, {
   3.4112369196578817`*^9, 3.4112369213002434`*^9}, {3.4112369837500415`*^9, 
   3.411236987465384*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PackageqDimensions", "[", 
+   SubscriptBox["\[CapitalGamma]_", "n_"], "]"}], ":=", 
+  RowBox[{"PackageData", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"QuantumGroups`Representations`Private`fastQDimension", ",", 
+        RowBox[{"HoldPattern", "[", 
+         RowBox[{
+          RowBox[{
+          "QuantumGroups`Representations`Private`fastQDimension", "[", 
+           SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
+          RowBox[{
+           RowBox[{"Irrep", "[", 
+            SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "_", "]"}], 
+          "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "QuantumGroups`Representations`Private`recursiveQDimension", ",", 
+        RowBox[{"HoldPattern", "[", 
+         RowBox[{
+          RowBox[{
+          "QuantumGroups`Representations`Private`recursiveQDimension", "[", 
+           SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", 
+          RowBox[{
+           RowBox[{"Irrep", "[", 
+            SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "_", "]"}], 
+          "]"}], "]"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ToString", "[", "\[CapitalGamma]", "]"}], "<>", 
+       RowBox[{"ToString", "[", "n", "]"}]}], ",", "\"\<qDimensions\>\""}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<Needs\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<QuantumGroups`\>\"", ",", 
+       "\"\<QuantumGroups`Representations`\>\""}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<ExtraPrivateCode\>\"", "\[Rule]", "\"\<q=Global`q;\>\""}], 
+    ",", 
+    RowBox[{"\"\<UseGzip\>\"", "\[Rule]", "False"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.42010793381851*^9, 3.420107956010421*^9}, {
+  3.4201079864642115`*^9, 3.4201080382486734`*^9}, {3.4201080985053186`*^9, 
+  3.420108102621237*^9}, {3.420111554895363*^9, 3.420111578018613*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1313,38 +1365,40 @@ Cell[5365, 163, 4808, 125, 392, "Input",
  InitializationCell->True],
 Cell[10176, 290, 11379, 282, 872, "Input",
  InitializationCell->True],
-Cell[21558, 574, 1347, 33, 134, "Input",
+Cell[21558, 574, 2077, 50, 154, "Input",
  InitializationCell->True],
-Cell[22908, 609, 2095, 49, 194, "Input",
+Cell[23638, 626, 1347, 33, 134, "Input",
  InitializationCell->True],
-Cell[25006, 660, 623, 18, 31, "Input",
+Cell[24988, 661, 2095, 49, 194, "Input",
  InitializationCell->True],
-Cell[25632, 680, 9395, 220, 434, "Input",
+Cell[27086, 712, 623, 18, 31, "Input",
  InitializationCell->True],
-Cell[35030, 902, 1061, 25, 134, "Input",
+Cell[27712, 732, 9395, 220, 434, "Input",
  InitializationCell->True],
-Cell[36094, 929, 1078, 27, 134, "Input",
+Cell[37110, 954, 1061, 25, 134, "Input",
  InitializationCell->True],
-Cell[37175, 958, 1252, 28, 154, "Input",
+Cell[38174, 981, 1078, 27, 134, "Input",
  InitializationCell->True],
-Cell[38430, 988, 1237, 30, 134, "Input",
+Cell[39255, 1010, 1252, 28, 154, "Input",
  InitializationCell->True],
-Cell[39670, 1020, 1211, 28, 134, "Input",
+Cell[40510, 1040, 1237, 30, 134, "Input",
  InitializationCell->True],
-Cell[40884, 1050, 1517, 37, 154, "Input",
+Cell[41750, 1072, 1211, 28, 134, "Input",
  InitializationCell->True],
-Cell[42404, 1089, 1211, 29, 154, "Input",
+Cell[42964, 1102, 1517, 37, 154, "Input",
  InitializationCell->True],
-Cell[43618, 1120, 1109, 26, 134, "Input",
+Cell[44484, 1141, 1211, 29, 154, "Input",
  InitializationCell->True],
-Cell[44730, 1148, 1207, 26, 154, "Input",
+Cell[45698, 1172, 1109, 26, 134, "Input",
  InitializationCell->True],
-Cell[45940, 1176, 553, 16, 72, "Input"],
-Cell[46496, 1194, 27, 0, 29, "Text"],
-Cell[46526, 1196, 2868, 68, 472, "Input"],
-Cell[49397, 1266, 96, 3, 31, "Input",
+Cell[46810, 1200, 1207, 26, 154, "Input",
  InitializationCell->True],
-Cell[49496, 1271, 103, 3, 31, "Input",
+Cell[48020, 1228, 553, 16, 72, "Input"],
+Cell[48576, 1246, 27, 0, 29, "Text"],
+Cell[48606, 1248, 2868, 68, 472, "Input"],
+Cell[51477, 1318, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[51576, 1323, 103, 3, 31, "Input",
  InitializationCell->True]
 }
 ]

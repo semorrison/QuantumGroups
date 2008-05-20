@@ -112,6 +112,14 @@ If[useGzip,SetDirectory[directory];Run["gzip --rsync "<>Last[fullPackagePath]<>"
 ResetDirectory[];]
 
 
+PackageqDimensions[Subscript[\[CapitalGamma]_, n_]]:=PackageData[
+{{QuantumGroups`Representations`Private`fastQDimension,HoldPattern[QuantumGroups`Representations`Private`fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][_]]]},{QuantumGroups`Representations`Private`recursiveQDimension,HoldPattern[QuantumGroups`Representations`Private`recursiveQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][_]]]}},
+{ToString[\[CapitalGamma]]<>ToString[n],"qDimensions"},
+"Needs"->{"QuantumGroups`","QuantumGroups`Representations`"},
+"ExtraPrivateCode"->"q=Global`q;","UseGzip"->False
+]
+
+
 PackageMatrixPresentations[Subscript[\[CapitalGamma]_, n_]]:=PackageData[
 MatrixPresentation,MatrixPresentation[Subscript[\[CapitalGamma], n]][_][Irrep[Subscript[\[CapitalGamma], n]][_],FundamentalBasis,_],
 {ToString[\[CapitalGamma]]<>ToString[n],"MatrixPresentations"},

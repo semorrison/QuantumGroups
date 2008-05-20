@@ -135,6 +135,12 @@ DirectSum@@SortWeights[\[CapitalGamma]][Cases[compositions,lp_?LittelmannPathDom
 ]
 
 
+LittelmannPathDecomposeRepresentation[\[CapitalGamma]_][Irrep[\[CapitalGamma]_][\[Lambda]_]\[CircleTimes]Irrep[\[CapitalGamma]_][\[Mu]_]]:=Module[{lp,compositions},
+lp=LittelmannPath[\[CapitalGamma]][{\[Lambda]}];compositions=ComposeLittelmannPaths[lp,#]&/@LittelmannPathLowerings[Irrep[\[CapitalGamma]][\[Mu]]];
+DirectSum@@SortWeights[\[CapitalGamma]][Cases[compositions,lp_?LittelmannPathDominantQ:>Irrep[\[CapitalGamma]][LittelmannPathEndpoint[lp]]]]
+]
+
+
 End[];
 
 

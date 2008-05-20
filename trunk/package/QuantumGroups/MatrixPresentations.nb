@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    209726,       5160]
-NotebookOptionsPosition[     88543,       2591]
-NotebookOutlinePosition[    204055,       4985]
-CellTagsIndexPosition[    204012,       4982]
+NotebookDataLength[    209941,       5165]
+NotebookOptionsPosition[     88758,       2596]
+NotebookOutlinePosition[    204270,       4990]
+CellTagsIndexPosition[    204227,       4987]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -2137,9 +2137,13 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
         "]"}], "/;", 
-       RowBox[{"!", 
-        RowBox[{"UnitVectorQ", "[", "\[Lambda]", "]"}]}]}], "\[RuleDelayed]", 
-      
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"UnitVectorQ", "[", "\[Lambda]", "]"}]}], "\[And]", 
+         RowBox[{"!", 
+          RowBox[{"ZeroVectorQ", "[", "\[Lambda]", "]"}]}]}], ")"}]}], 
+      "\[RuleDelayed]", 
       RowBox[{"Module", "[", 
        RowBox[{
         RowBox[{"{", 
@@ -2169,7 +2173,8 @@ Cell[BoxData[
            RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "\[Mu]", 
            "]"}]}]}]}], "]"}]}]}], "\[IndentingNewLine]", "}"}]}], 
   ";"}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4201110099718018`*^9, 3.4201110220691967`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -5137,27 +5142,27 @@ Cell[54068, 1608, 378, 7, 36, "Message"]
 }, Open  ]],
 Cell[54461, 1618, 1788, 47, 129, "Input",
  InitializationCell->True],
-Cell[56252, 1667, 17925, 504, 833, "Input",
+Cell[56252, 1667, 18140, 509, 833, "Input",
  InitializationCell->True],
-Cell[74180, 2173, 1111, 31, 69, "Input"],
-Cell[75294, 2206, 5526, 141, 489, "Input",
+Cell[74395, 2178, 1111, 31, 69, "Input"],
+Cell[75509, 2211, 5526, 141, 489, "Input",
  InitializationCell->True],
-Cell[80823, 2349, 139, 4, 28, "Input",
+Cell[81038, 2354, 139, 4, 28, "Input",
  InitializationCell->True],
-Cell[80965, 2355, 128, 3, 28, "Input",
+Cell[81180, 2360, 128, 3, 28, "Input",
  InitializationCell->True],
-Cell[81096, 2360, 1023, 28, 129, "Input",
+Cell[81311, 2365, 1023, 28, 129, "Input",
  InitializationCell->True],
-Cell[82122, 2390, 1301, 37, 49, "Input"],
-Cell[83426, 2429, 1851, 54, 129, "Input"],
-Cell[85280, 2485, 965, 27, 49, "Input"],
-Cell[86248, 2514, 1977, 57, 129, "Input"],
-Cell[88228, 2573, 96, 3, 28, "Input",
+Cell[82337, 2395, 1301, 37, 49, "Input"],
+Cell[83641, 2434, 1851, 54, 129, "Input"],
+Cell[85495, 2490, 965, 27, 49, "Input"],
+Cell[86463, 2519, 1977, 57, 129, "Input"],
+Cell[88443, 2578, 96, 3, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[88361, 2581, 36, 0, 36, "Subsection"],
-Cell[88400, 2583, 103, 3, 70, "Input",
+Cell[88576, 2586, 36, 0, 36, "Subsection"],
+Cell[88615, 2588, 103, 3, 70, "Input",
  InitializationCell->True]
 }, Closed]]
 }, Open  ]]
