@@ -199,8 +199,8 @@ QuantumGroups`MatrixPresentations`Private`SubIrrepWeightBasis,QuantumGroups`Matr
 
 
 PackageBraidingMaps[Subscript[\[CapitalGamma]_, n_]]:=PackageData[
-{{NormalisedBraidingMap,NormalisedBraidingMap[Subscript[\[CapitalGamma], n],_,_]},{InverseNormalisedBraidingMap,InverseNormalisedBraidingMap[Subscript[\[CapitalGamma], n],_,_]}},
-{"tmp",ToString[\[CapitalGamma]]<>ToString[n],"BraidingMaps"},
+{{BraidingMap,BraidingMap[Subscript[\[CapitalGamma], n],_,_]},{InverseBraidingMap,InverseBraidingMap[Subscript[\[CapitalGamma], n],_,_]}},
+{ToString[\[CapitalGamma]]<>ToString[n],"BraidingMaps"},
 "Needs"->{"QuantumGroups`","QuantumGroups`MatrixPresentations`","QuantumGroups`RepresentationTensors`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Representations`"},
 "ExtraPrivateCode"->"q=Global`q;"
 ]

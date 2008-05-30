@@ -58,7 +58,7 @@ QuantumTrace::usage="";
 Distributor;Associator;
 
 
-BraidingMap;NormalisedBraidingMap;InverseNormalisedBraidingMap;
+BraidingMap;InverseBraidingMap;NormalisedBraidingMap;InverseNormalisedBraidingMap;
 
 
 DecompositionMap;InverseDecompositionMap;
@@ -194,6 +194,9 @@ Simplify[qDimension[\[CapitalGamma]][V]/QuantumTrace[b]]b
 
 
 NormalisedBraidingMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=BraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]
+
+
+InverseBraidingMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=InverseBraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=Inverse[BraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]]
 
 
 InverseNormalisedBraidingMap[\[CapitalGamma]_,V_\[CircleTimes]W_,\[Beta]_]:=InverseNormalisedBraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]=Inverse[NormalisedBraidingMap[\[CapitalGamma],V\[CircleTimes]W,\[Beta]]]

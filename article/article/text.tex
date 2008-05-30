@@ -475,7 +475,7 @@ MatrixPresentation[A3][$X_1^+$][V, \{0, 0, 0\}, FundamentalBasis]\end{inm}
 \end{mma}
 
 
-\section{Invariant vectors and intertwiners}
+\section{Invariant vectors and Hom-spaces}
 
 
 \section{$R$-matrices and quantum knot invariants}
@@ -632,5 +632,116 @@ for any $x$ in the quantum group, and if we define $$\mathcal{B}_{V,W} = \sigma 
 for any finite dimensional representations $U, V$ and $W$.
 \end{prop}
 
+These maps are defined by the \pkg, and are available as functions \code{RMatrix} and \code{BraidingMap}. The two functions require slightly different syntax, and package
+their answers in different ways.
+The first function takes arguments
+$\operatorname{RMatrix}[\Gamma, V, W, \beta, \lambda]$, and returns the matrix presentation of $\mathcal{R}_{V,W}$ acting on the $\lambda$ weight space,
+using the basis described by $\beta$. The second function takes arguments $\operatorname{BraidingMap}[\Gamma, V \tensor W, \beta]$, and returns
+$\mathcal{B}_{V,W}$ packaged as a \code{RepresentationTensor} expression, as described in \S \ref{??}.
+
+As examples, we have
+
+
+
+\begin{mma}
+\begin{inm}$\text{RMatrix}[A_2, \Irrep[A_2][\{1,0\}], \Irrep[A_2][\{0,1\}], \text{FundamentalBasis}, \{0,0\}]$
+\end{inm}
+\begin{outm}$\left(\begin{array}{lll} \frac{1}{q^{2/3}} & 0 & 0 \\ \frac{q^2-1}{q^{5/3}} & \frac{1}{q^{2/3}} & 0 \\ \frac{1-q^2}{q^{8/3}} & \frac{q^2-1}{q^{5/3}} & \frac{1}{q^{2/3}}\end{array}\right)$\end{outm}
+\begin{inm}$\text{BraidingMap}[A_2, \Irrep[A_2][\{1,0\}] \tensor \Irrep[A_2][\{0,1\}], \text{FundamentalBasis}]$
+\end{inm}
+\begin{outm}
+\begin{equation*}
+\begin{split}
+\text{RepresentationTensor}[A_2,\text{Irrep}\left[A_2\right][\{0,1\}]\otimes
+   \text{Irrep}\left[A_2\right][\{1,0\}],\text{FundamentalBasis}, \\
+   \text{Irrep}\left[A_2\right][\{1,0\}]\otimes
+   \text{Irrep}\left[A_2\right][\{0,1\}],\text{FundamentalBasis},\\
+\left\{
+\begin{array}{ll}
+\{
+ \{1,1\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^{1/3}
+\end{array}
+\right)\right] \},\\\{
+ \{2,-1\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^{1/3}
+\end{array}
+\right)\right] \},\\\{
+ \{-1,2\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^{1/3}
+\end{array}
+\right)\right] \},\\\{
+ \{0,0\}, & \text{Matrix}[3,3,\left(
+\begin{array}{lll}
+ \frac{1-q^2}{q^{8/3}} & \frac{q^2-1}{q^{5/3}} & \frac{1}{q^{2/3}} \\
+ \frac{q^2-1}{q^{5/3}} & \frac{1}{q^{2/3}} & 0 \\
+ \frac{1}{q^{2/3}} & 0 & 0
+\end{array}
+\right)] \},\\\{
+ \{1,-2\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^{1/3}
+\end{array}
+\right)\right] \},\\\{
+ \{-2,1\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^{1/3}
+\end{array}
+\right)\right] \},\\\{
+ \{-1,-1\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^{1/3}
+\end{array}
+\right)\right]\}
+\end{array}
+\right\}]
+\end{split}
+\end{equation*}
+\end{outm}
+\begin{inm}$\text{BraidingMap}[D_4, \Irrep[D_4][\{0,1,0,0\}] \tensor \Irrep[D_4][\{0,1,0,0\}], \text{FundamentalBasis}]$
+\end{inm}
+\begin{outm}
+\begin{equation*}
+\begin{split}
+\text{RepresentationTensor}[D_4,\Irrep[D_4][\{0,1,0,0\}]\otimes
+  \Irrep[D_4][\{0,1,0,0\}],\text{FundamentalBasis}, \\
+   \Irrep[D_4][\{0,1,0,0\}]\otimes
+   \Irrep[D_4][\{0,1,0,0\}],\text{FundamentalBasis},\\
+\left\{
+\begin{array}{ll}
+\{
+ \{0,-2,0,0\}, & \text{Matrix}\left[1,1,\left(
+\begin{array}{l}
+ q^2
+\end{array}
+\right)\right] \},\\\{
+ \{-1,0,-1,-1\}, & \text{Matrix}\left[2,2,\left(
+\begin{array}{ll}
+ 0 & q \\ q & q^2-1
+\end{array}
+\right)\right] \},\\
+\cdots
+\\\{
+ \{0,0,0,0\}, & \text{Matrix}[40,40,\left(
+\cdots
+\right)] \},\\
+\cdots
+\end{array}
+\right\}]
+\end{split}
+\end{equation*}\end{outm}
+\end{mma}
+
+For later:
+\begin{mma}
+\begin{inm}$\text{BraidingData}[A_3][\Irrep[A_3][\{0,1,0\}], 3]$
+\end{inm}
+\begin{outm}
+??
+\end{outm}
+\end{mma}
 
 \subsection{}
