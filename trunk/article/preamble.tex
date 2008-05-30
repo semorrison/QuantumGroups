@@ -106,20 +106,28 @@
 \newcommand{\inN}{\stepcounter{lineNumber}\arabic{lineNumber}}
 \newcommand{\outN}{\arabic{lineNumber}}
 
+%\newenvironment{inm}{%
+% \vskip 6pt \par\noindent%
+%  {\footnotesize\color{blue}In[\inN]$:=$}\tt%
+%  \catcode`\#=12 \catcode`\&=12 \catcode`\~=12 \catcode`\%=12%
+%  %\catcode`\$=12
+%  %\catcode`\^=12 \catcode`\_=12%
+%  \obeylines\obeyspaces}{}
+%\newenvironment{outm}{%
+% \vskip 0pt \par\noindent\parindent=12pt%
+%  {\footnotesize\color{blue}Out[\outN]$=$}\tt%
+%  \catcode`\#=12 \catcode`\~=12 \catcode`\%=12%
+%  %\catcode`\$=12 \catcode`\&=12
+%  %\catcode`\^=12 \catcode`\_=12%
+%  \obeylines\obeyspaces}{}
 \newenvironment{inm}{%
  \vskip 6pt \par\noindent%
   {\footnotesize\color{blue}In[\inN]$:=$}\tt%
-  \catcode`\#=12 \catcode`\&=12 \catcode`\~=12 \catcode`\%=12%
-  %\catcode`\$=12
-  %\catcode`\^=12 \catcode`\_=12%
-  \obeylines\obeyspaces}{}
+  }{}
 \newenvironment{outm}{%
  \vskip 0pt \par\noindent\parindent=12pt%
   {\footnotesize\color{blue}Out[\outN]$=$}\tt%
-  \catcode`\#=12 \catcode`\~=12 \catcode`\%=12%
-  %\catcode`\$=12 \catcode`\&=12
-  %\catcode`\^=12 \catcode`\_=12%
-  \obeylines\obeyspaces}{}
+  }{}
 %\newenvironment{printm}%
 %    {\verbatim}%
 %    {\endverbatim}%
@@ -200,6 +208,8 @@
 
 \newcommand{\Gr}[2]{\text{Gr}(#1 \subset #2)}
 \newcommand{\Flag}[3]{\text{Flag}(#1 \subset #2 \subset #3)}
+
+\newcommand{\Irrep}{\operatorname{Irrep}}
 
 \def\llbracket{\left[\!\!\left[}
 \def\rrbracket{\right]\!\!\right]}
