@@ -96,7 +96,8 @@ Kuperberg's spider \cite{???}.
 Next, the two variable Kauffman polynomial \cite{MR958895} simultaneously
 captures all the Reshetikhin-Turaev invariants for the standard
 representations of the quantum groups $U_q(\mathfrak{so}(n))$, $n \geq
-5$, and $U_q(\mathfrak{sp}(n))$, $n \geq 4$. We'll write (see below)
+5$, and $U_q(\mathfrak{sp}(n))$, $n \geq 4$, see \cite{MR939474, MR1090432}.
+We'll write $V^\natural$ for the standard representation, and (see below)
 $B_n$ to mean $\mathfrak{so}(2n+1)$ acting on $\Complex^{2n+1}$, $C_n$ to
 mean $\mathfrak{sp}(n)$ acting on $\Complex^{2n}$, and $D_n$ to mean
 $\mathfrak{so}(2n)$ acting on $\Complex^{2n}$. The quantum integers are
@@ -104,22 +105,22 @@ denoted $\qiq{k}{q} = \frac{q^k-q^{-k}}{q-q^{-1}}$.
 
 \begin{align}
 \label{eq:kauffman-B}%
-\text{Kauffman}_L(-i q^{4n}, i (q^2-q^{-2})) & = \frac{RT_{B_n}(L)(q)}{\qiq{2n}{q^2} + 1} \\
+\text{Kauffman}_L(-i q^{4n}, i (q^2-q^{-2})) & = \frac{RT_{B_n, V^\natural}(L)(q)}{\qiq{2n}{q^2} + 1} \\
 \label{eq:kauffman-C}%
-\text{Kauffman}_L(i q^{2n+1}, i (q-q^{-1})) & = (-1)^{\card{L}} \frac{RT_{C_n}(L)(q)}{\qiq{2n+1}{q} - 1} \\
+\text{Kauffman}_L(i q^{2n+1}, i (q-q^{-1})) & = (-1)^{\card{L}} \frac{RT_{C_n, V^\natural}(L)(q)}{\qiq{2n+1}{q} - 1} \\
 \label{eq:kauffman-D}%
-\text{Kauffman}_L(-i q^{2n-1}, i (q-q^{-1})) & = \frac{RT_{D_n}(L)(q)}{\qiq{2n-1}{q} + 1}
+\text{Kauffman}_L(-i q^{2n-1}, i (q-q^{-1})) & = \frac{RT_{D_n, V^\natural}(L)(q)}{\qiq{2n-1}{q} + 1}
 \end{align}
 
-\todo{look these up \cite{MR939474, MR1090432}, and write some formulas} \todo{explain how to check
-these?}
+Later, in \S \ref{??}, we'll show how to check these identities for particular knots and particular values of $n$, using the \pkg. \todo{}
 
 Noticing that $\text{Kauffman}_L(a,z) = \text{Kauffman}_L(-a,-z)$, we
 observe that one can pass between the expressions in Equations
 \ref{eq:kauffman-C} and \ref{eq:kauffman-D} by replacing $n$ with $-n$
 and $q$ with $q^{-1}$. This amusing fact is a presumably a reflection of
 an identity in Vassiliev theory, due to Kontsevich, described in
-\cite[Exercise 6.37]{MR1318886}.
+\cite[Exercise 6.37]{MR1318886}. The Reshetikhin-Turaev invariant in type $C$ can also be written more naturally (i.e. without signs)
+as a specialisation of the Dubrovnik normalisation \cite{MR966143,MR980759} of the Kauffman polynomial.
 
 \todo{mention cabling formulas. what happens outside of type A??}
 \todo{examples in MMA}
@@ -652,7 +653,7 @@ As examples, we have
 \begin{outm}
 \begin{equation*}
 \begin{split}
-\text{RepresentationTensor}[A_2,\text{Irrep}\left[A_2\right][\{0,1\}]\otimes
+\text{RepresentationTensor}[A_2,\\\text{Irrep}\left[A_2\right][\{0,1\}]\otimes
    \text{Irrep}\left[A_2\right][\{1,0\}],\text{FundamentalBasis}, \\
    \text{Irrep}\left[A_2\right][\{1,0\}]\otimes
    \text{Irrep}\left[A_2\right][\{0,1\}],\text{FundamentalBasis},\\
@@ -706,7 +707,7 @@ As examples, we have
 \begin{outm}
 \begin{equation*}
 \begin{split}
-\text{RepresentationTensor}[D_4,\Irrep[D_4][\{0,1,0,0\}]\otimes
+\text{RepresentationTensor}[D_4,\\\Irrep[D_4][\{0,1,0,0\}]\otimes
   \Irrep[D_4][\{0,1,0,0\}],\text{FundamentalBasis}, \\
    \Irrep[D_4][\{0,1,0,0\}]\otimes
    \Irrep[D_4][\{0,1,0,0\}],\text{FundamentalBasis},\\
@@ -744,4 +745,4 @@ For later:
 \end{outm}
 \end{mma}
 
-\subsection{}
+\subsection{Representations of the braid group}
