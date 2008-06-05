@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["QuantumGroups`Representations`",{"QuantumGroups`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`WeylGroups`","QuantumGroups`LittelmannPaths`"}];
+BeginPackage["QuantumGroups`Representations`",{"QuantumGroups`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`WeylGroups`","QuantumGroups`LittelmannPaths`","QuantumGroups`Utilities`Debugging`"}];
 
 
 WeightMultiplicities::usage="";
@@ -127,16 +127,18 @@ WeightMultiplicity[\[CapitalGamma]_,V_DirectSum,\[Lambda]_]:=Plus@@(WeightMultip
 PositiveWeights[\[CapitalGamma]_,V_]:=PositiveWeights[\[CapitalGamma],V]=Select[Weights[\[CapitalGamma],V],PositiveWeightQ[\[CapitalGamma]]]
 
 
-qDimension[\[CapitalGamma]_][V_]:=qDimension[\[CapitalGamma]][V]=With[{\[Rho]=Plus@@PositiveRoots[\[CapitalGamma]]},Plus@@(WeightMultiplicities[\[CapitalGamma],V]/.{\[Lambda]_,n_Integer}:>n q^KillingForm[\[CapitalGamma]][\[Rho],\[Lambda]])]
+qDimension[\[CapitalGamma]_][V_]:=qDimension[\[CapitalGamma]][V]=With[{\[Rho]=Table[1,{Rank[\[CapitalGamma]]}]},Plus@@(WeightMultiplicities[\[CapitalGamma],V]/.{\[Lambda]_,n_Integer}:>n q^KillingForm[\[CapitalGamma]][2\[Rho],\[Lambda]])]
 
 
 fastQDimension[Subscript[(\[CapitalGamma]:(A|D|E)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]:{___Integer}]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
 Module[{
-exp=KillingForm[Subscript[\[CapitalGamma], n]][Plus@@PositiveRoots[Subscript[\[CapitalGamma], n]],\[Lambda]],
+exp=KillingForm[Subscript[\[CapitalGamma], n]][2Table[1,{n}],\[Lambda]],
 sum=0,
 latestLowerings={LittelmannPath[Subscript[\[CapitalGamma], n]][{\[Lambda]}]}
 },
+DebugPrint["Running fastQDimensions, ",Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]];
 While[exp>=0,
+DebugPrint["... exp=",exp];
 sum+=q^exp Length[latestLowerings];
 exp-=2;
 latestLowerings=LittelmannPathOneStepLowerings[latestLowerings];
@@ -148,11 +150,12 @@ Expand[sum+(sum/.{q->q^-1})-(sum/.{q->0})]
 (* this could be optimised more, by staying in the positive half-space *)
 fastQDimension[Subscript[(\[CapitalGamma]:(B|C|F|G)), n_]][Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]:{___Integer}]]:=fastQDimension[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]]]=
 Module[{
+\[Rho]=Table[1,{n}],
 sum=0,
 latestLowerings={LittelmannPath[Subscript[\[CapitalGamma], n]][{\[Lambda]}]}
 },
 While[Length[latestLowerings]>0,
-sum+=Plus@@(q^KillingForm[Subscript[\[CapitalGamma], n]][Plus@@PositiveRoots[Subscript[\[CapitalGamma], n]],LittelmannPathEndpoint[#]]&/@latestLowerings);
+sum+=Plus@@(q^KillingForm[Subscript[\[CapitalGamma], n]][2\[Rho],LittelmannPathEndpoint[#]]&/@latestLowerings);
 latestLowerings=LittelmannPathOneStepLowerings[latestLowerings];
 ];
 sum
@@ -252,6 +255,8 @@ fastQDimension[Subscript[E, 8]][Irrep[Subscript[E, 8]][{1, 0, 0, 0, 0, 0, 0, 0}]
      54*q^36 + 49*q^38 + 46*q^40 + 42*q^42 + 40*q^44 + 36*q^46 + 33*q^48 + 29*q^50 + 27*q^52 + 
      24*q^54 + 22*q^56 + 19*q^58 + 17*q^60 + 14*q^62 + 13*q^64 + 11*q^66 + 10*q^68 + 8*q^70 + 
      7*q^72 + 5*q^74 + 5*q^76 + 4*q^78 + 3*q^80 + 2*q^82 + 2*q^84 + q^86 + q^88 + q^90 + q^92;
+
+fastQDimension[Subscript[E, 8]][Irrep[Subscript[E, 8]][{0, 0, 0, 0, 0, 0, 1, 0}]] =676+q^(-114)+q^(-112)+2/q^110+2/q^108+3/q^106+4/q^104+6/q^102+7/q^100+9/q^98+11/q^96+14/q^94+17/q^92+22/q^90+25/q^88+30/q^86+35/q^84+42/q^82+49/q^80+58/q^78+65/q^76+75/q^74+85/q^72+98/q^70+109/q^68+124/q^66+136/q^64+152/q^62+168/q^60+187/q^58+204/q^56+224/q^54+241/q^52+263/q^50+283/q^48+307/q^46+327/q^44+351/q^42+371/q^40+396/q^38+418/q^36+443/q^34+463/q^32+486/q^30+504/q^28+528/q^26+547/q^24+568/q^22+583/q^20+601/q^18+613/q^16+630/q^14+641/q^12+653/q^10+658/q^8+667/q^6+669/q^4+676/q^2+676*q^2+669*q^4+667*q^6+658*q^8+653*q^10+641*q^12+630*q^14+613*q^16+601*q^18+583*q^20+568*q^22+547*q^24+528*q^26+504*q^28+486*q^30+463*q^32+443*q^34+418*q^36+396*q^38+371*q^40+351*q^42+327*q^44+307*q^46+283*q^48+263*q^50+241*q^52+224*q^54+204*q^56+187*q^58+168*q^60+152*q^62+136*q^64+124*q^66+109*q^68+98*q^70+85*q^72+75*q^74+65*q^76+58*q^78+49*q^80+42*q^82+35*q^84+30*q^86+25*q^88+22*q^90+17*q^92+14*q^94+11*q^96+9*q^98+7*q^100+6*q^102+4*q^104+3*q^106+2*q^108+2*q^110+q^112+q^114
 
 
 End[];
