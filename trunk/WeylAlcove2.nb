@@ -1,0 +1,1962 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     77064,       1953]
+NotebookOptionsPosition[     75368,       1890]
+NotebookOutlinePosition[     75710,       1905]
+CellTagsIndexPosition[     75667,       1902]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PseudoUnitaryQ", "[", 
+   RowBox[{"RepresentationCategory", "[", 
+    RowBox[{"\[CapitalGamma]_", ",", "l_"}], "]"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Length", "[", 
+    RowBox[{"FindPositiveDimensions", "[", 
+     RowBox[{"\[CapitalGamma]", ",", "l"}], "]"}], "]"}], ">", 
+   "0"}]}]], "Input",
+ CellChangeTimes->{{3.4216310614448195`*^9, 3.4216311409891987`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cachedFullSimplify", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"cachedFullSimplify", "[", "x", "]"}], "=", 
+   RowBox[{"FullSimplify", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.421631749654416*^9, 3.4216317553526096`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"RepresentationCategory", "/:", 
+  RowBox[{
+   RowBox[{"Dimensions", "[", 
+    RowBox[{"RepresentationCategory", "[", 
+     RowBox[{"\[CapitalGamma]_", ",", "l_"}], "]"}], "]"}], "/;", 
+   RowBox[{"PseudoUnitaryQ", "[", 
+    RowBox[{"RepresentationCategory", "[", 
+     RowBox[{"\[CapitalGamma]", ",", "l"}], "]"}], "]"}]}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"FindPositiveDimensions", "[", 
+     RowBox[{"\[CapitalGamma]", ",", "l"}], "]"}], "\[LeftDoubleBracket]", 
+    "1", "\[RightDoubleBracket]"}], "/.", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r_Integer", ",", "z_Integer"}], "}"}], "\[RuleDelayed]", 
+    RowBox[{"Chop", "@", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"-", "1"}], ")"}], 
+            RowBox[{
+             RowBox[{
+              RowBox[{"RibbonElements", "[", "\[CapitalGamma]", "]"}], 
+              "\[LeftDoubleBracket]", "r", "\[RightDoubleBracket]"}], ".", 
+             "#"}]], 
+           RowBox[{
+            RowBox[{"qDimension", "[", "\[CapitalGamma]", "]"}], "[", 
+            RowBox[{
+             RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", "#", "]"}], 
+            "]"}]}], ")"}], "&"}], "/@", 
+        RowBox[{"AlcoveWeights", "[", 
+         RowBox[{"\[CapitalGamma]", ",", "l"}], "]"}]}], "/.", 
+       RowBox[{"q", "\[Rule]", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"2", "\[Pi]", " ", "\[ImaginaryI]", " ", 
+          FractionBox["z", "l"]}], "]"}]}]}], "]"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.4216313906481905`*^9, 3.4216314398789806`*^9}, {
+  3.421631472425781*^9, 3.4216316543373566`*^9}, {3.421631744466957*^9, 
+  3.4216317451078787`*^9}, {3.4216318039224496`*^9, 3.421631842838408*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PseudoUnitaryQ", "/@", 
+  RowBox[{"RepresentationCategoriesByRank", "[", 
+   RowBox[{"4", ",", "10"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.421631125677181*^9, 3.4216311792742496`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "False", ",", "False", ",", "False", ",", 
+   "True"}], "}"}]], "Output",
+ CellChangeTimes->{{3.421631175478792*^9, 3.421631207144325*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PseudoUnitaryQ", "/@", 
+  RowBox[{"RepresentationCategoriesByRank", "[", 
+   RowBox[{"5", ",", "100"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.421631125677181*^9, 3.4216311295227103`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{{3.4216311353510914`*^9, 3.4216311523355136`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PseudoUnitaryQ", "/@", 
+  RowBox[{"RepresentationCategoriesByRank", "[", 
+   RowBox[{"6", ",", "100"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.421631125677181*^9, 3.4216311295227103`*^9}, {
+  3.4216312335923553`*^9, 3.4216312336524415`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{3.4216312459901824`*^9, 3.4216312865785456`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PseudoUnitaryQ", "/@", 
+  RowBox[{"RepresentationCategoriesByRank", "[", 
+   RowBox[{"7", ",", "100"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.421631125677181*^9, 3.4216311295227103`*^9}, {
+  3.421631238319152*^9, 3.421631238449339*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"True", ",", "True", ",", "True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{{3.421631276143541*^9, 3.421631287239496*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PseudoUnitaryQ", "/@", 
+  RowBox[{"RepresentationCategoriesByRank", "[", 
+   RowBox[{"8", ",", "100"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.421631125677181*^9, 3.4216311295227103`*^9}, {
+  3.421631238319152*^9, 3.421631238449339*^9}, {3.4216312953611746`*^9, 
+  3.421631295551448*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True"}], "}"}]], "Output",
+ CellChangeTimes->{3.421631443634381*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"3", ",", "10"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+  3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+  3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+  3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+  3.4216319916123343`*^9}, {3.421632035725766*^9, 3.421632065859096*^9}, {
+  3.421632309259088*^9, 3.421632309329189*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "8"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.4142135623730951`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "2"], ",", "8"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "2"], ",", "16"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.4142135623730951`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "3"], ",", "24"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000002`", "1.4142135623730951`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "4"], ",", "32"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.4142135623730954`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "5"], ",", "40"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.4142135623730976`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "6"], ",", "48"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.4142135623730958`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "7"], ",", "56"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.4142135623730994`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "8"], ",", "64"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.4142135623731065`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "9"], ",", "72"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.414213562373135`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "10"], ",", "80"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.4142135623731065`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["\[ExponentialE]", "6"], ",", "13"}], "]"}], GridBox[{
+       {"0.9999999999999982`", "0.9999999999999982`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["\[ExponentialE]", "6"], ",", "26"}], "]"}], GridBox[{
+       {"0.9999999999999982`", "0.9999999999999982`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["\[ExponentialE]", "8"], ",", "64"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000002274`", "1.4142135623731207`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 8], {{1., 1., 1.4142135623730951`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 2], 8], {{1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 2], 16], {{1., 1., 1.4142135623730951`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 3], 24], {{1., 1.0000000000000002`, 
+     1.4142135623730951`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 4], 32], {{1., 1., 1.4142135623730954`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 5], 40], {{1., 1.0000000000000009`, 
+     1.4142135623730976`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 6], 48], {{1., 1., 1.4142135623730958`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 7], 56], {{1., 1., 1.4142135623730994`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 8], 64], {{1., 1.0000000000000009`, 
+     1.4142135623731065`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 9], 72], {{1., 1.0000000000000009`, 
+     1.414213562373135}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 10], 80], {{1., 1.0000000000000009`, 
+     1.4142135623731065`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[E, 6], 13], {{0.9999999999999982, 0.9999999999999982, 
+     1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[E, 6], 26], {{0.9999999999999982, 0.9999999999999982, 
+     1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[E, 8], 64], {{1., 1.0000000000002274`, 
+     1.4142135623731207`}}}}]]], "Output",
+ CellChangeTimes->{3.4216323758147907`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"4", ",", "10"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+  3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+  3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+  3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+  3.4216319916123343`*^9}, {3.421632035725766*^9, 3.421632065859096*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "5"}], "]"}], GridBox[{
+       {"0.9999999999999998`", "1.`", "1.6180339887498947`", 
+        "1.618033988749895`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "10"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000002`", "1.618033988749895`", 
+        "1.618033988749895`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "3"], ",", "5"}], "]"}], GridBox[{
+       {"0.9999999999999998`", "0.9999999999999998`", "1.`", 
+        "1.0000000000000002`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "3"], ",", "10"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000002`", "1.0000000000000002`", 
+        "1.0000000000000002`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "3"], ",", "20"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.6180339887498951`", 
+        "1.6180339887498953`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "4"], ",", "7"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "4"], ",", "14"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "5"], ",", "9"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.0000000000000009`", 
+        "1.0000000000000009`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "5"], ",", "18"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.0000000000000009`", 
+        "1.0000000000000009`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "6"], ",", "11"}], "]"}], GridBox[{
+       {"0.9999999999999964`", "0.9999999999999964`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "6"], ",", "22"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.0000000000000018`", "1.0000000000000018`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "7"], ",", "13"}], "]"}], GridBox[{
+       {"0.9999999999999991`", "1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "7"], ",", "26"}], "]"}], GridBox[{
+       {"0.9999999999999991`", "1.`", "1.0000000000000036`", 
+        "1.0000000000000036`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "8"], ",", "15"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.0000000000000142`", 
+        "1.0000000000000142`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "8"], ",", "30"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "1.0000000000000142`", 
+        "1.0000000000000142`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "9"], ",", "17"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "9"], ",", "34"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "10"], ",", "19"}], "]"}], GridBox[{
+       {"0.9999999999999716`", "0.9999999999999716`", "1.`", 
+        "1.0000000000000018`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["D", "10"], ",", "38"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.0000000000000018`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "36"}], "]"}], GridBox[{
+       {"1.`", "1.8793852415718177`", "2.5320888862379576`", 
+        "2.8793852415718173`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 5], {{0.9999999999999998, 1., 
+     1.6180339887498947`, 1.618033988749895}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 10], {{1., 1.0000000000000002`, 
+     1.618033988749895, 1.618033988749895}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 3], 5], {{0.9999999999999998, 
+     0.9999999999999998, 1., 1.0000000000000002`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 3], 10], {{1., 1.0000000000000002`, 
+     1.0000000000000002`, 1.0000000000000002`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 3], 20], {{1., 1.0000000000000009`, 1.6180339887498951`, 
+     1.6180339887498953`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 4], 7], {{1., 1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 4], 14], {{1., 1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 5], 9], {{1., 1.0000000000000009`, 1.0000000000000009`, 
+     1.0000000000000009`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 5], 18], {{1., 1.0000000000000009`, 1.0000000000000009`, 
+     1.0000000000000009`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 6], 11], {{0.9999999999999964, 0.9999999999999964, 1., 
+     1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 6], 22], {{1., 1., 1.0000000000000018`, 
+     1.0000000000000018`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 7], 13], {{0.9999999999999991, 1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 7], 26], {{0.9999999999999991, 1., 1.0000000000000036`, 
+     1.0000000000000036`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 8], 15], {{1., 1.0000000000000009`, 1.0000000000000142`, 
+     1.0000000000000142`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 8], 30], {{1., 1.0000000000000009`, 1.0000000000000142`, 
+     1.0000000000000142`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 9], 17], {{1., 1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 9], 34], {{1., 1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 10], 19], {{0.9999999999999716, 0.9999999999999716, 1., 
+     1.0000000000000018`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[D, 10], 38], {{1., 1., 1., 1.0000000000000018`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 36], {{1., 1.8793852415718177`, 
+     2.5320888862379576`, 2.8793852415718173`}}}}]]], "Output",
+ CellChangeTimes->{{3.4216319054484367`*^9, 3.4216319079219933`*^9}, {
+  3.4216319507635965`*^9, 3.421631956421733*^9}, {3.421632061773221*^9, 
+  3.4216320662196145`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"5", ",", "100"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+  3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+  3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+  3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+  3.4216319916123343`*^9}, {3.421632035725766*^9, 3.4216320524798574`*^9}, {
+  3.4216325683917027`*^9, 3.4216325726177793`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "12"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000004`", "1.7320508075688774`", 
+        "1.7320508075688774`", "2.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "4"], ",", "12"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000004`", "1.0000000000000004`", 
+        "1.0000000000000009`", "1.0000000000000009`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "4"], ",", "24"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000018`", "1.732050807568878`", 
+        "1.7320508075688803`", "2.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["\[ExponentialE]", "8"], ",", "33"}], "]"}], GridBox[{
+       {"1.`", "1.9189859472389799`", "2.6825070656632306`", 
+        "3.2287074151195725`", "3.5133370916662443`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["\[ExponentialE]", "8"], ",", "66"}], "]"}], GridBox[{
+       {"1.`", "1.9189859472389799`", "2.6825070656632306`", 
+        "3.2287074151195725`", "3.5133370916662443`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["F", "4"], ",", "44"}], "]"}], GridBox[{
+       {"1.`", "1.9189859472289985`", "2.682507065662378`", 
+        "3.2287074151195867`", "3.513337091666137`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "11"}], "]"}], GridBox[{
+       {"1.`", "1.9189859472289967`", "2.682507065662363`", 
+        "3.2287074151195654`", "3.513337091666136`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "22"}], "]"}], GridBox[{
+       {"1.`", "1.9189859472289967`", "2.682507065662363`", 
+        "3.2287074151195654`", "3.513337091666136`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 12], {{1., 1.0000000000000004`, 
+     1.7320508075688774`, 1.7320508075688774`, 2.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 4], 12], {{1., 1.0000000000000004`, 
+     1.0000000000000004`, 1.0000000000000009`, 1.0000000000000009`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 4], 24], {{1., 1.0000000000000018`, 1.732050807568878, 
+     1.7320508075688803`, 2.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[E, 8], 33], {{1., 1.9189859472389799`, 2.6825070656632306`, 
+     3.2287074151195725`, 3.5133370916662443`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[E, 8], 66], {{1., 1.9189859472389799`, 2.6825070656632306`, 
+     3.2287074151195725`, 3.5133370916662443`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`F, 4], 44], {{1., 1.9189859472289985`, 
+     2.682507065662378, 3.2287074151195867`, 3.513337091666137}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 11], {{1., 1.9189859472289967`, 
+     2.682507065662363, 3.2287074151195654`, 3.513337091666136}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 22], {{1., 1.9189859472289967`, 
+     2.682507065662363, 3.2287074151195654`, 
+     3.513337091666136}}}}]]], "Output",
+ CellChangeTimes->{
+  3.4216316888569937`*^9, {3.42163171996172*^9, 3.4216317560736465`*^9}, {
+   3.4216318012285757`*^9, 3.4216318493878255`*^9}, {3.4216319692501793`*^9, 
+   3.4216320527802896`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"6", ",", "100"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+  3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+  3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+  3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+  3.4216319916123343`*^9}, {3.421632035725766*^9, 3.421632073770472*^9}, {
+  3.421632574310213*^9, 3.4216325751814656`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "7"}], "]"}], GridBox[{
+       {"0.9999999999999996`", "1.`", "1.801937735804838`", 
+        "1.8019377358048385`", "2.2469796037174667`", "2.246979603717467`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "14"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000004`", "1.8019377358048383`", 
+        "1.8019377358048385`", "2.246979603717467`", "2.246979603717467`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "2"], ",", "5"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000002`", "1.0000000000000002`", 
+        "1.618033988749895`", "1.618033988749895`", "1.6180339887498951`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "2"], ",", "10"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000002`", "1.0000000000000002`", 
+        "1.618033988749895`", "1.618033988749895`", "1.6180339887498951`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "5"], ",", "7"}], "]"}], GridBox[{
+       {"0.9999999999999982`", "0.9999999999999996`", "0.9999999999999996`", 
+        "1.`", "1.`", "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "5"], ",", "14"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.0000000000000004`", "1.0000000000000004`", 
+        "1.0000000000000013`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "2"], ",", "7"}], "]"}], GridBox[{
+       {"0.9999999999999982`", "1.`", "1.8019377358048372`", 
+        "1.8019377358048385`", "2.2469796037174667`", "2.2469796037174676`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "2"], ",", "14"}], "]"}], GridBox[{
+       {"0.9999999999999982`", "1.`", "1.8019377358048372`", 
+        "1.8019377358048385`", "2.2469796037174667`", "2.2469796037174676`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "2"], ",", "20"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000009`", "2.`", "2.0000000000000004`", 
+        "2.23606797749979`", "2.2360679774997902`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "5"], ",", "28"}], "]"}], GridBox[{
+       {"1.`", "1.000000000000007`", "1.801937735804839`", 
+        "1.8019377358048487`", "2.2469796037174703`", "2.2469796037174703`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["\[ExponentialE]", "7"], ",", "40"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000001137`", "1.4142135623731065`", 
+        "1.6180339887499002`", "1.6180339887499713`", "2.2882456112707388`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "21"}], "]"}], GridBox[{
+       {"1.`", "3.7912878474779212`", "3.7912878474779217`", 
+        "3.7912878474779284`", "4.791287847477925`", "5.791287847477922`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "42"}], "]"}], GridBox[{
+       {"1.`", "3.7912878474779212`", "3.7912878474779217`", 
+        "3.7912878474779284`", "4.791287847477925`", "5.791287847477922`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 7], {{0.9999999999999996, 1., 
+     1.801937735804838, 1.8019377358048385`, 2.2469796037174667`, 
+     2.246979603717467}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 14], {{1., 1.0000000000000004`, 
+     1.8019377358048383`, 1.8019377358048385`, 2.246979603717467, 
+     2.246979603717467}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 2], 5], {{1., 1.0000000000000002`, 
+     1.0000000000000002`, 1.618033988749895, 1.618033988749895, 
+     1.6180339887498951`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 2], 10], {{1., 1.0000000000000002`, 
+     1.0000000000000002`, 1.618033988749895, 1.618033988749895, 
+     1.6180339887498951`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 5], 7], {{0.9999999999999982, 
+     0.9999999999999996, 0.9999999999999996, 1., 1., 1.}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 5], 14], {{1., 1., 1., 1.0000000000000004`, 
+     1.0000000000000004`, 1.0000000000000013`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 2], 7], {{0.9999999999999982, 1., 
+     1.8019377358048372`, 1.8019377358048385`, 2.2469796037174667`, 
+     2.2469796037174676`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 2], 14], {{0.9999999999999982, 1., 
+     1.8019377358048372`, 1.8019377358048385`, 2.2469796037174667`, 
+     2.2469796037174676`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 2], 20], {{1., 1.0000000000000009`, 2., 
+     2.0000000000000004`, 2.23606797749979, 2.2360679774997902`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 5], 28], {{1., 1.000000000000007, 1.801937735804839, 
+     1.8019377358048487`, 2.2469796037174703`, 2.2469796037174703`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[E, 7], 40], {{1., 1.0000000000001137`, 1.4142135623731065`, 
+     1.6180339887499002`, 1.6180339887499713`, 2.2882456112707388`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 21], {{1., 3.7912878474779212`, 
+     3.7912878474779217`, 3.7912878474779284`, 4.791287847477925, 
+     5.791287847477922}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 42], {{1., 3.7912878474779212`, 
+     3.7912878474779217`, 3.7912878474779284`, 4.791287847477925, 
+     5.791287847477922}}}}]]], "Output",
+ CellChangeTimes->{3.421631974657955*^9, 3.421632074120976*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"7", ",", "100"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+   3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+   3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+   3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+   3.4216319916123343`*^9}, {3.421632035725766*^9, 3.42163209224704*^9}, 
+   3.4216325777050943`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "16"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.8477590650225735`", "1.847759065022574`", 
+        "2.414213562373095`", "2.414213562373095`", "2.613125929752753`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "6"], ",", "16"}], "]"}], GridBox[{
+       {"1.`", "1.`", "1.`", "1.0000000000000009`", "1.0000000000000009`", 
+        "1.0000000000000009`", "1.0000000000000009`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "3"], ",", "28"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000018`", "2.`", "2.`", "2.0000000000000036`", 
+        "2.64575131106459`", "2.6457513110645907`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "6"], ",", "32"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000284`", "1.847759065022574`", 
+        "1.8477590650226148`", "2.4142135623730994`", "2.4142135623731065`", 
+        "2.613125929752762`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 16], {{1., 1., 1.8477590650225735`, 
+     1.847759065022574, 2.414213562373095, 2.414213562373095, 
+     2.613125929752753}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 6], 16], {{1., 1., 1., 1.0000000000000009`, 
+     1.0000000000000009`, 1.0000000000000009`, 1.0000000000000009`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 3], 28], {{1., 1.0000000000000018`, 2., 2., 
+     2.0000000000000036`, 2.64575131106459, 2.6457513110645907`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 6], 32], {{1., 1.0000000000000284`, 1.847759065022574, 
+     1.8477590650226148`, 2.4142135623730994`, 2.4142135623731065`, 
+     2.613125929752762}}}}]]], "Output",
+ CellChangeTimes->{3.421632092637602*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"8", ",", "100"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+   3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+   3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+   3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+   3.4216319916123343`*^9}, {3.421632035725766*^9, 3.4216320984659824`*^9}, 
+   3.4216325790570383`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "9"}], "]"}], GridBox[{
+       {"0.9999999999999991`", "1.`", "1.8793852415718166`", 
+        "1.8793852415718173`", "2.5320888862379554`", "2.532088886237956`", 
+        "2.879385241571816`", "2.879385241571817`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "1"], ",", "18"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000004`", "1.8793852415718169`", 
+        "1.8793852415718173`", "2.532088886237956`", "2.5320888862379562`", 
+        "2.879385241571817`", "2.879385241571817`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "7"], ",", "9"}], "]"}], GridBox[{
+       {"0.9999999999999929`", "0.9999999999999929`", "0.9999999999999991`", 
+        "0.9999999999999991`", "1.`", "1.0000000000000036`", 
+        "1.0000000000000036`", "1.000000000000007`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["A", "7"], ",", "18"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000004`", "1.0000000000000004`", 
+        "1.0000000000000036`", "1.0000000000000036`", "1.0000000000000036`", 
+        "1.0000000000000036`", "1.000000000000007`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "3"], ",", "9"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000142`", "1.8793852415718173`", 
+        "1.8793852415718248`", "2.5320888862379594`", "2.532088886237961`", 
+        "2.8793852415718173`", "2.8793852415718195`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "3"], ",", "18"}], "]"}], GridBox[{
+       {"0.9999999999999929`", "1.`", "1.8793852415718106`", 
+        "1.8793852415718173`", "2.5320888862379523`", "2.5320888862379594`", 
+        "2.879385241571816`", "2.8793852415718195`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["B", "4"], ",", "36"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000000053`", "2.0000000000000004`", 
+        "2.0000000000000053`", "2.000000000000007`", "2.000000000000007`", 
+        "3.000000000000001`", "3.000000000000007`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "3"], ",", "9"}], "]"}], GridBox[{
+       {"0.9999999999999929`", "1.`", "1.879385241571815`", 
+        "1.8793852415718213`", "2.5320888862379554`", "2.5320888862379594`", 
+        "2.8793852415718106`", "2.8793852415718177`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "3"], ",", "18"}], "]"}], GridBox[{
+       {"0.9999999999999929`", "1.`", "1.879385241571815`", 
+        "1.8793852415718213`", "2.5320888862379554`", "2.5320888862379594`", 
+        "2.8793852415718106`", "2.8793852415718177`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["C", "7"], ",", "36"}], "]"}], GridBox[{
+       {"1.`", "1.0000000000001137`", "1.8793852415718177`", 
+        "1.8793852415718675`", "2.532088886237961`", "2.532088886238057`", 
+        "2.8793852415718533`", "2.8793852415718675`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "13"}], "]"}], GridBox[{
+       {"1.`", "2.9418836348521005`", "4.148114905279364`", 
+        "4.148114905279377`", "4.712795686158524`", "6.2098171825007284`", 
+        "7.345946675963038`", "8.055156450048106`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {
+     RowBox[{"RepresentationCategory", "[", 
+      RowBox[{
+       SubscriptBox["G", "2"], ",", "26"}], "]"}], GridBox[{
+       {"1.`", "2.9418836348521005`", "4.148114905279364`", 
+        "4.148114905279377`", "4.712795686158524`", "6.2098171825007284`", 
+        "7.345946675963038`", "8.055156450048106`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 9], {{0.9999999999999991, 1., 
+     1.8793852415718166`, 1.8793852415718173`, 2.5320888862379554`, 
+     2.532088886237956, 2.879385241571816, 2.879385241571817}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 1], 18], {{1., 1.0000000000000004`, 
+     1.8793852415718169`, 1.8793852415718173`, 2.532088886237956, 
+     2.5320888862379562`, 2.879385241571817, 2.879385241571817}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 7], 9], {{0.9999999999999929, 
+     0.9999999999999929, 0.9999999999999991, 0.9999999999999991, 1., 
+     1.0000000000000036`, 1.0000000000000036`, 1.000000000000007}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`A, 7], 18], {{1., 1.0000000000000004`, 
+     1.0000000000000004`, 1.0000000000000036`, 1.0000000000000036`, 
+     1.0000000000000036`, 1.0000000000000036`, 1.000000000000007}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 3], 9], {{1., 1.0000000000000142`, 
+     1.8793852415718173`, 1.8793852415718248`, 2.5320888862379594`, 
+     2.532088886237961, 2.8793852415718173`, 2.8793852415718195`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 3], 18], {{0.9999999999999929, 1., 
+     1.8793852415718106`, 1.8793852415718173`, 2.5320888862379523`, 
+     2.5320888862379594`, 2.879385241571816, 2.8793852415718195`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`B, 4], 36], {{1., 1.0000000000000053`, 
+     2.0000000000000004`, 2.0000000000000053`, 2.000000000000007, 
+     2.000000000000007, 3.000000000000001, 3.000000000000007}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 3], 9], {{0.9999999999999929, 1., 1.879385241571815, 
+     1.8793852415718213`, 2.5320888862379554`, 2.5320888862379594`, 
+     2.8793852415718106`, 2.8793852415718177`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 3], 18], {{0.9999999999999929, 1., 1.879385241571815, 
+     1.8793852415718213`, 2.5320888862379554`, 2.5320888862379594`, 
+     2.8793852415718106`, 2.8793852415718177`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[C, 7], 36], {{1., 1.0000000000001137`, 1.8793852415718177`, 
+     1.8793852415718675`, 2.532088886237961, 2.532088886238057, 
+     2.8793852415718533`, 2.8793852415718675`}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 13], {{1., 2.9418836348521005`, 
+     4.148114905279364, 4.148114905279377, 4.712795686158524, 
+     6.2098171825007284`, 7.345946675963038, 8.055156450048106}}}, {
+     $CellContext`RepresentationCategory[
+      Subscript[QuantumGroups`G, 2], 26], {{1., 2.9418836348521005`, 
+     4.148114905279364, 4.148114905279377, 4.712795686158524, 
+     6.2098171825007284`, 7.345946675963038, 
+     8.055156450048106}}}}]]], "Output",
+ CellChangeTimes->{3.4216320990668464`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"{", 
+       RowBox[{"Sort", "[", 
+        RowBox[{"Dimensions", "[", "#", "]"}], "]"}], "}"}]}], "}"}], "&"}], "/@",
+    
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"RepresentationCategoriesByRank", "[", 
+      RowBox[{"9", ",", "100"}], "]"}], ",", 
+     RowBox[{"rc_", "/;", 
+      RowBox[{"PseudoUnitaryQ", "[", "rc", "]"}]}]}], "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.421631672713781*^9, 3.4216316906095133`*^9}, {
+  3.4216317226055217`*^9, 3.4216317353438387`*^9}, {3.421631813766605*^9, 
+  3.4216318157294273`*^9}, {3.4216318477855215`*^9, 3.421631849077379*^9}, {
+  3.4216318913281326`*^9, 3.421631907601533*^9}, {3.4216319427721057`*^9, 
+  3.4216319916123343`*^9}, {3.421632035725766*^9, 3.4216320984659824`*^9}, {
+  3.421632554041067*^9, 3.4216325807795153`*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.421632990017971*^9}]
+}, Open  ]]
+},
+WindowSize->{1043, 555},
+WindowMargins->{{Automatic, 99}, {Automatic, 50}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 404, 10, 31, "Input"],
+Cell[975, 33, 273, 6, 31, "Input"],
+Cell[1251, 41, 1836, 45, 83, "Input"],
+Cell[CellGroupData[{
+Cell[3112, 90, 213, 4, 31, "Input"],
+Cell[3328, 96, 440, 8, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3805, 109, 214, 4, 31, "Input"],
+Cell[4022, 115, 234, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4293, 125, 267, 5, 31, "Input"],
+Cell[4563, 132, 301, 6, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4901, 143, 263, 5, 31, "Input"],
+Cell[5167, 150, 171, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5375, 158, 314, 6, 31, "Input"],
+Cell[5692, 166, 262, 6, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5991, 177, 905, 22, 31, "Input"],
+Cell[6899, 201, 10857, 274, 250, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17793, 480, 856, 21, 31, "Input"],
+Cell[18652, 503, 15935, 402, 346, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34624, 910, 912, 22, 31, "Input"],
+Cell[35539, 934, 7424, 178, 154, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43000, 1117, 908, 22, 31, "Input"],
+Cell[43911, 1141, 12036, 282, 234, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55984, 1428, 888, 22, 31, "Input"],
+Cell[56875, 1452, 4110, 97, 90, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61022, 1554, 891, 22, 31, "Input"],
+Cell[61916, 1578, 12409, 279, 218, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74362, 1862, 910, 22, 31, "Input"],
+Cell[75275, 1886, 77, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
