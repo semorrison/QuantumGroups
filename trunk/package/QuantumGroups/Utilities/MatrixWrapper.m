@@ -136,7 +136,7 @@ Matrix/:Dot[m1_Matrix,m2__Matrix]/;(MemberQ[Flatten[Dimensions/@{m1,m2}],0]):=Ze
 Matrix/:Plus[m1_Matrix,m2__Matrix]/;(SameQ[Dimensions/@{m1,m2}]):=Matrix[Sequence@@Dimensions[First[{m1,m2}]],Plus@@(MatrixData/@{m1,m2})]
 
 
-Matrix/:\[Alpha]_?QuantumGroups`qNumberQ Matrix[j_,k_,data_]:=Matrix[j,k,\[Alpha] data]
+Matrix/:\[Alpha]_ Matrix[j_,k_,data_]:=Matrix[j,k,\[Alpha] data]
 
 
 MatrixKroneckerProduct[Matrix[r1_,c1_,data1_],Matrix[r2_,c2_,data2_]]/;r1>0\[And]r2>0\[And]c1>0\[And]c2>0:=Matrix[r1 r2, c1 c2,BlockMatrix[Outer[Times,data1,data2]]]

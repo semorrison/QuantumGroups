@@ -117,7 +117,7 @@ Table[(\[Lambda]=Weights[\[CapitalGamma],domain][[i]];{\[Lambda],Plus@@(#[\[Lamb
 ]
 
 
-RepresentationTensor/:\[Alpha]_?qNumberQ RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,matrices_List]:=RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,V2,\[Beta]2,{#[[1]],\[Alpha] #[[2]]}&/@matrices]
+RepresentationTensor/:\[Alpha]_ RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,matrices_List]:=RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,V2,\[Beta]2,{#[[1]],\[Alpha] #[[2]]}&/@matrices]
 
 
 RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,_List]).(G:RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,V3_,\[Beta]3_,_List]):=RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,V3,\[Beta]3,{#,Together[F[#].G[#]]}&/@SortWeights[\[CapitalGamma]][Union[Weights[\[CapitalGamma],V1]~Join~Weights[\[CapitalGamma],V3]]]]
@@ -300,11 +300,13 @@ InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CirclePlus]_),\[Beta]_]:=Inverse[
 
 
 InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CircleTimes]_),\[Beta]_]:=InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]=
+If[LoadDecompositionMaps[\[CapitalGamma],V],InverseDecompositionMap[\[CapitalGamma],V,\[Beta]],
 Module[{result},
 DebugPrintHeld["Beginning ",InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
 result=Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]];
 DebugPrintHeld["Finished ",InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
 result
+]
 ]
 
 
