@@ -84,7 +84,7 @@ $\uqsl{n}$, however, because it turns out that these invariants, for
 varying $n$, all fit together as a two variable polynomial, the HOMFLYPT
 polynomial \cite{MR776477}. In particular,
 
-$$\text{HOMFLYPT}_K(q^n, q) = RT_{\uqsl{n}, \Complex^n}(K)(q).$$
+$$\text{HOMFLYPT}_K(q^n, q-q^{-1}) = RT_{\uqsl{n}, \Complex^n}(K)(q).$$
 \todo{explain how to check this, and where it's proved! Perhaps \cite{MR1024455}? But I can't get it.}
 
 Thus to find programs or tables of these invariants, you're for the most
@@ -103,6 +103,7 @@ mean $\mathfrak{sp}(n)$ acting on $\Complex^{2n}$, and $D_n$ to mean
 $\mathfrak{so}(2n)$ acting on $\Complex^{2n}$. The quantum integers are
 denoted $\qiq{k}{q} = \frac{q^k-q^{-k}}{q-q^{-1}}$.
 
+\todo{Two thing might be wrong here: $(-1)^{\card{L}}$ might actually be $(-1)^{\card{L}+1}$, and the right hand sides are all framing independent!}
 \begin{align}
 \label{eq:kauffman-B}%
 \text{Kauffman}_L(-i q^{4n}, i (q^2-q^{-2})) & = \frac{RT_{B_n, V^\natural}(L)(q)}{\qiq{2n}{q^2} + 1} \\
