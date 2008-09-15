@@ -22,7 +22,7 @@
 DeclarePackage["QuantumGroups`Utilities`IntersectSubspaces`",{"IntersectSubspaces"}];
 
 
-DeclarePackage["QuantumGroups`Utilities`MatrixWrapper`",{"OnesMatrix","ZeroesMatrix","ZeroMatrixQ","NonZeroMatrixQ","Matrix","MatrixData","identityMatrix","KroneckerProduct","BlockDiagonalMatrix","MatrixInverse","PrepareInverse","InterpolationInverseThreshold"}];
+DeclarePackage["QuantumGroups`Utilities`MatrixWrapper`",{"OnesMatrix","ZeroesMatrix","ZeroMatrixQ","NonZeroMatrixQ","Matrix","MatrixData","identityMatrix","KroneckerProduct","BlockDiagonalMatrix","AppendRows","AppendColumns","MatrixInverse","PrepareInverse","InterpolationInverseThreshold"}];
 
 
 DeclarePackage["QuantumGroups`Utilities`Debugging`",{"DebugEcho","DebugPrint","DebugEvaluate","DebugSet","DebugPrintHeld"}];

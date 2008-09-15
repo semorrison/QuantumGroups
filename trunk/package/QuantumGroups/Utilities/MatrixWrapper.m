@@ -19,10 +19,10 @@
 
 
 
-BeginPackage["QuantumGroups`Utilities`MatrixWrapper`",{"LinearAlgebra`MatrixManipulation`","QuantumGroups`Utilities`Debugging`"}];
+BeginPackage["QuantumGroups`Utilities`MatrixWrapper`",{"QuantumGroups`Utilities`Debugging`"}];
 
 
-OnesMatrix;ZeroesMatrix;ZeroMatrixQ;NonZeroMatrixQ;Matrix;MatrixData;identityMatrix;MatrixKroneckerProduct;BlockDiagonalMatrix;MatrixInverse;PrepareInverse;InterpolationInverseThreshold;
+OnesMatrix;ZeroesMatrix;ZeroMatrixQ;NonZeroMatrixQ;Matrix;MatrixData;identityMatrix;MatrixKroneckerProduct;BlockDiagonalMatrix;AppendRows;AppendColumns;MatrixInverse;PrepareInverse;InterpolationInverseThreshold;
 
 
 Begin["`Private`"];
@@ -100,12 +100,12 @@ Matrix/:NullSpace[m_Matrix,opts___]:=NullSpace[MatrixData[m],opts]
 Matrix/:AppendRows[Matrix[r_,0,_],Matrix[r_,c_,data_]]:=Matrix[r,c,data]
 Matrix/:AppendRows[Matrix[r_,c_,data_],Matrix[r_,0,_]]:=Matrix[r,c,data]
 Matrix/:AppendRows[Matrix[0,c1_,_],Matrix[0,c2_,_]]:=Matrix[0,c1+c2]
-Matrix/:AppendRows[Matrix[r_,c1_,data1_],Matrix[r_,c2_,data2_]]:=Matrix[r,c1+c2,AppendRows[data1,data2]]
+Matrix/:AppendRows[Matrix[r_,c1_,data1_],Matrix[r_,c2_,data2_]]:=Matrix[r,c1+c2,Join[data1,data2,2]]
 
 
 Matrix/:AppendRows[m1:Matrix[0,_,_],m2:(Matrix[0,_,_]..)]:=ZeroesMatrix[0,Plus@@({m1,m2}[[All,2]])]
 Matrix/:AppendRows[m1:Matrix[r_,0,_],m2:(Matrix[r_,0,_]..)]:=ZeroesMatrix[r,0]
-Matrix/:AppendRows[m1:Matrix[r_,_,_],m2:(Matrix[r_,_,_]..)]:=Matrix[r,Plus@@({m1,m2}[[All,2]]),AppendRows@@(MatrixData/@{m1,m2})]
+Matrix/:AppendRows[m1:Matrix[r_,_,_],m2:(Matrix[r_,_,_]..)]:=Matrix[r,Plus@@({m1,m2}[[All,2]]),Join[##,2]&@@(MatrixData/@{m1,m2})]
 
 
 Matrix/:AppendRows[m1_Matrix]:=m1
@@ -115,12 +115,12 @@ Matrix/:AppendRows[m1_Matrix]:=m1
 Matrix/:AppendColumns[Matrix[0,c_,_],Matrix[r_,c_,data_]]:=Matrix[r,c,data]
 Matrix/:AppendColumns[Matrix[r_,c_,data_],Matrix[0,c_,_]]:=Matrix[r,c,data]
 Matrix/:AppendColumns[Matrix[r1_,0,_],Matrix[r2_,0,_]]:=Matrix[r1+r2,0]
-Matrix/:AppendColumns[Matrix[r1_,c_,data1_],Matrix[r2_,c_,data2_]]:=Matrix[r1+r2,c,AppendColumns[data1,data2]]
+Matrix/:AppendColumns[Matrix[r1_,c_,data1_],Matrix[r2_,c_,data2_]]:=Matrix[r1+r2,c,Join[data1,data2]]
 
 
 Matrix/:AppendColumns[m1:Matrix[_,0,_],m2:(Matrix[_,0,_]..)]:=ZeroesMatrix[Plus@@({m1,m2}[[All,1]]),0]
 Matrix/:AppendColumns[m1:Matrix[0,c_,_],m2:(Matrix[0,c_,_]..)]:=ZeroesMatrix[0,c]
-Matrix/:AppendColumns[m1:Matrix[_,c_,_],m2:(Matrix[_,c_,_]..)]:=Matrix[Plus@@({m1,m2}[[All,1]]),c,AppendColumns@@(DeleteCases[MatrixData/@{m1,m2},{}])]
+Matrix/:AppendColumns[m1:Matrix[_,c_,_],m2:(Matrix[_,c_,_]..)]:=Matrix[Plus@@({m1,m2}[[All,1]]),c,Join@@(DeleteCases[MatrixData/@{m1,m2},{}])]
 
 
 Matrix/:AppendColumns[m1_Matrix]:=m1

@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["QuantumGroups`MatrixPresentations`",{"LinearAlgebra`MatrixManipulation`","QuantumGroups`","QuantumGroups`Utilities`IntersectSubspaces`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`","QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`"}];
+BeginPackage["QuantumGroups`MatrixPresentations`",{"QuantumGroups`","QuantumGroups`Utilities`IntersectSubspaces`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`","QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`"}];
 
 
 MatrixPresentation::usage="";
@@ -136,7 +136,7 @@ HighWeightVectors[\[CapitalGamma]_][V_,b_,\[Lambda]_]:=HighWeightVectors[\[Capit
 T=AppendColumns@@Table[MatrixPresentation[\[CapitalGamma]][SuperPlus[Subscript[X, i]]][V,b,\[Lambda]],{i,1,Rank[\[CapitalGamma]]}];
 If[Dimensions[T][[1]]==0,Return[IdentityMatrix[WeightMultiplicity[\[CapitalGamma],V,\[Lambda]]]]];
 DebugPrint["About to find the null space of a ",Dimensions[T][[2]]," by ",Dimensions[T][[2]]," matrix."];
-r=Together[NullSpace[T,Method->OneStepRowReduction]];
+r=Together[NullSpace[T,Method->"OneStepRowReduction"]];
 DebugPrint["Finished finding null space."];
 r
 ]

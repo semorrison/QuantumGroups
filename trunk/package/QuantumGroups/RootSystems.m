@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["QuantumGroups`RootSystems`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`"}];
+BeginPackage["QuantumGroups`RootSystems`",{"QuantumGroups`"}];
 
 
 CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;WeylOrbit;PositiveWeightQ;InWeylPolytopeQ;SortWeights;SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;LongDominantRoots;ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
@@ -28,7 +28,7 @@ CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;WeylOrb
 Begin["`Private`"];
 
 
-CartanMatrix[Subscript[A, n_]]:=CartanMatrix[Subscript[A, n]]=TridiagonalMatrix[Switch[#1-#2,1,-1,0,2,-1,-1,_,0]&,n]
+CartanMatrix[Subscript[A, n_]]:=CartanMatrix[Subscript[A, n]]=Array[Switch[#1-#2,1,-1,0,2,-1,-1,_,0]&,{n,n}]
 
 
 ElementaryMatrix[n_,i0_,j0_]:=Table[If[i==i0\[And]j==j0,1,0],{i,1,n},{j,1,n}]

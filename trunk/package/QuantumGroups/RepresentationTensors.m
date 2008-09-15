@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["QuantumGroups`RepresentationTensors`",{"QuantumGroups`","LinearAlgebra`MatrixManipulation`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`","QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`","QuantumGroups`RMatrix`"}];
+BeginPackage["QuantumGroups`RepresentationTensors`",{"QuantumGroups`","QuantumGroups`Utilities`MatrixWrapper`","QuantumGroups`Utilities`Debugging`","QuantumGroups`Utilities`DataPackage`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`Representations`","QuantumGroups`MatrixPresentations`","QuantumGroups`RMatrix`"}];
 
 
 RepresentationTensor::usage="";
@@ -311,7 +311,7 @@ result
 
 
 If[$VersionNumber>=6.,
-BlockMatrix[b:{{___Matrix}...}]:=LinearAlgebra`MatrixManipulation`AppendColumns@@(LinearAlgebra`MatrixManipulation`AppendRows@@#&/@b)
+BlockMatrix[b:{{___Matrix}...}]:=AppendColumns@@(AppendRows@@#&/@b)
 ]
 
 
