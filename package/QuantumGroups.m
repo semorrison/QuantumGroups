@@ -31,10 +31,13 @@ DeclarePackage["QuantumGroups`Utilities`Debugging`",{"DebugEcho","DebugPrint","D
 DeclarePackage["QuantumGroups`Utilities`DataPackage`",{"DefiniteValues","MatchingValues","ValuesAsString","PackageData","PackageMatrixPresentations","PackageDecompositionMaps","PackageQuantumRoots","PackageRMatrix","PackagePartialRMatrixPresentation","PackageHighWeightVectors","PackageBraidingMatrices","PackageBRPresentations","PackageBraidingMaps"}];
 
 
-DeclarePackage["QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Rank","KillingForm","SimpleRoots","SimpleReflection","WeylOrbit","PositiveWeightQ","InWeylPolytopeQ","SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinusculeRepresentationQ","MinusculeRepresentations","ReflectIntoPositiveWeylChamber","ShortDominantRoots","LongDominantRoots","ShortSimpleRoots","ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
+DeclarePackage["QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","LacingNumber","Rank","KillingForm","\[Rho]","SimpleRoots","SimpleReflection","WeylOrbit","RootWeightQ","WeightsModRoots","WeightInLatticeQ","IntermediateLattices","PositiveWeightQ","InWeylPolytopeQ","SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinusculeRepresentationQ","MinusculeRepresentations","ReflectIntoPositiveWeylChamber","ShortDominantRoots","LongDominantRoots","ShortSimpleRoots","ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
 
 
-DeclarePackage["QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","\[Rho]","PositiveGenerators","NegativeGenerators","CartanGenerators","Generators","NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight","OperatorLength"}];
+DeclarePackage["QuantumGroups`RootsOfUnity`",{"AlcoveDefiningRoot","WeightInAlcoveQ","AlcoveWeights","AlcoveWeightsInLattice","AlcoveRoots"}];
+
+
+DeclarePackage["QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","PositiveGenerators","NegativeGenerators","CartanGenerators","Generators","NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight","OperatorLength"}];
 
 
 DeclarePackage["QuantumGroups`BraidAction`",{"T","BraidAction","BraidRelations","CheckBraidRelations"}];
@@ -44,6 +47,9 @@ DeclarePackage["QuantumGroups`QuantumRoots`",{"ExpandQuantumRoot","QuantumPositi
 
 
 DeclarePackage["QuantumGroups`LittelmannPaths`",{"LittelmannPath","LittelmannPathDecomposeRepresentation","LittelmannPathWeightMultiplicities","LittelmannPathOneStepLowerings","LittelmannPathLowerings","LittelmannPathEndpoint"}];
+
+
+DeclarePackage["QuantumGroups`Steinberg`",{"SteinbergDecomposeRepresentation"}];
 
 
 DeclarePackage["QuantumGroups`WeylGroups`",{"PositiveRoots","LongestWordDecomposition","WeylGroup"}];

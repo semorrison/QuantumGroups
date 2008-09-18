@@ -22,7 +22,7 @@
 BeginPackage["QuantumGroups`RootSystems`",{"QuantumGroups`"}];
 
 
-CartanMatrix;CartanFactors;Rank;KillingForm;SimpleRoots;SimpleReflection;WeylOrbit;PositiveWeightQ;InWeylPolytopeQ;SortWeights;SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;LongDominantRoots;ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
+CartanMatrix;CartanFactors;LacingNumber;Rank;KillingForm;\[Rho];SimpleRoots;SimpleReflection;WeylOrbit;RootWeightQ;WeightsModRoots;WeightInLatticeQ;IntermediateLattices;PositiveWeightQ;InWeylPolytopeQ;SortWeights;SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;LongDominantRoots;ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
 
 
 Begin["`Private`"];
@@ -148,6 +148,11 @@ CartanFactors[Subscript[F, 4]]={2,2,1,1};
 CartanFactors[Subscript[E, n_]]:=CartanFactors[Subscript[E, n]]=Table[1,{n}]
 
 
+LacingNumber[Subscript[(A|D|E), _]]=1;
+LacingNumber[Subscript[(B|C|F), _]]=2;
+LacingNumber[Subscript[G, 2]]=3;
+
+
 Rank[Subscript[\[CapitalGamma]_, n_]]:=n
 
 
@@ -163,6 +168,9 @@ KillingForm[\[CapitalGamma]_][x_,y_]:=Simplify[x.Inverse[CartanFactors[\[Capital
 KillingForm[\[CapitalGamma]_][x_,y_]:=Simplify[x.Inverse[Transpose[CartanMatrix[\[CapitalGamma]]]].DiagonalMatrix[CartanFactors[\[CapitalGamma]]].y]
 
 
+\[Rho][\[CapitalGamma]_]:=Table[1,{Rank[\[CapitalGamma]]}]
+
+
 SimpleRoots[\[CapitalGamma]_]:=Transpose[CartanMatrix[\[CapitalGamma]]]
 
 
@@ -174,6 +182,22 @@ AllSimpleReflections[\[CapitalGamma]_][x_]:=Table[SimpleReflection[\[CapitalGamm
 
 
 WeylOrbit[\[CapitalGamma]_,\[Lambda]_]:=FixedPoint[Union[Flatten[AllSimpleReflections[\[CapitalGamma]]/@#,1],#]&,{\[Lambda]}]
+
+
+RootWeightQ[\[CapitalGamma]_,\[Lambda]_]:=And@@(IntegerQ/@Table[(2KillingForm[\[CapitalGamma]][\[Lambda],UnitVector[Rank[\[CapitalGamma]],k]])/KillingForm[\[CapitalGamma]][SimpleRoots[\[CapitalGamma]][[k]],SimpleRoots[\[CapitalGamma]][[k]]],{k,1,Rank[\[CapitalGamma]]}])
+
+
+WeightsModRoots[\[CapitalGamma]_]:=WeightsModRoots[\[CapitalGamma]]={ZeroVector[Rank[\[CapitalGamma]]]}~Join~DeleteCases[IdentityMatrix[Rank[\[CapitalGamma]]],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
+
+
+WeightInLatticeQ[\[CapitalGamma]_,\[Lambda]_,sublattice_]:=
+Or@@(RootWeightQ[\[CapitalGamma],#+\[Lambda]]&/@WeightsModRoots[\[CapitalGamma]][[sublattice]])
+
+
+IntermediateLatticeQ[\[CapitalGamma]_,subset_]:=And@@Flatten[Outer[WeightInLatticeQ[\[CapitalGamma],WeightsModRoots[\[CapitalGamma]][[#1]]+WeightsModRoots[\[CapitalGamma]][[#2]],subset]&,subset,subset]]
+
+
+IntermediateLattices[\[CapitalGamma]_]:=Cases[{1}~Join~#&/@Subsets[Range[2,Length[WeightsModRoots[\[CapitalGamma]]]]],subset_/;IntermediateLatticeQ[\[CapitalGamma],subset]]
 
 
 PositiveWeightQ[\[CapitalGamma]_][\[Lambda]_]:=And@@(NonNegative/@\[Lambda])
