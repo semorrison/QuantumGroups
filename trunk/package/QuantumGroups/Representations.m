@@ -19,7 +19,7 @@
 
 
 
-BeginPackage["QuantumGroups`Representations`",{"QuantumGroups`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`WeylGroups`","QuantumGroups`LittelmannPaths`","QuantumGroups`Utilities`Debugging`"}];
+BeginPackage["QuantumGroups`Representations`",{"QuantumGroups`","QuantumGroups`RootSystems`","QuantumGroups`Algebra`","QuantumGroups`WeylGroups`","QuantumGroups`LittelmannPaths`","QuantumGroups`Steinberg`","QuantumGroups`Utilities`Debugging`"}];
 
 
 WeightMultiplicities::usage="";
@@ -71,6 +71,9 @@ m==-\[Infinity]
 
 
 DecomposeRepresentation[\[CapitalGamma]_][Irrep[\[CapitalGamma]_][\[Lambda]_]\[CircleTimes]Irrep[\[CapitalGamma]_][\[Mu]_]]:=DecomposeRepresentation[\[CapitalGamma]][Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]]=LittelmannPathDecomposeRepresentation[\[CapitalGamma]][Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]]
+
+
+DecomposeRepresentation[\[CapitalGamma]_,l_][Irrep[\[CapitalGamma]_][\[Lambda]_]\[CircleTimes]Irrep[\[CapitalGamma]_][\[Mu]_]]:=SteinbergDecomposeRepresentation[\[CapitalGamma],l][Irrep[\[CapitalGamma]][\[Lambda]]\[CircleTimes]Irrep[\[CapitalGamma]][\[Mu]]]
 
 
 Weights[\[CapitalGamma]_,V_]:=Weights[\[CapitalGamma],V]=First/@WeightMultiplicities[\[CapitalGamma],V]
