@@ -174,11 +174,14 @@ InterpolationInverseThreshold=30;
 PrepareInverse[x_]:=Null
 
 
-MatrixInverse[m_?SquareMatrixQ]:=If[Length[m]>=InterpolationInverseThreshold,RowOrderedInterpolationInverse[m],RowReductionInverse[m]]
+If[$VersionNumber>=6,SquareMatrixQ[m_]:=(MatrixQ[m]\[And]Dimensions[m][[1]]==Dimensions[m][[2]])]
+
+
+MatrixInverse[m_]/;(SquareMatrixQ[m]\[Or](Print["Warning: tried to take the inverse of a non-square matrix! ",m];False)):=If[Length[m]>=InterpolationInverseThreshold,RowOrderedInterpolationInverse[m],RowReductionInverse[m]]
 
 
 RowReductionInverse[m_?SquareMatrixQ]:=Module[{result},
-If[Length[m]>=8,DebugPrint["Performing (built-in) row reduction on a matrix of size ",Length[m]]];result=Together[Inverse[m,Method->OneStepRowReduction]];
+If[Length[m]>=8,DebugPrint["Performing (built-in) row reduction on a matrix of size ",Length[m]]];result=Together[Inverse[m,Method->"OneStepRowReduction"]];
 If[Length[m]>=8,DebugPrint["Finished row reduction"]];
 result
 ]
