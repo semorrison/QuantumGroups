@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     46198,       1389]
-NotebookOptionsPosition[     42422,       1270]
-NotebookOutlinePosition[     42797,       1286]
-CellTagsIndexPosition[     42754,       1283]
+NotebookDataLength[     47581,       1425]
+NotebookOptionsPosition[     43735,       1304]
+NotebookOutlinePosition[     44110,       1320]
+CellTagsIndexPosition[     44067,       1317]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -946,9 +946,39 @@ Cell[BoxData[
  InitializationCell->True],
 
 Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"$VersionNumber", "\[GreaterEqual]", "6"}], ",", 
+   RowBox[{
+    RowBox[{"SquareMatrixQ", "[", "m_", "]"}], ":=", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"MatrixQ", "[", "m", "]"}], "\[And]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Dimensions", "[", "m", "]"}], "\[LeftDoubleBracket]", "1", 
+        "\[RightDoubleBracket]"}], "\[Equal]", 
+       RowBox[{
+        RowBox[{"Dimensions", "[", "m", "]"}], "\[LeftDoubleBracket]", "2", 
+        "\[RightDoubleBracket]"}]}]}], ")"}]}]}], "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.431283826882659*^9, 3.431283831929917*^9}, {
+  3.431283904033597*^9, 3.431283930782059*^9}, {3.4312840127999954`*^9, 
+  3.4312840251177073`*^9}}],
+
+Cell[BoxData[
  RowBox[{
-  RowBox[{"MatrixInverse", "[", 
-   RowBox[{"m_", "?", "SquareMatrixQ"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"MatrixInverse", "[", "m_", "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"SquareMatrixQ", "[", "m", "]"}], "\[Or]", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "\"\<Warning: tried to take the inverse of a non-square matrix! \>\"",
+          ",", "m"}], "]"}], ";", "False"}], ")"}]}], ")"}]}], ":=", 
   RowBox[{"If", "[", 
    RowBox[{
     RowBox[{
@@ -956,7 +986,10 @@ Cell[BoxData[
      "InterpolationInverseThreshold"}], ",", 
     RowBox[{"RowOrderedInterpolationInverse", "[", "m", "]"}], ",", 
     RowBox[{"RowReductionInverse", "[", "m", "]"}]}], "]"}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4312842781615667`*^9, 3.4312843171976976`*^9}, {
+  3.431284788535448*^9, 3.4312847932522306`*^9}, {3.431285037433346*^9, 
+  3.431285039145808*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -979,8 +1012,8 @@ Cell[BoxData[
       RowBox[{"Together", "[", 
        RowBox[{"Inverse", "[", 
         RowBox[{"m", ",", 
-         RowBox[{"Method", "\[Rule]", "OneStepRowReduction"}]}], "]"}], 
-       "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Method", "\[Rule]", "\"\<OneStepRowReduction\>\""}]}], 
+        "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
      RowBox[{"If", "[", 
       RowBox[{
        RowBox[{
@@ -988,7 +1021,8 @@ Cell[BoxData[
        RowBox[{"DebugPrint", "[", "\"\<Finished row reduction\>\"", "]"}]}], 
       "]"}], ";", "\[IndentingNewLine]", "result"}]}], "\[IndentingNewLine]", 
    "]"}]}]], "Input",
- InitializationCell->True],
+ InitializationCell->True,
+ CellChangeTimes->{{3.4312842616077633`*^9, 3.4312842634904704`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1373,23 +1407,25 @@ Cell[30511, 937, 123, 3, 31, "Input",
  InitializationCell->True],
 Cell[30637, 942, 122, 3, 31, "Input",
  InitializationCell->True],
-Cell[30762, 947, 433, 11, 31, "Input",
+Cell[30762, 947, 768, 19, 31, "Input",
  InitializationCell->True],
-Cell[31198, 960, 1149, 30, 132, "Input",
+Cell[31533, 968, 896, 23, 52, "Input",
  InitializationCell->True],
-Cell[32350, 992, 1177, 34, 70, "Input",
+Cell[32432, 993, 1228, 31, 132, "Input",
  InitializationCell->True],
-Cell[33530, 1028, 615, 17, 70, "Input",
+Cell[33663, 1026, 1177, 34, 112, "Input",
  InitializationCell->True],
-Cell[34148, 1047, 250, 7, 70, "Input",
+Cell[34843, 1062, 615, 17, 72, "Input",
  InitializationCell->True],
-Cell[34401, 1056, 683, 16, 70, "Input",
+Cell[35461, 1081, 250, 7, 52, "Input",
  InitializationCell->True],
-Cell[35087, 1074, 7126, 184, 70, "Input",
+Cell[35714, 1090, 683, 16, 72, "Input",
  InitializationCell->True],
-Cell[42216, 1260, 96, 3, 70, "Input",
+Cell[36400, 1108, 7126, 184, 687, "Input",
  InitializationCell->True],
-Cell[42315, 1265, 103, 3, 70, "Input",
+Cell[43529, 1294, 96, 3, 31, "Input",
+ InitializationCell->True],
+Cell[43628, 1299, 103, 3, 31, "Input",
  InitializationCell->True]
 }
 ]
