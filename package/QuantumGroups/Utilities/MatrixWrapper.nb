@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     45839,       1378]
-NotebookOptionsPosition[     42129,       1261]
-NotebookOutlinePosition[     42504,       1277]
-CellTagsIndexPosition[     42461,       1274]
+NotebookDataLength[     46198,       1389]
+NotebookOptionsPosition[     42422,       1270]
+NotebookOutlinePosition[     42797,       1286]
+CellTagsIndexPosition[     42754,       1283]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -725,6 +725,15 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"$VersionNumber", "\[GreaterEqual]", "6"}], ",", 
+    RowBox[{"BlockMatrix", "=", "ArrayFlatten"}]}], "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.431228865157462*^9, 3.4312288760030575`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{
    RowBox[{"MatrixKroneckerProduct", "[", 
     RowBox[{
@@ -1342,43 +1351,45 @@ Cell[22308, 688, 811, 24, 52, "Input",
  InitializationCell->True],
 Cell[23122, 714, 343, 9, 31, "Input",
  InitializationCell->True],
-Cell[23468, 725, 801, 23, 52, "Input",
+Cell[23468, 725, 290, 7, 31, "Input",
  InitializationCell->True],
-Cell[24272, 750, 803, 22, 52, "Input",
+Cell[23761, 734, 801, 23, 52, "Input",
  InitializationCell->True],
-Cell[25078, 774, 816, 23, 52, "Input",
+Cell[24565, 759, 803, 22, 52, "Input",
  InitializationCell->True],
-Cell[25897, 799, 119, 3, 29, "Text"],
-Cell[26019, 804, 466, 11, 31, "Input",
+Cell[25371, 783, 816, 23, 52, "Input",
  InitializationCell->True],
-Cell[26488, 817, 1151, 32, 52, "Input",
+Cell[26190, 808, 119, 3, 29, "Text"],
+Cell[26312, 813, 466, 11, 31, "Input",
  InitializationCell->True],
-Cell[27642, 851, 64, 0, 29, "Text"],
-Cell[27709, 853, 1346, 39, 112, "Input",
+Cell[26781, 826, 1151, 32, 52, "Input",
  InitializationCell->True],
-Cell[29058, 894, 1157, 32, 52, "Input",
+Cell[27935, 860, 64, 0, 29, "Text"],
+Cell[28002, 862, 1346, 39, 112, "Input",
  InitializationCell->True],
-Cell[30218, 928, 123, 3, 31, "Input",
+Cell[29351, 903, 1157, 32, 52, "Input",
  InitializationCell->True],
-Cell[30344, 933, 122, 3, 31, "Input",
+Cell[30511, 937, 123, 3, 31, "Input",
  InitializationCell->True],
-Cell[30469, 938, 433, 11, 31, "Input",
+Cell[30637, 942, 122, 3, 31, "Input",
  InitializationCell->True],
-Cell[30905, 951, 1149, 30, 132, "Input",
+Cell[30762, 947, 433, 11, 31, "Input",
  InitializationCell->True],
-Cell[32057, 983, 1177, 34, 70, "Input",
+Cell[31198, 960, 1149, 30, 132, "Input",
  InitializationCell->True],
-Cell[33237, 1019, 615, 17, 70, "Input",
+Cell[32350, 992, 1177, 34, 70, "Input",
  InitializationCell->True],
-Cell[33855, 1038, 250, 7, 70, "Input",
+Cell[33530, 1028, 615, 17, 70, "Input",
  InitializationCell->True],
-Cell[34108, 1047, 683, 16, 70, "Input",
+Cell[34148, 1047, 250, 7, 70, "Input",
  InitializationCell->True],
-Cell[34794, 1065, 7126, 184, 70, "Input",
+Cell[34401, 1056, 683, 16, 70, "Input",
  InitializationCell->True],
-Cell[41923, 1251, 96, 3, 70, "Input",
+Cell[35087, 1074, 7126, 184, 70, "Input",
  InitializationCell->True],
-Cell[42022, 1256, 103, 3, 70, "Input",
+Cell[42216, 1260, 96, 3, 70, "Input",
+ InitializationCell->True],
+Cell[42315, 1265, 103, 3, 70, "Input",
  InitializationCell->True]
 }
 ]
