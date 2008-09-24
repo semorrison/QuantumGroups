@@ -105,7 +105,7 @@ MatrixPresentation[\[CapitalGamma]_][A_][V_\[CircleTimes]W_,\[Beta]_,\[Lambda]_]
 MatrixPresentation[\[CapitalGamma]_][A_][V_DirectSum,\[Beta]_,\[Lambda]_]:=BlockDiagonalMatrix@@(MatrixPresentation[\[CapitalGamma]][A][#,\[Beta],\[Lambda]]&/@(List@@V))
 
 
-PadWithZeroRows[m_Matrix,initial_?NaturalQ,total_?NaturalQ]:=With[{rows = Dimensions[m][[1]],cols=Dimensions[m][[2]]},Matrix[total,cols,Join[ZeroMatrix[initial,cols],MatrixData[m],ZeroMatrix[total-initial-rows,cols]]]]
+PadWithZeroRows[m_Matrix,initial_?NaturalQ,total_?NaturalQ]:=With[{rows = Dimensions[m][[1]],cols=Dimensions[m][[2]]},Matrix[total,cols,Join[ConstantArray[0,{initial,cols}],MatrixData[m],ConstantArray[0,{total-initial-rows,cols}]]]]
 
 
 WeightMultiplicityComponents[\[CapitalGamma]_,V1_,V2_,\[Lambda]_]:=Table[WeightMultiplicity[\[CapitalGamma],V1,\[Lambda]-Weights[\[CapitalGamma],V2][[i]]]WeightMultiplicity[\[CapitalGamma],V2,Weights[\[CapitalGamma],V2][[i]]],{i,1,Length[Weights[\[CapitalGamma],V2]]}]
