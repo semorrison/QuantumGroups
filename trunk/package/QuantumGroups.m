@@ -34,7 +34,7 @@ DeclarePackage["QuantumGroups`Utilities`DataPackage`",{"DefiniteValues","Matchin
 DeclarePackage["QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","LacingNumber","Rank","KillingForm","\[Rho]","SimpleRoots","SimpleReflection","WeylOrbit","RootWeightQ","WeightsModRoots","WeightInLatticeQ","IntermediateLattices","PositiveWeightQ","InWeylPolytopeQ","SortWeights","SortWeightMultiplicities","MinisculeWeightQ","MinusculeRepresentationQ","MinusculeRepresentations","ReflectIntoPositiveWeylChamber","ShortDominantRoots","LongDominantRoots","ShortSimpleRoots","ShortRoots","ShortDominantRootQ","DualCoxeterNumber"}];
 
 
-DeclarePackage["QuantumGroups`RootsOfUnity`",{"AlcoveDefiningRoot","WeightInAlcoveQ","AlcoveWeights","AlcoveWeightsInLattice","AlcoveRoots"}];
+DeclarePackage["QuantumGroups`RootsOfUnity`",{"AlcoveDefiningRoot","WeightInAlcoveQ","AlcoveWeights","AlcoveWeightsInLattice","AlcoveRoots","LevelFromRoot","RootFromLevel"}];
 
 
 DeclarePackage["QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","PositiveGenerators","NegativeGenerators","CartanGenerators","Generators","NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight","OperatorLength"}];
