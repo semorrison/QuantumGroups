@@ -22,7 +22,7 @@
 BeginPackage["QuantumGroups`RootsOfUnity`",{"QuantumGroups`","QuantumGroups`RootSystems`"}];
 
 
-AlcoveDefiningRoot;WeightInAlcoveQ;AlcoveWeights;AlcoveWeightsInLattice;AlcoveRoots
+AlcoveDefiningRoot;WeightInAlcoveQ;AlcoveWeights;AlcoveWeightsInLattice;AlcoveRoots;LevelFromRoot;RootFromLevel;
 
 
 Begin["`Private`"];
@@ -61,7 +61,7 @@ AlcoveWeightsInLattice[\[CapitalGamma]_,l_,All]:=AlcoveWeights[\[CapitalGamma],l
 AlcoveWeightsInLattice[\[CapitalGamma]_,l_,lattice_]:=AlcoveWeightsInLattice[\[CapitalGamma],l,lattice]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;WeightInLatticeQ[\[CapitalGamma],\[Lambda],lattice]]
 
 
-AlcoveRoots[\[CapitalGamma]_,l_]:=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
+AlcoveRoots[\[CapitalGamma]_,l_]:=AlcoveRoots[\[CapitalGamma],l]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
 
 
 End[];
