@@ -224,32 +224,7 @@ result
 ]
 
 
-LoadDecompositionMaps[Subscript[\[CapitalGamma]_, n_]]:=Module[{},
-Off[Get::noopen,Needs::nocont];
-Needs["QuantumGroups`Data`"<>SymbolName[\[CapitalGamma]]<>ToString[n]<>"`DecompositionMaps`"];
-On[Get::noopen,Needs::nocont];
-LoadDecompositionMaps[Subscript[\[CapitalGamma], n]]=False;
-True
-]
-
-
 weightToString[\[Lambda]:{__Integer}]:=StringDrop[StringJoin@@((ToString[#]<>"$")&/@\[Lambda]),-1]
-
-
-LoadDecompositionMaps[Subscript[\[CapitalGamma]_, n_],Z_]:=Module[{tensorPowerQ,tensorPowerPattern,data},
-If[LoadDecompositionMaps[Subscript[\[CapitalGamma], n]],True,
-tensorPowerQ[V_][W_]:=MatchQ[W,V]||MatchQ[W,U_\[CircleTimes]V/;tensorPowerQ[V][U]];
-tensorPowerPattern=U_\[CircleTimes](V:(Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]_]))/;tensorPowerQ[V][U];
-If[MatchQ[Z,tensorPowerPattern],
-data=Z/.X:(_\[CircleTimes]Y:Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]_]):>{\[Lambda],Count[X,Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]],\[Infinity]]};
-Off[Get::noopen,Needs::nocont];
-Needs["QuantumGroups`Data`"<>SymbolName[\[CapitalGamma]]<>ToString[n]<>"`DecompositionMaps`"<>"w"<>weightToString[data[[1]]]<>"`k"<>ToString[data[[2]]]<>"`"];
-On[Get::noopen,Needs::nocont];
-];
-LoadDecompositionMaps[Subscript[\[CapitalGamma], n],Z]=False;
-True
-]
-]
 
 
 DecompositionMap[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_],\[Beta]_]:=IdentityMap[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]],\[Beta]]
@@ -307,11 +282,6 @@ result=Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]];
 DebugPrintHeld["Finished ",InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
 result
 ]
-]
-
-
-If[$VersionNumber>=6.,
-BlockMatrix[b:{{___Matrix}...}]:=AppendColumns@@(AppendRows@@#&/@b)
 ]
 
 
