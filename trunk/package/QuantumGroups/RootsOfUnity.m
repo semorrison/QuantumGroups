@@ -64,6 +64,15 @@ AlcoveWeightsInLattice[\[CapitalGamma]_,l_,lattice_]:=AlcoveWeightsInLattice[\[C
 AlcoveRoots[\[CapitalGamma]_,l_]:=AlcoveRoots[\[CapitalGamma],l]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
 
 
+LevelFromRoot[\[CapitalGamma]_,l_]:=l/(2LacingNumber[\[CapitalGamma]])-DualCoxeterNumber[\[CapitalGamma]]
+
+
+RootFromLevel[\[CapitalGamma]_,k_]:=2LacingNumber[\[CapitalGamma]](k+DualCoxeterNumber[\[CapitalGamma]])
+
+
+AlcoveRoots[\[CapitalGamma]_,l_]:=AlcoveRoots[\[CapitalGamma],l]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
+
+
 End[];
 
 
