@@ -10,12 +10,11 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     58520,       1916]
-NotebookOptionsPosition[     52028,       1705]
-NotebookOutlinePosition[     52562,       1726]
-CellTagsIndexPosition[     52519,       1723]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     59367,       1923]
+NotebookOptionsPosition[     52880,       1712]
+NotebookOutlinePosition[     53407,       1733]
+CellTagsIndexPosition[     53364,       1730]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
@@ -47,21 +46,37 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.430404683340555*^9, 3.430404683560872*^9}}],
 
-Cell[BoxData[
- RowBox[{"CartanMatrix", ";", "CartanFactors", ";", "LacingNumber", ";", 
-  "Rank", ";", "KillingForm", ";", "\[Rho]", ";", "SimpleRoots", ";", 
-  "SimpleReflection", ";", "WeylOrbit", ";", "RootWeightQ", ";", 
-  "WeightsModRoots", ";", "WeightInLatticeQ", ";", "IntermediateLattices", 
-  ";", "PositiveWeightQ", ";", "InWeylPolytopeQ", ";", "SortWeights", ";", 
-  "SortWeightMultiplicities", ";", "MinusculeWeightQ", ";", 
-  "MinusculeRepresentationQ", ";", "ReflectIntoPositiveWeylChamber", ";", 
-  "DominantRoots", ";", "ShortDominantRoots", ";", "LongDominantRoots", ";", 
-  "ShortSimpleRoots", ";", "ShortRoots", ";", "ShortDominantRootQ", ";", 
-  "DualCoxeterNumber", ";"}]], "Input",
+Cell[BoxData[{
+ RowBox[{"CartanMatrix", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"CartanFactors", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LacingNumber", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Rank", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"KillingForm", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Rho]", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SimpleRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SimpleReflection", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WeylOrbit", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"RootWeightQ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WeightsModRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"WeightInLatticeQ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"IntermediateLattices", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"PositiveWeightQ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"InWeylPolytopeQ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SortWeights", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SortWeightMultiplicities", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MinusculeWeightQ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MinusculeRepresentationQ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ReflectIntoPositiveWeylChamber", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DominantRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ShortDominantRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LongDominantRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ShortSimpleRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ShortRoots", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ShortDominantRootQ", ";", "DualCoxeterNumber", ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.420129096178955*^9, 3.4201290969801073`*^9}, {
   3.4307621822031136`*^9, 3.4307621873805585`*^9}, {3.430763705813958*^9, 
-  3.430763707225989*^9}}],
+  3.430763707225989*^9}, {3.446832305962214*^9, 3.44683233830752*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -456,8 +471,7 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"InverseCartanMatrix", "[", "\[CapitalGamma]", "]"}], "=", 
    RowBox[{"Inverse", "[", 
-    RowBox[{"CartanMatrix", "[", "\[CapitalGamma]", "]"}], "]"}]}]}]], "Input",\
-
+    RowBox[{"CartanMatrix", "[", "\[CapitalGamma]", "]"}], "]"}]}]}]], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -508,8 +522,7 @@ Cell[BoxData[
   RowBox[{"Table", "[", 
    RowBox[{"1", ",", 
     RowBox[{"{", 
-     RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], "}"}]}], "]"}]}]], "Input",\
-
+     RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], "}"}]}], "]"}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.4198955583695507`*^9, 3.419895592216195*^9}, {
   3.421630261574662*^9, 3.421630273111251*^9}}],
@@ -614,8 +627,7 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.429981319901498*^9, 3.4299813838734846`*^9}, {
   3.429986280564581*^9, 3.429986289237051*^9}, {3.4299864974864993`*^9, 
-  3.4299865741467314`*^9}, {3.4306684184751587`*^9, 3.4306684243836546`*^9}}],\
-
+  3.4299865741467314`*^9}, {3.4306684184751587`*^9, 3.4306684243836546`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -704,8 +716,7 @@ Cell[BoxData[
        "]"}], "]"}]}], ",", 
     RowBox[{"subset_", "/;", 
      RowBox[{"IntermediateLatticeQ", "[", 
-      RowBox[{"\[CapitalGamma]", ",", "subset"}], "]"}]}]}], "]"}]}]], "Input",\
-
+      RowBox[{"\[CapitalGamma]", ",", "subset"}], "]"}]}]}], "]"}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.4306693409215713`*^9, 3.4306693632837267`*^9}, {
   3.4306694742432785`*^9, 3.4306695130791216`*^9}, {3.4306697344474335`*^9, 
@@ -777,8 +788,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{"InWeylPolytopeQ", "[", 
-   RowBox[{"\[CapitalGamma]_", ",", "\[Lambda]_", ",", "\[Mu]_"}], "]"}], ":=",
-   
+   RowBox[{"\[CapitalGamma]_", ",", "\[Lambda]_", ",", "\[Mu]_"}], "]"}], ":=", 
   RowBox[{
    RowBox[{"InWeylPolytopeQ", "[", 
     RowBox[{"\[CapitalGamma]", ",", "\[Lambda]", ",", "\[Mu]"}], "]"}], "=", 
@@ -1280,18 +1290,15 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"DualCoxeterNumber", "[", 
-    SubscriptBox["E", "6"], "]"}], "=", "12"}], 
-  ";"}], "\[IndentingNewLine]", 
+    SubscriptBox["E", "6"], "]"}], "=", "12"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"DualCoxeterNumber", "[", 
-    SubscriptBox["E", "7"], "]"}], "=", "18"}], 
-  ";"}], "\[IndentingNewLine]", 
+    SubscriptBox["E", "7"], "]"}], "=", "18"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"DualCoxeterNumber", "[", 
-    SubscriptBox["E", "8"], "]"}], "=", "30"}], 
-  ";"}], "\[IndentingNewLine]", 
+    SubscriptBox["E", "8"], "]"}], "=", "30"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"DualCoxeterNumber", "[", 
@@ -1707,12 +1714,12 @@ AutoGeneratedPackage->Automatic,
 WindowSize->{626, 679},
 WindowMargins->{{Automatic, 55}, {Automatic, -39}},
 ShowSelection->True,
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (November 10, 2008)",
 StyleDefinitions->FrontEnd`FileName[{
    ParentDirectory[
     ParentDirectory[
      ParentDirectory[]]]}, "PackageStyleSheet.nb", CharacterEncoding -> 
-  "WindowsANSI"]
+  "UTF-8"]
 ]
 (* End of Notebook Content *)
 
@@ -1726,195 +1733,195 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 39, 0, 49, "Subtitle"],
-Cell[632, 25, 101, 3, 47, "Text"],
+Cell[567, 22, 39, 0, 46, "Subtitle"],
+Cell[609, 24, 101, 3, 41, "Text"],
 Cell[CellGroupData[{
-Cell[758, 32, 31, 0, 71, "Section"],
-Cell[792, 34, 16, 0, 29, "Text"]
+Cell[735, 31, 31, 0, 67, "Section"],
+Cell[769, 33, 16, 0, 26, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[845, 39, 33, 0, 71, "Section"],
-Cell[881, 41, 279, 6, 31, "Input",
+Cell[822, 38, 33, 0, 67, "Section"],
+Cell[858, 40, 279, 6, 27, "Input",
  InitializationCell->True],
-Cell[1163, 49, 901, 14, 172, "Input",
+Cell[1140, 48, 1796, 30, 418, "Input",
  InitializationCell->True],
-Cell[2067, 65, 119, 3, 31, "Input",
+Cell[2939, 80, 119, 3, 27, "Input",
  InitializationCell->True],
-Cell[2189, 70, 663, 19, 72, "Input",
+Cell[3061, 85, 663, 19, 65, "Input",
  InitializationCell->True],
-Cell[2855, 91, 518, 15, 52, "Input",
+Cell[3727, 106, 518, 15, 43, "Input",
  InitializationCell->True],
-Cell[3376, 108, 425, 13, 52, "Input",
+Cell[4248, 123, 425, 13, 50, "Input",
  InitializationCell->True],
-Cell[3804, 123, 425, 13, 52, "Input",
+Cell[4676, 138, 425, 13, 50, "Input",
  InitializationCell->True],
-Cell[4232, 138, 779, 22, 92, "Input",
+Cell[5104, 153, 779, 22, 80, "Input",
  InitializationCell->True],
-Cell[5014, 162, 1090, 34, 102, "Input",
+Cell[5886, 177, 1090, 34, 109, "Input",
  InitializationCell->True],
-Cell[6107, 198, 1209, 37, 118, "Input",
+Cell[6979, 213, 1209, 37, 125, "Input",
  InitializationCell->True],
-Cell[7319, 237, 1437, 42, 132, "Input",
+Cell[8191, 252, 1437, 42, 141, "Input",
  InitializationCell->True],
-Cell[8759, 281, 969, 30, 72, "Input",
+Cell[9631, 296, 969, 30, 77, "Input",
  InitializationCell->True],
-Cell[9731, 313, 795, 24, 42, "Input",
+Cell[10603, 328, 795, 24, 42, "Input",
  InitializationCell->True],
-Cell[10529, 339, 313, 10, 31, "Input",
+Cell[11401, 354, 313, 10, 31, "Input",
  InitializationCell->True],
-Cell[10845, 351, 406, 13, 31, "Input",
+Cell[11717, 366, 406, 13, 31, "Input",
  InitializationCell->True],
-Cell[11254, 366, 406, 13, 31, "Input",
+Cell[12126, 381, 406, 13, 31, "Input",
  InitializationCell->True],
-Cell[11663, 381, 313, 10, 31, "Input",
+Cell[12535, 396, 313, 10, 31, "Input",
  InitializationCell->True],
-Cell[11979, 393, 208, 7, 31, "Input",
+Cell[12851, 408, 208, 7, 31, "Input",
  InitializationCell->True],
-Cell[12190, 402, 228, 7, 31, "Input",
+Cell[13062, 417, 228, 7, 31, "Input",
  InitializationCell->True],
-Cell[12421, 411, 313, 10, 31, "Input",
+Cell[13293, 426, 313, 10, 31, "Input",
  InitializationCell->True],
-Cell[12737, 423, 673, 21, 76, "Input",
+Cell[13609, 438, 673, 21, 76, "Input",
  InitializationCell->True],
-Cell[13413, 446, 147, 4, 34, "Input",
+Cell[14285, 461, 147, 4, 34, "Input",
  InitializationCell->True],
-Cell[13563, 452, 314, 8, 52, "Input",
+Cell[14435, 467, 312, 7, 52, "Input",
  InitializationCell->True],
-Cell[13880, 462, 352, 10, 31, "Input",
+Cell[14750, 476, 352, 10, 31, "Input",
  InitializationCell->True],
-Cell[14235, 474, 431, 12, 52, "Input",
+Cell[15105, 488, 431, 12, 52, "Input",
  InitializationCell->True],
-Cell[14669, 488, 506, 14, 72, "Input",
+Cell[15539, 502, 506, 14, 72, "Input",
  InitializationCell->True],
-Cell[15178, 504, 373, 10, 31, "Input",
+Cell[16048, 518, 371, 9, 31, "Input",
  InitializationCell->True],
-Cell[15554, 516, 220, 5, 31, "Input",
+Cell[16422, 529, 220, 5, 31, "Input",
  InitializationCell->True],
-Cell[15777, 523, 819, 23, 68, "Input",
+Cell[16645, 536, 819, 23, 68, "Input",
  InitializationCell->True],
-Cell[16599, 548, 460, 14, 52, "Input",
+Cell[17467, 561, 460, 14, 52, "Input",
  InitializationCell->True],
-Cell[17062, 564, 516, 15, 52, "Input",
+Cell[17930, 577, 516, 15, 52, "Input",
  InitializationCell->True],
-Cell[17581, 581, 1411, 35, 156, "Input",
+Cell[18449, 594, 1411, 35, 156, "Input",
  InitializationCell->True],
-Cell[18997, 619, 789, 20, 72, "Input",
+Cell[19863, 631, 789, 20, 72, "Input",
  InitializationCell->True],
-Cell[19789, 641, 948, 21, 52, "Input",
+Cell[20655, 653, 948, 21, 52, "Input",
  InitializationCell->True],
-Cell[20740, 664, 957, 23, 132, "Input",
+Cell[21606, 676, 957, 23, 132, "Input",
  InitializationCell->True],
-Cell[21700, 689, 825, 22, 72, "Input",
+Cell[22566, 701, 823, 21, 72, "Input",
  InitializationCell->True],
-Cell[22528, 713, 151, 3, 47, "Text"],
-Cell[22682, 718, 270, 8, 31, "Input",
+Cell[23392, 724, 151, 3, 47, "Text"],
+Cell[23546, 729, 270, 8, 31, "Input",
  InitializationCell->True],
-Cell[22955, 728, 933, 26, 92, "Input",
+Cell[23819, 739, 933, 26, 92, "Input",
  InitializationCell->True],
-Cell[23891, 756, 606, 18, 72, "Input",
+Cell[24755, 767, 606, 18, 72, "Input",
  InitializationCell->True],
-Cell[24500, 776, 549, 14, 72, "Input",
+Cell[25364, 787, 546, 13, 72, "Input",
  InitializationCell->True],
-Cell[25052, 792, 459, 15, 33, "Input",
+Cell[25913, 802, 459, 15, 33, "Input",
  InitializationCell->True],
-Cell[25514, 809, 659, 17, 72, "Input",
+Cell[26375, 819, 659, 17, 72, "Input",
  InitializationCell->True],
-Cell[26176, 828, 881, 25, 92, "Input",
+Cell[27037, 838, 881, 25, 92, "Input",
  InitializationCell->True],
-Cell[27060, 855, 976, 28, 72, "Input",
+Cell[27921, 865, 976, 28, 72, "Input",
  InitializationCell->True],
-Cell[28039, 885, 224, 6, 31, "Input",
+Cell[28900, 895, 224, 6, 31, "Input",
  InitializationCell->True],
-Cell[28266, 893, 1043, 31, 92, "Input",
+Cell[29127, 903, 1043, 31, 92, "Input",
  InitializationCell->True],
-Cell[29312, 926, 558, 17, 52, "Input",
+Cell[30173, 936, 558, 17, 52, "Input",
  InitializationCell->True],
-Cell[29873, 945, 2127, 66, 152, "Input",
+Cell[30734, 955, 2127, 66, 152, "Input",
  InitializationCell->True],
-Cell[32003, 1013, 216, 4, 47, "Text"],
+Cell[32864, 1023, 216, 4, 47, "Text"],
 Cell[CellGroupData[{
-Cell[32244, 1021, 1123, 31, 112, "Input"],
-Cell[33370, 1054, 32, 0, 30, "Output"]
+Cell[33105, 1031, 1123, 31, 112, "Input"],
+Cell[34231, 1064, 32, 0, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33439, 1059, 1123, 31, 112, "Input"],
-Cell[34565, 1092, 32, 0, 30, "Output"]
+Cell[34300, 1069, 1123, 31, 112, "Input"],
+Cell[35426, 1102, 32, 0, 30, "Output"]
 }, Open  ]],
-Cell[34612, 1095, 148, 4, 31, "Input",
+Cell[35473, 1105, 148, 4, 31, "Input",
  InitializationCell->True],
-Cell[34763, 1101, 351, 9, 31, "Input",
+Cell[35624, 1111, 351, 9, 31, "Input",
  InitializationCell->True],
-Cell[35117, 1112, 481, 13, 52, "Input",
+Cell[35978, 1122, 481, 13, 52, "Input",
  InitializationCell->True],
-Cell[35601, 1127, 409, 11, 72, "Input",
+Cell[36462, 1137, 409, 11, 72, "Input",
  InitializationCell->True],
-Cell[36013, 1140, 1074, 29, 112, "Input",
+Cell[36874, 1150, 1074, 29, 112, "Input",
  InitializationCell->True],
-Cell[37090, 1171, 1186, 31, 112, "Input",
+Cell[37951, 1181, 1186, 31, 112, "Input",
  InitializationCell->True],
-Cell[38279, 1204, 1061, 27, 92, "Input",
+Cell[39140, 1214, 1061, 27, 92, "Input",
  InitializationCell->True],
-Cell[39343, 1233, 545, 15, 72, "Input",
+Cell[40204, 1243, 545, 15, 72, "Input",
  InitializationCell->True],
-Cell[39891, 1250, 302, 8, 31, "Input",
+Cell[40752, 1260, 302, 8, 31, "Input",
  InitializationCell->True],
-Cell[40196, 1260, 1331, 42, 192, "Input",
+Cell[41057, 1270, 1322, 39, 192, "Input",
  InitializationCell->True],
-Cell[41530, 1304, 96, 3, 31, "Input",
+Cell[42382, 1311, 96, 3, 31, "Input",
  InitializationCell->True],
-Cell[41629, 1309, 103, 3, 31, "Input",
+Cell[42481, 1316, 103, 3, 31, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[41757, 1316, 87, 2, 31, "Input"],
-Cell[41847, 1320, 213, 8, 30, "Output"]
+Cell[42609, 1323, 87, 2, 31, "Input"],
+Cell[42699, 1327, 213, 8, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42097, 1333, 88, 2, 31, "Input"],
-Cell[42188, 1337, 73, 2, 30, "Output"]
+Cell[42949, 1340, 88, 2, 31, "Input"],
+Cell[43040, 1344, 73, 2, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42298, 1344, 206, 6, 31, "Input"],
-Cell[42507, 1352, 627, 19, 43, "Output"]
+Cell[43150, 1351, 206, 6, 31, "Input"],
+Cell[43359, 1359, 627, 19, 43, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[43171, 1376, 85, 2, 31, "Input"],
-Cell[43259, 1380, 2579, 80, 107, "Output"]
+Cell[44023, 1383, 85, 2, 31, "Input"],
+Cell[44111, 1387, 2579, 80, 107, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45875, 1465, 88, 2, 31, "Input"],
-Cell[45966, 1469, 117, 3, 30, "Output"]
+Cell[46727, 1472, 88, 2, 31, "Input"],
+Cell[46818, 1476, 117, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46120, 1477, 93, 2, 31, "Input"],
-Cell[46216, 1481, 140, 4, 30, "Output"]
+Cell[46972, 1484, 93, 2, 31, "Input"],
+Cell[47068, 1488, 140, 4, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46393, 1490, 88, 2, 31, "Input"],
-Cell[46484, 1494, 258, 8, 30, "Output"]
+Cell[47245, 1497, 88, 2, 31, "Input"],
+Cell[47336, 1501, 258, 8, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46779, 1507, 88, 2, 31, "Input"],
-Cell[46870, 1511, 281, 8, 30, "Output"]
+Cell[47631, 1514, 88, 2, 31, "Input"],
+Cell[47722, 1518, 281, 8, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47188, 1524, 88, 2, 31, "Input"],
-Cell[47279, 1528, 166, 5, 30, "Output"]
+Cell[48040, 1531, 88, 2, 31, "Input"],
+Cell[48131, 1535, 166, 5, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47482, 1538, 88, 2, 31, "Input"],
-Cell[47573, 1542, 171, 6, 30, "Output"]
+Cell[48334, 1545, 88, 2, 31, "Input"],
+Cell[48425, 1549, 171, 6, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47781, 1553, 93, 2, 31, "Input"],
-Cell[47877, 1557, 97, 3, 30, "Output"]
+Cell[48633, 1560, 93, 2, 31, "Input"],
+Cell[48729, 1564, 97, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48011, 1565, 192, 5, 31, "Input"],
-Cell[48206, 1572, 260, 8, 30, "Output"]
+Cell[48863, 1572, 192, 5, 31, "Input"],
+Cell[49058, 1579, 260, 8, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48503, 1585, 363, 12, 31, "Input"],
-Cell[48869, 1599, 3119, 101, 107, "Output"]
+Cell[49355, 1592, 363, 12, 31, "Input"],
+Cell[49721, 1606, 3119, 101, 107, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

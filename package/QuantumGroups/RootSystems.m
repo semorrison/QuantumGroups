@@ -22,7 +22,32 @@
 BeginPackage["QuantumGroups`RootSystems`",{"QuantumGroups`"}];
 
 
-CartanMatrix;CartanFactors;LacingNumber;Rank;KillingForm;\[Rho];SimpleRoots;SimpleReflection;WeylOrbit;RootWeightQ;WeightsModRoots;WeightInLatticeQ;IntermediateLattices;PositiveWeightQ;InWeylPolytopeQ;SortWeights;SortWeightMultiplicities;MinusculeWeightQ;MinusculeRepresentationQ;ReflectIntoPositiveWeylChamber;DominantRoots;ShortDominantRoots;LongDominantRoots;ShortSimpleRoots;ShortRoots;ShortDominantRootQ;DualCoxeterNumber;
+CartanMatrix;
+CartanFactors;
+LacingNumber;
+Rank;
+KillingForm;
+\[Rho];
+SimpleRoots;
+SimpleReflection;
+WeylOrbit;
+RootWeightQ;
+WeightsModRoots;
+WeightInLatticeQ;
+IntermediateLattices;
+PositiveWeightQ;
+InWeylPolytopeQ;
+SortWeights;
+SortWeightMultiplicities;
+MinusculeWeightQ;
+MinusculeRepresentationQ;
+ReflectIntoPositiveWeylChamber;
+DominantRoots;
+ShortDominantRoots;
+LongDominantRoots;
+ShortSimpleRoots;
+ShortRoots;
+ShortDominantRootQ;DualCoxeterNumber;
 
 
 Begin["`Private`"];
@@ -43,17 +68,17 @@ CartanMatrix[Subscript[C, n_]]:=CartanMatrix[Subscript[C, n]]=CartanMatrix[Subsc
 CartanMatrix[Subscript[D, n_]]:=CartanMatrix[Subscript[D, n]]=CartanMatrix[Subscript[A, n]]+ElementaryMatrix[n,n,n-1]+ElementaryMatrix[n,n-1,n]-ElementaryMatrix[n,n,n-2]-ElementaryMatrix[n,n-2,n]
 
 
-CartanMatrix[Subscript[E, 6]]=(\[NoBreak]{
+CartanMatrix[Subscript[E, 6]]=({
  {2, 0, -1, 0, 0, 0},
  {0, 2, 0, -1, 0, 0},
  {-1, 0, 2, -1, 0, 0},
  {0, -1, -1, 2, -1, 0},
  {0, 0, 0, -1, 2, -1},
  {0, 0, 0, 0, -1, 2}
-}\[NoBreak]);
+});
 
 
-CartanMatrix[Subscript[E, 7]]=(\[NoBreak]{
+CartanMatrix[Subscript[E, 7]]=({
  {2, 0, -1, 0, 0, 0, 0},
  {0, 2, 0, -1, 0, 0, 0},
  {-1, 0, 2, -1, 0, 0, 0},
@@ -61,12 +86,12 @@ CartanMatrix[Subscript[E, 7]]=(\[NoBreak]{
  {0, 0, 0, -1, 2, -1, 0},
  {0, 0, 0, 0, -1, 2, -1},
  {0, 0, 0, 0, 0, -1, 2}
-}\[NoBreak]);
+});
 
 
 CartanMatrix[Subscript[E, 8]]=\!\(\*
 TagBox[
-RowBox[{"(", "\[NoBreak]", GridBox[{
+RowBox[{"(", "", GridBox[{
 {"2", "0", 
 RowBox[{"-", "1"}], "0", "0", "0", "0", "0"},
 {"0", "2", "0", 
@@ -91,13 +116,13 @@ RowBox[{"-", "1"}]},
 RowBox[{"-", "1"}], "2"}
 },
 GridBoxAlignment->{"Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
-GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}}], "", ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
 
 
 CartanMatrix[Subscript[F, 4]]=\!\(\*
 TagBox[
-RowBox[{"(", "\[NoBreak]", GridBox[{
+RowBox[{"(", "", GridBox[{
 {"2", 
 RowBox[{"-", "1"}], "0", "0"},
 {
@@ -110,20 +135,20 @@ RowBox[{"-", "1"}]},
 RowBox[{"-", "1"}], "2"}
 },
 GridBoxAlignment->{"Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
-GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}}], "", ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
 
 
 CartanMatrix[Subscript[G, 2]]=\!\(\*
 TagBox[
-RowBox[{"(", "\[NoBreak]", GridBox[{
+RowBox[{"(", "", GridBox[{
 {"2", 
 RowBox[{"-", "3"}]},
 {
 RowBox[{"-", "1"}], "2"}
 },
 GridBoxAlignment->{"Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
-GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}}], "", ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\);
 
 
@@ -175,7 +200,7 @@ SimpleRoots[\[CapitalGamma]_]:=Transpose[CartanMatrix[\[CapitalGamma]]]
 
 
 SimpleReflection[\[CapitalGamma]_,i_][x_]:=
-With[{\[Lambda]=SimpleRoots[\[CapitalGamma]][[i]]},x-2KillingForm[\[CapitalGamma]][\[Lambda],x]/KillingForm[\[CapitalGamma]][\[Lambda],\[Lambda]] \[Lambda]]
+With[{\[Lambda]=SimpleRoots[\[CapitalGamma]][[i]]},x-2 KillingForm[\[CapitalGamma]][\[Lambda],x]/KillingForm[\[CapitalGamma]][\[Lambda],\[Lambda]] \[Lambda]]
 
 
 AllSimpleReflections[\[CapitalGamma]_][x_]:=Table[SimpleReflection[\[CapitalGamma],i][x],{i,1,Rank[\[CapitalGamma]]}]

@@ -40,7 +40,7 @@ CodomainBasis::usage="";
 Algebra::usage="";
 
 
-IdentityMap::usage="";
+IdentityMap::usage="";ZeroMap::usage="";
 
 
 ZeroTensorQ::usage="";
@@ -55,7 +55,7 @@ RepresentationTensorErrors;
 QuantumTrace::usage="";
 
 
-Distributor;Associator;
+Distributor;Associator;InverseAssociator;
 
 
 BraidingMap;InverseBraidingMap;NormalisedBraidingMap;InverseNormalisedBraidingMap;
@@ -153,20 +153,64 @@ QuantumTrace[RepresentationTensor[\[CapitalGamma]_,V_,\[Beta]_,V_,\[Beta]_,matri
 Associator[\[CapitalGamma]_,V1_,V2_,V3_,\[Beta]_]:=RepresentationTensor[\[CapitalGamma],(V1\[CircleTimes]V2)\[CircleTimes]V3,\[Beta],V1\[CircleTimes](V2\[CircleTimes]V3),\[Beta],{#,Associator[\[CapitalGamma],V1,V2,V3,\[Beta],#]}&/@Weights[\[CapitalGamma],V1\[CircleTimes](V2\[CircleTimes]V3)]]
 
 
-Associator[\[CapitalGamma]_,U_,V_,W_,\[Beta]_,\[Lambda]_]:=LeftAssociator[\[CapitalGamma],U,V,W,\[Lambda]].Inverse[RightAssociator[\[CapitalGamma],U,V,W,\[Lambda]]]
+InverseAssociator[\[CapitalGamma]_,V1_,V2_,V3_,\[Beta]_]:=RepresentationTensor[\[CapitalGamma],V1\[CircleTimes](V2\[CircleTimes]V3),\[Beta],(V1\[CircleTimes]V2)\[CircleTimes]V3,\[Beta],{#,InverseAssociator[\[CapitalGamma],V1,V2,V3,\[Beta],#]}&/@Weights[\[CapitalGamma],V1\[CircleTimes](V2\[CircleTimes]V3)]]
+
+
+Associator[\[CapitalGamma]_,U_,V_,W_,\[Beta]_,\[Lambda]_]:=Matrix[LeftAssociator[\[CapitalGamma],U,V,W,\[Lambda]].Inverse[RightAssociator[\[CapitalGamma],U,V,W,\[Lambda]]]]
+
+
+InverseAssociator[\[CapitalGamma]_,U_,V_,W_,\[Beta]_,\[Lambda]_]:=Matrix[RightAssociator[\[CapitalGamma],U,V,W,\[Lambda]].Inverse[LeftAssociator[\[CapitalGamma],U,V,W,\[Lambda]]]]
 
 
 ConstituentWeights[\[CapitalGamma]_,V1_,V2_,V3_,\[Lambda]_]:=Select[Flatten[Outer[{\[Lambda]-#1-#2,#2,#1}&,Weights[\[CapitalGamma],V3],Weights[\[CapitalGamma],V2],1],1],MemberQ[Weights[\[CapitalGamma],V1],#[[1]]]&]
 
 
-RightAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
+(*RightAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
 TensorProductWeightSpaceInclusion[\[CapitalGamma],{U,V\[CircleTimes]W},{a,b+c}].MatrixKroneckerProduct[identityMatrix[WeightMultiplicity[\[CapitalGamma],U,a]],TensorProductWeightSpaceInclusion[\[CapitalGamma],{V,W},{b,c}]]
 LeftAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
-TensorProductWeightSpaceInclusion[\[CapitalGamma],{U\[CircleTimes]V,W},{a+b,c}].MatrixKroneckerProduct[TensorProductWeightSpaceInclusion[\[CapitalGamma],{U,V},{a,b}],identityMatrix[WeightMultiplicity[\[CapitalGamma],W,c]]]
+TensorProductWeightSpaceInclusion[\[CapitalGamma],{U\[CircleTimes]V,W},{a+b,c}].MatrixKroneckerProduct[TensorProductWeightSpaceInclusion[\[CapitalGamma],{U,V},{a,b}],identityMatrix[WeightMultiplicity[\[CapitalGamma],W,c]]]*)
 
 
-RightAssociator[\[CapitalGamma]_,U_,V_,W_,\[Lambda]_]:=AppendRows@@(RightAssociatedWeightSpaceInclusion[\[CapitalGamma],{U,V,W},#]&/@ConstituentWeights[\[CapitalGamma],U,V,W,\[Lambda]])
-LeftAssociator[\[CapitalGamma]_,U_,V_,W_,\[Lambda]_]:=AppendRows@@(LeftAssociatedWeightSpaceInclusion[\[CapitalGamma],{U,V,W},#]&/@ConstituentWeights[\[CapitalGamma],U,V,W,\[Lambda]])
+(*RightAssociator[\[CapitalGamma]_,U_,V_,W_,\[Lambda]_]:=AppendRows@@(RightAssociatedWeightSpaceInclusion[\[CapitalGamma],{U,V,W},#]&/@ConstituentWeights[\[CapitalGamma],U,V,W,\[Lambda]])
+LeftAssociator[\[CapitalGamma]_,U_,V_,W_,\[Lambda]_]:=AppendRows@@(LeftAssociatedWeightSpaceInclusion[\[CapitalGamma],{U,V,W},#]&/@ConstituentWeights[\[CapitalGamma],U,V,W,\[Lambda]])*)
+
+
+CoordinateInclusion/:DirectSum[i:CoordinateInclusion[n_Integer,_List]..]:=CoordinateInclusion[n,Join@@{i}[[All,2]]]
+
+
+CoordinateInclusion/:CoordinateInclusion[n_Integer,p_List].CoordinateInclusion[m_Integer,q_List]:=CoordinateInclusion[n,p[[#]]&/@q]
+
+
+CoordinateInclusion/:Inverse[CoordinateInclusion[n_,p_List]/;Length[p]==n]:=CoordinateInclusion[n,Ordering[p]]
+
+
+CoordinateInclusion/:CoordinateInclusion[n_Integer,p_List]\[CircleTimes]CoordinateInclusion[m_Integer,q_List]:=CoordinateInclusion[n m,Flatten[Outer[#2+m (#1-1)&,p,q]]]
+
+
+CoordinateInclusion/:Matrix[CoordinateInclusion[n_,p_List]]:=Matrix[n,Length[p],IdentityMatrix[n][[All,p]]]
+
+
+CoordinateInclusion[n_Integer]:=CoordinateInclusion[n,Range[n]]
+
+
+FindFirst[a_, b_] := Position[a, b, {1},1,Heads->False][[1,1]]
+
+
+CoordinateInclusion[\[CapitalGamma]_,{V_,W_},{a_,b_}]:=CoordinateInclusion[
+WeightMultiplicity[\[CapitalGamma],V\[CircleTimes]W,a+b],
+QuantumGroups`MatrixPresentations`Private`WeightMultiplicityPartialSums[\[CapitalGamma],V,W,a+b][[FindFirst[Weights[\[CapitalGamma],W],b]]]
++Range[WeightMultiplicity[\[CapitalGamma],V,a]WeightMultiplicity[\[CapitalGamma],W,b]]
+]
+
+
+RightAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
+CoordinateInclusion[\[CapitalGamma],{U,V\[CircleTimes]W},{a,b+c}].(CoordinateInclusion[WeightMultiplicity[\[CapitalGamma],U,a]]\[CircleTimes]CoordinateInclusion[\[CapitalGamma],{V,W},{b,c}])
+LeftAssociatedWeightSpaceInclusion[\[CapitalGamma]_,{U_,V_,W_},{a_,b_,c_}]:=
+CoordinateInclusion[\[CapitalGamma],{U\[CircleTimes]V,W},{a+b,c}].(CoordinateInclusion[\[CapitalGamma],{U,V},{a,b}]\[CircleTimes]CoordinateInclusion[WeightMultiplicity[\[CapitalGamma],W,c]])
+
+
+RightAssociator[\[CapitalGamma]_,U_,V_,W_,\[Lambda]_]:=DirectSum@@(RightAssociatedWeightSpaceInclusion[\[CapitalGamma],{U,V,W},#]&/@ConstituentWeights[\[CapitalGamma],U,V,W,\[Lambda]])
+LeftAssociator[\[CapitalGamma]_,U_,V_,W_,\[Lambda]_]:=DirectSum@@(LeftAssociatedWeightSpaceInclusion[\[CapitalGamma],{U,V,W},#]&/@ConstituentWeights[\[CapitalGamma],U,V,W,\[Lambda]])
 
 
 targetIndexWeightPairs[\[CapitalGamma]_][V_DirectSum\[CircleTimes]W_,\[Lambda]_]:=Flatten[Table[With[{\[Mu]=Weights[\[CapitalGamma],W][[j]]},Table[Table[{i,\[Mu]},{WeightMultiplicity[\[CapitalGamma],V[[i]],\[Lambda]-\[Mu]]WeightMultiplicity[\[CapitalGamma],W,\[Mu]]}],{i,1,Length[V]}]],{j,1,Length[Weights[\[CapitalGamma],W]]}],2]
@@ -224,7 +268,32 @@ result
 ]
 
 
+LoadDecompositionMaps[Subscript[\[CapitalGamma]_, n_]]:=Module[{},
+Off[Get::noopen,Needs::nocont];
+Needs["QuantumGroups`Data`"<>SymbolName[\[CapitalGamma]]<>ToString[n]<>"`DecompositionMaps`"];
+On[Get::noopen,Needs::nocont];
+LoadDecompositionMaps[Subscript[\[CapitalGamma], n]]=False;
+True
+]
+
+
 weightToString[\[Lambda]:{__Integer}]:=StringDrop[StringJoin@@((ToString[#]<>"$")&/@\[Lambda]),-1]
+
+
+LoadDecompositionMaps[Subscript[\[CapitalGamma]_, n_],Z_]:=Module[{tensorPowerQ,tensorPowerPattern,data},
+If[LoadDecompositionMaps[Subscript[\[CapitalGamma], n]],True,
+tensorPowerQ[V_][W_]:=MatchQ[W,V]||MatchQ[W,U_\[CircleTimes]V/;tensorPowerQ[V][U]];
+tensorPowerPattern=U_\[CircleTimes](V:(Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]_]))/;tensorPowerQ[V][U];
+If[MatchQ[Z,tensorPowerPattern],
+data=Z/.X:(_\[CircleTimes]Y:Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]_]):>{\[Lambda],Count[X,Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]],\[Infinity]]};
+Off[Get::noopen,Needs::nocont];
+Needs["QuantumGroups`Data`"<>SymbolName[\[CapitalGamma]]<>ToString[n]<>"`DecompositionMaps`"<>"w"<>weightToString[data[[1]]]<>"`k"<>ToString[data[[2]]]<>"`"];
+On[Get::noopen,Needs::nocont];
+];
+LoadDecompositionMaps[Subscript[\[CapitalGamma], n],Z]=False;
+True
+]
+]
 
 
 DecompositionMap[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_],\[Beta]_]:=IdentityMap[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]],\[Beta]]
@@ -274,14 +343,20 @@ InverseDecompositionMap[\[CapitalGamma]_,V:Irrep[_][_],\[Beta]_]:=Inverse[Decomp
 InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CirclePlus]_),\[Beta]_]:=Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]]
 
 
-InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CircleTimes]_),\[Beta]_]:=InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]=
+InverseDecompositionMap[\[CapitalGamma]_,V:(_\[CircleTimes]_),\[Beta]_]:=
 If[LoadDecompositionMaps[\[CapitalGamma],V],InverseDecompositionMap[\[CapitalGamma],V,\[Beta]],
-Module[{result},
+Module[{},
 DebugPrintHeld["Beginning ",InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
-result=Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]];
+InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]=Inverse[DecompositionMap[\[CapitalGamma],V,\[Beta]]];
 DebugPrintHeld["Finished ",InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]];
-result
+PackageDecompositionMaps[\[CapitalGamma]];
+InverseDecompositionMap[\[CapitalGamma],V,\[Beta]]
 ]
+]
+
+
+If[$VersionNumber>=6.,
+BlockMatrix[b:{{___Matrix}...}]:=AppendColumns@@(AppendRows@@#&/@b)
 ]
 
 

@@ -31,13 +31,13 @@ LittelmannPathDecomposeRepresentation::usage="LittelmannPathDecomposeRepresentat
 LittelmannPathWeightMultiplicities::usage="LittelmannPathWeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]] gives a list of pairs; each pair consists of a weight and its multiplicity in Irrep[\[CapitalGamma]][\[Lambda]], using the Littelmann path model.";
 
 
-LittelmannPathOneStepLowerings;LittelmannPathLowerings;LittelmannPathEndpoint;
-
-
 Begin["`Internals`"];
 
 
-LittelmannPathVertices;LittelmannPathInnerProducts;LowerLittelmannPath;ComposeLittelmannPaths;LittelmannPathDominantQ;
+LittelmannPathVertices;
+LittelmannPathInnerProducts;
+LowerLittelmannPath;
+ComposeLittelmannPaths;LittelmannPathDominantQ;
 
 
 End[];
@@ -82,7 +82,7 @@ LowerLittelmannPath[lp_,{}]:=lp
 LowerLittelmannPath[lp_,d_List]:=LowerLittelmannPath[LowerLittelmannPath[lp,Last[d]],Drop[d,-1]]
 
 
-SimpleRootLength[\[CapitalGamma]_][i_]:=1/2 KillingForm[\[CapitalGamma]][SimpleRoots[\[CapitalGamma]][[i]],SimpleRoots[\[CapitalGamma]][[i]]]
+SimpleRootLength[\[CapitalGamma]_][i_]:=SimpleRootLength[\[CapitalGamma]][i]=1/2 KillingForm[\[CapitalGamma]][SimpleRoots[\[CapitalGamma]][[i]],SimpleRoots[\[CapitalGamma]][[i]]]
 
 
 LowerLittelmannPath[lp_,i_,m_]:=Module[{ip,min,lm,ms,l,v,\[CapitalGamma],\[Alpha],v1,v2},

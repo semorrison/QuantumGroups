@@ -67,7 +67,7 @@ DeclarePackage["QuantumGroups`AlgebraRelations`",{"Relations","CheckRelations"}]
 DeclarePackage["QuantumGroups`RMatrix`",{"RMatrix","CheckRMatrixOppositeCommutes"}];
 
 
-DeclarePackage["QuantumGroups`RepresentationTensors`",{"RepresentationTensor","Domain","Codomain","DomainBasis","CodomainBasis","Algebra","IdentityMap","ZeroTensorQ","CheckRepresentationTensor","RepresentationTensorErrors","QuantumTrace","Distributor","Associator","BraidingMap","InverseBraidingMap","NormalisedBraidingMap","InverseNormalisedBraidingMap","DecompositionMap","InverseDecompositionMap","PermuteDirectSummands","DirectSumProjectionMap","DirectSumInclusionMap"}];
+DeclarePackage["QuantumGroups`RepresentationTensors`",{"RepresentationTensor","Domain","Codomain","DomainBasis","CodomainBasis","Algebra","IdentityMap","ZeroTensorQ","CheckRepresentationTensor","RepresentationTensorErrors","QuantumTrace","Distributor","Associator","InverseAssociator","BraidingMap","InverseBraidingMap","NormalisedBraidingMap","InverseNormalisedBraidingMap","DecompositionMap","InverseDecompositionMap","PermuteDirectSummands","DirectSumProjectionMap","DirectSumInclusionMap"}];
 
 
 DeclarePackage["QuantumGroups`Braiding`",{"BraidingData","CheckBraidingData","BR","LoadAllBraidingDataFromWiki","PackageBraidingData","WriteBraidingDataToWiki"}];
