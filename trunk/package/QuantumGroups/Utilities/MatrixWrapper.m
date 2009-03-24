@@ -168,7 +168,7 @@ BlockDiagonalMatrix[m_Matrix]:=m
 BlockDiagonalMatrix[m1_,m2_,m3__]:=BlockDiagonalMatrix[BlockDiagonalMatrix@@(Take[{m1,m2,m3},Floor[Length[{m1,m2,m3}]/2]]),BlockDiagonalMatrix@@(Drop[{m1,m2,m3},Floor[Length[{m1,m2,m3}]/2]])]
 
 
-InterpolationInverseThreshold=30;
+InterpolationInverseThreshold=21;
 
 
 PrepareInverse[x_]:=Null

@@ -10,12 +10,11 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    210190,       5171]
-NotebookOptionsPosition[     89007,       2602]
-NotebookOutlinePosition[    204519,       4996]
-CellTagsIndexPosition[    204476,       4993]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[    210248,       5149]
+NotebookOptionsPosition[     89077,       2589]
+NotebookOutlinePosition[    204578,       4974]
+CellTagsIndexPosition[    204535,       4971]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
@@ -97,8 +96,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"HighWeights", "::", "usage"}], "=", "\"\<\>\""}], ";"}]], "Input",\
-
+   RowBox[{"HighWeights", "::", "usage"}], "=", "\"\<\>\""}], ";"}]], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -149,8 +147,7 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[", "A", 
      "]"}], "[", 
-    RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}]}], "*)"}]], "Input",\
-
+    RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}]}], "*)"}]], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -569,8 +566,7 @@ Cell[BoxData[
       RowBox[{"\[Lambda]", "+", 
        RowBox[{
         RowBox[{"OperatorWeight", "[", "\[CapitalGamma]", "]"}], "[", 
-        RowBox[{"\[CapitalDelta]", "[", "A", "]"}], "]"}]}]}], "]"}]}]}], ":=",
-   
+        RowBox[{"\[CapitalDelta]", "[", "A", "]"}], "]"}]}]}], "]"}]}]}], ":=", 
   RowBox[{"Matrix", "[", 
    RowBox[{"0", ",", 
     RowBox[{"WeightMultiplicity", "[", 
@@ -693,15 +689,20 @@ Cell[BoxData[
   RowBox[{"WeightMultiplicityPartialSums", "[", 
    RowBox[{"\[CapitalGamma]_", ",", "V1_", ",", "V2_", ",", "\[Lambda]_"}], 
    "]"}], ":=", 
-  RowBox[{"Drop", "[", 
-   RowBox[{
-    RowBox[{"FoldList", "[", 
-     RowBox[{"Plus", ",", "0", ",", 
-      RowBox[{"WeightMultiplicityComponents", "[", 
-       RowBox[{"\[CapitalGamma]", ",", "V1", ",", "V2", ",", "\[Lambda]"}], 
-       "]"}]}], "]"}], ",", 
-    RowBox[{"-", "1"}]}], "]"}]}]], "Input",
- InitializationCell->True],
+  RowBox[{
+   RowBox[{"WeightMultiplicityPartialSums", "[", 
+    RowBox[{"\[CapitalGamma]", ",", "V1", ",", "V2", ",", "\[Lambda]"}], 
+    "]"}], "=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{
+     RowBox[{"FoldList", "[", 
+      RowBox[{"Plus", ",", "0", ",", 
+       RowBox[{"WeightMultiplicityComponents", "[", 
+        RowBox[{"\[CapitalGamma]", ",", "V1", ",", "V2", ",", "\[Lambda]"}], 
+        "]"}]}], "]"}], ",", 
+     RowBox[{"-", "1"}]}], "]"}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.4468361949740953`*^9, 3.446836207081067*^9}}],
 
 Cell[TextData[{
  "Gives the map from ",
@@ -739,7 +740,6 @@ Cell[BoxData[
          RowBox[{"\[CapitalGamma]", ",", "V", ",", "\[Lambda]"}], "]"}], 
         RowBox[{"WeightMultiplicity", "[", 
          RowBox[{"\[CapitalGamma]", ",", "W", ",", "\[Mu]"}], "]"}]}]}], ",", 
-      
       RowBox[{"m1", "=", 
        RowBox[{"WeightMultiplicity", "[", 
         RowBox[{"\[CapitalGamma]", ",", 
@@ -789,7 +789,6 @@ Cell[BoxData[
           RowBox[{
            RowBox[{
             RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[", 
-            
             RowBox[{"SuperPlus", "[", 
              SubscriptBox["X", "i"], "]"}], "]"}], "[", 
            RowBox[{"V", ",", "b", ",", "\[Lambda]"}], "]"}], ".", "#"}], 
@@ -867,7 +866,6 @@ Cell[BoxData[
           RowBox[{
            RowBox[{
             RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[", 
-            
             RowBox[{"SuperPlus", "[", 
              SubscriptBox["X", "i"], "]"}], "]"}], "[", 
            RowBox[{"V", ",", "b", ",", "\[Lambda]"}], "]"}], ",", 
@@ -931,8 +929,7 @@ Cell[BoxData[
           RowBox[{"\[Lambda]", ",", "#"}], "}"}], "&"}], "/@", 
         RowBox[{
          RowBox[{"HighWeightVectors", "[", "\[CapitalGamma]", "]"}], "[", 
-         RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}]}]}], "]"}], "/@",
-      
+         RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}]}]}], "]"}], "/@", 
      RowBox[{"PositiveWeights", "[", 
       RowBox[{"\[CapitalGamma]", ",", "V"}], "]"}]}], ",", "1"}], 
    "]"}]}]], "Input",
@@ -1143,8 +1140,7 @@ Cell[BoxData[
     "V_", ",", "\[Beta]_", ",", "\[Lambda]_", ",", "v_", ",", "\[Mu]_"}], 
     "]"}], "/;", 
    RowBox[{"InWeylPolytopeQ", "[", 
-    RowBox[{"\[CapitalGamma]", ",", "\[Lambda]", ",", "\[Mu]"}], "]"}]}], ":=",
-   
+    RowBox[{"\[CapitalGamma]", ",", "\[Lambda]", ",", "\[Mu]"}], "]"}]}], ":=", 
   RowBox[{
    RowBox[{
     RowBox[{"SubIrrepWeightBasis", "[", "\[CapitalGamma]", "]"}], "[", 
@@ -1178,14 +1174,12 @@ Cell[BoxData[
               RowBox[{"V", ",", "\[Beta]", ",", 
                RowBox[{"\[Mu]", "-", 
                 RowBox[{
-                 RowBox[{"OperatorWeight", "[", "\[CapitalGamma]", "]"}], "[",
-                  
+                 RowBox[{"OperatorWeight", "[", "\[CapitalGamma]", "]"}], "[", 
                  RowBox[{"SuperMinus", "[", 
                   SubscriptBox["X", "i"], "]"}], "]"}]}]}], "]"}], ".", "#"}],
              "&"}], "/@", 
            RowBox[{
-            RowBox[{"SubIrrepWeightBasis", "[", "\[CapitalGamma]", "]"}], "[",
-             
+            RowBox[{"SubIrrepWeightBasis", "[", "\[CapitalGamma]", "]"}], "[", 
             RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]", ",", "v", ",", 
              RowBox[{"\[Mu]", "-", 
               RowBox[{
@@ -1308,8 +1302,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"DirectSumProjection", "[", "\[CapitalGamma]_", "]"}], "[", 
-   RowBox[{"V_DirectSum", ",", "index_Integer", ",", "\[Lambda]_"}], "]"}], ":=",
-   
+   RowBox[{"V_DirectSum", ",", "index_Integer", ",", "\[Lambda]_"}], "]"}], ":=", 
   RowBox[{"With", "[", 
    RowBox[{
     RowBox[{"{", 
@@ -1580,9 +1573,7 @@ Cell[BoxData[
             RowBox[{
              SubscriptBox["h", "#"], "&"}], "/@", 
             RowBox[{"ShortSimpleRoots", "[", "\[CapitalGamma]", "]"}]}], ",", 
-           
-           RowBox[{"{", "}"}]}], "]"}]}], "]"}]}], ";", "\[IndentingNewLine]",
-       
+           RowBox[{"{", "}"}]}], "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"With", "[", 
        RowBox[{
         RowBox[{"{", 
@@ -1792,7 +1783,6 @@ Cell[BoxData[
         SubscriptBox["F", "4"], "]"}], "[", 
        RowBox[{"{", 
         RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], "\[Rule]", 
-      
       SuperscriptBox[
        RowBox[{
         RowBox[{"Irrep", "[", 
@@ -1806,7 +1796,6 @@ Cell[BoxData[
         SubscriptBox["F", "4"], "]"}], "[", 
        RowBox[{"{", 
         RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], "]"}], "\[Rule]", 
-      
       SuperscriptBox[
        RowBox[{
         RowBox[{"Irrep", "[", 
@@ -1820,7 +1809,6 @@ Cell[BoxData[
         SubscriptBox["F", "4"], "]"}], "[", 
        RowBox[{"{", 
         RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], "]"}], "\[Rule]", 
-      
       SuperscriptBox[
        RowBox[{
         RowBox[{"Irrep", "[", 
@@ -2331,8 +2319,7 @@ for \>\"", ",", "V"}], "]"}], ";",
              RowBox[{"W", ",", "FundamentalBasis", ",", "\[Lambda]"}], "]"}], 
             ".", 
             RowBox[{
-             RowBox[{"DirectSumInclusion", "[", "\[CapitalGamma]", "]"}], "[",
-              
+             RowBox[{"DirectSumInclusion", "[", "\[CapitalGamma]", "]"}], "[", 
              RowBox[{
               RowBox[{
                RowBox[{
@@ -2610,8 +2597,7 @@ DockedCells->(FrontEndExecute[{
 ShowSelection->True,
 InputAliases->{"intt" -> RowBox[{"\[Integral]", 
      RowBox[{"\[SelectionPlaceholder]", 
-       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> 
-  RowBox[{
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> RowBox[{
      SubsuperscriptBox[
      "\[Integral]", "\[SelectionPlaceholder]", "\[Placeholder]"], 
      RowBox[{"\[Placeholder]", 
@@ -2646,8 +2632,7 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
         " ", "\[DoubleLongLeftArrow]", " ", 
        TagBox[
        "\[Placeholder]", NotationBoxTag, TagStyle -> 
-        "NotationTemplateStyle"]}], "]"}], "symb" -> 
-  RowBox[{"Symbolize", "[", 
+        "NotationTemplateStyle"]}], "]"}], "symb" -> RowBox[{"Symbolize", "[", 
      TagBox[
      "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"], 
      "]"}], "infixnotation" -> RowBox[{"InfixNotation", "[", 
@@ -2664,7 +2649,7 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
     "NotationPatternWrapperStyle"], "madeboxeswraper" -> 
   TagBox["\[Placeholder]", NotationMadeBoxesTag, TagStyle -> 
     "NotationMadeBoxesWrapperStyle"]},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
 StyleDefinitions->Notebook[{
    Cell[
     CellGroupData[{
@@ -2899,8 +2884,7 @@ Notebook level.", "Text"],
                Inherited}, LineSpacing -> {1, 2}, LanguageCategory -> 
              "NaturalLanguage", CounterIncrements -> "Section", 
              CounterAssignments -> {{"Subsection", 0}, {"Subsubsection", 0}}, 
-             FontFamily -> "Helvetica", FontSize -> 20, FontWeight -> "Bold"],
-             
+             FontFamily -> "Helvetica", FontSize -> 20, FontWeight -> "Bold"], 
             Cell[
              StyleData["Section", "Presentation"], 
              CellMargins -> {{40, 10}, {11, 32}}, LineSpacing -> {1, 0}, 
@@ -3499,7 +3483,7 @@ or between Notebooks.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`NotebookLocate[#2]}]& ), ButtonNote -> 
                ButtonData}], 
@@ -3523,7 +3507,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["MainBook", #]}]& )}], 
             Cell[
@@ -3543,7 +3527,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
              FontColor -> RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["AddOns", #]}]& )}], 
             Cell[
@@ -3563,7 +3547,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
              FontColor -> RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["RefGuide", #]}]& )}], 
             Cell[
@@ -3583,7 +3567,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["RefGuide", #]}]& )}], 
             Cell[
@@ -3603,12 +3587,11 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["GettingStarted", #]}]& )}], 
             Cell[
-             StyleData["GettingStartedLink", "Presentation"], FontSize -> 16],
-             
+             StyleData["GettingStartedLink", "Presentation"], FontSize -> 16], 
             Cell[
              StyleData["GettingStartedLink", "Condensed"], FontSize -> 11], 
             Cell[
@@ -3624,7 +3607,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["Demos", #]}]& )}], 
             Cell[
@@ -3640,7 +3623,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["Tour", #]}]& )}], 
             Cell[
@@ -3656,7 +3639,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["OtherInformation", #]}]& )}], 
             Cell[
@@ -3664,7 +3647,6 @@ help system.", "Text"],
              16], 
             Cell[
              StyleData["OtherInformationLink", "Condensed"], FontSize -> 11], 
-            
             Cell[
              StyleData["OtherInformationLink", "SlideShow"]], 
             Cell[
@@ -3678,7 +3660,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["MasterIndex", #]}]& )}], 
             Cell[
@@ -4091,7 +4073,6 @@ stand out).", "Text"],
                     "RowsIndexed" -> {}}}], 
                Cell[
                 StyleData["2ColumnEvenBox", "Presentation"], FontSize -> 18], 
-               
                Cell[
                 StyleData["2ColumnEvenBox", "SlideShow"]], 
                Cell[
@@ -4122,8 +4103,7 @@ stand out).", "Text"],
                     Offset[0.4]}, 
                     Offset[0.2]}, "RowsIndexed" -> {}}}], 
                Cell[
-                StyleData["2ColumnSmallBox", "Presentation"], FontSize -> 18],
-                
+                StyleData["2ColumnSmallBox", "Presentation"], FontSize -> 18], 
                Cell[
                 StyleData["2ColumnSmallBox", "SlideShow"]], 
                Cell[
@@ -4174,8 +4154,7 @@ stand out).", "Text"],
                     Offset[0.4]}, 
                     Offset[0.2]}, "RowsIndexed" -> {}}}], 
                Cell[
-                StyleData["3ColumnSmallBox", "Presentation"], FontSize -> 18],
-                
+                StyleData["3ColumnSmallBox", "Presentation"], FontSize -> 18], 
                Cell[
                 StyleData["3ColumnSmallBox", "SlideShow"]], 
                Cell[
@@ -4671,8 +4650,7 @@ stand out).", "Text"],
                 "GraphicsGrouping", CellHorizontalScrolling -> True, 
                 StyleMenuListing -> None], 
                Cell[
-                StyleData["ItemizedPicture", "Presentation"], FontSize -> 18],
-                
+                StyleData["ItemizedPicture", "Presentation"], FontSize -> 18], 
                Cell[
                 StyleData["ItemizedPicture", "SlideShow"]], 
                Cell[
@@ -4981,7 +4959,7 @@ These styles serve to make visible otherwise invisible tagboxes.", "Text",
        Background -> RGBColor[0.900008, 0.889998, 1], 
        TagBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
        "NotationPackage"]}, Closed]]}, Visible -> False, FrontEndVersion -> 
-  "6.0 for Microsoft Windows (32-bit) (June 19, 2007)", StyleDefinitions -> 
+  "7.0 for Mac OS X x86 (32-bit) (February 18, 2009)", StyleDefinitions -> 
   "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -4996,179 +4974,179 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 74, 1, 49, "Subtitle",
+Cell[567, 22, 74, 1, 46, "Subtitle",
  InitializationCell->True],
-Cell[667, 26, 128, 4, 47, "Text",
+Cell[644, 25, 128, 4, 41, "Text",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[820, 34, 58, 1, 71, "Section",
+Cell[797, 33, 58, 1, 67, "Section",
  InitializationCell->True],
-Cell[881, 37, 160, 4, 29, "Text",
+Cell[858, 36, 160, 4, 26, "Text",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1078, 46, 60, 1, 71, "Section",
+Cell[1055, 45, 60, 1, 67, "Section",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[1163, 51, 38, 0, 36, "Subsection"],
-Cell[1204, 53, 45, 0, 29, "Text"],
-Cell[1252, 55, 685, 16, 109, "Input",
+Cell[1140, 50, 38, 0, 34, "Subsection"],
+Cell[1181, 52, 45, 0, 26, "Text"],
+Cell[1229, 54, 685, 16, 85, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1974, 76, 36, 0, 36, "Subsection"],
-Cell[2013, 78, 150, 5, 28, "Input",
+Cell[1951, 75, 36, 0, 34, "Subsection"],
+Cell[1990, 77, 150, 5, 24, "Input",
  InitializationCell->True],
-Cell[2166, 85, 149, 5, 28, "Input",
+Cell[2143, 84, 149, 5, 24, "Input",
  InitializationCell->True],
-Cell[2318, 92, 87, 2, 28, "Input",
+Cell[2295, 91, 87, 2, 24, "Input",
  InitializationCell->True],
-Cell[2408, 96, 142, 5, 28, "Input",
+Cell[2385, 95, 140, 4, 24, "Input",
  InitializationCell->True],
-Cell[2553, 103, 152, 5, 28, "Input",
+Cell[2528, 101, 152, 5, 24, "Input",
  InitializationCell->True],
-Cell[2708, 110, 103, 2, 28, "Input",
+Cell[2683, 108, 103, 2, 24, "Input",
  InitializationCell->True],
-Cell[2814, 114, 89, 2, 28, "Input",
+Cell[2789, 112, 89, 2, 24, "Input",
  InitializationCell->True],
-Cell[2906, 118, 84, 2, 28, "Input",
+Cell[2881, 116, 84, 2, 24, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3027, 125, 31, 0, 36, "Subsection"],
-Cell[3061, 127, 119, 3, 28, "Input",
+Cell[3002, 123, 31, 0, 34, "Subsection"],
+Cell[3036, 125, 119, 3, 24, "Input",
  InitializationCell->True],
-Cell[3183, 132, 101, 3, 28, "Input",
+Cell[3158, 130, 101, 3, 24, "Input",
  InitializationCell->True],
-Cell[3287, 137, 510, 16, 28, "Input",
+Cell[3262, 135, 508, 15, 24, "Input",
  InitializationCell->True],
-Cell[3800, 155, 790, 22, 69, "Input",
+Cell[3773, 152, 790, 22, 55, "Input",
  InitializationCell->True],
-Cell[4593, 179, 776, 22, 49, "Input",
+Cell[4566, 176, 776, 22, 40, "Input",
  InitializationCell->True],
-Cell[5372, 203, 545, 16, 49, "Input",
+Cell[5345, 200, 545, 16, 40, "Input",
  InitializationCell->True],
-Cell[5920, 221, 404, 11, 28, "Input",
+Cell[5893, 218, 404, 11, 24, "Input",
  InitializationCell->True],
-Cell[6327, 234, 520, 14, 28, "Input",
+Cell[6300, 231, 520, 14, 24, "Input",
  InitializationCell->True],
-Cell[6850, 250, 873, 28, 69, "Input",
+Cell[6823, 247, 873, 28, 55, "Input",
  InitializationCell->True],
-Cell[7726, 280, 1529, 42, 92, "Input",
+Cell[7699, 277, 1529, 42, 90, "Input",
  InitializationCell->True],
-Cell[9258, 324, 1614, 43, 89, "Input",
+Cell[9231, 321, 1614, 43, 77, "Input",
  InitializationCell->True],
-Cell[10875, 369, 1061, 28, 69, "Input",
+Cell[10848, 366, 1061, 28, 62, "Input",
  InitializationCell->True],
-Cell[11939, 399, 942, 26, 69, "Input",
+Cell[11912, 396, 942, 26, 55, "Input",
  InitializationCell->True],
-Cell[12884, 427, 2120, 55, 169, "Input",
+Cell[12857, 424, 2120, 55, 130, "Input",
  InitializationCell->True],
-Cell[15007, 484, 2599, 66, 149, "Input",
+Cell[14980, 481, 2599, 66, 115, "Input",
  InitializationCell->True],
-Cell[17609, 552, 917, 27, 69, "Input",
+Cell[17582, 549, 914, 26, 55, "Input",
  InitializationCell->True],
-Cell[18529, 581, 549, 16, 28, "Input",
+Cell[18499, 577, 549, 16, 24, "Input",
  InitializationCell->True],
-Cell[19081, 599, 153, 3, 29, "Text"],
-Cell[19237, 604, 623, 18, 49, "Input",
+Cell[19051, 595, 153, 3, 26, "Text"],
+Cell[19207, 600, 623, 18, 40, "Input",
  InitializationCell->True],
-Cell[19863, 624, 1280, 34, 89, "Input",
+Cell[19833, 620, 1280, 34, 70, "Input",
  InitializationCell->True],
-Cell[21146, 660, 1046, 28, 69, "Input",
+Cell[21116, 656, 1046, 28, 55, "Input",
  InitializationCell->True],
-Cell[22195, 690, 499, 13, 49, "Input",
+Cell[22165, 686, 729, 18, 55, "Input",
  InitializationCell->True],
-Cell[22697, 705, 415, 16, 32, "Text",
+Cell[22897, 706, 415, 16, 29, "Text",
  InitializationCell->True],
-Cell[23115, 723, 2001, 50, 189, "Input",
+Cell[23315, 724, 1994, 49, 145, "Input",
  InitializationCell->True],
-Cell[25119, 775, 923, 26, 69, "Input",
+Cell[25312, 775, 910, 25, 55, "Input",
  InitializationCell->True],
-Cell[26045, 803, 638, 18, 49, "Input",
+Cell[26225, 802, 638, 18, 40, "Input",
  InitializationCell->True],
-Cell[26686, 823, 108, 3, 29, "Text"],
-Cell[26797, 828, 572, 16, 28, "Input"],
-Cell[27372, 846, 40, 0, 29, "Text"],
-Cell[27415, 848, 2560, 61, 209, "Input",
+Cell[26866, 822, 108, 3, 26, "Text"],
+Cell[26977, 827, 572, 16, 24, "Input"],
+Cell[27552, 845, 40, 0, 26, "Text"],
+Cell[27595, 847, 2547, 60, 160, "Input",
  InitializationCell->True],
-Cell[29978, 911, 147, 3, 29, "Text"],
-Cell[30128, 916, 756, 22, 49, "Input",
+Cell[30145, 909, 147, 3, 26, "Text"],
+Cell[30295, 914, 750, 21, 40, "Input",
  InitializationCell->True],
-Cell[30887, 940, 939, 27, 89, "Input",
+Cell[31048, 937, 939, 27, 70, "Input",
  InitializationCell->True],
-Cell[31829, 969, 353, 11, 28, "Input",
+Cell[31990, 966, 353, 11, 24, "Input",
  InitializationCell->True],
-Cell[32185, 982, 520, 15, 49, "Input",
+Cell[32346, 979, 520, 15, 40, "Input",
  InitializationCell->True],
-Cell[32708, 999, 173, 6, 28, "Input",
+Cell[32869, 996, 173, 6, 24, "Input",
  InitializationCell->True],
-Cell[32884, 1007, 358, 10, 49, "Input",
+Cell[33045, 1004, 358, 10, 40, "Input",
  InitializationCell->True],
-Cell[33245, 1019, 229, 6, 28, "Input",
+Cell[33406, 1016, 229, 6, 24, "Input",
  InitializationCell->True],
-Cell[33477, 1027, 357, 11, 28, "Input",
+Cell[33638, 1024, 357, 11, 24, "Input",
  InitializationCell->True],
-Cell[33837, 1040, 588, 17, 49, "Input",
+Cell[33998, 1037, 588, 17, 40, "Input",
  InitializationCell->True],
-Cell[34428, 1059, 177, 6, 28, "Input",
+Cell[34589, 1056, 177, 6, 24, "Input",
  InitializationCell->True],
-Cell[34608, 1067, 366, 10, 49, "Input",
+Cell[34769, 1064, 366, 10, 40, "Input",
  InitializationCell->True],
-Cell[34977, 1079, 237, 6, 28, "Input",
+Cell[35138, 1076, 237, 6, 24, "Input",
  InitializationCell->True],
-Cell[35217, 1087, 166, 4, 28, "Input",
+Cell[35378, 1084, 166, 4, 24, "Input",
  InitializationCell->True],
-Cell[35386, 1093, 1156, 31, 169, "Input",
+Cell[35547, 1090, 1156, 31, 130, "Input",
  InitializationCell->True],
-Cell[36545, 1126, 279, 8, 28, "Input",
+Cell[36706, 1123, 279, 8, 24, "Input",
  InitializationCell->True],
-Cell[36827, 1136, 3150, 77, 289, "Input",
+Cell[36988, 1133, 3116, 74, 220, "Input",
  InitializationCell->True],
-Cell[39980, 1215, 270, 8, 28, "Input",
+Cell[40107, 1209, 270, 8, 28, "Input",
  InitializationCell->True],
-Cell[40253, 1225, 781, 19, 49, "Input",
+Cell[40380, 1219, 781, 19, 49, "Input",
  InitializationCell->True],
-Cell[41037, 1246, 1556, 40, 129, "Input",
+Cell[41164, 1240, 1556, 40, 129, "Input",
  InitializationCell->True],
-Cell[42596, 1288, 596, 16, 49, "Input",
+Cell[42723, 1282, 596, 16, 49, "Input",
  InitializationCell->True],
-Cell[43195, 1306, 1366, 37, 109, "Input",
+Cell[43322, 1300, 1363, 36, 109, "Input",
  InitializationCell->True],
-Cell[44564, 1345, 548, 15, 49, "Input",
+Cell[44688, 1338, 548, 15, 49, "Input",
  InitializationCell->True],
-Cell[45115, 1362, 398, 9, 49, "Input",
+Cell[45239, 1355, 398, 9, 49, "Input",
  InitializationCell->True],
-Cell[45516, 1373, 1392, 35, 109, "Input",
+Cell[45640, 1366, 1392, 35, 109, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[46933, 1412, 7381, 200, 431, "Input",
+Cell[47057, 1405, 7362, 198, 431, "Input",
  InitializationCell->True],
-Cell[54317, 1614, 378, 7, 36, "Message"]
+Cell[54422, 1605, 378, 7, 36, "Message"]
 }, Open  ]],
-Cell[54710, 1624, 1788, 47, 129, "Input",
+Cell[54815, 1615, 1788, 47, 129, "Input",
  InitializationCell->True],
-Cell[56501, 1673, 18140, 509, 833, "Input",
+Cell[56606, 1664, 18119, 506, 833, "Input",
  InitializationCell->True],
-Cell[74644, 2184, 1111, 31, 69, "Input"],
-Cell[75758, 2217, 5526, 141, 489, "Input",
+Cell[74728, 2172, 1111, 31, 69, "Input"],
+Cell[75842, 2205, 5512, 140, 489, "Input",
  InitializationCell->True],
-Cell[81287, 2360, 139, 4, 28, "Input",
+Cell[81357, 2347, 139, 4, 28, "Input",
  InitializationCell->True],
-Cell[81429, 2366, 128, 3, 28, "Input",
+Cell[81499, 2353, 128, 3, 28, "Input",
  InitializationCell->True],
-Cell[81560, 2371, 1023, 28, 129, "Input",
+Cell[81630, 2358, 1023, 28, 129, "Input",
  InitializationCell->True],
-Cell[82586, 2401, 1301, 37, 49, "Input"],
-Cell[83890, 2440, 1851, 54, 129, "Input"],
-Cell[85744, 2496, 965, 27, 49, "Input"],
-Cell[86712, 2525, 1977, 57, 129, "Input"],
-Cell[88692, 2584, 96, 3, 28, "Input",
+Cell[82656, 2388, 1301, 37, 49, "Input"],
+Cell[83960, 2427, 1851, 54, 129, "Input"],
+Cell[85814, 2483, 965, 27, 49, "Input"],
+Cell[86782, 2512, 1977, 57, 129, "Input"],
+Cell[88762, 2571, 96, 3, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[88825, 2592, 36, 0, 36, "Subsection"],
-Cell[88864, 2594, 103, 3, 70, "Input",
+Cell[88895, 2579, 36, 0, 36, "Subsection"],
+Cell[88934, 2581, 103, 3, 70, "Input",
  InitializationCell->True]
 }, Closed]]
 }, Open  ]]

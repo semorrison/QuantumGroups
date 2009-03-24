@@ -10,12 +10,11 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     76845,       1937]
-NotebookOptionsPosition[     28009,        870]
-NotebookOutlinePosition[     72968,       1817]
-CellTagsIndexPosition[     72899,       1812]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[     76885,       1923]
+NotebookOptionsPosition[     28044,        861]
+NotebookOutlinePosition[     73009,       1803]
+CellTagsIndexPosition[     72940,       1798]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
@@ -35,8 +34,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"DeclarePackage", "[", 
    RowBox[{"\"\<QuantumGroups`Utilities`IntersectSubspaces`\>\"", ",", 
-    RowBox[{"{", "\"\<IntersectSubspaces\>\"", "}"}]}], "]"}], ";"}]], "Input",\
-
+    RowBox[{"{", "\"\<IntersectSubspaces\>\"", "}"}]}], "]"}], ";"}]], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -265,15 +263,16 @@ Cell[BoxData[
       "\"\<CheckRepresentationTensor\>\"", ",", 
       "\"\<RepresentationTensorErrors\>\"", ",", "\"\<QuantumTrace\>\"", ",", 
       "\"\<Distributor\>\"", ",", "\"\<Associator\>\"", ",", 
-      "\"\<BraidingMap\>\"", ",", "\"\<InverseBraidingMap\>\"", ",", 
-      "\"\<NormalisedBraidingMap\>\"", ",", 
-      "\"\<InverseNormalisedBraidingMap\>\"", ",", "\"\<DecompositionMap\>\"",
-       ",", "\"\<InverseDecompositionMap\>\"", ",", 
-      "\"\<PermuteDirectSummands\>\"", ",", "\"\<DirectSumProjectionMap\>\"", 
-      ",", "\"\<DirectSumInclusionMap\>\""}], "}"}]}], "]"}], ";"}]], "Input",\
-
+      "\"\<InverseAssociator\>\"", ",", "\"\<BraidingMap\>\"", ",", 
+      "\"\<InverseBraidingMap\>\"", ",", "\"\<NormalisedBraidingMap\>\"", 
+      ",", "\"\<InverseNormalisedBraidingMap\>\"", ",", 
+      "\"\<DecompositionMap\>\"", ",", "\"\<InverseDecompositionMap\>\"", 
+      ",", "\"\<PermuteDirectSummands\>\"", ",", 
+      "\"\<DirectSumProjectionMap\>\"", ",", 
+      "\"\<DirectSumInclusionMap\>\""}], "}"}]}], "]"}], ";"}]], "Input",
  InitializationCell->True,
- CellChangeTimes->{{3.4211619151573505`*^9, 3.421161916479251*^9}}],
+ CellChangeTimes->{{3.4211619151573505`*^9, 3.421161916479251*^9}, {
+  3.4468374382876177`*^9, 3.446837440082047*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -308,14 +307,12 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"QuantumGroupsDirectory", "::", "usage"}], "=", 
    "\"\<QuantumGroupsDirectory[] should hopefully return the location the \
-QuantumGroups` package was loaded from.\>\""}], 
-  ";"}], "\[IndentingNewLine]", 
+QuantumGroups` package was loaded from.\>\""}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"QuantumGroupsDataDirectory", "::", "usage"}], "=", 
    "\"\<QuantumGroupsDataDirectory[] specifies were the QuantumGroups` \
-package should look for, and save, precomputed data.\>\""}], ";"}]}], "Input",\
-
+package should look for, and save, precomputed data.\>\""}], ";"}]}], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -571,8 +568,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"ZeroVectorQ", "::", "usage"}], "=", 
-   "\"\<ZeroVectorQ[v] tests if v is the zero vector.\>\""}], ";"}]], "Input",\
-
+   "\"\<ZeroVectorQ[v] tests if v is the zero vector.\>\""}], ";"}]], "Input",
  InitializationCell->True,
  CellLabel->"In[62]:="],
 
@@ -601,8 +597,7 @@ Cell[BoxData[
          RowBox[{"(", 
           RowBox[{"$Path", "/.", 
            RowBox[{"\"\<.\>\"", "\[Rule]", 
-            RowBox[{"Directory", "[", "]"}]}]}], ")"}]}], "]"}]}], ")"}], ",",
-      
+            RowBox[{"Directory", "[", "]"}]}]}], ")"}]}], "]"}]}], ")"}], ",", 
      RowBox[{"-", "14"}]}], "]"}]}]}]], "Input",
  InitializationCell->True,
  CellLabel->"In[16]:="],
@@ -692,8 +687,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"qInteger", "[", "i", "]"}], "[", "q", "]"}], ",", 
       RowBox[{"{", 
-       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], "]"}]}]], "Input",\
-
+       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], "]"}]}]], "Input",
  InitializationCell->True,
  CellLabel->"In[65]:="],
 
@@ -771,8 +765,7 @@ Cell[BoxData[
        RowBox[{"UnitVector", "[", 
         RowBox[{"n_", ",", "i_Integer"}], "]"}], "/;", 
        RowBox[{"(", 
-        RowBox[{"1", "\[LessEqual]", "i", "\[LessEqual]", "n"}], ")"}]}], ":=",
-       
+        RowBox[{"1", "\[LessEqual]", "i", "\[LessEqual]", "n"}], ")"}]}], ":=", 
       RowBox[{"Module", "[", 
        RowBox[{
         RowBox[{"{", 
@@ -794,8 +787,7 @@ Cell[BoxData[
         RowBox[{"{", "n", "}"}]}], "]"}]}], ")"}]}], ",", 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Unprotect", "[", "UnitVector", "]"}], ";", "\[IndentingNewLine]",
-     
+    RowBox[{"Unprotect", "[", "UnitVector", "]"}], ";", "\[IndentingNewLine]", 
     RowBox[{"(", 
      RowBox[{
       RowBox[{
@@ -855,8 +847,7 @@ Cell[BoxData[
  CellLabel->"In[75]:="],
 
 Cell[BoxData[{
- RowBox[{"<<", 
-  "QuantumGroups`Utilities`Debugging`"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`Utilities`Debugging`"}], "\[IndentingNewLine]", 
  RowBox[{"<<", "QuantumGroups`Utilities`DataPackage`"}]}], "Input",
  InitializationCell->True],
 
@@ -874,8 +865,7 @@ WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Visible->True,
 InputAliases->{"intt" -> RowBox[{"\[Integral]", 
      RowBox[{"\[SelectionPlaceholder]", 
-       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> 
-  RowBox[{
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> RowBox[{
      SubsuperscriptBox[
      "\[Integral]", "\[SelectionPlaceholder]", "\[Placeholder]"], 
      RowBox[{"\[Placeholder]", 
@@ -910,8 +900,7 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
         " ", "\[DoubleLongLeftArrow]", " ", 
        TagBox[
        "\[Placeholder]", NotationBoxTag, TagStyle -> 
-        "NotationTemplateStyle"]}], "]"}], "symb" -> 
-  RowBox[{"Symbolize", "[", 
+        "NotationTemplateStyle"]}], "]"}], "symb" -> RowBox[{"Symbolize", "[", 
      TagBox[
      "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"], 
      "]"}], "infixnotation" -> RowBox[{"InfixNotation", "[", 
@@ -928,7 +917,7 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
     "NotationPatternWrapperStyle"], "madeboxeswraper" -> 
   TagBox["\[Placeholder]", NotationMadeBoxesTag, TagStyle -> 
     "NotationMadeBoxesWrapperStyle"]},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
 StyleDefinitions->Notebook[{
    Cell[
     CellGroupData[{
@@ -1099,8 +1088,7 @@ Notebook level.  ", "Text"],
                     BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], 
                Inherited}, CounterIncrements -> "Section", 
              CounterAssignments -> {{"Subsection", 0}, {"Subsubsection", 0}}, 
-             FontFamily -> "Helvetica", FontSize -> 18, FontWeight -> "Bold"],
-             
+             FontFamily -> "Helvetica", FontSize -> 18, FontWeight -> "Bold"], 
             Cell[
              StyleData["Section", "Printout"], 
              CellMargins -> {{2, 4}, {2, 80}}, FontSize -> 14]}, Closed]], 
@@ -1133,8 +1121,7 @@ Notebook level.  ", "Text"],
                     BoxMargins -> {{-0.175, 0}, {0, 0}}]}], TextForm], 
                Inherited}, LineSpacing -> {1, 5}, CounterIncrements -> 
              "Subsection", CounterAssignments -> {{"Subsubsection", 0}}, 
-             FontFamily -> "Helvetica", FontSize -> 15, FontWeight -> "Bold"],
-             
+             FontFamily -> "Helvetica", FontSize -> 15, FontWeight -> "Bold"], 
             Cell[
              StyleData["Subsection", "Printout"], 
              CellMargins -> {{2, 4}, {2, 18}}, FontSize -> 12]}, Closed]], 
@@ -1654,7 +1641,7 @@ help system.", "Text"],
              FontVariations -> {"Underline" -> True}, FontColor -> 
              RGBColor[0, 0, 1], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["MainBook", #]}]& )}], 
             Cell[
@@ -1669,7 +1656,7 @@ help system.", "Text"],
              FontVariations -> {"Underline" -> True}, FontColor -> 
              RGBColor[0, 0, 1], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["AddOns", #]}]& )}], 
             Cell[
@@ -1684,7 +1671,7 @@ help system.", "Text"],
              FontVariations -> {"Underline" -> True}, FontColor -> 
              RGBColor[0, 0, 1], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["RefGuide", #]}]& )}], 
             Cell[
@@ -1699,7 +1686,7 @@ help system.", "Text"],
              FontVariations -> {"Underline" -> True}, FontColor -> 
              RGBColor[0, 0, 1], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["GettingStarted", #]}]& )}], 
             Cell[
@@ -1714,7 +1701,7 @@ help system.", "Text"],
              FontVariations -> {"Underline" -> True}, FontColor -> 
              RGBColor[0, 0, 1], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["OtherInformation", #]}]& )}], 
             Cell[
@@ -1774,8 +1761,7 @@ for use in palette buttons.", "Text"],
       Cell[
        CellGroupData[{
          Cell[
-         "Notation Package Styles", "Section", CellTags -> "NotationPackage"],
-          
+         "Notation Package Styles", "Section", CellTags -> "NotationPackage"], 
          Cell[
          "The cells below define certain styles needed by the Notation \
 package. These styles serve to make visible otherwise invisible tagboxes.", 
@@ -1795,7 +1781,7 @@ package. These styles serve to make visible otherwise invisible tagboxes.",
           None, Background -> RGBColor[0.900008, 0.889998, 1], 
           TagBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
           "NotationPackage"]}, Closed]]}, Open]]}, Visible -> False, 
-  FrontEndVersion -> "6.0 for Microsoft Windows (32-bit) (June 19, 2007)", 
+  FrontEndVersion -> "7.0 for Mac OS X x86 (32-bit) (February 18, 2009)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -1804,138 +1790,138 @@ package. These styles serve to make visible otherwise invisible tagboxes.",
 (*CellTagsOutline
 CellTagsIndex->{
  "Union"->{
-  Cell[23859, 725, 512, 17, 28, "Input",
+  Cell[23909, 719, 512, 17, 28, "Input",
    InitializationCell->True,
    CellTags->"Union"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Union", 72782, 1805}
+ {"Union", 72823, 1791}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 41, 0, 31, "Subtitle"],
-Cell[634, 25, 55, 0, 23, "Text"],
-Cell[692, 27, 31, 0, 83, "Section"],
+Cell[567, 22, 41, 0, 28, "Subtitle"],
+Cell[611, 24, 55, 0, 20, "Text"],
+Cell[669, 26, 31, 0, 80, "Section"],
 Cell[CellGroupData[{
-Cell[748, 31, 33, 0, 51, "Section"],
-Cell[784, 33, 238, 6, 28, "Input",
+Cell[725, 30, 33, 0, 48, "Section"],
+Cell[761, 32, 236, 5, 24, "Input",
  InitializationCell->True],
-Cell[1025, 41, 843, 17, 69, "Input",
+Cell[1000, 39, 843, 17, 55, "Input",
  InitializationCell->True],
-Cell[1871, 60, 367, 9, 28, "Input",
+Cell[1846, 58, 367, 9, 24, "Input",
  InitializationCell->True],
-Cell[2241, 71, 756, 16, 69, "Input",
+Cell[2216, 69, 756, 16, 55, "Input",
  InitializationCell->True],
-Cell[3000, 89, 1367, 25, 89, "Input",
+Cell[2975, 87, 1367, 25, 70, "Input",
  InitializationCell->True],
-Cell[4370, 116, 747, 15, 49, "Input",
+Cell[4345, 114, 747, 15, 40, "Input",
  InitializationCell->True],
-Cell[5120, 133, 672, 14, 49, "Input",
+Cell[5095, 131, 672, 14, 40, "Input",
  InitializationCell->True],
-Cell[5795, 149, 326, 8, 28, "Input",
+Cell[5770, 147, 326, 8, 24, "Input",
  InitializationCell->True],
-Cell[6124, 159, 362, 9, 28, "Input",
+Cell[6099, 157, 362, 9, 24, "Input",
  InitializationCell->True],
-Cell[6489, 170, 601, 14, 49, "Input",
+Cell[6464, 168, 601, 14, 40, "Input",
  InitializationCell->True],
-Cell[7093, 186, 379, 9, 28, "Input",
+Cell[7068, 184, 379, 9, 24, "Input",
  InitializationCell->True],
-Cell[7475, 197, 333, 9, 28, "Input",
+Cell[7450, 195, 333, 9, 24, "Input",
  InitializationCell->True],
-Cell[7811, 208, 586, 13, 49, "Input",
+Cell[7786, 206, 586, 13, 40, "Input",
  InitializationCell->True],
-Cell[8400, 223, 499, 11, 49, "Input",
+Cell[8375, 221, 499, 11, 40, "Input",
  InitializationCell->True],
-Cell[8902, 236, 266, 7, 28, "Input",
+Cell[8877, 234, 266, 7, 24, "Input",
  InitializationCell->True],
-Cell[9171, 245, 271, 7, 28, "Input",
+Cell[9146, 243, 271, 7, 24, "Input",
  InitializationCell->True],
-Cell[9445, 254, 1096, 21, 89, "Input",
+Cell[9420, 252, 1186, 22, 85, "Input",
  InitializationCell->True],
-Cell[10544, 277, 425, 10, 28, "Input",
+Cell[10609, 276, 425, 10, 40, "Input",
  InitializationCell->True],
-Cell[10972, 289, 304, 7, 89, "Input",
+Cell[11037, 288, 304, 7, 70, "Input",
  InitializationCell->True],
-Cell[11279, 298, 158, 5, 28, "Input",
+Cell[11344, 297, 158, 5, 24, "Input",
  InitializationCell->True],
-Cell[11440, 305, 519, 13, 49, "Input",
+Cell[11505, 304, 514, 11, 40, "Input",
  InitializationCell->True],
-Cell[11962, 320, 196, 6, 28, "Input",
+Cell[12022, 317, 196, 6, 24, "Input",
  InitializationCell->True],
-Cell[12161, 328, 2062, 72, 69, "Input",
+Cell[12221, 325, 2062, 72, 59, "Input",
  InitializationCell->True],
-Cell[14226, 402, 187, 6, 28, "Input",
+Cell[14286, 399, 187, 6, 24, "Input",
  InitializationCell->True],
-Cell[14416, 410, 210, 6, 28, "Input",
+Cell[14476, 407, 210, 6, 24, "Input",
  InitializationCell->True],
-Cell[14629, 418, 281, 8, 28, "Input",
+Cell[14689, 415, 281, 8, 24, "Input",
  InitializationCell->True],
-Cell[14913, 428, 190, 5, 28, "Input",
+Cell[14973, 425, 190, 5, 24, "Input",
  InitializationCell->True],
-Cell[15106, 435, 183, 5, 28, "Input",
+Cell[15166, 432, 183, 5, 24, "Input",
  InitializationCell->True],
-Cell[15292, 442, 287, 8, 28, "Input",
+Cell[15352, 439, 287, 8, 24, "Input",
  InitializationCell->True],
-Cell[15582, 452, 540, 16, 49, "Input",
+Cell[15642, 449, 540, 16, 40, "Input",
  InitializationCell->True],
-Cell[16125, 470, 185, 6, 28, "Input",
+Cell[16185, 467, 185, 6, 24, "Input",
  InitializationCell->True],
-Cell[16313, 478, 160, 4, 28, "Input",
+Cell[16373, 475, 160, 4, 24, "Input",
  InitializationCell->True],
-Cell[16476, 484, 625, 17, 89, "Input",
+Cell[16536, 481, 625, 17, 85, "Input",
  InitializationCell->True],
-Cell[17104, 503, 271, 7, 28, "Input",
+Cell[17164, 500, 271, 7, 24, "Input",
  InitializationCell->True],
-Cell[17378, 512, 223, 7, 28, "Input",
+Cell[17438, 509, 223, 7, 24, "Input",
  InitializationCell->True],
-Cell[17604, 521, 523, 12, 69, "Input",
+Cell[17664, 518, 523, 12, 70, "Input",
  InitializationCell->True],
-Cell[18130, 535, 560, 14, 109, "Input",
+Cell[18190, 532, 560, 14, 85, "Input",
  InitializationCell->True],
-Cell[18693, 551, 219, 7, 28, "Input",
+Cell[18753, 548, 219, 7, 24, "Input",
  InitializationCell->True],
-Cell[18915, 560, 225, 7, 28, "Input",
+Cell[18975, 557, 225, 7, 24, "Input",
  InitializationCell->True],
-Cell[19143, 569, 215, 7, 28, "Input",
+Cell[19203, 566, 213, 6, 24, "Input",
  InitializationCell->True],
-Cell[19361, 578, 143, 4, 28, "Input",
+Cell[19419, 574, 143, 4, 24, "Input",
  InitializationCell->True],
-Cell[19507, 584, 767, 23, 28, "Input",
+Cell[19565, 580, 761, 22, 40, "Input",
  InitializationCell->True],
-Cell[20277, 609, 612, 17, 49, "Input",
+Cell[20329, 604, 612, 17, 40, "Input",
  InitializationCell->True],
-Cell[20892, 628, 1404, 38, 129, "Input",
+Cell[20944, 623, 1404, 38, 100, "Input",
  InitializationCell->True],
-Cell[22299, 668, 402, 13, 30, "Input",
+Cell[22351, 663, 402, 13, 30, "Input",
  InitializationCell->True],
-Cell[22704, 683, 437, 14, 28, "Input",
+Cell[22756, 678, 435, 13, 28, "Input",
  InitializationCell->True],
-Cell[23144, 699, 469, 15, 44, "Input",
+Cell[23194, 693, 469, 15, 44, "Input",
  InitializationCell->True],
-Cell[23616, 716, 240, 7, 28, "Input",
+Cell[23666, 710, 240, 7, 28, "Input",
  InitializationCell->True],
-Cell[23859, 725, 512, 17, 28, "Input",
+Cell[23909, 719, 512, 17, 28, "Input",
  InitializationCell->True,
  CellTags->"Union"],
-Cell[24374, 744, 236, 7, 28, "Input",
+Cell[24424, 738, 236, 7, 28, "Input",
  InitializationCell->True],
-Cell[24613, 753, 220, 7, 28, "Input",
+Cell[24663, 747, 220, 7, 28, "Input",
  InitializationCell->True],
-Cell[24836, 762, 1899, 56, 149, "Input",
+Cell[24886, 756, 1887, 54, 149, "Input",
  InitializationCell->True],
-Cell[26738, 820, 460, 15, 28, "Input",
+Cell[26776, 812, 460, 15, 28, "Input",
  InitializationCell->True],
-Cell[27201, 837, 333, 11, 28, "Input",
+Cell[27239, 829, 333, 11, 28, "Input",
  InitializationCell->True],
-Cell[27537, 850, 120, 4, 28, "Input",
+Cell[27575, 842, 120, 4, 28, "Input",
  InitializationCell->True],
-Cell[27660, 856, 191, 4, 49, "Input",
+Cell[27698, 848, 188, 3, 49, "Input",
  InitializationCell->True],
-Cell[27854, 862, 127, 4, 28, "Input",
+Cell[27889, 853, 127, 4, 28, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
