@@ -52,22 +52,24 @@ BR[n_,{1}][\[CapitalGamma]_,V_List,\[Beta]_]:=BR[n,{1}][\[CapitalGamma],V,\[Beta
 BR[n_,{-1}][\[CapitalGamma]_,V_List,\[Beta]_]:=BR[n,{-1}][\[CapitalGamma],V,\[Beta]]=Inverse[BR[n,{1}][\[CapitalGamma],V,\[Beta]]]
 
 
-BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<k<n:=BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,aib,r},
+BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<k<n:=BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,ias,aib,r},
 DebugPrintHeld["Calculating (what a waste!) ",BR[n,{k}][\[CapitalGamma],V,\[Beta]]];
 ib=IdentityMap[\[CapitalGamma],TensorProduct@@Take[V,k-1],\[Beta]]\[CircleTimes]NormalisedBraidingMap[\[CapitalGamma],V[[k]]\[CircleTimes]V[[k+1]],\[Beta]];
 as=Associator[\[CapitalGamma],TensorProduct@@Take[V,k-1],V[[k]],V[[k+1]],\[Beta]];
-aib=as.ib.Inverse[as];
+ias=InverseAssociator[\[CapitalGamma],TensorProduct@@Take[V,k-1],V[[k]],V[[k+1]],\[Beta]];
+aib=as.ib.ias;
 r=Fold[#1\[CircleTimes]#2&,aib,IdentityMap[\[CapitalGamma],#,\[Beta]]&/@Drop[V,k+1]];
 DebugPrint["... finished calculating, result ",ByteCount[r], " bytes"];
 r
 ]
 
 
-BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<-k<n:=BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,aib,r},
+BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<-k<n:=BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,ias,aib,r},
 DebugPrintHeld["Calculating (what a waste!) ",BR[n,{k}][\[CapitalGamma],V,\[Beta]]];
 ib=IdentityMap[\[CapitalGamma],TensorProduct@@Take[V,(-k)-1],\[Beta]]\[CircleTimes]InverseNormalisedBraidingMap[\[CapitalGamma],V[[-k]]\[CircleTimes]V[[-k+1]],\[Beta]];
 as=Associator[\[CapitalGamma],TensorProduct@@Take[V,-k-1],V[[-k]],V[[-k+1]],\[Beta]];
-aib=as.ib.Inverse[as];
+ias=InverseAssociator[\[CapitalGamma],TensorProduct@@Take[V,-k-1],V[[-k]],V[[-k+1]],\[Beta]];
+aib=as.ib.ias;
 r=Fold[#1\[CircleTimes]#2&,aib,IdentityMap[\[CapitalGamma],#,\[Beta]]&/@Drop[V,-k+1]];
 DebugPrint["... finished calculating, result ",ByteCount[r], " bytes"];
 r
