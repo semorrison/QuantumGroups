@@ -31,6 +31,9 @@ WeylGroup::usage="WeylGroup[\[CapitalGamma]] returns a list of matrices, represe
 LongestWordDecomposition::usage="LongestWordDecomposition[\[CapitalGamma]] returns the lexicographically smallest decomposition of the longest element of the Weyl group.";
 
 
+LongestWord::usage="LongestWord[\[CapitalGamma]] returns the longest element of the Weyl group, in the fundamental weight basis.";
+
+
 Begin["`Private`"];
 
 
@@ -49,9 +52,13 @@ allElements=allElements~Join~newElements;
 newElements=Flatten[Outer[{#1[[1]]~Join~#2[[1]],#1[[2]].#2[[2]]}&,indexedSimpleReflections,newElements,1],1];
 newElements=Union[Complement[newElements,allElements,SameTest->(#1[[2]]==#2[[2]]&)],SameTest->(#1[[2]]==#2[[2]]&)];
 ];
+LongestWord[\[CapitalGamma]]=Last[allElements][[2]];
 LongestWordDecomposition[\[CapitalGamma]]=Last[allElements][[1]];
 Transpose[allElements][[2]]
 ]
+
+
+LongestWord[\[CapitalGamma]_]:=(Dot@@(WeylReflectionMatrix[\[CapitalGamma],#]&/@LongestWordDecomposition[\[CapitalGamma]]))
 
 
 LongestWordDecomposition[\[CapitalGamma]_]:=(WeylGroup[\[CapitalGamma]];LongestWordDecomposition[\[CapitalGamma]])
@@ -67,12 +74,6 @@ LongestWordDecomposition[Subscript[D, n_]]:=LongestWordDecomposition[Subscript[D
 
 
 LongestWordDecomposition[Subscript[E, 6]]={1,2,3,1,4,2,3,1,4,3,5,4,2,3,1,4,3,5,4,2,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1};
-
-
-LongestWordDecomposition[Subscript[E, 7]]={1,2,3,1,4,2,3,1,4,3,5,4,2,3,1,4,3,5,4,2,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1,7,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1,7,6,5,4,2,3,4,5,6,7};
-
-
-LongestWordDecomposition[Subscript[E, 8]]={1,2,3,1,4,2,3,1,4,3,5,4,2,3,1,4,3,5,4,2,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1,7,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1,7,6,5,4,2,3,4,5,6,7,8,7,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1,7,6,5,4,2,3,4,5,6,7,8,7,6,5,4,2,3,1,4,3,5,4,2,6,5,4,3,1,7,6,5,4,2,3,4,5,6,7,8};
 
 
 LongestWordDecomposition[Subscript[F, 4]]={1,2,1,3,2,1,3,2,3,4,3,2,1,3,2,3,4,3,2,1,3,2,3,4};

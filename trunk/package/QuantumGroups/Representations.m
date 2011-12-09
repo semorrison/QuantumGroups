@@ -43,7 +43,18 @@ PositiveWeights::usage="";
 qDimension::usage="";
 
 
+MultiplicityFreeQ::usage="MultiplicityFreeQ[\[CapitalGamma],V] determines whether every weight space in the representation V of \[CapitalGamma] has dimension 1. In the case that this is false, MultiplicityFreeQ is much faster than WeightMultiplicities[\[CapitalGamma],V].";
+
+
+DualRepresentation;
+
+
 Begin["`Private`"];
+
+
+DualRepresentation[X_DirectSum]:=DualRepresentation/@X
+DualRepresentation[X_TensorProduct]:=DualRepresentation/@(Reverse[X])
+DualRepresentation[Irrep[\[CapitalGamma]_][V_]]:=Irrep[\[CapitalGamma]][-LongestWord[\[CapitalGamma]].V]
 
 
 q=Global`q;
