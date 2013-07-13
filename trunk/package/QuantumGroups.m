@@ -86,6 +86,9 @@ QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return 
 QuantumGroupsDataDirectory::usage="QuantumGroupsDataDirectory[] specifies were the QuantumGroups` package should look for, and save, precomputed data.";
 
 
+Unprotect[TensorProduct]
+
+
 {A,B,C,D,E,F,G};
 
 
