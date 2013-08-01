@@ -120,7 +120,7 @@ Table[(\[Lambda]=Weights[\[CapitalGamma],domain][[i]];{\[Lambda],Plus@@(#[\[Lamb
 RepresentationTensor/:\[Alpha]_ RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,matrices_List]:=RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,V2,\[Beta]2,{#[[1]],\[Alpha] #[[2]]}&/@matrices]
 
 
-RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,_List]).(G:RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,V3_,\[Beta]3_,_List]):=RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,V3,\[Beta]3,{#,Together[F[#].G[#]]}&/@SortWeights[\[CapitalGamma]][Union[Weights[\[CapitalGamma],V1]~Join~Weights[\[CapitalGamma],V3]]]]
+RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,_List]).(G:RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,V3_,\[Beta]3_,_List]):=RepresentationTensor[\[CapitalGamma],V1,\[Beta]1,V3,\[Beta]3,((*Print["Composing weight ",#];*){#,Together[F[#].G[#]]})&/@SortWeights[\[CapitalGamma]][Union[Weights[\[CapitalGamma],V1]~Join~Weights[\[CapitalGamma],V3]]]]
 
 
 RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]3_,V2_,\[Beta]2_,_]).(Gs:{RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,V1_,\[Beta]1_,_]...}):=F.#&/@Gs
@@ -145,9 +145,10 @@ RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]c_,V2_
 RepresentationTensor/:Inverse[RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]1_,V2_,\[Beta]2_,matrices_]]:=RepresentationTensor[\[CapitalGamma],V2,\[Beta]2,V1,\[Beta]1,(PrepareInverse[#[[2]]]&/@matrices;{#[[1]],Inverse[#[[2]]]}&/@matrices)]
 
 
-QuantumTrace[RepresentationTensor[\[CapitalGamma]_,V_,\[Beta]_,V_,\[Beta]_,matrices_]]:=Simplify[\!\(
-\*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(Length[matrices]\)]\(Tr[\(\(MatrixPresentation[\[CapitalGamma]]\)[
-\*SubscriptBox[\(K\), \(\[CapitalGamma], \[Rho]\)]]\)[V, \[Beta], matrices[[i, 1]]] . matrices[[i, 2]]]\)\)]
+QuantumTrace[RepresentationTensor[\[CapitalGamma]_,V_,\[Beta]_,V_,\[Beta]_,matrices_]]:=Together[\!\(
+\*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(Length[matrices]\)]\((
+\*SuperscriptBox[\(Global`q\), \(2 \( KillingForm[\[CapitalGamma]]\)[\[Rho][\[CapitalGamma]], matrices[[i, 1]]]\)] Tr[ (*\(\(\(MatrixPresentation[\[CapitalGamma]]\)[
+\*SubscriptBox[\(K\), \(\[CapitalGamma], \[Rho]\)]]\)[V, \[Beta], matrices\[LeftDoubleBracket]i, 1\[RightDoubleBracket]]\)\(.\)*) matrices[[i, 2]]])\)\)]
 
 
 Associator[\[CapitalGamma]_,V1_,V2_,V3_,\[Beta]_]:=RepresentationTensor[\[CapitalGamma],(V1\[CircleTimes]V2)\[CircleTimes]V3,\[Beta],V1\[CircleTimes](V2\[CircleTimes]V3),\[Beta],{#,Associator[\[CapitalGamma],V1,V2,V3,\[Beta],#]}&/@Weights[\[CapitalGamma],V1\[CircleTimes](V2\[CircleTimes]V3)]]
@@ -184,7 +185,7 @@ CoordinateInclusion/:CoordinateInclusion[n_Integer,p_List].CoordinateInclusion[m
 CoordinateInclusion/:Inverse[CoordinateInclusion[n_,p_List]/;Length[p]==n]:=CoordinateInclusion[n,Ordering[p]]
 
 
-CoordinateInclusion/:CoordinateInclusion[n_Integer,p_List]\[CircleTimes]CoordinateInclusion[m_Integer,q_List]:=CoordinateInclusion[n m,Flatten[Outer[#2+m (#1-1)&,p,q]]]
+CoordinateInclusion/:CoordinateInclusion[n_Integer,p_List]\[CircleTimes]CoordinateInclusion[m_Integer,q_List]:=CoordinateInclusion[n m,Flatten[Outer[#2+m(#1-1)&,p,q]]]
 
 
 CoordinateInclusion/:Matrix[CoordinateInclusion[n_,p_List]]:=Matrix[n,Length[p],IdentityMatrix[n][[All,p]]]
