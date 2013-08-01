@@ -86,9 +86,6 @@ QuantumGroupsDirectory::usage="QuantumGroupsDirectory[] should hopefully return 
 QuantumGroupsDataDirectory::usage="QuantumGroupsDataDirectory[] specifies were the QuantumGroups` package should look for, and save, precomputed data.";
 
 
-Unprotect[TensorProduct]
-
-
 {A,B,C,D,E,F,G};
 
 
@@ -104,20 +101,20 @@ SetAttributes[DirectSum,{Flat,OneIdentity}]
 CircleTimes/:Power[V_,CircleTimes[n_]]:=TensorPower[V,n]
 
 
-TensorProduct=CircleTimes;CirclePlus=DirectSum;
+CirclePlus=DirectSum;
 
 
-TensorProduct[x:Except[_Integer]]:=x
+CircleTimes[x:Except[_Integer]]:=x
 
 
-TensorProduct[a__,b_,c_]:=TensorProduct[TensorProduct[a,b],c]
+CircleTimes[a__,b_,c_]:=CircleTimes[CircleTimes[a,b],c]
 
 
-TensorPower[_,0]:=TensorProduct[]
-TensorPower[x_,n_?NaturalQ]:=Fold[TensorProduct,x,Table[x,{n-1}]]
+TensorPower[_,0]:=CircleTimes[]
+TensorPower[x_,n_?NaturalQ]:=Fold[CircleTimes,x,Table[x,{n-1}]]
 
 
-{TensorProduct,TensorPower,DirectSum};
+{TensorPower,DirectSum};
 
 
 QuantumGroups::loading="Loading precomputed data in `1`."
