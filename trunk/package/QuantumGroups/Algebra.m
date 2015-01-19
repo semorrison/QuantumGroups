@@ -61,8 +61,8 @@ a_**b_Plus:=a**#&/@b
 a_Plus**b_:=#**b&/@a
 
 
-(\[Alpha]_?qNumberQ a_)**b_:=\[Alpha] (a**b)
-a_**(\[Alpha]_?qNumberQ b_):=\[Alpha] (a**b)
+(\[Alpha]_?qNumberQ a_)**b_:=\[Alpha](a**b)
+a_**(\[Alpha]_?qNumberQ b_):=\[Alpha](a**b)
 
 
 \[ScriptOne]**Z_:=Z
@@ -104,7 +104,7 @@ Protect[NonCommutativeMultiply];
 
 
 \[CapitalDelta][X_Plus]:=\[CapitalDelta]/@X
-\[CapitalDelta][X_TensorProduct]:=\[CapitalDelta][First[X]]\[CircleTimes]Rest[X]
+\[CapitalDelta][X_CircleTimes]:=\[CapitalDelta][First[X]]\[CircleTimes]Rest[X]
 
 
 OperatorWeight[\[CapitalGamma]_][\[ScriptZero]]:=ZeroVector[Rank[\[CapitalGamma]]]
@@ -124,7 +124,7 @@ OperatorWeight[\[CapitalGamma]_][A_\[CircleTimes]B_]:=OperatorWeight[\[CapitalGa
 
 
 OperatorWeight[\[CapitalGamma]_][\[Alpha]_?qNumberQ A_]:=OperatorWeight[\[CapitalGamma]][A]
-(*OperatorWeight[\[CapitalGamma]_][A_+B_]/;(OperatorWeight[\[CapitalGamma]][A]==OperatorWeight[\[CapitalGamma]][B]):=OperatorWeight[\[CapitalGamma]][A]*)
+(*OperatorWeight[\[CapitalGamma]_][A_+B_]/;(OperatorWeight[\[CapitalGamma]][A]\[Equal]OperatorWeight[\[CapitalGamma]][B]):=OperatorWeight[\[CapitalGamma]][A]*)
 OperatorWeight[\[CapitalGamma]_][A_Plus]/;(Length[Union[OperatorWeight[\[CapitalGamma]]/@(List@@A)]]==1):=OperatorWeight[\[CapitalGamma]][First[A]]
 
 

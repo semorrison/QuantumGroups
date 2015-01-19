@@ -52,7 +52,7 @@ Begin["`Private`"];
 q=Global`q;
 
 
-(*MatrixPresentation[\[CapitalGamma]_][A_][TensorProduct[V_],\[Beta]_,\[Lambda]_]:=MatrixPresentation[\[CapitalGamma]][A][V,\[Beta],\[Lambda]]*)
+(*MatrixPresentation[\[CapitalGamma]_][A_][CircleTimes[V_],\[Beta]_,\[Lambda]_]:=MatrixPresentation[\[CapitalGamma]][A][V,\[Beta],\[Lambda]]*)
 
 
 MatrixPresentation[\[CapitalGamma]_][A_**B_][V_,\[Beta]_,\[Lambda]_]/;!MemberQ[Weights[\[CapitalGamma],V],\[Lambda]+OperatorWeight[\[CapitalGamma]][A**B]]:=Matrix[0,WeightMultiplicity[\[CapitalGamma],V,\[Lambda]]]
@@ -239,8 +239,8 @@ Subscript[d, i_]:=CartanFactors[\[CapitalGamma]][[i]];
 kf=KillingForm[\[CapitalGamma]];
 action[SuperPlus[Subscript[X, i_]]][Subscript[x, \[Mu]_]]:=Switch[2 kf[\[Mu],Subscript[s, i]]/kf[Subscript[s, i],Subscript[s, i]],2|0|1,0,-1,Subscript[x, \[Mu]+Subscript[s, i]],-2,Subscript[h, Subscript[s, i]]];
 action[SuperMinus[Subscript[X, i_]]][Subscript[x, \[Mu]_]]:=Switch[2 kf[\[Mu],Subscript[s, i]]/kf[Subscript[s, i],Subscript[s, i]],-2|0|-1,0,1,Subscript[x, \[Mu]-Subscript[s, i]],2,Subscript[h, Subscript[s, i]]];
-action[SuperPlus[Subscript[X, i_]]][Subscript[h, \[Mu]_]]:=Switch[2 kf[\[Mu],Subscript[s, i]]/kf[Subscript[s, i],Subscript[s, i]],2,qInteger[2][q^Subscript[d, i]],-1,1,_,0] Subscript[x, Subscript[s, i]];
-action[SuperMinus[Subscript[X, i_]]][Subscript[h, \[Mu]_]]:=Switch[2 kf[\[Mu],Subscript[s, i]]/kf[Subscript[s, i],Subscript[s, i]],2,qInteger[2][q^Subscript[d, i]],-1,1,_,0] Subscript[x, -Subscript[s, i]];
+action[SuperPlus[Subscript[X, i_]]][Subscript[h, \[Mu]_]]:=Switch[2 kf[\[Mu],Subscript[s, i]]/kf[Subscript[s, i],Subscript[s, i]],2,qInteger[2][q^Subscript[d, i]],-1,1,_,0]Subscript[x, Subscript[s, i]];
+action[SuperMinus[Subscript[X, i_]]][Subscript[h, \[Mu]_]]:=Switch[2 kf[\[Mu],Subscript[s, i]]/kf[Subscript[s, i],Subscript[s, i]],2,qInteger[2][q^Subscript[d, i]],-1,1,_,0]Subscript[x, -Subscript[s, i]];
 basis[\[Mu]_]:=If[MemberQ[ShortRoots[\[CapitalGamma]],\[Mu]],{Subscript[x, \[Mu]]},
 If[ZeroVectorQ[\[Mu]],Subscript[h, #]&/@ShortSimpleRoots[\[CapitalGamma]],{}]];
 With[{\[Beta]1=basis[\[Kappa]],\[Beta]2=basis[\[Kappa]+OperatorWeight[\[CapitalGamma]][A]]},
@@ -257,107 +257,47 @@ Irrep[Subscript[B, n_]][\[Lambda]_]/;MemberQ[Take[IdentityMatrix[n],{2,-2}],\[La
 Irrep[Subscript[C, n_]][\[Lambda]_]/;MemberQ[Drop[IdentityMatrix[n],2],\[Lambda]]:>Irrep[Subscript[C, n]][RotateLeft[\[Lambda]]]\[CircleTimes]Irrep[Subscript[C, n]][UnitVector[n,1]],
 Irrep[Subscript[D, n_]][\[Lambda]_]/;MemberQ[Take[IdentityMatrix[n],{3,-3}],\[Lambda]]:>If[EvenQ[n-Position[IdentityMatrix[n],\[Lambda]][[1,1]]],Irrep[Subscript[D, n]][UnitVector[n,n]]\[CircleTimes]Irrep[Subscript[D, n]][UnitVector[n,n]],Irrep[Subscript[D, n]][UnitVector[n,n-1]]\[CircleTimes]Irrep[Subscript[D, n]][UnitVector[n,n]]],
 Irrep[Subscript[G, 2]][{0,1}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["G", "2"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(G\), \(2\)]]\)[{1, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[F, 4]][{1,0,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["F", "4"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(F\), \(4\)]]\)[{0, 0, 0, 1}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[F, 4]][{0,0,1,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["F", "4"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(F\), \(4\)]]\)[{0, 0, 0, 1}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[F, 4]][{0,1,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["F", "4"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(F\), \(4\)]]\)[{1, 0, 0, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 6]][{0,0,1,0,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "6"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(6\)]]\)[{1, 0, 0, 0, 0, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 6]][{0,1,0,0,0,0}]->Irrep[Subscript[E, 6]][{1,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 6]][{0,0,0,0,0,1}],
 Irrep[Subscript[E, 6]][{0,0,0,0,1,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "6"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(6\)]]\)[{0, 0, 0, 0, 0, 1}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 6]][{0,0,0,1,0,0}]->Irrep[Subscript[E, 6]][{1,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 6]][{0,0,1,0,0,0}],
 Irrep[Subscript[E, 7]][{0,0,1,0,0,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "7"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(7\)]]\)[{1, 0, 0, 0, 0, 0, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 7]][{0,1,0,0,0,0,0}]->Irrep[Subscript[E, 7]][{1,0,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 7]][{0,0,0,0,0,0,1}],
 Irrep[Subscript[E, 7]][{0,0,0,0,0,1,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "7"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(7\)]]\)[{1, 0, 0, 0, 0, 0, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 7]][{0,0,0,0,1,0,0}]->Irrep[Subscript[E, 7]][{1,0,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 7]][{0,1,0,0,0,0,0}],
 Irrep[Subscript[E, 7]][{0,0,0,1,0,0,0}]->Irrep[Subscript[E, 7]][{0,0,1,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 7]][{1,0,0,0,0,0,0}],
 Irrep[Subscript[E, 8]][{0,0,0,0,0,0,1,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "8"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(8\)]]\)[{0, 0, 0, 0, 0, 0, 0, 1}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 8]][{1,0,0,0,0,0,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "8"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(8\)]]\)[{0, 0, 0, 0, 0, 0, 0, 1}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 8]][{0,1,0,0,0,0,0,0}]->Irrep[Subscript[E, 8]][{1,0,0,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 8]][{0,0,0,0,0,0,0,1}],
 Irrep[Subscript[E, 8]][{0,0,0,0,0,1,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "8"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(8\)]]\)[{1, 0, 0, 0, 0, 0, 0, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 8]][{0,0,1,0,0,0,0,0}]->
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["E", "8"], "]"}], "[", 
-RowBox[{"{", 
-RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], "]"}], 
-RowBox[{"\[CircleTimes]", "2"}]]\),
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(E\), \(8\)]]\)[{1, 0, 0, 0, 0, 0, 0, 0}]\), \(\[CircleTimes]2\)]\),
 Irrep[Subscript[E, 8]][{0,0,0,0,1,0,0,0}]->Irrep[Subscript[E, 8]][{0,1,0,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 8]][{1,0,0,0,0,0,0,0}],
 Irrep[Subscript[E, 8]][{0,0,0,1,0,0,0,0}]->Irrep[Subscript[E, 8]][{0,0,1,0,0,0,0,0}]\[CircleTimes]Irrep[Subscript[E, 8]][{1,0,0,0,0,0,0,0}],
 Irrep[\[CapitalGamma]_][\[Lambda]_]/;(!UnitVectorQ[\[Lambda]]\[And]!ZeroVectorQ[\[Lambda]]):>Module[{n=Rank[\[CapitalGamma]],pos,\[Mu]},pos=Position[\[Lambda],_?(#!=0&)][[1,1]];\[Mu]=UnitVector[n,pos];

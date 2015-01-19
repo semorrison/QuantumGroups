@@ -129,9 +129,13 @@ RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]3_,V2_
 RepresentationTensor/:(Fs:{RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]3_,V2_,\[Beta]2_,_]...}).(G:RepresentationTensor[\[CapitalGamma]_,V2_,\[Beta]2_,V1_,\[Beta]1_,_]):=#.G&/@Fs
 
 
-RepresentationTensor/:(F:RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]c_,V2_,\[Beta]d_,_])\[CircleTimes](G:RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]c_,V4_,\[Beta]d_,_]):=Module[{\[Lambda],\[Mu],codomain=V1\[CircleTimes]V3,domain=V2\[CircleTimes]V4,productWeights,rightWeights},
+RepresentationTensor/:CircleTimes[F:RepresentationTensor[\[CapitalGamma]_,V1_,\[Beta]c_,V2_,\[Beta]d_,_],G:RepresentationTensor[\[CapitalGamma]_,V3_,\[Beta]c_,V4_,\[Beta]d_,_]]:=Module[{\[Lambda],\[Mu],codomain=V1\[CircleTimes]V3,domain=V2\[CircleTimes]V4,productWeights,rightWeights},
+(*Print[codomain];
+Print[domain];*)
 productWeights=SortWeights[\[CapitalGamma]][Union[Weights[\[CapitalGamma],domain]~Join~Weights[\[CapitalGamma],codomain]]];
+(*Print[productWeights];*)
 rightWeights=SortWeights[\[CapitalGamma]][Union[Weights[\[CapitalGamma],V4]~Join~Weights[\[CapitalGamma],V3]]];
+(*Print[rightWeights];*)
 RepresentationTensor[\[CapitalGamma],codomain,\[Beta]c,domain,\[Beta]d,
 Table[\[Lambda]=productWeights[[i]];{\[Lambda],BlockDiagonalMatrix@@Table[\[Mu]=rightWeights[[j]];Expand[MatrixKroneckerProduct[F[\[Lambda]-\[Mu]],G[\[Mu]]]],{j,1,Length[rightWeights]}]},{i,1,Length[productWeights]}]
 ]

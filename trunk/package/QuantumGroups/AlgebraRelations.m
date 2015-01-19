@@ -34,6 +34,10 @@ Begin["`Private`"];
 q=Global`q
 
 
+
+qBinomial[n_,k_][q_]:=qFactorial[n][q]/(qFactorial[n-k][q]qFactorial[k][q])
+
+
 BasicRelations[\[CapitalGamma]_]:=With[{cm=CartanMatrix[\[CapitalGamma]],cf=CartanFactors[\[CapitalGamma]],n=Rank[\[CapitalGamma]]},
 DeleteCases[Flatten[Join[
 Table[Subscript[K, i]**Subscript[K, j]==Subscript[K, j]**Subscript[K, i],{i,1,n},{j,i+1,n}],
@@ -41,16 +45,8 @@ Table[Subscript[K, i]**Subscript[K, i]^-1==\[ScriptOne],{i,1,n}],
 Table[Subscript[K, i]^-1**Subscript[K, i]==\[ScriptOne],{i,1,n}],
 Table[Subscript[K, i]**SuperPlus[Subscript[X, j]]**Subscript[K, i]^-1==q^(cf[[i]]cm[[i,j]]) SuperPlus[Subscript[X, j]],{i,1,n},{j,1,n}],
 Table[Subscript[K, i]**SuperMinus[Subscript[X, j]]**Subscript[K, i]^-1==q^(-cf[[i]]cm[[i,j]]) SuperMinus[Subscript[X, j]],{i,1,n},{j,1,n}],
-Table[SuperPlus[Subscript[X, i]]**SuperMinus[Subscript[X, j]]-SuperMinus[Subscript[X, j]]**SuperPlus[Subscript[X, i]]==DiscreteDelta[i-j](Subscript[K, i]-Subscript[K, i]^-1)/(q^cf[[i]]-q^-cf[[i]]),{i,1,n},{j,1,n}]
+Table[SuperPlus[Subscript[X, i]]**SuperMinus[Subscript[X, j]]-SuperMinus[Subscript[X, j]]**SuperPlus[Subscript[X, i]]==DiscreteDelta[i-j] (Subscript[K, i]-Subscript[K, i]^-1)/(q^cf[[i]]-q^-cf[[i]]),{i,1,n},{j,1,n}]
 
-]]/.{0->\[ScriptZero]},True]
-]
-
-
-SerreRelations[\[CapitalGamma]_]:=With[{cm=CartanMatrix[\[CapitalGamma]],cf=CartanFactors[\[CapitalGamma]],n=Rank[\[CapitalGamma]]},
-DeleteCases[Flatten[Join[
-Table[Sum[(-1)^r qBinomial[1-cm[[i,j]],r][q^cf[[i]]]NonCommutativePower[SuperPlus[Subscript[X, i]],1-cm[[i,j]]-r]**SuperPlus[Subscript[X, j]]**NonCommutativePower[SuperPlus[Subscript[X, i]],r],{r,0,1-cm[[i,j]]}]==\[ScriptZero],{i,1,n},{j,1,n}],
-Table[Sum[(-1)^r qBinomial[1-cm[[i,j]],r][q^cf[[i]]]NonCommutativePower[SuperMinus[Subscript[X, i]],1-cm[[i,j]]-r]**SuperMinus[Subscript[X, j]]**NonCommutativePower[SuperMinus[Subscript[X, i]],r],{r,0,1-cm[[i,j]]}]==\[ScriptZero],{i,1,n},{j,1,n}]
 ]]/.{0->\[ScriptZero]},True]
 ]
 
@@ -58,20 +54,20 @@ Table[Sum[(-1)^r qBinomial[1-cm[[i,j]],r][q^cf[[i]]]NonCommutativePower[SuperMin
 (*SerreRelations[\[CapitalGamma]_]:=With[{cm=CartanMatrix[\[CapitalGamma]],cf=CartanFactors[\[CapitalGamma]],n=Rank[\[CapitalGamma]]},
 DeleteCases[Flatten[Join[
 Table[\!\(
-\*UnderoverscriptBox[\(\[Sum]\), \(r = 0\), \(1 - cm[[i, j]]\)]\(
-SuperscriptBox[\((\(-1\))\), \(r\)] \(qBinomial[1 - cm[[i, j]], r]\)[
-\*SuperscriptBox[\(q\), \(cf[[i]]\)]] NonCommutativePower[SuperPlus[
-\*SubscriptBox[\(X\), \(i\)]], 1 - cm[[i, j]] - r] ** SuperPlus[
+\*UnderoverscriptBox[\(\[Sum]\), \(r = 0\), \(1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)]\(
+\*SuperscriptBox[\((\(-1\))\), \(r\)]\(qBinomial[1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket], r]\)[
+\*SuperscriptBox[\(q\), \(cf\[LeftDoubleBracket]i\[RightDoubleBracket]\)]]NonCommutativePower[SuperPlus[
+\*SubscriptBox[\(X\), \(i\)]], 1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket] - r] ** SuperPlus[
 \*SubscriptBox[\(X\), \(j\)]] ** NonCommutativePower[SuperPlus[
-\*SubscriptBox[\(X\), \(i\)]], r]\)\)==\[ScriptZero],{i,1,n},{j,1,n}],
+\*SubscriptBox[\(X\), \(i\)]], r]\)\)\[Equal]\[ScriptZero],{i,1,n},{j,1,n}],
 Table[\!\(
-\*UnderoverscriptBox[\(\[Sum]\), \(r = 0\), \(1 - cm[[i, j]]\)]\(
-SuperscriptBox[\((\(-1\))\), \(r\)] \(qBinomial[1 - cm[[i, j]], r]\)[
-\*SuperscriptBox[\(q\), \(cf[[i]]\)]] NonCommutativePower[SuperMinus[
-\*SubscriptBox[\(X\), \(i\)]], 1 - cm[[i, j]] - r] ** SuperMinus[
+\*UnderoverscriptBox[\(\[Sum]\), \(r = 0\), \(1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket]\)]\(
+\*SuperscriptBox[\((\(-1\))\), \(r\)]\(qBinomial[1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket], r]\)[
+\*SuperscriptBox[\(q\), \(cf\[LeftDoubleBracket]i\[RightDoubleBracket]\)]]NonCommutativePower[SuperMinus[
+\*SubscriptBox[\(X\), \(i\)]], 1 - cm\[LeftDoubleBracket]i, j\[RightDoubleBracket] - r] ** SuperMinus[
 \*SubscriptBox[\(X\), \(j\)]] ** NonCommutativePower[SuperMinus[
-\*SubscriptBox[\(X\), \(i\)]], r]\)\)==\[ScriptZero],{i,1,n},{j,1,n}]
-]]/.{0->\[ScriptZero]},True]
+\*SubscriptBox[\(X\), \(i\)]], r]\)\)\[Equal]\[ScriptZero],{i,1,n},{j,1,n}]
+]]/.{0\[Rule]\[ScriptZero]},True]
 ]*)
 
 

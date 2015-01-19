@@ -121,7 +121,7 @@ QuantumGroups::loading="Loading precomputed data in `1`."
 
 
 qInteger::usage="qInteger[n][q] computes the quantum integer n with the variable q.";
-{qFactorial,qBinomial};
+{qFactorial};
 qNumberQ::usage="qNumberQ[x] tests if x is a rational function in q. It (fakes) does so simply by replacing q with 3.14159, and testing if the resulting expression is a number.";
 
 
@@ -158,7 +158,7 @@ Begin["`Private`"];
 QuantumGroupsDirectory[]:=QuantumGroupsDirectory[]=StringDrop[(File/.Flatten[FileInformation[ToFileName[#,"QuantumGroups"]]&/@($Path/."."->Directory[])]),-14]
 
 
-(*might be dangerous if QuantumGroupsDirectory[] is somehow incorrect!*)
+(* might be dangerous if QuantumGroupsDirectory[] is somehow incorrect! *)
 If[!MemberQ[$Path,QuantumGroupsDirectory[]],AppendTo[$Path,QuantumGroupsDirectory[]]]
 
 
@@ -174,9 +174,6 @@ qInteger[n_Integer][q_]:=Sum[q^k,{k,-n+1,n-1,2}]
 
 
 qFactorial[n_Integer][q_]:=Expand[Times@@Table[qInteger[i][q],{i,1,n}]]
-
-
-qBinomial[n_,k_][q_]:=qFactorial[n][q]/(qFactorial[n-k][q]qFactorial[k][q])
 
 
 qNumberQ[x_]:=NumberQ[x/.Global`q->3.14159]
