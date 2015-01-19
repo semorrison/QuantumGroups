@@ -174,7 +174,7 @@ InterpolationInverseThreshold=21;
 PrepareInverse[x_]:=Null
 
 
-If[$VersionNumber>=6,SquareMatrixQ[m_]:=(MatrixQ[m]\[And]Dimensions[m][[1]]==Dimensions[m][[2]])]
+If[10>$VersionNumber>=6,SquareMatrixQ[m_]:=(MatrixQ[m]\[And]Dimensions[m][[1]]==Dimensions[m][[2]])]
 
 
 MatrixInverse[m_]/;(SquareMatrixQ[m]\[Or](Print["Warning: tried to take the inverse of a non-square matrix! ",m];False)):=If[Length[m]>=InterpolationInverseThreshold,RowOrderedInterpolationInverse[m],RowReductionInverse[m]]

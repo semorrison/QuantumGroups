@@ -10,12 +10,11 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    140115,       3084]
-NotebookOptionsPosition[     23123,        638]
-NotebookOutlinePosition[    138524,       3029]
-CellTagsIndexPosition[    138481,       3026]
-WindowFrame->Normal
-ContainsDynamic->False*)
+NotebookDataLength[    140650,       3088]
+NotebookOptionsPosition[     23569,        648]
+NotebookOutlinePosition[    138993,       3031]
+CellTagsIndexPosition[    138950,       3028]
+WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
@@ -101,6 +100,24 @@ Cell[BoxData[
  InitializationCell->True],
 
 Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"qBinomial", "[", 
+     RowBox[{"n_", ",", "k_"}], "]"}], "[", "q_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"qFactorial", "[", "n", "]"}], "[", "q", "]"}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{"qFactorial", "[", 
+       RowBox[{"n", "-", "k"}], "]"}], "[", "q", "]"}], 
+     RowBox[{
+      RowBox[{"qFactorial", "[", "k", "]"}], "[", "q", "]"}]}]]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.630698568807785*^9, 3.630698577991836*^9}}],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{"BasicRelations", "[", "\[CapitalGamma]_", "]"}], ":=", 
   RowBox[{"With", "[", 
@@ -172,7 +189,6 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "cf", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
-                
                 RowBox[{"cm", "\[LeftDoubleBracket]", 
                  RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}]], 
               RowBox[{"SuperPlus", "[", 
@@ -307,8 +323,7 @@ Cell[BoxData[
                  RowBox[{"NonCommutativePower", "[", 
                   RowBox[{
                    RowBox[{"SuperPlus", "[", 
-                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}], ",",
-                
+                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}], ",", 
                RowBox[{"{", 
                 RowBox[{"r", ",", "0", ",", 
                  RowBox[{"1", "-", 
@@ -354,8 +369,7 @@ Cell[BoxData[
                  RowBox[{"NonCommutativePower", "[", 
                   RowBox[{
                    RowBox[{"SuperMinus", "[", 
-                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}], ",",
-                
+                    SubscriptBox["X", "i"], "]"}], ",", "r"}], "]"}]}]}], ",", 
                RowBox[{"{", 
                 RowBox[{"r", ",", "0", ",", 
                  RowBox[{"1", "-", 
@@ -495,7 +509,6 @@ Cell[BoxData[
   RowBox[{"Relations", "[", "\[CapitalGamma]_", "]"}], ":=", 
   RowBox[{
    RowBox[{"BasicRelations", "[", "\[CapitalGamma]", "]"}], "~", "Join", "~", 
-   
    RowBox[{"SerreRelations", "[", "\[CapitalGamma]", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -527,7 +540,6 @@ Cell[BoxData[
           RowBox[{
            RowBox[{
             RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[", 
-            
             RowBox[{"a", "-", "b"}], "]"}], "[", 
            RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}], "]"}], 
          "]"}]}]}], "}"}]}], "]"}], ")"}]}]], "Input",
@@ -561,7 +573,6 @@ Cell[BoxData[
           RowBox[{
            RowBox[{
             RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[", 
-            
             RowBox[{"a", "-", "b"}], "]"}], "[", 
            RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}], "]"}], 
          "]"}]}]}], "}"}]}], "]"}], ")"}]}]], "Input",
@@ -595,8 +606,7 @@ Cell[BoxData[
           RowBox[{"Simplify", "[", 
            RowBox[{
             RowBox[{
-             RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[",
-              
+             RowBox[{"MatrixPresentation", "[", "\[CapitalGamma]", "]"}], "[", 
              RowBox[{"a", "-", "b"}], "]"}], "[", 
             RowBox[{"V", ",", "\[Beta]", ",", "\[Lambda]"}], "]"}], "]"}], 
           "]"}]}]}], "}"}]}], "]"}], ")"}]}]}]], "Input",
@@ -643,8 +653,7 @@ Visible->True,
 ShowSelection->True,
 InputAliases->{"intt" -> RowBox[{"\[Integral]", 
      RowBox[{"\[SelectionPlaceholder]", 
-       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> 
-  RowBox[{
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> RowBox[{
      SubsuperscriptBox[
      "\[Integral]", "\[SelectionPlaceholder]", "\[Placeholder]"], 
      RowBox[{"\[Placeholder]", 
@@ -679,8 +688,7 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
         " ", "\[DoubleLongLeftArrow]", " ", 
        TagBox[
        "\[Placeholder]", NotationBoxTag, TagStyle -> 
-        "NotationTemplateStyle"]}], "]"}], "symb" -> 
-  RowBox[{"Symbolize", "[", 
+        "NotationTemplateStyle"]}], "]"}], "symb" -> RowBox[{"Symbolize", "[", 
      TagBox[
      "\[Placeholder]", NotationBoxTag, TagStyle -> "NotationTemplateStyle"], 
      "]"}], "infixnotation" -> RowBox[{"InfixNotation", "[", 
@@ -697,7 +705,8 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
     "NotationPatternWrapperStyle"], "madeboxeswraper" -> 
   TagBox["\[Placeholder]", NotationMadeBoxesTag, TagStyle -> 
     "NotationMadeBoxesWrapperStyle"]},
-FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
 StyleDefinitions->Notebook[{
    Cell[
     CellGroupData[{
@@ -932,8 +941,7 @@ Notebook level.", "Text"],
                Inherited}, LineSpacing -> {1, 2}, LanguageCategory -> 
              "NaturalLanguage", CounterIncrements -> "Section", 
              CounterAssignments -> {{"Subsection", 0}, {"Subsubsection", 0}}, 
-             FontFamily -> "Helvetica", FontSize -> 20, FontWeight -> "Bold"],
-             
+             FontFamily -> "Helvetica", FontSize -> 20, FontWeight -> "Bold"], 
             Cell[
              StyleData["Section", "Presentation"], 
              CellMargins -> {{40, 10}, {11, 32}}, LineSpacing -> {1, 0}, 
@@ -1532,7 +1540,7 @@ or between Notebooks.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`NotebookLocate[#2]}]& ), ButtonNote -> 
                ButtonData}], 
@@ -1556,7 +1564,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["MainBook", #]}]& )}], 
             Cell[
@@ -1576,7 +1584,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
              FontColor -> RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["AddOns", #]}]& )}], 
             Cell[
@@ -1596,7 +1604,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
              FontColor -> RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["RefGuide", #]}]& )}], 
             Cell[
@@ -1616,7 +1624,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["RefGuide", #]}]& )}], 
             Cell[
@@ -1636,12 +1644,11 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["GettingStarted", #]}]& )}], 
             Cell[
-             StyleData["GettingStartedLink", "Presentation"], FontSize -> 16],
-             
+             StyleData["GettingStartedLink", "Presentation"], FontSize -> 16], 
             Cell[
              StyleData["GettingStartedLink", "Condensed"], FontSize -> 11], 
             Cell[
@@ -1657,7 +1664,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["Demos", #]}]& )}], 
             Cell[
@@ -1673,7 +1680,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["Tour", #]}]& )}], 
             Cell[
@@ -1689,7 +1696,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["OtherInformation", #]}]& )}], 
             Cell[
@@ -1697,7 +1704,6 @@ help system.", "Text"],
              16], 
             Cell[
              StyleData["OtherInformationLink", "Condensed"], FontSize -> 11], 
-            
             Cell[
              StyleData["OtherInformationLink", "SlideShow"]], 
             Cell[
@@ -1711,7 +1717,7 @@ help system.", "Text"],
              ButtonStyleMenuListing -> Automatic, FontColor -> 
              RGBColor[0.269993, 0.308507, 0.6], 
              ButtonBoxOptions -> {
-              Active -> True, ButtonFrame -> "None", 
+              Active -> True, Appearance -> {Automatic, None}, 
                ButtonFunction :> (FrontEndExecute[{
                   FrontEnd`HelpBrowserLookup["MasterIndex", #]}]& )}], 
             Cell[
@@ -2124,7 +2130,6 @@ stand out).", "Text"],
                     "RowsIndexed" -> {}}}], 
                Cell[
                 StyleData["2ColumnEvenBox", "Presentation"], FontSize -> 18], 
-               
                Cell[
                 StyleData["2ColumnEvenBox", "SlideShow"]], 
                Cell[
@@ -2155,8 +2160,7 @@ stand out).", "Text"],
                     Offset[0.4]}, 
                     Offset[0.2]}, "RowsIndexed" -> {}}}], 
                Cell[
-                StyleData["2ColumnSmallBox", "Presentation"], FontSize -> 18],
-                
+                StyleData["2ColumnSmallBox", "Presentation"], FontSize -> 18], 
                Cell[
                 StyleData["2ColumnSmallBox", "SlideShow"]], 
                Cell[
@@ -2207,8 +2211,7 @@ stand out).", "Text"],
                     Offset[0.4]}, 
                     Offset[0.2]}, "RowsIndexed" -> {}}}], 
                Cell[
-                StyleData["3ColumnSmallBox", "Presentation"], FontSize -> 18],
-                
+                StyleData["3ColumnSmallBox", "Presentation"], FontSize -> 18], 
                Cell[
                 StyleData["3ColumnSmallBox", "SlideShow"]], 
                Cell[
@@ -2681,10 +2684,10 @@ stand out).", "Text"],
              CellGroupData[{
                Cell[
                 StyleData["OpenCloseItemizedPicture"], 
-                CellMargins -> {{88, 4}, {4, 4}}, 
-                PrivateCellOptions -> {"DefaultCellGroupOpen" -> False}, 
-                CellGroupingRules -> "GraphicsGrouping", 
-                CellHorizontalScrolling -> True, StyleMenuListing -> None], 
+                CellMargins -> {{88, 4}, {4, 4}}, CellGroupingRules -> 
+                "GraphicsGrouping", CellHorizontalScrolling -> True, 
+                StyleMenuListing -> None, 
+                PrivateCellOptions -> {"DefaultCellGroupOpen" -> False}], 
                Cell[
                 StyleData["OpenCloseItemizedPicture", "Presentation"], 
                 FontSize -> 18], 
@@ -2704,8 +2707,7 @@ stand out).", "Text"],
                 "GraphicsGrouping", CellHorizontalScrolling -> True, 
                 StyleMenuListing -> None], 
                Cell[
-                StyleData["ItemizedPicture", "Presentation"], FontSize -> 18],
-                
+                StyleData["ItemizedPicture", "Presentation"], FontSize -> 18], 
                Cell[
                 StyleData["ItemizedPicture", "SlideShow"]], 
                Cell[
@@ -3014,8 +3016,8 @@ These styles serve to make visible otherwise invisible tagboxes.", "Text",
        Background -> RGBColor[0.900008, 0.889998, 1], 
        TagBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
        "NotationPackage"]}, Closed]]}, Visible -> False, FrontEndVersion -> 
-  "6.0 for Microsoft Windows (32-bit) (June 19, 2007)", StyleDefinitions -> 
-  "Default.nb"]
+  "10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, 2014)", 
+  StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
 
@@ -3029,59 +3031,61 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[590, 23, 71, 1, 49, "Subtitle",
+Cell[567, 22, 71, 1, 47, "Subtitle",
  InitializationCell->True],
-Cell[664, 26, 128, 4, 47, "Text",
+Cell[641, 25, 128, 4, 41, "Text",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[817, 34, 58, 1, 71, "Section",
+Cell[794, 33, 58, 1, 68, "Section",
  InitializationCell->True],
-Cell[878, 37, 162, 4, 29, "Text",
+Cell[855, 36, 162, 4, 26, "Text",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1077, 46, 60, 1, 71, "Section",
+Cell[1054, 45, 60, 1, 68, "Section",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[1162, 51, 38, 0, 36, "Subsection"],
-Cell[1203, 53, 45, 0, 29, "Text"],
-Cell[1251, 55, 564, 13, 69, "Input",
+Cell[1139, 50, 38, 0, 35, "Subsection"],
+Cell[1180, 52, 45, 0, 26, "Text"],
+Cell[1228, 54, 564, 13, 58, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1852, 73, 36, 0, 36, "Subsection"],
-Cell[1891, 75, 138, 4, 28, "Input",
+Cell[1829, 72, 36, 0, 35, "Subsection"],
+Cell[1868, 74, 138, 4, 26, "Input",
  InitializationCell->True],
-Cell[2032, 81, 146, 5, 28, "Input",
+Cell[2009, 80, 146, 5, 26, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2215, 91, 31, 0, 36, "Subsection"],
-Cell[2249, 93, 119, 3, 28, "Input",
+Cell[2192, 90, 31, 0, 35, "Subsection"],
+Cell[2226, 92, 119, 3, 26, "Input",
  InitializationCell->True],
-Cell[2371, 98, 83, 2, 28, "Input",
+Cell[2348, 97, 83, 2, 26, "Input",
  InitializationCell->True],
-Cell[2457, 102, 5893, 151, 286, "Input",
+Cell[2434, 101, 559, 16, 63, "Input",
  InitializationCell->True],
-Cell[8353, 255, 4950, 117, 206, "Input"],
-Cell[13306, 374, 4968, 116, 246, "Input",
+Cell[2996, 119, 5876, 150, 230, "Input",
  InitializationCell->True],
-Cell[18277, 492, 280, 7, 28, "Input",
+Cell[8875, 271, 4918, 115, 162, "Input"],
+Cell[13796, 388, 4968, 116, 166, "Input",
  InitializationCell->True],
-Cell[18560, 501, 1228, 32, 69, "Input",
+Cell[18767, 506, 276, 6, 26, "Input",
  InitializationCell->True],
-Cell[19791, 535, 1230, 32, 69, "Input",
+Cell[19046, 514, 1215, 31, 58, "Input",
  InitializationCell->True],
-Cell[21024, 569, 1273, 33, 89, "Input",
+Cell[20264, 547, 1217, 31, 58, "Input",
  InitializationCell->True],
-Cell[22300, 604, 505, 14, 28, "Input",
+Cell[21484, 580, 1259, 32, 74, "Input",
  InitializationCell->True],
-Cell[22808, 620, 96, 3, 28, "Input",
+Cell[22746, 614, 505, 14, 26, "Input",
+ InitializationCell->True],
+Cell[23254, 630, 96, 3, 28, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22941, 628, 36, 0, 36, "Subsection"],
-Cell[22980, 630, 103, 3, 30, "Input",
+Cell[23387, 638, 36, 0, 36, "Subsection"],
+Cell[23426, 640, 103, 3, 30, "Input",
  InitializationCell->True]
 }, Closed]]
 }, Open  ]]

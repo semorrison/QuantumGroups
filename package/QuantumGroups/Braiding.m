@@ -54,9 +54,9 @@ BR[n_,{-1}][\[CapitalGamma]_,V_List,\[Beta]_]:=BR[n,{-1}][\[CapitalGamma],V,\[Be
 
 BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<k<n:=BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,ias,aib,r},
 DebugPrintHeld["Calculating (what a waste!) ",BR[n,{k}][\[CapitalGamma],V,\[Beta]]];
-ib=IdentityMap[\[CapitalGamma],TensorProduct@@Take[V,k-1],\[Beta]]\[CircleTimes]NormalisedBraidingMap[\[CapitalGamma],V[[k]]\[CircleTimes]V[[k+1]],\[Beta]];
-as=Associator[\[CapitalGamma],TensorProduct@@Take[V,k-1],V[[k]],V[[k+1]],\[Beta]];
-ias=InverseAssociator[\[CapitalGamma],TensorProduct@@Take[V,k-1],V[[k]],V[[k+1]],\[Beta]];
+ib=IdentityMap[\[CapitalGamma],CircleTimes@@Take[V,k-1],\[Beta]]\[CircleTimes]NormalisedBraidingMap[\[CapitalGamma],V[[k]]\[CircleTimes]V[[k+1]],\[Beta]];
+as=Associator[\[CapitalGamma],CircleTimes@@Take[V,k-1],V[[k]],V[[k+1]],\[Beta]];
+ias=InverseAssociator[\[CapitalGamma],CircleTimes@@Take[V,k-1],V[[k]],V[[k+1]],\[Beta]];
 aib=as.ib.ias;
 r=Fold[#1\[CircleTimes]#2&,aib,IdentityMap[\[CapitalGamma],#,\[Beta]]&/@Drop[V,k+1]];
 DebugPrint["... finished calculating, result ",ByteCount[r], " bytes"];
@@ -66,9 +66,9 @@ r
 
 BR[n_,{k_Integer}][\[CapitalGamma]_,V_List,\[Beta]_]/;1<-k<n:=BR[n,{k}][\[CapitalGamma],V,\[Beta]]=Module[{ib,as,ias,aib,r},
 DebugPrintHeld["Calculating (what a waste!) ",BR[n,{k}][\[CapitalGamma],V,\[Beta]]];
-ib=IdentityMap[\[CapitalGamma],TensorProduct@@Take[V,(-k)-1],\[Beta]]\[CircleTimes]InverseNormalisedBraidingMap[\[CapitalGamma],V[[-k]]\[CircleTimes]V[[-k+1]],\[Beta]];
-as=Associator[\[CapitalGamma],TensorProduct@@Take[V,-k-1],V[[-k]],V[[-k+1]],\[Beta]];
-ias=InverseAssociator[\[CapitalGamma],TensorProduct@@Take[V,-k-1],V[[-k]],V[[-k+1]],\[Beta]];
+ib=IdentityMap[\[CapitalGamma],CircleTimes@@Take[V,(-k)-1],\[Beta]]\[CircleTimes]InverseNormalisedBraidingMap[\[CapitalGamma],V[[-k]]\[CircleTimes]V[[-k+1]],\[Beta]];
+as=Associator[\[CapitalGamma],CircleTimes@@Take[V,-k-1],V[[-k]],V[[-k+1]],\[Beta]];
+ias=InverseAssociator[\[CapitalGamma],CircleTimes@@Take[V,-k-1],V[[-k]],V[[-k+1]],\[Beta]];
 aib=as.ib.ias;
 r=Fold[#1\[CircleTimes]#2&,aib,IdentityMap[\[CapitalGamma],#,\[Beta]]&/@Drop[V,-k+1]];
 DebugPrint["... finished calculating, result ",ByteCount[r], " bytes"];
@@ -95,8 +95,7 @@ Together[Transpose[LinearSolve[Transpose[basis],Together[map.Transpose[basis]],M
 BraidingMatrices[\[CapitalGamma]_][V_,n_Integer,\[Lambda]_]:=BraidingMatrices[\[CapitalGamma]][V,n,\[Lambda]]=Module[{a,hwv,matrices,inverses},
 DebugPrintHeld["Calculating ",BraidingMatrices[\[CapitalGamma]][V,n,\[Lambda]]];
 hwv=HighWeightVectors[\[CapitalGamma]][
-\!\(\*SuperscriptBox["V", 
-RowBox[{"\[CircleTimes]", "n"}]]\),FundamentalBasis,\[Lambda]];
+\!\(\*SuperscriptBox[\(V\), \(\[CircleTimes]n\)]\),FundamentalBasis,\[Lambda]];
 DebugPrint["Changing basis ..."];
 matrices=Table[ChangeBasis[MatrixData[BR[n,{i}][\[CapitalGamma],V,FundamentalBasis][\[Lambda]]],hwv],{i,1,n-1}];
 DebugPrint["Computing inverses directly ..."];
@@ -124,8 +123,7 @@ BraidingData[\[CapitalGamma]_][V_,n_Integer]:=Module[{result},
 BraidingData[\[CapitalGamma]][V,n]=result=
 If[LoadBraidingData[\[CapitalGamma]],BraidingData[\[CapitalGamma]][V,n],
 {qDimension[\[CapitalGamma]][Irrep[\[CapitalGamma]][#]],BraidingMatrices[\[CapitalGamma]][V,n,#]}&/@HighWeights[\[CapitalGamma],
-\!\(\*SuperscriptBox["V", 
-RowBox[{"\[CircleTimes]", "n"}]]\)]
+\!\(\*SuperscriptBox[\(V\), \(\[CircleTimes]n\)]\)]
 ];
 If[autosaveBraidingData,PackageBraidingData[\[CapitalGamma]]];
 result
@@ -163,12 +161,8 @@ WriteBraidingDataToWiki[V_,k_]:=WriteBraidingDataToWiki[V,k,200*10^6]
 
 WriteBraidingDataToWiki[Irrep[Subscript[\[CapitalGamma]_, n_]][\[Lambda]_],k_,M_]:=MemoryConstrained[Module[{},
 If[CheckBraidingData[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]],k]=!=True,Print["The braiding data for ",
-\!\(\*SuperscriptBox[
-RowBox[{
-RowBox[{"Irrep", "[", 
-SubscriptBox["\[CapitalGamma]", "n"], "]"}], "[", "\[Lambda]", "]"}], 
-RowBox[{"\"\<\[CircleTimes]\>\"", "<>", 
-RowBox[{"ToString", "[", "k", "]"}]}]]\)," is invalid!"];Return[$Failed]];
+\!\(\*SuperscriptBox[\(\(Irrep[
+\*SubscriptBox[\(\[CapitalGamma]\), \(n\)]]\)[\[Lambda]]\), \("\<\[CircleTimes]\>" <> ToString[k]\)]\)," is invalid!"];Return[$Failed]];
 PackageBraidingData[Subscript[\[CapitalGamma], n]];
 WikiSetPageText["Data:Braiding/"<>ToString[\[CapitalGamma]]<>"_"<>ToString[n]<>"/"<>listToString[\[Lambda]]<>"/"<>ToString[k],ToString[BraidingData[Subscript[\[CapitalGamma], n]][Irrep[Subscript[\[CapitalGamma], n]][\[Lambda]],k],InputForm]]
 ],
@@ -187,8 +181,7 @@ targets=WikiAllPages["http://katlas.math.toronto.edu/w/index.php","Braiding","Da
 StringCases[#,"Data:Braiding/"~~\[CapitalGamma]_~~"_"|" "~~n:(DigitCharacter..)~~"/"~~\[Lambda]:((DigitCharacter..~~",")...~~DigitCharacter..)~~"/"~~k:(DigitCharacter..):>
 (irrep=Irrep[Subscript[ToExpression[\[CapitalGamma]], ToExpression[n]]][ToExpression["{"<>\[Lambda]<>"}"]];
 Print["Loading braiding data for ",
-\!\(\*SuperscriptBox["irrep", 
-RowBox[{"\"\<\[CircleTimes]\>\"", "<>", "k"}]]\)];results=results~Join~{{irrep,ToExpression[k]}};
+\!\(\*SuperscriptBox[\(irrep\), \("\<\[CircleTimes]\>" <> k\)]\)];results=results~Join~{{irrep,ToExpression[k]}};
 LoadBraidingDataFromWiki[irrep,ToExpression[k]])
 ]& /@ targets;
 results

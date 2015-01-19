@@ -53,7 +53,7 @@ Begin["`Private`"];
 
 
 DualRepresentation[X_DirectSum]:=DualRepresentation/@X
-DualRepresentation[X_TensorProduct]:=DualRepresentation/@(Reverse[X])
+DualRepresentation[X_CircleTimes]:=DualRepresentation/@(Reverse[X])
 DualRepresentation[Irrep[\[CapitalGamma]_][V_]]:=Irrep[\[CapitalGamma]][-LongestWord[\[CapitalGamma]].V]
 
 
@@ -63,7 +63,7 @@ q=Global`q;
 WeightMultiplicities[\[CapitalGamma]_,\[DoubleStruckCapitalC]]:={{ZeroVector[Rank[\[CapitalGamma]]],1}}
 
 
-WeightMultiplicities[\[CapitalGamma]_,TensorProduct[V_]]:=WeightMultiplicities[\[CapitalGamma],V]
+WeightMultiplicities[\[CapitalGamma]_,CircleTimes[V_]]:=WeightMultiplicities[\[CapitalGamma],V]
 
 
 WeightMultiplicities[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_]]:=WeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]]=LittelmannPathWeightMultiplicities[\[CapitalGamma],Irrep[\[CapitalGamma]][\[Lambda]]]
@@ -114,7 +114,7 @@ TensorWeightMultiplicities[{\[Lambda]_,a_},{\[Mu]_,b_}]:={\[Lambda]+\[Mu],a b}
 CombineWeightMultiplicities[\[CapitalGamma]_,l_]:={#[[1,1]],Plus@@(Last/@#)}&/@Split[SortWeightMultiplicities[\[CapitalGamma]][l],#1[[1]]==#2[[1]]&]
 
 
-WeightMultiplicities[\[CapitalGamma]_,V_\[CircleTimes]W_]:=WeightMultiplicities[\[CapitalGamma],V\[CircleTimes]W]=CombineWeightMultiplicities[\[CapitalGamma],Flatten[Outer[TensorWeightMultiplicities,WeightMultiplicities[\[CapitalGamma],W],WeightMultiplicities[\[CapitalGamma],V],1],1]]
+WeightMultiplicities[\[CapitalGamma]_,CircleTimes[V_,W_]]:=WeightMultiplicities[\[CapitalGamma],V\[CircleTimes]W]=CombineWeightMultiplicities[\[CapitalGamma],Flatten[Outer[TensorWeightMultiplicities,WeightMultiplicities[\[CapitalGamma],W],WeightMultiplicities[\[CapitalGamma],V],1],1]]
 
 
 WeightMultiplicities[\[CapitalGamma]_,V_DirectSum]:=WeightMultiplicities[\[CapitalGamma],V]=CombineWeightMultiplicities[\[CapitalGamma],Join@@(WeightMultiplicities[\[CapitalGamma],#]&/@(List@@V))]
