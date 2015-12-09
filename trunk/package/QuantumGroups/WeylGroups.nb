@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    133320,       2895]
-NotebookOptionsPosition[     16444,        465]
-NotebookOutlinePosition[    131811,       2846]
-CellTagsIndexPosition[    131768,       2843]
+NotebookDataLength[    133462,       2900]
+NotebookOptionsPosition[     16498,        467]
+NotebookOutlinePosition[    131899,       2849]
+CellTagsIndexPosition[    131856,       2846]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -399,6 +399,7 @@ Cell[BoxData[
      ",", "4", ",", "3", ",", "1", ",", "7", ",", "6", ",", "5", ",", "4", 
      ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}], "}"}]}], 
   ";"}]], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.413003046142317*^9, 3.413003056056573*^9}}],
 
 Cell[BoxData[
@@ -426,6 +427,7 @@ Cell[BoxData[
      ",", "4", ",", "3", ",", "1", ",", "7", ",", "6", ",", "5", ",", "4", 
      ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8"}], 
     "}"}]}], ";"}]], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.4130030677934494`*^9, 3.4130030778278785`*^9}}],
 
 Cell[BoxData[
@@ -521,7 +523,8 @@ InputAliases->{"intt" -> RowBox[{"\[Integral]",
     "NotationPatternWrapperStyle"], "madeboxeswraper" -> 
   TagBox["\[Placeholder]", NotationMadeBoxesTag, TagStyle -> 
     "NotationMadeBoxesWrapperStyle"]},
-FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
 StyleDefinitions->Notebook[{
    Cell[
     CellGroupData[{
@@ -2499,10 +2502,10 @@ stand out).", "Text"],
              CellGroupData[{
                Cell[
                 StyleData["OpenCloseItemizedPicture"], 
-                CellMargins -> {{88, 4}, {4, 4}}, 
-                PrivateCellOptions -> {"DefaultCellGroupOpen" -> False}, 
-                CellGroupingRules -> "GraphicsGrouping", 
-                CellHorizontalScrolling -> True, StyleMenuListing -> None], 
+                CellMargins -> {{88, 4}, {4, 4}}, CellGroupingRules -> 
+                "GraphicsGrouping", CellHorizontalScrolling -> True, 
+                StyleMenuListing -> None, 
+                PrivateCellOptions -> {"DefaultCellGroupOpen" -> False}], 
                Cell[
                 StyleData["OpenCloseItemizedPicture", "Presentation"], 
                 FontSize -> 18], 
@@ -2831,8 +2834,8 @@ These styles serve to make visible otherwise invisible tagboxes.", "Text",
        Background -> RGBColor[0.900008, 0.889998, 1], 
        TagBoxOptions -> {SyntaxForm -> "symbol"}, CellTags -> 
        "NotationPackage"]}, Closed]]}, Visible -> False, FrontEndVersion -> 
-  "7.0 for Mac OS X x86 (32-bit) (February 18, 2009)", StyleDefinitions -> 
-  "Default.nb"]
+  "10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, 2014)", 
+  StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
 
@@ -2846,54 +2849,56 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[567, 22, 38, 0, 46, "Subtitle"],
+Cell[567, 22, 38, 0, 47, "Subtitle"],
 Cell[608, 24, 101, 3, 41, "Text"],
 Cell[CellGroupData[{
-Cell[734, 31, 31, 0, 67, "Section"],
+Cell[734, 31, 31, 0, 68, "Section"],
 Cell[768, 33, 146, 3, 26, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[951, 41, 60, 1, 67, "Section",
+Cell[951, 41, 60, 1, 68, "Section",
  InitializationCell->True],
-Cell[1014, 44, 283, 8, 24, "Input",
+Cell[1014, 44, 283, 8, 26, "Input",
  InitializationCell->True],
-Cell[1300, 54, 145, 5, 24, "Input",
+Cell[1300, 54, 145, 5, 26, "Input",
  InitializationCell->True],
-Cell[1448, 61, 271, 7, 55, "Input",
+Cell[1448, 61, 271, 7, 58, "Input",
  InitializationCell->True],
-Cell[1722, 70, 297, 7, 55, "Input",
+Cell[1722, 70, 297, 7, 58, "Input",
  InitializationCell->True],
-Cell[2022, 79, 320, 7, 40, "Input",
+Cell[2022, 79, 320, 7, 42, "Input",
  InitializationCell->True],
-Cell[2345, 88, 119, 3, 24, "Input",
+Cell[2345, 88, 119, 3, 26, "Input",
  InitializationCell->True],
-Cell[2467, 93, 1297, 35, 55, "Input",
+Cell[2467, 93, 1297, 35, 58, "Input",
  InitializationCell->True],
-Cell[3767, 130, 588, 15, 40, "Input",
+Cell[3767, 130, 588, 15, 42, "Input",
  InitializationCell->True],
-Cell[4358, 147, 4342, 106, 250, "Input",
+Cell[4358, 147, 4342, 106, 266, "Input",
  InitializationCell->True],
-Cell[8703, 255, 492, 13, 24, "Input",
+Cell[8703, 255, 492, 13, 26, "Input",
  InitializationCell->True],
-Cell[9198, 270, 313, 8, 24, "Input",
+Cell[9198, 270, 313, 8, 26, "Input",
  InitializationCell->True],
-Cell[9514, 280, 486, 14, 47, "Input",
+Cell[9514, 280, 486, 14, 44, "Input",
  InitializationCell->True],
-Cell[10003, 296, 973, 29, 68, "Input",
+Cell[10003, 296, 973, 29, 62, "Input",
  InitializationCell->True],
 Cell[10979, 327, 1428, 40, 92, "Input",
  InitializationCell->True],
 Cell[12410, 369, 593, 13, 42, "Input",
  InitializationCell->True],
-Cell[13006, 384, 924, 17, 57, "Input"],
-Cell[13933, 403, 1548, 25, 72, "Input"],
-Cell[15484, 430, 462, 11, 24, "Input",
+Cell[13006, 384, 951, 18, 58, "Input",
  InitializationCell->True],
-Cell[15949, 443, 262, 8, 24, "Input",
+Cell[13960, 404, 1575, 26, 73, "Input",
  InitializationCell->True],
-Cell[16214, 453, 96, 3, 24, "Input",
+Cell[15538, 432, 462, 11, 26, "Input",
  InitializationCell->True],
-Cell[16313, 458, 103, 3, 24, "Input",
+Cell[16003, 445, 262, 8, 26, "Input",
+ InitializationCell->True],
+Cell[16268, 455, 96, 3, 26, "Input",
+ InitializationCell->True],
+Cell[16367, 460, 103, 3, 26, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
