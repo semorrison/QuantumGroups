@@ -19,6 +19,10 @@
 
 
 
+(* We let the symbols X and K escape to the System` context, to avoid shadowing problems with KnotTheory`. *)
+System`K;System`X;
+
+
 DeclarePackage["QuantumGroups`Utilities`IntersectSubspaces`",{"IntersectSubspaces"}];
 
 
@@ -37,7 +41,7 @@ DeclarePackage["QuantumGroups`RootSystems`",{"CartanMatrix","CartanFactors","Lac
 DeclarePackage["QuantumGroups`RootsOfUnity`",{"AlcoveDefiningRoot","WeightInAlcoveQ","AlcoveWeights","AlcoveWeightsInLattice","AlcoveRoots","LevelFromRoot","RootFromLevel"}];
 
 
-DeclarePackage["QuantumGroups`Algebra`",{"X","K","\[ScriptOne]","\[ScriptZero]","PositiveGenerators","NegativeGenerators","CartanGenerators","Generators","NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight","OperatorLength"}];
+DeclarePackage["QuantumGroups`Algebra`",{"\[ScriptOne]","\[ScriptZero]","PositiveGenerators","NegativeGenerators","CartanGenerators","Generators","NonCommutativePower","\[CapitalDelta]","\[CapitalDelta]op","OperatorWeight","OperatorLength"}];
 
 
 DeclarePackage["QuantumGroups`BraidAction`",{"T","BraidAction","BraidRelations","CheckBraidRelations"}];
