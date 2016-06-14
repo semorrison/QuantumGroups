@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     77651,       1932]
-NotebookOptionsPosition[     28770,        868]
-NotebookOutlinePosition[     73774,       1812]
-CellTagsIndexPosition[     73705,       1807]
+NotebookDataLength[     79920,       2002]
+NotebookOptionsPosition[     30903,        934]
+NotebookOutlinePosition[     75907,       1878]
+CellTagsIndexPosition[     75838,       1873]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -594,6 +594,72 @@ Cell[BoxData[
    "\"\<ZeroVectorQ[v] tests if v is the zero vector.\>\""}], ";"}]], "Input",
  InitializationCell->True,
  CellLabel->"In[62]:="],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"AdjointRepresentation", "[", 
+   SubscriptBox["A", "n_"], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Irrep", "[", 
+    SubscriptBox["A", "n"], "]"}], "[", 
+   RowBox[{
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"n", ",", "1"}], "]"}], "+", 
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"n", ",", "n"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AdjointRepresentation", "[", "G2", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"2", ",", "2"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AdjointRepresentation", "[", "F4", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Irrep", "[", "F4", "]"}], "[", 
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"4", ",", "1"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AdjointRepresentation", "[", "E6", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Irrep", "[", "E6", "]"}], "[", 
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"6", ",", "2"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AdjointRepresentation", "[", "E7", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Irrep", "[", "E7", "]"}], "[", 
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"7", ",", "1"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AdjointRepresentation", "[", "E8", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Irrep", "[", "E8", "]"}], "[", 
+    RowBox[{"UnitVector", "[", 
+     RowBox[{"8", ",", "8"}], "]"}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TwistFactor", "[", 
+   RowBox[{"\[CapitalGamma]_", ",", 
+    RowBox[{
+     RowBox[{"Irrep", "[", "\[CapitalGamma]_", "]"}], "[", "\[Lambda]_", 
+     "]"}]}], "]"}], ":=", 
+  SuperscriptBox["q", 
+   RowBox[{
+    RowBox[{"KillingForm", "[", "\[CapitalGamma]", "]"}], "[", 
+    RowBox[{"\[Lambda]", ",", 
+     RowBox[{"\[Lambda]", "+", 
+      RowBox[{"2", 
+       RowBox[{"\[Rho]", "[", "\[CapitalGamma]", "]"}]}]}]}], 
+    "]"}]]}]], "Input",
+ InitializationCell->True],
 
 Cell[BoxData[
  RowBox[{
@@ -1799,14 +1865,14 @@ package. These styles serve to make visible otherwise invisible tagboxes.",
 (*CellTagsOutline
 CellTagsIndex->{
  "Union"->{
-  Cell[24635, 726, 512, 17, 26, "Input",
+  Cell[26768, 792, 512, 17, 26, "Input",
    InitializationCell->True,
    CellTags->"Union"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Union", 73588, 1800}
+ {"Union", 75721, 1866}
  }
 *)
 (*NotebookFileOutline
@@ -1899,38 +1965,42 @@ Cell[20097, 580, 225, 7, 26, "Input",
  InitializationCell->True],
 Cell[20325, 589, 213, 6, 26, "Input",
  InitializationCell->True],
-Cell[20541, 597, 143, 4, 26, "Input",
+Cell[20541, 597, 1625, 47, 110, "Input",
  InitializationCell->True],
-Cell[20687, 603, 761, 22, 42, "Input",
+Cell[22169, 646, 502, 15, 28, "Input",
  InitializationCell->True],
-Cell[21451, 627, 688, 18, 42, "Input",
+Cell[22674, 663, 143, 4, 26, "Input",
  InitializationCell->True],
-Cell[22142, 647, 1404, 38, 106, "Input",
+Cell[22820, 669, 761, 22, 42, "Input",
  InitializationCell->True],
-Cell[23549, 687, 402, 13, 30, "Input",
+Cell[23584, 693, 688, 18, 42, "Input",
  InitializationCell->True],
-Cell[23954, 702, 435, 13, 26, "Input",
+Cell[24275, 713, 1404, 38, 106, "Input",
  InitializationCell->True],
-Cell[24392, 717, 240, 7, 26, "Input",
+Cell[25682, 753, 402, 13, 30, "Input",
  InitializationCell->True],
-Cell[24635, 726, 512, 17, 26, "Input",
+Cell[26087, 768, 435, 13, 26, "Input",
+ InitializationCell->True],
+Cell[26525, 783, 240, 7, 26, "Input",
+ InitializationCell->True],
+Cell[26768, 792, 512, 17, 26, "Input",
  InitializationCell->True,
  CellTags->"Union"],
-Cell[25150, 745, 236, 7, 26, "Input",
+Cell[27283, 811, 236, 7, 26, "Input",
  InitializationCell->True],
-Cell[25389, 754, 220, 7, 26, "Input",
+Cell[27522, 820, 220, 7, 26, "Input",
  InitializationCell->True],
-Cell[25612, 763, 1887, 54, 121, "Input",
+Cell[27745, 829, 1887, 54, 121, "Input",
  InitializationCell->True],
-Cell[27502, 819, 460, 15, 26, "Input",
+Cell[29635, 885, 460, 15, 26, "Input",
  InitializationCell->True],
-Cell[27965, 836, 333, 11, 26, "Input",
+Cell[30098, 902, 333, 11, 26, "Input",
  InitializationCell->True],
-Cell[28301, 849, 120, 4, 25, "Input",
+Cell[30434, 915, 120, 4, 25, "Input",
  InitializationCell->True],
-Cell[28424, 855, 188, 3, 42, "Input",
+Cell[30557, 921, 188, 3, 42, "Input",
  InitializationCell->True],
-Cell[28615, 860, 127, 4, 26, "Input",
+Cell[30748, 926, 127, 4, 26, "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]]
