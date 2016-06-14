@@ -156,6 +156,17 @@ UnitVectorQ::usage="UnitVectorQ[v] tests if v is a unit coordinate vector.";
 ZeroVectorQ::usage="ZeroVectorQ[v] tests if v is the zero vector.";
 
 
+AdjointRepresentation[Subscript[A, n_]]:=Irrep[Subscript[A, n]][UnitVector[n,1]+UnitVector[n,n]]
+AdjointRepresentation[G2]=Irrep[G2][UnitVector[2,2]];
+AdjointRepresentation[F4]=Irrep[F4][UnitVector[4,1]];
+AdjointRepresentation[E6]=Irrep[E6][UnitVector[6,2]];
+AdjointRepresentation[E7]=Irrep[E7][UnitVector[7,1]];
+AdjointRepresentation[E8]=Irrep[E8][UnitVector[8,8]];
+
+
+TwistFactor[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_]]:=q^KillingForm[\[CapitalGamma]][\[Lambda],\[Lambda]+2\[Rho][\[CapitalGamma]]]
+
+
 Begin["`Private`"];
 
 
