@@ -19,15 +19,19 @@
 
 
 
+(* ::Input::Initialization:: *)
 BeginPackage["QuantumGroups`RootsOfUnity`",{"QuantumGroups`","QuantumGroups`RootSystems`"}];
 
 
+(* ::Input::Initialization:: *)
 AlcoveDefiningRoot;WeightInAlcoveQ;AlcoveWeights;AlcoveWeightsInLattice;AlcoveRoots;LevelFromRoot;RootFromLevel;
 
 
+(* ::Input::Initialization:: *)
 Begin["`Private`"];
 
 
+(* ::Input::Initialization:: *)
 AlcoveDefiningRoot[\[CapitalGamma]_,l_]:=AlcoveDefiningRoot[\[CapitalGamma],l]=With[{lp=If[EvenQ[l],l/2,l]},
 If[Divisible[lp,LacingNumber[\[CapitalGamma]]],
 LongDominantRoots[\[CapitalGamma]][[1]],
@@ -35,9 +39,11 @@ ShortDominantRoots[\[CapitalGamma]][[1]]]
 ]
 
 
+(* ::Input::Initialization:: *)
 WeightInAlcoveQ[\[CapitalGamma]_,l_Integer][\[Lambda]:{___Integer}]:=(And@@(NonNegative/@\[Lambda]))\[And](KillingForm[\[CapitalGamma]][AlcoveDefiningRoot[\[CapitalGamma],l],\[Lambda]+\[Rho][\[CapitalGamma]]]<If[EvenQ[l],l/2,l])
 
 
+(* ::Input::Initialization:: *)
 AlcoveWeights[\[CapitalGamma]_,l_]:=AlcoveWeights[\[CapitalGamma],l]=Module[{ar=AlcoveDefiningRoot[\[CapitalGamma],l],\[Lambda]=ZeroVector[Rank[\[CapitalGamma]]],p},
 Reap[
 While[
@@ -55,25 +61,37 @@ If[p<Rank[\[CapitalGamma]],++\[Lambda][[p+1]]];
 ]
 
 
+(* ::Input::Initialization:: *)
 AlcoveWeightsInLattice[\[CapitalGamma]_,l_,All]:=AlcoveWeights[\[CapitalGamma],l]
 
 
+(* ::Input::Initialization:: *)
 AlcoveWeightsInLattice[\[CapitalGamma]_,l_,lattice_]:=AlcoveWeightsInLattice[\[CapitalGamma],l,lattice]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;WeightInLatticeQ[\[CapitalGamma],\[Lambda],lattice]]
 
 
+(* ::Input::Initialization:: *)
 AlcoveRoots[\[CapitalGamma]_,l_]:=AlcoveRoots[\[CapitalGamma],l]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
 
 
+(* ::Input::Initialization:: *)
 LevelFromRoot[\[CapitalGamma]_,l_]:=l/(2LacingNumber[\[CapitalGamma]])-DualCoxeterNumber[\[CapitalGamma]]
 
 
+(* ::Input::Initialization:: *)
 RootFromLevel[\[CapitalGamma]_,k_]:=2LacingNumber[\[CapitalGamma]](k+DualCoxeterNumber[\[CapitalGamma]])
 
 
+(* ::Input::Initialization:: *)
 AlcoveRoots[\[CapitalGamma]_,l_]:=AlcoveRoots[\[CapitalGamma],l]=Cases[AlcoveWeights[\[CapitalGamma],l],\[Lambda]_/;RootWeightQ[\[CapitalGamma],\[Lambda]]]
 
 
+(* ::Input::Initialization:: *)
+TwistFactor[\[CapitalGamma]_,Irrep[\[CapitalGamma]_][\[Lambda]_]]:=Global`q^KillingForm[\[CapitalGamma]][\[Lambda],\[Lambda]+2\[Rho][\[CapitalGamma]]]
+
+
+(* ::Input::Initialization:: *)
 End[];
 
 
+(* ::Input::Initialization:: *)
 EndPackage[];
